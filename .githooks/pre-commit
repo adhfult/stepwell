@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Blocks commits that include real .env files or anything that looks like a
+# secret. Enabled automatically (web: npm install; local: new-project skill)
+# with:  git config core.hooksPath .githooks
+set -euo pipefail
+
+# 1. Never commit real .env files (templates like .env.example are fine)
+bad_env="$(git diff --cached --name-only --diff-filter=ACM | grep -E '(^|/)\.env($|\.)' | grep -vE '\.env\.(example|sample|template)$' || true)"
+if [ -n "$bad_env" ]; then
+  echo "Commit blocked: these look like real .env files:" >&2
+  echo "$bad_env" | sed 's/^/  /' >&2
+  echo "Unstage them with: git restore --staged <file>" >&2
+  exit 1
+fi
+
+# 2. Scan staged changes for secrets
+if command -v gitleaks >/dev/null 2>&1; then
+  if ! gitleaks git --pre-commit --staged --redact --no-banner; then
+    echo "Commit blocked: gitleaks found something that looks like a secret (shown above, redacted)." >&2
+    exit 1
+  fi
+else
+  echo "Note: gitleaks not installed, so this commit wasn't scanned for secrets." >&2
+fi
