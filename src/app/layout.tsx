@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "project-name",
-  description: "__PROJECT_DESCRIPTION__",
+  title: "stepwell",
+  description: "Helps students connect careers to programs and colleges using official U.S. data.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

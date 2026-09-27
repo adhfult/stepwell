@@ -1,4 +1,4 @@
-# Design system: project-name
+# Design system: stepwell
 
 **Status: not chosen yet.** Before building real UI, pick a direction (ask
 Claude to propose two or three options based on docs/PRODUCT.md), then record

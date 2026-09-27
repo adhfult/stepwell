@@ -1,5 +1,5 @@
 {
-  "name": "project-name",
+  "name": "stepwell",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -32,5 +32,5 @@
     "typescript": "^5",
     "vitest": "^5.0.2"
   },
-  "description": "__PROJECT_DESCRIPTION__"
+  "description": "Helps students connect careers to programs and colleges using official U.S. data."
 }

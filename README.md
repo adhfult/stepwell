@@ -1,6 +1,6 @@
-# project-name
+# stepwell
 
-__PROJECT_DESCRIPTION__
+Helps students connect careers to programs and colleges using official U.S. data.
 
 ## Run it
 ```bash

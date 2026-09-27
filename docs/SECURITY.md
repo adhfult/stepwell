@@ -1,23 +1,94 @@
-# Security: project-name
+# Stepwell security checklist
 
-Project-specific rules. The pre-ship-security skill combines these with the
-global checklist before any deploy.
+**Hard rules.** Every change that touches login, data, APIs, files, or
+settings must follow them, and the pre-ship-security skill checks all of them
+before any deploy. Stepwell's users may be 13–17, so privacy mistakes matter more.
 
-## Always
-- Every table with user data has Row Level Security enabled and owner-only
-  policies, created in the same migration as the table.
-- Server code uses `src/lib/supabase/server.ts` (acts as the user). The
-  service-role key is never used in this app; if a task truly needs it, it runs
-  in a separate server-only job and gets a decision record first.
-- Nothing secret uses the `NEXT_PUBLIC_` prefix.
-- All input to Route Handlers and Server Actions is validated with zod.
-- Rate-limit sign-up, sign-in, and any endpoint that costs money (e.g. AI calls).
+Each item says **how Stepwell does it**.
 
-## If this project collects personal data
-- Publish a privacy policy and terms before launch, linked in the footer.
-- Collect only what a feature needs; note each personal field in ARCHITECTURE.md.
-- If users may be under 18, state a minimum age (13+) at sign-up and never
-  sell or share their data.
+## Secrets and keys
+- [ ] **Secure API keys.** Server-only keys (`ONET_*`, `SCORECARD_API_KEY`,
+      `SUPABASE_SERVICE_ROLE_KEY`, any AI key) live in `.env.local` and in
+      Vercel environment variables, never in code, never with `NEXT_PUBLIC_`.
+- [ ] **Hide all .env files.** `.gitignore` blocks `.env*` except `.env.example`;
+      the pre-commit hook blocks real `.env` files; Claude can't read them.
+- [ ] **Never hardcode secrets.** No keys, passwords, or tokens in source,
+      tests, docs, or commit messages. `.env.example` holds names only.
+- [ ] **Check Git history for secrets.** gitleaks runs on every commit
+      (hook) and every push (CI). A leaked key is **rotated** in its
+      dashboard, not just deleted from code.
+- [ ] Vercel: production keys are set only for the Production environment;
+      previews use a separate development Supabase project.
 
-## Project-specific
-Add rules specific to this project here.
+## Login and permissions
+- [ ] **Add authentication.** Supabase Auth (email + password, email
+      confirmation on). No home-made password handling.
+- [ ] **Rate-limit login and signup.** Supabase Auth rate limits stay on;
+      any custom endpoint that sends email or costs money gets its own limit.
+- [ ] **Verify permissions server-side.** Every Server Action and Route
+      Handler gets the user from the session (`supabase.auth.getUser()`),
+      then checks what they may do. Hiding a button is not a permission check.
+- [ ] **Don't trust frontend user IDs.** Never accept `user_id` from the
+      browser; the server and RLS use the session's user.
+- [ ] **Protect admin routes.** Stepwell has no admin pages in version 1.
+      If added, they require a server-side role check and a decision record.
+- [ ] Sensitive actions (delete account, change email) re-check the session
+      and ask for confirmation.
+
+## Data and database
+- [ ] **Isolate user data.** Every table with user data has RLS with
+      owner-only policies, in the same migration that creates it.
+- [ ] **Lock down your database.** RLS enabled on **every** table in the
+      public schema, including reference tables (public read only); no
+      `using (true)` on user data; users can't write `user_id`, `role`, or
+      timestamps directly.
+- [ ] **Secure Firebase, Supabase, and storage.** No Firebase. Supabase:
+      service-role key only in import jobs; storage buckets private by
+      default with owner-only policies; Auth redirect URLs restricted to
+      Stepwell's own domains; leaked-password protection on if available.
+- [ ] **Prevent SQL and NoSQL injection.** Only the Supabase client or
+      parameterized queries; never build SQL from strings with user input.
+- [ ] Account deletion removes all of that user's data (cascade from auth.users).
+- [ ] Minimum data: no birthdates, addresses, phone numbers, or school IDs.
+
+## Input and output
+- [ ] **Validate inputs server-side.** zod schemas on every Server Action,
+      Route Handler, and search parameter, even if the browser validated too.
+- [ ] **Sanitize user content.** React escapes text by default; never use
+      `dangerouslySetInnerHTML` with user or imported content.
+- [ ] **Secure file uploads.** None in version 1. If added: type and size
+      checked on the server, private bucket, never served as HTML.
+- [ ] **Hide detailed errors.** Users see a friendly message; details go to
+      server logs only (never tokens, emails, or personal data in logs).
+- [ ] Links from users or data use safe URLs only (no `javascript:`), and
+      redirects only go to Stepwell's own pages.
+
+## Deployment and configuration
+- [ ] **Disable production debug mode.** No debug routes, test pages, or
+      verbose logging in production; `console.log` of user data removed.
+- [ ] **Add security headers and restrict CORS.** Set in `next.config.ts`:
+      Content-Security-Policy, X-Content-Type-Options, Referrer-Policy,
+      frame protection (`frame-ancestors 'none'`), Permissions-Policy.
+      No wildcard CORS; API routes serve Stepwell's own pages only.
+- [ ] HTTPS only (Vercel default).
+- [ ] Dependencies: Dependabot updates merged when CI is green;
+      `npm audit` shows no critical issues.
+
+## Privacy (because users may be 13–17)
+- [ ] Minimum age 13, confirmed at sign-up; only `age_confirmed` is stored.
+- [ ] No ads, no third-party tracking, no selling or sharing data, including
+      with colleges. Error tracking (e.g. Sentry) sends no personal data.
+- [ ] Terms of Service and Privacy Policy linked in the footer before launch.
+
+## Accounts that protect Stepwell
+- [ ] Two-factor authentication on GitHub, Supabase, Vercel, and the domain registrar.
+- [ ] Keys and passwords stored in a password manager (1Password via the
+      Student Pack), never in chats, notes apps, or email.
+
+## Before every launch or major release
+- [ ] **Test as an untrusted user.** Sign in as a second test account and
+      try to read or change the first account's data (profile, saved items)
+      from the browser console and with direct requests. Every attempt must fail.
+- [ ] Run the pre-ship-security skill ("Is this ready to deploy?").
+- [ ] Before the first public launch, also run the full Cloudflare
+      security-audit skill and fix all confirmed findings.
