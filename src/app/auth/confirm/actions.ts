@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { getCurrentUser } from "@/lib/auth/dal";
 import { describeLinkError } from "@/lib/auth/errors";
 import { safeNextPath } from "@/lib/auth/safe-next";
 import { formText } from "@/lib/form-data";
@@ -35,6 +36,13 @@ export async function confirmLink(_previous: ConfirmState, formData: FormData): 
   const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
 
   if (error) {
+    // Already used, but this browser is signed in (the link was used a moment
+    // ago here: a double tap, the email opened twice): just carry on. Safe,
+    // since it only sends an already signed-in student to their own pages.
+    if (await getCurrentUser()) {
+      revalidatePath("/", "layout");
+      redirect(safeNextPath(next, linkKinds[type].next));
+    }
     // The code only: never the token or anything personal.
     console.error("Email link failed:", error.code ?? error.status);
     return { error: describeLinkError(error) };
