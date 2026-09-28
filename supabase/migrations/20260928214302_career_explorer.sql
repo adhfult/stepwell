@@ -129,12 +129,13 @@ grant insert (onet_code) on table public.saved_items to authenticated;
 -- Search -------------------------------------------------------------------
 -- Ranks: 0 exact title, 1 exact other title ("nurse" is an alternate title
 -- of Registered Nurses), 2 title starts with the query, 3 title contains it,
--- 4 another title contains it, 5 close spelling. Ties: closer spelling, then
+-- 4 another title contains it; only when none of those match, close
+-- spellings: 5 on a title, 6 on another title. Ties: closer spelling, then
 -- the general career (code ending .00) before its specialties, then shorter.
--- Close spellings: word similarity 0.5 or more (typos like "sofware" score
--- about 0.55; pg_trgm's default cut-off of 0.6 misses them, and a function
--- may not change that setting). ponytail: this check reads every title
--- (about 55,000); fine at this size, revisit if search gets slow.
+-- Close spellings use word similarity 0.5 or more (typos like "sofware"
+-- score about 0.55; pg_trgm's default cut-off of 0.6 misses them, and a
+-- function may not change that setting). That check reads every title, so
+-- it runs only when nothing matched directly.
 -- Runs as the caller (security invoker), so RLS applies as usual.
 
 create function public.search_occupations(p_query text)
@@ -156,39 +157,41 @@ as $$
       -- LIKE treats % and _ as wildcards; match them literally.
       replace(replace(replace(lower(btrim(p_query)), '\', '\\'), '%', '\%'), '_', '\_') as pattern
   ),
-  candidates as (
+  matches as (
     select
       o.onet_code,
       null::text as matched_title,
       case
         when lower(o.title) = q.term then 0
         when lower(o.title) like q.pattern || '%' then 2
-        when lower(o.title) like '%' || q.pattern || '%' then 3
-        else 5
+        else 3
       end as rank,
       extensions.word_similarity(q.term, lower(o.title)) as score
     from public.occupations o, q
-    where q.term <> ''
-      and (lower(o.title) like '%' || q.pattern || '%'
-           or extensions.word_similarity(q.term, lower(o.title)) >= 0.5)
+    where q.term <> '' and lower(o.title) like '%' || q.pattern || '%'
     union all
     select
       t.onet_code,
       t.title,
-      case
-        when lower(t.title) = q.term then 1
-        when lower(t.title) like '%' || q.pattern || '%' then 4
-        else 5
-      end,
+      case when lower(t.title) = q.term then 1 else 4 end,
       extensions.word_similarity(q.term, lower(t.title))
     from public.occupation_titles t, q
-    where q.term <> ''
-      and (lower(t.title) like '%' || q.pattern || '%'
-           or extensions.word_similarity(q.term, lower(t.title)) >= 0.5)
+    where q.term <> '' and lower(t.title) like '%' || q.pattern || '%'
+  ),
+  close_spellings as (
+    select o.onet_code, null::text, 5, extensions.word_similarity(q.term, lower(o.title))
+    from public.occupations o, q
+    where q.term <> '' and not exists (select from matches)
+      and extensions.word_similarity(q.term, lower(o.title)) >= 0.5
+    union all
+    select t.onet_code, t.title, 6, extensions.word_similarity(q.term, lower(t.title))
+    from public.occupation_titles t, q
+    where q.term <> '' and not exists (select from matches)
+      and extensions.word_similarity(q.term, lower(t.title)) >= 0.5
   ),
   best as (
     select distinct on (c.onet_code) c.onet_code, c.matched_title, c.rank, c.score
-    from candidates c
+    from (select * from matches union all select * from close_spellings) c
     order by c.onet_code, c.rank, c.score desc
   )
   select b.onet_code, o.title, b.matched_title, o.job_zone, o.education_level

@@ -134,6 +134,13 @@ describe("createPoliteFetcher", () => {
     expect(calls.filter((c) => c.url.endsWith("/a"))).toHaveLength(4);
   });
 
+  it("retries a download that fails while reading the body", async () => {
+    const broken = () =>
+      new Response(new ReadableStream({ pull: (c) => c.error(new Error("connection reset")) }), { status: 200 });
+    const { fetcher } = setup({ ...robots(""), "https://example.gov/a": [broken, ok("A")] });
+    await expect(fetcher.get("https://example.gov/a")).resolves.toMatchObject({ body: "A" });
+  });
+
   it("returns other 4xx without retrying", async () => {
     const { fetcher, calls } = setup({ ...robots(""), "https://example.gov/a": [status(403)] });
     await expect(fetcher.get("https://example.gov/a")).resolves.toMatchObject({ status: 403 });

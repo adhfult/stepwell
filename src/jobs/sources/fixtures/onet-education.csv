@@ -1,0 +1,40 @@
+O*NET-SOC Code,Title,Element ID,Element Name,Scale ID,Scale Name,Category,Data Value,N,Standard Error,Lower CI Bound,Upper CI Bound,Recommend Suppress,Date,Domain Source
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),1,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),2,4.46,28,4.1428,0.6307,25.5524,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),3,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),4,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),5,5.15,28,5.2236,0.6000,32.7756,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),6,32.29,28,12.7266,12.6247,61.1586,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),7,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),8,45.91,28,16.6480,17.6593,77.0570,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),9,3.94,28,4.0634,0.4511,27.0734,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),10,0.55,28,0.5831,0.0637,4.6529,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),11,4.92,28,4.7695,0.6342,29.5426,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),12,2.78,28,2.7428,0.3548,18.6644,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.D.4.a,Job-Related Professional Certification,IM,Importance,,3.01,28,0.2773,2.4454,3.5834,N,08/2023,Incumbent
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),1,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),2,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),3,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),4,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),5,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),6,18.52,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),7,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),8,74.07,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),9,7.41,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),10,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),11,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),12,0.00,27,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.D.4.a,Job-Related Professional Certification,IM,Importance,,2.70,27,,,,,08/2021,Occupational Expert
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),1,10.35,28,7.6848,2.0646,38.7124,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),2,28.76,28,11.3910,11.4276,55.8159,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),3,5.72,28,5.6980,0.6906,34.6394,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),4,21.59,28,11.0866,6.7027,51.3506,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),5,5.99,28,5.8141,0.7609,34.6341,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),6,27.30,28,10.5201,11.2316,52.6984,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),7,0.14,28,0.1380,0.0167,1.0888,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),8,0.15,28,0.1576,0.0191,1.2422,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),9,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),10,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),11,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),12,0.00,28,0.0000,,,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.D.4.a,Job-Related Professional Certification,IM,Importance,,1.88,28,0.2508,1.3704,2.3996,N,08/2023,Incumbent

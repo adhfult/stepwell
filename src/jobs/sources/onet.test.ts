@@ -1,11 +1,24 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Fetcher, FetchResult } from "../fetch/polite.ts";
-import { findLatestRelease, parseOccupations, readOnet } from "./onet.ts";
+import {
+  buildDetails,
+  DETAIL_FILES,
+  type DetailFile,
+  findLatestRelease,
+  parseOccupations,
+  readOnet,
+} from "./onet.ts";
 
+// Real excerpts of O*NET 31.0 files, saved 2026-09-28. The detail files keep
+// only 11-1011.00, 11-1011.03 and 11-1021.00.
 const fixture = (name: string) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
 const page = fixture("onet-database-page.html");
 const csv = fixture("onet-occupation_data.csv");
+const detailFiles = Object.fromEntries(
+  (Object.keys(DETAIL_FILES) as DetailFile[]).map((name) => [name, fixture(`onet-${name}.csv`)]),
+) as Record<DetailFile, string>;
+const noMinimums = Object.fromEntries(Object.keys(DETAIL_FILES).map((name) => [name, 0])) as Record<DetailFile, number>;
 
 describe("findLatestRelease", () => {
   it("reads the release and CSV link from the saved O*NET page", () => {
@@ -25,15 +38,59 @@ describe("findLatestRelease", () => {
   });
 });
 
+describe("buildDetails", () => {
+  const details = buildDetails(detailFiles, noMinimums);
+  const ceo = details.get("11-1011.00")!;
+
+  it("reads the job zone and the most common education level", () => {
+    expect(ceo.job_zone).toBe(5);
+    expect(ceo).toMatchObject({ education_level: 8, education_share: 46 });
+  });
+
+  it("keeps the 8 most important core tasks, most important first", () => {
+    expect(ceo.tasks).toHaveLength(8);
+    expect(ceo.tasks[0]).toBe(
+      "Direct or coordinate an organization's financial or budget activities to fund operations, maximize investments, or increase efficiency.",
+    );
+  });
+
+  it("keeps the 6 most important skills from both skill files", () => {
+    expect(ceo.skills).toHaveLength(6);
+    expect(ceo.skills[0]).toBe("Judgment and Decision Making");
+  });
+
+  it("collects reported titles (with O*NET's featured flag) and alternate titles", () => {
+    expect(ceo.titles).toContainEqual({ kind: "reported", title: "CEO (Chief Executive Officer)", featured: true });
+    expect(ceo.titles).toContainEqual({ kind: "reported", title: "Chief Diversity Officer (CDO)", featured: false });
+    expect(ceo.titles.filter((t) => t.kind === "alternate")).toHaveLength(75);
+  });
+
+  it("reads related careers with their tier and rank", () => {
+    expect(ceo.related[0]).toEqual({ code: "11-1021.00", tier: "primary_short", rank: 1 });
+  });
+
+  it("fails when a file has fewer usable rows than expected", () => {
+    expect(() => buildDetails(detailFiles)).toThrow(/only \d+ usable rows/);
+  });
+
+  it("fails when a column is renamed", () => {
+    const renamed = { ...detailFiles, job_titles: detailFiles.job_titles.replace("Job Title", "Title Of Job") };
+    expect(() => buildDetails(renamed, { ...noMinimums, job_titles: 1 })).toThrow("job_titles.csv: only 0 usable rows");
+  });
+});
+
 describe("parseOccupations", () => {
-  it("turns every row of the saved file into a valid occupation", () => {
-    const records = parseOccupations(csv);
+  it("turns every row of the saved file into a valid occupation, with details where there are some", () => {
+    const records = parseOccupations(csv, buildDetails(detailFiles, noMinimums));
     expect(records).toHaveLength(20);
     expect(records.every((r) => r.status === "valid")).toBe(true);
     expect(records[0]).toMatchObject({
       id: "11-1011.00",
-      value: { onet_code: "11-1011.00", title: "Chief Executives" },
+      value: { onet_code: "11-1011.00", title: "Chief Executives", job_zone: 5 },
     });
+    // A career with no detail rows still imports, with empty details.
+    const last = records.at(-1);
+    expect(last).toMatchObject({ status: "valid", value: { job_zone: null, tasks: [], titles: [] } });
   });
 
   it("rejects bad codes, empty titles and duplicates with a reason", () => {
@@ -59,37 +116,42 @@ describe("parseOccupations", () => {
 });
 
 describe("readOnet", () => {
-  function fakeFetcher(csvResponse: Partial<FetchResult>) {
-    const calls: Array<{ url: string; etag?: string | null }> = [];
+  function fakeFetcher(status = 200) {
+    const calls: string[] = [];
     const fetcher: Fetcher = {
       requestCount: () => calls.length,
-      async get(url, options) {
-        calls.push({ url, etag: options?.etag });
-        const base = { contentType: null, finalUrl: url, etag: null };
-        if (url.endsWith("database.html")) return { ...base, status: 200, body: page };
-        return { ...base, status: 200, body: csv, ...csvResponse };
+      async get(url) {
+        calls.push(url);
+        const base: Omit<FetchResult, "body"> = { status: 200, contentType: null, finalUrl: url, etag: null };
+        if (url.endsWith("database.html")) return { ...base, body: page };
+        if (url.endsWith("occupation_data.csv")) return { ...base, status, body: csv, etag: '"new"' };
+        const name = url.split("/").at(-1)!.replace(".csv", "");
+        return { ...base, body: detailFiles[name as DetailFile] };
       },
     };
     return { fetcher, calls };
   }
 
-  it("reports unchanged for the same release without downloading the file", async () => {
-    const { fetcher, calls } = fakeFetcher({});
+  it("reports unchanged for the same release without downloading anything else", async () => {
+    const { fetcher, calls } = fakeFetcher();
     const result = await readOnet(fetcher, { etag: '"abc"', release: "31.0" });
     expect(calls).toHaveLength(1);
     expect(result).toEqual({ status: "unchanged", release: "31.0", etag: '"abc"' });
   });
 
-  it("downloads and parses a new release", async () => {
-    const { fetcher, calls } = fakeFetcher({ etag: '"new"' });
-    const result = await readOnet(fetcher, { etag: '"abc"', release: "30.2" });
-    expect(calls[1].url).toMatch(/occupation_data\.csv$/);
+  it("downloads a new release's files from the same folder and joins them", async () => {
+    const { fetcher, calls } = fakeFetcher();
+    const result = await readOnet(fetcher, { etag: null, release: "30.2" }, noMinimums);
+    expect(calls).toHaveLength(2 + Object.keys(DETAIL_FILES).length);
+    expect(calls.every((u) => u.includes("/db_31_0_csv/") || u.endsWith("database.html"))).toBe(true);
     expect(result).toMatchObject({ status: "fetched", release: "31.0", etag: '"new"' });
-    if (result.status === "fetched") expect(result.records).toHaveLength(20);
+    if (result.status === "fetched") {
+      expect(result.records[0]).toMatchObject({ value: { skills: expect.arrayContaining(["Critical Thinking"]) } });
+    }
   });
 
   it("fails on an unexpected status", async () => {
-    const { fetcher } = fakeFetcher({ status: 404 });
-    await expect(readOnet(fetcher, { etag: null, release: null })).rejects.toThrow("returned 404");
+    const { fetcher } = fakeFetcher(404);
+    await expect(readOnet(fetcher, { etag: null, release: null }, noMinimums)).rejects.toThrow("returned 404");
   });
 });

@@ -33,7 +33,9 @@ type Options = {
 const ROBOT_NAME = "StepwellBot";
 const RETRY_BASE_MS = 5_000;
 const MAX_RETRY_AFTER_MS = 10 * 60_000;
-const TIMEOUT_MS = 60_000;
+// Covers the whole download: O*NET's largest file (38 MB) took 84 s at about
+// 465 KB/s on 2026-09-28, so this leaves room for a slower day.
+const TIMEOUT_MS = 5 * 60_000;
 
 export function createPoliteFetcher({
   userAgent,
@@ -101,21 +103,23 @@ export function createPoliteFetcher({
         let failure: unknown = null;
         try {
           response = await send(url, headers, delayMs);
+          if (response.status !== 429 && response.status < 500) {
+            // Read the body in here too: a download that stalls or drops
+            // halfway is retried like any other network error.
+            return {
+              status: response.status,
+              body: response.status === 304 ? "" : await response.text(),
+              contentType: response.headers.get("content-type"),
+              finalUrl: response.url || url.href,
+              etag: response.headers.get("etag"),
+            };
+          }
         } catch (error) {
           if (error instanceof Error && error.message.startsWith("Page cap")) throw error;
+          response = null;
           failure = error; // network error or timeout: worth a retry
         }
 
-        const retryable = !response || response.status === 429 || response.status >= 500;
-        if (response && !retryable) {
-          return {
-            status: response.status,
-            body: response.status === 304 ? "" : await response.text(),
-            contentType: response.headers.get("content-type"),
-            finalUrl: response.url || url.href,
-            etag: response.headers.get("etag"),
-          };
-        }
         if (attempt >= maxRetries) {
           throw new Error(
             response
