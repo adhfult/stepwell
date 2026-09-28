@@ -30,10 +30,18 @@ One connected path, built on free official data:
 4. **Career → programs → colleges:** for a career, show related programs of
    study and colleges offering them, with cost, graduation rate, and earnings
    of graduates (College Scorecard).
-5. **Saved plan:** save careers and colleges; a simple list of next steps.
+5. **Saved plan:** save careers, colleges, scholarships and programs, laid out
+   as a year-by-year plan with deadlines.
+6. **AP and academics suggestions:** which AP classes help for a career
+   (from O*NET knowledge ratings).
+7. **Scholarships:** from CareerOneStop and allowlisted sites, matched to the
+   student (optional eligibility answers, two-step opt-in).
+8. **Internships and programs:** USAJOBS Pathways plus allowlisted internship
+   and summer-program sites.
+
+Design and build order: `docs/specs/v1-expansion-draft.md` (approved 2026-09-28).
 
 ## Not doing (for now)
-- Scholarships (no reliable free data source; needs curation later).
 - AI advisor chat (phase 2, after the data foundation works).
 - Application tracking, résumés, counselor or parent accounts.
 - Native mobile apps (the website works on phones).
@@ -44,6 +52,7 @@ One connected path, built on free official data:
 - 10 real students in the target age range use it without help.
 - At least half save a career and a college on their first visit.
 - 5 of them come back within two weeks.
+- At least half find one scholarship they qualify for whose deadline hasn't passed.
 
 ## Open questions
 - Which state(s) to focus on first for college results?

@@ -1,9 +1,9 @@
 # Draft: v1 expansion (academics, scholarships, opportunities)
 
-- Status: draft, not approved
+- Status: approved (2026-09-28); build steps get their own specs
 - Started: 2026-09-27
-- Design stage reached: Sections 1 and 2 approved in chat (2026-09-27).
-  Sections 3 and 4 drafted, awaiting review.
+- Design stage reached: all four sections approved in chat (1 and 2 on
+  2026-09-27, 3 and 4 on 2026-09-28).
 - Nothing in this file changes other docs until it is approved. Where it
   disagrees with PRODUCT.md, ARCHITECTURE.md, DATA_SOURCES.md, SECURITY.md or
   decision 0002, this draft is the proposal and those files are still current.
@@ -230,7 +230,7 @@ app code, logs or error tracking.
 - New decision record replacing the minimum-data parts of decision 0002 and
   SECURITY.md line "Minimum data".
 - Legal review before public launch (state laws on sensitive data of known minors).
-- Still to decide in Section 4: retention period for unused eligibility data.
+- Retention: deleted after 12 months without a sign-in (Section 4.2).
 
 ## Design direction
 Three options were proposed, all checked against `docs/design/AVOID.md`:
@@ -241,7 +241,7 @@ Three options were proposed, all checked against `docs/design/AVOID.md`:
 Chosen: Water and Stone mixed with Wayfinding. Full tokens and component
 patterns are recorded in `docs/design/DESIGN.md` (applied to the starter page).
 
-## Section 3: data pipeline (awaiting review)
+## Section 3: data pipeline (approved)
 
 ### 3.1 Units
 Each unit has one job and can be tested alone.
@@ -400,7 +400,7 @@ within 48 hours.
   keep a free Supabase project from pausing; CareerOneStop and USAJOBS
   credential names.
 
-## Section 4: privacy, retention, final fix list (awaiting review)
+## Section 4: privacy, retention, final fix list (approved)
 
 ### 4.1 Eligibility data, in detail
 Builds on "Eligibility data safeguards" above, using the patterns proven in
@@ -464,6 +464,5 @@ New since the draft started, to apply when it's approved:
   legal set, allowlist, no getting around blocks).
 
 ## Next steps
-- Owner reviews Sections 3 and 4; once approved, this draft becomes the
-  approved design, and each build step gets its own spec (pipeline foundation
-  first), then an implementation plan.
+- Approved. Each build step gets its own spec in `docs/specs/`, approved
+  before code: the data pipeline foundation first (`docs/specs/data-pipeline.md`).

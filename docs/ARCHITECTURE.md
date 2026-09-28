@@ -34,35 +34,51 @@
   the cloud project only with the owner's OK (`supabase db push`).
 
 ## Data model
+Built tables are marked; the rest are planned in the approved v1 expansion
+design (`docs/specs/v1-expansion-draft.md`, Section 2) and arrive with their
+build step's spec.
+
 **Reference data** (public read, written only by import jobs):
 | Table | Key | Contents |
 |---|---|---|
-| `occupations` | `soc_code` | title, description, typical education, pay, source date |
-| `occupation_details` | `soc_code` | tasks, skills, knowledge (JSON) |
-| `institutions` | `unitid` | name, city, state, cost, admission rate, grad rate |
-| `programs` | `(unitid, cip_code, credential)` | program name, median debt, earnings |
-| `occupation_program_map` | `(soc_code, cip_code)` | CIP–SOC crosswalk |
+| `occupations` | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, pay, outlook, interest scores, O*NET release |
+| `occupation_titles`, `occupation_knowledge`, `occupation_details`, `occupation_related` | `onet_code` | search titles; knowledge ratings (joined for AP suggestions); tasks and skills (JSON); related careers |
+| `interest_questions` | id | Interest Profiler questions, cached once |
+| `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
+| `programs` | `id` (unique `unitid, cip4, credential_level`) | median debt, earnings |
+| `occupation_program_map` | `(soc_code, cip6)` + computed `cip4` | CIP–SOC crosswalk |
+| `ap_courses`, `knowledge_ap_map` | code | AP course list and the knowledge-area mapping (hand-entered) |
+| `sources` | id | every data source, its terms check and fetcher |
+| `scholarships`, `scholarship_criteria`, `opportunities`, `listing_fields` | id | listings, their eligibility rules, CIP families |
 
 **User data** (owner-only via RLS):
 | Table | Contents |
 |---|---|
-| `profiles` | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
-| `interest_results` | Interest Profiler scores (six areas) |
-| `saved_items` | saved careers and colleges |
-| `plan_steps` | next steps with optional due dates and status |
+| `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
+| `interest_results` | latest Interest Profiler scores (six areas) |
+| `saved_items` | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
+| `plan_items` | year-by-year plan: term, kind, title, due date, status; saved listings' deadlines read live |
+| `eligibility_profiles` | optional scholarship answers after a two-step opt-in; matching stays in the database; deleted after 12 months without a sign-in (decision 0006) |
 
 ## Data imports
-- Jobs in `src/jobs/` fetch O*NET / Scorecard data and upsert into reference
-  tables using the service-role key, **outside** the web app (run by a
-  scheduler such as GitHub Actions or Supabase Cron). See `docs/DATA_SOURCES.md`.
-- Each imported row stores `source` and `retrieved_at` for display and auditing.
+- One shared pipeline in `src/jobs/` with one adapter per source (v1 expansion
+  draft, Section 3): fetch politely, validate with zod, stage in the `ingest`
+  schema (not exposed to the Data API), then merge into `public` in one
+  transaction; a circuit breaker stops a broken scraper from wiping data.
+- Runs on a GitHub Actions schedule with the service-role key, **outside** the
+  web app. Sources and the allowlist: `docs/DATA_SOURCES.md`; scraping rules:
+  decision 0007.
+- Each imported row stores its source and retrieval date for display and auditing.
+- Retention jobs run inside Postgres with `pg_cron` (v1 expansion, Section 4.2).
 
 ## Settings
 | Variable | Public? | Purpose |
 |---|---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | yes | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | yes | Supabase publishable key |
-| `ONET_USERNAME`, `ONET_PASSWORD`, `SCORECARD_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | **no** | Import jobs only |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | yes | Cloudflare Turnstile site key (unset locally = test key) |
+| `ONET_API_KEY`, `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | **no** | Import jobs only |
+| `SUPABASE_AUTH_CAPTCHA_SECRET` | **no** | Supabase Auth only; the test secret is set by `npm run db:start` |
 
 ## Later
 - AI advisor: server-side Anthropic API calls with tool use over our tables,

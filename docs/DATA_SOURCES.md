@@ -8,8 +8,11 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
 - **What:** 900+ occupations: descriptions, tasks, skills, knowledge,
   education/training, related occupations, and the Interest Profiler.
 - **Owner:** U.S. Department of Labor / National Center for O*NET Development.
-- **Access:** free account at services.onetcenter.org (username + password,
-  stored as `ONET_USERNAME` / `ONET_PASSWORD`, server-side only).
+- **Access:** the O*NET database is a free CC BY download (occupations, tasks,
+  skills, knowledge ratings, alternate titles, related occupations, interest
+  scores); Web Services API v2 (API key in an `X-API-Key` header, stored as
+  `ONET_API_KEY`, server-side only) adds pay and outlook (My Next Move Job
+  Outlook) and the Interest Profiler questions.
 - **Rules:** attribution is required wherever O*NET data is shown; the API is
   rate-limited, so cache results. Check the current terms at sign-up.
 - **Key:** occupations use O*NET-SOC codes (e.g. `29-1141.00` Registered Nurses).
@@ -32,13 +35,27 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
 - Stored as a table `occupation_program_map (soc_code, cip_code)`, loaded
   from the official crosswalk file; re-check when either code set updates.
 
+## Scholarships and opportunities (v1)
+- **CareerOneStop Web API** (U.S. Dept. of Labor): Scholarship Finder, 9,500+
+  awards; open data under USDOL's Open Data Policy. Confirm the endpoint and
+  fields at registration.
+- **USAJOBS API:** federal Pathways internships (open to high school students).
+- **Allowlisted sites:** only sites whose terms and robots.txt allow it; each
+  gets an entry in "Allowlisted sites" below before its adapter is merged
+  (process: v1 expansion draft, Section 3.9; decision 0007).
+
+## Allowlisted sites
+None yet.
+
 ## Later (not in the MVP)
-- **BLS Employment Projections:** 10-year growth outlook by occupation.
+- **BLS Employment Projections:** detailed 10-year growth by occupation.
 - **CareerOneStop:** apprenticeships, certifications, training programs.
 
 ## Environment variables (server-only, never NEXT_PUBLIC_)
 | Variable | Used by |
 |---|---|
-| `ONET_USERNAME`, `ONET_PASSWORD` | O*NET import job |
+| `ONET_API_KEY` | O*NET import job |
+| CareerOneStop and USAJOBS keys (names set at registration) | Scholarship and internship import jobs |
+| `CONTEXT_DEV_API_KEY` | Import jobs, hard pages only |
 | `SCORECARD_API_KEY` | Scorecard import job |
 | `SUPABASE_SERVICE_ROLE_KEY` | Import jobs only (writes reference tables). Never in app code. |

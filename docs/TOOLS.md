@@ -4,8 +4,13 @@
 |---|---|---|---|
 | Database, logins | Supabase | Free tier | Now |
 | Hosting | Vercel | Free tier (Hobby) | At first deploy |
-| Career data | O*NET Web Services | Free (attribution required) | Week 2 |
-| College data | College Scorecard via api.data.gov | Free key | Later |
+| Career data | O*NET database download + Web Services API key | Free (CC BY; attribution required) | Pipeline step (first source) |
+| College data | College Scorecard via api.data.gov | Free key | Programs & colleges step |
+| Scholarships | CareerOneStop Web API (U.S. Dept. of Labor) | Free key (open data) | Scholarships step |
+| Federal internships | USAJOBS API | Free key | Internships step |
+| Scraping hard pages (JavaScript, PDFs) | context.dev | Free tier (1,000 credits a month; check) | Pipeline, only where plain fetch can't |
+| Bot check on sign-up, sign-in, reset | Cloudflare Turnstile | Free | Now (test keys locally; real keys at launch) |
+| Local Supabase | Docker Desktop (WSL integration) | Free for personal and education use | Now |
 | Password manager for all keys | 1Password | Free via GitHub Student Pack | Now |
 | Domain name | Namecheap / .TECH / Name.com | Free for 1 year via Student Pack (renewal is paid) | At first deploy |
 | Sharing `.env.local` values between two PCs (optional) | Doppler | Free Team plan while a student (Student Pack) | Optional |
