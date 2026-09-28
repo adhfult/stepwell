@@ -1,28 +1,73 @@
 @import "tailwindcss";
 
 /*
- * Neutral defaults only. The project's real colors and typefaces are chosen
- * once, recorded in docs/design/DESIGN.md, and then defined here as tokens.
+ * Design tokens from docs/design/DESIGN.md (Water and Stone, with Wayfinding).
+ * Change a value there first, then here. Light theme only until a dark
+ * palette is designed and contrast-checked.
  */
 :root {
-  --background: #f5f6f7;
-  --foreground: #1a1a1a;
+  color-scheme: light;
+  --background: #e8eeec;
+  --surface: #f3f6f5;
+  --foreground: #132a2c;
+  --muted: #51615f;
+  --primary: #0b5d66;
+  --accent: #a8323e;
+  --highlight: #f2c12e;
+  --border-strong: #6e8380;
+  --border-subtle: #c5d1ce;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121212;
-    --foreground: #ececec;
-  }
+/* Switch off Tailwind's default colors, type sizes and corner radii so only
+   the tokens below exist (no bg-white, no rounded-2xl). */
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+
+  /* 4px steps; use only 1, 2, 3, 4, 6, 8, 12, 16, 24 (see DESIGN.md). */
+  --spacing: 0.25rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.55;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.2;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.2;
+  --text-3xl: 2.625rem;
+  --text-3xl--line-height: 1.2;
+
+  --radius-control: 2px;
 }
 
+/* "inline" makes utilities use these values where they're applied, which the
+   font variables need: next/font defines them on an element, not on :root. */
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-highlight: var(--highlight);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
+
+  --font-heading: var(--font-bitter, Georgia), serif;
+  --font-body: var(--font-atkinson, ui-sans-serif), system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--foreground);
+  outline-offset: 2px;
 }
