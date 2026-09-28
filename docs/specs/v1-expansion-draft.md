@@ -2,8 +2,8 @@
 
 - Status: draft, not approved
 - Started: 2026-09-27
-- Design stage reached: Sections 1 and 2 presented (Section 1 approved in chat,
-  Section 2 expanded and awaiting review). Sections 3 and 4 not drafted yet.
+- Design stage reached: Sections 1 and 2 approved in chat (2026-09-27).
+  Section 3 drafted, awaiting review. Section 4 not drafted yet.
 - Nothing in this file changes other docs until it is approved. Where it
   disagrees with PRODUCT.md, ARCHITECTURE.md, DATA_SOURCES.md, SECURITY.md or
   decision 0002, this draft is the proposal and those files are still current.
@@ -85,7 +85,7 @@ These go into the specs listed; nothing is changed yet.
 - Left out of v1: which high school offers which AP classes (would require
   storing the student's school).
 
-## Section 2: data model (expanded, awaiting review)
+## Section 2: data model (approved in chat)
 
 ### 2.1 Where tables live
 | Schema | Reachable through Supabase's API? | Holds |
@@ -238,11 +238,168 @@ Three options were proposed, all checked against `docs/design/AVOID.md`:
 2. Wayfinding: warm grey, route blue, signal yellow fill; Overpass + Atkinson Hyperlegible; 4px corners.
 3. Water and Stone: pale mineral, deep teal, pomegranate; Bitter + Libre Franklin; square corners.
 
-Chosen: Water and Stone mixed with Wayfinding. Full tokens are recorded in
-`docs/design/DESIGN.md`.
+Chosen: Water and Stone mixed with Wayfinding. Full tokens and component
+patterns are recorded in `docs/design/DESIGN.md` (applied to the starter page).
+
+## Section 3: data pipeline (awaiting review)
+
+### 3.1 Units
+Each unit has one job and can be tested alone.
+
+| Unit | Where | Does | Depends on |
+|---|---|---|---|
+| Runner | `src/jobs/run.ts` | Command line: `import <source>`, `import --due` (every source whose refresh interval has passed), `--dry-run`. Opens and closes the `import_runs` row. | everything below |
+| Source adapters | `src/jobs/sources/<slug>.ts` | Per source: `discover()` lists the URLs or API pages to read; `parse()` turns one response into raw records; `normalize()` turns a raw record into our shape. Adapters never fetch or touch the database themselves; they are handed a fetcher. | fetcher interface, schemas |
+| Fetchers | `src/jobs/fetch/` | One `Fetcher` interface (`get(url)` returns status, body, content type, final URL). `plainFetcher` (Node `fetch`), `contextDevFetcher` (JavaScript-heavy pages and PDFs), and API clients (O*NET, CareerOneStop, USAJOBS, Scorecard). All go through the politeness layer. | politeness |
+| Politeness | `src/jobs/fetch/polite.ts` | robots.txt, per-host rate limits, User-Agent, conditional requests, retries | none |
+| Schemas | `src/jobs/schemas/` | zod schemas for every record kind: the single definition of "a valid record" | zod |
+| Quality checks | `src/jobs/quality/` | Scam rules, deadline and amount sanity, link rules. Returns pass, or a rejection reason. | schemas |
+| Loader | `src/jobs/load.ts` + SQL functions in `ingest` | Writes staging rows, then merges into `public` in one transaction; dedupe; gone detection | Supabase service-role client |
+
+How the jobs run (Node 24's built-in TypeScript support or `tsx`) is decided
+in the implementation plan.
+
+### 3.2 One run, step by step
+1. Open an `import_runs` row (status running).
+2. Permission gate: the source must be `allowed` with `terms_checked_at`
+   within the last 12 months; otherwise stop with "re-check terms" and touch
+   no data.
+3. robots.txt (scraped sources): read fresh every run. If a page we use is
+   now disallowed, pause the source (`allowed = false`, reason recorded),
+   hide its listings until a person reviews it, and alert.
+4. Discover and fetch, politely (3.3).
+5. Parse, normalize and validate each record with zod. A bad record is kept
+   in staging as rejected with its reason; it never stops the run.
+6. Quality checks (scam and sanity rules).
+7. Circuit breaker before merging. Abort the merge (run = failed, students
+   keep the last good data) if valid records are under 50% of the last
+   successful run, if more than 20% were rejected, or if there are none. A
+   scraper that suddenly finds nothing is broken, not an empty site.
+8. Merge in one transaction: upsert on `(source_id, source_record_id)`,
+   update `last_seen_at`, record changes by `content_hash`, mark `gone` after
+   2 successful runs in a row without the row, then dedupe (3.6).
+9. Close the run: status, counts (seen, new, changed, gone, rejected),
+   context.dev credits used.
+
+### 3.3 Politeness and fetch rules
+- User-Agent: `StepwellBot/1.0 (+<Stepwell URL>/about-data; <contact address>)`.
+- Scraped sites: at most 1 request every 5 seconds per host, slower if
+  robots.txt `Crawl-delay` or the site's terms say so. APIs follow their
+  documented limits (O*NET terms give per-second and per-day guidance; the
+  Scorecard key is limited per hour).
+- Conditional requests (ETag, If-Modified-Since) so unchanged pages cost
+  nothing; `content_hash` skips re-parsing identical content.
+- Retries: 429 and 5xx up to 3 times with growing waits, honoring
+  Retry-After. Other 4xx are logged, not retried.
+- Adapters fetch only the pages they list; no following links off-site; a
+  per-source page cap per run (starting at 2,000) stops runaway crawls.
+- No logins, no CAPTCHAs, no getting around bot protection. A site that
+  blocks Stepwell leaves the allowlist instead of being worked around.
+
+### 3.4 context.dev budget guard
+- Only adapters that declare the `contextDev` fetcher use it.
+- Every response reports `credits_remaining`. Below 100, the fetcher stops
+  using context.dev until the next month; those pages are skipped, their
+  listings keep the last good data, and skipped pages never count toward
+  "gone".
+- Credits per source are recorded per run. A source that needs more than
+  about 500 credits a month is reconsidered (plain fetch, or dropped).
+
+### 3.5 What we copy
+- Always: facts (title, sponsor, amount, deadline, eligibility rules, link).
+  In the U.S., facts like dates and amounts generally aren't protected by
+  copyright; creative descriptions are.
+- Descriptions: only from sources whose terms allow reuse (CareerOneStop open
+  data, government sites), at most 500 characters. Otherwise no description:
+  students follow the link.
+- Never: images, logos (unless attribution requires them), or names, emails
+  and phone numbers of people found on pages.
+
+### 3.6 Dedupe
+- Candidates: same domain and normalized titles at least 0.8 similar
+  (`pg_trgm`), or the same amount and deadline with a similar sponsor name.
+- Precedence: the sponsor's own page, then government sources (CareerOneStop,
+  USAJOBS), then other allowlisted sites. The winner is shown; the others get
+  `duplicate_of`.
+- Start strict and tune on real data: two copies of a listing are a smaller
+  problem than two different scholarships merged into one.
+
+### 3.7 Scheduling
+- GitHub Actions workflow `.github/workflows/import.yml`:
+  - `schedule` once a day at an odd minute (e.g. 09:17 UTC; runs at the top
+    of the hour are more often delayed), running `import --due`;
+  - `workflow_dispatch` with a source input for manual runs;
+  - `concurrency: import` so runs never overlap; `timeout-minutes: 60`;
+    Node 24 like CI.
+- Refresh intervals (stored per source): O*NET bulk data checked monthly for
+  a new release, pay and outlook quarterly; Scorecard checked monthly;
+  CareerOneStop weekly; USAJOBS daily (postings close fast); scraped sites
+  weekly.
+- Secrets live in GitHub Actions secrets, names only in `.env.example`:
+  `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ONET_API_KEY`,
+  `SCORECARD_API_KEY`, CareerOneStop and USAJOBS credentials (exact names
+  confirmed at registration), `CONTEXT_DEV_API_KEY`.
+- The repo is private, so Actions minutes come from a monthly free allowance
+  (verify the current amount in GitHub's billing docs; GitHub Pro from the
+  Student Pack raises it). Estimate: 5 to 15 minutes a day, roughly 150 to
+  450 minutes a month. GitHub documents auto-disabling scheduled workflows
+  after 60 days without activity for public repos; confirm for private ones.
+- Raspberry Pi fallback: the same code on a systemd timer, only for a site
+  that blocks cloud servers. Not set up in v1 unless needed (it would be a
+  second place holding the service-role key).
+
+### 3.8 Monitoring (no new services)
+- `ingest.import_runs` keeps every run's counts and errors; the first 20
+  rejected records per run are kept with their reasons.
+- Each run writes a summary table to the Actions job summary.
+- A failed workflow sends GitHub's failure email (for scheduled workflows,
+  GitHub notifies the person who last edited the schedule).
+- A freshness step at the end of each daily run fails the workflow (and so
+  emails) if any active source's last successful run is older than twice its
+  refresh interval.
+- No admin pages in v1 (SECURITY.md): the Actions summary and Supabase's
+  table editor are enough.
+
+### 3.9 Adding a source, and takedowns
+One pull request adds a source, with three parts:
+1. An entry in a new "Allowlisted sites" section of `docs/DATA_SOURCES.md`:
+   owner, pages fetched, what we take, terms link with the relevant sentence
+   quoted and the date checked, robots.txt result and date, rate limit,
+   attribution text, contact.
+2. A migration adding its `sources` row.
+3. The adapter, saved fixture pages, and tests.
+Terms are re-checked yearly (the runner refuses after 12 months). If a site
+owner asks Stepwell to stop: the same day, set `allowed = false` (hides its
+listings); then remove the adapter in a pull request and confirm to them,
+within 48 hours.
+
+### 3.10 Testing
+- Adapters are tested against saved copies of real pages and API responses,
+  never the network. When a site changes: save a new fixture, watch the test
+  fail, fix the parser.
+- Schemas and quality rules: unit tests with real scam patterns (application
+  fee, "guaranteed", requests for bank details or Social Security numbers).
+- Merge, gone detection and dedupe: SQL tests against a local Supabase
+  (needs Docker, which RLS tests need anyway).
+- `--dry-run` fetches and parses live, prints counts and 5 sample records,
+  and writes nothing; used before merging a new adapter.
+
+### 3.11 Security boundaries
+- `src/app` may never import `src/jobs` (ESLint `no-restricted-imports`);
+  the service-role key is read only in `src/jobs/env.ts`, validated with zod.
+- Scraped text is untrusted: stored as plain text with length limits and
+  control characters stripped, rendered only through React (escaped), never
+  as HTML.
+- Listing links must be https and on the sponsor's or the source's domain;
+  tracking parameters (`utm_*`) are removed; the domain is shown next to the link.
+
+### Section 3 open items
+- A contact address for the User-Agent and takedown requests: a Stepwell
+  address, not a personal email (it is sent to every site we read).
+- Verify: GitHub Actions allowance for private repos; whether daily writes
+  keep a free Supabase project from pausing; CareerOneStop and USAJOBS
+  credential names.
 
 ## Not drafted yet
-- Section 3: pipeline (adapters, fetcher interface, allowlist process,
-  rate limits and politeness, scheduling, monitoring, failure handling).
 - Section 4: privacy safeguards in detail, retention, final fix list.
 - Then: write the approved spec, self-review, user review, implementation plan.
