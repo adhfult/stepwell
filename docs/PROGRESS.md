@@ -10,8 +10,9 @@ Newest entries at the top. Keep each entry short.
       and the site footer
 - [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
       Supabase project, real Turnstile keys, Vercel) before real students
-- [ ] v1 expansion: review Section 3 (pipeline), draft Section 4 (privacy,
-      retention, final fix list), approve the draft, then apply the doc fixes
+- [ ] v1 expansion: review Sections 3 (pipeline) and 4 (privacy, retention,
+      final fix list, drafted 2026-09-28), approve the draft, then apply the
+      doc fixes listed in 4.3
 - [ ] Data pipeline foundation with O*NET as the first adapter, then Career
       Explorer (build order in the expansion draft, Section 1)
 

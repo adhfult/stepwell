@@ -3,7 +3,7 @@
 - Status: draft, not approved
 - Started: 2026-09-27
 - Design stage reached: Sections 1 and 2 approved in chat (2026-09-27).
-  Section 3 drafted, awaiting review. Section 4 not drafted yet.
+  Sections 3 and 4 drafted, awaiting review.
 - Nothing in this file changes other docs until it is approved. Where it
   disagrees with PRODUCT.md, ARCHITECTURE.md, DATA_SOURCES.md, SECURITY.md or
   decision 0002, this draft is the proposal and those files are still current.
@@ -400,6 +400,70 @@ within 48 hours.
   keep a free Supabase project from pausing; CareerOneStop and USAJOBS
   credential names.
 
-## Not drafted yet
-- Section 4: privacy safeguards in detail, retention, final fix list.
-- Then: write the approved spec, self-review, user review, implementation plan.
+## Section 4: privacy, retention, final fix list (awaiting review)
+
+### 4.1 Eligibility data, in detail
+Builds on "Eligibility data safeguards" above, using the patterns proven in
+the accounts feature (`supabase/migrations/*_profiles.sql`, 35 pgTAP tests).
+- **Two steps of opt-in.** First screen: GPA, intended fields, first-generation,
+  citizenship status. A second, separate choice ("Also match scholarships for
+  specific groups?") unlocks heritage, gender, religion, disability, military
+  family and income band. Each question says in one sentence why it's asked
+  and has "Prefer not to say". Answering nothing still gives "You might
+  qualify" matches.
+- **Table rules** (`eligibility_profiles`): one row per student, created only by
+  the opt-in; RLS owner-only; grants `select`, `insert`, `update` (answer
+  columns only) and `delete` to `authenticated`, nothing to `anon`; a check
+  constraint on every answer (fixed lists, GPA 0 to 4.0); `consent_version`
+  and `consented_at` required. `user_id` references `auth.users` with
+  `on delete cascade`, so account deletion removes it.
+- **Stays in the database.** Matching is a `security invoker` function; pages
+  get match levels and reasons, never other students' answers. The student
+  sees and edits their own answers on one page; "Remove my answers" deletes
+  the row. Answers are never logged, never sent to error tracking, and never
+  sent to an AI model (AI is phase 2 and would need its own decision).
+- **Consent versions.** The consent text has a version in code; if the saved
+  `consent_version` is older, the student is asked again before matching.
+- **Before collecting anything:** decision record 0006 (replaces the
+  minimum-data parts of 0002 for eligibility answers), the Privacy page
+  updated (the legal pages spec already requires this), and the legal review
+  in `docs/LAUNCH.md` covers it.
+
+### 4.2 How long data is kept
+Scheduled clean-up runs inside Postgres with `pg_cron` (available locally,
+1.6.4), so no admin key leaves the database. Each job is a plain SQL function,
+tested with pgTAP by calling it directly.
+
+| Data | Kept | Then |
+|---|---|---|
+| Account never confirmed | 7 days | Deleted (answers the accounts spec's open question) |
+| Eligibility answers | While the student signs in at least once in 12 months | Deleted; the student can answer again |
+| Profile, saved items, plan | Until the student deletes the account | Deleted at once (cascade) |
+| Scraped listings | While live; "gone" rows kept for saved items | Never shown once gone |
+| `ingest` fetch logs, rejected records | 30 days | Deleted |
+| Hosting and database logs | Provider defaults (check in LAUNCH.md) | Provider deletes |
+
+### 4.3 Final fix list (status of the earlier open issues)
+| # | Issue | Status |
+|---|---|---|
+| 1 | Delete account without the service-role key | Done: `delete_my_account()`, decision 0004 |
+| 2 | Design direction before UI | Done: DESIGN.md |
+| 3 | 13+ flag write path | Done: sign-up trigger, decision 0005 (neutral age screen) |
+| 4 | Pay in v1 | In the Career Explorer spec (O*NET Job Outlook) |
+| 5 | Nothing creates `saved_items` | In the Career Explorer spec (exclusive-arc design, 2.7) |
+| 6 | Related careers storage | In the Career Explorer spec (`occupation_related`) |
+| 7 | Import before approval | Resolved by the build order: the pipeline has its own spec |
+| 8 | Scheduler | GitHub Actions (3.7) |
+| 9 | SOC/CIP granularity | In the pipeline and programs specs; confirm with the downloaded crosswalk |
+| 10 | Terms, Privacy, screenshots | Terms and Privacy: `docs/specs/legal-pages.md` (drafts await placeholders); screenshots once real features exist |
+| 11 | Housekeeping | Done: grad year label, PROGRESS date, `NEXT_PUBLIC_TURNSTILE_SITE_KEY` in `.env.example`. Not an issue after all: the "Cloudflare security-audit skill" in SECURITY.md is installable (command in LAUNCH.md). Still to do when the draft is approved: `ONET_API_KEY` and the other pipeline names in `.env.example` (with the pipeline spec), TOOLS.md Scorecard timing, PRODUCT.md (drop "Not doing: Scholarships", add the success measure from Section 1). |
+
+New since the draft started, to apply when it's approved:
+- ARCHITECTURE.md: the `ingest` schema and the pipeline (Section 3).
+- Decision records: 0006 (eligibility data), 0007 (scraping policy: largest
+  legal set, allowlist, no getting around blocks).
+
+## Next steps
+- Owner reviews Sections 3 and 4; once approved, this draft becomes the
+  approved design, and each build step gets its own spec (pipeline foundation
+  first), then an implementation plan.
