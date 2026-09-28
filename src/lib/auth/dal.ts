@@ -51,3 +51,16 @@ export async function requireUser(returnTo: string): Promise<CurrentUser> {
   }
   return user;
 }
+
+/**
+ * For sensitive actions (deleting the account, setting a password): asks the
+ * Supabase Auth server directly with getUser() instead of trusting the
+ * token's claims, so a signed-out or deleted session can't slip through
+ * during the up-to-an-hour a token stays valid. Not cached: always fresh.
+ */
+export async function getFreshUser(): Promise<CurrentUser | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.getUser();
+  if (error || !data.user) return null;
+  return { id: data.user.id, email: data.user.email ?? null };
+}

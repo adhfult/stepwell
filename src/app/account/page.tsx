@@ -35,6 +35,16 @@ export default async function AccountPage() {
           </SubmitButton>
         </form>
       </section>
+
+      <section aria-labelledby="leaving-heading" className="mt-12">
+        <h2 id="leaving-heading" className="text-xl font-bold">
+          Leaving Stepwell
+        </h2>
+        <p className="mt-3">
+          You can delete your account and everything in it at any time.{" "}
+          <Link href="/account/delete">Delete my account</Link>
+        </p>
+      </section>
     </div>
   );
 }
