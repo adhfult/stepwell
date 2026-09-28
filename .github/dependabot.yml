@@ -9,6 +9,18 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      # Node 24 runs everything (CI, Vercel, import jobs), so its types stay
+      # on 24.x; move with the runtime.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      # Majors the Next.js lint setup doesn't support yet (2026-09-28: ESLint
+      # 10 crashes eslint-plugin-react; typescript-eslint stops at TS 6).
+      # Remove these once eslint-config-next and typescript-eslint support them.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
