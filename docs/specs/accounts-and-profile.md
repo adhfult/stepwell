@@ -208,6 +208,9 @@ Small steps, each checked in the browser at `localhost:3000` (never
 10. Account page shows the profile.
 11. Delete account (`delete_my_account()` migration and tests).
 12. Forgot password; set a new password.
+12b. Mobile polish pass (added 2026-09-27: the owner found phone layouts
+    cluttered): every account page reviewed and tidied at 320-390px with a
+    real phone-sized browser, not only checked for sideways scrolling.
 13. Docs (ARCHITECTURE.md, SECURITY.md, the supabase-migration skill), final
     walkthrough, AVOID.md check.
 
