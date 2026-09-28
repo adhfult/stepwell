@@ -18,8 +18,10 @@ work is and what it takes, so I can decide whether to explore it further.
    data; its Web Services API does, with `ONET_API_KEY`. A career O*NET has
    no outlook for has no pay section, rather than "Not reported" lines.
 2. **Search is a plain form** (`/careers?q=nurse`), results rendered on the
-   server. It works without JavaScript, can be bookmarked and shared, and adds
-   nothing to the content security policy. Results-as-you-type (the old
+   server. It can be bookmarked and shared, and adds nothing to the content
+   security policy. (Correction, 2026-09-28: like every page with a loading
+   skeleton, it needs JavaScript, because the page streams in behind the
+   skeleton; see the interest quiz spec.) Results-as-you-type (the old
    draft) can come later if students ask.
 3. **Retired careers are kept.** When a new O*NET release drops a code, the
    merge sets `retired_at` instead of deleting it, so a student's saved career

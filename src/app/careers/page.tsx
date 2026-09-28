@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Page, PageTitle } from "@/components/page";
-import { getOnetSource, searchCareers, type SearchResult } from "@/lib/careers/data";
-import { medianPay, resultFacts, searchQuerySchema } from "@/lib/careers/labels";
+import { getOnetSource, searchCareers } from "@/lib/careers/data";
+import { searchQuerySchema } from "@/lib/careers/labels";
+import { CareerList } from "./career-list";
 import { CareerSearchForm } from "./search-form";
 import { OnetSource } from "./source-line";
 
@@ -39,43 +40,20 @@ export default async function CareersPage({ searchParams }: PageProps<"/careers"
               ? `Top ${MAX_RESULTS} careers for “${query}”`
               : `${results.length} ${results.length === 1 ? "career matches" : "careers match"} “${query}”`}
           </h2>
-          <ResultList results={results} query={query} />
+          <CareerList
+            careers={results.map((r) => ({
+              ...r,
+              // Skip "Also called: Nurse" when the student searched "nurse": it adds nothing.
+              note:
+                r.matched_title && r.matched_title.toLowerCase() !== query.toLowerCase()
+                  ? `Also called: ${r.matched_title}`
+                  : null,
+            }))}
+          />
           {source && <OnetSource release={source.release} retrievedAt={source.retrievedAt} />}
         </section>
       )}
     </Page>
-  );
-}
-
-/** A list with dividers (DESIGN.md "Panels and lists"): title link, one line of facts. */
-function ResultList({ results, query }: { results: SearchResult[]; query: string }) {
-  return (
-    <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
-      {results.map((r) => {
-        const pay = medianPay(r.pay);
-        const facts = [resultFacts(r.education_level, r.job_zone), pay && `median pay ${pay}`]
-          .filter(Boolean)
-          .join(", ");
-        return (
-          <li key={r.onet_code} className="py-4">
-            <Link href={`/careers/${r.onet_code}`} className="font-heading text-lg font-bold">
-              {r.title}
-            </Link>
-            {/* Skip "Also called: Nurse" when the student searched "nurse": it adds nothing. */}
-            {r.matched_title && r.matched_title.toLowerCase() !== query.toLowerCase() && (
-              <p className="mt-1 text-sm text-muted">Also called: {r.matched_title}</p>
-            )}
-            <p className="mt-1">
-              {facts ? (
-                facts.charAt(0).toUpperCase() + facts.slice(1)
-              ) : (
-                <span className="text-muted">Education, preparation and pay not reported</span>
-              )}
-            </p>
-          </li>
-        );
-      })}
-    </ul>
   );
 }
 
@@ -86,7 +64,10 @@ function Examples() {
       <h2 id="examples-heading" className="text-lg font-bold">
         Not sure where to start?
       </h2>
-      <p className="mt-3">Try one of these:</p>
+      <p className="mt-3">
+        <Link href="/interests">Take the interest quiz</Link> to find careers that fit what you like to do, or try one
+        of these:
+      </p>
       <ul className="mt-2 space-y-1">
         {EXAMPLES.map((example) => (
           <li key={example}>

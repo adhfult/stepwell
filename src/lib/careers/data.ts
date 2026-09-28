@@ -21,23 +21,27 @@ export type SearchResult = {
 
 const PAY_COLUMNS = "annual_low, annual_median, annual_high, hourly_low, hourly_median, hourly_high, or_more";
 
-export async function searchCareers(query: string): Promise<SearchResult[]> {
+/** Adds median pay to a list of careers for the facts line: one query for all. */
+export async function withPay<T extends { onet_code: string }>(rows: T[]): Promise<(T & { pay: Pay | null })[]> {
+  if (rows.length === 0) return [];
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("search_occupations", { p_query: query });
-  if (error) throw new Error(`Career search failed (${error.code})`);
-  if (data.length === 0) return [];
-
-  // Median pay for the facts line: one query for all results.
-  const { data: pay, error: payError } = await supabase
+  const { data, error } = await supabase
     .from("occupation_outlook")
     .select(`onet_code, ${PAY_COLUMNS}`)
     .in(
       "onet_code",
-      data.map((r) => r.onet_code),
+      rows.map((r) => r.onet_code),
     );
-  if (payError) throw new Error(`Career pay failed (${payError.code})`);
-  const payByCode = new Map(pay.map((p) => [p.onet_code, p]));
-  return data.map((r) => ({ ...r, pay: payByCode.get(r.onet_code) ?? null }));
+  if (error) throw new Error(`Career pay failed (${error.code})`);
+  const payByCode = new Map(data.map((p) => [p.onet_code, p]));
+  return rows.map((r) => ({ ...r, pay: payByCode.get(r.onet_code) ?? null }));
+}
+
+export async function searchCareers(query: string): Promise<SearchResult[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("search_occupations", { p_query: query });
+  if (error) throw new Error(`Career search failed (${error.code})`);
+  return withPay(data);
 }
 
 const strings = (value: unknown): string[] =>

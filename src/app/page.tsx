@@ -12,7 +12,7 @@ export default function Home() {
       </p>
       <CareerSearchForm />
       <p className="mt-6">
-        Or <Link href="/careers">see some careers to start with</Link>.
+        Not sure what you like? <Link href="/interests">Take the interest quiz</Link> and see careers that fit you.
       </p>
     </Page>
   );

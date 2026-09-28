@@ -17,8 +17,13 @@ starting point.
 
 ## Decisions made without asking (push back on any)
 1. **60 questions, not the 30-question mobile version.** O*NET recommends the
-   60 when possible. Phones get 5 pages of 12, so it never looks like a wall
-   of questions; without JavaScript all 60 show on one page.
+   60 when possible. 5 pages of 12, so it never looks like a wall of
+   questions.
+7. **The site needs JavaScript** (found while building): pages with a
+   loading skeleton stream in, and without JavaScript the content stays
+   hidden behind the skeleton. Skeletons are required (AVOID.md) and sign-in
+   already needs JavaScript for the bot check, so Stepwell keeps them rather
+   than supporting browsers with JavaScript turned off.
 2. **Optional, never at sign-up** (PRODUCT.md open question). Anyone can take
    it; an account is only needed to save results.
 3. **Only scores are saved, never answers.** Saving is a button the student

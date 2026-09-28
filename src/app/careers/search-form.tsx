@@ -2,8 +2,8 @@ import { buttonClass } from "@/components/button-styles";
 import { SEARCH_MAX } from "@/lib/careers/labels";
 
 /**
- * Career search: a plain GET form (/careers?q=nurse), so it works without
- * JavaScript and results can be bookmarked. DESIGN.md "Form fields": label
+ * Career search: a plain GET form (/careers?q=nurse), so results can be
+ * bookmarked and shared. DESIGN.md "Form fields": label
  * above, 44px controls; the button sits beside the field from 640px.
  */
 export function CareerSearchForm({ query = "", error }: { query?: string; error?: string }) {

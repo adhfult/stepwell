@@ -5,6 +5,9 @@ import { buttonClass } from "@/components/button-styles";
 import { SubmitButton } from "@/components/form";
 import { requireUser } from "@/lib/auth/dal";
 import { getMySavedCareers } from "@/lib/careers/data";
+import { getMyInterestResults } from "@/lib/interests/data";
+import { listNames } from "@/lib/interests/labels";
+import { rankAreas, resultsPath } from "@/lib/interests/scoring";
 import { getMyProfile, isProfileComplete, type Profile } from "@/lib/profile/data";
 import { stageName, stateName } from "@/lib/profile/options";
 import { signOut } from "./actions";
@@ -13,7 +16,11 @@ export const metadata: Metadata = { title: "Your account" };
 
 export default async function AccountPage() {
   const user = await requireUser("/account");
-  const [profile, savedCareers] = await Promise.all([getMyProfile(), getMySavedCareers()]);
+  const [profile, savedCareers, interests] = await Promise.all([
+    getMyProfile(),
+    getMySavedCareers(),
+    getMyInterestResults(),
+  ]);
 
   return (
     <Page>
@@ -26,6 +33,10 @@ export default async function AccountPage() {
 
       <section aria-labelledby="saved-heading" className="mt-12">
         <SavedCareers careers={savedCareers} />
+      </section>
+
+      <section aria-labelledby="interests-heading" className="mt-12">
+        <Interests interests={interests} />
       </section>
 
       <section aria-labelledby="signing-in-heading" className="mt-12">
@@ -88,6 +99,36 @@ function SavedCareers({ careers }: { careers: SavedCareer[] }) {
           </li>
         ))}
       </ul>
+    </>
+  );
+}
+
+/** Saved interest quiz results (scores only), or an empty state. */
+function Interests({ interests }: { interests: Awaited<ReturnType<typeof getMyInterestResults>> }) {
+  if (!interests) {
+    return (
+      <>
+        <h2 id="interests-heading" className="text-lg font-bold">
+          No interest results saved
+        </h2>
+        <p className="mt-3">Answer 60 quick questions and see careers that fit what you like to do.</p>
+        <p className="mt-3">
+          <Link href="/interests">Take the interest quiz</Link>
+        </p>
+      </>
+    );
+  }
+  return (
+    <>
+      <h2 id="interests-heading" className="text-lg font-bold">
+        Your interests
+      </h2>
+      <p className="mt-3">
+        Your top interests: <strong>{listNames(rankAreas(interests).slice(0, 3))}</strong>.
+      </p>
+      <p className="mt-3">
+        <Link href={resultsPath(interests)}>See careers that match your interests</Link>
+      </p>
     </>
   );
 }
