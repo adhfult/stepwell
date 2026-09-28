@@ -2,10 +2,22 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 /**
+ * Pages that need a signed-in student. The proxy only makes a quick check of
+ * the login token here, so signed-out visitors get a real redirect before the
+ * page starts streaming. Each page still calls requireUser() (the Data Access
+ * Layer), which is the check that actually protects data.
+ */
+const SIGNED_IN_PREFIXES = ["/account"];
+
+function needsSignIn(pathname: string) {
+  return SIGNED_IN_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
+}
+
+/**
  * Runs before matching requests (Next.js 16 renamed "middleware" to "proxy").
- * Its only job here: keep the Supabase login session fresh by refreshing the
- * auth cookies. Access control itself belongs in Row Level Security and in
- * server code, not here.
+ * Its jobs: keep the Supabase login session fresh by refreshing the auth
+ * cookies, and the optimistic redirect above. Access control itself belongs
+ * in Row Level Security and in server code, not here.
  */
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -29,8 +41,20 @@ export async function proxy(request: NextRequest) {
   });
 
   // Refreshes the session if needed. Don't put code between creating the
-  // client and this call.
-  await supabase.auth.getUser();
+  // client and this call. getClaims() verifies the token (locally when the
+  // project uses asymmetric signing keys), as Supabase's Next.js guide
+  // recommends; getSession() would trust the cookie unchecked.
+  const { data } = await supabase.auth.getClaims();
+
+  const { pathname, search } = request.nextUrl;
+  if (!data && needsSignIn(pathname)) {
+    const signIn = new URL("/sign-in", request.url);
+    signIn.searchParams.set("next", pathname + search);
+    const redirect = NextResponse.redirect(signIn);
+    // Keep any cookie changes Supabase just made (such as clearing an expired session).
+    response.cookies.getAll().forEach((cookie) => redirect.cookies.set(cookie));
+    return redirect;
+  }
 
   return response;
 }

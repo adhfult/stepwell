@@ -1,5 +1,7 @@
 import "server-only";
+import { redirect } from "next/navigation";
 import { cache } from "react";
+import { safeNextPath } from "@/lib/auth/safe-next";
 import { createClient } from "@/lib/supabase/server";
 
 /**
@@ -37,3 +39,15 @@ export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
 
   return { id: data.claims.sub, email: data.claims.email ?? null };
 });
+
+/**
+ * For pages that need a signed-in student. Signed-out visitors go to sign-in
+ * and come back to `returnTo` (this page's path) afterwards.
+ */
+export async function requireUser(returnTo: string): Promise<CurrentUser> {
+  const user = await getCurrentUser();
+  if (!user) {
+    redirect(`/sign-in?next=${encodeURIComponent(safeNextPath(returnTo, "/account"))}`);
+  }
+  return user;
+}

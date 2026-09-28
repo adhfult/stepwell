@@ -57,7 +57,10 @@ so its suggestions fit me, without handing over more about myself than it needs.
 - [ ] Auth checks live in one server-only Data Access Layer
       (`src/lib/auth/dal.ts`): `getClaims()` for pages, `getUser()` for
       sensitive actions (delete account, set password). Never `getSession()`
-      on the server. `src/proxy.ts` only refreshes the session.
+      on the server. `src/proxy.ts` refreshes the session and, with a quick
+      token check, redirects signed-out visitors away from `/account` pages
+      before they stream (a real 307 instead of an in-page redirect); the
+      page's `requireUser()` is still the check that protects data.
 - [ ] Signed in but no profile row counts as signed out (covers a deleted
       account whose old login token is still valid for up to an hour).
 

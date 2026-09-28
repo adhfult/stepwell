@@ -185,7 +185,22 @@ export function ResultPanel({
  * The form's main button. While the action runs it shows `pendingLabel`,
  * keeps its width (both labels share one grid cell) and ignores extra clicks.
  */
-export function SubmitButton({ children, pendingLabel }: { children: ReactNode; pendingLabel: string }) {
+const buttonStyles = {
+  primary: "bg-primary text-surface hover:bg-foreground",
+  secondary: "border border-border-strong bg-surface text-foreground hover:border-foreground",
+  delete: "bg-accent text-surface hover:bg-foreground",
+} as const;
+
+export function SubmitButton({
+  children,
+  pendingLabel,
+  variant = "primary",
+}: {
+  children: ReactNode;
+  pendingLabel: string;
+  /** DESIGN.md "Buttons": primary for the one main action, secondary for others, delete for deleting data. */
+  variant?: keyof typeof buttonStyles;
+}) {
   const { pending } = useFormStatus();
   return (
     <button
@@ -195,7 +210,7 @@ export function SubmitButton({ children, pendingLabel }: { children: ReactNode; 
       onClick={(event) => {
         if (pending) event.preventDefault();
       }}
-      className="inline-flex min-h-11 items-center rounded-control bg-primary px-4 font-bold text-surface hover:bg-foreground"
+      className={`inline-flex min-h-11 items-center rounded-control px-4 font-bold ${buttonStyles[variant]}`}
     >
       <span className="grid">
         <span className={`col-start-1 row-start-1 ${pending ? "invisible" : ""}`}>{children}</span>
