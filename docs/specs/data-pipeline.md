@@ -1,6 +1,6 @@
 # Spec: Data pipeline foundation (O*NET first)
 
-- Status: draft (review, then change to "approved")
+- Status: approved (2026-09-28)
 - Build step 2 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1 and 3). Career Explorer (step 3) builds on it.
 

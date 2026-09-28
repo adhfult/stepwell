@@ -23,7 +23,26 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "profiles": {
+            "occupations": {
+                  Row: {
+                    "description": string,"onet_code": string,"onet_release": string,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
+                  }
+                  Insert: {
+                    "description": string,"onet_code": string,"onet_release": string,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
+                  }
+                  Update: {
+                    "description"?: string,"onet_code"?: string,"onet_release"?: string,"retrieved_at"?: string,"soc_code"?: never,"source_id"?: string,"title"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupations_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"profiles": {
                   Row: {
                     "age_confirmed": boolean,"created_at": string,"grad_year": number | null,"id": string,"nickname": string | null,"stage": string | null,"state": string | null,"updated_at": string
                   }
@@ -32,6 +51,19 @@ export type Database = {
                   }
                   Update: {
                     "age_confirmed"?: boolean,"created_at"?: string,"grad_year"?: number | null,"id"?: string,"nickname"?: string | null,"stage"?: string | null,"state"?: string | null,"updated_at"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"sources": {
+                  Row: {
+                    "allowed": boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag": string | null,"last_release": string | null,"last_success_at": string | null,"name": string,"paused_reason": string | null,"refresh_interval": string,"terms_checked_at": string | null,"terms_url": string | null
+                  }
+                  Insert: {
+                    "allowed"?: boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag"?: string | null,"last_release"?: string | null,"last_success_at"?: string | null,"name": string,"paused_reason"?: string | null,"refresh_interval": string,"terms_checked_at"?: string | null,"terms_url"?: string | null
+                  }
+                  Update: {
+                    "allowed"?: boolean,"attribution"?: string,"homepage"?: string,"id"?: string,"kind"?: string,"last_etag"?: string | null,"last_release"?: string | null,"last_success_at"?: string | null,"name"?: string,"paused_reason"?: string | null,"refresh_interval"?: string,"terms_checked_at"?: string | null,"terms_url"?: string | null
                   }
                   Relationships: [
                     
