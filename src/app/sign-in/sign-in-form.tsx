@@ -2,6 +2,7 @@
 
 import { useActionState, useMemo } from "react";
 import { ErrorSummary, SubmitButton, TextField, type SummaryItem } from "@/components/form";
+import { Turnstile } from "@/components/turnstile";
 import { signIn } from "./actions";
 import { initialSignInState, type SignInState } from "./state";
 
@@ -44,6 +45,7 @@ export function SignInForm({ next }: { next: string }) {
         error={state.fieldErrors.password}
       />
 
+      <Turnstile resetKey={state} />
       <SubmitButton pendingLabel="Signing in">Sign in</SubmitButton>
     </form>
   );

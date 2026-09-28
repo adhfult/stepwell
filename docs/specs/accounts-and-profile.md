@@ -221,6 +221,9 @@ Small steps, each checked in the browser at `localhost:3000` (never
   class signs up at once.
 
 ## Launch blockers (before any real student signs up)
+- ~~Sign-up bot protection.~~ Done 2026-09-28: Cloudflare Turnstile on sign-up,
+  sign-in, password reset and the delete password check (Supabase requires
+  the token for all of them). Real keys still needed: docs/LAUNCH.md.
 - Terms and Privacy pages, linked from sign-up and the footer.
 - Custom email sending for the cloud project (the built-in service only
   sends to project team members, 2 emails an hour).

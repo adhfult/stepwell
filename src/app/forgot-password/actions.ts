@@ -1,5 +1,7 @@
 "use server";
 
+import { captchaToken } from "@/lib/auth/captcha";
+import { CAPTCHA_MESSAGE } from "@/lib/auth/errors";
 import { emailSchema } from "@/lib/auth/schemas";
 import { formText } from "@/lib/form-data";
 import { createClient } from "@/lib/supabase/server";
@@ -22,9 +24,15 @@ export async function requestPasswordReset(
   }
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.resetPasswordForEmail(parsed.data);
+  const { error } = await supabase.auth.resetPasswordForEmail(parsed.data, {
+    captchaToken: captchaToken(formData),
+  });
 
   if (error) {
+    // A failed bot check says nothing about whether the account exists, and no email went out.
+    if (error.code === "captcha_failed") {
+      return { status: "error", email: typed, formError: CAPTCHA_MESSAGE };
+    }
     if (error.code === "over_request_rate_limit") {
       return { status: "error", email: typed, formError: "Too many tries in a short time. Wait a few minutes, then try again." };
     }

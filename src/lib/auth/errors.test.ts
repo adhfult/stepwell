@@ -1,5 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { describeLinkError, describePasswordUpdateError, describeSignInError, describeSignUpError } from "./errors";
+import {
+  CAPTCHA_MESSAGE,
+  describeLinkError,
+  describePasswordUpdateError,
+  describeSignInError,
+  describeSignUpError,
+} from "./errors";
+
+describe("failed bot check", () => {
+  it("gets its own plain message on sign-up and sign-in", () => {
+    expect(describeSignUpError({ code: "captcha_failed" })).toEqual({ kind: "form", message: CAPTCHA_MESSAGE });
+    expect(describeSignInError({ code: "captcha_failed" })).toBe(CAPTCHA_MESSAGE);
+  });
+});
 
 describe("describePasswordUpdateError", () => {
   it("puts reused and weak passwords on the password field", () => {

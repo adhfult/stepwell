@@ -2,6 +2,7 @@
 
 import { useActionState, useMemo } from "react";
 import { ErrorSummary, SubmitButton, TextField, type SummaryItem } from "@/components/form";
+import { Turnstile } from "@/components/turnstile";
 import { deleteAccount } from "./actions";
 import { initialDeleteAccountState } from "./state";
 
@@ -27,6 +28,7 @@ export function DeleteAccountForm() {
         required
         error={state.passwordError}
       />
+      <Turnstile resetKey={state} />
       <SubmitButton variant="delete" pendingLabel="Deleting">
         Delete my account
       </SubmitButton>

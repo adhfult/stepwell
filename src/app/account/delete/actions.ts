@@ -2,7 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { captchaToken } from "@/lib/auth/captcha";
 import { getFreshUser } from "@/lib/auth/dal";
+import { CAPTCHA_MESSAGE } from "@/lib/auth/errors";
 import { checkPassword } from "@/lib/auth/password-check";
 import { signInSchema } from "@/lib/auth/schemas";
 import { formText } from "@/lib/form-data";
@@ -26,8 +28,9 @@ export async function deleteAccount(_previous: DeleteAccountState, formData: For
   if (!parsed.success) return { passwordError: parsed.error.issues[0]?.message };
   const password = parsed.data;
 
-  const check = await checkPassword(user.email, password, user.id);
+  const check = await checkPassword(user.email, password, user.id, captchaToken(formData));
   if (check === "wrong") return { passwordError: "That password isn’t right" };
+  if (check === "captcha") return { formError: CAPTCHA_MESSAGE };
   if (check === "error") return { formError: tryAgain };
 
   const supabase = await createClient();

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState, useMemo } from "react";
 import { ErrorSummary, ResultPanel, SubmitButton, TextField, type SummaryItem } from "@/components/form";
+import { Turnstile } from "@/components/turnstile";
 import { requestPasswordReset } from "./actions";
 import { initialForgotPasswordState } from "./state";
 
@@ -50,6 +51,7 @@ export function ForgotPasswordForm() {
           defaultValue={state.email}
           error={state.emailError}
         />
+        <Turnstile resetKey={state} />
         <SubmitButton pendingLabel="Sending">Send reset link</SubmitButton>
       </form>
       <p className="mt-8">

@@ -6,6 +6,9 @@
 
 export type AuthErrorLike = { code?: string | null } | null | undefined;
 
+/** Supabase refused the Turnstile token (missing, expired or already used). */
+export const CAPTCHA_MESSAGE = "We couldn’t check that you’re a person. Please try again in a moment.";
+
 export type SignUpOutcome =
   | { kind: "check-email" }
   | { kind: "field"; field: "email" | "password"; message: string }
@@ -20,6 +23,8 @@ export function describeSignInError(error: AuthErrorLike): string {
   switch (error?.code) {
     case "invalid_credentials":
       return "Email or password is wrong.";
+    case "captcha_failed":
+      return CAPTCHA_MESSAGE;
     case "email_not_confirmed":
       return "Confirm your email first. Use the link we sent you, or sign up again with the same address to get a new one.";
     case "over_request_rate_limit":
@@ -71,6 +76,8 @@ export function describeSignUpError(error: AuthErrorLike): SignUpOutcome {
       return { kind: "form", message: "Too many tries in a short time. Wait a few minutes, then try again." };
     case "email_address_not_authorized":
       return { kind: "form", message: "Stepwell can’t send email to that address yet. Try a different address." };
+    case "captcha_failed":
+      return { kind: "form", message: CAPTCHA_MESSAGE };
     case "signup_disabled":
       return { kind: "form", message: "New accounts are paused right now. Please try again later." };
     default:

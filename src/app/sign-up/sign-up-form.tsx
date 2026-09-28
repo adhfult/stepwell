@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState, useMemo } from "react";
 import { ErrorSummary, FieldError, SelectField, SubmitButton, TextField, type SummaryItem } from "@/components/form";
+import { Turnstile } from "@/components/turnstile";
 import { signUp } from "./actions";
 import { CheckEmailMessage, NotEligibleMessage } from "./messages";
 import { initialSignUpState, type SignUpState } from "./state";
@@ -111,6 +112,7 @@ export function SignUpForm({ thisYear }: { thisYear: number }) {
           <FieldError id="birth-error" message={birthError} />
         </fieldset>
 
+        <Turnstile resetKey={state} />
         <SubmitButton pendingLabel="Creating account">Create account</SubmitButton>
       </form>
       <p className="mt-8">

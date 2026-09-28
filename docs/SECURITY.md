@@ -25,6 +25,9 @@ Each item says **how Stepwell does it**.
       confirmation on). No home-made password handling.
 - [ ] **Rate-limit login and signup.** Supabase Auth rate limits stay on;
       any custom endpoint that sends email or costs money gets its own limit.
+      Cloudflare Turnstile (a bot check, usually invisible) guards sign-up,
+      sign-in and password reset at the Supabase Auth level, so bots calling
+      Supabase directly are refused too.
 - [ ] **Verify permissions server-side.** Every page, Server Action and
       Route Handler gets the user from the Data Access Layer
       (`src/lib/auth/dal.ts`): `getClaims()` (verified token) for pages,

@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { z } from "zod";
 import { AGE_BLOCK_COOKIE, isAtLeast13 } from "@/lib/auth/age";
+import { captchaToken } from "@/lib/auth/captcha";
 import { describeSignUpError } from "@/lib/auth/errors";
 import { makeSignUpSchema } from "@/lib/auth/schemas";
 import { formText } from "@/lib/form-data";
@@ -64,7 +65,7 @@ export async function signUp(_previous: SignUpState, formData: FormData): Promis
   const { error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { age_confirmed: true } },
+    options: { data: { age_confirmed: true }, captchaToken: captchaToken(formData) },
   });
 
   if (error) {

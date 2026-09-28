@@ -10,7 +10,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "check": "npm run lint && npm run typecheck && npm test",
-    "db:start": "npx supabase start -x realtime,storage-api,imgproxy,edge-runtime,logflare,vector,supavisor",
+    "db:start": "SUPABASE_AUTH_CAPTCHA_SECRET=1x0000000000000000000000000000000AA npx supabase start -x realtime,storage-api,imgproxy,edge-runtime,logflare,vector,supavisor",
     "db:stop": "npx supabase stop",
     "test:db": "npx supabase test db",
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"

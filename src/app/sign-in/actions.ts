@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { captchaToken } from "@/lib/auth/captcha";
 import { describeSignInError } from "@/lib/auth/errors";
 import { safeNextPath } from "@/lib/auth/safe-next";
 import { signInSchema } from "@/lib/auth/schemas";
@@ -25,7 +26,10 @@ export async function signIn(_previous: SignInState, formData: FormData): Promis
   }
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithPassword(result.data);
+  const { error } = await supabase.auth.signInWithPassword({
+    ...result.data,
+    options: { captchaToken: captchaToken(formData) },
+  });
 
   if (error) {
     if (error.code !== "invalid_credentials") {
