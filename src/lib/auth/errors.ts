@@ -11,6 +11,18 @@ export type SignUpOutcome =
   | { kind: "field"; field: "email" | "password"; message: string }
   | { kind: "form"; message: string };
 
+/**
+ * A confirmation or reset link that didn't work. Expired and already-used
+ * links look the same to Supabase (`otp_expired`), and scanners in school
+ * email sometimes use a link up, so the advice covers both.
+ */
+export function describeLinkError(error: AuthErrorLike): string {
+  if (error?.code === "over_request_rate_limit") {
+    return "Too many tries in a short time. Wait a few minutes, then try again.";
+  }
+  return "This link has expired or was already used.";
+}
+
 export function describeSignUpError(error: AuthErrorLike): SignUpOutcome {
   switch (error?.code) {
     // Same answer as a new sign-up, so nobody can use the form to find out

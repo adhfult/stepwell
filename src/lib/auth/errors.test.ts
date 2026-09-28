@@ -1,5 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { describeSignUpError } from "./errors";
+import { describeLinkError, describeSignUpError } from "./errors";
+
+describe("describeLinkError", () => {
+  it("explains expired or used links without technical details", () => {
+    expect(describeLinkError({ code: "otp_expired" })).toBe("This link has expired or was already used.");
+    expect(describeLinkError({ code: "something_new" })).toBe("This link has expired or was already used.");
+  });
+
+  it("asks the student to wait when rate limited", () => {
+    expect(describeLinkError({ code: "over_request_rate_limit" })).toContain("Wait a few minutes");
+  });
+});
 
 describe("describeSignUpError", () => {
   it("answers an existing account exactly like a new sign-up", () => {

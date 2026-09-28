@@ -150,7 +150,16 @@ export function ErrorSummary({ items }: { items: SummaryItem[] }) {
  * It takes focus so keyboard and screen reader users land on the news
  * instead of on nothing (the button they pressed is gone).
  */
-export function ResultPanel({ title, children }: { title: string; children: ReactNode }) {
+export function ResultPanel({
+  title,
+  tone = "info",
+  children,
+}: {
+  title: string;
+  /** "error" uses DESIGN.md's error state: a 2px accent border on all four sides. */
+  tone?: "info" | "error";
+  children: ReactNode;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -158,7 +167,12 @@ export function ResultPanel({ title, children }: { title: string; children: Reac
   }, []);
 
   return (
-    <div ref={ref} tabIndex={-1} aria-labelledby="result-title" className="mt-8 border border-border-subtle bg-surface p-4 lg:p-6">
+    <div
+      ref={ref}
+      tabIndex={-1}
+      aria-labelledby="result-title"
+      className={`mt-8 bg-surface p-4 lg:p-6 ${tone === "error" ? "border-2 border-accent" : "border border-border-subtle"}`}
+    >
       <h2 id="result-title" className="text-lg font-bold">
         {title}
       </h2>
