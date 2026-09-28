@@ -6,10 +6,14 @@
 export type SignUpField = "email" | "password" | "birthDate";
 
 export type SignUpState = {
-  // "checked" is temporary (step 5a): the details passed validation but
-  // nothing was created yet. Step 5b replaces it with the real outcomes.
-  status: "idle" | "invalid" | "checked";
+  status:
+    | "idle"
+    | "invalid" // a field needs fixing
+    | "error" // something outside the student's control; see formError
+    | "check-email" // done: shown for new and existing addresses alike
+    | "not-eligible"; // the age check said under 13
   fieldErrors: Partial<Record<SignUpField, string>>;
+  formError?: string;
   // Echoed back so the form keeps what was typed. Never the password.
   values: { email: string; birthMonth: string; birthYear: string };
 };

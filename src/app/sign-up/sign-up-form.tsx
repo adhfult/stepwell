@@ -3,6 +3,7 @@
 import { useActionState, useMemo } from "react";
 import { ErrorSummary, FieldError, SelectField, SubmitButton, TextField, type SummaryItem } from "@/components/form";
 import { signUp } from "./actions";
+import { CheckEmailMessage, NotEligibleMessage } from "./messages";
 import { initialSignUpState, type SignUpState } from "./state";
 
 const months = [
@@ -14,10 +15,11 @@ const months = [
 const fieldIds = { email: "email", password: "password", birthDate: "birthMonth" } as const;
 
 function summaryItems(state: SignUpState): SummaryItem[] {
-  return (Object.keys(fieldIds) as (keyof typeof fieldIds)[]).flatMap((field) => {
+  const fieldItems = (Object.keys(fieldIds) as (keyof typeof fieldIds)[]).flatMap((field) => {
     const message = state.fieldErrors[field];
     return message ? [{ fieldId: fieldIds[field], message }] : [];
   });
+  return state.formError ? [{ message: state.formError }, ...fieldItems] : fieldItems;
 }
 
 /**
@@ -34,16 +36,13 @@ export function SignUpForm({ thisYear }: { thisYear: number }) {
   );
   const birthError = state.fieldErrors.birthDate;
 
+  if (state.status === "check-email") return <CheckEmailMessage email={state.values.email} />;
+  if (state.status === "not-eligible") return <NotEligibleMessage />;
+
   return (
     // noValidate: the server checks everything and shows errors in one consistent way.
     <form action={formAction} noValidate className="mt-8 space-y-6">
       <ErrorSummary items={errors} />
-
-      {state.status === "checked" && (
-        <p role="status" className="border border-border-subtle bg-surface p-4">
-          Your details look right. Creating the account is the next build step, so nothing was saved yet.
-        </p>
-      )}
 
       <TextField
         id="email"

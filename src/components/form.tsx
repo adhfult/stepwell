@@ -94,7 +94,8 @@ export function SelectField({ id, label, placeholder, options, invalid = false, 
   );
 }
 
-export type SummaryItem = { fieldId: string; message: string };
+/** One problem to list. Without `fieldId` it's about the whole form (shown as text, not a link). */
+export type SummaryItem = { fieldId?: string; message: string };
 
 /**
  * Lists every problem as a link to its field and takes focus when it appears,
@@ -121,21 +122,47 @@ export function ErrorSummary({ items }: { items: SummaryItem[] }) {
         Please fix these and try again
       </h2>
       <ul className="mt-3 space-y-2">
-        {items.map((item) => (
-          <li key={item.fieldId}>
-            <a
-              href={`#${item.fieldId}`}
-              onClick={(event) => {
-                // Jumping to #id scrolls but doesn't always focus; focus the field itself.
-                event.preventDefault();
-                document.getElementById(item.fieldId)?.focus();
-              }}
-            >
-              {item.message}
-            </a>
+        {items.map(({ fieldId, message }) => (
+          <li key={fieldId ?? message}>
+            {fieldId ? (
+              <a
+                href={`#${fieldId}`}
+                onClick={(event) => {
+                  // Jumping to #id scrolls but doesn't always focus; focus the field itself.
+                  event.preventDefault();
+                  document.getElementById(fieldId)?.focus();
+                }}
+              >
+                {message}
+              </a>
+            ) : (
+              message
+            )}
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+/**
+ * A panel that replaces a form once it's done (such as "Check your email").
+ * It takes focus so keyboard and screen reader users land on the news
+ * instead of on nothing (the button they pressed is gone).
+ */
+export function ResultPanel({ title, children }: { title: string; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    ref.current?.focus();
+  }, []);
+
+  return (
+    <div ref={ref} tabIndex={-1} aria-labelledby="result-title" className="mt-8 border border-border-subtle bg-surface p-4 lg:p-6">
+      <h2 id="result-title" className="text-lg font-bold">
+        {title}
+      </h2>
+      <div className="mt-3 space-y-3">{children}</div>
     </div>
   );
 }
