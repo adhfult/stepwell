@@ -4,12 +4,37 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] Spec approved: `docs/specs/accounts-and-profile.md`
-- [ ] Build accounts & profile
-- [ ] Spec approved: `docs/specs/career-explorer.md`
-- [ ] O*NET import job + Career Explorer
+- [ ] Update `docs/specs/accounts-and-profile.md` with fixes 1 and 3 from
+      `docs/specs/v1-expansion-draft.md` (`delete_my_account()` database
+      function; `age_confirmed` set by the sign-up trigger, not editable), then approve it
+- [ ] Build accounts & profile (UI follows `docs/design/DESIGN.md`)
+- [ ] v1 expansion: review Section 3 (pipeline), draft Section 4 (privacy,
+      retention, final fix list), approve the draft, then apply the doc fixes
+- [ ] Data pipeline foundation with O*NET as the first adapter, then Career
+      Explorer (build order in the expansion draft, Section 1)
 
 ## Log
-### (date): project created
+### 2026-09-27: design direction and v1 expansion draft
+- Reviewed all docs; unclear or contradictory items now have proposed fixes
+  in `docs/specs/v1-expansion-draft.md` (not applied yet).
+- Brainstormed the v1 expansion (AP suggestions, scholarships, internships and
+  programs, year-by-year planner, scraping). Decided: all in v1; largest legal
+  source set (CareerOneStop API as base, allowlisted sites only); save full
+  scholarship-eligibility data with safeguards; shared pipeline with one
+  adapter per source. Sections 1 (scope) and 2 (data model) approved;
+  Section 3 awaiting review; Section 4 not drafted.
+- Research: O*NET API v2 uses an API key (docs still say username/password);
+  O*NET data is a CC BY bulk download and includes pay and outlook;
+  CareerOneStop API data is open data.
+- Design: Water and Stone + Wayfinding chosen; tokens and component patterns
+  in `docs/design/DESIGN.md`. Applied in `globals.css`, `layout.tsx` (Bitter
+  + Atkinson Hyperlegible Next, self-hosted) and the starter page. Light theme only.
+- Merged to `main` and pushed; CI green.
+- Open questions: a Stepwell contact address for the scraper's User-Agent;
+  dark mode palette; verify Supabase free-tier limits (pausing, auth email)
+  and GitHub Actions minutes for a private repo; PRODUCT.md questions (first
+  states, quiz required or optional) still open.
+
+### 2026-09-27: project created
 - Created from template-web; docs added from the Stepwell kit.
 - Next: review and approve the accounts-and-profile spec.
