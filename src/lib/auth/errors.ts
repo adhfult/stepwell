@@ -29,6 +29,20 @@ export function describeSignInError(error: AuthErrorLike): string {
   }
 }
 
+/** Setting a new password. */
+export function describePasswordUpdateError(error: AuthErrorLike): { field?: "password"; message: string } {
+  switch (error?.code) {
+    case "same_password":
+      return { field: "password", message: "Choose a password that’s different from your current one" };
+    case "weak_password":
+      return { field: "password", message: "Choose a longer or less common password" };
+    case "over_request_rate_limit":
+      return { message: "Too many tries in a short time. Wait a few minutes, then try again." };
+    default:
+      return { message: "We couldn’t change your password just now. Please try again in a few minutes." };
+  }
+}
+
 /**
  * A confirmation or reset link that didn't work. Expired and already-used
  * links look the same to Supabase (`otp_expired`), and scanners in school

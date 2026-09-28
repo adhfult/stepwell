@@ -1,5 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { describeLinkError, describeSignInError, describeSignUpError } from "./errors";
+import { describeLinkError, describePasswordUpdateError, describeSignInError, describeSignUpError } from "./errors";
+
+describe("describePasswordUpdateError", () => {
+  it("puts reused and weak passwords on the password field", () => {
+    expect(describePasswordUpdateError({ code: "same_password" })).toMatchObject({ field: "password" });
+    expect(describePasswordUpdateError({ code: "weak_password" })).toMatchObject({ field: "password" });
+  });
+
+  it("falls back to a form message without technical details", () => {
+    const outcome = describePasswordUpdateError({ code: "unexpected_failure" });
+    expect(outcome.field).toBeUndefined();
+    expect(outcome.message).not.toContain("unexpected_failure");
+  });
+});
 
 describe("describeSignInError", () => {
   it("gives one message for a wrong email or password", () => {

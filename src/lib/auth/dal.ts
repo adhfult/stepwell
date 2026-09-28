@@ -64,3 +64,29 @@ export async function getFreshUser(): Promise<CurrentUser | null> {
   if (error || !data.user) return null;
   return { id: data.user.id, email: data.user.email ?? null };
 }
+
+/** How long after opening an email link a student may set a password without the old one. */
+export const EMAIL_LINK_WINDOW_SECONDS = 15 * 60;
+
+/**
+ * Whether this session came from an email link (a password reset or email
+ * confirmation) within the last 15 minutes. Supabase records how a session
+ * started in the token's `amr` claim: "otp" for email links, "password" for
+ * a normal sign-in. Setting a password without the old one is allowed only
+ * then, so someone at a shared computer where a student is still signed in
+ * can't take over the account; they'd need the student's inbox.
+ */
+export async function signedInByEmailLinkRecently(now = Date.now()): Promise<boolean> {
+  const supabase = await createClient();
+  const { data } = await supabase.auth.getClaims();
+  const amr = data?.claims.amr;
+  if (!Array.isArray(amr)) return false;
+  const nowSeconds = Math.floor(now / 1000);
+  return amr.some(
+    (entry) =>
+      typeof entry === "object" &&
+      entry.method === "otp" &&
+      nowSeconds - entry.timestamp >= 0 &&
+      nowSeconds - entry.timestamp <= EMAIL_LINK_WINDOW_SECONDS,
+  );
+}
