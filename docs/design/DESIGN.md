@@ -46,8 +46,10 @@ Rules:
 - Body, labels, numbers, forms: **Atkinson Hyperlegible Next** (from the
   Braille Institute; letters like l, I and 1 are never confused), weights 400
   and 700. Used for every dollar amount and date.
-- Both load through `next/font/google`, which self-hosts the files: students'
-  browsers never contact Google.
+- Both load once in `src/app/layout.tsx` through `next/font/google`, which
+  self-hosts the files: students' browsers never contact Google. `globals.css`
+  applies Atkinson to `body` and Bitter to `h1` to `h4` by default, so pages
+  need no font classes (`font-heading` / `font-body` exist for exceptions).
 - Scale (17px base, ratio 1.25). Tailwind classes in brackets:
 
 | Class | Size | Line height | Use |
@@ -87,8 +89,5 @@ directions. Anything with a deadline stands out; everything else stays quiet.
 ## Open items
 - **Dark mode is not designed yet.** The site is light only
   (`color-scheme: light`) until a dark palette is chosen and contrast-checked.
-- **Fonts currently load in `src/app/page.tsx`**, so they apply to the
-  starter page only. Before a second page is built, move the two font imports
-  to `src/app/layout.tsx` (Next.js scopes fonts to the component that loads them).
 - Terms and Privacy footer links are required by AVOID.md and do not exist
   yet (planned as the legal pages spec).
