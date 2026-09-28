@@ -23,7 +23,39 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "occupation_details": {
+            "interest_questions": {
+                  Row: {
+                    "area": string,"index": number,"retrieved_at": string,"source_id": string,"text": string
+                  }
+                  Insert: {
+                    "area": string,"index": number,"retrieved_at": string,"source_id"?: string,"text": string
+                  }
+                  Update: {
+                    "area"?: string,"index"?: number,"retrieved_at"?: string,"source_id"?: string,"text"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "interest_questions_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"interest_results": {
+                  Row: {
+                    "artistic": number,"conventional": number,"enterprising": number,"investigative": number,"realistic": number,"social": number,"taken_at": string,"user_id": string
+                  }
+                  Insert: {
+                    "artistic": number,"conventional": number,"enterprising": number,"investigative": number,"realistic": number,"social": number,"taken_at"?: string,"user_id"?: string
+                  }
+                  Update: {
+                    "artistic"?: number,"conventional"?: number,"enterprising"?: number,"investigative"?: number,"realistic"?: number,"social"?: number,"taken_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"occupation_details": {
                   Row: {
                     "onet_code": string,"skills": NonNullable<Json>,"tasks": NonNullable<Json>
                   }
@@ -113,13 +145,13 @@ isOneToOne: false
                   ]
                 },"occupations": {
                   Row: {
-                    "description": string,"education_level": number | null,"education_share": number | null,"job_zone": number | null,"onet_code": string,"onet_release": string,"retired_at": string | null,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
+                    "description": string,"education_level": number | null,"education_share": number | null,"interest_artistic": number | null,"interest_conventional": number | null,"interest_enterprising": number | null,"interest_investigative": number | null,"interest_realistic": number | null,"interest_social": number | null,"job_zone": number | null,"onet_code": string,"onet_release": string,"retired_at": string | null,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
                   }
                   Insert: {
-                    "description": string,"education_level"?: number | null,"education_share"?: number | null,"job_zone"?: number | null,"onet_code": string,"onet_release": string,"retired_at"?: string | null,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
+                    "description": string,"education_level"?: number | null,"education_share"?: number | null,"interest_artistic"?: number | null,"interest_conventional"?: number | null,"interest_enterprising"?: number | null,"interest_investigative"?: number | null,"interest_realistic"?: number | null,"interest_social"?: number | null,"job_zone"?: number | null,"onet_code": string,"onet_release": string,"retired_at"?: string | null,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
                   }
                   Update: {
-                    "description"?: string,"education_level"?: number | null,"education_share"?: number | null,"job_zone"?: number | null,"onet_code"?: string,"onet_release"?: string,"retired_at"?: string | null,"retrieved_at"?: string,"soc_code"?: never,"source_id"?: string,"title"?: string
+                    "description"?: string,"education_level"?: number | null,"education_share"?: number | null,"interest_artistic"?: number | null,"interest_conventional"?: number | null,"interest_enterprising"?: number | null,"interest_investigative"?: number | null,"interest_realistic"?: number | null,"interest_social"?: number | null,"job_zone"?: number | null,"onet_code"?: string,"onet_release"?: string,"retired_at"?: string | null,"retrieved_at"?: string,"soc_code"?: never,"source_id"?: string,"title"?: string
                   }
                   Relationships: [
                     {
@@ -183,6 +215,11 @@ isOneToOne: false
           Functions: {
             "delete_my_account":
 { Args: Record<PropertyKey, never>; Returns: undefined
+                           },
+"match_careers":
+{ Args: { "p_artistic": number,"p_conventional": number,"p_enterprising": number,"p_investigative": number,"p_realistic": number,"p_social": number,"p_zone"?: number }; Returns: {
+              "education_level": number,"fit": number,"job_zone": number,"onet_code": string,"title": string
+            }[]
                            },
 "search_occupations":
 { Args: { "p_query": string }; Returns: {
