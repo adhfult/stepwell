@@ -41,8 +41,9 @@ build step's spec.
 **Reference data** (public read, written only by import jobs):
 | Table | Key | Contents |
 |---|---|---|
-| `occupations` (built: code, title, description, release) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, pay, outlook, interest scores, O*NET release |
-| `occupation_titles`, `occupation_knowledge`, `occupation_details`, `occupation_related` | `onet_code` | search titles; knowledge ratings (joined for AP suggestions); tasks and skills (JSON); related careers |
+| `occupations` (built; pay, outlook and interest scores still to come) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, `retired_at`, O*NET release; pay, outlook, interest scores later |
+| `occupation_titles`, `occupation_details`, `occupation_related` (built) | `onet_code` | reported and alternate titles (search: `search_occupations()`); top tasks and skills (JSON); related careers |
+| `occupation_knowledge` | `onet_code` | knowledge ratings (joined for AP suggestions) |
 | `interest_questions` | id | Interest Profiler questions, cached once |
 | `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
 | `programs` | `id` (unique `unitid, cip4, credential_level`) | median debt, earnings |
@@ -56,7 +57,7 @@ build step's spec.
 |---|---|
 | `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
 | `interest_results` | latest Interest Profiler scores (six areas) |
-| `saved_items` | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
+| `saved_items` (built, careers only so far) | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
 | `plan_items` | year-by-year plan: term, kind, title, due date, status; saved listings' deadlines read live |
 | `eligibility_profiles` | optional scholarship answers after a two-step opt-in; matching stays in the database; deleted after 12 months without a sign-in (decision 0006) |
 

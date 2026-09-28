@@ -21,7 +21,16 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   downloads that release's CSV files (e.g. `db_31_0_csv/occupation_data.csv`,
   no key). Same release as last time = unchanged; O*NET's ETags differ
   between its servers, so they aren't used. Release 31.0 loaded 2026-09-28
-  (1,016 occupations).
+  (1,016 occupations, 62,458 titles).
+- **Files used:** `occupation_data`, `job_titles` (search), `sample_of_reported_titles`
+  ("also called"), `job_zones`, `education` (most common level; O*NET's
+  "Recommend Suppress" shares are counted but not shown), `task_statements`
+  and `task_ratings` (top core tasks), `essential_skills` and
+  `transferable_skills` (top skills; 31.0 split the old skills file),
+  `related_occupations`. Each has a minimum row count; about 65 MB per
+  release, 2 to 3 minutes at O*NET's download speed.
+- **Retired careers:** a code missing from a new release is marked
+  `retired_at`, never deleted, so saved careers keep working.
 
 ## College Scorecard (colleges and programs)
 - **What:** U.S. colleges: cost, admission rate, graduation rate, and

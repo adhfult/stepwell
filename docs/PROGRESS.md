@@ -10,14 +10,43 @@ Newest entries at the top. Keep each entry short.
       and the site footer
 - [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
       Supabase project, real Turnstile keys, Vercel) before real students
-- [ ] Data imports in the cloud (`docs/LAUNCH.md`, "Data imports"): push the
-      two pipeline migrations (with your OK), set the `importer` password,
-      add the GitHub secret and `IMPORT_CONTACT`, run the workflow once
-- [ ] Career Explorer: update `docs/specs/career-explorer.md` for the v1
-      expansion (pay and outlook, related careers, `saved_items`, more O*NET
-      files in the same adapter), approve, build
+- [ ] **Owner:** set the `importer` password and the `IMPORT_DATABASE_URL`
+      GitHub secret (the permission system blocks agents from secret writes;
+      one-liner in the 2026-09-28 evening chat and `docs/LAUNCH.md`), then
+      run "Import data" once from the Actions tab
+- [ ] **Owner:** run `npx supabase db reset` locally once (blocked for
+      agents because it wipes local accounts) to prove migrations + seed
+      work from scratch
+- [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
+      https://github.com/adhfult for now); register for an O*NET Web
+      Services key (`ONET_API_KEY`) for Career Explorer step 6 (pay and outlook)
+- [ ] Review the Dependabot pull requests waiting on GitHub
+- [ ] Next build step: Interest quiz (v1 expansion, Section 1, step 4);
+      its spec needs updating first
 
 ## Log
+### 2026-09-28 (late night): cloud setup and Career Explorer built
+- Pushed to GitHub; all migrations pushed to the cloud dev project (it was
+  empty); pg_cron works there without extra grants; advisors: only the
+  intended `delete_my_account()` warning.
+- Import TLS: `pg` treats `sslmode=require` as full verification and the
+  pooler chains to Supabase's own root, so the job now ships that public
+  root certificate (fingerprint checked) instead of skipping verification.
+  The pooler recognizes `importer.<ref>`; login waits for its password.
+- Import workflow tested on GitHub: ends with a notice until the secret
+  exists. `IMPORT_CONTACT` variable set.
+- Career Explorer (spec rewritten and built, steps 1 to 5): retired careers
+  instead of deletes; titles, details, related careers; `saved_items`;
+  `search_occupations()` (10 ms, close spellings only when nothing matches);
+  `/careers`, `/careers/[code]`, save/remove, saved list on `/account`,
+  Careers in the header, search on the home page. The adapter now reads 10
+  O*NET files (about 65 MB, 2 to 3 minutes, 560 MB peak memory).
+- Found and fixed: a 60 s fetch timeout couldn't fit the 38 MB
+  task_ratings download; O*NET's flagged education shares made Registered
+  Nurses show a certificate.
+- Tests: 95 unit, 110 pgTAP; Chrome at 320px and 1280px on a production
+  build, no console or CSP errors.
+
 ### 2026-09-28 (night): data pipeline foundation built
 - Spec approved and built in 5 steps. Decision 0008: import jobs log in as
   an `importer` Postgres role that can only call `ingest` functions (the

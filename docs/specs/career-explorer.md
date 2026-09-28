@@ -1,7 +1,7 @@
 # Spec: Career Explorer
 
-- Status: approved (owner's go-ahead in chat, 2026-09-28); steps 1 to 5 to
-  build now, step 6 (pay and outlook) waits for an O*NET API key
+- Status: built (steps 1 to 5, 2026-09-28); step 6 (pay and outlook) waits
+  for an O*NET API key
 - Build step 3 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1, 2.3 and 2.7). Builds on `docs/specs/data-pipeline.md`.
 
@@ -28,7 +28,10 @@ work is and what it takes, so I can decide whether to explore it further.
    never disappears. Retired careers leave search and their page says so.
    (The v1 plan's rule for listings: "gone rows kept for saved items".)
 4. **"Typical education"** is the level the most workers in O*NET's survey
-   reported, shown with its share ("Bachelor's degree, 62% of workers").
+   reported, shown with its share ("Bachelor's degree (62% of workers)").
+   When O*NET flags that share as imprecise, the level still counts but the
+   share isn't shown (found building: skipping flagged shares made
+   Registered Nurses show a certificate instead of a bachelor's degree).
    Levels get short plain names (e.g. "Certificate after high school").
 5. **Top tasks** are the 8 most important core tasks (O*NET importance
    ratings); **top skills** are the 6 most important from O*NET 31.0's two
@@ -41,57 +44,58 @@ work is and what it takes, so I can decide whether to explore it further.
 
 ## Acceptance criteria
 Data (O*NET adapter, same run as `occupation_data.csv`)
-- [ ] `occupations` gains job zone (1 to 5), typical education (level and
+- [x] `occupations` gains job zone (1 to 5), typical education (level and
       share) and `retired_at`. Codes missing from a new release are retired,
       not deleted; a code that comes back is un-retired.
-- [ ] `occupation_titles`: reported and alternate titles (kind column), for
+- [x] `occupation_titles`: reported and alternate titles (kind column), for
       "also called" and search.
-- [ ] `occupation_details`: top tasks and top skills (JSON arrays of text).
-- [ ] `occupation_related`: related careers with O*NET's tier and rank; a
+- [x] `occupation_details`: top tasks and top skills (JSON arrays of text).
+- [x] `occupation_related`: related careers with O*NET's tier and rank; a
       related code that isn't a current occupation is skipped.
-- [ ] Every file must parse into at least a minimum number of rows (for
+- [x] Every file must parse into at least a minimum number of rows (for
       example 30,000 alternate titles); otherwise the run fails, so a renamed
       column can't quietly empty every career page.
-- [ ] All child rows are replaced in the same transaction as the merge.
+- [x] All child rows are replaced in the same transaction as the merge.
 
 Search (`/careers`)
-- [ ] Search form (label "Search careers"), `GET /careers?q=`. The query is
+- [x] Search form (label "Search careers"), `GET /careers?q=`. The query is
       validated with zod (1 to 100 characters after trimming).
-- [ ] `public.search_occupations(q)`: title and alternate-title matches,
+- [x] `public.search_occupations(q)`: title and alternate-title matches,
       exact and prefix title matches first, then contains, then close
       spellings (`pg_trgm`); `%` and `_` in the query are matched literally;
       retired careers excluded; at most 30 results.
-- [ ] Results are a list with dividers: title link, and one line of facts
+- [x] Results are a list with dividers: title link, and one line of facts
       (typical education, preparation), plus "Matched: <alternate title>"
       when the match came from one.
-- [ ] Empty query: short intro and the form. No results: "No careers match
+- [x] Empty query: short intro and the form. No results: "No careers match
       "x"" with one suggestion. Loading skeleton; error state with "Try again".
-- [ ] "nurse", "software" and "electrician" each put the obvious career in
+- [x] "nurse", "software" and "electrician" each put the obvious career in
       the top 3.
 
 Career page (`/careers/[code]`, e.g. `/careers/29-1141.00`)
-- [ ] Title, description, also called, typical education, preparation (job
+- [x] Title, description, also called, typical education, preparation (job
       zone in plain words), top tasks, top skills, related careers (links).
-- [ ] Source line under the data: O*NET release, retrieved month, CC BY 4.0
+- [x] Source line under the data: O*NET release, retrieved month, CC BY 4.0
       link, and "Stepwell shows a selection of this data".
-- [ ] A bad or unknown code shows the not-found page. A retired code shows
+- [x] A bad or unknown code shows the not-found page (HTTP 200 plus
+      `noindex`, because the page streams behind its loading skeleton). A retired code shows
       the page with a note that O*NET no longer lists it.
-- [ ] Save: signed in, "Save career" / "Remove from saved"; signed out,
+- [x] Save: signed in, "Save career" / "Remove from saved"; signed out,
       "Sign in to save this career" (returns here after sign-in).
 
 Saved careers
-- [ ] `saved_items`: one row per saved thing, one link column per kind
+- [x] `saved_items`: one row per saved thing, one link column per kind
       (only `onet_code` for now), exactly one set, unique per student.
       Owner-only RLS (select, insert, delete); `user_id` comes from
       `auth.uid()`, never the browser.
-- [ ] The save action validates the code with zod and uses the session's
+- [x] The save action validates the code with zod and uses the session's
       user. Account page lists saved careers (empty state links to search).
 
 Site
-- [ ] Header shows "Careers"; still one line at 320px. Home page links to
+- [x] Header shows "Careers"; still one line at 320px. Home page links to
       career search.
-- [ ] AVOID.md check passes; works at 320px and desktop.
-- [ ] `npm run check` and `npm run test:db` pass.
+- [x] AVOID.md check passes; works at 320px and desktop.
+- [x] `npm run check` and `npm run test:db` pass.
 
 ## Data
 | Table | Read | Write |

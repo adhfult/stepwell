@@ -109,10 +109,10 @@ Rules:
   "Stepwell" in Bitter bold `text-lg`, linking home, on the left. Main links
   on the right: Careers, Colleges, Scholarships, Opportunities, My plan. On
   phones these collapse behind a text button labeled "Menu" (no hamburger
-  icon). The signed-in student's account link is last. Until those pages
-  exist, phones show only "Sign in" (or "Account"), so the header stays on
-  one line at 320px; "Create account" joins from 640px (the sign-in page
-  links to it).
+  icon). The signed-in student's account link is last. Until more sections
+  exist (and the "Menu" button with them), phones show "Careers" and "Sign
+  in" (or "Account"), which fit on one line at 320px; "Create account"
+  joins from 640px (the sign-in page links to it).
 - **Footer** (on `surface`, top `border-subtle` divider): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
   sources. Required before launch; links are added only when their pages exist.
