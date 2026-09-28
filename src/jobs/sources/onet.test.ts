@@ -57,6 +57,17 @@ describe("buildDetails", () => {
     expect(nurses).toMatchObject({ education_level: 6, education_share: null });
   });
 
+  it("reads the six interest scores (OI scale), ignoring the high-point rows", () => {
+    expect(ceo).toMatchObject({
+      interest_realistic: 1.26,
+      interest_investigative: 3.05,
+      interest_artistic: 2.16,
+      interest_social: 3.54,
+      interest_enterprising: 6.96,
+      interest_conventional: 4.97,
+    });
+  });
+
   it("keeps the 8 most important core tasks, most important first", () => {
     expect(ceo.tasks).toHaveLength(8);
     expect(ceo.tasks[0]).toBe(

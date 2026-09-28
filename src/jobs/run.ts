@@ -11,6 +11,7 @@ import { type JobEnv, parseJobEnv } from "./env.ts";
 import { createPoliteFetcher, type Fetcher, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
 import { databaseClient, finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
 import { readOnet } from "./sources/onet.ts";
+import { readOnetIp } from "./sources/onet-ip.ts";
 import { OUTLOOK_DELAY_MS, readOnetOutlook } from "./sources/onet-outlook.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
@@ -25,10 +26,11 @@ type Adapter = {
   minDelayMs?: number;
 };
 
-// --due runs sources in this order of id: onet before onet_outlook, whose
-// rows need their careers.
+// --due runs sources in order of id: onet first, since onet_outlook's rows
+// need their careers.
 const ADAPTERS: Record<string, Adapter> = {
   onet: { kind: "occupation", read: (fetcher, previous) => readOnet(fetcher, previous) },
+  onet_ip: { kind: "interest_question", read: readOnetIp, minDelayMs: OUTLOOK_DELAY_MS },
   onet_outlook: { kind: "occupation_outlook", read: readOnetOutlook, minDelayMs: OUTLOOK_DELAY_MS },
 };
 

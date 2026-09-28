@@ -26,9 +26,14 @@ export const DETAIL_FILES = {
   essential_skills: 4_500,
   transferable_skills: 11_000,
   related_occupations: 9_000,
+  career_interest_types: 2_700,
 } as const;
 
 export type DetailFile = keyof typeof DETAIL_FILES;
+
+const INTEREST_AREAS = ["realistic", "investigative", "artistic", "social", "enterprising", "conventional"] as const;
+type InterestColumn = `interest_${(typeof INTEREST_AREAS)[number]}`;
+const interestScore = z.number().min(1).max(7).nullable();
 
 const RELATED_TIERS: Record<string, "primary_short" | "primary_long" | "supplemental"> = {
   "Primary-Short": "primary_short",
@@ -43,6 +48,12 @@ const occupationSchema = z.object({
   job_zone: z.number().int().min(1).max(5).nullable(),
   education_level: z.number().int().min(1).max(12).nullable(),
   education_share: z.number().int().min(0).max(100).nullable(),
+  interest_realistic: interestScore,
+  interest_investigative: interestScore,
+  interest_artistic: interestScore,
+  interest_social: interestScore,
+  interest_enterprising: interestScore,
+  interest_conventional: interestScore,
   tasks: z.array(z.string().min(1).max(1000)).max(MAX_TASKS),
   skills: z.array(z.string().min(1).max(100)).max(MAX_SKILLS),
   titles: z.array(
@@ -102,13 +113,29 @@ function push<T>(map: Map<string, T[]>, key: string, value: T) {
   else map.set(key, [value]);
 }
 
+const emptyDetails: Details = {
+  job_zone: null,
+  education_level: null,
+  education_share: null,
+  interest_realistic: null,
+  interest_investigative: null,
+  interest_artistic: null,
+  interest_social: null,
+  interest_enterprising: null,
+  interest_conventional: null,
+  tasks: [],
+  skills: [],
+  titles: [],
+  related: [],
+};
+
 /** Joins the detail files into one Details object per O*NET code. */
 export function buildDetails(files: Record<DetailFile, string>, minimums: Record<DetailFile, number> = DETAIL_FILES) {
   const details = new Map<string, Details>();
   const get = (code: string) => {
     let d = details.get(code);
     if (!d) {
-      d = { job_zone: null, education_level: null, education_share: null, tasks: [], skills: [], titles: [], related: [] };
+      d = { ...emptyDetails, tasks: [], skills: [], titles: [], related: [] };
       details.set(code, d);
     }
     return d;
@@ -193,20 +220,19 @@ export function buildDetails(files: Record<DetailFile, string>, minimums: Record
     });
   }
 
+  // Interest scores: the six RIASEC areas on O*NET's 1 to 7 "OI" scale.
+  for (const row of usableRows("career_interest_types", files.career_interest_types,
+    [CODE_COL, "Element Name", "Data Value"], minimums, (row) => row["Scale ID"] === "OI")) {
+    const area = row["Element Name"].toLowerCase();
+    if ((INTEREST_AREAS as readonly string[]).includes(area)) {
+      get(row[CODE_COL])[`interest_${area}` as InterestColumn] = Number(row["Data Value"]);
+    }
+  }
+
   // Titles longer than the database allows are left out rather than rejecting the career.
   for (const d of details.values()) d.titles = d.titles.filter((t) => t.title.length <= 200);
   return details;
 }
-
-const emptyDetails: Details = {
-  job_zone: null,
-  education_level: null,
-  education_share: null,
-  tasks: [],
-  skills: [],
-  titles: [],
-  related: [],
-};
 
 /** Turns occupation_data.csv plus the details into staged records: valid, or rejected with a reason. */
 export function parseOccupations(csv: string, details = new Map<string, Details>()): StagedRecord<Occupation>[] {
