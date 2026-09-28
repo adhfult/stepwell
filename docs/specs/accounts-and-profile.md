@@ -1,6 +1,6 @@
 # Spec: Accounts and profile
 
-- Status: draft (review, then change to "approved")
+- Status: approved (2026-09-27)
 - Updated 2026-09-27: reviewed against PRODUCT.md, ARCHITECTURE.md,
   SECURITY.md, DESIGN.md and AVOID.md and current Supabase and Next.js 16
   docs; includes fixes 1 and 3 from `docs/specs/v1-expansion-draft.md` and
