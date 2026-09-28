@@ -31,6 +31,15 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   release, 2 to 3 minutes at O*NET's download speed.
 - **Retired careers:** a code missing from a new release is marked
   `retired_at`, never deleted, so saved careers keep working.
+- **Pay and outlook** (source `onet_outlook`, `src/jobs/sources/onet-outlook.ts`):
+  Web Services API v2, `https://api-v2.onetcenter.org/mnm/careers/` (923
+  careers) then `/mnm/careers/{code}/job_outlook` for each, with the
+  `X-API-Key` header. BLS wage estimates (10th percentile, median, 90th;
+  annual or hourly; `_over` = above the BLS maximum) and 2024 to 2034
+  projections. Terms (checked 2026-09-28): at most 5 requests a second and
+  50,000 a day (we make 2 a second, about 8 minutes); link to O*NET Web
+  Services near the data. A 422 means no data for that career. Refreshed
+  every 3 months.
 
 ## College Scorecard (colleges and programs)
 - **What:** U.S. colleges: cost, admission rate, graduation rate, and

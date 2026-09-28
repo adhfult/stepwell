@@ -1,7 +1,6 @@
 # Spec: Career Explorer
 
-- Status: built (steps 1 to 5, 2026-09-28); step 6 (pay and outlook) waits
-  for an O*NET API key
+- Status: built (steps 1 to 6, 2026-09-28)
 - Build step 3 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1, 2.3 and 2.7). Builds on `docs/specs/data-pipeline.md`.
 
@@ -15,10 +14,9 @@ As a student, I want to look up a career and quickly understand what the
 work is and what it takes, so I can decide whether to explore it further.
 
 ## Decisions made without asking (push back on any)
-1. **Pay and outlook wait** (step 6). O*NET's download has no pay data; its
-   Web Services API does, and needs `ONET_API_KEY` from a free registration
-   only the owner can do. Until then the page leaves the pay section out
-   entirely rather than showing "Not reported" on every career.
+1. **Pay and outlook came last** (step 6). O*NET's download has no pay
+   data; its Web Services API does, with `ONET_API_KEY`. A career O*NET has
+   no outlook for has no pay section, rather than "Not reported" lines.
 2. **Search is a plain form** (`/careers?q=nurse`), results rendered on the
    server. It works without JavaScript, can be bookmarked and shared, and adds
    nothing to the content security policy. Results-as-you-type (the old
@@ -123,7 +121,40 @@ suggestions, the year-by-year plan, results-as-you-type.
 | 3 | `/careers` search | "nurse", "software", "electrician" by hand; 320px |
 | 4 | Career page and save | A few careers by hand; save and remove; signed-out link |
 | 5 | Header, home link, account list, docs | Full pass at 320px and desktop; AVOID.md |
-| 6 | Pay and outlook (needs `ONET_API_KEY`) | Later |
+| 6 | Pay and outlook (below) | Unit tests on saved API responses; pgTAP; local import; career pages by hand |
+
+## Step 6: pay and outlook (approved by the owner 2026-09-28)
+Checked against O*NET Web Services API v2 on 2026-09-28:
+`GET https://api-v2.onetcenter.org/mnm/careers/{code}/job_outlook` with an
+`X-API-Key` header returns an outlook category (Bright, Average, Below
+Average; projections 2024 to 2034 from BLS), Bright Outlook reasons (`grow`,
+`openings`, `emerging`) and pay from BLS wage estimates: 10th percentile,
+median and 90th percentile, annual and/or hourly, with an `_over` field
+instead when pay is above the most BLS publishes. `/mnm/careers/` lists the
+923 careers My Next Move covers. Terms: at most 5 requests per second and
+50,000 per day; a link to O*NET Web Services near the data.
+
+- [x] A second source, `onet_outlook` (kind api, refreshed every 3 months),
+      with its own adapter: list the My Next Move careers, then read each
+      one's job outlook at 2 requests per second (about 8 minutes). The key
+      comes from `ONET_API_KEY`; missing key = the run fails with a clear
+      message. A 422 ("no data for this career") is skipped, not an error.
+- [x] `occupation_outlook` (public read): outlook, Bright Outlook reasons,
+      annual and hourly pay (low, median, high; dollars, hourly with cents),
+      which figures are "or more", source and retrieval date. Merged in one
+      transaction; careers no longer listed lose their row.
+- [x] Career page, section "Pay and outlook": "Median pay" as a key number
+      ("$61,010 a year", or "$29.05 an hour" when only hourly pay is
+      published), the range ("Most people in this job earn $40,050 to
+      $95,210 a year."), and the outlook in words ("Bright outlook. New jobs
+      are very likely... It will grow quickly."). Values above the BLS
+      maximum read "or more" (none in the 2026-09-28 data). A note says when
+      pay covers a wider job group. No row: the section is left out.
+- [x] Source line under the section: BLS wage estimates and 2024 to 2034
+      projections, via a link to O*NET Web Services (their terms), CC BY 4.0.
+- [x] Search results add median pay to the facts line when known.
+- [x] Daily workflow passes `ONET_API_KEY`; `--due` runs `onet` before
+      `onet_outlook` (outlook rows need their careers).
 
 ## Test plan
 Unit tests for parsing and joins on fixture excerpts; pgTAP for the database

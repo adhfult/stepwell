@@ -20,13 +20,26 @@ Newest entries at the top. Keep each entry short.
       applied locally; the local database was patched to match, and the
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
-      https://github.com/adhfult for now); register for an O*NET Web
-      Services key (`ONET_API_KEY`) for Career Explorer step 6 (pay and outlook)
-- [ ] Review the Dependabot pull requests waiting on GitHub
+      https://github.com/adhfult for now)
 - [ ] Next build step: Interest quiz (v1 expansion, Section 1, step 4);
-      its spec needs updating first
+      its spec needs updating first. Programs and colleges (step 5) can use
+      the `SCORECARD_API_KEY` that's now set
 
 ## Log
+### 2026-09-28 (end of day): pay and outlook; dependencies
+- Career Explorer step 6: new source `onet_outlook` (O*NET Web Services
+  job outlook, 2 requests a second, 923 careers, 0 rejected, 8.4 minutes);
+  `occupation_outlook`; "Pay and outlook" section on career pages and
+  median pay in search results. Pushed to the cloud project.
+- Keys: `ONET_API_KEY` and `SCORECARD_API_KEY` set in GitHub by the owner;
+  local imports now read the local settings file too.
+- Dependabot: merged React 19.3.0; ESLint 10, TypeScript 7 and
+  `@types/node` 26 held back in `.github/dependabot.yml` (toolchain
+  support; Node 24 runtime). The owner merged the Claude GitHub Actions
+  workflows (PR #5).
+- Still blocked for agents (secret writes): the `importer` password and
+  `IMPORT_DATABASE_URL`, so scheduled imports end with a notice.
+
 ### 2026-09-28 (late night): cloud setup and Career Explorer built
 - Pushed to GitHub; all migrations pushed to the cloud dev project (it was
   empty); pg_cron works there without extra grants; advisors: only the

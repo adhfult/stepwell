@@ -41,8 +41,9 @@ build step's spec.
 **Reference data** (public read, written only by import jobs):
 | Table | Key | Contents |
 |---|---|---|
-| `occupations` (built; pay, outlook and interest scores still to come) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, `retired_at`, O*NET release; pay, outlook, interest scores later |
+| `occupations` (built; interest scores still to come) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, `retired_at`, O*NET release; interest scores later |
 | `occupation_titles`, `occupation_details`, `occupation_related` (built) | `onet_code` | reported and alternate titles (search: `search_occupations()`); top tasks and skills (JSON); related careers |
+| `occupation_outlook` (built) | `onet_code` | outlook category and Bright Outlook reasons; annual and hourly pay (10th, median, 90th percentile; "or more" flags) |
 | `occupation_knowledge` | `onet_code` | knowledge ratings (joined for AP suggestions) |
 | `interest_questions` | id | Interest Profiler questions, cached once |
 | `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
@@ -79,7 +80,7 @@ build step's spec.
 | `NEXT_PUBLIC_SUPABASE_URL` | yes | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | yes | Supabase publishable key |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | yes | Cloudflare Turnstile site key (unset locally = test key) |
-| `IMPORT_DATABASE_URL`, `IMPORT_CONTACT` (built); `ONET_API_KEY`, `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY` (later) | **no** | Import jobs only, as GitHub Actions secrets |
+| `IMPORT_DATABASE_URL`, `IMPORT_CONTACT`, `ONET_API_KEY` (built); `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY` (later) | **no** | Import jobs only: GitHub Actions secrets, and the local settings file for local runs |
 | `SUPABASE_AUTH_CAPTCHA_SECRET` | **no** | Supabase Auth only; the test secret is set by `npm run db:start` |
 
 ## Later
