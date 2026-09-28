@@ -224,7 +224,7 @@ Small steps, each checked in the browser at `localhost:3000` (never
 - Terms and Privacy pages, linked from sign-up and the footer.
 - Custom email sending for the cloud project (the built-in service only
   sends to project team members, 2 emails an hour).
-- A full Content-Security-Policy.
+- ~~A full Content-Security-Policy.~~ Done 2026-09-28 (nonce-based, `src/proxy.ts`).
 - A separate production Supabase project; migrations and auth settings pushed
   to it only with the owner's OK.
 - Legal review of the age screen and data practices (decision 0002, 0005).

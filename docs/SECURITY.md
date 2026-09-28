@@ -74,8 +74,10 @@ Each item says **how Stepwell does it**.
       Content-Security-Policy, X-Content-Type-Options, Referrer-Policy,
       frame protection (`frame-ancestors 'none'`), Permissions-Policy.
       No wildcard CORS; API routes serve Stepwell's own pages only.
-      (Now set, with a partial CSP; a full `script-src` policy with nonces
-      is a launch blocker in the accounts spec.)
+      (Now set. The CSP is sent per request from `src/proxy.ts` with a fresh
+      nonce: only Next.js's own nonce-stamped scripts run. Development adds
+      `'unsafe-eval'` and Next's dev tools trip style warnings; production
+      builds have neither, checked with zero violations on every page.)
 - [ ] HTTPS only (Vercel default).
 - [ ] Dependencies: Dependabot updates merged when CI is green;
       `npm audit` shows no critical issues.

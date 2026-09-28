@@ -1,21 +1,12 @@
 import type { NextConfig } from "next";
 
 /**
- * Security headers for every page (docs/SECURITY.md, "Add security headers").
- * The CSP is deliberately partial: it blocks framing, <base> tricks, form posts
- * to other sites and plugins. A full script-src policy needs per-request
- * nonces and is a launch blocker tracked in docs/specs/accounts-and-profile.md.
+ * Security headers for every response (docs/SECURITY.md, "Add security
+ * headers"). The Content-Security-Policy is set per request in src/proxy.ts,
+ * because it carries a fresh nonce each time; these stay the same.
  */
-const contentSecurityPolicy = [
-  "frame-ancestors 'none'",
-  "base-uri 'self'",
-  "form-action 'self'",
-  "object-src 'none'",
-].join("; ");
-
 const securityHeaders = [
-  { key: "Content-Security-Policy", value: contentSecurityPolicy },
-  // Older browsers that don't read frame-ancestors.
+  // Framing is also refused by the CSP's frame-ancestors; this covers older browsers.
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

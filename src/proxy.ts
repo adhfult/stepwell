@@ -15,13 +15,49 @@ function needsSignIn(pathname: string) {
 }
 
 /**
+ * Content-Security-Policy with a fresh nonce per request (Next.js CSP guide):
+ * only scripts carrying the nonce run, so injected script can't. Next.js
+ * reads the nonce from the request header and stamps its own scripts.
+ * Development needs 'unsafe-eval' (React's debugging); production doesn't.
+ * upgrade-insecure-requests only in production, so local http testing works.
+ */
+function contentSecurityPolicy(nonce: string) {
+  const isDev = process.env.NODE_ENV === "development";
+  return [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
+    `style-src 'self' 'nonce-${nonce}'`,
+    "img-src 'self' blob: data:",
+    "font-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    ...(isDev ? [] : ["upgrade-insecure-requests"]),
+  ].join("; ");
+}
+
+/**
  * Runs before matching requests (Next.js 16 renamed "middleware" to "proxy").
  * Its jobs: keep the Supabase login session fresh by refreshing the auth
  * cookies, and the optimistic redirect above. Access control itself belongs
  * in Row Level Security and in server code, not here.
  */
 export async function proxy(request: NextRequest) {
-  let response = NextResponse.next({ request });
+  const csp = contentSecurityPolicy(Buffer.from(crypto.randomUUID()).toString("base64"));
+
+  // Every response the proxy passes on carries the policy, including the ones
+  // Supabase rebuilds after refreshing cookies. The request copy tells
+  // Next.js which nonce to put on its scripts.
+  const nextWithPolicy = () => {
+    const headers = new Headers(request.headers);
+    headers.set("Content-Security-Policy", csp);
+    const res = NextResponse.next({ request: { headers } });
+    res.headers.set("Content-Security-Policy", csp);
+    return res;
+  };
+
+  let response = nextWithPolicy();
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -35,7 +71,7 @@ export async function proxy(request: NextRequest) {
       },
       setAll(cookiesToSet, headers) {
         cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
-        response = NextResponse.next({ request });
+        response = nextWithPolicy();
         cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
         Object.entries(headers ?? {}).forEach(([k, v]) => response.headers.set(k, v));
       },
