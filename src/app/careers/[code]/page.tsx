@@ -3,9 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
-import { getCareer, isCareerSaved } from "@/lib/careers/data";
-import { onetCodeSchema, preparation, typicalEducation } from "@/lib/careers/labels";
-import { OnetSource } from "../source-line";
+import { type Career, getCareer, isCareerSaved } from "@/lib/careers/data";
+import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalEducation } from "@/lib/careers/labels";
+import { OnetSource, OutlookSource } from "../source-line";
 import { SaveCareerForm } from "./save-form";
 
 async function careerFor(params: PageProps<"/careers/[code]">["params"]) {
@@ -84,6 +84,8 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
         </dl>
       </section>
 
+      {career.outlook && <PayAndOutlook career={career} />}
+
       {career.tasks.length > 0 && (
         <section aria-labelledby="tasks-heading" className="mt-12">
           <h2 id="tasks-heading" className="text-lg font-bold">
@@ -129,5 +131,44 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
 
       <OnetSource release={career.onet_release} retrievedAt={career.retrieved_at} />
     </Page>
+  );
+}
+
+/**
+ * Pay (BLS wage estimates) and outlook (BLS projections), via O*NET Web
+ * Services. Left out entirely when O*NET has no data for this career.
+ */
+function PayAndOutlook({ career }: { career: Career }) {
+  const outlook = career.outlook!;
+  const median = medianPay(outlook);
+  const range = payRange(outlook);
+  const prospects = outlookText(outlook.outlook, outlook.bright_reasons);
+  // BLS sometimes publishes pay only for a wider job group than this career.
+  const widerGroup = outlook.wage_soc_code && outlook.wage_soc_code !== career.soc_code;
+
+  return (
+    <section aria-labelledby="pay-heading" className="mt-12">
+      <h2 id="pay-heading" className="text-lg font-bold">
+        Pay and outlook
+      </h2>
+      {median ? (
+        <div className="mt-4">
+          <p className="text-sm text-muted">Median pay</p>
+          <p className="text-xl font-bold">{median}</p>
+          {range && <p className="mt-2">{range}</p>}
+          {widerGroup && (
+            <p className="mt-2 text-sm text-muted">Pay is for the wider job group this career belongs to.</p>
+          )}
+        </div>
+      ) : (
+        <p className="mt-3 text-muted">Pay not reported</p>
+      )}
+      {prospects && (
+        <p className="mt-4">
+          <strong>{prospects.name}.</strong> {prospects.detail}
+        </p>
+      )}
+      <OutlookSource retrievedAt={outlook.retrieved_at} />
+    </section>
   );
 }

@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { createClient } from "@/lib/supabase/server";
+import type { Pay } from "./labels";
 
 /**
  * Career reads (part of the Data Access Layer). Reference data is public;
@@ -15,13 +16,28 @@ export type SearchResult = {
   matched_title: string | null;
   job_zone: number | null;
   education_level: number | null;
+  pay: Pay | null;
 };
+
+const PAY_COLUMNS = "annual_low, annual_median, annual_high, hourly_low, hourly_median, hourly_high, or_more";
 
 export async function searchCareers(query: string): Promise<SearchResult[]> {
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("search_occupations", { p_query: query });
   if (error) throw new Error(`Career search failed (${error.code})`);
-  return data;
+  if (data.length === 0) return [];
+
+  // Median pay for the facts line: one query for all results.
+  const { data: pay, error: payError } = await supabase
+    .from("occupation_outlook")
+    .select(`onet_code, ${PAY_COLUMNS}`)
+    .in(
+      "onet_code",
+      data.map((r) => r.onet_code),
+    );
+  if (payError) throw new Error(`Career pay failed (${payError.code})`);
+  const payByCode = new Map(pay.map((p) => [p.onet_code, p]));
+  return data.map((r) => ({ ...r, pay: payByCode.get(r.onet_code) ?? null }));
 }
 
 const strings = (value: unknown): string[] =>
@@ -35,14 +51,14 @@ export const getCareer = cache(async (code: string) => {
   const { data: career, error } = await supabase
     .from("occupations")
     .select(
-      "onet_code, title, description, job_zone, education_level, education_share, onet_release, retrieved_at, retired_at",
+      "onet_code, soc_code, title, description, job_zone, education_level, education_share, onet_release, retrieved_at, retired_at",
     )
     .eq("onet_code", code)
     .maybeSingle();
   if (error) throw new Error(`Career lookup failed (${error.code})`);
   if (!career) return null;
 
-  const [details, titles, related] = await Promise.all([
+  const [details, titles, related, outlook] = await Promise.all([
     supabase.from("occupation_details").select("tasks, skills").eq("onet_code", code).maybeSingle(),
     supabase
       .from("occupation_titles")
@@ -60,8 +76,13 @@ export const getCareer = cache(async (code: string) => {
       .order("tier", { ascending: false }) // primary_short before primary_long
       .order("rank")
       .limit(12),
+    supabase
+      .from("occupation_outlook")
+      .select(`outlook, bright_reasons, wage_soc_code, retrieved_at, ${PAY_COLUMNS}`)
+      .eq("onet_code", code)
+      .maybeSingle(),
   ]);
-  for (const result of [details, titles, related]) {
+  for (const result of [details, titles, related, outlook]) {
     if (result.error) throw new Error(`Career details failed (${result.error.code})`);
   }
 
@@ -70,6 +91,7 @@ export const getCareer = cache(async (code: string) => {
     tasks: strings(details.data?.tasks),
     skills: strings(details.data?.skills),
     alsoCalled: (titles.data ?? []).map((t) => t.title),
+    outlook: outlook.data,
     related: (related.data ?? [])
       .flatMap((r) => (r.related && !r.related.retired_at ? [r.related] : []))
       .slice(0, 6),

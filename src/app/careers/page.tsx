@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Page, PageTitle } from "@/components/page";
 import { getOnetSource, searchCareers, type SearchResult } from "@/lib/careers/data";
-import { resultFacts, searchQuerySchema } from "@/lib/careers/labels";
+import { medianPay, resultFacts, searchQuerySchema } from "@/lib/careers/labels";
 import { CareerSearchForm } from "./search-form";
 import { OnetSource } from "./source-line";
 
@@ -52,7 +52,10 @@ function ResultList({ results, query }: { results: SearchResult[]; query: string
   return (
     <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
       {results.map((r) => {
-        const facts = resultFacts(r.education_level, r.job_zone);
+        const pay = medianPay(r.pay);
+        const facts = [resultFacts(r.education_level, r.job_zone), pay && `median pay ${pay}`]
+          .filter(Boolean)
+          .join(", ");
         return (
           <li key={r.onet_code} className="py-4">
             <Link href={`/careers/${r.onet_code}`} className="font-heading text-lg font-bold">
@@ -62,7 +65,13 @@ function ResultList({ results, query }: { results: SearchResult[]; query: string
             {r.matched_title && r.matched_title.toLowerCase() !== query.toLowerCase() && (
               <p className="mt-1 text-sm text-muted">Also called: {r.matched_title}</p>
             )}
-            <p className="mt-1">{facts ?? <span className="text-muted">Education and preparation not reported</span>}</p>
+            <p className="mt-1">
+              {facts ? (
+                facts.charAt(0).toUpperCase() + facts.slice(1)
+              ) : (
+                <span className="text-muted">Education, preparation and pay not reported</span>
+              )}
+            </p>
           </li>
         );
       })}
