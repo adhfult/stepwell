@@ -10,13 +10,21 @@ Newest entries at the top. Keep each entry short.
       and the site footer
 - [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
       Supabase project, real Turnstile keys, Vercel) before real students
-- [ ] v1 expansion: review Sections 3 (pipeline) and 4 (privacy, retention,
-      final fix list, drafted 2026-09-28), approve the draft, then apply the
-      doc fixes listed in 4.3
-- [ ] Data pipeline foundation with O*NET as the first adapter, then Career
-      Explorer (build order in the expansion draft, Section 1)
+- [ ] Review and approve `docs/specs/data-pipeline.md` (O*NET first; proposes
+      an `importer` database role instead of the service-role key), then build
+      it step by step; then Career Explorer
 
 ## Log
+### 2026-09-28 (evening): v1 expansion approved
+- Sections 3 and 4 approved (retention: unconfirmed accounts 7 days,
+  eligibility answers 12 months without sign-in, ingest logs 30 days).
+- Applied to PRODUCT, ARCHITECTURE, DATA_SOURCES, TOOLS; decisions 0006
+  (eligibility answers) and 0007 (scraping policy).
+- Drafted `docs/specs/data-pipeline.md`. Found: O*NET 31.0 CSVs download
+  per file without a key; the unexposed `ingest` schema can't be written
+  through the service-role client, so the spec proposes a direct Postgres
+  `importer` role via Supabase's IPv4 shared pooler.
+
 ### 2026-09-28 (later): hardening and launch prep
 - Login cookies HttpOnly (and Secure in production); zod on the delete
   password; full nonce-based CSP from `src/proxy.ts` (production: zero
