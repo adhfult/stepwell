@@ -14,7 +14,7 @@
     "db:stop": "npx supabase stop",
     "test:db": "npx supabase test db",
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
-    "import": "node src/jobs/run.ts"
+    "import": "node --env-file-if-exists=.env.local src/jobs/run.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
