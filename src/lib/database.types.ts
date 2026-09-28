@@ -23,15 +23,78 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "occupations": {
+            "occupation_details": {
                   Row: {
-                    "description": string,"onet_code": string,"onet_release": string,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
+                    "onet_code": string,"skills": NonNullable<Json>,"tasks": NonNullable<Json>
                   }
                   Insert: {
-                    "description": string,"onet_code": string,"onet_release": string,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
+                    "onet_code": string,"skills"?: NonNullable<Json>,"tasks"?: NonNullable<Json>
                   }
                   Update: {
-                    "description"?: string,"onet_code"?: string,"onet_release"?: string,"retrieved_at"?: string,"soc_code"?: never,"source_id"?: string,"title"?: string
+                    "onet_code"?: string,"skills"?: NonNullable<Json>,"tasks"?: NonNullable<Json>
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_details_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: true
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    }
+                  ]
+                },"occupation_related": {
+                  Row: {
+                    "onet_code": string,"rank": number,"related_code": string,"tier": string
+                  }
+                  Insert: {
+                    "onet_code": string,"rank": number,"related_code": string,"tier": string
+                  }
+                  Update: {
+                    "onet_code"?: string,"rank"?: number,"related_code"?: string,"tier"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_related_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    },{
+      foreignKeyName: "occupation_related_related_code_fkey"
+      columns: ["related_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    }
+                  ]
+                },"occupation_titles": {
+                  Row: {
+                    "featured": boolean,"kind": string,"onet_code": string,"title": string
+                  }
+                  Insert: {
+                    "featured"?: boolean,"kind": string,"onet_code": string,"title": string
+                  }
+                  Update: {
+                    "featured"?: boolean,"kind"?: string,"onet_code"?: string,"title"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_titles_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    }
+                  ]
+                },"occupations": {
+                  Row: {
+                    "description": string,"education_level": number | null,"education_share": number | null,"job_zone": number | null,"onet_code": string,"onet_release": string,"retired_at": string | null,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
+                  }
+                  Insert: {
+                    "description": string,"education_level"?: number | null,"education_share"?: number | null,"job_zone"?: number | null,"onet_code": string,"onet_release": string,"retired_at"?: string | null,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
+                  }
+                  Update: {
+                    "description"?: string,"education_level"?: number | null,"education_share"?: number | null,"job_zone"?: number | null,"onet_code"?: string,"onet_release"?: string,"retired_at"?: string | null,"retrieved_at"?: string,"soc_code"?: never,"source_id"?: string,"title"?: string
                   }
                   Relationships: [
                     {
@@ -55,6 +118,25 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"saved_items": {
+                  Row: {
+                    "created_at": string,"id": string,"onet_code": string | null,"user_id": string
+                  }
+                  Insert: {
+                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"user_id"?: string
+                  }
+                  Update: {
+                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"user_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "saved_items_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    }
+                  ]
                 },"sources": {
                   Row: {
                     "allowed": boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag": string | null,"last_release": string | null,"last_success_at": string | null,"name": string,"paused_reason": string | null,"refresh_interval": string,"terms_checked_at": string | null,"terms_url": string | null
@@ -76,6 +158,11 @@ isOneToOne: false
           Functions: {
             "delete_my_account":
 { Args: Record<PropertyKey, never>; Returns: undefined
+                           },
+"search_occupations":
+{ Args: { "p_query": string }; Returns: {
+              "education_level": number,"job_zone": number,"matched_title": string,"onet_code": string,"title": string
+            }[]
                            }
           }
           Enums: {

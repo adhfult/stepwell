@@ -173,9 +173,10 @@ select results_eq(
 );
 reset role;
 select is(
-  (select string_agg(onet_code || ' ' || onet_release, ', ' order by onet_code) from public.occupations),
-  '11-1011.00 31.1, 15-1252.00 31.1',
-  'occupations now match the new release exactly'
+  (select string_agg(onet_code || ' ' || onet_release || ' ' || case when retired_at is null then 'current' else 'retired' end,
+                     ', ' order by onet_code) from public.occupations),
+  '11-1011.00 31.1 current, 15-1252.00 31.1 current, 29-1141.00 31.0 retired',
+  'the new release is current; the dropped career is retired, not deleted'
 );
 
 -- Refusals
