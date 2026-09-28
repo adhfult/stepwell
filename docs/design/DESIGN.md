@@ -84,7 +84,8 @@ Rules:
   defaults: `sm` 640px, `md` 768px, `lg` 1024px.
 - Side padding: 24px (`px-6`) on every page; 32px (`lg:px-8`) from 1024px.
 - Content width: reading pages (career details, About the data, Terms,
-  Privacy) at most 672px (`max-w-2xl`); browsing pages (search results,
+  Privacy) at most 672px (`max-w-2xl`); short form pages (sign-up, sign-in,
+  password) at most 448px (`max-w-md`); browsing pages (search results,
   college comparison, the plan) at most 1024px (`max-w-5xl`).
 - Vertical rhythm: 16px between paragraphs, 48px between page sections on
   phones (`py-12`), 64px from 1024px (`lg:py-16`).

@@ -16,7 +16,7 @@ const atkinson = Atkinson_Hyperlegible_Next({
 });
 
 export const metadata: Metadata = {
-  title: "Stepwell",
+  title: { default: "Stepwell", template: "%s | Stepwell" },
   description: "Helps students connect careers to programs and colleges using official U.S. data.",
 };
 
