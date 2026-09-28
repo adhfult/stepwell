@@ -13,12 +13,15 @@
     "db:start": "SUPABASE_AUTH_CAPTCHA_SECRET=1x0000000000000000000000000000000AA npx supabase start -x realtime,storage-api,imgproxy,edge-runtime,logflare,vector,supavisor",
     "db:stop": "npx supabase stop",
     "test:db": "npx supabase test db",
-    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "import": "node src/jobs/run.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.117.2",
+    "csv-parse": "^7.0.3",
     "next": "16.3.6",
+    "pg": "^8.23.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "robots-parser": "^3.0.1",
@@ -28,6 +31,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.19.0",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
