@@ -41,14 +41,14 @@ build step's spec.
 **Reference data** (public read, written only by import jobs):
 | Table | Key | Contents |
 |---|---|---|
-| `occupations` | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, pay, outlook, interest scores, O*NET release |
+| `occupations` (built: code, title, description, release) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, pay, outlook, interest scores, O*NET release |
 | `occupation_titles`, `occupation_knowledge`, `occupation_details`, `occupation_related` | `onet_code` | search titles; knowledge ratings (joined for AP suggestions); tasks and skills (JSON); related careers |
 | `interest_questions` | id | Interest Profiler questions, cached once |
 | `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
 | `programs` | `id` (unique `unitid, cip4, credential_level`) | median debt, earnings |
 | `occupation_program_map` | `(soc_code, cip6)` + computed `cip4` | CIP–SOC crosswalk |
 | `ap_courses`, `knowledge_ap_map` | code | AP course list and the knowledge-area mapping (hand-entered) |
-| `sources` | id | every data source, its terms check and fetcher |
+| `sources` (built) | id | every data source, its terms check and fetcher |
 | `scholarships`, `scholarship_criteria`, `opportunities`, `listing_fields` | id | listings, their eligibility rules, CIP families |
 
 **User data** (owner-only via RLS):
@@ -65,8 +65,9 @@ build step's spec.
   draft, Section 3): fetch politely, validate with zod, stage in the `ingest`
   schema (not exposed to the Data API), then merge into `public` in one
   transaction; a circuit breaker stops a broken scraper from wiping data.
-- Runs on a GitHub Actions schedule with the service-role key, **outside** the
-  web app. Sources and the allowlist: `docs/DATA_SOURCES.md`; scraping rules:
+- `npm run import -- <source>` or `--due`; runs daily on GitHub Actions
+  (`.github/workflows/import.yml`), **outside** the web app, logged in as the
+  `importer` database role through Supabase's pooler (decision 0008). Sources and the allowlist: `docs/DATA_SOURCES.md`; scraping rules:
   decision 0007.
 - Each imported row stores its source and retrieval date for display and auditing.
 - Retention jobs run inside Postgres with `pg_cron` (v1 expansion, Section 4.2).
@@ -77,7 +78,7 @@ build step's spec.
 | `NEXT_PUBLIC_SUPABASE_URL` | yes | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | yes | Supabase publishable key |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | yes | Cloudflare Turnstile site key (unset locally = test key) |
-| `ONET_API_KEY`, `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | **no** | Import jobs only |
+| `IMPORT_DATABASE_URL`, `IMPORT_CONTACT` (built); `ONET_API_KEY`, `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY` (later) | **no** | Import jobs only, as GitHub Actions secrets |
 | `SUPABASE_AUTH_CAPTCHA_SECRET` | **no** | Supabase Auth only; the test secret is set by `npm run db:start` |
 
 ## Later

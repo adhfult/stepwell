@@ -7,9 +7,11 @@ before any deploy. Stepwell's users may be 13–17, so privacy mistakes matter m
 Each item says **how Stepwell does it**.
 
 ## Secrets and keys
-- [ ] **Secure API keys.** Server-only keys (`ONET_*`, `SCORECARD_API_KEY`,
-      `SUPABASE_SERVICE_ROLE_KEY`, any AI key) live in `.env.local` and in
-      Vercel environment variables, never in code, never with `NEXT_PUBLIC_`.
+- [ ] **Secure API keys.** Server-only keys (any AI key) live in
+      `.env.local` and in Vercel environment variables, never in code, never
+      with `NEXT_PUBLIC_`. Import-job secrets (`IMPORT_DATABASE_URL`,
+      `ONET_API_KEY`, `SCORECARD_API_KEY`, ...) live only in GitHub Actions
+      secrets.
 - [ ] **Hide all .env files.** `.gitignore` blocks `.env*` except `.env.example`;
       the pre-commit hook blocks real `.env` files; Claude can't read them.
 - [ ] **Never hardcode secrets.** No keys, passwords, or tokens in source,
@@ -49,7 +51,10 @@ Each item says **how Stepwell does it**.
       `using (true)` on user data; users can't write `user_id`, `role`, or
       timestamps directly.
 - [ ] **Secure Firebase, Supabase, and storage.** No Firebase. Supabase:
-      service-role key only in import jobs; storage buckets private by
+      the service-role key is used nowhere: import jobs log in as the
+      `importer` role, which can only call the `ingest` functions (decision
+      0008), and nothing outside `src/jobs` may import job code (ESLint);
+      storage buckets private by
       default with owner-only policies; Auth redirect URLs restricted to
       Stepwell's own domains; leaked-password protection on if available
       (it's Pro plan only, so not available on the free plan).

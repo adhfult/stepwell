@@ -1,6 +1,7 @@
 # Spec: Data pipeline foundation (O*NET first)
 
-- Status: approved (2026-09-28)
+- Status: built (2026-09-28); the first run on GitHub waits for the cloud
+  setup in `docs/LAUNCH.md`
 - Build step 2 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1 and 3). Career Explorer (step 3) builds on it.
 
@@ -37,40 +38,41 @@ Found while writing this spec (checked 2026-09-28):
 
 ## Acceptance criteria
 Database
-- [ ] New `ingest` schema, not exposed to the Data API; `anon` and
+- [x] New `ingest` schema, not exposed to the Data API; `anon` and
       `authenticated` have no rights on it.
-- [ ] `public.sources` (reference data, public read): slug, name, kind (api,
+- [x] `public.sources` (reference data, public read): slug, name, kind (api,
       dataset, scrape, manual), homepage, terms URL, `terms_checked_at`,
       `allowed`, pause reason, refresh interval, attribution text, last
       successful run, and what the last run saw (`last_etag`,
       `last_release`) for the "unchanged" check. Seeded in the migration
       with the O*NET row.
-- [ ] `ingest.import_runs`: source, start and end times, status (running,
+- [x] `ingest.import_runs`: source, start and end times, status (running,
       succeeded, failed, aborted, unchanged), counts (seen, new, changed,
       removed, rejected), error message.
-- [ ] `ingest.staged_records`: run, record kind, source record id, payload
+- [x] `ingest.staged_records`: run, record kind, source record id, payload
       (JSON), status (valid or rejected) and rejection reason.
-- [ ] `public.occupations` (minimal; Career Explorer adds columns):
+- [x] `public.occupations` (minimal; Career Explorer adds columns):
       `onet_code` primary key with a format check, computed `soc_code`,
       title, description, O*NET release, `source_id`, `retrieved_at`. RLS
       on, one read policy for `anon, authenticated`, select granted to them.
-- [ ] `importer` login role, created without a password in the migration,
+- [x] `importer` login role, created without a password in the migration,
       and only if it doesn't exist yet (roles belong to the whole server,
       so a local `db reset` can find it already there).
       It may only execute the `ingest` functions below (all `security
       definer`, `set search_path = ''`, execute revoked from `public`):
       start a run, stage records, merge occupations, finish a run.
-- [ ] Starting a run is the permission gate: it refuses a source that is not
+- [x] Starting a run is the permission gate: it refuses a source that is not
       `allowed`, or whose `terms_checked_at` is missing or older than 12
       months, and records why.
-- [ ] Merging happens in one transaction: upsert by `onet_code`, delete rows
+- [x] Merging happens in one transaction: upsert by `onet_code`, delete rows
       missing from the new release, record the counts. A failed merge
       leaves the old rows untouched.
-- [ ] `pg_cron` deletes `staged_records` and runs older than 30 days
-      (Section 4.2).
+- [x] `pg_cron` deletes `staged_records` older than 30 days (Section 4.2).
+      Run history is kept: one small row per run, and the circuit breaker
+      compares against the last success, which can be older than 30 days.
 
 Fetching (`src/jobs/fetch/`)
-- [ ] One `Fetcher` (`get(url)` returns status, body, content type, final
+- [x] One `Fetcher` (`get(url)` returns status, body, content type, final
       URL, ETag) wrapped by a politeness layer: User-Agent
       `StepwellBot/1.0 (+contact)`, robots.txt checked before each host's
       first request in a run, at most one request per 5 seconds per host
@@ -78,41 +80,42 @@ Fetching (`src/jobs/fetch/`)
       last ETag, up to 3 retries on 429 and 5xx with growing waits and
       `Retry-After` respected, no retries on other 4xx, and a page cap per
       run (2,000).
-- [ ] Without `IMPORT_CONTACT`, local runs send `StepwellBot/1.0
+- [x] Without `IMPORT_CONTACT`, local runs send `StepwellBot/1.0
       (development)`; in CI the runner refuses to start without it.
 
 Runner and O*NET adapter (`src/jobs/`)
-- [ ] `npm run import -- <slug>`, `npm run import -- --due` (every source
+- [x] `npm run import -- <slug>`, `npm run import -- --due` (every source
       whose refresh interval has passed) and `--dry-run` (fetch and parse
       live, print counts and 5 samples, write nothing).
-- [ ] The O*NET adapter finds the current release number on O*NET's
+- [x] The O*NET adapter finds the current release number on O*NET's
       database page, downloads `occupation_data.csv`, parses it with
       `csv-parse`, and validates every row with zod. A bad row is staged as
       rejected with its reason and doesn't stop the run.
-- [ ] Unchanged file (304, or the same release as the last run): the run
-      ends as "unchanged" without merging.
-- [ ] Circuit breaker before merging: abort (students keep the last good
+- [x] Unchanged file (304, or the same release as the last run): the run
+      ends as "unchanged" without merging. For O*NET the release decides:
+      its ETags differ between its servers for the same file.
+- [x] Circuit breaker before merging: abort (students keep the last good
       data) if valid records are under 50% of the last successful run, more
       than 20% are rejected, or there are none. The 50% rule is skipped when
       the source has never succeeded (first run).
-- [ ] Nothing outside `src/jobs` can import it (ESLint `no-restricted-imports`);
+- [x] Nothing outside `src/jobs` can import it (ESLint `no-restricted-imports`);
       settings are read and validated with zod only in `src/jobs/env.ts`.
 
 Schedule (`.github/workflows/import.yml`)
-- [ ] Daily at 09:17 UTC runs `--due`; manual runs with a source input;
+- [x] Daily at 09:17 UTC runs `--due`; manual runs with a source input;
       `concurrency: import`; 60-minute timeout; Node 24 like CI.
-- [ ] Writes the run's counts to the job summary.
-- [ ] Freshness check: fails (so GitHub emails the owner) if any active
+- [x] Writes the run's counts to the job summary.
+- [x] Freshness check: fails (so GitHub emails the owner) if any active
       source's last success is older than twice its refresh interval.
-- [ ] Without the `IMPORT_DATABASE_URL` secret, the job ends with a notice
+- [x] Without the `IMPORT_DATABASE_URL` secret, the job ends with a notice
       instead of failing, so no daily failure emails before setup.
 
 Docs
-- [ ] `.env.example` names `IMPORT_DATABASE_URL` and `IMPORT_CONTACT`, plus
+- [x] `.env.example` names `IMPORT_DATABASE_URL` and `IMPORT_CONTACT`, plus
       the later pipeline names from Section 3.7 (commented out).
-- [ ] ARCHITECTURE.md (settings, imports), SECURITY.md (importer role),
+- [x] ARCHITECTURE.md (settings, imports), SECURITY.md (importer role),
       DATA_SOURCES.md (O*NET files and release check), decision 0008.
-- [ ] `npm run check` and `npm run test:db` pass.
+- [x] `npm run check` and `npm run test:db` pass.
 
 ## Data
 | Where | Who can read | Who can write |

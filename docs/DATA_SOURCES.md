@@ -16,7 +16,12 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
 - **Rules:** attribution is required wherever O*NET data is shown; the API is
   rate-limited, so cache results. Check the current terms at sign-up.
 - **Key:** occupations use O*NET-SOC codes (e.g. `29-1141.00` Registered Nurses).
-- **Refresh:** monthly job (O*NET updates quarterly).
+- **Refresh:** the import (`src/jobs/sources/onet.ts`) runs monthly: it reads
+  the current release from https://www.onetcenter.org/database.html and
+  downloads that release's CSV files (e.g. `db_31_0_csv/occupation_data.csv`,
+  no key). Same release as last time = unchanged; O*NET's ETags differ
+  between its servers, so they aren't used. Release 31.0 loaded 2026-09-28
+  (1,016 occupations).
 
 ## College Scorecard (colleges and programs)
 - **What:** U.S. colleges: cost, admission rate, graduation rate, and
@@ -58,4 +63,5 @@ None yet.
 | CareerOneStop and USAJOBS keys (names set at registration) | Scholarship and internship import jobs |
 | `CONTEXT_DEV_API_KEY` | Import jobs, hard pages only |
 | `SCORECARD_API_KEY` | Scorecard import job |
-| `SUPABASE_SERVICE_ROLE_KEY` | Import jobs only (writes reference tables). Never in app code. |
+| `IMPORT_DATABASE_URL` | Import jobs: the `importer` role's pooler connection (decision 0008) |
+| `IMPORT_CONTACT` | Import jobs: contact address in the User-Agent (GitHub variable, not secret) |

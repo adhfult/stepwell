@@ -36,6 +36,18 @@ Details that change often (free-tier limits, prices) are marked "check".
   - Bot protection: Turnstile, with the **real** secret from step 4.
 - [ ] Check: does the free project pause when idle, and what wakes it?
 
+### Data imports (`.github/workflows/import.yml`, decision 0008)
+- [ ] **You, in the SQL editor:** give the `importer` role a long random
+      password: `alter role importer with password '<password>';`
+- [ ] **You, in GitHub** (Settings, Secrets and variables, Actions): secret
+      `IMPORT_DATABASE_URL` = the **Session pooler** connection string from
+      the dashboard's Connect button, with user `importer.<project-ref>` and
+      that password. Variable `IMPORT_CONTACT` = the Stepwell contact address.
+- [ ] Run "Import data" by hand once (Actions tab), then check the
+      `occupations` count in the table editor.
+- [ ] Check: do scheduled runs keep a private repo's workflow enabled, and
+      how many Actions minutes are used a month?
+
 ## 4. Cloudflare Turnstile (bot check)
 - [ ] **You:** free Cloudflare account, Turnstile, add a widget for
       `<domain>` in "Managed" mode.

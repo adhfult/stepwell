@@ -10,11 +10,34 @@ Newest entries at the top. Keep each entry short.
       and the site footer
 - [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
       Supabase project, real Turnstile keys, Vercel) before real students
-- [ ] Review and approve `docs/specs/data-pipeline.md` (O*NET first; proposes
-      an `importer` database role instead of the service-role key), then build
-      it step by step; then Career Explorer
+- [ ] Data imports in the cloud (`docs/LAUNCH.md`, "Data imports"): push the
+      two pipeline migrations (with your OK), set the `importer` password,
+      add the GitHub secret and `IMPORT_CONTACT`, run the workflow once
+- [ ] Career Explorer: update `docs/specs/career-explorer.md` for the v1
+      expansion (pay and outlook, related careers, `saved_items`, more O*NET
+      files in the same adapter), approve, build
 
 ## Log
+### 2026-09-28 (night): data pipeline foundation built
+- Spec approved and built in 5 steps. Decision 0008: import jobs log in as
+  an `importer` Postgres role that can only call `ingest` functions (the
+  unexposed `ingest` schema can't be reached through the Data API).
+- `npm run import -- onet [--dry-run] [--force]` and `--due`; polite fetcher
+  (robots.txt, 5 s per host, retries, page cap); zod validation; circuit
+  breaker; one-transaction merge. O*NET 31.0: 1,016 occupations loaded
+  locally. Daily GitHub Actions workflow (idle until its secret exists),
+  freshness check, pg_cron clean-up of staged records after 30 days.
+- Found: O*NET's ETags differ between its servers, so the release number
+  decides "unchanged". Tests: 80 unit, 78 pgTAP; advisors clean.
+- New dependencies: `pg`, `csv-parse`, `robots-parser`. Jobs run on Node
+  24's built-in TypeScript (no build step).
+- Open: `IMPORT_CONTACT` address (same as the legal pages' contact email);
+  strip control characters from imported text (Section 3.11) before the
+  first scraped source; a fresh `supabase db reset` hasn't been run since
+  the pipeline migrations (it would wipe local test accounts); on the cloud
+  push, check whether pg_cron needs `grant usage on schema cron to postgres`
+  and that `importer.<ref>` can log in through the pooler.
+
 ### 2026-09-28 (evening): v1 expansion approved
 - Sections 3 and 4 approved (retention: unconfirmed accounts 7 days,
   eligibility answers 12 months without sign-in, ingest logs 30 days).
