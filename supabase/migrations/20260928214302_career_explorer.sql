@@ -11,7 +11,8 @@ alter table public.occupations
   add column job_zone smallint
     constraint occupations_job_zone_valid check (job_zone between 1 and 5),
   -- The education level most workers reported (O*NET categories 1 to 12),
-  -- and the share of workers who reported it.
+  -- and the share of workers who reported it (empty when O*NET flags the
+  -- share as imprecise).
   add column education_level smallint
     constraint occupations_education_level_valid check (education_level between 1 and 12),
   add column education_share smallint
@@ -19,8 +20,8 @@ alter table public.occupations
   -- Set when a newer O*NET release no longer lists this career. Kept, so a
   -- student's saved career never disappears; hidden from search.
   add column retired_at timestamptz,
-  add constraint occupations_education_pair check (
-    (education_level is null) = (education_share is null)
+  add constraint occupations_education_share_needs_level check (
+    education_share is null or education_level is not null
   );
 
 create index occupations_title_trgm on public.occupations

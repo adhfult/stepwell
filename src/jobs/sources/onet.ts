@@ -120,14 +120,21 @@ export function buildDetails(files: Record<DetailFile, string>, minimums: Record
   }
 
   // Typical education: the level the most workers reported ("RL" scale).
+  // O*NET flags imprecise percentages ("Recommend Suppress"). Skipping them
+  // would pick the wrong level (Registered Nurses: bachelor's 56% is flagged,
+  // so a 23% certificate would win), so every level counts when choosing,
+  // and a flagged share is simply not shown.
   const education = usableRows("education", files.education, [CODE_COL, "Category", "Data Value"], minimums,
-    (row) => row["Scale ID"] === "RL" && notSuppressed(row));
+    (row) => row["Scale ID"] === "RL");
+  const topShare = new Map<string, number>();
   for (const row of education) {
-    const d = get(row[CODE_COL]);
-    const share = Math.round(Number(row["Data Value"]));
-    if (d.education_share === null || share > d.education_share) {
+    const code = row[CODE_COL];
+    const value = Number(row["Data Value"]);
+    if (value > (topShare.get(code) ?? -1)) {
+      topShare.set(code, value);
+      const d = get(code);
       d.education_level = Number(row["Category"]);
-      d.education_share = share;
+      d.education_share = row["Recommend Suppress"] === "Y" ? null : Math.round(value);
     }
   }
 

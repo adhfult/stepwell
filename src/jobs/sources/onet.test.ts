@@ -47,6 +47,16 @@ describe("buildDetails", () => {
     expect(ceo).toMatchObject({ education_level: 8, education_share: 46 });
   });
 
+  it("picks the most common level even when O*NET flags its share, and then hides the share", () => {
+    // Registered Nurses in O*NET 31.0: bachelor's 55.92% is flagged "Recommend Suppress".
+    const header = detailFiles.education.split("\r\n")[0];
+    const row = (category: number, value: string, suppress: string) =>
+      `29-1141.00,Registered Nurses,2.D.1,Required Level of Education,RL,Required Level Of Education (Categories 1-12),${category},${value},28,1,,,${suppress},08/2023,Incumbent`;
+    const education = [header, row(3, "22.50", "N"), row(5, "19.39", "N"), row(6, "55.92", "Y")].join("\r\n");
+    const nurses = buildDetails({ ...detailFiles, education }, noMinimums).get("29-1141.00")!;
+    expect(nurses).toMatchObject({ education_level: 6, education_share: null });
+  });
+
   it("keeps the 8 most important core tasks, most important first", () => {
     expect(ceo.tasks).toHaveLength(8);
     expect(ceo.tasks[0]).toBe(
