@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { getCurrentUser } from "@/lib/auth/dal";
 
-// 44px tall tap targets (DESIGN.md "Spacing and shape").
-const navLink = "inline-flex min-h-11 items-center";
+// 44px tall tap targets (DESIGN.md "Spacing and shape"). Navigation links are
+// the one place links aren't underlined at rest: in the header, everything
+// is a link, so the underline only adds noise (underlined on hover and focus).
+const navLink = "inline-flex min-h-11 items-center no-underline hover:underline focus-visible:underline";
 
 /**
  * Site header from DESIGN.md "Page frame": the wordmark, then account links.
@@ -43,14 +45,15 @@ async function AccountLinks() {
   }
 
   return (
-    // Wraps instead of overflowing on the narrowest phones (320px leaves ~1px spare).
-    <ul className="flex flex-wrap items-center justify-end gap-x-4">
+    // Phones get "Sign in" only, so the header stays on one line; the sign-in
+    // page links to "Create an account". Both show from 640px.
+    <ul className="flex items-center justify-end gap-x-4">
       <li>
         <Link href="/sign-in" className={navLink}>
           Sign in
         </Link>
       </li>
-      <li>
+      <li className="hidden sm:block">
         <Link href="/sign-up" className={navLink}>
           Create account
         </Link>
@@ -65,7 +68,7 @@ function AccountLinksSkeleton() {
     <div className="flex min-h-11 items-center gap-4" aria-busy="true">
       <span className="sr-only">Loading account links</span>
       <span aria-hidden="true" className="h-3 w-14 bg-border-subtle" />
-      <span aria-hidden="true" className="h-3 w-28 bg-border-subtle" />
+      <span aria-hidden="true" className="hidden h-3 w-28 bg-border-subtle sm:block" />
     </div>
   );
 }

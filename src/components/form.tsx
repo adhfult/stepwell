@@ -160,16 +160,19 @@ export function ErrorSummary({ items }: { items: SummaryItem[] }) {
   if (items.length === 0) return null;
 
   return (
+    // Focus is only moved here so screen readers start at the problems; it's
+    // not a control, so it draws no focus outline on top of its red border.
     <div
       ref={ref}
       tabIndex={-1}
       aria-labelledby="error-summary-title"
-      className="border-2 border-accent bg-surface p-4"
+      className="border-2 border-accent bg-surface p-4 focus:outline-none"
     >
-      <h2 id="error-summary-title" className="text-lg font-bold">
-        Please fix these and try again
+      {/* Body font, not a big heading: clear without shouting. */}
+      <h2 id="error-summary-title" className="font-body text-base font-bold">
+        There’s a problem
       </h2>
-      <ul className="mt-3 space-y-2">
+      <ul className="mt-2 space-y-1">
         {items.map(({ fieldId, message }) => (
           <li key={fieldId ?? message}>
             {fieldId ? (
@@ -194,32 +197,36 @@ export function ErrorSummary({ items }: { items: SummaryItem[] }) {
 }
 
 /**
- * A panel that replaces a form once it's done (such as "Check your email").
- * It takes focus so keyboard and screen reader users land on the news
- * instead of on nothing (the button they pressed is gone).
+ * A panel with news: a form's result (such as "Check your email") or a page
+ * state (such as "Open a reset link first"). With autoFocus, used when it
+ * replaces a form, it takes focus so keyboard and screen reader users land on
+ * the news instead of on nothing (the button they pressed is gone).
  */
 export function ResultPanel({
   title,
   tone = "info",
+  autoFocus = false,
   children,
 }: {
   title: string;
   /** "error" uses DESIGN.md's error state: a 2px accent border on all four sides. */
   tone?: "info" | "error";
+  /** Take focus when shown: only when it replaces a form after an action, never on page load. */
+  autoFocus?: boolean;
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    ref.current?.focus();
-  }, []);
+    if (autoFocus) ref.current?.focus();
+  }, [autoFocus]);
 
   return (
     <div
       ref={ref}
-      tabIndex={-1}
+      tabIndex={autoFocus ? -1 : undefined}
       aria-labelledby="result-title"
-      className={`mt-8 bg-surface p-4 lg:p-6 ${tone === "error" ? "border-2 border-accent" : "border border-border-subtle"}`}
+      className={`mt-8 bg-surface p-4 focus:outline-none lg:p-6 ${tone === "error" ? "border-2 border-accent" : "border border-border-subtle"}`}
     >
       <h2 id="result-title" className="text-lg font-bold">
         {title}

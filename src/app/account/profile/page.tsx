@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Page, PageTitle } from "@/components/page";
 import { requireUser } from "@/lib/auth/dal";
 import { getMyProfile, isProfileComplete } from "@/lib/profile/data";
 import { ProfileForm } from "./profile-form";
@@ -12,10 +13,10 @@ export default async function ProfilePage() {
   const profile = await getMyProfile();
 
   return (
-    <div className="mx-auto max-w-md px-6 py-12 lg:py-16">
-      <h1 className="text-2xl font-bold sm:text-3xl">
+    <Page width="form">
+      <PageTitle>
         {isProfileComplete(profile) ? "Edit your profile" : "Set up your profile"}
-      </h1>
+      </PageTitle>
       <p className="mt-4">
         Stepwell uses this to suggest careers, programs and colleges that fit you. You can change it anytime.
       </p>
@@ -31,6 +32,6 @@ export default async function ProfilePage() {
       <p className="mt-8">
         <Link href="/account">Back to your account</Link>
       </p>
-    </div>
+    </Page>
   );
 }

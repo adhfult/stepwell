@@ -60,10 +60,14 @@ Rules:
 |---|---|---|---|
 | `text-sm` | 14px | 1.55 | Source lines, help text, tags (minimum size) |
 | `text-base` | 17px | 1.55 | Body, buttons, form fields |
-| `text-lg` | 21px | 1.2 | Card and list titles, small headings |
-| `text-xl` | 27px | 1.2 | Section headings, key numbers |
-| `text-2xl` | 33px | 1.2 | Page headings (phone) |
-| `text-3xl` | 42px | 1.2 | Page headings (640px and wider) |
+| `text-lg` | 21px | 1.2 | Section headings, panel and list titles |
+| `text-xl` | 27px | 1.2 | Page headings on phones, key numbers |
+| `text-2xl` | 33px | 1.2 | Page headings from 640px |
+| `text-3xl` | 42px | 1.2 | Page headings from 1024px |
+
+- Page headings use `<PageTitle>` (`src/components/page.tsx`): 27px on
+  phones, 33px from 640px, 42px from 1024px. Section headings inside a page
+  are `text-lg`, so they never compete with the page title.
 
 - Sentence case everywhere. No all-caps labels, no letter-spaced eyebrows.
 - One `h1` per page; heading levels never skip (h2 after h1, h3 after h2).
@@ -87,8 +91,13 @@ Rules:
   Privacy) at most 672px (`max-w-2xl`); short form pages (sign-up, sign-in,
   password) at most 448px (`max-w-md`); browsing pages (search results,
   college comparison, the plan) at most 1024px (`max-w-5xl`).
-- Vertical rhythm: 16px between paragraphs, 48px between page sections on
-  phones (`py-12`), 64px from 1024px (`lg:py-16`).
+- Every page's content sits in `<Page>` (`src/components/page.tsx`, widths
+  `reading`, `form`, `browse`), which sets the widths above and the top and
+  bottom space: 32px on phones, 48px from 640px, 64px from 1024px.
+- Vertical rhythm: 16px between paragraphs, 40 to 48px between sections.
+- Phones are judged at 320 to 390px wide, not only "no sideways scrolling":
+  a page should show its heading and the start of its content without
+  clutter (added after the 2026-09-28 mobile pass).
 - One column on phones. From 1024px a browsing page may add one side column
   (filters, or the route line), never more than two columns.
 
@@ -100,7 +109,10 @@ Rules:
   "Stepwell" in Bitter bold `text-lg`, linking home, on the left. Main links
   on the right: Careers, Colleges, Scholarships, Opportunities, My plan. On
   phones these collapse behind a text button labeled "Menu" (no hamburger
-  icon). The signed-in student's account link is last.
+  icon). The signed-in student's account link is last. Until those pages
+  exist, phones show only "Sign in" (or "Account"), so the header stays on
+  one line at 320px; "Create account" joins from 640px (the sign-in page
+  links to it).
 - **Footer** (on `surface`, top `border-subtle` divider): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
   sources. Required before launch; links are added only when their pages exist.
@@ -116,7 +128,11 @@ Rules:
 - Links to other sites say so in the text: "Apply on the sponsor's site".
   They open in the same tab.
 - Base styles for links live in `globals.css`; components only override
-  them for the header wordmark and navigation.
+  them for the header wordmark and navigation. Header navigation links are
+  not underlined at rest (everything there is a link, so underlines only add
+  noise); they underline on hover and keyboard focus.
+- Long email addresses use `break-words`, so they wrap at a hyphen or move
+  to the next line instead of breaking mid-word.
 
 ### Buttons
 All buttons: at least 44px tall, `px-4`, `rounded-control`, `text-base`
@@ -150,8 +166,15 @@ bold, sentence case, a verb that names the action ("Save career", not
   clickable.
 - Errors: the field gets a 2px `accent` border and `aria-invalid="true"`;
   the message sits below it in `accent` text and starts with "Error:". When
-  a form is submitted with problems, a panel at the top lists each one as a
-  link to its field and receives focus.
+  a form is submitted with problems, a panel at the top (2px `accent`
+  border, heading "There’s a problem" in bold body text, not a big serif
+  heading) lists each one as a link to its field and receives focus.
+- A form's intro sentence and its footer links ("Already have an account?")
+  belong to the form: when a result panel replaces the form, they go too,
+  so only the result is on screen.
+- Result panels take focus only when they replace a form after an action,
+  never on page load. Panels that take focus programmatically draw no
+  focus outline (they aren't controls; the outline doubled their border).
 - Sensitive questions (scholarship eligibility): each explains in one
   sentence why it is asked and offers "Prefer not to say" as a real choice.
 

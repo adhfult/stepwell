@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Page, PageTitle } from "@/components/page";
 import { ResultPanel } from "@/components/form";
 import { ConfirmForm } from "./confirm-form";
 import { LinkHelp } from "./link-help";
@@ -20,22 +21,21 @@ export default async function ConfirmPage({ searchParams }: PageProps<"/auth/con
 
   if (!kind || !tokenHash) {
     return (
-      <div className="mx-auto max-w-md px-6 py-12 lg:py-16">
-        <h1 className="text-2xl font-bold sm:text-3xl">Check your link</h1>
+      <Page width="form">
+        <PageTitle>Check your link</PageTitle>
         <ResultPanel title="This link isn’t complete" tone="error">
           <p>It may have been cut off when it was copied. Open the link straight from the email instead.</p>
           <LinkHelp kind={kind ?? "email"} />
         </ResultPanel>
-      </div>
+      </Page>
     );
   }
 
   const copy = linkKinds[kind];
   return (
-    <div className="mx-auto max-w-md px-6 py-12 lg:py-16">
-      <h1 className="text-2xl font-bold sm:text-3xl">{copy.title}</h1>
-      <p className="mt-4">{copy.intro}</p>
+    <Page width="form">
+      <PageTitle>{copy.title}</PageTitle>
       <ConfirmForm kind={kind} tokenHash={tokenHash} next={next} />
-    </div>
+    </Page>
   );
 }

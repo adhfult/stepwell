@@ -18,7 +18,7 @@ export function SetPasswordForm() {
 
   if (state.status === "saved") {
     return (
-      <ResultPanel title="Password changed">
+      <ResultPanel title="Password changed" autoFocus>
         <p>You’re still signed in here. Any other devices will be signed out within the hour.</p>
         <p>
           <Link href="/account">Go to your account</Link>

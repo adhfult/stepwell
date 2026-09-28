@@ -1,7 +1,7 @@
 /** Skeleton shaped like the account page; no shimmer (DESIGN.md "States"). */
 export default function AccountLoading() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-12 lg:py-16" aria-busy="true">
+    <div className="mx-auto max-w-2xl px-6 py-8 sm:py-12 lg:px-8 lg:py-16" aria-busy="true">
       <p className="sr-only">Loading your account</p>
       <div aria-hidden="true">
         <div className="h-8 w-56 bg-border-subtle sm:h-10" />

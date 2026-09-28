@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Page, PageTitle } from "@/components/page";
 import { buttonClass } from "@/components/button-styles";
 import { SubmitButton } from "@/components/form";
 import { requireUser } from "@/lib/auth/dal";
@@ -14,8 +15,8 @@ export default async function AccountPage() {
   const profile = await getMyProfile();
 
   return (
-    <div className="mx-auto max-w-2xl px-6 py-12 lg:py-16">
-      <h1 className="text-2xl font-bold sm:text-3xl">Your account</h1>
+    <Page>
+      <PageTitle>Your account</PageTitle>
       {profile?.nickname && <p className="mt-4 text-lg">Hi, {profile.nickname}.</p>}
 
       <section aria-labelledby="profile-heading" className="mt-10">
@@ -23,11 +24,11 @@ export default async function AccountPage() {
       </section>
 
       <section aria-labelledby="signing-in-heading" className="mt-12">
-        <h2 id="signing-in-heading" className="text-xl font-bold">
+        <h2 id="signing-in-heading" className="text-lg font-bold">
           Signing in
         </h2>
         <p className="mt-3">
-          Signed in as <strong className="break-all">{user.email}</strong>.
+          Signed in as <strong className="break-words">{user.email}</strong>.
         </p>
         <p className="mt-3">
           Want a new password? <Link href="/forgot-password">Reset your password</Link> and we’ll email you a link.
@@ -40,7 +41,7 @@ export default async function AccountPage() {
       </section>
 
       <section aria-labelledby="leaving-heading" className="mt-12">
-        <h2 id="leaving-heading" className="text-xl font-bold">
+        <h2 id="leaving-heading" className="text-lg font-bold">
           Leaving Stepwell
         </h2>
         <p className="mt-3">
@@ -48,7 +49,7 @@ export default async function AccountPage() {
           <Link href="/account/delete">Delete my account</Link>
         </p>
       </section>
-    </div>
+    </Page>
   );
 }
 
@@ -84,7 +85,7 @@ function ProfileSummary({ profile }: { profile: Profile }) {
   return (
     <>
       <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-        <h2 id="profile-heading" className="text-xl font-bold">
+        <h2 id="profile-heading" className="text-lg font-bold">
           Your profile
         </h2>
         <Link href="/account/profile" className="inline-flex min-h-11 items-center">

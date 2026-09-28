@@ -18,9 +18,9 @@ export function ForgotPasswordForm() {
 
   if (state.status === "sent") {
     return (
-      <ResultPanel title="Check your email">
+      <ResultPanel title="Check your email" autoFocus>
         <p>
-          If <strong className="break-all">{state.email}</strong> has a Stepwell account, we sent it a link to choose
+          If <strong className="break-words">{state.email}</strong> has a Stepwell account, we sent it a link to choose
           a new password.
         </p>
         <p className="text-sm text-muted">
@@ -31,21 +31,30 @@ export function ForgotPasswordForm() {
     );
   }
 
+  // The intro and footer belong to the form, so they go when the result shows.
   return (
-    <form action={formAction} noValidate className="mt-8 space-y-6">
-      <ErrorSummary items={errors} />
-      <TextField
-        id="email"
-        label="Email address"
-        type="email"
-        autoComplete="email"
-        autoCapitalize="none"
-        spellCheck={false}
-        required
-        defaultValue={state.email}
-        error={state.emailError}
-      />
-      <SubmitButton pendingLabel="Sending">Send reset link</SubmitButton>
-    </form>
+    <>
+      <p className="mt-4">
+        Enter the email address for your Stepwell account. We’ll send a link to choose a new password.
+      </p>
+      <form action={formAction} noValidate className="mt-8 space-y-6">
+        <ErrorSummary items={errors} />
+        <TextField
+          id="email"
+          label="Email address"
+          type="email"
+          autoComplete="email"
+          autoCapitalize="none"
+          spellCheck={false}
+          required
+          defaultValue={state.email}
+          error={state.emailError}
+        />
+        <SubmitButton pendingLabel="Sending">Send reset link</SubmitButton>
+      </form>
+      <p className="mt-8">
+        Remembered it? <Link href="/sign-in">Sign in</Link>
+      </p>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Page, PageTitle } from "@/components/page";
 import { buttonClass } from "@/components/button-styles";
 import { ResultPanel } from "@/components/form";
 import { requireUser, signedInByEmailLinkRecently } from "@/lib/auth/dal";
@@ -13,8 +14,8 @@ export default async function SetPasswordPage() {
   const allowed = await signedInByEmailLinkRecently();
 
   return (
-    <div className="mx-auto max-w-md px-6 py-12 lg:py-16">
-      <h1 className="text-2xl font-bold sm:text-3xl">Choose a new password</h1>
+    <Page width="form">
+      <PageTitle>Choose a new password</PageTitle>
       {allowed ? (
         <SetPasswordForm />
       ) : (
@@ -32,6 +33,6 @@ export default async function SetPasswordPage() {
       <p className="mt-8">
         <Link href="/account">Back to your account</Link>
       </p>
-    </div>
+    </Page>
   );
 }
