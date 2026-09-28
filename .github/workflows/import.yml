@@ -1,0 +1,70 @@
+name: Import data
+
+# Daily import of every due source (docs/specs/data-pipeline.md). A failed
+# run emails whoever last edited this schedule. Setup: docs/LAUNCH.md.
+on:
+  schedule:
+    # An odd minute: runs at the top of the hour are more often delayed.
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "One source to import (blank = every due source)"
+        required: false
+        default: ""
+      force:
+        description: "Import even if the source looks unchanged"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check setup
+        id: setup
+        env:
+          IMPORT_DATABASE_URL: ${{ secrets.IMPORT_DATABASE_URL }}
+        run: |
+          if [ -z "$IMPORT_DATABASE_URL" ]; then
+            echo "::notice::IMPORT_DATABASE_URL isn't set yet, so nothing was imported (docs/LAUNCH.md)."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.setup.outputs.ready == 'true'
+        uses: actions/checkout@v7
+      - if: steps.setup.outputs.ready == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - if: steps.setup.outputs.ready == 'true'
+        run: npm ci --omit=dev
+
+      - name: Import
+        if: steps.setup.outputs.ready == 'true'
+        env:
+          IMPORT_DATABASE_URL: ${{ secrets.IMPORT_DATABASE_URL }}
+          IMPORT_CONTACT: ${{ vars.IMPORT_CONTACT }}
+          # Inputs pass through env, never pasted into the script.
+          SOURCE: ${{ inputs.source }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          echo "### Import results" >> "$GITHUB_STEP_SUMMARY"
+          flags=()
+          if [ "$FORCE" = "true" ]; then flags+=(--force); fi
+          if [ -n "$SOURCE" ]; then
+            npm run import -- "$SOURCE" "${flags[@]}"
+          else
+            npm run import -- --due "${flags[@]}"
+          fi

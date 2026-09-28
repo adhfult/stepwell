@@ -7,6 +7,11 @@ begin;
 create extension if not exists pgtap with schema extensions;
 select plan(31);
 
+-- Start from an empty pipeline, whatever local imports have loaded.
+delete from public.occupations;
+delete from ingest.import_runs;
+update public.sources set last_success_at = null, last_etag = null, last_release = null;
+
 -- Tables and public access
 select ok(
   (select relrowsecurity from pg_class where oid = 'public.sources'::regclass),
