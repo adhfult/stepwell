@@ -17,7 +17,10 @@ export default async function SignInPage({ searchParams }: PageProps<"/sign-in">
     <div className="mx-auto max-w-md px-6 py-12 lg:py-16">
       <h1 className="text-2xl font-bold sm:text-3xl">Sign in</h1>
       <SignInForm next={next} />
-      <p className="mt-8">
+      <p className="mt-6">
+        <Link href="/forgot-password">Forgot your password?</Link>
+      </p>
+      <p className="mt-4">
         New to Stepwell? <Link href="/sign-up">Create an account</Link>
       </p>
     </div>

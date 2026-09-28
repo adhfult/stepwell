@@ -253,6 +253,11 @@ otp_expiry = 3600
 subject = "Confirm your email for Stepwell"
 content_path = "./supabase/templates/confirmation.html"
 
+# Stepwell: password reset links use the same button page, then /account/password.
+[auth.email.template.recovery]
+subject = "Reset your Stepwell password"
+content_path = "./supabase/templates/recovery.html"
+
 # Uncomment to customize notification email template
 # [auth.email.notification.password_changed]
 # enabled = true

@@ -29,6 +29,9 @@ export default async function AccountPage() {
         <p className="mt-3">
           Signed in as <strong className="break-all">{user.email}</strong>.
         </p>
+        <p className="mt-3">
+          Want a new password? <Link href="/forgot-password">Reset your password</Link> and we’ll email you a link.
+        </p>
         <form action={signOut} className="mt-4">
           <SubmitButton variant="secondary" pendingLabel="Signing out">
             Sign out
