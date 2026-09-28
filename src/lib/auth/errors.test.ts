@@ -1,5 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { describeLinkError, describeSignUpError } from "./errors";
+import { describeLinkError, describeSignInError, describeSignUpError } from "./errors";
+
+describe("describeSignInError", () => {
+  it("gives one message for a wrong email or password", () => {
+    expect(describeSignInError({ code: "invalid_credentials" })).toBe("Email or password is wrong.");
+  });
+
+  it("explains an unconfirmed account and how to get a new link", () => {
+    expect(describeSignInError({ code: "email_not_confirmed" })).toContain("Confirm your email first");
+  });
+
+  it("falls back without technical details", () => {
+    expect(describeSignInError({ code: "unexpected_failure" })).not.toContain("unexpected_failure");
+  });
+});
 
 describe("describeLinkError", () => {
   it("explains expired or used links without technical details", () => {

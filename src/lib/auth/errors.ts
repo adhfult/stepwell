@@ -12,6 +12,24 @@ export type SignUpOutcome =
   | { kind: "form"; message: string };
 
 /**
+ * Sign-in failures. A wrong email and a wrong password get the same message,
+ * so the form can't be used to find out which addresses have accounts.
+ * Supabase only reports "not confirmed" after the password was right.
+ */
+export function describeSignInError(error: AuthErrorLike): string {
+  switch (error?.code) {
+    case "invalid_credentials":
+      return "Email or password is wrong.";
+    case "email_not_confirmed":
+      return "Confirm your email first. Use the link we sent you, or sign up again with the same address to get a new one.";
+    case "over_request_rate_limit":
+      return "Too many tries in a short time. Wait a few minutes, then try again.";
+    default:
+      return "We couldn’t sign you in just now. Please try again in a few minutes.";
+  }
+}
+
+/**
  * A confirmation or reset link that didn't work. Expired and already-used
  * links look the same to Supabase (`otp_expired`), and scanners in school
  * email sometimes use a link up, so the advice covers both.

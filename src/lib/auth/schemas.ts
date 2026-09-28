@@ -19,6 +19,15 @@ export const newPasswordSchema = z
   .min(8, { error: "Use at least 8 characters" })
   .max(72, { error: "Use 72 characters or fewer" });
 
+/**
+ * Sign-in only checks that something was typed; the password rules are for
+ * choosing a password, and repeating them here would just hint at them.
+ */
+export const signInSchema = z.object({
+  email: emailSchema,
+  password: z.string().min(1, { error: "Enter your password" }).max(1000, { error: "Enter your password" }),
+});
+
 const birthDateError = "Choose the month and year you were born";
 
 /** Sign-up fields. `now` sets which birth years are offered (this year and 100 before). */

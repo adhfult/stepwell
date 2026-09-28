@@ -1,6 +1,20 @@
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
-import { makeSignUpSchema } from "./schemas";
+import { makeSignUpSchema, signInSchema } from "./schemas";
+
+describe("sign-in schema", () => {
+  it("accepts any non-empty password and normalizes the email", () => {
+    const result = signInSchema.safeParse({ email: " Sam@Example.com", password: "x" });
+    expect(result.success && result.data).toEqual({ email: "sam@example.com", password: "x" });
+  });
+
+  it("asks for both fields when they're empty", () => {
+    const result = signInSchema.safeParse({ email: "", password: "" });
+    const errors = result.success ? {} : z.flattenError(result.error).fieldErrors;
+    expect(errors.email).toBeDefined();
+    expect(errors.password).toEqual(["Enter your password"]);
+  });
+});
 
 const schema = makeSignUpSchema(new Date(Date.UTC(2026, 8, 15)));
 const valid = { email: "sam@example.com", password: "correct-horse-9", birthMonth: "3", birthYear: "2010" };
