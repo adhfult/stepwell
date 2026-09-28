@@ -42,7 +42,9 @@ Database
 - [ ] `public.sources` (reference data, public read): slug, name, kind (api,
       dataset, scrape, manual), homepage, terms URL, `terms_checked_at`,
       `allowed`, pause reason, refresh interval, attribution text, last
-      successful run. Seeded in the migration with the O*NET row.
+      successful run, and what the last run saw (`last_etag`,
+      `last_release`) for the "unchanged" check. Seeded in the migration
+      with the O*NET row.
 - [ ] `ingest.import_runs`: source, start and end times, status (running,
       succeeded, failed, aborted, unchanged), counts (seen, new, changed,
       removed, rejected), error message.
@@ -52,7 +54,9 @@ Database
       `onet_code` primary key with a format check, computed `soc_code`,
       title, description, O*NET release, `source_id`, `retrieved_at`. RLS
       on, one read policy for `anon, authenticated`, select granted to them.
-- [ ] `importer` login role, created without a password in the migration.
+- [ ] `importer` login role, created without a password in the migration,
+      and only if it doesn't exist yet (roles belong to the whole server,
+      so a local `db reset` can find it already there).
       It may only execute the `ingest` functions below (all `security
       definer`, `set search_path = ''`, execute revoked from `public`):
       start a run, stage records, merge occupations, finish a run.
@@ -89,8 +93,9 @@ Runner and O*NET adapter (`src/jobs/`)
       ends as "unchanged" without merging.
 - [ ] Circuit breaker before merging: abort (students keep the last good
       data) if valid records are under 50% of the last successful run, more
-      than 20% are rejected, or there are none.
-- [ ] `src/app` can't import `src/jobs` (ESLint `no-restricted-imports`);
+      than 20% are rejected, or there are none. The 50% rule is skipped when
+      the source has never succeeded (first run).
+- [ ] Nothing outside `src/jobs` can import it (ESLint `no-restricted-imports`);
       settings are read and validated with zod only in `src/jobs/env.ts`.
 
 Schedule (`.github/workflows/import.yml`)
