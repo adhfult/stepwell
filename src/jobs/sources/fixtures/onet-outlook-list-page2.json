@@ -1,0 +1,9 @@
+{
+  "start": 3,
+  "end": 3,
+  "total": 3,
+  "prev": "https://api-v2.onetcenter.org/mnm/careers/?start=1&end=2",
+  "career": [
+    { "href": "https://api-v2.onetcenter.org/mnm/careers/49-9021.01/", "code": "49-9021.01", "title": "Heating & Air Conditioning Mechanics", "tags": { "bright_outlook": true } }
+  ]
+}

@@ -12,7 +12,7 @@ export type FetchResult = {
 };
 
 export type Fetcher = {
-  get(url: string, options?: { etag?: string | null }): Promise<FetchResult>;
+  get(url: string, options?: { etag?: string | null; headers?: Record<string, string> }): Promise<FetchResult>;
   requestCount(): number;
 };
 
@@ -86,7 +86,7 @@ export function createPoliteFetcher({
   return {
     requestCount: () => requests,
 
-    async get(rawUrl, { etag } = {}) {
+    async get(rawUrl, { etag, headers: extraHeaders = {} } = {}) {
       const url = new URL(rawUrl);
       if (url.protocol !== "https:") throw new Error(`Only https is fetched: ${rawUrl}`);
 
@@ -96,7 +96,8 @@ export function createPoliteFetcher({
       }
       const crawlDelayMs = (robots?.getCrawlDelay(ROBOT_NAME) ?? 0) * 1000;
       const delayMs = Math.max(minDelayMs, crawlDelayMs);
-      const headers: Record<string, string> = etag ? { "If-None-Match": etag } : {};
+      // Extra headers (such as an API key) go only to the page itself, never to robots.txt.
+      const headers: Record<string, string> = { ...extraHeaders, ...(etag ? { "If-None-Match": etag } : {}) };
 
       for (let attempt = 0; ; attempt++) {
         let response: Response | null = null;

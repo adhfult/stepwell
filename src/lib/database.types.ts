@@ -42,6 +42,31 @@ isOneToOne: true
       referencedColumns: ["onet_code"]
     }
                   ]
+                },"occupation_outlook": {
+                  Row: {
+                    "annual_high": number | null,"annual_low": number | null,"annual_median": number | null,"bright_reasons": (string)[],"hourly_high": number | null,"hourly_low": number | null,"hourly_median": number | null,"onet_code": string,"or_more": (string)[],"outlook": string,"retrieved_at": string,"source_id": string,"wage_soc_code": string | null
+                  }
+                  Insert: {
+                    "annual_high"?: number | null,"annual_low"?: number | null,"annual_median"?: number | null,"bright_reasons"?: (string)[],"hourly_high"?: number | null,"hourly_low"?: number | null,"hourly_median"?: number | null,"onet_code": string,"or_more"?: (string)[],"outlook": string,"retrieved_at": string,"source_id"?: string,"wage_soc_code"?: string | null
+                  }
+                  Update: {
+                    "annual_high"?: number | null,"annual_low"?: number | null,"annual_median"?: number | null,"bright_reasons"?: (string)[],"hourly_high"?: number | null,"hourly_low"?: number | null,"hourly_median"?: number | null,"onet_code"?: string,"or_more"?: (string)[],"outlook"?: string,"retrieved_at"?: string,"source_id"?: string,"wage_soc_code"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_outlook_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: true
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    },{
+      foreignKeyName: "occupation_outlook_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"occupation_related": {
                   Row: {
                     "onet_code": string,"rank": number,"related_code": string,"tier": string

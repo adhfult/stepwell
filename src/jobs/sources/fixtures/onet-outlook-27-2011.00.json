@@ -1,0 +1,4 @@
+{
+  "outlook": { "category": "Below Average", "description": "New job opportunities are less likely in the future." },
+  "salary": { "soc_code": "27-2011", "hourly_10th_percentile": 13.02, "hourly_median": 23.94, "hourly_90th_percentile_over": 115 }
+}

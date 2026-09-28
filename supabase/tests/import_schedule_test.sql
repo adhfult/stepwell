@@ -8,6 +8,8 @@ select plan(12);
 -- (pgTAP lives in the extensions schema; this grant is rolled back with the test.)
 grant usage on schema extensions to importer;
 
+-- Only onet takes part, whatever other sources exist.
+update public.sources set allowed = false where id <> 'onet';
 update public.sources set last_success_at = null where id = 'onet';
 select is(
   (select array_agg(s) from ingest.due_sources() s),

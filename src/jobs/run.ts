@@ -7,10 +7,11 @@
 import { appendFileSync } from "node:fs";
 import type pg from "pg";
 import { breakerReason } from "./breaker.ts";
-import { parseJobEnv } from "./env.ts";
+import { type JobEnv, parseJobEnv } from "./env.ts";
 import { createPoliteFetcher, type Fetcher, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
 import { databaseClient, finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
 import { readOnet } from "./sources/onet.ts";
+import { OUTLOOK_DELAY_MS, readOnetOutlook } from "./sources/onet-outlook.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
 type Adapter = {
@@ -18,12 +19,22 @@ type Adapter = {
   read: (
     fetcher: Fetcher,
     previous: { etag: string | null; release: string | null },
+    env: JobEnv,
   ) => Promise<AdapterResult<unknown>>;
+  /** Wait between requests to one host; official APIs follow their own documented limits. */
+  minDelayMs?: number;
 };
 
+// --due runs sources in this order of id: onet before onet_outlook, whose
+// rows need their careers.
 const ADAPTERS: Record<string, Adapter> = {
-  onet: { kind: "occupation", read: readOnet },
+  onet: { kind: "occupation", read: (fetcher, previous) => readOnet(fetcher, previous) },
+  onet_outlook: { kind: "occupation_outlook", read: readOnetOutlook, minDelayMs: OUTLOOK_DELAY_MS },
 };
+
+function fetcherFor(adapter: Adapter, env: JobEnv) {
+  return createPoliteFetcher({ userAgent: userAgentFor(env.IMPORT_CONTACT), minDelayMs: adapter.minDelayMs });
+}
 
 /** Prints a line, and adds it to the GitHub Actions job summary when there is one. */
 function report(line: string, isError = false) {
@@ -32,7 +43,7 @@ function report(line: string, isError = false) {
   if (summary) appendFileSync(summary, `- ${line}\n`);
 }
 
-async function importSource(db: pg.Client, fetcher: Fetcher, source: string, force: boolean) {
+async function importSource(db: pg.Client, env: JobEnv, source: string, force: boolean) {
   const adapter = ADAPTERS[source];
   if (!adapter) {
     report(`${source}: no adapter in src/jobs/run.ts`, true);
@@ -48,7 +59,7 @@ async function importSource(db: pg.Client, fetcher: Fetcher, source: string, for
     const previous = force
       ? { etag: null, release: null }
       : { etag: run.lastEtag, release: run.lastRelease };
-    const result = await adapter.read(fetcher, previous);
+    const result = await adapter.read(fetcherFor(adapter, env), previous, env);
     if (result.status === "unchanged") {
       await finishRun(db, run.runId, { status: "unchanged", release: result.release, etag: result.etag });
       report(`${source}: unchanged (release ${result.release})`);
@@ -70,7 +81,7 @@ async function importSource(db: pg.Client, fetcher: Fetcher, source: string, for
     const merged = await merge(db, adapter.kind, run.runId, result.release);
     await finishRun(db, run.runId, { status: "succeeded", ...counts, ...merged });
     report(
-      `${source} ${result.release ?? ""}: ${counts.seen} seen, ${rejected} rejected, ` +
+      `${source}${result.release ? ` ${result.release}` : ""}: ${counts.seen} seen, ${rejected} rejected, ` +
         `${merged.added} added, ${merged.changed} changed, ${merged.removed} removed`,
     );
     return true;
@@ -83,8 +94,8 @@ async function importSource(db: pg.Client, fetcher: Fetcher, source: string, for
   }
 }
 
-async function dryRun(fetcher: Fetcher, source: string, adapter: Adapter) {
-  const result = await adapter.read(fetcher, { etag: null, release: null });
+async function dryRun(env: JobEnv, source: string, adapter: Adapter) {
+  const result = await adapter.read(fetcherFor(adapter, env), { etag: null, release: null }, env);
   if (result.status === "unchanged") throw new Error("A dry run never sends an ETag");
   const valid = result.records.filter((r) => r.status === "valid");
   const rejected = result.records.filter((r) => r.status === "rejected");
@@ -108,22 +119,21 @@ async function main(argv: string[]) {
   }
 
   const env = parseJobEnv(process.env);
-  const fetcher = createPoliteFetcher({ userAgent: userAgentFor(env.IMPORT_CONTACT) });
 
   if (source && argv.includes("--dry-run")) {
-    await dryRun(fetcher, source, ADAPTERS[source]);
+    await dryRun(env, source, ADAPTERS[source]);
     return 0;
   }
 
   const db = databaseClient(env.IMPORT_DATABASE_URL);
   await db.connect();
   try {
-    if (source) return (await importSource(db, fetcher, source, force)) ? 0 : 1;
+    if (source) return (await importSource(db, env, source, force)) ? 0 : 1;
 
     const { rows: dueRows } = await db.query<{ id: string }>("select s as id from ingest.due_sources() s");
     if (dueRows.length === 0) report("No sources due.");
     let ok = true;
-    for (const { id } of dueRows) ok = (await importSource(db, fetcher, id, force)) && ok;
+    for (const { id } of dueRows) ok = (await importSource(db, env, id, force)) && ok;
 
     // Freshness check: fail (so GitHub emails) if a source keeps failing.
     const { rows: stale } = await db.query<{ source_id: string; last_success_at: Date | null }>(

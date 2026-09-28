@@ -103,6 +103,13 @@ describe("createPoliteFetcher", () => {
     await expect(fetcher.get("https://example.gov/a")).rejects.toThrow("robots.txt");
   });
 
+  it("sends extra headers to the page but not to robots.txt", async () => {
+    const { fetcher, calls } = setup({ ...robots(""), "https://example.gov/a": [ok()] });
+    await fetcher.get("https://example.gov/a", { headers: { "X-API-Key": "k" } });
+    expect(calls[0].headers["X-API-Key"]).toBeUndefined();
+    expect(calls[1].headers["X-API-Key"]).toBe("k");
+  });
+
   it("sends the last ETag and returns 304 with an empty body", async () => {
     const { fetcher, calls } = setup({ ...robots(""), "https://example.gov/a": [status(304)] });
     const result = await fetcher.get("https://example.gov/a", { etag: '"1"' });

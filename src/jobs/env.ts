@@ -12,6 +12,8 @@ const schema = z
       .startsWith("postgresql://")
       .refine((url) => !url.includes("sslmode="), "leave sslmode out (TLS is set in load.ts)")
       .default(LOCAL_DATABASE_URL),
+    // O*NET Web Services (pay and outlook). Only the onet_outlook source needs it.
+    ONET_API_KEY: z.string().min(10).optional(),
     // A contact address for the User-Agent, sent to every site we read.
     IMPORT_CONTACT: z.string().min(3).optional(),
     CI: z.string().optional(),

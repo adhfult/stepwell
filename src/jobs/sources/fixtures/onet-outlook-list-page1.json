@@ -1,0 +1,10 @@
+{
+  "start": 1,
+  "end": 2,
+  "total": 3,
+  "next": "https://api-v2.onetcenter.org/mnm/careers/?start=3&end=4",
+  "career": [
+    { "href": "https://api-v2.onetcenter.org/mnm/careers/13-2011.00/", "code": "13-2011.00", "title": "Accountants & Auditors", "tags": { "bright_outlook": true } },
+    { "href": "https://api-v2.onetcenter.org/mnm/careers/27-2011.00/", "code": "27-2011.00", "title": "Actors", "tags": {} }
+  ]
+}

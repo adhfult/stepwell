@@ -63,14 +63,22 @@ export async function stageRecords<T>(
 }
 
 // Merge functions by record kind. A fixed list, so no SQL is ever built from input.
-const MERGE_SQL = {
-  occupation: "select added, changed, removed from ingest.merge_occupations($1, $2)",
+const MERGE = {
+  occupation: (runId: number, release: string | null) => ({
+    sql: "select added, changed, removed from ingest.merge_occupations($1, $2)",
+    params: [runId, release],
+  }),
+  occupation_outlook: (runId: number) => ({
+    sql: "select added, changed, removed from ingest.merge_occupation_outlook($1)",
+    params: [runId],
+  }),
 } as const;
 
-export type RecordKind = keyof typeof MERGE_SQL;
+export type RecordKind = keyof typeof MERGE;
 
 export async function merge(db: pg.Client, kind: RecordKind, runId: number, release: string | null) {
-  const { rows } = await db.query(MERGE_SQL[kind], [runId, release]);
+  const { sql, params } = MERGE[kind](runId, release);
+  const { rows } = await db.query(sql, params);
   return rows[0] as { added: number; changed: number; removed: number };
 }
 
