@@ -1,0 +1,133 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Page, PageTitle } from "@/components/page";
+import { getCurrentUser } from "@/lib/auth/dal";
+import { getCareer, isCareerSaved } from "@/lib/careers/data";
+import { onetCodeSchema, preparation, typicalEducation } from "@/lib/careers/labels";
+import { OnetSource } from "../source-line";
+import { SaveCareerForm } from "./save-form";
+
+async function careerFor(params: PageProps<"/careers/[code]">["params"]) {
+  const code = onetCodeSchema.safeParse((await params).code);
+  if (!code.success) notFound();
+  const career = await getCareer(code.data);
+  if (!career) notFound();
+  return career;
+}
+
+export async function generateMetadata({ params }: PageProps<"/careers/[code]">): Promise<Metadata> {
+  return { title: (await careerFor(params)).title };
+}
+
+export default async function CareerPage({ params }: PageProps<"/careers/[code]">) {
+  const career = await careerFor(params);
+  const [user, saved] = await Promise.all([getCurrentUser(), isCareerSaved(career.onet_code)]);
+  const education = typicalEducation(career.education_level, career.education_share);
+  const prep = preparation(career.job_zone);
+
+  return (
+    <Page>
+      <p>
+        <Link href="/careers" className="inline-flex min-h-11 items-center">
+          Search careers
+        </Link>
+      </p>
+      <PageTitle>{career.title}</PageTitle>
+      {career.alsoCalled.length > 0 && (
+        <p className="mt-2 text-muted">Also called: {career.alsoCalled.join(", ")}</p>
+      )}
+
+      {career.retired_at && (
+        <div className="mt-6 border border-border-subtle bg-surface p-4 lg:p-6">
+          <h2 className="text-lg font-bold">O*NET no longer lists this career</h2>
+          <p className="mt-3">
+            The newest O*NET release dropped or renamed it. What you see here is from O*NET {career.onet_release}.
+            Search for it again to find its new name.
+          </p>
+        </div>
+      )}
+
+      <p className="mt-6">{career.description}</p>
+
+      {user ? (
+        <SaveCareerForm code={career.onet_code} saved={saved} />
+      ) : (
+        <p className="mt-6">
+          <Link href={`/sign-in?next=${encodeURIComponent(`/careers/${career.onet_code}`)}`}>
+            Sign in to save this career
+          </Link>
+        </p>
+      )}
+
+      <section aria-labelledby="takes-heading" className="mt-12">
+        <h2 id="takes-heading" className="text-lg font-bold">
+          What it takes
+        </h2>
+        <dl className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">
+          <div className="py-3 sm:flex sm:gap-4">
+            <dt className="text-sm text-muted sm:w-48 sm:shrink-0 sm:pt-0.5">Typical education</dt>
+            <dd className="mt-1 sm:mt-0">{education ?? <span className="text-muted">Not reported</span>}</dd>
+          </div>
+          <div className="py-3 sm:flex sm:gap-4">
+            <dt className="text-sm text-muted sm:w-48 sm:shrink-0 sm:pt-0.5">Preparation</dt>
+            <dd className="mt-1 sm:mt-0">
+              {prep ? (
+                <>
+                  <strong>{prep.name}.</strong> {prep.detail}
+                </>
+              ) : (
+                <span className="text-muted">Not reported</span>
+              )}
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      {career.tasks.length > 0 && (
+        <section aria-labelledby="tasks-heading" className="mt-12">
+          <h2 id="tasks-heading" className="text-lg font-bold">
+            What you would do
+          </h2>
+          <ul className="mt-3 list-disc space-y-2 pl-6">
+            {career.tasks.map((task) => (
+              <li key={task}>{task}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {career.skills.length > 0 && (
+        <section aria-labelledby="skills-heading" className="mt-12">
+          <h2 id="skills-heading" className="text-lg font-bold">
+            Skills that matter most
+          </h2>
+          <ul className="mt-3 list-disc space-y-1 pl-6">
+            {career.skills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {career.related.length > 0 && (
+        <section aria-labelledby="related-heading" className="mt-12">
+          <h2 id="related-heading" className="text-lg font-bold">
+            Related careers
+          </h2>
+          <ul className="mt-2">
+            {career.related.map((r) => (
+              <li key={r.onet_code}>
+                <Link href={`/careers/${r.onet_code}`} className="inline-flex min-h-11 items-center">
+                  {r.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <OnetSource release={career.onet_release} retrievedAt={career.retrieved_at} />
+    </Page>
+  );
+}

@@ -1,16 +1,18 @@
+import Link from "next/link";
 import { Page, PageTitle } from "@/components/page";
+import { CareerSearchForm } from "./careers/search-form";
 
-/**
- * Starter page. Replace it once docs/PRODUCT.md and docs/design/DESIGN.md
- * describe what this project is and how it should look.
- */
 export default function Home() {
   return (
     <Page>
       <PageTitle>Stepwell</PageTitle>
-      <p className="mt-4">Helps students connect careers to programs and colleges using official U.S. data.</p>
-      <p className="mt-8 border border-border-subtle bg-surface px-4 py-3 text-sm text-muted">
-        This page is a placeholder. Next steps are in <code>docs/PRODUCT.md</code>.
+      <p className="mt-4">
+        Stepwell helps you see where a career leads: what the work is, what it takes, and which careers are related,
+        using official U.S. government data. It’s free, with no ads.
+      </p>
+      <CareerSearchForm />
+      <p className="mt-6">
+        Or <Link href="/careers">see some careers to start with</Link>.
       </p>
     </Page>
   );

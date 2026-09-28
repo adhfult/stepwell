@@ -4,6 +4,7 @@ import { Page, PageTitle } from "@/components/page";
 import { buttonClass } from "@/components/button-styles";
 import { SubmitButton } from "@/components/form";
 import { requireUser } from "@/lib/auth/dal";
+import { getMySavedCareers } from "@/lib/careers/data";
 import { getMyProfile, isProfileComplete, type Profile } from "@/lib/profile/data";
 import { stageName, stateName } from "@/lib/profile/options";
 import { signOut } from "./actions";
@@ -12,7 +13,7 @@ export const metadata: Metadata = { title: "Your account" };
 
 export default async function AccountPage() {
   const user = await requireUser("/account");
-  const profile = await getMyProfile();
+  const [profile, savedCareers] = await Promise.all([getMyProfile(), getMySavedCareers()]);
 
   return (
     <Page>
@@ -21,6 +22,10 @@ export default async function AccountPage() {
 
       <section aria-labelledby="profile-heading" className="mt-10">
         {isProfileComplete(profile) ? <ProfileSummary profile={profile} /> : <FinishProfile />}
+      </section>
+
+      <section aria-labelledby="saved-heading" className="mt-12">
+        <SavedCareers careers={savedCareers} />
       </section>
 
       <section aria-labelledby="signing-in-heading" className="mt-12">
@@ -50,6 +55,40 @@ export default async function AccountPage() {
         </p>
       </section>
     </Page>
+  );
+}
+
+type SavedCareer = Awaited<ReturnType<typeof getMySavedCareers>>[number];
+
+/** A list with dividers; empty state with one action (DESIGN.md "States"). */
+function SavedCareers({ careers }: { careers: SavedCareer[] }) {
+  if (careers.length === 0) {
+    return (
+      <>
+        <h2 id="saved-heading" className="text-lg font-bold">
+          No saved careers yet
+        </h2>
+        <p className="mt-3">Save careers you want to compare and they’ll show up here.</p>
+        <p className="mt-3">
+          <Link href="/careers">Search careers</Link>
+        </p>
+      </>
+    );
+  }
+  return (
+    <>
+      <h2 id="saved-heading" className="text-lg font-bold">
+        Saved careers
+      </h2>
+      <ul className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">
+        {careers.map((career) => (
+          <li key={career.onet_code} className="py-3">
+            <Link href={`/careers/${career.onet_code}`}>{career.title}</Link>
+            {career.retired_at && <p className="mt-1 text-sm text-muted">No longer listed by O*NET</p>}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

@@ -8,9 +8,10 @@ import { getCurrentUser } from "@/lib/auth/dal";
 const navLink = "inline-flex min-h-11 items-center no-underline hover:underline focus-visible:underline";
 
 /**
- * Site header from DESIGN.md "Page frame": the wordmark, then account links.
- * Main section links (Careers, Colleges, ...) and the phone "Menu" button come
- * with the pages they point to, so there are never links to missing pages.
+ * Site header from DESIGN.md "Page frame": the wordmark, the main section
+ * links, then account links. More sections (Colleges, ...) and the phone
+ * "Menu" button come with the pages they point to, so there are never links
+ * to missing pages.
  */
 export function SiteHeader() {
   return (
@@ -22,12 +23,19 @@ export function SiteHeader() {
         >
           Stepwell
         </Link>
-        <nav aria-label="Account">
-          {/* The login check waits here, so the rest of the page isn't held up. */}
-          <Suspense fallback={<AccountLinksSkeleton />}>
-            <AccountLinks />
-          </Suspense>
-        </nav>
+        <div className="flex items-center gap-4">
+          <nav aria-label="Main">
+            <Link href="/careers" className={navLink}>
+              Careers
+            </Link>
+          </nav>
+          <nav aria-label="Account">
+            {/* The login check waits here, so the rest of the page isn't held up. */}
+            <Suspense fallback={<AccountLinksSkeleton />}>
+              <AccountLinks />
+            </Suspense>
+          </nav>
+        </div>
       </div>
     </header>
   );
