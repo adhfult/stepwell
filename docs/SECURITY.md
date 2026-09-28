@@ -25,9 +25,12 @@ Each item says **how Stepwell does it**.
       confirmation on). No home-made password handling.
 - [ ] **Rate-limit login and signup.** Supabase Auth rate limits stay on;
       any custom endpoint that sends email or costs money gets its own limit.
-- [ ] **Verify permissions server-side.** Every Server Action and Route
-      Handler gets the user from the session (`supabase.auth.getUser()`),
-      then checks what they may do. Hiding a button is not a permission check.
+- [ ] **Verify permissions server-side.** Every page, Server Action and
+      Route Handler gets the user from the Data Access Layer
+      (`src/lib/auth/dal.ts`): `getClaims()` (verified token) for pages,
+      `getUser()` (asks the Auth server) for sensitive actions, never
+      `getSession()`. Then it checks what they may do. Hiding a button is not
+      a permission check.
 - [ ] **Don't trust frontend user IDs.** Never accept `user_id` from the
       browser; the server and RLS use the session's user.
 - [ ] **Protect admin routes.** Stepwell has no admin pages in version 1.
@@ -45,7 +48,8 @@ Each item says **how Stepwell does it**.
 - [ ] **Secure Firebase, Supabase, and storage.** No Firebase. Supabase:
       service-role key only in import jobs; storage buckets private by
       default with owner-only policies; Auth redirect URLs restricted to
-      Stepwell's own domains; leaked-password protection on if available.
+      Stepwell's own domains; leaked-password protection on if available
+      (it's Pro plan only, so not available on the free plan).
 - [ ] **Prevent SQL and NoSQL injection.** Only the Supabase client or
       parameterized queries; never build SQL from strings with user input.
 - [ ] Account deletion removes all of that user's data (cascade from auth.users).
@@ -70,12 +74,16 @@ Each item says **how Stepwell does it**.
       Content-Security-Policy, X-Content-Type-Options, Referrer-Policy,
       frame protection (`frame-ancestors 'none'`), Permissions-Policy.
       No wildcard CORS; API routes serve Stepwell's own pages only.
+      (Now set, with a partial CSP; a full `script-src` policy with nonces
+      is a launch blocker in the accounts spec.)
 - [ ] HTTPS only (Vercel default).
 - [ ] Dependencies: Dependabot updates merged when CI is green;
       `npm audit` shows no critical issues.
 
 ## Privacy (because users may be 13–17)
-- [ ] Minimum age 13, confirmed at sign-up; only `age_confirmed` is stored.
+- [ ] Minimum age 13, checked at sign-up with a neutral birth month and year
+      question that is never stored (decision 0005); only `age_confirmed` is
+      stored, and the sign-up trigger refuses accounts without it.
 - [ ] No ads, no third-party tracking, no selling or sharing data, including
       with colleges. Error tracking (e.g. Sentry) sends no personal data.
 - [ ] Terms of Service and Privacy Policy linked in the footer before launch.

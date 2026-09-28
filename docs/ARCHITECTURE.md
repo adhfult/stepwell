@@ -14,10 +14,24 @@
 | Hosting | Vercel | |
 
 ## How a request flows
-1. `src/proxy.ts` refreshes the Supabase login session.
-2. Pages and server actions use `src/lib/supabase/server.ts`, which acts as the
+1. `src/proxy.ts` refreshes the Supabase login session (`getClaims()`) and,
+   with that quick token check, redirects signed-out visitors away from
+   `/account` pages before they stream.
+2. Pages and Server Actions ask the Data Access Layer (`src/lib/auth/dal.ts`)
+   who is signed in: `getCurrentUser()` (verified token plus a profile row),
+   `requireUser()` for protected pages, `getFreshUser()` (asks the Auth
+   server) for sensitive actions, `signedInByEmailLinkRecently()` for setting
+   a password. Never auth checks in layouts, never `getSession()` on the server.
+3. Data access goes through `src/lib/supabase/server.ts`, which acts as the
    signed-in user, so Row Level Security decides what they can read or write.
-3. Reference data (careers, colleges) is public-read; user data is owner-only.
+4. Reference data (careers, colleges) is public-read; user data is owner-only.
+
+## Local development
+- Supabase runs locally in Docker: `npm run db:start` / `npm run db:stop`
+  (unused services excluded). Emails land in Mailpit (127.0.0.1:54324).
+- Migrations live in `supabase/migrations/` and are applied locally first;
+  pgTAP tests in `supabase/tests/` run with `npm run test:db`. Changes reach
+  the cloud project only with the owner's OK (`supabase db push`).
 
 ## Data model
 **Reference data** (public read, written only by import jobs):
@@ -32,7 +46,7 @@
 **User data** (owner-only via RLS):
 | Table | Contents |
 |---|---|
-| `profiles` | user id, display name, education stage, state, grad year, age confirmed (no birthdate) |
+| `profiles` | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
 | `interest_results` | Interest Profiler scores (six areas) |
 | `saved_items` | saved careers and colleges |
 | `plan_steps` | next steps with optional due dates and status |

@@ -1,6 +1,6 @@
 # Spec: Accounts and profile
 
-- Status: approved (2026-09-27)
+- Status: built (2026-09-28; approved 2026-09-27)
 - Updated 2026-09-27: reviewed against PRODUCT.md, ARCHITECTURE.md,
   SECURITY.md, DESIGN.md and AVOID.md and current Supabase and Next.js 16
   docs; includes fixes 1 and 3 from `docs/specs/v1-expansion-draft.md` and
@@ -18,93 +18,93 @@ so its suggestions fit me, without handing over more about myself than it needs.
 ## Acceptance criteria
 
 ### Sign-up
-- [ ] Email and password sign-up through Supabase Auth, with email
+- [x] Email and password sign-up through Supabase Auth, with email
       confirmation on. Passwords are 8 to 72 characters.
-- [ ] Sign-up asks "What month and year were you born?" with no mention of an
+- [x] Sign-up asks "What month and year were you born?" with no mention of an
       age limit. Both menus start empty (never on a real month or year). The
       server works out whether the person is 13 or older; the month and year
       are never stored or logged. Someone born in the current month 13 years
       ago counts as under 13, since no day is asked. (Decision 0005.)
-- [ ] Under 13: a kind message that doesn't say how to get in ("Sorry, we
+- [x] Under 13: a kind message that doesn't say how to get in ("Sorry, we
       can't create an account for you. You can still explore careers without
       one."). A session-only cookie (no personal data) keeps showing that
       message if they try again in the same browser session.
-- [ ] After sign-up the page says "Check your email", the same message whether
+- [x] After sign-up the page says "Check your email", the same message whether
       or not the address already has an account (no account lookups by email).
-- [ ] The database itself refuses to create an account unless age was
+- [x] The database itself refuses to create an account unless age was
       confirmed (trigger), even if someone calls Supabase Auth directly.
 
 ### Email confirmation
-- [ ] The confirmation email links to `/auth/confirm`, a page with a
+- [x] The confirmation email links to `/auth/confirm`, a page with a
       "Confirm my email" button. (School email scanners such as Microsoft
       Safe Links open links automatically and would use up a one-time link.)
-- [ ] After confirming, the student is signed in and lands on the profile form.
-- [ ] An expired or already-used link shows a friendly message: sign in if
+- [x] After confirming, the student is signed in and lands on the profile form.
+- [x] An expired or already-used link shows a friendly message: sign in if
       you've already confirmed; otherwise sign up again with the same email
       to get a new link.
 
 ### Sign-in and sign-out
-- [ ] Sign in with email and password. Wrong details show "Email or password
+- [x] Sign in with email and password. Wrong details show "Email or password
       is wrong." An unconfirmed account shows "Confirm your email first",
       with the same tip about getting a new link.
-- [ ] After sign-in, the student returns to the page they came from (`next`),
+- [x] After sign-in, the student returns to the page they came from (`next`),
       but only if it is a Stepwell page; otherwise the home page.
-- [ ] Sign-out is a button (a form that posts), not a link, and clears the session.
+- [x] Sign-out is a button (a form that posts), not a link, and clears the session.
 
 ### Protected pages
-- [ ] `/account` and everything under it require sign-in; signed-out visitors
+- [x] `/account` and everything under it require sign-in; signed-out visitors
       go to `/sign-in?next=<that page>`.
-- [ ] Auth checks live in one server-only Data Access Layer
+- [x] Auth checks live in one server-only Data Access Layer
       (`src/lib/auth/dal.ts`): `getClaims()` for pages, `getUser()` for
       sensitive actions (delete account, set password). Never `getSession()`
       on the server. `src/proxy.ts` refreshes the session and, with a quick
       token check, redirects signed-out visitors away from `/account` pages
       before they stream (a real 307 instead of an in-page redirect); the
       page's `requireUser()` is still the check that protects data.
-- [ ] Signed in but no profile row counts as signed out (covers a deleted
+- [x] Signed in but no profile row counts as signed out (covers a deleted
       account whose old login token is still valid for up to an hour).
 
 ### Profile
-- [ ] The profile form asks:
+- [x] The profile form asks:
   - nickname, optional ("What should we call you? A first name or nickname is fine."), up to 40 characters;
   - stage: middle school, high school, college, or adult learner;
   - state: a menu of the 50 states, DC, and five territories (PR, GU, VI, AS, MP);
   - expected graduation year, optional, and hidden for adult learners (see Data).
-- [ ] Validated with zod on the server, and again by database checks.
-- [ ] "Profile complete" means stage and state are set. Until then `/account`
+- [x] Validated with zod on the server, and again by database checks.
+- [x] "Profile complete" means stage and state are set. Until then `/account`
       shows a "Finish your profile" empty state. No other page is blocked.
-- [ ] The student can edit the profile later; saving shows "Profile saved".
+- [x] The student can edit the profile later; saving shows "Profile saved".
 
 ### Forgot and reset password
-- [ ] "Forgot password" sends a reset email and shows the same message for
+- [x] "Forgot password" sends a reset email and shows the same message for
       every address.
-- [ ] The reset link goes to the same button page as confirmation, then to
+- [x] The reset link goes to the same button page as confirmation, then to
       "Set a new password". The old password stops working.
 
 ### Delete account
-- [ ] `/account/delete` explains what will be deleted and asks for the
+- [x] `/account/delete` explains what will be deleted and asks for the
       password, checked on the server.
-- [ ] Deleting calls `delete_my_account()` (decision 0004): the login and,
+- [x] Deleting calls `delete_my_account()` (decision 0004): the login and,
       through cascades, every row of the student's data are removed. Then the
       session is cleared and a "Your account is deleted" page is shown.
 
 ### Everywhere
-- [ ] Every redirect target taken from a URL or form goes through one
+- [x] Every redirect target taken from a URL or form goes through one
       `safeNextPath()` helper: only paths that start with `/` and not with
       `//` or `/\`.
-- [ ] Security headers in `next.config.ts`: `X-Content-Type-Options: nosniff`,
+- [x] Security headers in `next.config.ts`: `X-Content-Type-Options: nosniff`,
       `Referrer-Policy: strict-origin-when-cross-origin`,
       `X-Frame-Options: DENY`, a `Permissions-Policy` that turns off camera,
       microphone and location, and a CSP of `frame-ancestors 'none';
       base-uri 'self'; form-action 'self'; object-src 'none'`. (A full CSP
       comes later.)
-- [ ] UI follows `docs/design/DESIGN.md` and never uses anything in
+- [x] UI follows `docs/design/DESIGN.md` and never uses anything in
       `docs/design/AVOID.md`: form pattern (label above, 44px fields,
       "Error:" messages, an error summary that takes focus), site header,
       skeleton, empty and error states, a designed not-found page. Forms keep
       what was typed after an error (never the password). Works at 320px.
-- [ ] No links to Terms or Privacy until those pages exist (no broken links).
-- [ ] `npm run check` and `npm run test:db` pass.
+- [x] No links to Terms or Privacy until those pages exist (no broken links).
+- [x] `npm run check` and `npm run test:db` pass.
 
 ## Data
 Table `public.profiles` (one row per account, created by a trigger):

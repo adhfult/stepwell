@@ -4,16 +4,41 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] Update `docs/specs/accounts-and-profile.md` with fixes 1 and 3 from
-      `docs/specs/v1-expansion-draft.md` (`delete_my_account()` database
-      function; `age_confirmed` set by the sign-up trigger, not editable), then approve it
-- [ ] Build accounts & profile (UI follows `docs/design/DESIGN.md`)
+- [ ] Decide on the two security hardening proposals from the 2026-09-28
+      review (HttpOnly/Secure login cookies; zod length cap on the delete
+      form's password); see that log entry
 - [ ] v1 expansion: review Section 3 (pipeline), draft Section 4 (privacy,
       retention, final fix list), approve the draft, then apply the doc fixes
 - [ ] Data pipeline foundation with O*NET as the first adapter, then Career
       Explorer (build order in the expansion draft, Section 1)
+- Before any real student signs up (accounts spec, "Launch blockers"): Terms
+  and Privacy pages, custom SMTP, full CSP, sign-up bot protection, separate
+  production Supabase project with auth config pushed, legal review.
 
 ## Log
+### 2026-09-28: accounts and profile built (spec steps 0-13)
+- Spec reviewed, improved and approved; decisions 0004 (delete via
+  `delete_my_account()`) and 0005 (neutral birth month/year age screen).
+- Local Supabase in Docker (`npm run db:start`/`db:stop`, unused services
+  excluded, ~570 MB); `profiles` + trigger + RLS + column grants and
+  `delete_my_account()`, 35 pgTAP tests (`npm run test:db`), advisors clean.
+- Built: security headers, header + DAL, sign-up (age gate, same answer for
+  every address), scanner-safe email confirmation, sign-in/out, protected
+  `/account`, profile form and summary, delete account (password re-check),
+  forgot/reset password (15-minute email-link rule, other devices signed out).
+- Mobile polish pass at 320/375px in real Chrome; `<Page>`/`<PageTitle>`;
+  DESIGN.md updated. 47 unit tests; end-to-end checks for every step.
+- Found and fixed: a used confirm link now continues when that browser is
+  already signed in (seen once while the dev server compiled a page).
+- Security review (pre-ship-security, review only): gitleaks and npm audit
+  clean, no service-role key in app code, RLS verified with a real token.
+  Proposed, awaiting approval: HttpOnly + Secure on login cookies; zod on
+  the delete password. Recommended before launch: CAPTCHA on sign-up and the
+  Cloudflare security-audit skill (users may be 13-17).
+- Open questions: accounts never confirmed (delete after N days?); per-IP
+  auth rate limits when auth runs in Server Actions; login cookie lifetime
+  (400 days) on shared computers. Ponytail plugin enabled for the project.
+
 ### 2026-09-27: design direction and v1 expansion draft
 - Reviewed all docs; unclear or contradictory items now have proposed fixes
   in `docs/specs/v1-expansion-draft.md` (not applied yet).

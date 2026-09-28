@@ -46,12 +46,24 @@ Without RLS, anyone with the public key can read the whole table.
    enable RLS and add only a `for select to anon, authenticated using (true)`
    policy. Writes then only happen through migrations or a separate admin job.
 
+   Grants: new tables are no longer exposed to the Data API by default, so
+   grant what's needed explicitly, as narrowly as possible (see
+   `supabase/migrations/*_profiles.sql`: `revoke all`, then `select` and
+   column-level `update`). Repeat every form (zod) rule as a `check`
+   constraint: students can call the Data API directly and skip the forms.
+   `security definer` functions: `set search_path = ''`, check
+   `auth.uid()`, and `revoke execute ... from public, anon`.
+
 3. Explain the change and its policies to the user before applying it.
-4. Apply it. `npx supabase db push` changes the real (linked) database, so
-   ask the user first; prefer a development project over production.
+4. Apply it locally first (the local stack runs in Docker; `npm run db:start`):
+   `npx supabase migration up --local`, or `npx supabase db reset` to rebuild.
+   Add pgTAP tests in `supabase/tests/` and run `npm run test:db`; run
+   `npx supabase db advisors --local --type all`.
 5. Refresh TypeScript types:
-   `npx supabase gen types typescript --linked > src/lib/database.types.ts`
+   `npx supabase gen types typescript --local > src/lib/database.types.ts`
 6. Update the data model section of `docs/ARCHITECTURE.md`.
+7. Only when the user says so: `npx supabase db push` to the linked cloud
+   project (prefer a development project over production).
 
 ## Checks before finishing
 - Every new table: `enable row level security` is present.
