@@ -3,3 +3,5 @@
 *.png binary
 *.jpg binary
 *.ico binary
+# Saved copies of real pages and files: keep their exact bytes (CRLF included).
+src/jobs/sources/fixtures/** -text
