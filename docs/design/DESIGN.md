@@ -92,6 +92,9 @@ Rules:
   (filters, or the route line), never more than two columns.
 
 ### Page frame
+- **Skip link**: the first thing on every page is "Skip to main content",
+  hidden until focused with the keyboard, jumping to the single `<main>`
+  landmark (in `layout.tsx`; pages render inside it, never their own `<main>`).
 - **Header** (on `background`, bottom `border-subtle` divider): the word
   "Stepwell" in Bitter bold `text-lg`, linking home, on the left. Main links
   on the right: Careers, Colleges, Scholarships, Opportunities, My plan. On
