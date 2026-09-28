@@ -16,7 +16,9 @@ Newest entries at the top. Keep each entry short.
       run "Import data" once from the Actions tab
 - [ ] **Owner:** run `npx supabase db reset` locally once (blocked for
       agents because it wipes local accounts) to prove migrations + seed
-      work from scratch
+      work from scratch (the career migration was edited after it was first
+      applied locally; the local database was patched to match, and the
+      cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now); register for an O*NET Web
       Services key (`ONET_API_KEY`) for Career Explorer step 6 (pay and outlook)
