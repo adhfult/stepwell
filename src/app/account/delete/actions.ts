@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { getFreshUser } from "@/lib/auth/dal";
 import { checkPassword } from "@/lib/auth/password-check";
+import { signInSchema } from "@/lib/auth/schemas";
 import { formText } from "@/lib/form-data";
 import { createClient } from "@/lib/supabase/server";
 import type { DeleteAccountState } from "./state";
@@ -20,8 +21,10 @@ export async function deleteAccount(_previous: DeleteAccountState, formData: For
   const user = await getFreshUser();
   if (!user?.email) redirect("/sign-in?next=%2Faccount%2Fdelete");
 
-  const password = formText(formData, "password");
-  if (!password) return { passwordError: "Enter your password" };
+  // Same rule as signing in: typed, and not absurdly long.
+  const parsed = signInSchema.shape.password.safeParse(formText(formData, "password"));
+  if (!parsed.success) return { passwordError: parsed.error.issues[0]?.message };
+  const password = parsed.data;
 
   const check = await checkPassword(user.email, password, user.id);
   if (check === "wrong") return { passwordError: "That password isn’t right" };

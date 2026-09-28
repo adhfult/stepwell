@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { authCookieOptions } from "@/lib/supabase/cookie-options";
 
 /**
  * Pages that need a signed-in student. The proxy only makes a quick check of
@@ -27,6 +28,7 @@ export async function proxy(request: NextRequest) {
   if (!url || !key) return response; // Supabase not configured yet
 
   const supabase = createServerClient(url, key, {
+    cookieOptions: authCookieOptions,
     cookies: {
       getAll() {
         return request.cookies.getAll();
