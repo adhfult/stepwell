@@ -19,5 +19,8 @@
       "Bash(npx supabase db reset:*)",
       "Bash(vercel:*)"
     ]
+  },
+  "enabledPlugins": {
+    "ponytail@ponytail": true
   }
 }
