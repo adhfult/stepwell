@@ -1,7 +1,20 @@
 // Talks to the database as the importer role, which can only call the
 // ingest.* functions (decision 0008).
-import type pg from "pg";
+import { readFileSync } from "node:fs";
+import pg from "pg";
 import type { StagedRecord } from "./sources/types.ts";
+
+// Supabase's pooler certificate chains to Supabase's own root, which Node
+// doesn't trust by default. This is that public root (prod-ca-2021.crt from
+// Supabase's downloads, fingerprint checked against the pooler's chain
+// 2026-09-28; expires 2031-04-26), so the connection is fully verified.
+const SUPABASE_ROOT_CA = readFileSync(new URL("./supabase-root-2021-ca.crt", import.meta.url), "utf8");
+
+/** A client for IMPORT_DATABASE_URL: plain for the local stack, verified TLS otherwise. */
+export function databaseClient(url: string) {
+  const local = ["127.0.0.1", "localhost"].includes(new URL(url).hostname);
+  return new pg.Client({ connectionString: url, ssl: local ? false : { ca: SUPABASE_ROOT_CA } });
+}
 
 const BATCH_SIZE = 500;
 const MAX_REJECTED_KEPT = 20; // Section 3.8: the first 20 rejected records per run

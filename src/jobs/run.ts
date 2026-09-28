@@ -5,11 +5,11 @@
 //   npm run import -- --due               every source whose refresh interval has
 //                                         passed, then the freshness check
 import { appendFileSync } from "node:fs";
-import pg from "pg";
+import type pg from "pg";
 import { breakerReason } from "./breaker.ts";
 import { parseJobEnv } from "./env.ts";
 import { createPoliteFetcher, type Fetcher, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
-import { finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
+import { databaseClient, finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
 import { readOnet } from "./sources/onet.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
@@ -115,7 +115,7 @@ async function main(argv: string[]) {
     return 0;
   }
 
-  const db = new pg.Client({ connectionString: env.IMPORT_DATABASE_URL });
+  const db = databaseClient(env.IMPORT_DATABASE_URL);
   await db.connect();
   try {
     if (source) return (await importSource(db, fetcher, source, force)) ? 0 : 1;

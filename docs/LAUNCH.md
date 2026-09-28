@@ -42,7 +42,8 @@ Details that change often (free-tier limits, prices) are marked "check".
 - [ ] **You, in GitHub** (Settings, Secrets and variables, Actions): secret
       `IMPORT_DATABASE_URL` = the **Session pooler** connection string from
       the dashboard's Connect button, with user `importer.<project-ref>` and
-      that password. Variable `IMPORT_CONTACT` = the Stepwell contact address.
+      that password, and no `?sslmode=` (the job verifies TLS against
+      Supabase's root certificate in `src/jobs/`). Variable `IMPORT_CONTACT` = the Stepwell contact address.
 - [ ] Run "Import data" by hand once (Actions tab), then check the
       `occupations` count in the table editor.
 - [ ] Check: do scheduled runs keep a private repo's workflow enabled, and
