@@ -94,6 +94,53 @@ export function SelectField({ id, label, placeholder, options, invalid = false, 
   );
 }
 
+type RadioGroupProps = {
+  name: string;
+  legend: string;
+  hint?: string;
+  error?: string;
+  options: readonly { value: string; label: string }[];
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+};
+
+/**
+ * A question with a few visible choices (DESIGN.md: the browser's own radio
+ * buttons in the primary color, 24px, whole label clickable). The first radio
+ * gets id={name} so an error summary link can focus the group.
+ */
+export function RadioGroup({ name, legend, hint, error, options, defaultValue, onValueChange }: RadioGroupProps) {
+  const hintId = hint ? `${name}-hint` : undefined;
+  const errorId = `${name}-error`;
+  return (
+    <fieldset aria-describedby={describedBy(hintId, error ? errorId : undefined)}>
+      <legend className="font-bold">{legend}</legend>
+      {hint && (
+        <p id={hintId} className="mt-1 text-sm text-muted">
+          {hint}
+        </p>
+      )}
+      <div className="mt-2">
+        {options.map((option, index) => (
+          <label key={option.value} className="flex min-h-11 items-center gap-3">
+            <input
+              type="radio"
+              id={index === 0 ? name : undefined}
+              name={name}
+              value={option.value}
+              defaultChecked={defaultValue === option.value}
+              onChange={() => onValueChange?.(option.value)}
+              className="size-6 shrink-0"
+            />
+            <span>{option.label}</span>
+          </label>
+        ))}
+      </div>
+      <FieldError id={errorId} message={error} />
+    </fieldset>
+  );
+}
+
 /** One problem to list. Without `fieldId` it's about the whole form (shown as text, not a link). */
 export type SummaryItem = { fieldId?: string; message: string };
 
