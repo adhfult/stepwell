@@ -1,6 +1,6 @@
 # 0002: Minimum age 13, minimal data
 
-- Status: accepted
+- Status: accepted; how age is confirmed is replaced by 0005
 
 ## Context
 The audience includes high school students. U.S. law (COPPA) imposes strict
