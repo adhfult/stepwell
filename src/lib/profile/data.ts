@@ -27,8 +27,8 @@ export const getMyProfile = cache(async (): Promise<Profile | null> => {
   return data;
 });
 
-/** Profile complete = stage and state set (spec). */
-export function isProfileComplete(profile: Profile | null): boolean {
+/** Profile complete = stage and state set (spec). A type guard, so callers know it's not null. */
+export function isProfileComplete(profile: Profile | null): profile is Profile & { stage: string; state: string } {
   return Boolean(profile?.stage && profile?.state);
 }
 

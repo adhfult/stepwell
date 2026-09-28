@@ -1,5 +1,6 @@
 "use client"; // Error boundaries must be Client Components
 
+import { buttonClass } from "@/components/button-styles";
 import { ResultPanel } from "@/components/form";
 
 /**
@@ -15,7 +16,7 @@ export default function AccountError({ retry }: { error: Error & { digest?: stri
         <button
           type="button"
           onClick={() => retry()}
-          className="inline-flex min-h-11 items-center rounded-control bg-primary px-4 font-bold text-surface hover:bg-foreground"
+          className={buttonClass()}
         >
           Try again
         </button>

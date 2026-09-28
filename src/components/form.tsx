@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type InputHTMLAttributes, type ReactNode, type SelectHTMLAttributes } from "react";
 import { useFormStatus } from "react-dom";
+import { buttonClass, type ButtonVariant } from "./button-styles";
 
 /**
  * Form pieces following DESIGN.md "Form fields" and "Buttons": label above,
@@ -232,12 +233,6 @@ export function ResultPanel({
  * The form's main button. While the action runs it shows `pendingLabel`,
  * keeps its width (both labels share one grid cell) and ignores extra clicks.
  */
-const buttonStyles = {
-  primary: "bg-primary text-surface hover:bg-foreground",
-  secondary: "border border-border-strong bg-surface text-foreground hover:border-foreground",
-  delete: "bg-accent text-surface hover:bg-foreground",
-} as const;
-
 export function SubmitButton({
   children,
   pendingLabel,
@@ -246,7 +241,7 @@ export function SubmitButton({
   children: ReactNode;
   pendingLabel: string;
   /** DESIGN.md "Buttons": primary for the one main action, secondary for others, delete for deleting data. */
-  variant?: keyof typeof buttonStyles;
+  variant?: ButtonVariant;
 }) {
   const { pending } = useFormStatus();
   return (
@@ -257,7 +252,7 @@ export function SubmitButton({
       onClick={(event) => {
         if (pending) event.preventDefault();
       }}
-      className={`inline-flex min-h-11 items-center rounded-control px-4 font-bold ${buttonStyles[variant]}`}
+      className={buttonClass(variant)}
     >
       <span className="grid">
         <span className={`col-start-1 row-start-1 ${pending ? "invisible" : ""}`}>{children}</span>

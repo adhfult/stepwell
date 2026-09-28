@@ -74,6 +74,17 @@ export const STATES = [
 
 export type StateCode = (typeof STATES)[number]["value"];
 
+/** A saved stage as words, short enough for a summary ("Adult learner"). */
+export function stageName(value: string | null | undefined): string | null {
+  const label = STAGES.find((s) => s.value === value)?.label;
+  return label ? label.replace(/ \(.*\)$/, "") : null;
+}
+
+/** A saved state code as its name ("OH" -> "Ohio"). */
+export function stateName(code: string | null | undefined): string | null {
+  return STATES.find((s) => s.value === code)?.label ?? null;
+}
+
 /** What "expected graduation year" means for each stage (spec, Data). */
 export function gradYearLabel(stage: string | null | undefined): string | null {
   if (stage === "adult_learner") return null; // not asked
