@@ -82,4 +82,23 @@
     outline: 3px solid var(--foreground);
     outline-offset: 2px;
   }
+
+  /* Links are always underlined: color alone doesn't mark a link. Hover
+     changes instantly (no transitions, per AVOID.md). */
+  a {
+    color: var(--primary);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+
+  a:hover {
+    color: var(--foreground);
+    text-decoration-thickness: 2px;
+  }
+
+  /* Native checkboxes and radio buttons in the primary color. */
+  :root {
+    accent-color: var(--primary);
+  }
 }
