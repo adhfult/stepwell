@@ -4,18 +4,28 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] Decide on the two security hardening proposals from the 2026-09-28
-      review (HttpOnly/Secure login cookies; zod length cap on the delete
-      form's password); see that log entry
+- [ ] Fill the placeholders in `docs/legal/privacy-draft.md` and
+      `docs/legal/terms-draft.md` (name, contact email, email provider,
+      state, date), approve `docs/specs/legal-pages.md`, then build the pages
+      and the site footer
+- [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
+      Supabase project, real Turnstile keys, Vercel) before real students
 - [ ] v1 expansion: review Section 3 (pipeline), draft Section 4 (privacy,
       retention, final fix list), approve the draft, then apply the doc fixes
 - [ ] Data pipeline foundation with O*NET as the first adapter, then Career
       Explorer (build order in the expansion draft, Section 1)
-- Before any real student signs up (accounts spec, "Launch blockers"): Terms
-  and Privacy pages, custom SMTP, full CSP, sign-up bot protection, separate
-  production Supabase project with auth config pushed, legal review.
 
 ## Log
+### 2026-09-28 (later): hardening and launch prep
+- Login cookies HttpOnly (and Secure in production); zod on the delete
+  password; full nonce-based CSP from `src/proxy.ts` (production: zero
+  violations on every page).
+- Cloudflare Turnstile bot check on sign-up, sign-in, password reset and the
+  delete password check (Supabase requires it for all of them once on);
+  local test keys; a too-early submit waits for the token.
+- `docs/LAUNCH.md` checklist; legal pages spec and plain-language drafts with
+  placeholders (`docs/specs/legal-pages.md`, `docs/legal/`).
+
 ### 2026-09-28: accounts and profile built (spec steps 0-13)
 - Spec reviewed, improved and approved; decisions 0004 (delete via
   `delete_my_account()`) and 0005 (neutral birth month/year age screen).
