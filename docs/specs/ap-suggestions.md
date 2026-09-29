@@ -1,6 +1,7 @@
 # Spec: AP and academics suggestions
 
-- Status: approved (owner's go-ahead in chat, 2026-09-28: "Continue.")
+- Status: built (2026-09-28; approved by the owner's go-ahead in chat:
+  "Continue.")
 - Build step 6 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1 and 2.5). Builds on `docs/specs/career-explorer.md`.
 
@@ -67,21 +68,27 @@ help for a career I'm interested in, so my schedule points somewhere.
 | Communications and Media | English Language and Composition, Seminar |
 
 ## Acceptance criteria
-- [ ] `knowledge_areas` (33, O*NET ids and names) and `ap_courses` (42,
+- [x] `knowledge_areas` (33, O*NET ids and names) and `ap_courses` (42,
       with their College Board group) hand-entered in the migration;
       `knowledge_ap_map` as above. Public read.
-- [ ] `occupation_knowledge` (career, area, importance) loaded by the O*NET
+- [x] `occupation_knowledge` (career, area, importance) loaded by the O*NET
       import from `knowledge.csv` (scale IM), with a minimum row count like
       the other files; unknown area ids are skipped.
-- [ ] `public.ap_courses_for_career(onet_code)`: up to 6 courses from areas
+- [x] `public.ap_courses_for_career(onet_code)`: up to 6 courses from areas
       rated 3.5 or more, highest importance first, each course once, with
       the area it came from.
-- [ ] Career page section "Classes that help": the courses as a list with
+- [x] Career page section "Classes that help": the courses as a list with
       "Builds: <area>", a sentence that regular classes in the same subjects
       help too, and a source line ("Based on O*NET knowledge ratings.
       Stepwell matches them to AP courses itself. AP is a trademark of
       College Board."). Left out when there are none.
-- [ ] Works at 320px; AVOID.md check; `npm run check` and `npm run test:db` pass.
+- [x] Works at 320px; AVOID.md check; `npm run check` and `npm run test:db` pass.
+
+## Result (2026-09-28)
+29,964 knowledge ratings for 910 careers; 808 careers get AP suggestions.
+Examples: Registered Nurses: Psychology, Biology, Chemistry, English
+Language, English Literature. Software Developers: Computer Science A and
+Principles, Cybersecurity, Calculus AB and BC, Precalculus.
 
 ## Out of scope
 Which high school offers which AP classes (would need the student's school;

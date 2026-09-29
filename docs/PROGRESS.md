@@ -21,13 +21,26 @@ Newest entries at the top. Keep each entry short.
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Next build step: AP and academics suggestions (v1 expansion,
-      Section 1, step 6: O*NET knowledge ratings and a hand-written knowledge
-      area to AP course table); its spec needs writing first
+- [ ] Next build step: Scholarships (v1 expansion, Section 1, step 7:
+      CareerOneStop API plus allowlisted sites, and the optional eligibility
+      answers with the two-step opt-in from decision 0006). Needs a
+      CareerOneStop API registration by the owner first; its spec needs
+      writing (the first step that stores sensitive answers about minors, so
+      plan it before building)
+- [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
+      own judgment; easy to change in one migration)
 - [ ] Later: a phone "Menu" button in the header, so Interests (and the next
       sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-28 (late night): AP suggestions built
+- Spec with the full knowledge-area to AP-course mapping
+  (`docs/specs/ap-suggestions.md`); `knowledge_areas`, `ap_courses` (42),
+  `knowledge_ap_map` (69), `occupation_knowledge` (29,964 ratings);
+  `ap_courses_for_career()`; "Classes that help" on career pages (808
+  careers). Pushed to the cloud.
+- Still blocked for agents: the `importer` password and GitHub secret.
+
 ### 2026-09-28 (night): programs and colleges built
 - Spec written and built (`docs/specs/programs-and-colleges.md`): sources
   `onet_cip` (O*NET's CIP to O*NET-SOC crosswalk, Excel, via the new

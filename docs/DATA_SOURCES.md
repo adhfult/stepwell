@@ -31,6 +31,12 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   release, 2 to 3 minutes at O*NET's download speed.
 - **Retired careers:** a code missing from a new release is marked
   `retired_at`, never deleted, so saved careers keep working.
+- **Knowledge ratings** (`knowledge.csv`, scale "IM", 1 to 5): 33 areas per
+  career, used for AP suggestions (areas rated 3.5 or more). The list of AP
+  courses comes from College Board's course index (checked 2026-09-28, 42
+  courses) and the area-to-course mapping is Stepwell's own, both entered by
+  hand in `supabase/migrations/*_ap_suggestions.sql`. AP is a trademark of
+  College Board; say so wherever AP courses are shown.
 - **Pay and outlook** (source `onet_outlook`, `src/jobs/sources/onet-outlook.ts`):
   Web Services API v2, `https://api-v2.onetcenter.org/mnm/careers/` (923
   careers) then `/mnm/careers/{code}/job_outlook` for each, with the

@@ -44,12 +44,12 @@ build step's spec.
 | `occupations` (built) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, six interest scores (1 to 7), `retired_at`, O*NET release |
 | `occupation_titles`, `occupation_details`, `occupation_related` (built) | `onet_code` | reported and alternate titles (search: `search_occupations()`); top tasks and skills (JSON); related careers |
 | `occupation_outlook` (built) | `onet_code` | outlook category and Bright Outlook reasons; annual and hourly pay (10th, median, 90th percentile; "or more" flags) |
-| `occupation_knowledge` | `onet_code` | knowledge ratings (joined for AP suggestions) |
+| `occupation_knowledge` (built) | `(onet_code, area_id)` | importance of each O*NET knowledge area (1 to 5) |
 | `interest_questions` (built) | index | the 60 Interest Profiler questions and their areas; matched with `match_careers()` |
 | `institutions` (built) | `unitid` | name, city, state, ownership, website, net price, admission rate, graduation rate (8-year, all students), students |
 | `programs` (built) | `id` (unique `unitid, cip4, credential_level`) | title, credential, earnings 1 and 4 years after, median debt, graduates |
 | `occupation_programs` (built) | `(onet_code, cip6)` + computed `cip4` | O*NET's CIP to O*NET-SOC crosswalk; `colleges_for_career()` joins through `cip4` |
-| `ap_courses`, `knowledge_ap_map` | code | AP course list and the knowledge-area mapping (hand-entered) |
+| `knowledge_areas`, `ap_courses`, `knowledge_ap_map` (built) | id / code | O*NET's 33 knowledge areas, College Board's 42 AP courses, and Stepwell's mapping (hand-entered in the migration; `ap_courses_for_career()`) |
 | `sources` (built) | id | every data source, its terms check and fetcher |
 | `scholarships`, `scholarship_criteria`, `opportunities`, `listing_fields` | id | listings, their eligibility rules, CIP families |
 
