@@ -21,7 +21,10 @@ import {
   rateText,
 } from "@/lib/colleges/labels";
 import { monthYear } from "@/lib/careers/labels";
+import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
+import { getCurrentUser } from "@/lib/auth/dal";
+import { SaveButton } from "@/app/plan/save-button";
 import { STATES, stateName } from "@/lib/profile/options";
 
 async function careerFor(
@@ -57,9 +60,11 @@ export default async function CareerCollegesPage({
     (query.state === "all" ? undefined : (profileState ?? undefined));
   const showAll = query.more === "1";
 
-  const [colleges, retrieved] = await Promise.all([
+  const [colleges, retrieved, user, saved] = await Promise.all([
     collegesForCareer(career.onet_code, state, filters.level),
     getScorecardRetrieved(),
+    getCurrentUser(),
+    getMySavedIds(),
   ]);
 
   return (
@@ -95,6 +100,7 @@ export default async function CareerCollegesPage({
             colleges={colleges}
             showAll={showAll}
             moreHref={moreHref(career.onet_code, state, filters.level)}
+            saved={user ? saved.colleges : null}
           />
         </section>
       ) : (
@@ -218,10 +224,13 @@ function CollegeList({
   colleges,
   showAll,
   moreHref,
+  saved,
 }: {
   colleges: CollegeProgram[];
   showAll: boolean;
   moreHref: string;
+  /** The student's saved colleges; null when signed out (no Save buttons). */
+  saved: Set<number> | null;
 }) {
   const titles = new Set(colleges.map((c) => c.program));
   const sharedTitle = titles.size === 1 ? colleges[0].program : null;
@@ -265,6 +274,7 @@ function CollegeList({
                   <a href={c.website!}>{domain}</a>
                 </p>
               )}
+              {saved && <SaveButton kind="college" id={c.unitid} saved={saved.has(c.unitid)} />}
             </li>
           );
         })}

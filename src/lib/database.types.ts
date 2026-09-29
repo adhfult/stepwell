@@ -308,6 +308,19 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"plan_items": {
+                  Row: {
+                    "academic_year": number | null,"created_at": string,"done": boolean,"due_on": string | null,"id": string,"kind": string,"term": string,"title": string,"user_id": string
+                  }
+                  Insert: {
+                    "academic_year"?: number | null,"created_at"?: string,"done"?: boolean,"due_on"?: string | null,"id"?: string,"kind"?: string,"term"?: string,"title": string,"user_id"?: string
+                  }
+                  Update: {
+                    "academic_year"?: number | null,"created_at"?: string,"done"?: boolean,"due_on"?: string | null,"id"?: string,"kind"?: string,"term"?: string,"title"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"profiles": {
                   Row: {
                     "age_confirmed": boolean,"created_at": string,"grad_year": number | null,"id": string,"nickname": string | null,"stage": string | null,"state": string | null,"updated_at": string
@@ -342,13 +355,13 @@ isOneToOne: false
                   ]
                 },"saved_items": {
                   Row: {
-                    "created_at": string,"id": string,"onet_code": string | null,"user_id": string
+                    "created_at": string,"id": string,"onet_code": string | null,"scholarship_id": string | null,"title": string | null,"unitid": number | null,"user_id": string
                   }
                   Insert: {
-                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"user_id"?: string
+                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"scholarship_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
                   }
                   Update: {
-                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"user_id"?: string
+                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"scholarship_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
                   }
                   Relationships: [
                     {

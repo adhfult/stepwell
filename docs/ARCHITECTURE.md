@@ -59,8 +59,8 @@ build step's spec.
 |---|---|
 | `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
 | `interest_results` (built) | latest quiz scores (six areas, 0 to 40), never the answers; saved only when the student presses Save |
-| `saved_items` (built, careers only so far) | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
-| `plan_items` | year-by-year plan: term, kind, title, due date, status; saved listings' deadlines read live |
+| `saved_items` (built: careers, scholarships, colleges) | one link column per kind (`onet_code`, `scholarship_id`, `unitid`), exactly one set; scholarships and colleges have no foreign key (their daily merges delete rows) and keep a `title` copy so the plan can say "No longer listed" |
+| `plan_items` (built) | the student's own steps: title (200), kind, school year (or none), term, optional due date, done; no free-text notes. Saved listings' deadlines are read live on `/plan` |
 | `eligibility_profiles` (built) | optional scholarship answers (first question set only), consent version; matching stays in the database; deleted with the account and after 12 months without a sign-in by pg_cron (decision 0006) |
 
 ## Data imports

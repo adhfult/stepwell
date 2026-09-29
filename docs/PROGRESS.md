@@ -26,13 +26,33 @@ Newest entries at the top. Keep each entry short.
       work from scratch; then re-run the imports
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Specs to write and approve next: step 9 (saved plan and year-by-year
-      planner), an "About the data" page (then its footer link), and the
-      yearly scholarship re-check (rules in `data/scholarships/README.md`)
+- [ ] **Owner:** the USAJOBS key isn't under the name the importer reads.
+      List the variable names (no values) with
+      `! grep -oE '^[A-Za-z_][A-Za-z0-9_]*' .env.local`, then rename the key
+      to `USAJOBS_API_KEY` and add `USAJOBS_EMAIL=`.
+- [ ] Review the planner defaults taken on 2026-09-29 (see the saved-plan
+      spec's Result): internships and AP classes can't be saved yet; no
+      starter tasks; no notes.
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-09-29 (evening): About the data, re-check job, saved plan
+- The owner said to proceed on the three draft specs; each open question
+  took its default, written in each spec's Result.
+- `/about-data` lists every source with its publisher, use, O*NET credit
+  and last update; linked first in the footer.
+- `npm run scholarships:due` and a monthly "Scholarship re-check" workflow
+  that fails (so GitHub emails the owner) when entries are due. Ran once on
+  GitHub: passed, nothing due.
+- Saved plan: Save buttons on scholarships and college lists, `plan_items`,
+  and `/plan` ("My plan" in the header from 640px; on phones via Account).
+  pgTAP includes a merge that removes a saved scholarship; tried signed in
+  at 320px (save, add, move, done, "No longer listed", cascade on account
+  deletion).
+- Local Supabase's Kong container had stopped (exit 127); `docker start
+  supabase_kong_stepwell` fixed it.
+
 ### 2026-09-29 (morning): legal pages, all states, internships
 - Terms and Privacy pages and a site footer on every page; the sign-up
   form links both. Placeholders stay until launch (`placeholdersLeft()`).

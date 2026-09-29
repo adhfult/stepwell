@@ -28,7 +28,10 @@ It's an independent project. Questions: [CONTACT EMAIL].
   other companies or to AI tools.
 - **Your interest quiz scores, if you save them.** Just the six scores, never
   your answers.
-- **Careers you save.**
+- **Careers, scholarships and colleges you save, and your plan.** The steps
+  you add to your plan (a short title, the school year, when in the year, the
+  kind of step and an optional due date), and whether you've done them. Only
+  you can see them.
 - **Cookies Stepwell needs to work.** A login cookie keeps you signed in until
   you sign out. If our age check says you're under 13, a cookie that ends when
   you close your browser keeps showing that message. Neither one tracks you.

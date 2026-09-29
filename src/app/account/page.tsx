@@ -28,6 +28,9 @@ export default async function AccountPage() {
     <Page>
       <PageTitle>Your account</PageTitle>
       {profile?.nickname && <p className="mt-4 text-lg">Hi, {profile.nickname}.</p>}
+      <p className="mt-4">
+        <Link href="/plan">Go to my plan</Link>
+      </p>
 
       <section aria-labelledby="profile-heading" className="mt-10">
         {isProfileComplete(profile) ? <ProfileSummary profile={profile} /> : <FinishProfile />}

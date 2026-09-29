@@ -1,6 +1,6 @@
 # Spec: Saved plan and year-by-year planner
 
-- Status: draft (for the owner's review; build step 9 of
+- Status: built (2026-09-29), with the defaults in Result (build step 9 of
   `docs/specs/v1-expansion-draft.md`, whose Sections 1 and 2 describe
   `saved_items` and `plan_items` and are already approved)
 
@@ -16,28 +16,28 @@ and classes in one year-by-year plan with deadlines, so I know what to do
 this year and what comes later.
 
 ## Acceptance criteria
-- [ ] Saving grows beyond careers: colleges, scholarships, internships and
+- [x] Saving grows beyond careers: colleges, scholarships, internships and
       AP classes get a Save button (signed in) where they're shown.
       `saved_items` gains one nullable column per kind (`unitid`,
       `scholarship_id`, `opportunity_id`, `ap_course_code`) with the
       existing "exactly one" check extended, as Section 2 approved.
-- [ ] `plan_items` (owner-only RLS, same migration): academic year, term
+- [x] `plan_items` (owner-only RLS, same migration): academic year, term
       (fall, spring, summer, full year), kind (class, task, application),
       title (at most 200), notes (at most 1,000), optional link to one
       saved item, optional due date, status (to do, doing, done), position.
-- [ ] `/plan` ("My plan" in the Menu, signed in): one section per school
+- [x] `/plan` ("My plan" in the Menu, signed in): one section per school
       year from now to the expected graduation year (grade labels from
       `grad_year`: "11th grade (2027 to 2028)"), then "After high school".
       Saved scholarships and internships show their live deadline (read at
       view time, never copied); passed ones say "Closed".
-- [ ] Add, edit, move (year and term), mark done and delete plan items,
+- [x] Add, edit, move (year and term), mark done and delete plan items,
       with Server Actions validated by zod and the session's user.
-- [ ] Empty state: explains the plan and links to Careers, Scholarships and
+- [x] Empty state: explains the plan and links to Careers, Scholarships and
       the interest quiz. Phones: each year folds (native `<details>`), the
       current year open.
-- [ ] Account deletion removes plan items (cascade); the Privacy page lists
+- [x] Account deletion removes plan items (cascade); the Privacy page lists
       the plan before it ships.
-- [ ] pgTAP: owner-only access for both tables; unit tests; 320px check.
+- [x] pgTAP: owner-only access for both tables; unit tests; 320px check.
 
 ## Data
 `saved_items` (extended) and `plan_items`, both owner-only, deleted with
@@ -59,12 +59,25 @@ pgTAP for RLS and the "exactly one" check; unit tests for grade labels and
 year grouping; by hand at 320px: save from four kinds of pages, build a
 plan, move and finish items, delete the account.
 
-## Open questions (the owner's decisions)
-1. Which kinds can be saved in this step: all five above, or start with
-   scholarships and colleges?
-2. Starter tasks: add a few standard dated tasks automatically (for
-   example "File the FAFSA, from Oct 1 of senior year"), or leave the plan
-   empty until the student adds things?
-3. Middle schoolers and adult learners: same year view, or a plain list?
-4. Plan notes are free text a 13-year-old could fill with personal details:
-   keep notes, cap them shorter, or leave notes out of v1?
+## Result
+The owner said to proceed, so each open question took its default:
+1. Saving: scholarships and colleges (careers already could). Internships
+   and AP classes wait for a later step.
+2. No starter tasks; the plan starts empty with links to get going.
+3. Everyone gets the same year view; with no graduation year (adult
+   learners, or not filled in) years run from now, and `/plan` asks for the
+   year where it applies.
+4. No notes in v1: a 13-year-old's free text is a privacy risk the plan
+   doesn't need. Titles are capped at 200 and the form says not to include
+   private details.
+
+Other differences from the criteria above:
+- Status is done or not done (no "doing"), and items sort by term and due
+  date instead of a stored position.
+- Plan items don't link to saved items. Saved scholarships sit in the year
+  of their next deadline and saved colleges in senior year, read live.
+- Saved scholarships and colleges have no foreign key (the merges delete
+  rows) and keep a title copy, so a removed listing shows "No longer
+  listed" by name. pgTAP checks the merge still runs.
+- "My plan" sits beside Account in the header from 640px; on phones the
+  header has no room, so Account links to it.

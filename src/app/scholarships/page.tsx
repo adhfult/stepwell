@@ -4,10 +4,12 @@ import { z } from "zod";
 import { buttonClass } from "@/components/button-styles";
 import { Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
+import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
 import { STAGES, STATES, stateName } from "@/lib/profile/options";
 import { getMyEligibility, matchScholarships, type ScholarshipMatch } from "@/lib/scholarships/data";
 import { checkedText, deadlineText, domainOf, FIELDS } from "@/lib/scholarships/labels";
+import { SaveButton } from "@/app/plan/save-button";
 
 export const metadata: Metadata = { title: "Scholarships and grants" };
 
@@ -27,7 +29,7 @@ const paramsSchema = z.object({
 export default async function ScholarshipsPage({ searchParams }: PageProps<"/scholarships">) {
   const params = paramsSchema.parse(await searchParams);
   const [user, profile] = await Promise.all([getCurrentUser(), getMyProfile()]);
-  const eligibility = user ? await getMyEligibility() : null;
+  const [eligibility, saved] = user ? await Promise.all([getMyEligibility(), getMySavedIds()]) : [null, null];
 
   // Start from the student's profile; "all" / "any" means they cleared it on purpose.
   const state = params.state === "all" ? undefined : (params.state ?? profile?.state ?? undefined);
@@ -90,7 +92,7 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
           </h2>
           <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
             {shown.map((s) => (
-              <Listing key={s.id} s={s} />
+              <Listing key={s.id} s={s} saved={saved && saved.scholarships.has(s.id)} />
             ))}
           </ul>
           {!params.more && listings.length > FIRST && (
@@ -160,7 +162,7 @@ function Filters({ state, stage, fields }: { state?: string; stage?: string; fie
 }
 
 /** One listing: DESIGN.md tags (words, never color alone) and deadline rules. */
-function Listing({ s }: { s: ScholarshipMatch }) {
+function Listing({ s, saved }: { s: ScholarshipMatch; saved: boolean | null }) {
   const deadline = deadlineText(s);
   const tone = deadline.tone === "urgent" ? "text-accent font-bold" : deadline.tone === "closed" ? "text-muted" : "";
   return (
@@ -180,6 +182,7 @@ function Listing({ s }: { s: ScholarshipMatch }) {
       <p className="mt-2">
         <a href={s.url}>Apply on the official site ({domainOf(s.url)})</a>
       </p>
+      {saved !== null && <SaveButton kind="scholarship" id={s.id} saved={saved} />}
       {/* The long parts fold away, so a phone shows a scannable list (native <details>, no script). */}
       <details className="mt-2">
         <summary className="inline-flex min-h-11 cursor-pointer items-center text-primary underline">
