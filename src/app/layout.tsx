@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Next, Bitter } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${bitter.variable} ${atkinson.variable} h-full antialiased`}>
-      <body className="min-h-full">
+      <body className="flex min-h-full flex-col">
         {/* Lets keyboard users jump past the header; visible only when focused. */}
         <a
           href="#main"
@@ -32,7 +33,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to main content
         </a>
         <SiteHeader />
-        <main id="main">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
       </body>
     </html>
   );

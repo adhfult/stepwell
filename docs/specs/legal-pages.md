@@ -1,6 +1,9 @@
 # Spec: Terms and Privacy pages
 
-- Status: draft (fill in the placeholders, review, then change to "approved")
+- Status: built 2026-09-29, with placeholders. The owner chose to name only
+  the project ("an independent project", no owner name); contact email,
+  email provider, law state and effective date stay `[PLACEHOLDERS]` in
+  `src/lib/legal/details.ts` until launch (`placeholdersLeft()` lists them).
 - Launch blocker from `docs/specs/accounts-and-profile.md`. Not legal advice:
   a legal review is required before real students sign up (docs/LAUNCH.md).
 
@@ -16,18 +19,19 @@ information before I create an account.
 ## Acceptance criteria
 - [ ] `/privacy` and `/terms` show the approved text from
       `docs/legal/privacy-draft.md` and `docs/legal/terms-draft.md`, with
-      every `[PLACEHOLDER]` filled in and a "Last updated" date.
-- [ ] A site footer on every page (DESIGN.md "Page frame": on `surface`,
+      every `[PLACEHOLDER]` filled in and a "Last updated" date. (Text and
+      pages done; the placeholders wait for the owner, see docs/LAUNCH.md.)
+- [x] A site footer on every page (DESIGN.md "Page frame": on `surface`,
       top `border-subtle` divider) links to Terms and Privacy. Other footer
       links (About the data, Contact) are added when those pages exist.
-- [ ] The sign-up page says, next to the button: "By creating an account,
+- [x] The sign-up page says, next to the button: "By creating an account,
       you agree to the Terms and the Privacy Policy." with both linked.
-- [ ] Reading pages (`<Page>`, reading width), `<PageTitle>`, section
+- [x] Reading pages (`<Page>`, reading width), `<PageTitle>`, section
       headings `text-lg`; works at 320px; AVOID.md check passes (no em dashes).
-- [ ] The Privacy page matches what the code does: any later change to what
+- [x] The Privacy page matches what the code does: any later change to what
       Stepwell collects (for example scholarship eligibility answers in the
       v1 expansion) updates the page first.
-- [ ] `npm run check` passes.
+- [x] `npm run check` passes.
 
 ## Data
 None stored. Static pages.
@@ -42,7 +46,7 @@ None stored. Static pages.
 - Parent accounts, data requests by form (email works for now).
 
 ## Open questions (to fill the placeholders)
-- `[OWNER NAME]`: who runs Stepwell, as it should appear publicly.
+- ~~`[OWNER NAME]`~~: decided, the pages say "an independent project".
 - `[CONTACT EMAIL]`: a Stepwell address (not a personal one), also used by
   the data pipeline's User-Agent (v1 expansion draft).
 - `[EMAIL PROVIDER]`: from docs/LAUNCH.md step 2.

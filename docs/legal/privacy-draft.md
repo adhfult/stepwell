@@ -8,7 +8,7 @@ launch. Placeholders are in `[BRACKETS]`. Keep it matched to what the code does.
 **Last updated: [EFFECTIVE DATE]**
 
 Stepwell helps students connect careers to programs and colleges. It's free.
-It's run by [OWNER NAME]. Questions: [CONTACT EMAIL].
+It's an independent project. Questions: [CONTACT EMAIL].
 
 ## What we collect
 - **Your email address and password.** You need them to sign in. Your

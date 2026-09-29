@@ -68,8 +68,11 @@ Details that change often (free-tier limits, prices) are marked "check".
       domain registrar (SECURITY.md).
 
 ## 6. Before opening sign-up
-- [ ] Terms and Privacy pages live and linked (`docs/specs/legal-pages.md`),
-      with the placeholders filled in.
+- [ ] Terms and Privacy placeholders filled in: edit `LEGAL` in
+      `src/lib/legal/details.ts` (contact email, email provider from step 2,
+      law state, effective date) and the matching `docs/legal/*-draft.md`.
+      `placeholdersLeft()` must return an empty list before launch. The
+      pages and footer links are already live (`docs/specs/legal-pages.md`).
 - [ ] Legal review of the age screen, Terms and Privacy (not legal advice here).
 - [ ] **Claude:** pre-ship-security skill, then Cloudflare's security-audit
       skill (`npx skills add https://github.com/cloudflare/security-audit-skill

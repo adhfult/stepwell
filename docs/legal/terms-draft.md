@@ -7,8 +7,8 @@ launch. Placeholders are in `[BRACKETS]`.
 
 **Last updated: [EFFECTIVE DATE]**
 
-These are the rules for using Stepwell, run by [OWNER NAME]. By creating an
-account, you agree to them.
+These are the rules for using Stepwell, an independent project. By creating
+an account, you agree to them.
 
 ## Who can use Stepwell
 You need to be 13 or older and give your real age range when you sign up.
@@ -31,8 +31,11 @@ We may close accounts that break these rules.
 Career, program and college information comes from official U.S. government
 sources such as O\*NET (U.S. Department of Labor) and College Scorecard (U.S.
 Department of Education). It can be out of date or incomplete, and it's a
-starting point, not a promise about any job, school or cost. Check important
-details with the school, and talk with a counselor or a trusted adult.
+starting point, not a promise about any job, school or cost. Scholarship
+listings come from official state and federal program pages and can change at
+any time; always check the official page before you apply. Check important
+details with the school or program, and talk with a counselor or a trusted
+adult.
 
 ## Changes and availability
 Stepwell is free and offered as it is. We may change it, pause it or stop it.

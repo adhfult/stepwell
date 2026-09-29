@@ -113,6 +113,10 @@ export function SignUpForm({ thisYear }: { thisYear: number }) {
         </fieldset>
 
         <Turnstile resetKey={state} />
+        <p className="text-sm text-muted">
+          By creating an account, you agree to the <Link href="/terms">Terms</Link> and the{" "}
+          <Link href="/privacy">Privacy Policy</Link>.
+        </p>
         <SubmitButton pendingLabel="Creating account">Create account</SubmitButton>
       </form>
       <p className="mt-8">

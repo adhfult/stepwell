@@ -115,7 +115,9 @@ Rules:
   "Account") on one line at 320px; "Create account" joins from 640px.
 - **Footer** (on `surface`, top `border-subtle` divider): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
-  sources. Required before launch; links are added only when their pages exist.
+  sources. Links are added only when their pages exist: Terms and Privacy
+  now (`src/components/site-footer.tsx`); About the data and Contact later.
+  The body is a flex column so the footer sits at the bottom of short pages.
 
 ## Components
 
@@ -295,6 +297,4 @@ checkboxes and radio buttons. Everything else above is applied per component.
 ## Open items
 - **Dark mode is not designed yet.** The site is light only
   (`color-scheme: light`) until a dark palette is chosen and contrast-checked.
-- Terms and Privacy footer links are required by AVOID.md and do not exist
-  yet (planned as the legal pages spec).
 - The route line's draw-in motion needs a prototype before it is final.
