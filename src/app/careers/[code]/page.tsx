@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
+import { getCareerPrograms } from "@/lib/colleges/data";
 import { type Career, getCareer, isCareerSaved } from "@/lib/careers/data";
 import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalEducation } from "@/lib/careers/labels";
 import { OnetSource, OutlookSource } from "../source-line";
@@ -22,7 +23,11 @@ export async function generateMetadata({ params }: PageProps<"/careers/[code]">)
 
 export default async function CareerPage({ params }: PageProps<"/careers/[code]">) {
   const career = await careerFor(params);
-  const [user, saved] = await Promise.all([getCurrentUser(), isCareerSaved(career.onet_code)]);
+  const [user, saved, programs] = await Promise.all([
+    getCurrentUser(),
+    isCareerSaved(career.onet_code),
+    getCareerPrograms(career.onet_code),
+  ]);
   const education = typicalEducation(career.education_level, career.education_share);
   const prep = preparation(career.job_zone);
 
@@ -85,6 +90,23 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
       </section>
 
       {career.outlook && <PayAndOutlook career={career} />}
+
+      {programs.length > 0 && (
+        <section aria-labelledby="study-heading" className="mt-12">
+          <h2 id="study-heading" className="text-lg font-bold">
+            Where to study
+          </h2>
+          <p className="mt-3">Programs that lead to this career include:</p>
+          <ul className="mt-2 list-disc space-y-1 pl-6">
+            {programs.slice(0, 6).map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
+          <p className="mt-4">
+            <Link href={`/careers/${career.onet_code}/colleges`}>Find colleges for this career</Link>
+          </p>
+        </section>
+      )}
 
       {career.tasks.length > 0 && (
         <section aria-labelledby="tasks-heading" className="mt-12">
