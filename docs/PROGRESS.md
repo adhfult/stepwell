@@ -21,18 +21,23 @@ Newest entries at the top. Keep each entry short.
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Next build step: Scholarships (v1 expansion, Section 1, step 7:
-      CareerOneStop API plus allowlisted sites, and the optional eligibility
-      answers with the two-step opt-in from decision 0006). Needs a
-      CareerOneStop API registration by the owner first; its spec needs
-      writing (the first step that stores sensitive answers about minors, so
-      plan it before building)
+- [ ] **Owner:** review `docs/specs/scholarships.md` (draft): CareerOneStop
+      is blocked (403 on every network the owner tried), so it proposes a
+      curated list of official state and federal programs and a smaller set
+      of eligibility questions; answer its 3 open questions
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 - [ ] Later: a phone "Menu" button in the header, so Interests (and the next
       sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-28 (late night): scholarships source problem
+- CareerOneStop's website returns 403 (CloudFront) to the owner on every
+  network tried, so its API can't be registered for. No open scholarship
+  dataset exists; the big aggregators forbid scraping. Drafted
+  `docs/specs/scholarships.md` (curated official list) for review.
+- USAJOBS's developer site is reachable (for internships, step 8).
+
 ### 2026-09-28 (late night): AP suggestions built
 - Spec with the full knowledge-area to AP-course mapping
   (`docs/specs/ap-suggestions.md`); `knowledge_areas`, `ap_courses` (42),
