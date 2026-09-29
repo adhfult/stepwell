@@ -1,0 +1,22 @@
+name: Scholarship re-check
+
+# Monthly (docs/specs/scholarship-recheck.md): fails with the list of entries
+# to re-check by hand, so GitHub emails the owner. Reads only the repo's files.
+on:
+  schedule:
+    - cron: "23 13 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  due:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: npm run scholarships:due

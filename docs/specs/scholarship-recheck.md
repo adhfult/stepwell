@@ -1,6 +1,6 @@
 # Spec: Keeping the scholarship list current
 
-- Status: draft (for the owner's review)
+- Status: built (2026-09-29)
 
 ## Goal
 Make sure no scholarship listing quietly goes out of date: every entry is
@@ -17,14 +17,14 @@ don't miss or chase the wrong date.
 - The research rules are in `data/scholarships/README.md`.
 
 ## Acceptance criteria
-- [ ] `npm run scholarships:due` lists, by state, the entries that need a
+- [x] `npm run scholarships:due` lists, by state, the entries that need a
       look: `checked_at` older than 11 months, or a `date` deadline that
       has passed (it will usually come back next year). No network use.
-- [ ] A monthly GitHub Actions job runs the same check and, when anything
+- [x] A monthly GitHub Actions job runs the same check and, when anything
       is due, fails with the list in its summary (GitHub emails the owner),
       so nothing depends on remembering.
-- [ ] Unit tests for the "due" rule.
-- [ ] README gains a short "How to re-check" section: run the list, re-read
+- [x] Unit tests for the "due" rule.
+- [x] README gains a short "How to re-check" section: run the list, re-read
       each page, update facts and `checked_at`, validate, import, commit.
 
 ## Data
@@ -42,8 +42,9 @@ and decision 0007 prefers facts checked by a person), private scholarships.
 ## Test plan
 Unit tests on fixed dates; one manual run of the workflow.
 
-## Open questions
-- A failing monthly job as the reminder, or an opened GitHub issue instead
-  (an issue needs `issues: write` permission for the workflow)?
-- Who re-checks: the owner, or an agent session using the README rules
-  (the first two batches were agent-researched and spot-checked)?
+## Result
+The owner said to proceed, so the defaults were taken: a failing monthly
+job (`.github/workflows/scholarship-recheck.yml`, no extra permissions)
+rather than an opened issue, and the owner re-checks, optionally with an
+agent session that follows the README rules. The script is
+`src/jobs/scholarships-due.ts`; nothing is due on 2026-09-29.

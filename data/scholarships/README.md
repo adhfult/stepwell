@@ -23,7 +23,16 @@ anything off-format.
   `award.text` at most 120. No em or en dashes.
 - `checked_at` is the day you checked the page.
 
-## Yearly re-check
+## How to re-check
 Every entry older than 12 months shows "Check the official page for this
-year's details" instead of its deadline. Re-check each state's page, update
-facts and `checked_at`, then run `npm run import -- official_list`.
+year's details" instead of its deadline. On the 1st of each month the
+"Scholarship re-check" workflow fails, and GitHub emails the owner, when
+anything is due: checked more than 11 months ago, or a dated deadline that
+has passed (it usually comes back next year).
+
+1. `npm run scholarships:due` lists what's due, by state.
+2. Re-read each official page, update the facts and `checked_at` by the
+   rules above. Remove a program that ended; update `url` if the page moved.
+3. `npm run import -- official_list --dry-run` validates the files, then
+   `npm run import -- official_list` loads them.
+4. Commit. The next monthly run passes once nothing is due.
