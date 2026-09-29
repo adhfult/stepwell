@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { getCareerPrograms } from "@/lib/colleges/data";
+import { getScholarshipFieldsForCareer } from "@/lib/scholarships/data";
 import { type Career, getApCourses, getCareer, isCareerSaved } from "@/lib/careers/data";
 import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalEducation } from "@/lib/careers/labels";
 import { OnetSource, OutlookSource } from "../source-line";
@@ -23,11 +24,12 @@ export async function generateMetadata({ params }: PageProps<"/careers/[code]">)
 
 export default async function CareerPage({ params }: PageProps<"/careers/[code]">) {
   const career = await careerFor(params);
-  const [user, saved, programs, apCourses] = await Promise.all([
+  const [user, saved, programs, apCourses, scholarshipFields] = await Promise.all([
     getCurrentUser(),
     isCareerSaved(career.onet_code),
     getCareerPrograms(career.onet_code),
     getApCourses(career.onet_code),
+    getScholarshipFieldsForCareer(career.onet_code),
   ]);
   const education = typicalEducation(career.education_level, career.education_share);
   const prep = preparation(career.job_zone);
@@ -106,6 +108,11 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
           <p className="mt-4">
             <Link href={`/careers/${career.onet_code}/colleges`}>Find colleges for this career</Link>
           </p>
+          {scholarshipFields.length > 0 && (
+            <p className="mt-2">
+              <Link href={`/scholarships?fields=${scholarshipFields.join(",")}`}>Scholarships for this field</Link>
+            </p>
+          )}
         </section>
       )}
 

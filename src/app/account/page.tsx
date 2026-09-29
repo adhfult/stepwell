@@ -6,6 +6,7 @@ import { SubmitButton } from "@/components/form";
 import { requireUser } from "@/lib/auth/dal";
 import { getMySavedCareers } from "@/lib/careers/data";
 import { getMyInterestResults } from "@/lib/interests/data";
+import { getMyEligibility } from "@/lib/scholarships/data";
 import { listNames } from "@/lib/interests/labels";
 import { rankAreas, resultsPath } from "@/lib/interests/scoring";
 import { getMyProfile, isProfileComplete, type Profile } from "@/lib/profile/data";
@@ -16,10 +17,11 @@ export const metadata: Metadata = { title: "Your account" };
 
 export default async function AccountPage() {
   const user = await requireUser("/account");
-  const [profile, savedCareers, interests] = await Promise.all([
+  const [profile, savedCareers, interests, eligibility] = await Promise.all([
     getMyProfile(),
     getMySavedCareers(),
     getMyInterestResults(),
+    getMyEligibility(),
   ]);
 
   return (
@@ -37,6 +39,20 @@ export default async function AccountPage() {
 
       <section aria-labelledby="interests-heading" className="mt-12">
         <Interests interests={interests} />
+      </section>
+
+      <section aria-labelledby="matching-heading" className="mt-12">
+        <h2 id="matching-heading" className="text-lg font-bold">
+          Scholarship matching
+        </h2>
+        <p className="mt-3">
+          {eligibility
+            ? "On. Your optional answers are used to show which scholarships you qualify for."
+            : "Off. Answer a few optional questions to see which scholarships you qualify for."}
+        </p>
+        <p className="mt-3">
+          <Link href="/account/eligibility">{eligibility ? "Change or remove your answers" : "Turn on scholarship matching"}</Link>
+        </p>
       </section>
 
       <section aria-labelledby="signing-in-heading" className="mt-12">
