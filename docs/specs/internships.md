@@ -47,8 +47,7 @@ apply for, so I can try a career before choosing it.
    O*NET codes, so the link would be guesswork.
 
 ## Acceptance criteria
-- [ ] Source `usajobs` (api, 1 day) (built and unit-tested on the API
-      reference's example; tick after the first live dry run): adapter pages through
+- [x] Source `usajobs` (api, 1 day) (first live run 2026-09-29): adapter pages through
       `HiringPath=student` results with the key in headers (never the URL),
       validates each posting with zod, and stages it.
 - [x] `opportunities` (public read): id (USAJOBS posting id), title,
@@ -68,6 +67,11 @@ apply for, so I can try a career before choosing it.
 - data.usajobs.gov's robots.txt disallows all crawlers; the adapter skips
   that check only for this documented, keyed API (decision 0007 addendum).
 - Checked at 320px and 1280px with synthetic postings merged locally.
+- First live run: the student hiring path also returns ordinary jobs open
+  to many paths (pest controller, physician); `isStudentJob()` keeps 60 of
+  the 86 paid postings. Checked again at 320px with the live postings.
+- Still to do by the owner: the `USAJOBS_API_KEY` and `USAJOBS_EMAIL`
+  GitHub secrets, so the daily cloud import can run.
 
 ## Out of scope
 Non-federal internships, summer and pre-college programs, saving

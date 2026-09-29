@@ -1,0 +1,513 @@
+{
+ "LanguageCode": "EN",
+ "SearchParameters": {},
+ "SearchResult": {
+  "SearchResultCount": 4,
+  "SearchResultCountAll": 4,
+  "SearchResultItems": [
+   {
+    "MatchedObjectId": "854458300",
+    "MatchedObjectDescriptor": {
+     "PositionID": "u-26-JAN-DHA-12865759-JLE",
+     "PositionTitle": "Human Resources Specialist",
+     "PositionURI": "https://www.usajobs.gov:443/job/854458300",
+     "ApplyURI": [
+      "https://www.usajobs.gov:443/job/854458300"
+     ],
+     "PositionLocationDisplay": "Patrick AFB, Florida",
+     "PositionLocation": [
+      {
+       "LocationName": "Patrick AFB, Florida",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Florida",
+       "CityName": "Patrick AFB, Florida",
+       "Longitude": -80.60844,
+       "Latitude": 28.242105
+      }
+     ],
+     "OrganizationName": "United States Space Force",
+     "DepartmentName": "Department of the Air Force",
+     "SubAgency": "AFPC/Talent Readiness Division/DPZS",
+     "JobCategory": [
+      {
+       "Name": "Human Resources Management",
+       "Code": "0201"
+      }
+     ],
+     "JobGrade": [
+      {
+       "Code": "GS"
+      }
+     ],
+     "PositionSchedule": [
+      {
+       "Name": "",
+       "Code": "1"
+      }
+     ],
+     "PositionOfferingType": [
+      {
+       "Name": "",
+       "Code": "15317"
+      }
+     ],
+     "QualificationSummary": "To qualify for a GS-07: Completion of 1 full year of graduate level education, or bachelor's degree with Superior academic Achievement as provided in the \"General Policies and Instructions\" for Qualifications Standards Operating Manual, or 5 academic years of pre-professional study, or 1 year specialized experience equivalent to at least GS-5. Experience refers to paid and unpaid experience, including volunteer work done through National Service Programs (i.e., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student and social). Volunteer work helps build critical competencies, knowledge and skills that can provide valuable training and experience that translates directly to paid employment. You will receive credit for all qualifying experience, including volunteer experience. SPECIALIZED EXPERIENCE: Applicants must have at least one (1) year of specialized experience at the next lower grade GS-05, or equivalent in other pay systems. Examples of specialized experience includes: providing support for Human Resources (HR) specialists involved in using HR information systems; in delivering HR services to military personnel; and in classification, recruitment and placement, employee benefits, human resource development, performance management, and employee and labor management relations. Process and document HR actions for a wide variety of employee categories that involve different forms, different authorities, different action codes, and different regulatory authorities, or additional pay systems. Obtain missing data from HR files or the appropriate office; assist employees in preparing paperwork related to HR actions; review finished forms for completeness and adequacy; contact individual employees or supervisors by telephone to resolve questions before processing final actions; provide information on HR systems, processes and procedures; and/or provide brochures, applications and other HR documents to employees. This experience MUST be equivalent to at least the GS-05 level in Federal service, which could have been obtained in the private or public sectors. Applicants in the Best-qualified category will be referred to the selecting official for further review. To view qualifying educational requirements and/or combination of education and specialized experience, click on the following link: http:// www.opm.gov/qualifications/standards/indexes/num-ndx.asp KNOWLEDGE, SKILLS AND ABILITIES (KSAs): Your qualifications will be evaluated on the basis of your level of knowledge, skills, abilities and/or competencies in the following areas: 1. Knowledge of basic principles and practices of human resources. 2. Ability to communicate effectively with others, both orally and in writing. 3. Ability to gather facts and use effective analytical, and evaluative methods to accurately assess information and formulate solutions to problems. 4. Ability to management several projects simultaneously. PART-TIME OR UNPAID EXPERIENCE: Credit will be given for appropriate unpaid and or part-time work. You must clearly identify the duties and responsibilities in each position held and the total number of hours per week. VOLUNTEER WORK EXPERIENCE: Refers to paid and unpaid experience, including volunteer work done through National Service Programs (i.e., Peace Corps, AmeriCorps) and other organizations (e.g., professional; philanthropic; religious; spiritual; community; student and social). Volunteer work helps build critical competencies, knowledge and skills that can provide valuable training and experience that translates directly to paid employment. You will receive credit for all qualifying experience, including volunteer experience.",
+     "PositionRemuneration": [
+      {
+       "MinimumRange": "50835",
+       "MaximumRange": "97809",
+       "RateIntervalCode": "PA",
+       "Description": "Per Year"
+      }
+     ],
+     "PositionStartDate": "2026-01-14T00:00:00.0000",
+     "PositionEndDate": "2027-01-13T23:59:59.9970",
+     "PublicationStartDate": "2026-01-14T00:00:00.0000",
+     "ApplicationCloseDate": "2027-01-13T23:59:59.9970",
+     "PositionFormattedDescription": [],
+     "UserArea": {
+      "Details": {
+       "JobSummary": "",
+       "WhoMayApply": {
+        "Name": "",
+        "Code": ""
+       },
+       "LowGrade": "7",
+       "HighGrade": "7",
+       "PromotionPotential": "11",
+       "SubAgencyName": "AFPC/Talent Readiness Division/DPZS",
+       "OrganizationCodes": "DD/AF4G",
+       "Relocation": "False",
+       "HiringPath": [
+        "graduates",
+        "student",
+        "public"
+       ],
+       "HiringPathDisplay": [
+        "Recent graduates",
+        "Students",
+        "Open to the public"
+       ],
+       "MCOTags": [],
+       "TotalOpenings": "FEW",
+       "AgencyMarketingStatement": "",
+       "TravelCode": "1",
+       "ApplyOnlineUrl": "https://apply.usastaffing.gov/Application/Apply",
+       "DetailStatusUrl": "https://apply.usastaffing.gov/Application/ApplicationStatus",
+       "MajorDuties": [],
+       "Education": "",
+       "Requirements": "",
+       "Evaluations": "",
+       "HowToApply": "",
+       "WhatToExpectNext": "",
+       "RequiredDocuments": "",
+       "Benefits": "",
+       "BenefitsUrl": "https://www.usajobs.gov/Help/working-in-government/benefits/",
+       "BenefitsDisplayDefaultText": true,
+       "OtherInformation": "",
+       "KeyRequirements": [],
+       "WithinArea": "False",
+       "CommuteDistance": "0",
+       "ServiceType": "01",
+       "AnnouncementClosingType": "01",
+       "AgencyContactEmail": "",
+       "AgencyContactPhone": "",
+       "SecurityClearance": "Secret",
+       "DrugTestRequired": "False",
+       "PositionSensitivitiy": "Noncritical-Sensitive (NCS)/Moderate Risk",
+       "AdjudicationType": [
+        "Suitability/Fitness"
+       ],
+       "TeleworkEligible": false,
+       "RemoteIndicator": false,
+       "FinancialDisclosure": false,
+       "BargainingUnitStatus": false
+      },
+      "IsRadialSearch": false
+     },
+     "AnnouncementClosingType": "01"
+    },
+    "RelevanceRank": 0
+   },
+   {
+    "MatchedObjectId": "880718800",
+    "MatchedObjectDescriptor": {
+     "PositionID": "ST-13027523-26-LLO",
+     "PositionTitle": "Morale, Well-being, and Recreation Internship",
+     "PositionURI": "https://www.usajobs.gov:443/job/880718800",
+     "ApplyURI": [
+      "https://www.usajobs.gov:443/job/880718800"
+     ],
+     "PositionLocationDisplay": "Multiple Locations",
+     "PositionLocation": [
+      {
+       "LocationName": "Kodiak, Alaska",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Alaska",
+       "CityName": "Kodiak, Alaska",
+       "Longitude": -152.39516,
+       "Latitude": 57.79435
+      },
+      {
+       "LocationName": "New London, Connecticut",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Connecticut",
+       "CityName": "New London, Connecticut",
+       "Longitude": -72.096466,
+       "Latitude": 41.356434
+      },
+      {
+       "LocationName": "Borinquen Air Station, Puerto Rico",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Puerto Rico",
+       "CityName": "Borinquen Air Station, Puerto Rico",
+       "Longitude": -67.1532,
+       "Latitude": 18.4684
+      },
+      {
+       "LocationName": "Portsmouth, Virginia",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Virginia",
+       "CityName": "Portsmouth, Virginia",
+       "Longitude": -76.297714,
+       "Latitude": 36.832638
+      },
+      {
+       "LocationName": "Yorktown, Virginia",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "Virginia",
+       "CityName": "Yorktown, Virginia",
+       "Longitude": -76.5123,
+       "Latitude": 37.235
+      }
+     ],
+     "OrganizationName": "U.S. Coast Guard",
+     "DepartmentName": "Department of Homeland Security",
+     "SubAgency": "Community Services Command; Morale, Well-being, and Recreation (MWR)",
+     "JobCategory": [
+      {
+       "Name": "Recreation Aid And Assistant",
+       "Code": "0189"
+      }
+     ],
+     "JobGrade": [
+      {
+       "Code": "NF"
+      }
+     ],
+     "PositionSchedule": [
+      {
+       "Name": "",
+       "Code": "1"
+      }
+     ],
+     "PositionOfferingType": [
+      {
+       "Name": "Internships",
+       "Code": "15318"
+      }
+     ],
+     "QualificationSummary": "Internship candidates should: Be actively enrolled in a degree program in Recreation, Hospitality, Fitness, Sports Management, Child & Youth Development, Marketing, Business Administration, or a related field Be in good academic standing Demonstrate strong communication and interpersonal skills Show professionalism, initiative, and enthusiasm for working in a dynamic, service-focused environment",
+     "PositionRemuneration": [
+      {
+       "MinimumRange": "0.01",
+       "MaximumRange": "18",
+       "RateIntervalCode": "PH",
+       "Description": "Per Hour"
+      }
+     ],
+     "PositionStartDate": "2026-08-12T00:00:00.0000",
+     "PositionEndDate": "2027-08-11T23:59:59.9970",
+     "PublicationStartDate": "2026-08-12T00:00:00.0000",
+     "ApplicationCloseDate": "2027-08-11T23:59:59.9970",
+     "PositionFormattedDescription": [],
+     "UserArea": {
+      "Details": {
+       "JobSummary": "",
+       "WhoMayApply": {
+        "Name": "",
+        "Code": ""
+       },
+       "LowGrade": "1",
+       "HighGrade": "1",
+       "PromotionPotential": "1",
+       "PromotionPotentialAdditionalText": "Unpaid and NF-01 Rec-aid.",
+       "SubAgencyName": "Community Services Command; Morale, Well-being, and Recreation (MWR)",
+       "OrganizationCodes": "HS/HSAC",
+       "Relocation": "False",
+       "HiringPath": [
+        "student"
+       ],
+       "HiringPathDisplay": [
+        "Students"
+       ],
+       "MCOTags": [],
+       "TotalOpenings": "Many",
+       "AgencyMarketingStatement": "",
+       "TravelCode": "0",
+       "MajorDuties": [],
+       "Education": "",
+       "Requirements": "",
+       "Evaluations": "",
+       "HowToApply": "",
+       "WhatToExpectNext": "",
+       "RequiredDocuments": "",
+       "Benefits": "",
+       "BenefitsUrl": "https://shopcgx.com/pages/careers?srsltid=AfmBOoovPrONbe7eDTuqCe3cdnjDTq3pqNbC22cRkmilmdGGV4VI8AVj",
+       "BenefitsDisplayDefaultText": false,
+       "OtherInformation": "",
+       "KeyRequirements": [],
+       "WithinArea": "False",
+       "CommuteDistance": "0",
+       "ServiceType": "02",
+       "AnnouncementClosingType": "01",
+       "AgencyContactEmail": "",
+       "SecurityClearance": "Not Required",
+       "DrugTestRequired": "False",
+       "AdjudicationType": [],
+       "TeleworkEligible": false,
+       "RemoteIndicator": false,
+       "FinancialDisclosure": false,
+       "BargainingUnitStatus": false
+      },
+      "IsRadialSearch": false
+     },
+     "AnnouncementClosingType": "01"
+    },
+    "RelevanceRank": 0
+   },
+   {
+    "MatchedObjectId": "869474800",
+    "MatchedObjectDescriptor": {
+     "PositionID": "DE-12955820-26-AB",
+     "PositionTitle": "Graduate Student Research Assistant",
+     "PositionURI": "https://www.usajobs.gov:443/job/869474800",
+     "ApplyURI": [
+      "https://www.usajobs.gov:443/job/869474800"
+     ],
+     "PositionLocationDisplay": "Anywhere in the U.S. (remote job)",
+     "PositionLocation": [
+      {
+       "LocationName": "Anywhere in the U.S. (remote job), United States",
+       "CountryCode": "United States",
+       "CityName": "Anywhere in the U.S. (remote job), United States",
+       "Longitude": 0,
+       "Latitude": 0
+      }
+     ],
+     "OrganizationName": "Judicial Branch Headquarters",
+     "DepartmentName": "Judicial Branch",
+     "SubAgency": "The Federal Judicial Center",
+     "JobCategory": [
+      {
+       "Name": "Operations Research",
+       "Code": "1515"
+      }
+     ],
+     "JobGrade": [
+      {
+       "Code": "AD"
+      }
+     ],
+     "PositionSchedule": [
+      {
+       "Name": "12-39 hours per week",
+       "Code": "2"
+      }
+     ],
+     "PositionOfferingType": [
+      {
+       "Name": "Fall, Spring, or Summer semester",
+       "Code": "15318"
+      }
+     ],
+     "QualificationSummary": "Currently enrolled and seeking a graduate degree in a social or behavioral science discipline such as psychology, sociology, or political science at an accredited educational institution, on a full-time basis; Experience working in a research environment either as a paid employee, intern, or volunteer, or as part of a graduate school program; Knowledge of statistical programs such as SAS, SPSS, STATA, and R; Knowledge of database management programs such as Excel, Access, or FileMaker; Strong writing skills; and Strong interpersonal and communication skills, including the ability to work collaboratively. Summer graduate student research assistants are asked to commit to at least eight weeks of employment for 30 to 39 hours per week. Spring and fall semester graduate student research assistants are asked to commit to 12 to 15 hours per week. Graduate student research assistants are limited to working a maximum of 39 hours per week.",
+     "PositionRemuneration": [
+      {
+       "MinimumRange": "21.36",
+       "MaximumRange": "24.04",
+       "RateIntervalCode": "PH",
+       "Description": "Per Hour"
+      }
+     ],
+     "PositionStartDate": "2026-05-27T00:00:00.0000",
+     "PositionEndDate": "2027-05-26T23:59:59.9970",
+     "PublicationStartDate": "2026-05-27T00:00:00.0000",
+     "ApplicationCloseDate": "2027-05-26T23:59:59.9970",
+     "PositionFormattedDescription": [],
+     "UserArea": {
+      "Details": {
+       "JobSummary": "",
+       "WhoMayApply": {
+        "Name": "",
+        "Code": ""
+       },
+       "LowGrade": "00",
+       "HighGrade": "00",
+       "PromotionPotential": "None",
+       "SubAgencyName": "The Federal Judicial Center",
+       "OrganizationCodes": "JL/JL00",
+       "Relocation": "False",
+       "HiringPath": [
+        "student"
+       ],
+       "HiringPathDisplay": [
+        "Students"
+       ],
+       "MCOTags": [],
+       "TotalOpenings": "Few",
+       "AgencyMarketingStatement": "",
+       "TravelCode": "0",
+       "MajorDuties": [],
+       "Education": "",
+       "Requirements": "",
+       "Evaluations": "",
+       "HowToApply": "",
+       "WhatToExpectNext": "",
+       "RequiredDocuments": "",
+       "Benefits": "",
+       "BenefitsDisplayDefaultText": false,
+       "OtherInformation": "",
+       "KeyRequirements": [],
+       "WithinArea": "False",
+       "CommuteDistance": "0",
+       "ServiceType": "02",
+       "AnnouncementClosingType": "01",
+       "AgencyContactEmail": "",
+       "SecurityClearance": "Not Required",
+       "DrugTestRequired": "False",
+       "AdjudicationType": [],
+       "TeleworkEligible": false,
+       "RemoteIndicator": true,
+       "FinancialDisclosure": false,
+       "BargainingUnitStatus": false
+      },
+      "IsRadialSearch": false
+     },
+     "AnnouncementClosingType": "01"
+    },
+    "RelevanceRank": 0
+   },
+   {
+    "MatchedObjectId": "855084200",
+    "MatchedObjectDescriptor": {
+     "PositionID": "HCO-26-DE-12865764",
+     "PositionTitle": "Student Volunteer",
+     "PositionURI": "https://www.usajobs.gov:443/job/855084200",
+     "ApplyURI": [
+      "https://www.usajobs.gov:443/job/855084200"
+     ],
+     "PositionLocationDisplay": "Washington, District of Columbia",
+     "PositionLocation": [
+      {
+       "LocationName": "Washington, District of Columbia",
+       "CountryCode": "United States",
+       "CountrySubDivisionCode": "District of Columbia",
+       "CityName": "Washington, District of Columbia",
+       "Longitude": -77.032,
+       "Latitude": 38.8904
+      }
+     ],
+     "OrganizationName": "Government Accountability Office",
+     "DepartmentName": "Legislative Branch",
+     "SubAgency": "Multiple Offices",
+     "JobCategory": [
+      {
+       "Name": "General Student Trainee",
+       "Code": "0099"
+      }
+     ],
+     "JobGrade": [
+      {
+       "Code": "GS"
+      }
+     ],
+     "PositionSchedule": [
+      {
+       "Name": "",
+       "Code": "6"
+      }
+     ],
+     "PositionOfferingType": [
+      {
+       "Name": "",
+       "Code": "15318"
+      }
+     ],
+     "QualificationSummary": "In addition to the Key Requirements listed in this vacancy announcement, the Student Volunteer must also posses the following qualities: Ability to work well in a team environment Ability to communicate orally and in writing to a variety of audiences Excellent interpersonal skills Ability to organize a variety of assignments simultaneously to meet deadlines. A working knowledge of computer applications such as Microsoft: Word, Excel, Power Point and Outlook. Note: If at any point during the internship (and for any reason) your status as a student changes to that of a non-student, your internship will be terminated.",
+     "PositionRemuneration": [
+      {
+       "MinimumRange": "0",
+       "MaximumRange": "0",
+       "RateIntervalCode": "WC",
+       "Description": "Without Compensation"
+      }
+     ],
+     "PositionStartDate": "2026-01-22T00:00:00.0000",
+     "PositionEndDate": "2026-12-31T23:59:59.9970",
+     "PublicationStartDate": "2026-01-22T00:00:00.0000",
+     "ApplicationCloseDate": "2026-12-31T23:59:59.9970",
+     "PositionFormattedDescription": [],
+     "UserArea": {
+      "Details": {
+       "JobSummary": "",
+       "WhoMayApply": {
+        "Name": "",
+        "Code": ""
+       },
+       "LowGrade": "00",
+       "HighGrade": "00",
+       "PromotionPotential": "None",
+       "SubAgencyName": "Multiple Offices",
+       "OrganizationCodes": "LL/LG00",
+       "Relocation": "False",
+       "HiringPath": [
+        "student"
+       ],
+       "HiringPathDisplay": [
+        "Students"
+       ],
+       "MCOTags": [],
+       "TotalOpenings": "Few",
+       "AgencyMarketingStatement": "",
+       "TravelCode": "0",
+       "ApplyOnlineUrl": "https://apply.usastaffing.gov/Application/Apply",
+       "DetailStatusUrl": "https://apply.usastaffing.gov/Application/ApplicationStatus",
+       "MajorDuties": [],
+       "Education": "",
+       "Requirements": "",
+       "Evaluations": "",
+       "HowToApply": "",
+       "WhatToExpectNext": "",
+       "RequiredDocuments": "",
+       "Benefits": "",
+       "BenefitsUrl": "https://www.gao.gov/about/careers/benefits",
+       "BenefitsDisplayDefaultText": true,
+       "OtherInformation": "",
+       "KeyRequirements": [],
+       "WithinArea": "False",
+       "CommuteDistance": "0",
+       "ServiceType": "02",
+       "AnnouncementClosingType": "01",
+       "AgencyContactEmail": "",
+       "SecurityClearance": "Not Required",
+       "DrugTestRequired": "False",
+       "AdjudicationType": [],
+       "TeleworkEligible": true,
+       "RemoteIndicator": false,
+       "FinancialDisclosure": false,
+       "BargainingUnitStatus": false
+      },
+      "IsRadialSearch": false
+     },
+     "AnnouncementClosingType": "01"
+    },
+    "RelevanceRank": 0
+   }
+  ],
+  "UserArea": {
+   "NumberOfPages": "1",
+   "IsRadialSearch": false
+  }
+ }
+}

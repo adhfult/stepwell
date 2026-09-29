@@ -4,12 +4,9 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **Owner:** add `USAJOBS_API_KEY` and `USAJOBS_EMAIL` (the email the
-      key was requested with) to GitHub secrets and `.env.local`, ideally
-      together with the importer secret below (the `usajobs` source is due
-      daily and fails until its key exists). Then an agent runs
-      `npm run import -- usajobs --dry-run`, saves a live page as the test
-      fixture, and imports.
+- [ ] **Owner:** copy `USAJOBS_API_KEY` and `USAJOBS_EMAIL` from
+      `.env.local` into GitHub secrets (works locally since 2026-09-29; the
+      daily cloud import fails without them).
 - [ ] **Owner:** set the `importer` password and the `IMPORT_DATABASE_URL`
       GitHub secret (the permission system blocks agents from secret writes;
       one-liner in `docs/LAUNCH.md`), then run "Import data" once from the
@@ -26,10 +23,6 @@ Newest entries at the top. Keep each entry short.
       work from scratch; then re-run the imports
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] **Owner:** the USAJOBS key isn't under the name the importer reads.
-      List the variable names (no values) with
-      `! grep -oE '^[A-Za-z_][A-Za-z0-9_]*' .env.local`, then rename the key
-      to `USAJOBS_API_KEY` and add `USAJOBS_EMAIL=`.
 - [ ] Review the planner defaults taken on 2026-09-29 (see the saved-plan
       spec's Result): internships and AP classes can't be saved yet; no
       starter tasks; no notes.
@@ -50,6 +43,9 @@ Newest entries at the top. Keep each entry short.
   pgTAP includes a merge that removes a saved scholarship; tried signed in
   at 320px (save, add, move, done, "No longer listed", cascade on account
   deletion).
+- USAJOBS ran live: 60 student postings kept of 103 (unpaid and
+  "open to everyone" jobs left out); fixture replaced with real postings.
+- Row caps: 1,000 saved items and 500 plan steps per student.
 - Local Supabase's Kong container had stopped (exit 127); `docker start
   supabase_kong_stepwell` fixed it.
 

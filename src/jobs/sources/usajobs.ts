@@ -42,6 +42,14 @@ const INTERVALS: Record<string, PayInterval> = {
 };
 const UNPAID = new Set(["WC", "WITHOUT COMPENSATION"]);
 
+// The student hiring path also returns ordinary jobs that merely accept
+// students among many paths (12 for "open to everyone"). A student job lists
+// at most 3 paths, or says what it is in its title or offering type.
+const STUDENT_JOB = /intern|student|trainee|co-?op|cooperative education|clerk|scholarship|work study|practicum|fellow|pathways/i;
+export function isStudentJob(title: string, hiringPaths: string[], offeringTypes: string[]) {
+  return hiringPaths.length <= 3 || STUDENT_JOB.test(title) || offeringTypes.some((o) => /intern/i.test(o));
+}
+
 const STATE_CODES = new Map<string, string>(STATES.map((s) => [s.label.toLowerCase(), s.value]));
 
 /** Plain text: no tags, control characters or long dashes, spaces collapsed, cut at a word. */
@@ -64,7 +72,8 @@ const amount = z
   .nullish()
   .transform((v) => {
     const n = Number(v);
-    return v != null && v !== "" && Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : null;
+    // Under $1 is a placeholder (live postings list "$0.01 to $18.00"), not real pay.
+    return v != null && v !== "" && Number.isFinite(n) && n >= 1 ? Math.round(n * 100) / 100 : null;
   });
 
 const itemSchema = z.object({
@@ -97,11 +106,15 @@ const itemSchema = z.object({
       )
       .nullish(),
     QualificationSummary: z.string().nullish(),
+    PositionOfferingType: z.array(z.object({ Name: z.string().nullish() })).nullish().catch(null),
     UserArea: z
       .object({
         Details: z
           .object({
             WhoMayApply: z.object({ Name: z.string().nullish() }).nullish(),
+            // Search results leave WhoMayApply empty; this says the same ("Students, Recent graduates").
+            HiringPathDisplay: z.array(z.string()).nullish().catch(null),
+            HiringPath: z.array(z.string()).nullish().catch(null),
             RemoteIndicator: z.union([z.boolean(), z.string()]).nullish(),
           })
           .nullish(),
@@ -122,7 +135,7 @@ export function usajobsUrl(raw: string): string | null {
 
 /**
  * One posting as a staged record, or null for postings Stepwell leaves out
- * on purpose (unpaid, or already closed). Only a missing id, title, link or
+ * on purpose (closed, not a student job, or unpaid). Only a missing id, title, link or
  * closing date rejects; odd optional fields become empty instead, so a small
  * change at USAJOBS can't trip the circuit breaker.
  */
@@ -139,13 +152,22 @@ export function parsePosting(raw: unknown, today: string): StagedRecord<Opportun
   const closesOn = d.ApplicationCloseDate.slice(0, 10);
   if (closesOn < today) return null;
 
+  const hiringPaths = d.UserArea?.Details?.HiringPath ?? [];
+  const offeringTypes = (d.PositionOfferingType ?? []).map((o) => o.Name ?? "");
+  if (!isStudentJob(d.PositionTitle, hiringPaths, offeringTypes)) return null;
+
   const pay = d.PositionRemuneration?.[0];
   const code = (pay?.RateIntervalCode ?? pay?.Description ?? "").trim().toUpperCase();
   if (UNPAID.has(code) || UNPAID.has((pay?.Description ?? "").trim().toUpperCase())) return null;
   const interval = INTERVALS[code] ?? INTERVALS[(pay?.Description ?? "").trim().toUpperCase()] ?? null;
 
   const locations = d.PositionLocation ?? [];
-  const places = [...new Set(locations.map((l) => cleanText(l.LocationName, 200)).filter((p) => p !== null))];
+  // Remote postings end in ", United States"; other places don't name the country.
+  const places = [
+    ...new Set(
+      locations.map((l) => cleanText(l.LocationName?.replace(/, United States$/, ""), 200)).filter((p) => p !== null),
+    ),
+  ];
   const states = [
     ...new Set(
       locations.map((l) => STATE_CODES.get((l.CountrySubDivisionCode ?? "").trim().toLowerCase())).filter((s) => s !== undefined),
@@ -166,7 +188,9 @@ export function parsePosting(raw: unknown, today: string): StagedRecord<Opportun
       pay_min: pay?.MinimumRange ?? null,
       pay_max: pay?.MaximumRange ?? null,
       pay_interval: interval,
-      who_may_apply: cleanText(d.UserArea?.Details?.WhoMayApply?.Name, 200),
+      who_may_apply:
+        cleanText(d.UserArea?.Details?.WhoMayApply?.Name, 200) ??
+        cleanText(d.UserArea?.Details?.HiringPathDisplay?.join(", "), 200),
       closes_on: closesOn,
       summary: cleanText(d.QualificationSummary, 500),
       url,

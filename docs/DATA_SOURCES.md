@@ -95,13 +95,16 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   yearly; older than 12 months, the page says to check the official page.
   Covers federal programs and all 50 states plus DC (264 programs,
   2026-09-29); the research rules are in `data/scholarships/README.md`.
-- **USAJOBS Search API** (source `usajobs`, built 2026-09-29, waiting for
-  the owner's key): open federal postings on the student hiring path
+- **USAJOBS Search API** (source `usajobs`, built and first run live
+  2026-09-29): open federal postings on the student hiring path
   (`GET https://data.usajobs.gov/api/search?HiringPath=student`, 500 a page),
   read daily by `src/jobs/sources/usajobs.ts` into `opportunities`. Key in
   the `Authorization-Key` header and the key holder's email as the
   User-Agent, as USAJOBS requires. Unpaid ("without compensation") and
-  closed postings are left out; postings that leave USAJOBS are removed.
+  closed postings are left out, and so are ordinary jobs that merely accept
+  students: a student job lists at most 3 hiring paths or names itself in
+  its title or offering type (`isStudentJob()`). Postings that leave
+  USAJOBS are removed.
   - Terms (https://developer.usajobs.gov/guides/terms-of-use, checked
     2026-09-29): the standard federal-system notice, "to be used by
     authorized users only" (a key makes us one). The Search API reference
@@ -112,9 +115,13 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
     (checked 2026-09-29). The keyed API is the documented way in, so this
     adapter alone skips the robots.txt check (decision 0007); spacing,
     retries and the page cap still apply.
-  - Not yet run live: the parser was built from the API reference's example
-    response. Replace `fixtures/usajobs-search-docs-sample.json` with a saved
-    live page after the first `npm run import -- usajobs --dry-run`.
+  - First live run (2026-09-29): 103 postings; 17 unpaid and 26 not
+    student jobs left out, 60 kept, 0 rejected. Live data differs from the
+    API reference: every value is a string, `WhoMayApply` is empty (the
+    adapter uses `HiringPathDisplay`), some pay minimums are a $0.01
+    placeholder (under $1 counts as not given), and remote places end in
+    ", United States". The test fixture is four real postings, trimmed of
+    long text and contact fields.
 - **Allowlisted sites:** only sites whose terms and robots.txt allow it; each
   gets an entry in "Allowlisted sites" below before its adapter is merged
   (process: v1 expansion draft, Section 3.9; decision 0007).

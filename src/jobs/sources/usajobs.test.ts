@@ -1,69 +1,86 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Fetcher } from "../fetch/polite.ts";
-import { cleanText, pageUrl, parsePosting, readUsajobs, usajobsUrl } from "./usajobs.ts";
+import { cleanText, isStudentJob, pageUrl, parsePosting, readUsajobs, usajobsUrl } from "./usajobs.ts";
 
-// Built from the example response in USAJOBS's API reference (no key yet for
-// a live page): the docs' own posting, plus the variations live data may
-// bring (numbers, pay interval in words, remote, unpaid, closed, broken).
-// Replace with a saved live page after the first real dry run.
-const SAMPLE = readFileSync(new URL("./fixtures/usajobs-search-docs-sample.json", import.meta.url), "utf8");
+// Four real postings from the first live search (2026-09-29), trimmed of long
+// text and contact fields the adapter doesn't read: yearly pay, hourly pay
+// with a $0.01 placeholder minimum, remote, and unpaid. Closed and broken
+// postings are made from copies in the tests.
+const SAMPLE = readFileSync(new URL("./fixtures/usajobs-search-live-sample.json", import.meta.url), "utf8");
 const items = JSON.parse(SAMPLE).SearchResult.SearchResultItems as unknown[];
 const TODAY = "2026-09-29";
 
+type Raw = { MatchedObjectDescriptor: { ApplicationCloseDate: string } };
+const withCloseDate = (date: string) => {
+  const copy = structuredClone(items[0]) as Raw;
+  copy.MatchedObjectDescriptor.ApplicationCloseDate = date;
+  return copy;
+};
+
 describe("parsePosting", () => {
-  it("reads the docs' example posting", () => {
-    expect(parsePosting(items[0], TODAY)).toEqual({
-      status: "valid",
-      id: "21947200",
-      value: {
-        id: "21947200",
-        title: "IT SPECIALIST (INFOSEC/NETWORK)",
-        organization: "Space and Naval Warfare Systems Command",
-        places: ["Point Loma Complex, San Diego, California"],
-        states: ["CA"],
-        remote: false,
-        pay_min: 92108,
-        pay_max: 119746,
-        pay_interval: "year",
-        who_may_apply: "United States Citizens",
-        closes_on: "2026-12-01",
-        summary: "You must be enrolled at least half-time in a qualifying program - see Education.",
-        url: "https://www.usajobs.gov/GetJob/ViewDetails/21947200",
-      },
+  it("reads a live posting", () => {
+    const r = parsePosting(items[0], TODAY);
+    expect(r?.status === "valid" && { ...r.value, summary: r.value.summary?.slice(0, 20) }).toEqual({
+      id: "854458300",
+      title: "Human Resources Specialist",
+      organization: "United States Space Force",
+      places: ["Patrick AFB, Florida"],
+      states: ["FL"],
+      remote: false,
+      pay_min: 50835,
+      pay_max: 97809,
+      pay_interval: "year",
+      who_may_apply: "Recent graduates, Students, Open to the public",
+      closes_on: "2027-01-13",
+      summary: "To qualify for a GS-",
+      url: "https://www.usajobs.gov/job/854458300",
     });
   });
 
-  it("accepts numbers, pay intervals in words and remote postings", () => {
+  it("treats a pay minimum under $1 as not given", () => {
     const r = parsePosting(items[1], TODAY);
+    expect(r?.status === "valid" && r.value).toMatchObject({ pay_min: null, pay_max: 18, pay_interval: "hour", states: ["AK", "CT", "PR", "VA"] });
+  });
+
+  it("reads remote postings", () => {
+    const r = parsePosting(items[2], TODAY);
     expect(r?.status === "valid" && r.value).toMatchObject({
-      id: "812345601",
+      places: ["Anywhere in the U.S. (remote job)"],
       states: [],
       remote: true,
-      pay_min: 18.5,
-      pay_max: 24,
+      pay_min: 21.36,
       pay_interval: "hour",
-      who_may_apply: "Students",
-      closes_on: "2026-10-15",
     });
   });
 
   it("leaves out unpaid and closed postings instead of rejecting them", () => {
-    expect(parsePosting(items[2], TODAY)).toBeNull();
     expect(parsePosting(items[3], TODAY)).toBeNull();
+    expect(parsePosting(withCloseDate("2026-09-28T23:59:59.9970"), TODAY)).toBeNull();
   });
 
   it("rejects a posting without a real closing date", () => {
-    expect(parsePosting(items[4], TODAY)).toMatchObject({ status: "rejected", id: "812345604" });
-    const impossible = structuredClone(items[0]) as { MatchedObjectDescriptor: { ApplicationCloseDate: string } };
-    impossible.MatchedObjectDescriptor.ApplicationCloseDate = "2026-11-31T00:00:00Z";
-    expect(parsePosting(impossible, TODAY)).toMatchObject({ status: "rejected", reason: expect.stringContaining("not a real date") });
-    impossible.MatchedObjectDescriptor.ApplicationCloseDate = "2026-11-9";
-    expect(parsePosting(impossible, TODAY)).toMatchObject({ status: "rejected" });
+    expect(parsePosting(withCloseDate(""), TODAY)).toMatchObject({ status: "rejected", id: "854458300" });
+    expect(parsePosting(withCloseDate("2026-11-31T00:00:00Z"), TODAY)).toMatchObject({
+      status: "rejected",
+      reason: expect.stringContaining("not a real date"),
+    });
+    expect(parsePosting(withCloseDate("2026-11-9"), TODAY)).toMatchObject({ status: "rejected" });
   });
 });
 
 describe("helpers", () => {
+  it("keeps student jobs and drops jobs that merely accept students (live examples)", () => {
+    const twelve = Array.from({ length: 12 }, (_, i) => `path${i}`);
+    expect(isStudentJob("Contract Specialist", ["student", "graduates"], [])).toBe(true);
+    expect(isStudentJob("Student Trainee (Park Ranger)", twelve, [])).toBe(true);
+    expect(isStudentJob("FOREIGN AFFAIRS SPECIALIST", ["student", "a", "b", "c"], ["Internship"])).toBe(true);
+    expect(isStudentJob("Honors Program Law Clerk (J.D. Students)", ["student", "graduates"], [])).toBe(true);
+    expect(isStudentJob("Program Assistant", twelve, [])).toBe(false);
+    expect(isStudentJob("Physician (Anesthesiology)", twelve.slice(0, 8), [])).toBe(false);
+  });
+
+
   it("keeps links on usajobs.gov only", () => {
     expect(usajobsUrl("https://www.usajobs.gov:443/job/1")).toBe("https://www.usajobs.gov/job/1");
     expect(usajobsUrl("https://usajobs.gov.evil.example/job/1")).toBeNull();
@@ -94,9 +111,9 @@ describe("readUsajobs", () => {
     ]);
     expect(calls[0].url).not.toContain("k".repeat(20));
     expect(result.status === "fetched" && result.records.map((r) => `${r.id} ${r.status}`)).toEqual([
-      "21947200 valid",
-      "812345601 valid",
-      "812345604 rejected",
+      "854458300 valid",
+      "880718800 valid",
+      "869474800 valid",
     ]);
   });
 
