@@ -1,6 +1,7 @@
 # Spec: Scholarships
 
-- Status: **draft, for the owner's review** (not approved; nothing is built)
+- Status: approved 2026-09-28 (owner: official list first; skip the second
+  question set; first batch = federal plus CA, TX, FL, NY, PA)
 - Build step 7 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 2.6, 2.8 and 4.1; decisions 0006 and 0007).
 
@@ -112,9 +113,48 @@ real rules, then the remaining states in batches.
 Private scholarships (until an allowed source exists), the second opt-in
 step, application tracking, essay help, the planner (step 9).
 
-## Open questions for the owner
-1. Is a curated official list (about 150 to 250 listings) the right start,
-   knowing it misses most private scholarships?
-2. OK to skip the sensitive second step (heritage, gender, religion,
-   disability, income) for now?
-3. Which 5 states first?
+## Owner's answers (2026-09-28)
+1. Start with the curated official list; private scholarships later, only
+   through the allowlist.
+2. Skip the sensitive second question set for now.
+3. First batch: federal plus California, Texas, Florida, New York and
+   Pennsylvania, then the other states in batches.
+
+## Listing format (`data/scholarships/<state or federal>.json`)
+An array of entries; unknown facts are `null`, never guessed:
+```json
+{
+  "id": "ca-cal-grant-a",
+  "title": "Cal Grant A",
+  "sponsor": "California Student Aid Commission",
+  "sponsor_type": "state",
+  "url": "https://www.csac.ca.gov/cal-grants",
+  "award": { "min": null, "max": 14226, "text": "Pays tuition at a University of California campus, up to $14,226" },
+  "deadline": { "kind": "date", "date": "2027-03-02" },
+  "stages": ["high_school", "college"],
+  "rules": {
+    "state": "CA",
+    "min_gpa": 3.0,
+    "fields": [],
+    "citizenship": null,
+    "first_generation": false,
+    "military_family": false,
+    "needs_fafsa": true,
+    "other": "Must attend a qualifying California college"
+  },
+  "description": "Plain words, at most 500 characters.",
+  "checked_at": "2026-09-28"
+}
+```
+- `deadline.kind`: `date` (with `date`), `usually` (with `month_day`,
+  "03-02"), `rolling`, or `unknown`.
+- `stages`: any of `high_school` (apply as a high school student),
+  `college` (current undergraduates), `graduate`, `adult` (returning or
+  non-traditional students).
+- `rules.citizenship`: `null` (no rule), `citizen`, or
+  `citizen_or_eligible_noncitizen` (the federal aid definition).
+- `rules.fields`: 2-digit CIP families (for example "51" health, "11"
+  computing); empty means any field.
+- `rules.other`: any requirement Stepwell doesn't ask about (heritage,
+  county, specific college, service commitment, ...). A listing with
+  `other` can be "You might qualify" at best, and says what to check.
