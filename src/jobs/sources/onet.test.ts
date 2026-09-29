@@ -68,6 +68,11 @@ describe("buildDetails", () => {
     });
   });
 
+  it("reads knowledge importance for every area (IM scale)", () => {
+    expect(ceo.knowledge).toHaveLength(33);
+    expect(ceo.knowledge).toContainEqual({ area_id: "2.C.1.a", importance: 4.78 });
+  });
+
   it("keeps the 8 most important core tasks, most important first", () => {
     expect(ceo.tasks).toHaveLength(8);
     expect(ceo.tasks[0]).toBe(

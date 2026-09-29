@@ -1,0 +1,199 @@
+O*NET-SOC Code,Title,Element ID,Element Name,Scale ID,Scale Name,Data Value,N,Standard Error,Lower CI Bound,Upper CI Bound,Recommend Suppress,Not Relevant,Date,Domain Source
+11-1011.00,Chief Executives,2.C.1.a,Administration and Management,IM,Importance,4.78,28,0.1102,4.5564,5.0000,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.a,Administration and Management,LV,Level,6.50,28,0.2130,6.0666,6.9409,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.b,Administrative,IM,Importance,2.42,28,0.4651,1.4662,3.3749,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.b,Administrative,LV,Level,2.69,28,0.8678,0.9078,4.4690,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.c,Economics and Accounting,IM,Importance,4.04,28,0.3480,3.3246,4.7526,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.c,Economics and Accounting,LV,Level,4.98,28,0.6849,3.5754,6.3861,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.d,Sales and Marketing,IM,Importance,3.81,28,0.4018,2.9881,4.6368,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.d,Sales and Marketing,LV,Level,5.04,28,0.6803,3.6445,6.4364,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.e,Customer and Personal Service,IM,Importance,4.39,28,0.3139,3.7507,5.0000,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.e,Customer and Personal Service,LV,Level,5.94,28,0.5822,4.7494,7.0000,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.f,Personnel and Human Resources,IM,Importance,4.48,28,0.2271,4.0162,4.9480,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.1.f,Personnel and Human Resources,LV,Level,5.78,28,0.4268,4.9001,6.6516,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.2.a,Production and Processing,IM,Importance,2.71,28,0.5408,1.6020,3.8214,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.2.a,Production and Processing,LV,Level,2.92,28,0.9249,1.0269,4.8225,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.2.b,Food Production,IM,Importance,1.14,27,0.1180,1.0000,1.3843,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.2.b,Food Production,LV,Level,0.40,28,0.2518,0.0000,0.9133,Y,Y,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.a,Computers and Electronics,IM,Importance,3.82,28,0.3764,3.0447,4.5893,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.a,Computers and Electronics,LV,Level,5.19,28,0.6031,3.9537,6.4287,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.b,Engineering and Technology,IM,Importance,3.05,28,0.6046,1.8138,4.2948,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.b,Engineering and Technology,LV,Level,3.51,28,1.0864,1.2858,5.7438,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.c,Design,IM,Importance,1.91,28,0.3703,1.1511,2.6707,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.c,Design,LV,Level,1.75,27,0.7432,0.2257,3.2812,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.d,Building and Construction,IM,Importance,1.83,27,0.3102,1.1952,2.4705,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.d,Building and Construction,LV,Level,1.55,28,0.5674,0.3838,2.7124,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.e,Mechanical,IM,Importance,2.10,28,0.2060,1.6747,2.5202,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.3.e,Mechanical,LV,Level,1.92,28,0.3556,1.1876,2.6469,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.a,Mathematics,IM,Importance,3.60,28,0.2062,3.1738,4.0201,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.a,Mathematics,LV,Level,4.63,28,0.2595,4.1003,5.1654,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.b,Physics,IM,Importance,2.01,28,0.2230,1.5519,2.4669,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.b,Physics,LV,Level,1.28,28,0.2863,0.6917,1.8667,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.c,Chemistry,IM,Importance,1.69,28,0.1903,1.3039,2.0847,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.c,Chemistry,LV,Level,1.38,28,0.2950,0.7710,1.9815,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.d,Biology,IM,Importance,1.74,28,0.1867,1.3539,2.1199,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.d,Biology,LV,Level,1.26,28,0.3057,0.6324,1.8867,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.e,Psychology,IM,Importance,3.09,27,0.2774,2.5178,3.6583,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.e,Psychology,LV,Level,3.48,28,0.4551,2.5420,4.4097,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.f,Sociology and Anthropology,IM,Importance,2.88,28,0.2602,2.3450,3.4129,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.f,Sociology and Anthropology,LV,Level,2.53,28,0.3735,1.7670,3.2997,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.g,Geography,IM,Importance,2.69,27,0.2707,2.1349,3.2479,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.4.g,Geography,LV,Level,2.66,28,0.4014,1.8403,3.4875,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.5.a,Medicine and Dentistry,IM,Importance,1.51,28,0.2429,1.0086,2.0054,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.5.a,Medicine and Dentistry,LV,Level,0.65,28,0.2689,0.0977,1.2011,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.5.b,Therapy and Counseling,IM,Importance,1.87,28,0.3173,1.2151,2.5171,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.5.b,Therapy and Counseling,LV,Level,1.53,28,0.5590,0.3864,2.6803,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.6,Education and Training,IM,Importance,3.52,28,0.2650,2.9752,4.0628,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.6,Education and Training,LV,Level,4.60,28,0.5608,3.4457,5.7469,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.a,English Language,IM,Importance,4.41,27,0.3320,3.7241,5.0000,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.a,English Language,LV,Level,3.91,28,0.4932,2.8943,4.9182,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.b,Foreign Language,IM,Importance,2.26,28,0.2475,1.7485,2.7640,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.b,Foreign Language,LV,Level,1.97,28,0.3681,1.2133,2.7240,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.c,Fine Arts,IM,Importance,1.70,28,0.2083,1.2697,2.1245,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.c,Fine Arts,LV,Level,0.74,28,0.2356,0.2548,1.2216,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.d,History and Archeology,IM,Importance,2.16,28,0.2757,1.5976,2.7289,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.d,History and Archeology,LV,Level,1.85,28,0.2692,1.2980,2.4028,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.e,Philosophy and Theology,IM,Importance,2.35,27,0.3093,1.7105,2.9821,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.7.e,Philosophy and Theology,LV,Level,2.74,28,0.4991,1.7201,3.7682,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.8.a,Public Safety and Security,IM,Importance,3.88,27,0.3801,3.1005,4.6631,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.8.a,Public Safety and Security,LV,Level,3.35,27,0.2817,2.7659,3.9241,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.8.b,Law and Government,IM,Importance,3.48,28,0.1987,3.0739,3.8891,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.8.b,Law and Government,LV,Level,3.58,28,0.2370,3.0965,4.0692,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.9.a,Telecommunications,IM,Importance,2.59,28,0.2120,2.1568,3.0266,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.9.a,Telecommunications,LV,Level,2.51,28,0.7581,0.9531,4.0642,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.9.b,Communications and Media,IM,Importance,3.02,27,0.1363,2.7442,3.3047,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.9.b,Communications and Media,LV,Level,3.25,28,0.2469,2.7455,3.7585,N,N,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.10,Transportation,IM,Importance,2.26,28,0.2505,1.7457,2.7735,N,,08/2023,Incumbent
+11-1011.00,Chief Executives,2.C.10,Transportation,LV,Level,2.32,28,0.2929,1.7148,2.9167,N,N,08/2023,Incumbent
+11-1011.03,Chief Sustainability Officers,2.C.1.a,Administration and Management,IM,Importance,4.15,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.a,Administration and Management,LV,Level,5.00,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.b,Administrative,IM,Importance,2.62,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.b,Administrative,LV,Level,4.42,26,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.c,Economics and Accounting,IM,Importance,3.19,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.c,Economics and Accounting,LV,Level,3.85,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.d,Sales and Marketing,IM,Importance,3.15,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.d,Sales and Marketing,LV,Level,4.33,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.e,Customer and Personal Service,IM,Importance,3.41,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.e,Customer and Personal Service,LV,Level,4.44,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.f,Personnel and Human Resources,IM,Importance,3.00,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.1.f,Personnel and Human Resources,LV,Level,3.78,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.2.a,Production and Processing,IM,Importance,2.19,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.2.a,Production and Processing,LV,Level,2.41,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.2.b,Food Production,IM,Importance,2.07,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.2.b,Food Production,LV,Level,2.19,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.a,Computers and Electronics,IM,Importance,2.93,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.a,Computers and Electronics,LV,Level,3.59,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.b,Engineering and Technology,IM,Importance,2.96,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.b,Engineering and Technology,LV,Level,3.37,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.c,Design,IM,Importance,2.85,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.c,Design,LV,Level,3.19,26,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.d,Building and Construction,IM,Importance,3.48,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.d,Building and Construction,LV,Level,3.67,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.e,Mechanical,IM,Importance,2.44,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.3.e,Mechanical,LV,Level,2.41,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.a,Mathematics,IM,Importance,3.00,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.a,Mathematics,LV,Level,3.89,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.b,Physics,IM,Importance,2.30,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.b,Physics,LV,Level,2.30,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.c,Chemistry,IM,Importance,2.37,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.c,Chemistry,LV,Level,2.70,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.d,Biology,IM,Importance,2.81,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.d,Biology,LV,Level,3.56,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.e,Psychology,IM,Importance,2.93,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.e,Psychology,LV,Level,3.30,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.f,Sociology and Anthropology,IM,Importance,3.00,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.f,Sociology and Anthropology,LV,Level,4.00,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.g,Geography,IM,Importance,3.07,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.4.g,Geography,LV,Level,4.15,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.5.a,Medicine and Dentistry,IM,Importance,1.31,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.5.a,Medicine and Dentistry,LV,Level,0.70,27,,,,,Y,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.5.b,Therapy and Counseling,IM,Importance,1.81,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.5.b,Therapy and Counseling,LV,Level,1.78,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.6,Education and Training,IM,Importance,3.41,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.6,Education and Training,LV,Level,4.85,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.a,English Language,IM,Importance,4.30,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.a,English Language,LV,Level,4.89,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.b,Foreign Language,IM,Importance,1.85,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.b,Foreign Language,LV,Level,1.81,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.c,Fine Arts,IM,Importance,1.63,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.c,Fine Arts,LV,Level,1.04,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.d,History and Archeology,IM,Importance,2.31,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.d,History and Archeology,LV,Level,2.26,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.e,Philosophy and Theology,IM,Importance,2.11,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.7.e,Philosophy and Theology,LV,Level,2.70,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.8.a,Public Safety and Security,IM,Importance,2.56,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.8.a,Public Safety and Security,LV,Level,2.70,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.8.b,Law and Government,IM,Importance,3.69,26,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.8.b,Law and Government,LV,Level,3.89,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.9.a,Telecommunications,IM,Importance,1.89,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.9.a,Telecommunications,LV,Level,1.30,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.9.b,Communications and Media,IM,Importance,3.56,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.9.b,Communications and Media,LV,Level,3.74,27,,,,,N,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.10,Transportation,IM,Importance,3.11,27,,,,,,08/2021,Occupational Expert
+11-1011.03,Chief Sustainability Officers,2.C.10,Transportation,LV,Level,3.37,27,,,,,N,08/2021,Occupational Expert
+11-1021.00,General and Operations Managers,2.C.1.a,Administration and Management,IM,Importance,4.25,28,0.1985,3.8427,4.6572,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.a,Administration and Management,LV,Level,4.38,28,0.2137,3.9458,4.8227,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.b,Administrative,IM,Importance,3.21,28,0.2585,2.6845,3.7451,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.b,Administrative,LV,Level,3.95,27,0.4819,2.9558,4.9368,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.c,Economics and Accounting,IM,Importance,3.20,28,0.3690,2.4382,3.9525,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.c,Economics and Accounting,LV,Level,3.58,28,0.5789,2.3873,4.7628,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.d,Sales and Marketing,IM,Importance,2.99,28,0.3824,2.2029,3.7721,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.d,Sales and Marketing,LV,Level,3.35,28,0.6629,1.9942,4.7147,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.e,Customer and Personal Service,IM,Importance,4.15,28,0.2509,3.6386,4.6682,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.e,Customer and Personal Service,LV,Level,4.64,28,0.4967,3.6251,5.6632,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.f,Personnel and Human Resources,IM,Importance,3.44,27,0.2209,2.9832,3.8914,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.1.f,Personnel and Human Resources,LV,Level,3.95,27,0.2047,3.5314,4.3728,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.2.a,Production and Processing,IM,Importance,3.57,28,0.3152,2.9198,4.2134,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.2.a,Production and Processing,LV,Level,4.23,26,0.4949,3.2155,5.2540,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.2.b,Food Production,IM,Importance,1.32,28,0.1595,1.0000,1.6521,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.2.b,Food Production,LV,Level,0.65,28,0.3159,0.0015,1.2977,N,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.a,Computers and Electronics,IM,Importance,2.67,28,0.3454,1.9597,3.3769,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.a,Computers and Electronics,LV,Level,3.00,28,0.5418,1.8869,4.1104,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.b,Engineering and Technology,IM,Importance,2.90,28,0.3619,2.1550,3.6402,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.b,Engineering and Technology,LV,Level,3.27,28,0.5808,2.0825,4.4661,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.c,Design,IM,Importance,2.32,28,0.2974,1.7091,2.9294,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.c,Design,LV,Level,2.59,28,0.5304,1.5017,3.6781,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.d,Building and Construction,IM,Importance,2.20,28,0.3370,1.5082,2.8912,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.d,Building and Construction,LV,Level,2.26,28,0.5957,1.0386,3.4833,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.e,Mechanical,IM,Importance,2.85,28,0.3331,2.1709,3.5379,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.3.e,Mechanical,LV,Level,3.44,28,0.5510,2.3051,4.5662,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.a,Mathematics,IM,Importance,3.53,28,0.2090,3.0983,3.9561,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.a,Mathematics,LV,Level,4.07,28,0.1755,3.7101,4.4302,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.b,Physics,IM,Importance,1.98,28,0.2604,1.4506,2.5192,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.b,Physics,LV,Level,1.85,28,0.4783,0.8693,2.8321,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.c,Chemistry,IM,Importance,1.91,28,0.2782,1.3390,2.4806,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.c,Chemistry,LV,Level,1.97,28,0.5346,0.8710,3.0650,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.d,Biology,IM,Importance,1.21,28,0.1030,1.0012,1.4238,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.d,Biology,LV,Level,0.39,28,0.1865,0.0077,0.7729,N,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.e,Psychology,IM,Importance,2.53,28,0.2772,1.9618,3.0995,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.e,Psychology,LV,Level,2.67,28,0.4421,1.7585,3.5726,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.f,Sociology and Anthropology,IM,Importance,1.93,28,0.2226,1.4775,2.3908,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.f,Sociology and Anthropology,LV,Level,1.55,28,0.4028,0.7230,2.3760,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.g,Geography,IM,Importance,1.46,28,0.2037,1.0421,1.8779,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.4.g,Geography,LV,Level,0.65,27,0.2879,0.0562,1.2398,N,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.5.a,Medicine and Dentistry,IM,Importance,1.20,28,0.0995,1.0000,1.4072,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.5.a,Medicine and Dentistry,LV,Level,0.30,28,0.1504,0.0000,0.6108,N,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.5.b,Therapy and Counseling,IM,Importance,1.60,27,0.1876,1.2099,1.9813,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.5.b,Therapy and Counseling,LV,Level,1.43,27,0.4755,0.4533,2.4081,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.6,Education and Training,IM,Importance,2.79,28,0.2259,2.3216,3.2484,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.6,Education and Training,LV,Level,3.65,28,0.4114,2.8044,4.4929,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.a,English Language,IM,Importance,3.70,28,0.2707,3.1420,4.2530,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.a,English Language,LV,Level,3.64,28,0.4002,2.8185,4.4608,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.b,Foreign Language,IM,Importance,1.40,28,0.1536,1.0804,1.7105,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.b,Foreign Language,LV,Level,0.63,28,0.2613,0.0987,1.1711,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.c,Fine Arts,IM,Importance,1.28,28,0.1542,1.0000,1.5921,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.c,Fine Arts,LV,Level,0.45,28,0.2357,0.0000,0.9354,Y,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.d,History and Archeology,IM,Importance,1.35,28,0.1322,1.0756,1.6179,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.d,History and Archeology,LV,Level,0.67,28,0.2407,0.1744,1.1621,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.e,Philosophy and Theology,IM,Importance,1.23,28,0.0958,1.0353,1.4283,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.7.e,Philosophy and Theology,LV,Level,0.52,28,0.2064,0.0981,0.9452,N,Y,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.8.a,Public Safety and Security,IM,Importance,2.74,28,0.2734,2.1749,3.2968,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.8.a,Public Safety and Security,LV,Level,2.40,28,0.3866,1.6115,3.1978,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.8.b,Law and Government,IM,Importance,2.56,28,0.2075,2.1348,2.9862,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.8.b,Law and Government,LV,Level,2.96,28,0.3898,2.1555,3.7552,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.9.a,Telecommunications,IM,Importance,1.85,28,0.2013,1.4350,2.2612,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.9.a,Telecommunications,LV,Level,1.43,28,0.3917,0.6215,2.2291,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.9.b,Communications and Media,IM,Importance,2.39,28,0.3150,1.7401,3.0328,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.9.b,Communications and Media,LV,Level,2.31,28,0.5118,1.2573,3.3578,N,N,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.10,Transportation,IM,Importance,2.21,28,0.3067,1.5806,2.8390,N,,08/2023,Incumbent
+11-1021.00,General and Operations Managers,2.C.10,Transportation,LV,Level,1.66,28,0.4052,0.8263,2.4892,N,N,08/2023,Incumbent

@@ -27,6 +27,7 @@ export const DETAIL_FILES = {
   transferable_skills: 11_000,
   related_occupations: 9_000,
   career_interest_types: 2_700,
+  knowledge: 15_000,
 } as const;
 
 export type DetailFile = keyof typeof DETAIL_FILES;
@@ -69,6 +70,9 @@ const occupationSchema = z.object({
       tier: z.enum(["primary_short", "primary_long", "supplemental"]),
       rank: z.number().int().positive(),
     }),
+  ),
+  knowledge: z.array(
+    z.object({ area_id: z.string().regex(/^2\.C\.\d+(\.[a-z])?$/), importance: z.number().min(1).max(5) }),
   ),
 });
 
@@ -127,6 +131,7 @@ const emptyDetails: Details = {
   skills: [],
   titles: [],
   related: [],
+  knowledge: [],
 };
 
 /** Joins the detail files into one Details object per O*NET code. */
@@ -135,7 +140,7 @@ export function buildDetails(files: Record<DetailFile, string>, minimums: Record
   const get = (code: string) => {
     let d = details.get(code);
     if (!d) {
-      d = { ...emptyDetails, tasks: [], skills: [], titles: [], related: [] };
+      d = { ...emptyDetails, tasks: [], skills: [], titles: [], related: [], knowledge: [] };
       details.set(code, d);
     }
     return d;
@@ -227,6 +232,13 @@ export function buildDetails(files: Record<DetailFile, string>, minimums: Record
     if ((INTEREST_AREAS as readonly string[]).includes(area)) {
       get(row[CODE_COL])[`interest_${area}` as InterestColumn] = Number(row["Data Value"]);
     }
+  }
+
+  // Knowledge: how important each of O*NET's 33 areas is ("IM", 1 to 5),
+  // for AP suggestions. Imprecise (suppressed) ratings are left out.
+  for (const row of usableRows("knowledge", files.knowledge, [CODE_COL, "Element ID", "Data Value"], minimums,
+    (row) => row["Scale ID"] === "IM" && notSuppressed(row))) {
+    get(row[CODE_COL]).knowledge.push({ area_id: row["Element ID"], importance: Number(row["Data Value"]) });
   }
 
   // Titles longer than the database allows are left out rather than rejecting the career.

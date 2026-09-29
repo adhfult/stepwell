@@ -137,3 +137,11 @@ export const getOnetSource = cache(async () => {
     ? { release: data.last_release, retrievedAt: data.last_success_at }
     : null;
 });
+
+/** AP courses that build this career's important knowledge (ap_courses_for_career()). */
+export const getApCourses = cache(async (code: string) => {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("ap_courses_for_career", { p_onet_code: code });
+  if (error) throw new Error(`AP courses failed (${error.code})`);
+  return data;
+});
