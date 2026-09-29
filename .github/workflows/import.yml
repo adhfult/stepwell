@@ -57,6 +57,7 @@ jobs:
           IMPORT_DATABASE_URL: ${{ secrets.IMPORT_DATABASE_URL }}
           IMPORT_CONTACT: ${{ vars.IMPORT_CONTACT }}
           ONET_API_KEY: ${{ secrets.ONET_API_KEY }}
+          SCORECARD_API_KEY: ${{ secrets.SCORECARD_API_KEY }}
           # Inputs pass through env, never pasted into the script.
           SOURCE: ${{ inputs.source }}
           FORCE: ${{ inputs.force }}

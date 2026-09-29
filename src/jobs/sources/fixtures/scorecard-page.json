@@ -1,0 +1,446 @@
+{
+ "metadata": {
+  "page": 0,
+  "total": 3,
+  "per_page": 3
+ },
+ "results": [
+  {
+   "latest.cost.avg_net_price.public": 17621,
+   "latest.cost.avg_net_price.private": null,
+   "latest.admissions.admission_rate.overall": 0.5795,
+   "latest.completion.outcome_percentage_suppressed.all_students.8yr.award_pooled": 0.3053,
+   "latest.student.size": 6124,
+   "latest.programs.cip_4_digit": [
+    {
+     "code": "0305",
+     "title": "Forestry.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 4
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": 64749
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "1002",
+     "title": "Audiovisual Communications Technologies/Technicians.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 24
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": 28938
+      },
+      "4_yr": {
+       "overall_median_earnings": 42272
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": 33500
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0109",
+     "title": "Animal Sciences.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 18
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0110",
+     "title": "Food Science and Technology.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 8
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0199",
+     "title": "Agricultural/Animal/Plant/Veterinary Science and Related Fields, Other.",
+     "credential": {
+      "level": 6,
+      "title": "Doctoral Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 0
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    }
+   ],
+   "school.name": "Alabama A & M University",
+   "school.city": "Normal",
+   "school.state": "AL",
+   "school.ownership": 1,
+   "school.school_url": "www.aamu.edu/",
+   "id": 100654
+  },
+  {
+   "latest.cost.avg_net_price.public": 18749,
+   "latest.cost.avg_net_price.private": null,
+   "latest.admissions.admission_rate.overall": 0.8818,
+   "latest.completion.outcome_percentage_suppressed.all_students.8yr.award_pooled": 0.5781,
+   "latest.student.size": 11635,
+   "latest.programs.cip_4_digit": [
+    {
+     "code": "0901",
+     "title": "Communication and Media Studies.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 79
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": 33190
+      },
+      "4_yr": {
+       "overall_median_earnings": 44461
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": 21360
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0901",
+     "title": "Communication and Media Studies.",
+     "credential": {
+      "level": 5,
+      "title": "Master's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 11
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": 45087
+      },
+      "4_yr": {
+       "overall_median_earnings": 54662
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": 34167
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0502",
+     "title": "Ethnic, Cultural Minority, Gender, and Group Studies.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 2
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "0909",
+     "title": "Public Relations, Advertising, and Applied Communication.",
+     "credential": {
+      "level": 8,
+      "title": "Graduate/Professional Certificate"
+     },
+     "counts": {
+      "ipeds_awards2": 8
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "1410",
+     "title": "Electrical, Electronics, and Communications Engineering.",
+     "credential": {
+      "level": 5,
+      "title": "Master's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": null
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    }
+   ],
+   "school.name": "University of Alabama at Birmingham",
+   "school.city": "Birmingham",
+   "school.state": "AL",
+   "school.ownership": 1,
+   "school.school_url": "https://www.uab.edu/",
+   "id": 100663
+  },
+  {
+   "latest.cost.avg_net_price.public": null,
+   "latest.cost.avg_net_price.private": null,
+   "latest.admissions.admission_rate.overall": null,
+   "latest.completion.outcome_percentage_suppressed.all_students.8yr.award_pooled": 0.6756,
+   "latest.student.size": 241,
+   "latest.programs.cip_4_digit": [
+    {
+     "code": "5202",
+     "title": "Business Administration, Management and Operations.",
+     "credential": {
+      "level": 5,
+      "title": "Master's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 15
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": 46125
+      },
+      "4_yr": {
+       "overall_median_earnings": 55926
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": 59817
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "1907",
+     "title": "Human Development, Family Studies, and Related Services.",
+     "credential": {
+      "level": 2,
+      "title": "Associate's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 1
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "1907",
+     "title": "Human Development, Family Studies, and Related Services.",
+     "credential": {
+      "level": 3,
+      "title": "Bachelor's Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 8
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    },
+    {
+     "code": "1304",
+     "title": "Educational Administration and Supervision.",
+     "credential": {
+      "level": 6,
+      "title": "Doctoral Degree"
+     },
+     "counts": {
+      "ipeds_awards2": 0
+     },
+     "earnings": {
+      "1_yr": {
+       "overall_median_earnings": null
+      },
+      "4_yr": {
+       "overall_median_earnings": null
+      }
+     },
+     "debt": {
+      "staff_grad_plus": {
+       "all": {
+        "eval_inst": {
+         "median": null
+        }
+       }
+      }
+     }
+    }
+   ],
+   "school.name": "Amridge University",
+   "school.city": "Montgomery",
+   "school.state": "AL",
+   "school.ownership": 2,
+   "school.school_url": "https://www.amridgeuniversity.edu/",
+   "id": 100690
+  }
+ ]
+}

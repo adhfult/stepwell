@@ -9,10 +9,15 @@ export type FetchResult = {
   contentType: string | null;
   finalUrl: string;
   etag: string | null;
+  /** The raw body, when asked for with `as: "bytes"` (for example an Excel file). */
+  bytes?: Buffer;
 };
 
 export type Fetcher = {
-  get(url: string, options?: { etag?: string | null; headers?: Record<string, string> }): Promise<FetchResult>;
+  get(
+    url: string,
+    options?: { etag?: string | null; headers?: Record<string, string>; as?: "text" | "bytes" },
+  ): Promise<FetchResult>;
   requestCount(): number;
 };
 
@@ -86,7 +91,7 @@ export function createPoliteFetcher({
   return {
     requestCount: () => requests,
 
-    async get(rawUrl, { etag, headers: extraHeaders = {} } = {}) {
+    async get(rawUrl, { etag, headers: extraHeaders = {}, as = "text" } = {}) {
       const url = new URL(rawUrl);
       if (url.protocol !== "https:") throw new Error(`Only https is fetched: ${rawUrl}`);
 
@@ -107,9 +112,11 @@ export function createPoliteFetcher({
           if (response.status !== 429 && response.status < 500) {
             // Read the body in here too: a download that stalls or drops
             // halfway is retried like any other network error.
+            const bytes = as === "bytes" && response.status !== 304 ? Buffer.from(await response.arrayBuffer()) : undefined;
             return {
               status: response.status,
-              body: response.status === 304 ? "" : await response.text(),
+              body: response.status === 304 || bytes ? "" : await response.text(),
+              ...(bytes ? { bytes } : {}),
               contentType: response.headers.get("content-type"),
               finalUrl: response.url || url.href,
               etag: response.headers.get("etag"),

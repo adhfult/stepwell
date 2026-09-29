@@ -110,6 +110,13 @@ describe("createPoliteFetcher", () => {
     expect(calls[1].headers["X-API-Key"]).toBe("k");
   });
 
+  it("returns raw bytes when asked, for binary files", async () => {
+    const { fetcher } = setup({ ...robots(""), "https://example.gov/a.xlsx": [() => new Response(new Uint8Array([80, 75, 3, 4]))] });
+    const result = await fetcher.get("https://example.gov/a.xlsx", { as: "bytes" });
+    expect([...result.bytes!]).toEqual([80, 75, 3, 4]);
+    expect(result.body).toBe("");
+  });
+
   it("sends the last ETag and returns 304 with an empty body", async () => {
     const { fetcher, calls } = setup({ ...robots(""), "https://example.gov/a": [status(304)] });
     const result = await fetcher.get("https://example.gov/a", { etag: '"1"' });
