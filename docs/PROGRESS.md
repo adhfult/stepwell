@@ -21,16 +21,28 @@ Newest entries at the top. Keep each entry short.
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] **Owner:** review `docs/specs/scholarships.md` (draft): CareerOneStop
-      is blocked (403 on every network the owner tried), so it proposes a
-      curated list of official state and federal programs and a smaller set
-      of eligibility questions; answer its 3 open questions
+- [ ] Scholarships: research the remaining 45 states and DC in batches
+      (same format and checks as `data/scholarships/`); re-check every entry
+      yearly (California's nursing and Gilman deadlines are days away)
+- [ ] Next build step: Internships and programs (v1 expansion, step 8:
+      USAJOBS Pathways; needs a free USAJOBS API key from the owner, and its
+      developer site works from the owner's network)
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 - [ ] Later: a phone "Menu" button in the header, so Interests (and the next
       sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-29 (just after midnight): scholarships built (first batch)
+- Owner chose: curated official list, skip the second question set, first
+  batch federal + CA, TX, FL, NY, PA. Six research agents gathered 59
+  programs from official pages; spot-checked, validated, imported.
+- `scholarships`, `eligibility_profiles` (pg_cron retention),
+  `match_scholarships()`; `/scholarships`, `/account/eligibility`, account
+  and career page links; phone Menu button. Privacy draft updated.
+  Pushed to the cloud.
+- Still blocked for agents: the `importer` password and GitHub secret.
+
 ### 2026-09-28 (late night): scholarships source problem
 - CareerOneStop's website returns 403 (CloudFront) to the owner on every
   network tried, so its API can't be registered for. No open scholarship

@@ -19,6 +19,16 @@ It's run by [OWNER NAME]. Questions: [CONTACT EMAIL].
 - **Your profile, if you fill it in.** A nickname (optional), where you are in
   school, your state, and the year you expect to graduate (optional). We use
   it to suggest careers, programs and colleges that fit you.
+- **Scholarship answers, only if you turn on matching.** If you choose to,
+  you can tell us your GPA, fields you might study, whether you'd be the first
+  in your family to go to college, your citizenship status, whether a parent
+  served in the military, and whether you plan to file the FAFSA. Every
+  question is optional. We use the answers only to show which scholarships
+  you might qualify for. They're never shown to anyone, shared, or sent to
+  other companies or to AI tools.
+- **Your interest quiz scores, if you save them.** Just the six scores, never
+  your answers.
+- **Careers you save.**
 - **Cookies Stepwell needs to work.** A login cookie keeps you signed in until
   you sign out. If our age check says you're under 13, a cookie that ends when
   you close your browser keeps showing that message. Neither one tracks you.
@@ -48,10 +58,13 @@ addresses) to keep Stepwell working and safe.
 
 ## How long we keep it
 Until you delete your account. You can do that anytime from your account page:
-it removes your login and your profile right away.
+it removes your login, your profile, and everything you saved right away.
+Scholarship answers are also deleted if you don't sign in for 12 months, and
+you can remove them yourself anytime on the "Scholarship matching" page.
 
 ## Your choices
 - See and change your profile on your account page.
+- Change or remove your scholarship answers on the "Scholarship matching" page.
 - Delete your account and everything in it on your account page.
 - Questions or requests: [CONTACT EMAIL].
 

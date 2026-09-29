@@ -91,6 +91,12 @@ Each item says **how Stepwell does it**.
       `npm audit` shows no critical issues.
 
 ## Privacy (because users may be 13–17)
+- [x] **Scholarship eligibility answers** (decision 0006): only after a
+      separate opt-in with consent; every question optional; owner-only RLS
+      with column grants; matching runs in the database as the student;
+      never logged (errors log only database codes); "Remove my answers";
+      deleted with the account and after 12 months without a sign-in
+      (pg_cron). The Privacy draft describes them.
 - [ ] Minimum age 13, checked at sign-up with a neutral birth month and year
       question that is never stored (decision 0005); only `age_confirmed` is
       stored, and the sign-up trigger refuses accounts without it.

@@ -1,7 +1,8 @@
 # Spec: Scholarships
 
-- Status: approved 2026-09-28 (owner: official list first; skip the second
-  question set; first batch = federal plus CA, TX, FL, NY, PA)
+- Status: built (first batch) 2026-09-29; approved 2026-09-28 (owner:
+  official list first; skip the second question set; first batch = federal
+  plus CA, TX, FL, NY, PA)
 - Build step 7 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 2.6, 2.8 and 4.1; decisions 0006 and 0007).
 
@@ -70,7 +71,7 @@ they're due, so I don't miss free money for college.
 
 ## Acceptance criteria (once approved)
 Data
-- [ ] `data/scholarships/` files with a zod schema: id, title, sponsor,
+- [x] `data/scholarships/` files with a zod schema: id, title, sponsor,
       sponsor type (federal or state), official https link (government or
       the program's own domain), award (amount range and/or words such as
       "full tuition at public colleges"), deadline (date, "usually around
@@ -78,36 +79,54 @@ Data
       residency, minimum GPA, fields as 2-digit CIP families, citizenship,
       first-generation, military family, needs FAFSA), a short description in
       Stepwell's own words (at most 500 characters), `checked_at`, source URL.
-- [ ] Source `official_list`; import into `scholarships` and
+- [x] Source `official_list`; import into `scholarships` and
       `scholarship_criteria` (public read); a file that fails validation
       fails the run.
-- [ ] `eligibility_profiles` (owner-only; one row per student, created only
+- [x] `eligibility_profiles` (owner-only; one row per student, created only
       by the opt-in; answer columns only; check constraints; `consent_version`,
       `consented_at`); cascade on account deletion; pg_cron deletes rows of
       students with no sign-in for 12 months.
-- [ ] `public.match_scholarships(state, stage)` (security invoker) returns
+- [x] `public.match_scholarships(state, stage)` (security invoker) returns
       listings with a match level and the reasons, using the caller's own
       eligibility row if there is one.
 
 Pages
-- [ ] `/scholarships`: state filter (profile state first), stage filter,
+- [x] `/scholarships`: state filter (profile state first), stage filter,
       list with "You qualify" / "You might qualify" tags, amount, deadline
       rules from DESIGN.md ("Closes in 5 days (Mar 1)" in accent within 14
       days; "Closed Mar 1" muted; "Usually due around March 1"), official
       link labeled as leaving Stepwell, source line per listing.
-- [ ] `/account/eligibility`: opt-in screen (what's asked, why, how it's
+- [x] `/account/eligibility`: opt-in screen (what's asked, why, how it's
       used, how to remove it), then the questions, each with one sentence
       on why and "Prefer not to say"; "Remove my answers".
-- [ ] Career pages: "Scholarships for this field" link when listings match
+- [x] Career pages: "Scholarships for this field" link when listings match
       the career's CIP families.
-- [ ] Header "Menu" button on phones; account page links to eligibility.
-- [ ] Loading, empty and error states; 320px; AVOID.md; SECURITY.md items
+- [x] Header "Menu" button on phones; account page links to eligibility.
+- [x] Loading, empty and error states; 320px; AVOID.md; SECURITY.md items
       listed; `npm run check` and `npm run test:db`.
 
 ## First research batch (before building)
 Federal programs and 5 states (the owner's choice; for example the most
 populous: CA, TX, FL, NY, PA) to test the file format and the matching on
 real rules, then the remaining states in batches.
+
+## Result (2026-09-29)
+- 59 programs: 19 federal, California 8, Florida 8, New York 9,
+  Pennsylvania 8, Texas 7. Researched from official pages; 6 facts
+  spot-checked against the live pages (all matched). 13 official sites
+  (hesc.ny.gov, some federal) block this network with 403 but load
+  normally elsewhere. Dropped: Texas Armed Services Scholarship (a
+  conditional loan), Coast Guard CSPI (rules "under review"). TEACH and
+  NIH GPA minimums have alternatives, so they're in `other`, not `min_gpa`.
+- Rules are columns on `scholarships`, not a separate criteria table (the
+  rule set is small and fixed). `other` allows up to 420 characters
+  (income limits and service commitments that turn awards into loans are
+  worth stating in full).
+- Almost every official program has an `other` requirement, so matches
+  are mostly "You might qualify", with the exact thing to check. That's
+  the honest label.
+- Phones: details and requirements fold behind a native toggle (the full
+  list was about 10,000px tall at 320px; now about 5,000).
 
 ## Out of scope
 Private scholarships (until an allowed source exists), the second opt-in

@@ -86,8 +86,14 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
 - **CareerOneStop Web API** (U.S. Dept. of Labor): Scholarship Finder, 9,500+
   awards; open data under USDOL's Open Data Policy. **Blocked 2026-09-28:**
   the website returns 403 (CloudFront) to the owner on every network tried,
-  so no API key could be requested. Proposed replacement: a curated list of
-  official state and federal programs (`docs/specs/scholarships.md`, draft).
+  so no API key could be requested.
+- **Official list** (source `official_list`, built 2026-09-29): Stepwell's
+  curated list of official state and federal programs in
+  `data/scholarships/<state>.json` and `federal.json`, researched from
+  government pages, each with its link and `checked_at`; loaded daily by
+  `src/jobs/sources/official-list.ts` (no fetching). Re-check each entry
+  yearly; older than 12 months, the page says to check the official page.
+  So far: federal, CA, FL, NY, PA, TX.
 - **USAJOBS API:** federal Pathways internships (open to high school students).
 - **Allowlisted sites:** only sites whose terms and robots.txt allow it; each
   gets an entry in "Allowlisted sites" below before its adapter is merged

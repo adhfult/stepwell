@@ -51,7 +51,8 @@ build step's spec.
 | `occupation_programs` (built) | `(onet_code, cip6)` + computed `cip4` | O*NET's CIP to O*NET-SOC crosswalk; `colleges_for_career()` joins through `cip4` |
 | `knowledge_areas`, `ap_courses`, `knowledge_ap_map` (built) | id / code | O*NET's 33 knowledge areas, College Board's 42 AP courses, and Stepwell's mapping (hand-entered in the migration; `ap_courses_for_career()`) |
 | `sources` (built) | id | every data source, its terms check and fetcher |
-| `scholarships`, `scholarship_criteria`, `opportunities`, `listing_fields` | id | listings, their eligibility rules, CIP families |
+| `scholarships` (built) | id | official state and federal programs from `data/scholarships/` with their rules as columns; `match_scholarships()` |
+| `opportunities`, `listing_fields` | id | internships and programs (step 8) |
 
 **User data** (owner-only via RLS):
 | Table | Contents |
@@ -60,7 +61,7 @@ build step's spec.
 | `interest_results` (built) | latest quiz scores (six areas, 0 to 40), never the answers; saved only when the student presses Save |
 | `saved_items` (built, careers only so far) | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
 | `plan_items` | year-by-year plan: term, kind, title, due date, status; saved listings' deadlines read live |
-| `eligibility_profiles` | optional scholarship answers after a two-step opt-in; matching stays in the database; deleted after 12 months without a sign-in (decision 0006) |
+| `eligibility_profiles` (built) | optional scholarship answers (first question set only), consent version; matching stays in the database; deleted with the account and after 12 months without a sign-in by pg_cron (decision 0006) |
 
 ## Data imports
 - One shared pipeline in `src/jobs/` with one adapter per source (v1 expansion
