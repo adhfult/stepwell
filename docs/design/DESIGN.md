@@ -116,7 +116,7 @@ Rules:
 - **Footer** (on `surface`, top `border-subtle` divider): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
   sources. Links are added only when their pages exist: Terms and Privacy
-  now (`src/components/site-footer.tsx`); About the data and Contact later.
+  and About the data now (`src/components/site-footer.tsx`); Contact later.
   The body is a flex column so the footer sits at the bottom of short pages.
 
 ## Components
