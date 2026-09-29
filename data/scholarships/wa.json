@@ -1,0 +1,127 @@
+[
+  {
+    "id": "wa-college-grant",
+    "title": "Washington College Grant (WA Grant)",
+    "sponsor": "Washington Student Achievement Council",
+    "sponsor_type": "state",
+    "url": "https://wsac.wa.gov/wcg-awards",
+    "award": {
+      "min": null,
+      "max": 13203,
+      "text": "2026-27 full awards: $13,203 at UW, $12,700 at WSU, $5,095 at community colleges, $6,476 at private nonprofits"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "WA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Washington resident with a high school diploma, GED or equivalent and no bachelor's degree. Income limits: a family of 4 earning $83,500 or less gets the full award, and partial awards go up to $139,500. Must attend an eligible Washington school or approved apprenticeship. Part time is OK."
+    },
+    "description": "Washington's main grant for college, job training and apprenticeships. If your family's income is under the limit, you are guaranteed the money; you do not compete for it. Recent high school graduates and working-age adults can use it, full time or part time. Apply by filing the FAFSA, or the WASFA if you are undocumented or cannot file the FAFSA. File early so your school can include it in your aid offer.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wa-college-bound-scholarship",
+    "title": "College Bound Scholarship",
+    "sponsor": "Washington Student Achievement Council",
+    "sponsor_type": "state",
+    "url": "https://wsac.wa.gov/college-bound",
+    "award": {
+      "min": null,
+      "max": 13703,
+      "text": "Maximum awards range from $5,595 at career colleges to $13,703 at the University of Washington"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "WA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Sign up in 7th or 8th grade (or newly eligible in 9th) with free or reduced-price lunch income (family of 4: $61,050 or less), or be in foster care. Must graduate from a WA high school, homeschool or GED, keep a 2.0 GPA (waived for community and technical colleges), and have no felony. Family of 4 income at college: $95,500 or less."
+    },
+    "description": "An early promise of college money for Washington students from low-income families. Public school students who get free or reduced-price lunch in 7th or 8th grade, and students in foster care, are signed up automatically; private and homeschool students can contact the program. To get the money you graduate, keep your grades up, and file the FAFSA or WASFA in senior year and every year of college.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wa-passport-to-college",
+    "title": "Passport to Careers: Passport to College Scholarship",
+    "sponsor": "Washington Student Achievement Council",
+    "sponsor_type": "state",
+    "url": "https://wsac.wa.gov/passport/about",
+    "award": {
+      "min": null,
+      "max": 2000,
+      "text": "Up to $2,000 a year (2026-27), plus support from college staff"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "WA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For former foster youth who were in care after age 13, or youth who were homeless and not in a parent's or guardian's custody in the prior school year. Must enroll at least half time by age 21, keep Washington residency, and work toward a certificate, associate or first bachelor's degree (not theology)."
+    },
+    "description": "Money and campus support for Washington students who were in foster care or were homeless on their own. It can help pay tuition, books, housing and transportation, and it also works for apprenticeships. High school seniors apply by filing the FAFSA or WASFA and answering the foster care questions; the state then sends a letter about eligibility.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wa-american-indian-endowed-scholarship",
+    "title": "American Indian Endowed Scholarship",
+    "sponsor": "Washington Student Achievement Council",
+    "sponsor_type": "state",
+    "url": "https://wsac.wa.gov/american-indian-endowed-scholarship",
+    "award": {
+      "min": 500,
+      "max": 3000,
+      "text": "About $500 to $3,000; 10 to 15 students chosen each year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "WA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have close social and cultural ties to an American Indian community in Washington and plan to use your education to benefit it. Washington resident with financial need, enrolling full time at a participating Washington college. Not for theology. Up to five years; reapply every year."
+    },
+    "description": "A competitive scholarship for Washington students with strong ties to an American Indian community in the state, for undergraduate or graduate study. Applications for 2027-28 open in December 2026. You also need to file the FAFSA to show financial need.",
+    "checked_at": "2026-09-29"
+  }
+]

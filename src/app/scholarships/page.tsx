@@ -114,7 +114,8 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
 
       <p className="mt-8 max-w-2xl text-sm text-muted">
         Source: official state and federal program pages, listed by Stepwell (each listing says when it was checked).
-        So far: federal programs and California, Florida, New York, Pennsylvania and Texas. More states are coming.
+        Covers federal programs and the main state programs in all 50 states and DC; colleges and private groups offer
+        many more awards.
       </p>
     </Page>
   );

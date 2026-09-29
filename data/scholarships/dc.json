@@ -1,0 +1,66 @@
+[
+  {
+    "id": "dc-tuition-assistance-grant",
+    "title": "DC Tuition Assistance Grant (DCTAG)",
+    "sponsor": "DC Office of the State Superintendent of Education (OSSE)",
+    "sponsor_type": "state",
+    "url": "https://osse.dc.gov/dctag",
+    "award": {
+      "min": null,
+      "max": 10000,
+      "text": "Up to $10,000 a year at public colleges nationwide; up to $2,500 at DC private colleges and private HBCUs"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "DC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "DC resident for 12 months before starting college, and stay a DC resident. High school diploma or GED earned within 15 years (2011 to 2026 for 2026-27). First undergraduate degree, at least half time, at an eligible college. Family taxable income under the yearly limit ($642,544 for students who started college in 2019-20 or later). Cannot be used at UDC."
+    },
+    "description": "DCTAG helps DC residents pay for college. At public colleges and universities anywhere in the country, it pays up to $10,000 a year toward the difference between in-state and out-of-state tuition. At private colleges in DC and private HBCUs, it pays up to $2,500 a year. You apply every year through the DC OneApp; for 2026-27 it was open from February 2 to August 21, 2026. Most students must also file the FAFSA.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "dc-mayors-scholars-undergraduate-program",
+    "title": "Mayor's Scholars Undergraduate Program",
+    "sponsor": "DC Office of the State Superintendent of Education (OSSE)",
+    "sponsor_type": "state",
+    "url": "https://osse.dc.gov/page/dc-mayors-scholars-information-students",
+    "award": {
+      "min": null,
+      "max": 4000,
+      "text": "Up to $4,000 a year for tuition and fees; up to $24,000 total for a bachelor's degree"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "DC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "DC resident for 12 months before starting college. New applicants: DC public or charter high school graduate (2011 to 2026) with a 2.5 GPA, or a DC GED or NEDP diploma plus a recommendation letter. Household income under 300% of the poverty line ($81,960 for 3 or fewer). First associate or bachelor's degree at an approved DC-area college. File the FAFSA and DCTAG if eligible."
+    },
+    "description": "A need-based award from DC for residents earning their first associate or bachelor's degree at approved colleges in the DC area, such as UDC, Howard, Georgetown, and Montgomery College. It pays up to $4,000 a year toward tuition and fees left after other aid. You apply each year in OSSE's online application; for 2026-27 it was open from February 2 to August 21, 2026. Returning students are funded first, then new applicants in the order they apply.",
+    "checked_at": "2026-09-29"
+  }
+]

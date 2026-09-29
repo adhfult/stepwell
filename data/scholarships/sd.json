@@ -1,0 +1,95 @@
+[
+  {
+    "id": "sd-opportunity-scholarship",
+    "title": "South Dakota Opportunity Scholarship",
+    "sponsor": "South Dakota Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://tdx.sdbor.edu/TDClient/33/Portal/KB/ArticleDet?ID=287",
+    "award": {
+      "min": 1500,
+      "max": 3000,
+      "text": "$1,500 a year in years 1 to 3 and $3,000 in year 4 (up to $7,500 total)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "09-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SD",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SD resident at high school graduation. Option 1: ACT 24 (SAT 1180) plus required courses with no grade below C and a 3.0 GPA, or Advanced Honors Endorsement with 3.0. Option 2: ACT 28 (SAT 1310), no GPA rule. Must attend an eligible SD college and start within 5 years of high school. Out-of-state transfers within 2 years get a partial award."
+    },
+    "description": "A merit scholarship for South Dakota high school graduates who go to college in the state, at public universities, technical colleges or some private universities. You apply on the Board of Regents scholarship portal, ideally by June 1 for fall (September 1 at the latest) or by November 1 for spring (January 15 at the latest). It pays a bit each year for up to four years, with the biggest amount in the fourth year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sd-jump-start-scholarship",
+    "title": "Jump Start Scholarship",
+    "sponsor": "South Dakota Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://tdx.sdbor.edu/TDClient/33/Portal/KB/ArticleDet?ID=252",
+    "award": {
+      "min": 1500,
+      "max": 1500,
+      "text": "$1,500 for the first year of college, split between fall and spring"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "SD",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SD resident. Must finish the state-recommended high school program and graduate from a SD public high school in three years or less, after at least two full-time semesters there. Cannot enroll in any part of a fourth high school year. Must start at an eligible SD college within one year of graduating."
+    },
+    "description": "A one-time award for South Dakota students who finish public high school early, in three years or less, and then start college in the state within a year. You apply through the Board of Regents scholarship portal.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sd-needs-based-grant",
+    "title": "South Dakota Needs-Based Scholarship Grant",
+    "sponsor": "South Dakota Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://tdx.sdbor.edu/TDClient/33/Portal/KB/ArticleDet?ID=311",
+    "award": {
+      "min": 500,
+      "max": 2000,
+      "text": "$500 to $2,000, set by your college"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SD",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For students with the highest unmet financial need at one of about 15 participating South Dakota colleges, including public universities, technical colleges and some private colleges."
+    },
+    "description": "A small grant for South Dakota college students with high financial need. There is no separate application: you fill out the FAFSA, and your college picks who gets it based on how much need is left after other aid. Funding is limited, so file the FAFSA early.",
+    "checked_at": "2026-09-29"
+  }
+]

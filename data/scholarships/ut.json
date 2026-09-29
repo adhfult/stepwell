@@ -1,0 +1,90 @@
+[
+  {
+    "id": "ut-opportunity-scholarship",
+    "title": "Utah Opportunity Scholarship",
+    "sponsor": "Utah System of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://ushe.edu/state-scholarships-aid/opportunity-scholarship/",
+    "award": {"min": null, "max": null, "text": "Set each year; the Class of 2026 got up to $800 a semester for four semesters ($3,200)"},
+    "deadline": {"kind": "date", "date": "2027-03-18"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "UT",
+      "min_gpa": 3.3,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must graduate from a Utah high school and take one AP, IB or concurrent enrollment course in each of math, science and language arts in grades 9 to 12. Must attend an eligible Utah college or university full time the fall after high school, or get an approved deferment."
+    },
+    "description": "A merit scholarship for Utah high school seniors who take advanced classes. For the Class of 2027, the application opens January 4, 2027, the priority deadline is January 29, and the final deadline is March 18, 2027. You must also file the FAFSA, but your family's income does not affect whether you qualify. It helps pay tuition and fees left after other state aid at Utah public colleges and some private ones.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ut-promise-grant",
+    "title": "Utah Promise Grant",
+    "sponsor": "Utah System of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://ushe.edu/utah-promise-grant/",
+    "award": {"min": null, "max": null, "text": "Varies with available funding, up to the cost of attendance"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college", "adult"],
+    "rules": {
+      "state": "UT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be a Utah resident or qualify for resident tuition and show financial need. For Utah public colleges, technical colleges and a few private nonprofits (BYU Provo, Ensign, WGU, Westminster). Lasts until a first bachelor's degree or 120 attempted credits."
+    },
+    "description": "A need-based grant for Utah students, both recent high school graduates and adults. File the FAFSA and talk to the financial aid office at the college you attend or plan to attend. The amount depends on your need and on how much money the state has that year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ut-technical-education-scholarship",
+    "title": "Technical Education Scholarship",
+    "sponsor": "Utah System of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://ushe.edu/technical-education-scholarship/",
+    "award": {"min": null, "max": null, "text": "Helps pay tuition, fees and books; amount depends on funding"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college", "adult"],
+    "rules": {
+      "state": "UT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must enroll in a designated high-demand technical program at a Utah technical college or the technical programs at Salt Lake Community College, Snow College, or USU Eastern, Moab or Blanding. Up to three academic years."
+    },
+    "description": "Helps Utah students pay for technical training in jobs the state needs, like programs at Utah's technical colleges. Recent high school graduates and adults can get it. File the FAFSA and ask the financial aid office at your school which programs count.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ut-adult-learner-grant",
+    "title": "Adult Learner Grant",
+    "sponsor": "Utah System of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://ushe.edu/adult-learner-grant-program/",
+    "award": {"min": null, "max": null, "text": "Up to the cost of attendance"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["adult"],
+    "rules": {
+      "state": "UT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be independent on the FAFSA, a Utah resident or qualify for resident tuition, show financial need, and enroll in an eligible online program in a field of industry need. Priority for rural, low-income, or high-demand job programs."
+    },
+    "description": "A need-based grant for Utah adults who study online in a field where the state needs workers. You must count as an independent student on the FAFSA. Contact the financial aid office at a participating school to apply.",
+    "checked_at": "2026-09-29"
+  }
+]

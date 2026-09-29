@@ -1,0 +1,127 @@
+[
+  {
+    "id": "vt-vermont-grant",
+    "title": "Vermont Grant",
+    "sponsor": "Vermont Student Assistance Corporation (VSAC)",
+    "sponsor_type": "state",
+    "url": "https://www.vsac.org/pay/student-aid-options/grants",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Recent awards ranged from $1,000 to $15,350 a year (2025-26); depends on need and funding"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "VT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Vermont resident in a full-time or part-time undergraduate degree or certificate program at a federally approved school, in or outside Vermont. No bachelor's degree yet (except UVM medical or veterinary students). Up to 10 full-time semesters. Grades are not considered."
+    },
+    "description": "Vermont's main need-based grant for residents going to college or career training, in Vermont or another state. Fill out the Vermont Grant application in your MyVSAC account and the FAFSA every year. Money is given first-come, first-served, so apply early. Vermont residents who are not U.S. citizens or eligible noncitizens can use the Vermont Grant Pathway Application instead of the FAFSA.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "vt-802opportunity",
+    "title": "802Opportunity: Free Tuition at CCV",
+    "sponsor": "Vermont Student Assistance Corporation (VSAC)",
+    "sponsor_type": "state",
+    "url": "https://www.vsac.org/free-tuition-community-college-vermont",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition plus the $125 admin fee at CCV, after other grants"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "VT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Vermont resident with family adjusted gross income of $100,000 or less. Must be a high school graduate (or equivalent), have no bachelor's degree, and study for an associate degree or certificate at the Community College of Vermont (CCV). Books and course fees not covered."
+    },
+    "description": "Free tuition at the Community College of Vermont for residents of any age whose family earns $100,000 a year or less. There is no separate application: file the FAFSA and the Vermont Grant application, apply to CCV, and register for classes. It covers fall, spring and summer. Residents who are not U.S. citizens or eligible noncitizens can use the Vermont Grant Pathway Application instead of the FAFSA.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "vt-freedom-unity",
+    "title": "Freedom & Unity: Free Tuition at Vermont State University",
+    "sponsor": "Vermont Student Assistance Corporation (VSAC)",
+    "sponsor_type": "state",
+    "url": "https://www.vsac.org/freedom-unity-free-tuition-vermont-state-university",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full general tuition at Vermont State University, after other grants"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "VT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Vermont resident with family adjusted gross income of $85,000 or less. High school graduate (or equivalent) with no bachelor's degree, in an associate or bachelor's program at Vermont State University. Certificate and graduate programs, fees, books and program-specific tuition not covered."
+    },
+    "description": "Free tuition at Vermont State University for Vermonters of any age whose family earns $85,000 a year or less, full time or part time. There is no separate application: file the FAFSA and the Vermont Grant application, apply to Vermont State, and register. Residents who are not U.S. citizens or eligible noncitizens can use the Vermont Grant Pathway Application instead of the FAFSA.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "vt-advancement-grant",
+    "title": "Vermont Advancement Grant",
+    "sponsor": "Vermont Student Assistance Corporation (VSAC)",
+    "sponsor_type": "state",
+    "url": "https://www.vsac.org/pay/student-aid-options/grants",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Varies with your finances, course cost and funding"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "VT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Vermont resident not enrolled in high school, taking a non-degree course or training that builds job skills or leads to more study. Up to 2 courses a term, 2 terms a year, 6 terms total. Does not pay for GED tests."
+    },
+    "description": "A grant for Vermonters taking short job-training courses or single college classes that are not part of a degree. Apply in your MyVSAC account. You can even apply after a course ends if money is still available that year. Residents who are not U.S. citizens or eligible noncitizens can use the Advancement Grant Pathway application.",
+    "checked_at": "2026-09-29"
+  }
+]

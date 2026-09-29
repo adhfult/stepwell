@@ -1,0 +1,146 @@
+[
+ {
+  "id": "mt-mus-honor-scholarship",
+  "title": "MUS Honor Scholarship",
+  "sponsor": "Montana University System",
+  "sponsor_type": "state",
+  "url": "https://www.mus.edu/Prepare/Pay/Scholarships/MUS_Honor_Scholarship.html",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition waiver for up to 8 semesters (average about $5,000 a year at a 4-year campus)"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2027-03-15"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MT",
+   "min_gpa": 3.4,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must be a Montana resident graduating from a Montana accredited high school, enrolled full-time there for at least 3 years including senior year. Must take the ACT or SAT, be on track for the Regents Rigorous Core or an IB diploma, and be accepted at an eligible Montana public campus. Up to 200 awards, ranked by GPA and test score. Fees not covered."
+  },
+  "description": "A merit scholarship for top Montana high school seniors. It waives tuition at Montana public colleges and universities for up to four years. Winners are picked by high school GPA and ACT or SAT score. Apply in the Award Montana portal (opens December 1) with your transcript, test score, college acceptance and a counselor-signed form.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mt-stem-healthcare-scholarship",
+  "title": "Montana STEM and Healthcare Scholarship",
+  "sponsor": "Montana University System",
+  "sponsor_type": "state",
+  "url": "https://www.mus.edu/Prepare/Pay/Scholarships/STEM_Scholarship.html",
+  "award": {
+   "min": 1000,
+   "max": 2000,
+   "text": "$1,000 the first year, $1,500 the second and third years, $2,000 the fourth year"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2027-03-15"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MT",
+   "min_gpa": 3.25,
+   "fields": [
+    "01",
+    "03",
+    "04",
+    "11",
+    "14",
+    "15",
+    "26",
+    "27",
+    "30",
+    "31",
+    "40",
+    "51"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must be a Montana resident graduating from a Montana accredited high school with 4 years of college prep math and 3 years of college prep science. Must declare a major on the MUS STEM and Healthcare list, enroll full-time at a qualifying campus the fall right after high school, and stay full-time."
+  },
+  "description": "For Montana high school seniors who plan to study science, technology, engineering, math or a health field at a Montana public college. The award grows each year you stay in a qualifying major. Apply in the Award Montana portal (opens December 1, 2026) with your transcript, college acceptance and a counselor-signed math and science form.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mt-2-plus-2-honor-scholarship",
+  "title": "2+2 Honor Scholarship",
+  "sponsor": "Montana University System",
+  "sponsor_type": "state",
+  "url": "https://applymontana.mus.edu/paying-for-school/scholarships/2-plus-2-honor-scholarship.html",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition waiver at a 4-year Montana public university for up to 4 semesters"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "06-30"
+  },
+  "stages": [
+   "college"
+  ],
+  "rules": {
+   "state": "MT",
+   "min_gpa": 3.4,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must be a Montana resident who earned an associate degree with at least a 3.4 GPA from an eligible Montana 2-year campus after at least 2 semesters there. Must be accepted at an eligible 4-year MUS campus and start the next semester. Apply by June 30 right after your associate degree. Fees not covered."
+  },
+  "description": "For Montana students who finish an associate degree at a 2-year public or community college with strong grades and then move on to a 4-year Montana public university. It waives tuition for up to 4 semesters. Filing the FAFSA is optional and only used to break ties.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mt-gianforte-trade-technology-scholarship",
+  "title": "Gianforte Trade and Technology Scholarship",
+  "sponsor": "Montana University System",
+  "sponsor_type": "state",
+  "url": "https://applymontana.mus.edu/paying-for-school/scholarships/gianforte-trade-and-technology-scholarships.html",
+  "award": {
+   "min": 750,
+   "max": 1500,
+   "text": "$1,500 per semester full-time, $750 per semester part-time"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "02-01"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MT",
+   "min_gpa": null,
+   "fields": [
+    "11",
+    "15",
+    "46",
+    "47",
+    "48"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Montana resident taking at least 6 credits in a qualifying trade or technology program at a qualifying Montana 2-year or tribal college, with unmet financial need and good academic standing. Dual credit high school students do not need a FAFSA. Up to 4 semesters full-time or 8 part-time."
+  },
+  "description": "Helps Montana students in 2-year trade and technology programs, such as automotive and diesel technology, plumbing, construction, electronics and cybersecurity. You apply each semester you are enrolled through the Award Montana portal. The program page lists September 1 for fall and February 1 for spring.",
+  "checked_at": "2026-09-29"
+ }
+]

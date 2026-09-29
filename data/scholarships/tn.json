@@ -1,0 +1,112 @@
+[
+  {
+    "id": "tn-hope-scholarship",
+    "title": "Tennessee HOPE Scholarship",
+    "sponsor": "Tennessee Higher Education Commission",
+    "sponsor_type": "state",
+    "url": "https://www.collegefortn.org/tennessee-hope-scholarship-3/",
+    "award": {"min": null, "max": 5700, "text": "Up to $2,250 a semester (years 1 to 2) and $2,850 (years 3 to 4) at four-year schools; $1,600 at two-year"},
+    "deadline": {"kind": "usually", "month_day": "09-01"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "TN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "TN resident who graduated from an eligible TN high school (some out-of-state exceptions). Needs a 21 ACT or 1060 SAT, OR a 3.0 high school GPA. Home school and GED/HiSET grads need a 21 ACT. Must enroll within 16 months of high school at an eligible TN college. Keep a 2.75 college GPA, then 3.0 after 72 hours."
+    },
+    "description": "Tennessee's lottery-funded merit scholarship for students who graduate from a Tennessee high school and go to college in the state. You apply just by filling out the FAFSA, by September 1 for fall, March 1 for spring or May 1 for summer. You can keep it for up to five years if you stay enrolled and keep your grades up. Never drop a class without talking to your financial aid office, because that can end the award.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "tn-promise",
+    "title": "Tennessee Promise Scholarship",
+    "sponsor": "Tennessee Higher Education Commission",
+    "sponsor_type": "state",
+    "url": "https://www.collegefortn.org/tennessee-promise-scholarship/",
+    "award": {"min": null, "max": null, "text": "Covers tuition and required fees left after other grants and scholarships"},
+    "deadline": {"kind": "date", "date": "2026-11-02"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "TN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "TN resident graduating from a TN, bordering or home high school (or GED/HiSET before age 19). Must file the FAFSA by April 1 of senior year, attend a required meeting, and do 16 hours of community service each year. For community colleges, TCATs and some four-year schools' associate programs. Keep a 2.0 college GPA."
+    },
+    "description": "Free tuition at Tennessee community colleges and colleges of applied technology for new high school graduates. It pays whatever tuition and fees are left after other grants. High school seniors in the Class of 2027 must apply in the THEC Student Portal by November 2, 2026 and file the FAFSA by April 1, 2027. You also get a mentor, go to a required meeting, and do community service each year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "tn-student-assistance-award",
+    "title": "Tennessee Student Assistance Award (TSAA)",
+    "sponsor": "Tennessee Higher Education Commission",
+    "sponsor_type": "state",
+    "url": "https://www.collegefortn.org/tennessee-financial-aid/tennessee-student-assistance-award/",
+    "award": {"min": null, "max": 4000, "text": "Up to $4,000 a year at private colleges; up to $2,000 at public colleges, TCATs and career schools"},
+    "deadline": {"kind": "usually", "month_day": "04-01"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "TN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "TN resident (parents too, if you are a dependent student). Student Aid Index (SAI) of 5,000 or less. Must attend an eligible TN school at least half time, list it first on the FAFSA, and not already have a bachelor's degree."
+    },
+    "description": "A need-based grant for Tennessee undergraduates with low family income. You apply by filing the FAFSA as soon as you can after it opens, and by April 1. Money runs out, so returning students and the neediest early filers get it first. You do not pay it back.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "tn-reconnect-grant",
+    "title": "Tennessee Reconnect Grant",
+    "sponsor": "Tennessee Higher Education Commission",
+    "sponsor_type": "state",
+    "url": "https://www.collegefortn.org/tennessee-reconnect/",
+    "award": {"min": null, "max": null, "text": "Covers tuition and required fees left after other grants"},
+    "deadline": {"kind": "usually", "month_day": "09-01"},
+    "stages": ["adult"],
+    "rules": {
+      "state": "TN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "TN resident who is independent on the FAFSA or at least 23 by January 1. No associate degree or higher yet. Must take at least 6 credit hours toward a certificate or associate degree, join a college success program, and keep a 2.0 GPA. Reconnect application due by June 30."
+    },
+    "description": "Free tuition for Tennessee adults going back to school for a certificate or associate degree at a community college or eligible school. It covers tuition and fees left after other grants. File the FAFSA by September 1 for fall, March 1 for spring or May 1 for summer, and send the Reconnect application by June 30. You can go part time.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "tn-dual-enrollment-grant",
+    "title": "Tennessee Dual Enrollment Grant",
+    "sponsor": "Tennessee Higher Education Commission",
+    "sponsor_type": "state",
+    "url": "https://www.collegefortn.org/dualenrollment/",
+    "award": {"min": null, "max": null, "text": "Full tuition for your first 5 college courses; then $100 per credit hour (up to $600) for courses 6 to 10"},
+    "deadline": {"kind": "usually", "month_day": "06-30"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "TN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "TN resident. Juniors and seniors at two-year or four-year colleges; freshmen and up at a TN College of Applied Technology (up to 1,296 clock hours). Must meet the college's dual enrollment admission rules and keep a 2.0 GPA in dual enrollment courses."
+    },
+    "description": "Helps Tennessee high school students take college classes for credit while still in high school. The first five courses are free, and later courses get partial help. At a college of applied technology you can start as early as ninth grade. Apply in the THEC Student Portal by June 30.",
+    "checked_at": "2026-09-29"
+  }
+]

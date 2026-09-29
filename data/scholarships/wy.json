@@ -1,0 +1,93 @@
+[
+  {
+    "id": "wy-hathaway-scholarship",
+    "title": "Hathaway Merit Scholarship",
+    "sponsor": "Wyoming Department of Education",
+    "sponsor_type": "state",
+    "url": "https://hathawayscholarship.org/requirements/high-school/",
+    "award": {
+      "min": 2360,
+      "max": 4720,
+      "text": "Per semester: Honors $2,360, Performance $1,770, Opportunity or Provisional $1,180"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "WY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Wyoming high school, homeschool or HSEC graduate with Wyoming residency. High school grads need the Hathaway Success Curriculum plus 3.5 GPA and ACT 25; 3.0 and ACT 21; 2.5 and ACT 19; or 2.5 and ACT 17 (or WorkKeys 12, Provisional). HSEC grads use ACT plus GED/HiSET scores instead of GPA. Only at UW or Wyoming community colleges."
+    },
+    "description": "Wyoming's merit scholarship for students who graduate from a Wyoming high school, homeschool or equivalency program and go to the University of Wyoming or a Wyoming community college. There are four levels based on your GPA, ACT score and high school classes, so plan your courses early with your counselor. You apply through the Wyoming college you choose, and the award can cover up to eight full-time semesters (four for the Provisional level).",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wy-hathaway-need-based",
+    "title": "Hathaway Need-Based Supplement",
+    "sponsor": "Wyoming Department of Education",
+    "sponsor_type": "state",
+    "url": "https://hathawayscholarship.org/requirements/needs/",
+    "award": {
+      "min": null,
+      "max": 2120,
+      "text": "25% of unmet need up to $2,120 a year; Honors students get all unmet need covered"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "WY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must first qualify for a Hathaway Merit Scholarship level and have unmet financial need of $2,000 or more after the FAFSA, the Hathaway award, other aid and a $2,000 student share are counted."
+    },
+    "description": "Extra money on top of the Hathaway Merit Scholarship for students whose families cannot cover the full cost of college. You apply by filing the FAFSA. Honors-level students with need can have all of their unmet need covered.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wy-wyomings-tomorrow",
+    "title": "Wyoming's Tomorrow Scholarship",
+    "sponsor": "Wyoming Community College Commission",
+    "sponsor_type": "state",
+    "url": "https://communitycolleges.wy.edu/wyomings-tomorrow-scholarship",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Up to $7,200 in total toward tuition and fees"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "WY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be 24 or older when you start school, a Wyoming resident for 1 year before applying (or 3 years total), and have unmet financial need. Must enroll in a credential program at UW or a Wyoming community college and register with Wyoming Workforce Services. Not for Hathaway recipients."
+    },
+    "description": "A need-based scholarship for Wyoming adults aged 24 and older going back to school for a degree or certificate at a Wyoming community college or the University of Wyoming. File the FAFSA, register with Wyoming Workforce Services, and apply through your college. Part-time students can get a smaller award.",
+    "checked_at": "2026-09-29"
+  }
+]

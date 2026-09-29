@@ -1,0 +1,188 @@
+[
+  {
+    "id": "sc-palmetto-fellows",
+    "title": "Palmetto Fellows Scholarship",
+    "sponsor": "South Carolina Commission on Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.che.sc.gov/students-families-and-military/scholarships-and-grants-sc-residents",
+    "award": {
+      "min": null,
+      "max": 7500,
+      "text": "Up to $6,700 first year, $7,500 later years; up to $10,000 with a STEM, education or accounting boost"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-15"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": 3.5,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SC resident, U.S. citizen or green card holder at high school graduation. Needs SAT 1200 (or CHE's equivalent ACT) plus 3.50 GPA plus top 6% class rank, OR SAT 1400 (or equivalent ACT) plus 4.00 GPA, on the SC Uniform Grading Policy. Must attend an eligible SC four-year college full time. No felony convictions."
+    },
+    "description": "South Carolina's top merit scholarship for the strongest high school seniors who stay in the state for college. Your school counselor starts the application and sends it to the state: by April 15 of senior year for early awards, or by a June date for late awards (check with your counselor). You can keep it for up to eight terms toward a first bachelor's degree. Approved math, science, education or accounting majors can get extra money from the second year on.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sc-life-scholarship",
+    "title": "LIFE Scholarship",
+    "sponsor": "South Carolina Commission on Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.che.sc.gov/students-families-and-military/scholarships-and-grants-sc-residents",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year; up to $7,500 with a STEM, education or accounting boost at four-year colleges"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SC resident, U.S. citizen or green card holder. Four-year college freshmen need 2 of 3: 3.0 GPA, SAT 1100 (or equivalent ACT), top 30% class rank. Two-year or technical college freshmen need a 3.0 GPA. In college you keep or earn it with a 3.0 college GPA and about 30 credits a year. Must attend an eligible SC college full time. No felony convictions."
+    },
+    "description": "A merit scholarship for South Carolina residents at in-state public and private colleges. There is no application: your college's financial aid office checks your final high school transcript and tells you if you qualify. Students who miss it at first can earn it later in college with good grades. It can be used for up to eight terms. Approved math, science, education and accounting majors can get extra money starting in the second year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sc-hope-scholarship",
+    "title": "SC HOPE Scholarship",
+    "sponsor": "South Carolina Commission on Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.che.sc.gov/students-families-and-military/scholarships-and-grants-sc-residents",
+    "award": {
+      "min": null,
+      "max": 2800,
+      "text": "Up to $2,800 for the first year only, including a $300 book allowance"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SC resident, U.S. citizen or green card holder at high school graduation. For first-time freshmen at an eligible SC four-year college, full time, who do not get LIFE or Palmetto Fellows. GPA is on the SC Uniform Grading Policy. No felony convictions."
+    },
+    "description": "A one-year scholarship for South Carolina students starting at an in-state four-year college who graduate high school with at least a B average but do not qualify for LIFE or Palmetto Fellows. There is no application: your college checks your final high school transcript. It pays only for the freshman year, but you may qualify for LIFE after that if your college grades are good.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sc-need-based-grant",
+    "title": "South Carolina Need-based Grant",
+    "sponsor": "South Carolina Commission on Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.che.sc.gov/students-families-and-military/scholarships-and-grants-sc-residents",
+    "award": {
+      "min": null,
+      "max": 3500,
+      "text": "Up to $3,500 a year full time, or $1,750 part time"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "SC resident with high financial need. Must attend an eligible South Carolina public college in a first degree program (certificate, associate or bachelor's). Up to eight full-time terms."
+    },
+    "description": "A grant for South Carolina students with the greatest financial need at in-state public colleges. You apply by filling out the FAFSA. Your college's financial aid office decides who gets it and how much, so file early. It can be used in fall, spring or summer.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sc-tuition-grant",
+    "title": "South Carolina Tuition Grant",
+    "sponsor": "South Carolina Tuition Grants Commission",
+    "sponsor_type": "state",
+    "url": "https://sctuitiongrants.org/eligibility/",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 for full-time students in 2026-27"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "You (or your parents if dependent) must have lived in SC for at least 12 months before fall. Must have financial need and attend one of 21 participating private nonprofit SC colleges full time (12+ credits) for a first undergraduate degree. Freshmen must be fully admitted. Up to eight semesters."
+    },
+    "description": "A need-based grant for South Carolina residents going to one of 21 private nonprofit colleges in the state, such as Furman, Wofford or Claflin. You apply by filing the FAFSA each year by August 1. The grant helps close the gap between the college's cost and what your family can pay.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sc-wins",
+    "title": "SC WINS Scholarship",
+    "sponsor": "SC Technical College System",
+    "sponsor_type": "state",
+    "url": "https://www.sctechsystem.edu/sc-wins/",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year for leftover tuition, fees and course costs"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "SC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "SC resident in an eligible workforce program at one of the 16 SC technical colleges. Must be employed, take the college's financial literacy course, or do 100 volunteer hours. Keep a 2.0 GPA each year. Covers one credential unless the next is in the same field."
+    },
+    "description": "A scholarship for South Carolina residents at the state's 16 technical colleges, aimed at jobs the state needs workers for. It pays tuition, fees and required course costs that are left after your other grants and scholarships. It covers certificates, industry credentials, diplomas and degrees. Ask your local technical college how to apply.",
+    "checked_at": "2026-09-29"
+  }
+]

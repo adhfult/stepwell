@@ -1,0 +1,196 @@
+[
+  {
+    "id": "ky-kees",
+    "title": "Kentucky Educational Excellence Scholarship (KEES)",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "$187 to $500 for each high school year with a 2.75+ GPA, plus ACT/SAT and AP/IB bonuses, paid each college year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Kentucky resident; graduate from a certified Kentucky high school meeting the KEES curriculum. Home school and GED grads (GED at ages 18 to 23) earn KEES from ACT/SAT only. AP/IB/Cambridge bonuses need free or reduced-price lunch. Use at participating Kentucky colleges, at least half-time. Renew: 2.5 college GPA after year 1, then 3.0 (or 2.5 and on track). Ends 5 years after high school."
+    },
+    "description": "Kentucky students earn KEES money for every high school year they finish with at least a 2.75 GPA. Higher grades earn more. You can add bonus money for your best ACT or SAT score, and for AP, IB or Cambridge exam scores if you got free or reduced-price lunch. The total you earn in high school is paid every year of college at a participating Kentucky school, for up to 8 semesters, as long as you keep your college grades up.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ky-cap-grant",
+    "title": "College Access Program (CAP) Grant",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": 5300,
+      "text": "Up to $5,300 a year at 4-year schools and up to $2,500 at 2-year schools (2026-27)"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Kentucky resident with financial need. Enroll at least half-time in a program at least two years long at an eligible Kentucky college, trade school or technical college. Awarded first come, first served by FAFSA date, so file soon after the FAFSA opens October 1. No past-due debts to KHEAA or federal aid programs."
+    },
+    "description": "A need-based grant for Kentucky undergraduates at eligible public and private colleges, trade schools and technical colleges. There is no separate application: filing the FAFSA is how you apply. Money is handed out in the order FAFSAs come in until it runs out, so filing early matters.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ky-kentucky-tuition-grant",
+    "title": "Kentucky Tuition Grant (KTG)",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": 3300,
+      "text": "Up to $3,300 for 2026-27"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Kentucky resident with financial need, enrolled full-time in an associate or bachelor's program at an eligible private Kentucky college. Awarded first come, first served by FAFSA date. Up to 4 terms for 2-year programs or 8 terms for 4-year programs."
+    },
+    "description": "A need-based grant for Kentucky residents who go full-time to an eligible private college in Kentucky. You apply by filing the FAFSA, and money goes out in the order FAFSAs arrive, so file early after it opens October 1.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ky-work-ready-scholarship",
+    "title": "Work Ready Kentucky Scholarship (WRKS)",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition left after other grants, up to KCTCS in-state tuition and fees (fees capped at $400 a year)"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [
+        "46",
+        "13",
+        "51",
+        "48",
+        "15",
+        "49",
+        "11",
+        "52"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Kentucky resident without an associate or higher degree; high school graduate or in/finished a GED program. Approved certificate, diploma or AAS program at an eligible Kentucky school in 2026-27 sectors: construction, education, healthcare, manufacturing and logistics, or professional/technical services. Up to 60 credit hours. First come, first served by WRKS application date."
+    },
+    "description": "Helps Kentuckians who have not earned an associate degree pay for short career programs: industry certificates, diplomas or an associate of applied science in high-demand fields. It covers the tuition that other grants don't. You need the FAFSA and a WRKS application on MyKHEAA, and money goes to early applicants first.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ky-dual-credit-scholarship",
+    "title": "Kentucky Dual Credit Scholarship",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays for 1 general education dual credit class in 2026-27, up to $99 per credit hour"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Kentucky resident in grade 11 or 12 at a Kentucky public, private or home school, taking an approved dual credit class at a participating Kentucky college. Must do a 30-minute college success counseling session each year. High schools report students to KHEAA; home school students apply by Oct 1, 2026 (fall) or March 1, 2027 (spring)."
+    },
+    "description": "Pays for a college class you take while still in high school (dual credit) at a participating Kentucky college, for juniors and seniors. For 2026-27 it covers one general education class. Your high school tells KHEAA you are taking dual credit, then you pick your college and semester in your MyKHEAA account.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ky-work-ready-dual-credit",
+    "title": "Work Ready Dual Credit Scholarship",
+    "sponsor": "Kentucky Higher Education Assistance Authority (KHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.kheaa.com/web/scholarships-grants.faces",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays the dual credit course cost for up to 2 career and technical courses per school year"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-01"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "KY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Kentucky resident in grades 9 to 12 at a Kentucky high school. Only career and technical education (CTE) dual credit courses in a pathway approved by the Kentucky Department of Education count. First come, first served. Oct 1, 2026 is the fall deadline; the final 2026-27 deadline is March 1, 2027."
+    },
+    "description": "Pays for up to two career and technical dual credit courses a year for Kentucky high school students, grades 9 to 12. The courses must be part of a state-approved career pathway that leads to an industry credential. Your high school reports you to KHEAA, then you submit your choices in MyKHEAA. Early requests are funded first.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "az-azleap",
+    "title": "Arizona Leveraging Educational Assistance Partnership (AzLEAP)",
+    "sponsor": "Arizona Board of Regents (ABOR)",
+    "sponsor_type": "state",
+    "url": "https://www.azregents.edu/programs/scholarships-assistance/azleap",
+    "award": {
+      "min": null,
+      "max": 2500,
+      "text": "Up to $2,500 per school year; the average award is about $1,000"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AZ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Arizona resident, undergraduate enrolled at least half time at a participating accredited Arizona college, and eligible for a federal Pell Grant based on the FAFSA. Some colleges pick students automatically; at others, ask the financial aid office."
+    },
+    "description": "A need-based grant for low-income Arizona residents in college. It gives up to $2,500 a year, and most awards are around $1,000. You need to qualify for a federal Pell Grant, which is decided by the FAFSA. Many participating colleges, such as Arizona State University, choose students automatically when they build the financial aid package. At other colleges, ask the financial aid office how to be considered.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "az-arizona-promise-program",
+    "title": "Arizona Promise Program",
+    "sponsor": "Arizona Board of Regents (ABOR)",
+    "sponsor_type": "state",
+    "url": "https://collegereadyaz.com/promise/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers in-state tuition and fees left after other aid at ASU, NAU or the University of Arizona, for up to 8 semesters"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-01"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "AZ",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Arizona resident who graduates from an Arizona high school. Must be admitted to ASU, NAU or the University of Arizona by April 1 as a first-year student for fall, and file the FAFSA and any verification documents by April 1. Must be eligible for a federal Pell Grant. Housing, meals, parking and books are not covered."
+    },
+    "description": "A promise from Arizona's three public universities to cover tuition and fees for low-income Arizona students. If you qualify for a federal Pell Grant, graduate from an Arizona high school with at least a 2.5 GPA, and are admitted to ASU, NAU, or the University of Arizona by April 1, it pays the tuition and fees left after other aid. File the FAFSA by April 1 of senior year. It does not pay for housing or books.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "az-veteran-spouses-tuition-scholarship",
+    "title": "Veteran Spouses Tuition Scholarship",
+    "sponsor": "Arizona Board of Regents (ABOR)",
+    "sponsor_type": "state",
+    "url": "https://www.azregents.edu/programs/scholarships-assistance/veteran-spouses",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Up to the cost of in-state tuition and required fees after other aid"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AZ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": true,
+      "other": "Must be the spouse of an honorably discharged U.S. armed forces veteran, an Arizona resident who qualifies for in-state tuition, and admitted to ASU, NAU, the University of Arizona or a participating community college, in a first degree program. Given first come, first served."
+    },
+    "description": "Spouses of honorably discharged U.S. military veterans can get free tuition at Arizona's public universities and participating community colleges. It pays up to the cost of in-state tuition and required fees after other financial aid. Awards are first come, first served. File the FAFSA and ask the financial aid office at your college how to apply.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "az-law-enforcement-spouses-dependents-scholarship",
+    "title": "Spouses and Dependents of Law Enforcement and Correctional Officers Tuition Scholarship",
+    "sponsor": "Arizona Board of Regents (ABOR)",
+    "sponsor_type": "state",
+    "url": "https://www.azregents.edu/law-spousesdependents",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and required fees after other aid; at private schools, up to average public university tuition"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AZ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For a dependent under age 27 or a spouse of a currently employed Arizona law enforcement or correctional officer. You and the officer must be Arizona residents. Enroll at a participating Arizona school in a certificate, license, associate or bachelor's program. Send the officer's commission card, a current job letter, and a birth or marriage certificate."
+    },
+    "description": "This scholarship pays tuition and required fees, after other aid, for the spouses and children of people who currently work as law enforcement or correctional officers in Arizona. Awards go first come, first served once your school confirms your enrollment. For 2026-27, applications opened July 17, 2026, but demand was higher than the money available, so new applicants go on a waitlist. Check the page for the next application period.",
+    "checked_at": "2026-09-29"
+  }
+]

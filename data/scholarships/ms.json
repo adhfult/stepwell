@@ -1,0 +1,160 @@
+[
+ {
+  "id": "ms-help-grant",
+  "title": "Higher Education Legislative Plan (HELP) Grant",
+  "sponsor": "Mississippi Office of Student Financial Aid",
+  "sponsor_type": "state",
+  "url": "https://www.msfinancialaid.org/programs/help-higher-ed-legislative-plan/",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Full tuition and required fees at a Mississippi public college, for up to 8 semesters"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "03-31"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MS",
+   "min_gpa": 2.5,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "For graduating high school seniors. Must have lived in Mississippi for 1 year, score at least 20 on the ACT (superscores accepted), meet the program's income limits, qualify for a full or partial Pell Grant, and enroll full-time at an approved Mississippi college. Private college students get the average public 4-year tuition. Apply with the MAAPP; documents due April 30."
+  },
+  "description": "Mississippi's biggest award for graduating seniors from lower-income families. It pays full tuition and required fees at a Mississippi public college or university for up to four years. You need a 2.5 high school GPA and a 20 on the ACT. File the FAFSA and the Mississippi Aid Application (MAAPP) between October 1 and March 31.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ms-tuition-assistance-grant",
+  "title": "Mississippi Tuition Assistance Grant (MTAG)",
+  "sponsor": "Mississippi Office of Student Financial Aid",
+  "sponsor_type": "state",
+  "url": "https://www.msfinancialaid.org/programs/mtag-mississippi-tuition-assistance-grant/",
+  "award": {
+   "min": null,
+   "max": 1000,
+   "text": "Up to $500 a year for freshmen and sophomores, up to $1,000 for juniors and seniors"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "09-15"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MS",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have lived in Mississippi for 1 year and enroll full-time at an approved Mississippi college. Must NOT qualify for the maximum Pell Grant. New students need a 2.5 high school GPA (or a GED or homeschool completion) and at least 15 on the ACT. College students need a 2.5 college GPA on 12 or more hours. Documents due October 15."
+  },
+  "description": "A state grant for Mississippi students who get less than the full federal Pell Grant, so it mostly helps middle-income families. It gives a set amount each year for students at Mississippi public and private nonprofit colleges. File the FAFSA and the Mississippi Aid Application (MAAPP) every year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ms-eminent-scholars-grant",
+  "title": "Mississippi Eminent Scholars Grant (MESG)",
+  "sponsor": "Mississippi Office of Student Financial Aid",
+  "sponsor_type": "state",
+  "url": "https://www.msfinancialaid.org/programs/mesg-mississippi-eminent-scholars-grant/",
+  "award": {
+   "min": null,
+   "max": 2500,
+   "text": "Up to $2,500 a year, not more than tuition and required fees"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "09-15"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MS",
+   "min_gpa": 3.5,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must score at least 29 on the ACT (or 1330 SAT), or be a National Merit Finalist or Semifinalist. Must have lived in Mississippi for 1 year before finishing high school and enroll full-time at an approved Mississippi college. College students can apply within 3 years of high school with a 3.5 college GPA on 12 to 18 hours. Documents due October 15."
+  },
+  "description": "A merit award for top Mississippi students who stay in the state for college. You need a 3.5 high school GPA and a high ACT or SAT score. It can be used at public and private nonprofit 2-year and 4-year colleges in Mississippi for up to 8 semesters. Apply every year with the Mississippi Aid Application (MAAPP).",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ms-faith-scholarship",
+  "title": "FAITH Scholarship for Foster Youth",
+  "sponsor": "Mississippi Office of Student Financial Aid",
+  "sponsor_type": "state",
+  "url": "https://www.msfinancialaid.org/programs/faith-scholarship/",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Full cost of attendance minus other grants, for up to 5 years"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "09-15"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MS",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have been in Mississippi Child Protection Services custody, lived in a qualifying Mississippi children's home, or been adopted from either at any time since age 13. Must be under 25 on October 1 of the aid year (extensions for military service). Must have lived in Mississippi 1 year and enroll at least half-time (6 hours) at an approved Mississippi college."
+  },
+  "description": "For current and former foster youth in Mississippi. It can pay the full cost of college, including housing and books, after other grants. There is no separate FAITH deadline, but the Mississippi Aid Application (MAAPP) it uses is only open from October 1 to September 15. Also file the FAFSA every year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ms-upskill-grant",
+  "title": "UPSKILL Grant",
+  "sponsor": "Mississippi Office of Student Financial Aid",
+  "sponsor_type": "state",
+  "url": "https://www.msfinancialaid.org/programs/upskill/",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Remaining community college tuition and fees plus a $500 yearly stipend"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "09-15"
+  },
+  "stages": [
+   "adult"
+  ],
+  "rules": {
+   "state": "MS",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be at least 24, a U.S. citizen or lawful permanent resident, and a Mississippi resident for 2 years. Needs a high school diploma or GED. Must enroll at least half-time in an eligible certificate or associate program for a priority job field at a participating Mississippi community college. Covers one certificate or degree."
+  },
+  "description": "A newer grant (created in 2026) for adults 24 and older who go back to community college in Mississippi to train for jobs the state needs. It pays the tuition and fees left after other grants and adds $500 a year. File the FAFSA and the Mississippi Aid Application (MAAPP) by the deadline.",
+  "checked_at": "2026-09-29"
+ }
+]

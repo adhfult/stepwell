@@ -1,0 +1,134 @@
+[
+  {
+    "id": "wi-grant-public",
+    "title": "Wisconsin Grant (UW, Technical and Tribal Colleges)",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/programs.html",
+    "award": {"min": null, "max": null, "text": "Minimum and maximum set each year; lower if you take fewer credits"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Wisconsin resident undergraduate with financial need in a degree or certificate program at a UW System school, Wisconsin technical college or tribal college. Part time is OK. Up to ten semesters."
+    },
+    "description": "Wisconsin's main need-based grant for residents at the state's public universities, technical colleges and tribal colleges. You apply by filing the FAFSA each year. The amount depends on your need and how many credits you take, and even students taking only a few credits can qualify.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-grant-private-nonprofit",
+    "title": "Wisconsin Grant (Private Non-Profit Colleges)",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/programs.html",
+    "award": {"min": null, "max": null, "text": "Maximum set each year; lower if you take fewer credits"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Wisconsin resident undergraduate with financial need in a degree or certificate program at a nonprofit independent college based in Wisconsin. Part time is OK. Up to ten semesters."
+    },
+    "description": "A need-based grant for Wisconsin residents attending private nonprofit colleges in Wisconsin. You apply by filing the FAFSA each year. The amount depends on your financial need and how many credits you take.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-talent-incentive-program",
+    "title": "Talent Incentive Program (TIP) Grant",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/programs.html",
+    "award": {"min": 600, "max": 1800, "text": "$600 to $1,800 for new awards; at least $250 when renewed"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Wisconsin resident with very high financial need who is educationally disadvantaged. Must be a first-time freshman enrolled at least half time for the first award, and be nominated by a college financial aid office or a WEOP counselor. Up to ten semesters."
+    },
+    "description": "A grant for Wisconsin students with the greatest financial need who face extra challenges getting to college. You file the FAFSA, and then a college financial aid office or a counselor from the Wisconsin Educational Opportunity Program nominates you. It starts in your first year of college and can be renewed.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-academic-excellence-scholarship",
+    "title": "Academic Excellence Scholarship",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/features/aes.html",
+    "award": {"min": 2250, "max": 2250, "text": "$2,250 a year toward tuition, half from the state and half from your college"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Chosen from the seniors with the highest GPA at each Wisconsin public and private high school; your school nominates you. Must enroll full time at a participating Wisconsin college by September 30 after graduation. Homeschool students need ACT 33 or SAT 1500. Up to 8 semesters."
+    },
+    "description": "A merit scholarship for the top students by GPA at each Wisconsin high school who stay in Wisconsin for college, including UW schools, technical colleges, private colleges and tribal colleges. You do not apply yourself: your high school nominates students each spring (in 2026, nominations ran February 18 to March 13).",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-indian-student-assistance-grant",
+    "title": "Indian Student Assistance Grant",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/programs.html",
+    "award": {"min": 250, "max": 1100, "text": "$250 to $1,100 a year"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college", "graduate"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Wisconsin resident who is at least 25% Native American, in an undergraduate or graduate program at an eligible school. Part time is OK. Must also submit the Indian Student Assistance Grant Application. Up to ten semesters."
+    },
+    "description": "A grant for Native American students from Wisconsin in college or graduate school. File the FAFSA and the separate Indian Student Assistance Grant Application.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-hearing-visually-impaired-grant",
+    "title": "Hearing and Visually Impaired Student Grant",
+    "sponsor": "Wisconsin Higher Educational Aids Board",
+    "sponsor_type": "state",
+    "url": "https://heab.state.wi.us/programs.html",
+    "award": {"min": 250, "max": 1800, "text": "$250 to $1,800 a year"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "WI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Wisconsin resident undergraduate with a severe or profound hearing or visual impairment and financial need, enrolled at least half time. Must also submit the grant's own application. Up to ten semesters."
+    },
+    "description": "A grant for Wisconsin undergraduates who are deaf, hard of hearing, blind or have low vision and have financial need. File the FAFSA and the separate Hearing and Visually Impaired Student Grant application.",
+    "checked_at": "2026-09-29"
+  }
+]

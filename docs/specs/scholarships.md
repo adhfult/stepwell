@@ -128,6 +128,28 @@ real rules, then the remaining states in batches.
 - Phones: details and requirements fold behind a native toggle (the full
   list was about 10,000px tall at 320px; now about 5,000).
 
+### Second batch (2026-09-29): the other 45 states and DC
+- 205 programs (1 to 6 a state; 264 in all). Five research agents, same
+  rules (now in `data/scholarships/README.md`). 13 facts spot-checked on the
+  live pages (AK, AL, IA, MO, MT, NJ, OK, TN, WV, WY): all matched after one
+  fix (Wyoming's Tomorrow now gives its linked page's "$7,200 in total"; the
+  per-semester figure came from another page).
+- Links: 185 of 205 load for curl; the rest are bot checks (403 from
+  Delaware, Illinois ISAC, New Hampshire, SC Tech, Virginia SCHEV) or an
+  incomplete certificate chain (ndus.edu); all open in real Chrome.
+- Dropped as loans in disguise (repaid if you don't finish, teach or stay):
+  Kansas Promise, ND Career Builders, WV Invests, Arizona Teachers Academy,
+  ArFuture and most state teacher and nurse programs. Also dropped:
+  programs closed to new students or unfunded, Guard-only programs, and
+  programs run by private foundations.
+- Thin states: New Hampshire (1: the state gives no general aid itself),
+  Alaska, DC, Hawaii and Rhode Island (2 each).
+- Going stale within days (the yearly re-check refreshes them): OK
+  Workforce Ready and Oregon Tribal Student Grant (Sep 30), Alabama Law
+  Enforcement Officers' Family (Oct 2), Maryland 2+2 (Oct 15).
+- Illinois: a July 2026 court ruling stopped state aid for undocumented
+  students for 2026-27; MAP and AIM HIGH say so. Re-check after Oct 1, 2026.
+
 ## Out of scope
 Private scholarships (until an allowed source exists), the second opt-in
 step, application tracking, essay help, the planner (step 9).

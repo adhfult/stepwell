@@ -1,0 +1,131 @@
+[
+  {
+    "id": "co-colorado-student-grant",
+    "title": "Colorado Student Grant",
+    "sponsor": "Colorado Department of Higher Education (CDHE)",
+    "sponsor_type": "state",
+    "url": "https://cdhe.colorado.gov/state-aid-available",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount set by your college based on financial need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "CO",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For undergraduates with documented financial need at participating Colorado colleges. Your college decides who gets it and how much, and not every college offers every state program. Students who cannot file the FAFSA may apply for state aid with the Colorado Application for State Financial Aid (CASFA)."
+    },
+    "description": "Colorado's need-based grant for undergraduate students. The state gives the money to participating colleges, and each college awards it to students with financial need, so you do not apply to the state directly. File the FAFSA, or Colorado's own state aid form (CASFA) if you are not eligible for the FAFSA, and ask your college's financial aid office about its deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "co-college-opportunity-fund",
+    "title": "College Opportunity Fund (COF) Stipend",
+    "sponsor": "Colorado Department of Higher Education (CDHE)",
+    "sponsor_type": "state",
+    "url": "https://cdhe.colorado.gov/the-college-opportunity-fund",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays part of in-state tuition per credit hour; the rate is set each year by the legislature"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "CO",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For eligible undergraduate students at participating Colorado colleges. You must apply for COF, be admitted, and enroll. The stipend is paid per credit hour straight to your college for eligible undergraduate classes."
+    },
+    "description": "The College Opportunity Fund is a Colorado stipend that pays part of in-state tuition for eligible undergraduate students at participating colleges. It is paid per credit hour straight to your college, which lowers your tuition bill. New and continuing students can get it, but you must apply for it and then be admitted and enrolled. The application is linked on the page, and College Assist answers questions about it.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "co-dependent-tuition-assistance-program",
+    "title": "Dependent Tuition Assistance Program (DTAP)",
+    "sponsor": "Colorado Department of Higher Education (CDHE)",
+    "sponsor_type": "state",
+    "url": "https://cdhe.colorado.gov/dependent-tuition-assistance-program",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition plus on-campus room and board at Colorado public colleges; required fees not covered"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "CO",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For children of Colorado law enforcement officers, firefighters or National Guard members killed or permanently disabled on duty, or of POWs or people missing in action. Must enroll in DTAP before age 24, keep a 2.5 GPA, file the FAFSA yearly, and apply for the College Opportunity Fund. Not for married students. Up to 8 semesters toward a first bachelor's degree or certificate."
+    },
+    "description": "DTAP helps the children of Colorado police officers, firefighters, and National Guard members who were killed or permanently disabled on duty, and children of prisoners of war or people missing in action. At Colorado public colleges it pays tuition plus on-campus room and board. It can also help at approved private and out-of-state colleges. The application is open March 1 through June 30; email the DTAP office for the link.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "co-fostered",
+    "title": "FosterEd",
+    "sponsor": "Colorado Department of Higher Education (CDHE)",
+    "sponsor_type": "state",
+    "url": "https://cdhe.colorado.gov/fostered",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays the rest of your full cost of attendance after other aid at Colorado public colleges"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate",
+      "adult"
+    ],
+    "rules": {
+      "state": "CO",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Current Colorado resident who was in foster care, or in non-certified kinship care after being found neglected or dependent, in Colorado on or after age 13. Must attend a Colorado public college, local district college or area technical college and apply every year starting in 2026-27. Covers up to 132 semester credits after joining. No age limit."
+    },
+    "description": "FosterEd pays the full cost of college, including tuition, fees, books, and living costs, for Coloradans who were in foster care at age 13 or older. It covers what is left after other grants and scholarships at Colorado public colleges and technical colleges. Starting in 2026-27, you must apply each year, and the application opens March 1. You also need a form confirming your foster care history and a FAFSA or CASFA.",
+    "checked_at": "2026-09-29"
+  }
+]

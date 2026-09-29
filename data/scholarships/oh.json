@@ -1,0 +1,168 @@
+[
+  {
+    "id": "oh-college-opportunity-grant",
+    "title": "Ohio College Opportunity Grant (OCOG)",
+    "sponsor": "Ohio Department of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://highered.ohio.gov/students/pay-for-college/ohio-grants-scholarships/ocog/ocog",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $4,000 a year at public universities, $5,000 at private nonprofits (2023-24 amounts)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "10-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "OH",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Student Aid Index (SAI) of 3,750 or less and household income of $96,000 or less. For an associate, first bachelor's, or nursing diploma. Usually not for community colleges, regional campuses, or Ohio Technical Centers, with some exceptions for foster youth and veterans."
+    },
+    "description": "Ohio's main need-based grant. It helps pay tuition and fees left after the federal Pell Grant at Ohio public university main campuses, private colleges, and some colleges in Pennsylvania. There is no separate application: just file the FAFSA. Ohio says the FAFSA deadline for this grant is October 1 each year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "oh-governors-merit-scholarship",
+    "title": "Governor's Merit Scholarship (GMS)",
+    "sponsor": "Ohio Department of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://highered.ohio.gov/students/pay-for-college/ohio-grants-scholarships/gms",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000, renewable for up to 4 years"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "05-15"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "OH",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Top 5% of your class at an Ohio public or chartered private high school. Homeschool and dropout recovery students apply with an ACT or SAT score by October 1 of senior year. Graduate on time and attend an Ohio public or private nonprofit college within 2 years. Register for Selective Service if required."
+    },
+    "description": "A merit scholarship for Ohio's top high school seniors who go to college in Ohio. Most students do not apply: your high school decides if you are in the top 5% and the state tells you. You must accept the offer online by May 15 of your senior year. It can pay for tuition, fees, books, housing and more. To renew it, finish at least 20 credits a year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "oh-choose-ohio-first",
+    "title": "Choose Ohio First Scholarship",
+    "sponsor": "Ohio Department of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://highered.ohio.gov/students/pay-for-college/ohio-grants-scholarships/choose-ohio-first/cof",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Varies by college; average $4,324 at four-year and $2,226 at two-year colleges (2021-22)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "OH",
+      "min_gpa": null,
+      "fields": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "26",
+        "27",
+        "40"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Ohio resident at a participating Ohio public or private nonprofit college, new to an eligible STEM program (or planning to teach STEM). Each college sets its own rules and picks its own students."
+    },
+    "description": "A scholarship for Ohio students studying science, technology, engineering or math, or training to be STEM teachers. The state gives money to participating colleges, and each college chooses who gets it and may add work-based learning like internships. You apply through the college, so check the list of participating schools and contact the one you plan to attend.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "oh-work-ready-grant",
+    "title": "Ohio Work Ready Grant (OWRG)",
+    "sponsor": "Ohio Department of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://highered.ohio.gov/students/pay-for-college/ohio-grants-scholarships/owrg/owrg",
+    "award": {
+      "min": null,
+      "max": 6000,
+      "text": "Up to $6,000 a year in manufacturing or engineering tech programs; up to $3,000 in others"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "OH",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Qualifying in-demand program at an Ohio community college, public university branch campus, or Ohio Technical Center. Need a Pell-eligible SAI unless you are in a technician program for advanced manufacturing or engineering technology. Register for Selective Service if required."
+    },
+    "description": "A grant for Ohio students training for in-demand jobs at community colleges, university branch campuses and Ohio Technical Centers. Students in manufacturing and engineering technology programs get the most. It covers tuition, fees and other school costs, including short-term certificates. File the FAFSA, then tell your school's financial aid office you want this grant.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "oh-war-orphan-scholarship",
+    "title": "Ohio War Orphan & Severely Disabled Veterans' Children Scholarship",
+    "sponsor": "Ohio Department of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://highered.ohio.gov/educators/financial-aid/sgs/wos/wos",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "77% of tuition and fees at public colleges, or $6,397 at private colleges (2026-27)"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-15"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "OH",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Parent was killed in combat or is a severely disabled veteran who served during a listed war period. Age 16 to 24 when you apply. Lived in Ohio for the past year and at least 4 of the last 10 years. For an associate or bachelor's degree at an Ohio college."
+    },
+    "description": "Help with tuition for children of Ohio veterans who died in combat or are severely disabled from service during a time of war. It can be used at public, private and for-profit colleges in Ohio for up to 10 semesters. Apply online with the parent's military papers. The deadline for the 2027-28 school year is May 15, 2027.",
+    "checked_at": "2026-09-29"
+  }
+]

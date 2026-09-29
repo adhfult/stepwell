@@ -1,0 +1,193 @@
+[
+ {
+  "id": "md-guaranteed-access-grant",
+  "title": "Howard P. Rawlings Guaranteed Access Grant",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_gagrant.aspx",
+  "award": {
+   "min": 100,
+   "max": 18000,
+   "text": "Up to 100% of financial need for the first 2 years, up to $18,000 a year (2026-27)"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "03-01"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must qualify for in-state tuition, have family income at or below 130% of the federal poverty level, be under 26 when first awarded, start college within 6 years of high school or GED, and enroll full-time at a Maryland college. Undocumented residents apply with the MHEC One-App."
+  },
+  "description": "Maryland's biggest grant for students from low-income families. It can cover all of your financial need for your first two years at a Maryland college, and it can be renewed after that. There is no separate application: you are considered when you file the FAFSA, or the MHEC One-App if you are an undocumented Maryland resident.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "md-educational-assistance-grant",
+  "title": "Howard P. Rawlings Educational Assistance Grant",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_ea.aspx",
+  "award": {
+   "min": 400,
+   "max": 3000,
+   "text": "$400 to $3,000 a year, renewable for up to 4 years total"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "03-01"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must qualify for in-state tuition in Maryland, show financial need, and enroll full-time (12 credits) at a Maryland college. No earlier bachelor's degree. Undocumented residents apply with the MHEC One-App."
+  },
+  "description": "A need-based grant for Maryland students going to college full-time in Maryland. High school seniors and current college students can get it. There is no separate application: file the FAFSA, or the MHEC One-App if you are an undocumented Maryland resident, by the state deadline.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "md-community-college-promise",
+  "title": "Maryland Community College Promise Scholarship",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_MDCommunityCollegePromiseScholarship.aspx",
+  "award": {
+   "min": null,
+   "max": 5000,
+   "text": "Up to $5,000 for tuition and fees left after other aid"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "adult"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Maryland high school graduate or GED holder eligible for in-state tuition and attend the community college in your county or region. Income limit $100,000 (single parent or single) or $150,000 (two parents or married). High school seniors need a 2.3 unweighted GPA; current community college students need a 2.5. At least 6 credits a term."
+  },
+  "description": "Helps pay community college tuition in Maryland. It fills the gap left after federal and state grants, up to $5,000 a year. File the FAFSA or MHEC One-App, then contact your community college. Adults who finished high school 5 or more years ago do not need to show a high school GPA. Check the page for the current application deadline.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "md-2-plus-2-transfer-scholarship",
+  "title": "2+2 Transfer Scholarship",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_2_plus_2.aspx",
+  "award": {
+   "min": 1000,
+   "max": 2000,
+   "text": "$2,000 a year for science, teaching, engineering, computer science, math or nursing; $1,000 for others"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2026-10-15"
+  },
+  "stages": [
+   "college"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": 2.5,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Maryland resident finishing (or who just finished) an associate degree at a Maryland community college and transferring full-time to a Maryland 4-year college. Student Aid Index (SAI) must be $10,000 or less. Apply through the MHEC One-App in MDCAPS."
+  },
+  "description": "For Maryland community college students who earn an associate degree and then transfer full-time to a Maryland 4-year college. Students in science, teaching, engineering, computer science, math or nursing programs get a larger award. It can be renewed for up to 3 years if you stay full-time and keep a 2.5 GPA.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "md-senatorial-scholarship",
+  "title": "Maryland Senatorial Scholarship",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_senatorial.aspx",
+  "award": {
+   "min": 400,
+   "max": 14086,
+   "text": "$400 to $14,086 a year (2026-27)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "graduate"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Maryland resident attending a Maryland college, university or private career school (out-of-state only in rare cases). Each state senator sets their own application and deadline; if the state office awards it for the senator, the FAFSA is due March 1. Undocumented students eligible for in-state tuition use the MHEC One-App."
+  },
+  "description": "Each Maryland state senator gives out these scholarships to students in their district. High school seniors, college students, graduate students and career school students can apply. Contact your own state senator's office to learn how to apply, and file the FAFSA or MHEC One-App.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "md-delegate-scholarship",
+  "title": "Maryland Delegate Scholarship",
+  "sponsor": "Maryland Higher Education Commission",
+  "sponsor_type": "state",
+  "url": "https://mhec.maryland.gov/preparing/Pages/FinancialAid/ProgramDescriptions/prog_delegate.aspx",
+  "award": {
+   "min": 200,
+   "max": 14086,
+   "text": "$200 to $14,086 (2026-27); reapply each year"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "graduate"
+  ],
+  "rules": {
+   "state": "MD",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Maryland resident attending a Maryland college, university or private career school (out-of-state only in rare cases). Each delegate sets their own application and deadline; if the state office awards it for the delegate, the FAFSA is due March 1. Undocumented students eligible for in-state tuition use the MHEC One-App."
+  },
+  "description": "Each Maryland state delegate gives out these scholarships to students in their district. High school seniors, college students, graduate students and career school students can apply. Contact your own delegates' offices to learn how to apply, and file the FAFSA or MHEC One-App. You must reapply every year.",
+  "checked_at": "2026-09-29"
+ }
+]

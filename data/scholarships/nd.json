@@ -1,0 +1,90 @@
+[
+  {
+    "id": "nd-state-grant",
+    "title": "North Dakota State Grant",
+    "sponsor": "North Dakota University System",
+    "sponsor_type": "state",
+    "url": "https://ndus.edu/paying-for-college/state-grant",
+    "award": {"min": null, "max": null, "text": "Up to $1,375 a semester, plus a Supplemental State Grant for some families"},
+    "deadline": {"kind": "rolling"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "ND",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "ND resident who finished high school, home school, or a GED in North Dakota (some bordering-state graduates qualify). First-time undergraduate, at least quarter-time at an ND college. Supplemental grant: family income $80,000 or less. Limit of 8 semesters."
+    },
+    "description": "North Dakota's grant for undergraduates with financial need at public, tribal and private colleges in the state. You apply by filing the FAFSA every year. Money is limited, so file as soon as you can after the FAFSA opens (usually October 1). Students who get it and whose family earns $80,000 or less may also get the Supplemental State Grant.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nd-north-dakota-scholarship",
+    "title": "North Dakota Scholarship",
+    "sponsor": "North Dakota Department of Public Instruction and North Dakota University System",
+    "sponsor_type": "state",
+    "url": "https://www.nd.gov/dpi/familiescommunity/students/north-dakota-scholarship",
+    "award": {"min": null, "max": 6000, "text": "$6,000 total, up to $750 a semester"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "ND",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "ND high school diploma, civics test and other Essential Skills, plus 2 of 3 readiness areas (for example ACT 24 or SAT 1180, CTE credits, WorkKeys, or ASVAB). Must use at an ND college, trade school or registered apprenticeship within 6 years. Keep a 2.75 college GPA and go full-time."
+    },
+    "description": "A reward for North Dakota high school students who take challenging classes and meet the state's college, career or military readiness goals. Seniors apply online with the Department of Public Instruction; in 2026 the deadline was June 5. It can be used at colleges, career and technical schools and registered apprenticeships in North Dakota.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nd-scholars-program",
+    "title": "ND Scholars Program",
+    "sponsor": "North Dakota University System",
+    "sponsor_type": "state",
+    "url": "https://ndus.edu/nd-scholars-program",
+    "award": {"min": null, "max": null, "text": "Full tuition (regular undergraduate rate) for up to 8 semesters"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "ND",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "ACT composite of 30 or higher (or SAT equivalent), taken between July 1 and June 30 of junior year. About 30 awards a year, given to the highest scores first. Must attend an ND public, tribal or private college for a first bachelor's degree."
+    },
+    "description": "A full-tuition merit scholarship for top-scoring North Dakota high school graduates who stay in the state for a bachelor's degree. There is no application: the state uses ACT or SAT scores from junior year and emails winners during senior year. Only about 30 students get it each year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nd-native-american-scholarship",
+    "title": "North Dakota Native American Scholarship",
+    "sponsor": "North Dakota University System",
+    "sponsor_type": "state",
+    "url": "https://ndus.edu/paying-for-college/native-american-scholarship/",
+    "award": {"min": null, "max": 2000, "text": "Up to $2,000 a year"},
+    "deadline": {"kind": "usually", "month_day": "07-15"},
+    "stages": ["high_school", "college", "graduate"],
+    "rules": {
+      "state": "ND",
+      "min_gpa": 2.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be an ND resident and an enrolled member of a federally recognized tribe, at an accredited ND college or career school. Merit awards need a 3.5 GPA; need-based awards (GPA 2.0 to 3.49) also need the FAFSA. Apply every year."
+    },
+    "description": "A scholarship for North Dakota students who are enrolled members of a federally recognized tribe. It is for certificate, associate, bachelor's and graduate programs at colleges and career schools in North Dakota. Apply each year through the ND SAMS portal with proof of tribal enrollment and your transcript. The priority deadline is July 15.",
+    "checked_at": "2026-09-29"
+  }
+]

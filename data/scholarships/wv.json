@@ -1,0 +1,90 @@
+[
+  {
+    "id": "wv-promise-scholarship",
+    "title": "PROMISE Scholarship",
+    "sponsor": "West Virginia Higher Education Policy Commission",
+    "sponsor_type": "state",
+    "url": "https://www.cfwv.com/financial-aid/promise-scholarship/how-it-works/",
+    "award": {"min": null, "max": 5500, "text": "Up to $5,500 a year or the cost of tuition and required fees, whichever is less"},
+    "deadline": {"kind": "date", "date": "2027-03-01"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "WV",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "You and your parent must have lived in WV for 12 months before the deadline. Must graduate from a WV high school (or approved homeschool) with a 3.0 overall and core GPA, and score ACT 21 or SAT 1080. Must attend an eligible WV public or private college and apply within two years of high school."
+    },
+    "description": "West Virginia's merit scholarship for students who graduate from a West Virginia high school with good grades and test scores and stay in the state for college. The Class of 2027 must file the Promise application and the FAFSA by March 1, 2027. It helps pay tuition and fees at public and private two- and four-year colleges in West Virginia. Awards depend on the state legislature funding the program each year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-higher-education-grant",
+    "title": "West Virginia Higher Education Grant",
+    "sponsor": "West Virginia Higher Education Policy Commission",
+    "sponsor_type": "state",
+    "url": "https://www.cfwv.com/wvgrant",
+    "award": {"min": null, "max": null, "text": "Estimated $3,400 a year for 2026-27; changes each year"},
+    "deadline": {"kind": "usually", "month_day": "04-15"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "WV",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have lived in West Virginia for at least 12 months before applying, have financial need, show academic promise, and enroll full time as an undergraduate at a participating school in West Virginia or Pennsylvania. No bachelor's degree yet."
+    },
+    "description": "A need-based grant for West Virginia students going to college full time. There is no separate application: you apply by filing the FAFSA by April 15 each year. It can be used at participating colleges in West Virginia and Pennsylvania.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-heaps-part-time",
+    "title": "Higher Education Adult Part-Time Student Grant (HEAPS)",
+    "sponsor": "West Virginia Higher Education Policy Commission",
+    "sponsor_type": "state",
+    "url": "https://www.cfwv.com/wp-content/uploads/2025/07/Financial-Aid-Fact-Sheet-2026-2027.pdf",
+    "award": {"min": null, "max": null, "text": "Varies with your program and financial need"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["adult"],
+    "rules": {
+      "state": "WV",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "WV resident for at least 12 months, U.S. citizen or permanent resident, with financial need and a high school diploma or equivalent. Must be enrolled part time in a certificate or degree program at a WV technical center, community college, or public or private college. Not in default on student loans."
+    },
+    "description": "A need-based grant for West Virginians who go to college part time, such as working adults. File the FAFSA and contact the school you plan to attend about its other steps.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-heaps-workforce",
+    "title": "HEAPS Workforce Development Grant",
+    "sponsor": "West Virginia Higher Education Policy Commission",
+    "sponsor_type": "state",
+    "url": "https://www.cfwv.com/wp-content/uploads/2025/07/Financial-Aid-Fact-Sheet-2026-2027.pdf",
+    "award": {"min": null, "max": 2000, "text": "The cost of the program, up to $2,000 a year"},
+    "deadline": {"kind": "rolling"},
+    "stages": ["adult"],
+    "rules": {
+      "state": "WV",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "WV resident for at least 12 months, U.S. citizen or permanent resident, with financial need and a high school diploma or equivalent. Must enroll in an in-demand certificate, industry credential or skills program at a participating WV technical center, community college or career school."
+    },
+    "description": "A grant for West Virginians training for in-demand jobs through short certificate or credential programs. Apply with the HEAPS Workforce application in your WVSAM account on cfwv.com and file the FAFSA. Applications open July 1 and are funded first-come, first-served until money runs out.",
+    "checked_at": "2026-09-29"
+  }
+]

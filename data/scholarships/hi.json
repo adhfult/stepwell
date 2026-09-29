@@ -1,0 +1,65 @@
+[
+  {
+    "id": "hi-hawaii-promise",
+    "title": "Hawaii Promise Program",
+    "sponsor": "University of Hawaii Community Colleges",
+    "sponsor_type": "state",
+    "url": "https://uhcc.hawaii.edu/admissions/hawaii-promise.php",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers direct costs left after other aid: tuition, fees, books, supplies and transportation"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "HI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Hawaii resident who qualifies for in-state tuition. Degree program at one of the 7 UH Community Colleges that accepts financial aid, at least 6 credits a semester. Must have financial need and keep at least a 2.0 GPA. Amount depends on funding and need. March 1 is the FAFSA priority deadline."
+    },
+    "description": "A state-funded scholarship that can make community college free for Hawaii residents with financial need. It fills the gap left after other grants for tuition, books and other direct costs at any UH Community College. File the FAFSA by March 1 and register for classes.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "hi-b-plus-scholarship",
+    "title": "State of Hawaii B Plus Scholarship",
+    "sponsor": "University of Hawaii",
+    "sponsor_type": "state",
+    "url": "https://manoa.hawaii.edu/fas/types-of-aid/scholarships/financial-aid-scholarships/",
+    "award": {
+      "min": null,
+      "max": 2000,
+      "text": "Up to $2,000 at UH Manoa; renewable up to 4 years"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "HI",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Graduated from a Hawaii public high school after 2005 with a rigorous curriculum and at least a 3.0 GPA. Must show financial need. At UH Manoa, enroll in at least 12 credits. Offered across University of Hawaii campuses; check your campus financial aid office for how to apply."
+    },
+    "description": "A state-funded scholarship for Hawaii public high school graduates with at least a B average who have financial need and attend a University of Hawaii campus. You must file the FAFSA to be considered.",
+    "checked_at": "2026-09-29"
+  }
+]

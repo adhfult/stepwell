@@ -1,0 +1,194 @@
+[
+  {
+    "id": "ia-iowa-tuition-grant",
+    "title": "Iowa Tuition Grant",
+    "sponsor": "Iowa Department of Education",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/iowa-tuition-grant",
+    "award": {
+      "min": null,
+      "max": 7500,
+      "text": "Up to $7,500 in 2026-27; 2027-28 amount not set yet"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-07-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Iowa resident, undergraduate in an associate or bachelor's program at an eligible Iowa private not-for-profit college. Need an eligible Student Aid Index (2026-27 range was -1,500 to 16,000). Up to four years full-time; part-time may get less."
+    },
+    "description": "A need-based grant for Iowa residents at eligible private colleges in Iowa. Filing the FAFSA is the application, and the FAFSA for 2027-28 must be in by July 1, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-last-dollar-scholarship",
+    "title": "Future Ready Iowa Last-Dollar Scholarship",
+    "sponsor": "Iowa Department of Education",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/last-dollar",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers tuition and fees left after federal and state grants, based on Iowa community college tuition"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Recent Iowa high school, homeschool or equivalency graduates, or anyone age 20 or older. Student Aid Index 30,000 or less. Program must be on Iowa's high-demand job list, at an Iowa community college or eligible private college. Enroll at least part-time, stay continuously enrolled (6+ hours), and go to advising. Iowa resident."
+    },
+    "description": "Pays the rest of your tuition after other grants for a certificate, diploma or associate degree in a high-demand field at an Iowa community college or eligible private college. Recent graduates and adults 20 and older can qualify. You just file the FAFSA.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-all-iowa-opportunity-scholarship",
+    "title": "All Iowa Opportunity Scholarship",
+    "sponsor": "Iowa Department of Education",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/aios",
+    "award": {
+      "min": null,
+      "max": 5646,
+      "text": "Up to $5,646 for 2027-28"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-04-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Iowa resident; Iowa high school or equivalency diploma within 2 years; first-time freshman in fall 2027 or spring 2028. File the FAFSA and Iowa Financial Aid Application by April 1. SAI -1,500 to 11,292. Priority to foster youth, children of fallen public safety workers, and TRIO, GEAR UP or alternative high school students. Iowa colleges only."
+    },
+    "description": "A need-based scholarship for Iowa students starting college at an eligible Iowa school, with priority for students who were in foster care and a few other groups. You must file both the FAFSA and the Iowa Financial Aid Application by April 1, 2027. It can renew for up to 8 semesters if you stay enrolled.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-kibbie-grant",
+    "title": "Kibbie Grant (Iowa Skilled Workforce Shortage Tuition Grant)",
+    "sponsor": "Iowa Department of Education",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/kibbie-grant",
+    "award": {
+      "min": null,
+      "max": 3100,
+      "text": "Up to $3,100 in 2026-27 (half of average community college tuition and fees)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Iowa resident at an Iowa community college in a qualified career or technical program (at least 15 weeks) in a skilled workforce shortage area, at least 3 credit hours. Must show need; SAI -1,500 to 6,000 in 2026-27. Up to two years."
+    },
+    "description": "Helps Iowa residents with financial need pay for career and technical programs at Iowa community colleges in fields that are short on workers. File the FAFSA by July 1 to be considered.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-robert-d-blue-scholarship",
+    "title": "Robert D. Blue Scholarship",
+    "sponsor": "Iowa Treasurer of State",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/robert-d-blue-scholarship",
+    "award": {
+      "min": 500,
+      "max": 1000,
+      "text": "$500 to $1,000"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "05-31"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Iowa resident attending or planning to attend an Iowa college or university. Judged on high school GPA, financial need, two reference letters and a 500-word essay."
+    },
+    "description": "A scholarship from the Iowa Treasurer for high school seniors and current college students at Iowa colleges. You apply with an essay and two reference letters, and your grades and financial need are considered. The deadline is May 31.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-future-ready-iowa-grant",
+    "title": "Future Ready Iowa Grant",
+    "sponsor": "Iowa Department of Education",
+    "sponsor_type": "state",
+    "url": "https://educate.iowa.gov/higher-ed/financial-aid/scholarships-grants/future-ready-iowa-grant",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount not listed on the program page"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "IA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Iowa resident age 25 or older by July 1 before the school year. At least part-time in an eligible bachelor's program on Iowa's job-demand list, at an Iowa public university, accredited private college or approved online school. Must stay continuously enrolled. First-time applicants file the FAFSA and Iowa Financial Aid Application."
+    },
+    "description": "A grant for Iowa adults 25 and older finishing a bachelor's degree in a high-demand field. Apply with the FAFSA and the Iowa Financial Aid Application by the July 1 priority deadline; renewing students and early applicants are funded first.",
+    "checked_at": "2026-09-29"
+  }
+]

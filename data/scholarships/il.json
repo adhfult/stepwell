@@ -1,0 +1,97 @@
+[
+  {
+    "id": "il-map-grant",
+    "title": "Monetary Award Program (MAP) Grant",
+    "sponsor": "Illinois Student Assistance Commission (ISAC)",
+    "sponsor_type": "state",
+    "url": "https://www.isac.org/students/during-college/types-of-financial-aid/grants/monetary-award-program/",
+    "award": {
+      "min": null,
+      "max": 8400,
+      "text": "Up to $8,400 a year toward tuition and fees, based on need and college cost"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "IL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Illinois resident with financial need at an approved Illinois college, at least 3 credit hours a term. No bachelor's degree yet; limit of 135 paid credit hours. Money runs out each year: 2026-27 awards stopped for FAFSAs received after April 23, 2026. File as soon as possible after Oct 1. No summer awards."
+    },
+    "description": "Illinois's main need-based grant for tuition and fees at approved Illinois colleges, open to recent graduates and adults. You apply by filing the FAFSA and listing your college. Because funds run out in spring, file early. A July 2026 court ruling stopped state aid for undocumented students for 2026-27; ISAC says a 2027-28 Alternative Application opens Oct 1, 2026.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "il-aim-high-grant",
+    "title": "AIM HIGH Grant",
+    "sponsor": "Illinois Student Assistance Commission (ISAC)",
+    "sponsor_type": "state",
+    "url": "https://www.isac.org/students/during-college/types-of-financial-aid/grants/aim-high.html",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount set by each participating public university"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Attended an Illinois high school; Illinois resident; first-time full-time undergrad at one of 12 Illinois public universities. Household income no more than 8 times the federal poverty guideline. Must meet the university's minimum GPA or ACT/SAT score. Each university sets extra rules and deadlines."
+    },
+    "description": "A merit and need grant for Illinois students starting full-time at one of the state's public universities. Each university runs its own AIM HIGH program, so check that school's page. File the FAFSA to apply.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "il-veterans-dependents-scholarship",
+    "title": "Deceased, Disabled, and MIA-POW Veterans' Dependents Scholarship",
+    "sponsor": "Illinois Department of Veterans' Affairs",
+    "sponsor_type": "state",
+    "url": "https://www.isac.org/students/during-college/types-of-financial-aid/scholarships/mia-pow-scholarship.html",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount not listed; used at Illinois public colleges"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "IL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Dependent of a veteran who was an Illinois resident when entering active duty and was declared a POW, missing in action, died from a service-connected disability, or has a 100% service-connected disability (VA or Department of Defense). Use at Illinois public colleges. Apply through the ISAC Student Portal."
+    },
+    "description": "Helps pay for college at Illinois public schools for dependents of Illinois veterans who died, went missing, were prisoners of war, or are fully disabled because of their service. The application is on the ISAC Student Portal, and the Illinois Department of Veterans' Affairs runs the program.",
+    "checked_at": "2026-09-29"
+  }
+]

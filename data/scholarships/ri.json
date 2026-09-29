@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ri-rhode-island-promise",
+    "title": "Rhode Island Promise Scholarship",
+    "sponsor": "Rhode Island Office of the Postsecondary Commissioner",
+    "sponsor_type": "state",
+    "url": "https://riopc.edu/policies/rhode-island-promise-scholarship-program-policies-and-procedures/",
+    "award": {"min": null, "max": null, "text": "Up to 2 years of tuition and required fees at CCRI, after other grants"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "RI",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must qualify for RI in-state tuition, finish high school or an equivalency before age 19, and start full-time at the Community College of Rhode Island the next semester. Keep a 2.5 college GPA and stay on track to graduate in 2 years. Must commit to live, work or study in RI after graduating."
+    },
+    "description": "Free tuition and required fees for two years at the Community College of Rhode Island (CCRI) for students who enroll full-time right after high school. It pays what is left after federal and other grants. File the FAFSA and any forms CCRI asks for by CCRI's deadline. Books, housing and some program fees are not covered.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ri-hope-scholarship",
+    "title": "Hope Scholarship at Rhode Island College",
+    "sponsor": "Rhode Island College (state program)",
+    "sponsor_type": "state",
+    "url": "https://www.ric.edu/admissions-financial-aid/scholarship-opportunities/hope-scholarship",
+    "award": {"min": null, "max": null, "text": "Tuition and required fees for your junior and senior years at RIC, after other aid"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["college"],
+    "rules": {
+      "state": "RI",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must qualify for RI in-state tuition and start at Rhode Island College as a first-time first-year student. Full-time (12+ credits) if 23 or younger; 60 credits by junior year and on track to finish in 4 years. Must commit to live, work or study in RI after graduating."
+    },
+    "description": "Makes the last two years of a bachelor's degree at Rhode Island College tuition-free for Rhode Island students who started at RIC as first-year students and stayed on track. There is no scholarship application: RIC checks your records before your junior year. You must file the FAFSA each year, keep a 2.5 GPA and declare a major by junior year. Students 24 or older have somewhat different rules.",
+    "checked_at": "2026-09-29"
+  }
+]

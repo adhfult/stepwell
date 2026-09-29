@@ -1,0 +1,24 @@
+[
+  {
+    "id": "nh-scholarships-for-orphans-of-veterans",
+    "title": "Scholarships for Orphans of Veterans",
+    "sponsor": "New Hampshire Department of Education, Division of Educator Support and Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.education.nh.gov/who-we-are/division-of-educator-support-and-higher-education/higher-education/higher-education-scholarships-for-orphans-of-veterans",
+    "award": {"min": null, "max": 2500, "text": "$2,500 for housing, food and books, plus free tuition at NH public colleges"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NH",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Parent was a New Hampshire service member who died on active duty or from a service-connected disability. Free tuition applies at University System of New Hampshire and Community College System of New Hampshire schools. Reapply each year."
+    },
+    "description": "A state scholarship for children of New Hampshire service members who died on active duty or because of a service-connected disability. It gives $2,500 for housing, food, books and supplies at a New Hampshire public or private college, and free tuition at the state's public universities and community colleges. Apply with the form on the Department of Education's page.",
+    "checked_at": "2026-09-29"
+  }
+]

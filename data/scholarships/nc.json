@@ -1,0 +1,97 @@
+[
+  {
+    "id": "nc-next-nc-scholarship",
+    "title": "Next NC Scholarship",
+    "sponsor": "North Carolina State Education Assistance Authority (NCSEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.cfnc.org/pay-for-college/next-nc-scholarship/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "At least $3,000 a year at a community college or $5,000 at a UNC university"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "NC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "NC resident for in-state tuition. Family adjusted gross income (AGI) of $80,000 or less and a Student Aid Index of 7,500 or less. At least 6 credits a semester at an NC community college or UNC System university. Part-time students get less."
+    },
+    "description": "North Carolina's main aid for students from families earning $80,000 or less. It combines the federal Pell Grant with state grants and can pay for tuition, fees, books, food and housing at any of the 58 community colleges or 16 UNC System universities. Just file the FAFSA; there are no other forms. File by June 1 for the biggest award, since later applications are funded only while money lasts.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nc-need-based-scholarship-private-colleges",
+    "title": "NC Need-Based Scholarship for Private College Students",
+    "sponsor": "North Carolina State Education Assistance Authority (NCSEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.cfnc.org/pay-for-college/apply-for-financial-aid/nc-need-based-scholarship-for-private-college-students/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount varies, based on need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "NC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "NC resident for tuition purposes. At least 6 credits as an undergraduate at a qualifying private NC college. No bachelor's degree yet. Student Aid Index (SAI) of 15,000 or less."
+    },
+    "description": "A grant for North Carolina students with financial need who go to a private college or university in the state. You are considered automatically when you file the FAFSA and list at least one qualifying private NC college. Money runs out, so file early and meet your college's priority deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nc-children-of-wartime-veterans",
+    "title": "North Carolina Scholarship for Children of Wartime Veterans",
+    "sponsor": "North Carolina Department of Military and Veterans Affairs",
+    "sponsor_type": "state",
+    "url": "https://www.milvets.nc.gov/benefits-services/scholarships",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Up to 8 semesters at North Carolina schools"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-14"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "NC",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Parent must be a deceased, disabled, combat, or POW/MIA veteran whose service happened during a period of war. Under age 25 when applying. NC resident; the veteran lived in NC when entering service, or the child was born in NC and has lived there since. 8 years to use it."
+    },
+    "description": "A scholarship for children of certain North Carolina veterans who served during wartime, to use at North Carolina schools. You apply online through the state's scholarship portal. The deadline is February 14 if the veteran's service-connected disability is less than 100% or they served in a combat zone.",
+    "checked_at": "2026-09-29"
+  }
+]

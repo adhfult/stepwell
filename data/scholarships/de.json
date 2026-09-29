@@ -1,0 +1,201 @@
+[
+  {
+    "id": "de-scholarship-incentive-program",
+    "title": "Scholarship Incentive Program (ScIP)",
+    "sponsor": "Delaware Department of Education, Higher Education Office (DHEO)",
+    "sponsor_type": "state",
+    "url": "https://education.delaware.gov/families/college-career-life/college-scholarship-financial-aid/scholarships-and-financial-aid-resources/dheo-scholarships/",
+    "award": {
+      "min": 1000,
+      "max": 1000,
+      "text": "$1,000 a year"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-17"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Delaware resident for at least 12 months before the deadline, with financial need shown on the FAFSA. Full time in an undergraduate degree at an accredited Delaware college, or out of state in a major not offered at UD, DSU or Delaware Tech (graduate: not offered at UD or DSU). Not for certificate or non-degree programs. Up to 5 years."
+    },
+    "description": "Delaware's need-based scholarship for full-time college students. It pays $1,000 a year. You can use it at an accredited Delaware college, or out of state if your major is not offered at Delaware's public colleges. Apply online in the Delaware Higher Education Financial Aid Portal between December 1, 2026 and May 17, 2027, and file the FAFSA by May 17, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-seed-scholarship",
+    "title": "SEED Scholarship (Student Excellence Equals Degree)",
+    "sponsor": "Delaware Technical Community College",
+    "sponsor_type": "state",
+    "url": "https://www.dtcc.edu/admissions-financial-aid/financial-aid-scholarships/types-aid/seed",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition left after the Pell Grant and other grants at Delaware Tech; fees and books not covered"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-01"
+    },
+    "stages": [
+      "high_school",
+      "adult"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have graduated from a Delaware high school or earned a Delaware GED; out-of-state or international diplomas do not count. Associate degree students need a 2.5 high school GPA or must use a pathway program; workforce certificates have no GPA rule. Age 25 or older: 5 years of Delaware residency. Take 12 credits the first semester. Non-violent felonies allowed."
+    },
+    "description": "SEED lets Delaware high school graduates attend Delaware Technical Community College tuition free. It pays the tuition left after the Pell Grant and other grants for an associate degree, diploma, certificate, or workforce training program, for up to five years. Course fees and books are not covered. Apply for admission, file the FAFSA (April 1 is the priority date), and submit the SEED form. People of any age can use it.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-inspire-scholarship",
+    "title": "Inspire Scholarship",
+    "sponsor": "Delaware State University",
+    "sponsor_type": "state",
+    "url": "https://www.desu.edu/admissions/financial-aid/scholarships/inspire-scholarship",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition at Delaware State University for up to 8 fall and spring semesters"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": 2.75,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must graduate from a Delaware high school and enroll full time at Delaware State University in the fall right after graduation. No felony convictions or pending charges. To renew: 12+ credits each fall and spring, a 2.75 GPA, 10 hours of community service each semester, and the FAFSA every year."
+    },
+    "description": "Delaware State University gives a four-year, full-tuition scholarship to Delaware high school graduates with at least a 2.75 GPA who start at DSU full time in the fall right after high school. Apply to DSU, send your transcript and ACT or SAT scores, and file the FAFSA. The financial aid office tells you if you qualify. To keep it, keep a 2.75 GPA, take full course loads, and do 10 hours of community service each semester.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-career-based-scholarship",
+    "title": "Career-Based Scholarship",
+    "sponsor": "Delaware Department of Education, Higher Education Office (DHEO)",
+    "sponsor_type": "state",
+    "url": "https://education.delaware.gov/families/college-career-life/college-scholarship-financial-aid/scholarships-and-financial-aid-resources/dheo-scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount announced by July 1, 2027; depends on state funding and the number of applicants"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-17"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": null,
+      "fields": [
+        "11",
+        "14",
+        "30",
+        "51",
+        "52"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Delaware resident for 12 months, full time in a bachelor's program at a Delaware public or private college, meeting your college's academic progress rules. Eligible majors: accounting, business administration (analytics, management or HR concentrations), computer engineering, computer science, data science and analytics, finance, IT, health care management, nursing, operations management."
+    },
+    "description": "A Delaware scholarship for full-time students in bachelor's degree majors that lead to jobs Delaware needs, such as nursing, computer science, accounting, and finance. At least one student in each high-need area gets an award. It is not renewable, but you can apply again each year. Apply in the Delaware Higher Education Financial Aid Portal and file the FAFSA by May 17, 2027. The award amount will be announced by July 1, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-educator-support-scholarship-undergraduate",
+    "title": "Educator Support Scholarship: Undergraduate Programs",
+    "sponsor": "Delaware Department of Education, Higher Education Office (DHEO)",
+    "sponsor_type": "state",
+    "url": "https://education.delaware.gov/families/college-career-life/college-scholarship-financial-aid/scholarships-and-financial-aid-resources/dheo-scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Amount announced by July 1, 2027; depends on state funding and the number of applicants"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-17"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": null,
+      "fields": [
+        "13"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Delaware resident for 12 months, full time in an undergraduate degree at a Delaware public or private college, meeting academic progress rules. Must plan to teach in a shortage area: early childhood special education, world languages, bilingual or immersion, middle or high school math or science, English learners, or special education."
+    },
+    "description": "A Delaware scholarship for full-time college students who plan to teach in subjects where Delaware schools need more teachers, like special education, math, science, and world languages. At least one student in each shortage area gets an award. It is not renewable, but you can apply again each year. Apply in the Delaware Higher Education Financial Aid Portal and file the FAFSA by May 17, 2027. The amount will be announced by July 1, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-children-of-deceased-veterans-and-others",
+    "title": "Educational Benefits for Children of Deceased Veterans and Others",
+    "sponsor": "Delaware Department of Education, Higher Education Office (DHEO)",
+    "sponsor_type": "state",
+    "url": "https://education.delaware.gov/families/college-career-life/college-scholarship-financial-aid/scholarships-and-financial-aid-resources/dheo-scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and required fees, for up to 4 years"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-17"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "DE",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Ages 16 to 24, Delaware resident for 3+ years in a row. Parent must be a service member who died from service, is or was a POW, or is missing in action (and lived in Delaware at that time), or a Delaware state police officer or state highway (DelDOT) worker who died from the job. Delaware public college first; private or out-of-state only if your program is not offered."
+    },
+    "description": "Pays tuition and required fees for up to four years for Delaware students ages 16 to 24 whose parent died because of military service, was a prisoner of war, or is missing in action. It also covers children of Delaware state police officers and certain state highway workers who died because of their jobs. The full award is for a Delaware public college. Apply in the Delaware Higher Education Financial Aid Portal by May 17, 2027.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "ar-academic-challenge-scholarship",
+    "title": "Arkansas Academic Challenge Scholarship",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/ACST",
+    "award": {
+      "min": 2000,
+      "max": 5000,
+      "text": "$2,000 the first year up to $5,000 the fourth year at a 4-year college; more with a low SAI"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Arkansas resident for 12 months. From high school: a Diploma of Merit, or a 3.0 GPA plus any ACT, SAT or Accuplacer score, or an ACT of 19 (SAT 990). Already in college: a 2.5 college GPA. Approved Arkansas college, no prior bachelor's degree. Traditional students take 15 credits a semester. Keep a 2.5 GPA. Cannot also get Workforce Challenge."
+    },
+    "description": "An Arkansas scholarship paid for mostly by the state lottery. High school seniors, current college students, and adults going back to school can all apply. The amount grows each year you stay in college, and students with a lower Student Aid Index on the FAFSA can get extra. Apply in the ADHE Scholarship Management System (SAMS) and file the FAFSA by July 1. To keep it, maintain a 2.5 GPA and earn enough credits each year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-governors-distinguished-scholarship",
+    "title": "Governor's Scholars Program: Distinguished Scholars",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/GDS",
+    "award": {
+      "min": null,
+      "max": 10000,
+      "text": "Up to $10,000 a year for tuition, fees, room and board, for up to 4 years"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-01"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": 3.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Graduating senior and Arkansas resident for 12 months. Needs both a 3.5 GPA and an ACT of 32 or an SAT (math plus reading) of 1410, with the score in by the February national ACT test. Take 15 credits a semester and keep a 3.25 college GPA. Students who hold, or whose parent holds, an Employment Authorization Document can apply without the FAFSA."
+    },
+    "description": "Arkansas's most demanding merit scholarship, for graduating seniors with very high grades and test scores. It pays up to $10,000 a year for tuition, fees, and room and board, for up to four years, and you can also get the Academic Challenge Scholarship. Apply in the ADHE Scholarship Management System (SAMS) and file the FAFSA by March 1 of senior year. Non-citizens with work authorization should contact ADHE about applying.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-governors-scholars-achievement",
+    "title": "Governor's Scholars Program: Achievement Scholars",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/GS",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year for tuition, fees, room and board, for up to 4 years"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Graduating senior and Arkansas resident for 12 months with an ACT or SAT on record. Must graduate with a Diploma of Distinction or earn an associate degree in high school, or be the top-scoring Academic Challenge applicant in a county with no Distinguished Scholar. Take 15 credits a semester and keep a 3.0 GPA. Students with work authorization (EAD) can apply without the FAFSA."
+    },
+    "description": "A merit scholarship for Arkansas seniors who graduate with a Diploma of Distinction or finish an associate degree while in high school. It can also go to the highest-scoring applicant in a county that has no Governor's Distinguished Scholar. It pays up to $5,000 a year for up to four years, on top of the Academic Challenge Scholarship. Apply in SAMS and file the FAFSA by July 1. Non-citizens with work authorization should contact ADHE.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-workforce-challenge-scholarship",
+    "title": "Arkansas Workforce Challenge Scholarship",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/AWC",
+    "award": {
+      "min": null,
+      "max": 3000,
+      "text": "Up to $3,000 per program ($1,500 for shorter training programs), not more than tuition"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": null,
+      "fields": [
+        "11",
+        "15",
+        "46",
+        "48",
+        "49",
+        "51",
+        "52"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Arkansas resident for at least 6 months with a high school diploma or equivalent. Must enroll in an associate degree or certificate program in advanced manufacturing, construction trades, health care, information technology, or logistics, distribution and transportation. Cannot hold the Academic Challenge Scholarship at the same time. Not renewable, but you can reapply for a new program."
+    },
+    "description": "A lottery-funded scholarship for career training in fields Arkansas needs, like health care, construction, manufacturing, computers, and trucking and logistics. It pays up to $3,000 for a credit program or longer training, or up to $1,500 for shorter training, but never more than tuition. Apply in the ADHE Scholarship Management System (SAMS) at least 30 days before your class starts.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-heroes-scholarship",
+    "title": "Arkansas Heroes Scholarship",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/HEROES",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "In-state tuition, housing and required fees at Arkansas colleges, for up to 8 semesters"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Child (under 26) or spouse (not remarried) of an Arkansan killed, missing in action, a POW, a Medal of Honor or Purple Heart recipient, or totally disabled in military service; or killed or permanently disabled on duty as a police, fire, forestry, corrections, transportation or community punishment worker, or teacher. Arkansas resident for 1 year. Full time."
+    },
+    "description": "Pays in-state tuition, required fees, and housing for the children and spouses of Arkansas military members and public servants who were killed, went missing, or were totally disabled in service or in the line of duty. It covers up to eight semesters of undergraduate study at a public or private Arkansas college. Apply in SAMS by July 1 and send the required proof. Military families must also apply for federal Chapter 35 (DEA) benefits.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-access-to-acceleration-scholarship",
+    "title": "ACCESS to Acceleration (A2A) Scholarship",
+    "sponsor": "Arkansas Division of Higher Education (ADHE)",
+    "sponsor_type": "state",
+    "url": "https://sams.adhe.edu/Scholarship/Details/A2A",
+    "award": {
+      "min": null,
+      "max": 2000,
+      "text": "$65 per college credit hour, up to $2,000 a year, for college classes taken in high school"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "AR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school students in grades 9 to 12 taking concurrent (college credit) courses. You or a parent must be an Arkansas resident. Not for students at a vocational center already reimbursed under state law. To keep it, keep a 2.5 GPA in your college courses. Apply through your school district or college."
+    },
+    "description": "Pays for college classes you take while still in high school. Arkansas students in grades 9 through 12 who take concurrent credit courses can get $65 per credit hour, up to $2,000 a year. Ask your high school counselor or the college which courses count and how to apply. To keep getting it, keep at least a 2.5 GPA in your college courses.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,125 @@
+[
+ {
+  "id": "mo-access-missouri-grant",
+  "title": "Access Missouri Financial Assistance Program",
+  "sponsor": "Missouri Department of Higher Education and Workforce Development",
+  "sponsor_type": "state",
+  "url": "https://dhewd.mo.gov/ppc/grants-scholarships/access-mo",
+  "award": {
+   "min": 500,
+   "max": 3500,
+   "text": "$500 to $1,700 a year at public 2-year colleges; $1,750 to $3,500 at 4-year and private schools"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2027-02-01"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MO",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Missouri resident and a U.S. citizen or permanent resident, enrolled full-time as an undergraduate at a participating Missouri school, with a Student Aid Index (SAI) of $12,000 or less. Not for theology or divinity degrees. Renewal needs a 2.5 college GPA. No bachelor's degree yet."
+  },
+  "description": "Missouri's main need-based grant. Your amount depends on your Student Aid Index from the FAFSA and the type of school you attend. There is no separate application: file the FAFSA by February 1, 2027 (priority, guaranteed award if eligible) and no later than April 1, 2027 for the 2027-28 school year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mo-bright-flight-scholarship",
+  "title": "Bright Flight Scholarship",
+  "sponsor": "Missouri Department of Higher Education and Workforce Development",
+  "sponsor_type": "state",
+  "url": "https://dhewd.mo.gov/ppc/grants-scholarships/bright-flight",
+  "award": {
+   "min": 1000,
+   "max": 3000,
+   "text": "$3,000 a year for ACT 32 or higher; $1,000 a year for ACT 30 or 31 (2026 graduates, estimated)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MO",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must score in the top 5% of Missouri ACT or SAT takers (ACT 30 or higher for 2026 graduates; superscores accepted) by the June test date after high school graduation. Must be a Missouri resident and U.S. citizen or permanent resident, and enroll full-time at a participating Missouri school the year after graduating. Renewal needs a 2.5 college GPA."
+  },
+  "description": "A merit scholarship for Missouri students with very high ACT or SAT scores who go to college in Missouri. There is no application: the state gets your scores when you list a Missouri college on the ACT or SAT (send superscores with code 2379). It can last up to 10 semesters.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mo-a-plus-scholarship",
+  "title": "A+ Scholarship Program",
+  "sponsor": "Missouri Department of Higher Education and Workforce Development",
+  "sponsor_type": "state",
+  "url": "https://dhewd.mo.gov/ppc/grants-scholarships/a-plus",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Unpaid tuition and general fees, up to $240 per credit hour (2026-27)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MO",
+   "min_gpa": 2.5,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must attend an A+ designated high school for 2 years, sign an A+ agreement before graduating, have 95% attendance, do 50 hours of unpaid tutoring or mentoring, keep good citizenship, and score proficient on the Algebra I end-of-course exam (or meet an ACT math and GPA combination). For full-time study at a participating community college or technical school."
+  },
+  "description": "Pays tuition and general fees left after federal grants at Missouri community colleges and technical schools for students who graduate from an A+ high school and meet its goals for grades, attendance and tutoring. Ask your high school A+ coordinator early, since the requirements start in 9th grade. File the FAFSA each year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mo-advanced-placement-incentive-grant",
+  "title": "Advanced Placement Incentive Grant",
+  "sponsor": "Missouri Department of Higher Education and Workforce Development",
+  "sponsor_type": "state",
+  "url": "https://dhewd.mo.gov/ppc/grants-scholarships/advanced-placement",
+  "award": {
+   "min": 500,
+   "max": 500,
+   "text": "One-time $500 grant"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2027-06-01"
+  },
+  "stages": [
+   "college"
+  ],
+  "rules": {
+   "state": "MO",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have scored 3 or higher on two AP math or science exams (Biology, Calculus AB or BC, Chemistry, Environmental Science, Physics 1, 2 or C, Statistics) at a Missouri public high school, and receive (or qualify for) an Access Missouri or A+ award that year. Send a paper application with your AP score report."
+  },
+  "description": "A one-time $500 bonus for Missouri students who passed two AP math or science exams in high school and now get an Access Missouri grant or A+ Scholarship in college. You apply once you are in college by mailing the application with your AP score report. The 2026-27 deadline is June 1, 2027.",
+  "checked_at": "2026-09-29"
+ }
+]

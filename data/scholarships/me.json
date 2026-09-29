@@ -1,0 +1,127 @@
+[
+  {
+    "id": "me-maine-state-grant",
+    "title": "Maine State Grant Program",
+    "sponsor": "Finance Authority of Maine (FAME)",
+    "sponsor_type": "state",
+    "url": "https://www.famemaine.com/affording-education/pay-for-school/maine-grant-tuition-programs/maine-state-grant-program/",
+    "award": {
+      "min": null,
+      "max": 2500,
+      "text": "Up to $2,500 full-time or $1,250 half-time (2026-27)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "ME",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Student Aid Index at or under 10,000 for 2026-27. At least half-time at an eligible Maine college in a first certificate, associate or bachelor's program. Schools outside Maine don't count, except some New England Tuition Break students."
+    },
+    "description": "Maine's need-based grant for undergraduates at Maine colleges. Your FAFSA is your application, so there is nothing else to fill out. File the FAFSA every year you plan to attend.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "me-free-college-scholarship",
+    "title": "Maine Free College Scholarship",
+    "sponsor": "Maine Community College System",
+    "sponsor_type": "state",
+    "url": "https://www.mccs.me.edu/free-college/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "100% of tuition after federal and state grants (class of 2026 and later)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "ME",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Earned a high school diploma or equivalent in 2024 or later. Lived in Maine a full year right before admission and while enrolled. Degree or certificate program at one of Maine's 7 community colleges; part-time is fine. Must accept any state and federal aid. Class of 2026 must enroll by summer 2029. No income or age limits."
+    },
+    "description": "Recent high school graduates who live in Maine can go to any Maine community college tuition-free. You don't need a Maine diploma, just a year of living in Maine. Apply to a community college and file the FAFSA. FAME says students who can't file the FAFSA because of citizenship can still qualify by working with the college.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "me-tuition-waiver-foster-care",
+    "title": "Maine Tuition Waiver Program (Foster Care)",
+    "sponsor": "Finance Authority of Maine (FAME)",
+    "sponsor_type": "state",
+    "url": "https://www.famemaine.com/affording-education/pay-for-school/maine-grant-tuition-programs/tuition-waiver-program/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition waived at participating Maine public colleges"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "ME",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "At high school graduation (or HiSET/GED) you must be in Maine foster care, adopted from it with a DHHS subsidy, or a ward of a permanency guardian with a DHHS subsidy. For Maine Community Colleges, University of Maine System schools or Maine Maritime Academy. 2027-28 applications open March 1, 2027; first come, first served."
+    },
+    "description": "Free tuition at Maine public colleges for students who were in Maine foster care, or adopted or placed with a guardian from it with state support. Apply to FAME starting March 1, with your FAFSA filed and your college acceptance letter.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "me-doctors-for-maines-future",
+    "title": "Doctors for Maine's Future Scholarship",
+    "sponsor": "Finance Authority of Maine (FAME)",
+    "sponsor_type": "state",
+    "url": "https://www.famemaine.com/affording-education/pay-for-school/maine-grant-tuition-programs/doctors-for-maines-future-scholarship/",
+    "award": {
+      "min": null,
+      "max": 25000,
+      "text": "Up to half the cost of attendance or $25,000 a year, whichever is less"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "graduate"
+    ],
+    "rules": {
+      "state": "ME",
+      "min_gpa": null,
+      "fields": [
+        "51"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Medical students at Tufts University School of Medicine Maine Medical Center Program or the University of New England College of Osteopathic Medicine. Need a substantial connection to Maine and at least 1 year of Maine residence for reasons other than school. Apply through the medical school; each sets its own deadline. Renewable up to 4 years."
+    },
+    "description": "A scholarship for medical students at Maine-based medical school programs who have strong ties to Maine. Priority goes to students who finished high school or college in Maine or whose parents live in Maine. Apply through your medical school.",
+    "checked_at": "2026-09-29"
+  }
+]

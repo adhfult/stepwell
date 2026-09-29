@@ -1,0 +1,112 @@
+[
+  {
+    "id": "nm-lottery-scholarship",
+    "title": "New Mexico Lottery Scholarship",
+    "sponsor": "New Mexico Higher Education Department",
+    "sponsor_type": "state",
+    "url": "https://www.reachhighernm.com/recent-high-school-graduate/",
+    "award": {"min": null, "max": null, "text": "100% of tuition at a New Mexico public college or university"},
+    "deadline": {"kind": "rolling"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NM",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "NM resident (usually 12 months). Start full-time at an NM public college within 16 months of finishing high school, a high school equivalency, or home school (15 credits at a university, 12 at a community college). Keep a 2.5 college GPA. Up to 7 semesters (3 at a community college)."
+    },
+    "description": "Free tuition for recent New Mexico high school graduates who go full-time to one of the state's public colleges or universities. There is no application: your college gives it to you when you enroll. The FAFSA is not required. Students who are not U.S. citizens can qualify with the state's non-discrimination waiver if they went to high school in New Mexico for at least a year and graduated there.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nm-opportunity-scholarship",
+    "title": "New Mexico Opportunity Scholarship",
+    "sponsor": "New Mexico Higher Education Department",
+    "sponsor_type": "state",
+    "url": "https://www.reachhighernm.com/returning-students/",
+    "award": {"min": null, "max": null, "text": "100% of tuition and course fees (fees up to $50 per credit) at NM public colleges"},
+    "deadline": {"kind": "rolling"},
+    "stages": ["college", "adult"],
+    "rules": {
+      "state": "NM",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "NM resident. For students 18 or older starting college more than 16 months after high school. 6 to 18 credits a semester at an NM public college. Keep a 2.5 college GPA. No bachelor's degree yet; up to 90 credits for an associate or 160 for a bachelor's."
+    },
+    "description": "Free tuition for New Mexico adults who are starting college later in life or going back after a break. You can go part-time or full-time to any public college or university in the state, for a degree or an approved job-training certificate. There is no separate application. The FAFSA is not required. Non-citizens can qualify through the state's non-discrimination waiver if they attended and graduated from a New Mexico high school.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nm-student-incentive-grant",
+    "title": "New Mexico Student Incentive Grant",
+    "sponsor": "New Mexico Higher Education Department",
+    "sponsor_type": "state",
+    "url": "https://hed.nm.gov/financial-aid/scholarships/student-incentive",
+    "award": {"min": 200, "max": 2500, "text": "$200 to $2,500 a year"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NM",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "NM resident with a high school diploma or equivalency. At least half-time as an undergraduate at an NM public or tribal college. Your college decides your financial need and handles the application."
+    },
+    "description": "A grant for New Mexico undergraduates with a lot of financial need at public colleges, universities and tribal colleges in the state. You apply through the financial aid office at your college, which also sets the timeline. You can renew it each year until you finish a bachelor's degree.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nm-teacher-preparation-affordability-scholarship",
+    "title": "Teacher Preparation Affordability Scholarship",
+    "sponsor": "New Mexico Higher Education Department",
+    "sponsor_type": "state",
+    "url": "https://hed.nm.gov/financial-aid/scholarships/teacher-preparation-affordability-scholarship-program",
+    "award": {"min": null, "max": 6000, "text": "Up to $6,000 a year, based on need, for up to 5 years"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["college", "graduate", "adult"],
+    "rules": {
+      "state": "NM",
+      "min_gpa": null,
+      "fields": ["13"],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be in a state-approved teacher preparation program at an NM public college or tribal college, starting more than 120 days after high school. NM resident or eligible for the nondiscrimination waiver. Financial need set by the college. Licensed teachers can use it for a graduate degree in education."
+    },
+    "description": "Money for New Mexico students training to become teachers at a public college or tribal college in the state. It can help pay tuition, fees, books and living costs. You apply through the teacher preparation program at your college, which decides the amount based on need. It lasts as long as you keep making progress, up to five years.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nm-native-american-tuition-scholarship",
+    "title": "New Mexico Native American Tuition Scholarship",
+    "sponsor": "New Mexico Higher Education Department",
+    "sponsor_type": "state",
+    "url": "https://hed.nm.gov/financial-aid/scholarships/new-mexico-native-american-tuition-scholarship",
+    "award": {"min": null, "max": null, "text": "Up to 100% of in-state tuition at an eligible college in a bordering state"},
+    "deadline": {"kind": "usually", "month_day": "07-01"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NM",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must have New Mexico tribal affiliation and be an NM resident with a high school diploma or equivalency. Full-time undergraduate at a public college in Arizona or Colorado, or Texas Tech University, with an in-state tuition agreement. Priority to NM high school graduates."
+    },
+    "description": "Helps Native American students from New Mexico pay tuition at public colleges in nearby states, such as Arizona, Colorado, and Texas Tech University. The application opens each year on May 15 and closes July 1. The next one opens May 15, 2027. You need an account on the state's site to apply.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ak-alaska-performance-scholarship",
+    "title": "Alaska Performance Scholarship (APS)",
+    "sponsor": "Alaska Commission on Postsecondary Education (ACPE)",
+    "sponsor_type": "state",
+    "url": "https://acpe.alaska.gov/Funding-Solutions/Alaska-Performance-Scholarship",
+    "award": {
+      "min": null,
+      "max": 7000,
+      "text": "Up to $3,500, $5,250 or $7,000 a year depending on your level, up to $28,000 total"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "AK",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Alaska resident who graduates from an Alaska high school (public, private or home school) after the required APS courses. Needs a 2.5+ GPA or a qualifying ACT, SAT or WorkKeys score (top level: 3.5 GPA, ACT 25 or SAT 1210). Use it at a participating Alaska college or training program within 8 years of graduating. Keep a 2.5 college GPA."
+    },
+    "description": "Alaska's merit scholarship for students who graduate from an Alaska high school after taking a set of harder classes. Your award level depends on your GPA or test score, and it pays up to $7,000 a year, up to $28,000 in total. Start planning in 7th or 8th grade so you take the right high school courses. To use it, file the FAFSA by June 30 each year and attend a participating college or job training program in Alaska.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ak-alaska-education-grant",
+    "title": "Alaska Education Grant (AEG)",
+    "sponsor": "Alaska Commission on Postsecondary Education (ACPE)",
+    "sponsor_type": "state",
+    "url": "https://acpe.alaska.gov/Funding-Solutions/Alaska-Education-Grant",
+    "award": {
+      "min": 500,
+      "max": 4000,
+      "text": "$500 to $4,000 per school year, based on financial need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AK",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Alaska resident for at least 365 days before filing the FAFSA; U.S. citizen or permanent resident. Undergraduate degree or vocational certificate program at a participating Alaska school, at least half time, no prior bachelor's degree. Awarded by highest need until money runs out, with priority for past recipients and early FAFSA filers."
+    },
+    "description": "Alaska's need-based grant for students at participating Alaska colleges and training schools, like the University of Alaska campuses. It gives $500 to $4,000 a year, and you do not pay it back. The FAFSA is the application, and you must list at least one participating Alaska school on it. Money runs out, and early FAFSA filers get priority, so file the FAFSA as soon as you can each year.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "id": "ok-oklahomas-promise",
+    "title": "Oklahoma's Promise",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://okpromise.org/application-requirements/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition at Oklahoma public colleges; part of tuition at private colleges and tech centers"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-12-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "OK",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Apply in grades 8 to 12, before Dec. 31 of senior year. Parent income limit of $60,000 to $80,000 depending on family size, and $100,000 when you start college. Take the required 15-unit course list with a 2.5 GPA in it, and stay out of trouble."
+    },
+    "description": "Free tuition at Oklahoma public colleges for students from families with lower incomes who sign up during middle or high school and keep their promises: take the required classes, keep a 2.5 GPA, and stay out of trouble. Seniors in 2026-27 must apply by December 31, 2026; younger students are encouraged to apply by June 30. It does not cover fees, books or housing.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ok-tuition-aid-grant",
+    "title": "Oklahoma Tuition Aid Grant (OTAG)",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.okcollegestart.org/Financial_Aid_Planning/Oklahoma_Grants/Oklahoma_Tuition_Aid_Grant.aspx",
+    "award": {
+      "min": null,
+      "max": 3000,
+      "text": "Up to $3,000 a year at research universities, $2,000 at regional, $1,500 at two-year and tech"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "OK",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Oklahoma resident and undergraduate at an eligible Oklahoma college, university, or career technology center. Must be eligible for a federal Pell Grant. Award is at most 75% of enrollment costs. Each school picks recipients."
+    },
+    "description": "Oklahoma's need-based grant for students who qualify for a federal Pell Grant. You apply by filing the FAFSA. There are usually more eligible students than money, so filing as early as possible after the FAFSA opens can decide whether you get it. Half is paid in the fall and half in the spring.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ok-rising-scholars-award",
+    "title": "Oklahoma Rising Scholars Award",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.okcollegestart.org/Financial_Aid_Planning/Scholarships/Academic_Scholarships/Academic_Scholars_Program.aspx",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Varies by college; up to $24,000 for 2026 automatic qualifiers at research universities"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "OK",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Oklahoma resident. Qualify as a National Merit Scholar or Finalist, U.S. Presidential Scholar, or score in the top 0.5% on the ACT or SAT (fall 2026: ACT English, math and reading scores adding up to 103, or SAT 1560). Or be nominated by a public college. Keep a 3.25 college GPA."
+    },
+    "description": "Oklahoma's top merit scholarship (formerly the Academic Scholars Program) for high-achieving students who attend college in Oklahoma. It helps pay for tuition, housing, food, books and fees for up to eight semesters, and public colleges add a tuition waiver. Students who qualify by test score or National Merit apply online; others can ask their college about its nomination process.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ok-inspired-to-teach",
+    "title": "Inspired to Teach",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.okcollegestart.org/Financial_Aid_Planning/Scholarships/Career_Scholarships/Inspired_to_Teach.aspx",
+    "award": {
+      "min": null,
+      "max": 2500,
+      "text": "$1,000 a year, rising to $2,500 in your last year of college"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "OK",
+      "min_gpa": 2.5,
+      "fields": [
+        "13"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Full-time in an accredited Oklahoma teacher education program (or a community college with a transfer agreement). Must agree to teach in an Oklahoma public PK-12 school for 5 years in a row after you are licensed. The state says you do not have to pay it back if you stop."
+    },
+    "description": "A scholarship for college students in Oklahoma who are training to become public school teachers. You apply through your college's Inspired to Teach coordinator; the state sets deadlines each semester. After you graduate and teach in an Oklahoma public school, you can also get up to $4,000 after each year of teaching, for up to five years.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ok-workforce-ready-scholarship",
+    "title": "State Regents Workforce Ready Scholarship",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.okcollegestart.org/Financial_Aid_Planning/Scholarships/Scholarship_Workforce_Ready.aspx",
+    "award": {
+      "min": 3000,
+      "max": 7000,
+      "text": "One-time $7,000 (research), $5,000 (regional) or $3,000 (two-year college)"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-09-30"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "OK",
+      "min_gpa": 2.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Oklahoma resident, full-time undergraduate at an Oklahoma public college in a program tied to a high-demand job. Must complete a work-based learning experience (like an internship, clinical, or apprenticeship) and send a portfolio and transcript."
+    },
+    "description": "A one-time scholarship for Oklahoma public college students preparing for high-demand careers who have done hands-on work learning, such as an internship or clinical experience. You apply with a portfolio showing that experience. Winners are told by the end of January and paid the next fall. The current deadline is September 30, 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

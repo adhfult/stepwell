@@ -1,0 +1,189 @@
+[
+  {
+    "id": "ga-hope-scholarship",
+    "title": "HOPE Scholarship",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/hope-scholarship/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "A set amount per credit hour toward tuition; the amount depends on your college"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Georgia resident. Graduates of eligible high schools need a 3.0 HOPE GPA and 4 rigor course credits. Graduates of unaccredited schools or home study, or HSE holders, need ACT 24 or SAT 1160. Others can earn it in college with a 3.0 GPA after 30, 60 or 90 semester hours. Degree program at an eligible Georgia college. Apply with the FAFSA or GSFAPP."
+    },
+    "description": "A Georgia merit scholarship. Georgia residents who graduate from high school with at least a 3.0 HOPE GPA (calculated by the state from core classes) and four rigor courses can get money toward tuition at Georgia public and private colleges. If you miss it in high school, you can still earn it in college with a 3.0 college GPA. Apply with the FAFSA or the free Georgia Student Finance Application (GSFAPP) before the term ends.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-zell-miller-scholarship",
+    "title": "Zell Miller Scholarship",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-scholarships/zell-miller-scholarship/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "A set amount per credit hour toward tuition; the amount depends on your college"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Georgia resident. Eligible high school graduates need a 3.7 HOPE GPA, 4 rigor credits and an SAT of 1200 or ACT of 25 before graduating, or must be the named valedictorian or salutatorian with a 3.0 HOPE GPA. Unaccredited school or home study graduates need ACT 29 or SAT 1340. It cannot be earned later in college. Apply with the FAFSA or GSFAPP."
+    },
+    "description": "A Georgia merit scholarship for students with very high grades and test scores. It goes to Georgia residents who graduate with at least a 3.7 HOPE GPA, four rigor courses, and an SAT of 1200 or ACT of 25, or who are their class valedictorian or salutatorian. It helps pay tuition at Georgia public and private colleges. You must qualify by high school graduation. Apply with the FAFSA or the GSFAPP before the term ends.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-hope-grant",
+    "title": "HOPE Grant",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-grants/hope-grant/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays part of tuition for a certificate or diploma program; the amount depends on your college"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Georgia resident working toward a certificate or diploma (not continuing education) at an eligible Georgia college. No high school GPA is needed, but you must keep a 2.0 college GPA at checkpoints. Up to 63 paid semester hours. Not available if you already have a bachelor's degree. Apply with the FAFSA or GSFAPP."
+    },
+    "description": "The HOPE Grant helps Georgia residents pay tuition for certificate and diploma programs, like those at Georgia's technical colleges. Unlike the HOPE Scholarship, it does not require a certain high school GPA, and you do not have to attend full time. You must keep a 2.0 college GPA. Apply with the FAFSA or the free Georgia Student Finance Application (GSFAPP) before the end of the term.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-hope-career-grant",
+    "title": "HOPE Career Grant",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/hope-zell-miller-grants/hope-career-grant/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "$125 to $500 a term for most programs; more for truck driving and basic law enforcement"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must qualify for and receive the HOPE Grant or Zell Miller Grant and enroll in one of the select high-demand programs on the GAfutures eligible programs list. The amount depends on your program and how many hours you take each term."
+    },
+    "description": "An extra grant on top of the HOPE Grant for students in certain career programs where Georgia has more jobs than trained workers. Most students get $125 to $500 a term depending on how many hours they take, and a few programs, like truck driving and basic law enforcement training, get more. You apply the same way as for the HOPE Grant, with the FAFSA or the GSFAPP.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-dreams-scholarship",
+    "title": "DREAMS Scholarship",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/scholarships-grants/dreams/",
+    "award": {
+      "min": null,
+      "max": 3000,
+      "text": "Up to $1,500 a term and $3,000 a year, limited to your unmet financial need"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Georgia resident, eligible for a federal Pell Grant with unmet need, in an associate or bachelor's program (6+ credits) at a University System of Georgia or Technical College System of Georgia school. No prior bachelor's degree. Keep a 2.0 GPA, finish the online Financial Toolkit sessions, and do 60 hours of paid or unpaid work (volunteering counts) each term after the first."
+    },
+    "description": "A need-based scholarship for Georgia residents who qualify for a federal Pell Grant and still have costs left to pay at a Georgia public college or technical college. It gives up to $1,500 a term. You must finish short online money lessons, and after your first term, do 60 hours of work each term, which can be a job, an internship, or volunteering. Your college decides who gets it, so file the FAFSA early.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-dual-enrollment",
+    "title": "Dual Enrollment",
+    "sponsor": "Georgia Student Finance Commission (GSFC)",
+    "sponsor_type": "state",
+    "url": "https://www.gafutures.org/hope-state-aid-programs/scholarships-grants/dual-enrollment/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers standard tuition, required fees and books for approved college courses, up to 30 semester hours"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "GA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Georgia resident at an eligible public or private high school or home study program in Georgia, under age 22. Grades 11 and 12 can take any approved course; 10th graders take career and technical courses at a technical college, or any approved course with SAT 1200 or ACT 26. Not for 9th graders. Needs school and parent approval."
+    },
+    "description": "Georgia's Dual Enrollment program lets high school students take college classes for free and earn high school and college credit at the same time. It pays tuition, required fees, and books for approved courses, up to 30 semester hours. Apply to the college first, then complete the Dual Enrollment Funding Application on GAfutures with your school counselor and a parent. Each new school year's application comes out in February.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "ct-roberta-b-willis-need-merit-scholarship",
+    "title": "Roberta B. Willis Scholarship: Need and Merit-Based Award",
+    "sponsor": "Connecticut Office of Higher Education (OHE)",
+    "sponsor_type": "state",
+    "url": "https://portal.ct.gov/ohe/knowledge-base/articles/for-students/connecticut-student-aid-programs",
+    "award": {
+      "min": null,
+      "max": 5250,
+      "text": "Up to $5,250 a year in a 4-year program, or up to $4,650 in a 2-year program"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-15"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Connecticut resident. Top 20% of your high school class (junior year for seniors, senior year for college students) and/or SAT 1200 or ACT 25. Student Aid Index at or below the yearly cutoff. Your high school counselor must submit the application for you, and you must file the FAFSA, by February 15. For Connecticut public or nonprofit private colleges."
+    },
+    "description": "Connecticut's scholarship for students with both strong grades and financial need. High school seniors in the top 20% of their class, or with an SAT of 1200 or ACT of 25, can qualify if their family's Student Aid Index is low enough. Your high school counselor applies for you, and you must file the FAFSA by February 15 of senior year. It pays up to $5,250 a year at a Connecticut public or nonprofit private college.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-roberta-b-willis-need-based-grant",
+    "title": "Roberta B. Willis Scholarship: Need-Based Grant",
+    "sponsor": "Connecticut Office of Higher Education (OHE)",
+    "sponsor_type": "state",
+    "url": "https://portal.ct.gov/ohe/knowledge-base/articles/for-students/connecticut-student-aid-programs",
+    "award": {
+      "min": null,
+      "max": 4500,
+      "text": "Up to $4,500 a year for full-time study, based on financial need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For Connecticut residents with financial need (based on the Student Aid Index) at a Connecticut public or nonprofit private college. There is no separate application; file the FAFSA and check your college's deadline."
+    },
+    "description": "A need-based grant for Connecticut residents at Connecticut public and nonprofit private colleges. It pays up to $4,500 a year for full-time study, and you do not pay it back. There is no separate application: file the FAFSA, and your college uses it to decide if you qualify. Ask your college's financial aid office for its FAFSA deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-minority-teacher-incentive-program",
+    "title": "Minority Teacher Incentive Program (MTIP)",
+    "sponsor": "Connecticut Office of Higher Education (OHE)",
+    "sponsor_type": "state",
+    "url": "https://portal.ct.gov/ohe/-/media/ohe-beta/pdf/sfa-pdfs/mtipoverview.pdf",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year for 2 years, plus up to $2,500 a year toward loans while teaching in CT"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "10-15"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": null,
+      "fields": [
+        "13"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Full-time college junior or senior in a Connecticut undergraduate teacher preparation program, of African American, Hispanic/Latino, Asian American or Native American heritage. Your education dean must nominate you by October 15. Loan stipends are for up to 4 years of teaching in a Connecticut public school."
+    },
+    "description": "A grant for college juniors and seniors from minority groups (African American, Hispanic/Latino, Asian American, or Native American) who are training to become teachers in Connecticut. It pays up to $5,000 a year for two years, and graduates who then teach in a Connecticut public school can get up to $2,500 a year for up to four years to help repay student loans. The dean of your education program nominates you, so tell your dean before October 15 that you want to be nominated.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-mary-ann-handley-award",
+    "title": "Mary Ann Handley Award (Tuition-Free Community College)",
+    "sponsor": "CT State Community College",
+    "sponsor_type": "state",
+    "url": "https://ctstate.edu/free-tuition",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers tuition and fees left after federal, state and college grants at CT State Community College"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-15"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Connecticut resident with a high school diploma, GED or home-school completion who began college in Fall 2020 or later. Enroll in at least 6 credits a semester in a degree or credit certificate program at CT State Community College. Accept all grants first; loans are not required. No income limit. Fall and spring only. Funding is first come, first served."
+    },
+    "description": "Connecticut's free community college program. It pays the tuition and fees left after your federal, state, and college grants at any CT State Community College campus, and there is no income limit. You need to live in Connecticut, file the FAFSA, and take at least 6 credits a semester. Money is first come, first served, so finish all financial aid steps early; Connecticut's Office of Higher Education suggests applying by July 15 for fall.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-chesla-undergraduate-scholarship",
+    "title": "CHESLA Undergraduate Scholarship",
+    "sponsor": "Connecticut Higher Education Supplemental Loan Authority (CHESLA)",
+    "sponsor_type": "state",
+    "url": "https://chesla.org/undergraduate-scholarship/",
+    "award": {
+      "min": 1500,
+      "max": 3000,
+      "text": "$1,500 for half-time students or $3,000 for full-time students"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Connecticut resident, eligible for a federal Pell Grant on the FAFSA, enrolled at least half time as an undergraduate at an eligible Connecticut public or nonprofit degree-granting college. Needs one reference for a letter of recommendation. Must not be in default on a CHESLA loan. The 2027-28 application opens March 1, 2027."
+    },
+    "description": "A scholarship from CHESLA, Connecticut's public college loan agency, for Pell-eligible undergraduates at Connecticut colleges with at least a 2.5 GPA. Full-time students get $3,000 and half-time students get $1,500, paid straight to the college. The application for 2027-28 opens March 1, 2027, and awards are made while money lasts, so apply early. You will need the email address of one person who can write you a letter of recommendation.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-chesla-certificate-scholarship",
+    "title": "CHESLA Certificate Scholarship",
+    "sponsor": "Connecticut Higher Education Supplemental Loan Authority (CHESLA)",
+    "sponsor_type": "state",
+    "url": "https://chesla.org/certificate-scholarship/",
+    "award": {
+      "min": 1250,
+      "max": 1250,
+      "text": "$1,250"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "CT",
+      "min_gpa": null,
+      "fields": [
+        "13",
+        "15",
+        "48",
+        "51"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Connecticut resident enrolled at least half time in a health care, manufacturing, or CT ARC teaching certificate program at an eligible Connecticut public or nonprofit degree-granting college. Needs a letter of recommendation and good academic standing. Must not be in default on a CHESLA loan. First come, first served."
+    },
+    "description": "A $1,250 scholarship for Connecticut residents working on a certificate in health care, manufacturing, or teaching (the CT ARC teaching certificate). The application is open now, and awards are made first come, first served until the money runs out. You need a letter of recommendation. Apply through the CHESLA website.",
+    "checked_at": "2026-09-29"
+  }
+]

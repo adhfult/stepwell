@@ -93,7 +93,8 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   government pages, each with its link and `checked_at`; loaded daily by
   `src/jobs/sources/official-list.ts` (no fetching). Re-check each entry
   yearly; older than 12 months, the page says to check the official page.
-  So far: federal, CA, FL, NY, PA, TX.
+  Covers federal programs and all 50 states plus DC (264 programs,
+  2026-09-29); the research rules are in `data/scholarships/README.md`.
 - **USAJOBS Search API** (source `usajobs`, built 2026-09-29, waiting for
   the owner's key): open federal postings on the student hiring path
   (`GET https://data.usajobs.gov/api/search?HiringPath=student`, 500 a page),

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "in-21st-century-scholars",
+    "title": "21st Century Scholars",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://learnmoreindiana.org/scholars/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Up to 100% of tuition at Indiana public colleges; part of tuition at private colleges"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be enrolled by June 30 of 8th grade (7th and 8th graders who qualify for free or reduced lunch are enrolled automatically); only foster youth can join in high school. Family income limits. Indiana resident. Earn a Core 40 or Indiana Diploma, finish the Scholar Success Program, follow the pledge (no drugs, alcohol or crimes). File FAFSA by April 15; 30 credits a year in college."
+    },
+    "description": "Indiana's early college promise. Students from income-eligible families who sign up by the end of 8th grade can get up to four years of paid tuition at an Indiana college. In high school you finish required activities, keep at least a 2.5 GPA and stay out of trouble. If you missed the 8th-grade deadline you can't join later unless you are in foster care, but Indiana has other aid.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-frank-obannon-grant",
+    "title": "Frank O'Bannon Grant",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/frank-obannon-grant",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Need-based; amount not listed on the program page. Pays toward tuition and fees"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-15"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Indiana resident by December 31 of the year before you apply. Full-time at an eligible Indiana college in an associate or first bachelor's program (or a certificate at Ivy Tech or Vincennes). High school diploma or GED. Earn 24 to 30+ credits a year to renew. File the FAFSA by April 15 every year."
+    },
+    "description": "Indiana's main need-based grant, for Hoosiers going full-time to eligible public, private or career colleges in Indiana. You apply just by filing the FAFSA by April 15. It pays toward tuition and fees, and you get the largest amount if you earn 30 credits a year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-workforce-ready-grant",
+    "title": "Workforce Ready Grant",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/workforce-ready-grant",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays tuition and required fees for approved high-value certificates, for up to 2 years"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": null,
+      "fields": [
+        "15",
+        "48",
+        "46",
+        "51",
+        "11",
+        "52",
+        "49"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For 2026-27, first-time dependent students (by FAFSA) are not eligible; only independent students and dependent students continuing from 2025-26. Indiana resident with a high school diploma but no college degree. Approved programs at Ivy Tech, Vincennes, Indiana Tech or other providers. Reduced by Pell. No income limit and no April 15 deadline."
+    },
+    "description": "Pays tuition for short certificate programs in high-demand fields like manufacturing, construction, health, IT and business, and transportation. It is mostly for adults and independent students right now. File the FAFSA and connect with a training provider through NextLevelJobs.org.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-adult-student-grant",
+    "title": "Adult Student Grant",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/adult-student-grant",
+    "award": {
+      "min": null,
+      "max": 2000,
+      "text": "Up to $2,000 a year, renewable"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be financially independent on the FAFSA and show need. Indiana resident. At least 6 credits a term toward an associate, first bachelor's, or a certificate at Ivy Tech or Vincennes. Complete 18 credits a year to renew. First come, first served; apply in ScholarTrack after filing the FAFSA."
+    },
+    "description": "A grant for working adults starting or finishing a certificate, associate or bachelor's degree in Indiana. You file the FAFSA and an application in ScholarTrack. Spots are first come, first served, so apply as soon as the yearly application opens.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-mitch-daniels-early-graduation",
+    "title": "Mitch Daniels Early Graduation Scholarship",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/mitch-daniels-early-graduation-scholarship",
+    "award": {
+      "min": 4000,
+      "max": 4000,
+      "text": "One-time $4,000"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-08-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Graduate from an Indiana public high school at least one year early, with at least a Core 40 diploma by the end of grade 11. Indiana legal settlement and full-time public high school for the last two semesters. Enroll full-time at an eligible Indiana college by the fall after graduating. Class of 2027 application opens Nov 1, 2026."
+    },
+    "description": "A one-time $4,000 scholarship for students who finish an Indiana public high school at least a year early and then start college full-time in Indiana the next fall. You file the FAFSA and apply in ScholarTrack.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-student-teaching-high-need",
+    "title": "Student Teaching Scholarship for High-Need Fields",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/student-teaching-scholarship-for-high-need-fields",
+    "award": {
+      "min": null,
+      "max": 4000,
+      "text": "Up to $4,000 during your student teaching term"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-31"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "IN",
+      "min_gpa": null,
+      "fields": [
+        "13"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Student teaching in special education or middle/high school math or science at an eligible Indiana college. First-time undergraduate; Indiana resident by Dec 31 of the prior year; GPA your school of education requires. Agree to apply for Indiana teaching jobs and, if hired, teach 3 years. Fall 2026 deadline is Sept 30, 2026; spring is Jan 31, 2027."
+    },
+    "description": "For future teachers in special education, math or science. You get it during the semester you student teach, and you promise to apply for teaching jobs in Indiana and teach there for three years if hired. File the FAFSA and apply in ScholarTrack.",
+    "checked_at": "2026-09-29"
+  }
+]

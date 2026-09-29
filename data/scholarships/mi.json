@@ -1,0 +1,189 @@
+[
+ {
+  "id": "mi-achievement-scholarship-university",
+  "title": "Michigan Achievement Scholarship (College and University)",
+  "sponsor": "MI Student Aid, Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/mistudentaid/programs/michigan-achievement-scholarship/college-and-university",
+  "award": {
+   "min": null,
+   "max": 5500,
+   "text": "Up to $5,500 a year for up to 5 years (up to $27,500 total)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must finish high school (or equivalency) in 2023 or later and enroll full-time within 15 months at an eligible Michigan public or private university (or a bachelor's program at a community college). Student Aid Index (SAI) must be 30,000 or less. Must be a Michigan resident since July 1 of the previous year; dependent students' parents too."
+  },
+  "description": "Michigan's main scholarship for recent high school graduates heading to a 4-year college in Michigan. Most students who show financial need on the FAFSA qualify, and there is no separate application. Keep filing the FAFSA and stay full-time to renew it.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mi-community-college-guarantee",
+  "title": "Michigan Achievement Scholarship: Community College Guarantee",
+  "sponsor": "MI Student Aid, Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/mistudentaid/programs/michigan-achievement-scholarship/community-college-guarantee",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Free in-district tuition and fees, plus a $1,000 bonus for Pell Grant students"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must graduate from high school (or equivalency in 2023 or later) and enroll full-time at a Michigan community college or Tribal college within 15 months. Covers in-district rates; out-of-district students get a smaller discount. No income limit. Must be a Michigan resident since July 1 of the previous year; dependent students' parents too."
+  },
+  "description": "Recent Michigan high school graduates can go to their local community college tuition-free. There is no income limit: you just file the FAFSA and enroll full-time within 15 months of graduating. Students who get a federal Pell Grant also get $1,000 for other costs. It renews for up to 3 years at a community college.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mi-achievement-skills-scholarship",
+  "title": "Michigan Achievement Skills Scholarship",
+  "sponsor": "MI Student Aid, Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/mistudentaid/programs/michigan-achievement-scholarship/career-training",
+  "award": {
+   "min": null,
+   "max": 2000,
+   "text": "Up to $2,000 a year for up to 2 years"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must finish high school (or equivalency) in 2023 or later and enroll within 15 months in an eligible career training program in Michigan. Must have lived in Michigan for at least the past year. No associate or bachelor's degree yet. Apply in the MiSSG Student Portal."
+  },
+  "description": "For recent Michigan high school graduates who want a short career training program that leads to an industry-recognized certificate, such as a skilled trade. First find an eligible training provider, then apply in the MiSSG Student Portal.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mi-tuition-incentive-program",
+  "title": "Tuition Incentive Program (TIP)",
+  "sponsor": "MI Student Aid, Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/mistudentaid/programs/tuition-incentive-program",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition help for a certificate or associate degree, then for a bachelor's degree"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have had Medicaid for 24 months within a 36-month period between age 9 and high school graduation (the state identifies eligible students). Must finish high school before age 20 (some exceptions) and start using TIP within 4 years. At least half-time at a participating college. Michigan resident since July 1 of the previous year."
+  },
+  "description": "Helps students who had Medicaid growing up pay tuition. Phase I covers a certificate or associate degree; Phase II helps with a bachelor's degree afterward. Michigan contacts eligible students as early as age 12. You must finish high school and file the FAFSA.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mi-fostering-futures-scholarship",
+  "title": "Fostering Futures Scholarship",
+  "sponsor": "MI Student Aid, Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/mistudentaid/programs/fostering-futures-scholarship",
+  "award": {
+   "min": null,
+   "max": 5000,
+   "text": "Up to $5,000, based on need and other aid"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2026-12-31"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "adult"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have been in Michigan foster care due to abuse or neglect on or after your 13th birthday, show financial need, and attend a Michigan public or nonprofit college at least half-time. Michigan resident since July 1 of the previous year. No age limit. Awards are first-come, first-served; the date is the priority deadline."
+  },
+  "description": "For students who were in Michigan foster care at age 13 or older. It helps pay tuition, fees, books and supplies at Michigan colleges. Apply in the MiSSG Student Portal; starting in 2026-27 you only need to apply once as long as you file the FAFSA every year. Apply early because money runs out.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mi-reconnect",
+  "title": "Michigan Reconnect",
+  "sponsor": "Michigan Department of Lifelong Education, Advancement, and Potential (MiLEAP)",
+  "sponsor_type": "state",
+  "url": "https://www.michigan.gov/reconnect/community-college",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Free in-district community college tuition and mandatory fees"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "adult"
+  ],
+  "rules": {
+   "state": "MI",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be at least 21 when you apply, have a high school diploma or equivalent, have lived in Michigan for a year or more, and have no associate or bachelor's degree. For a Pell-eligible associate degree or skill certificate at a Michigan public community college."
+  },
+  "description": "For Michigan adults 21 and older who want to go back to school. It pays in-district tuition and fees at any Michigan public community college for an associate degree or skill certificate. Apply online and file the FAFSA.",
+  "checked_at": "2026-09-29"
+ }
+]

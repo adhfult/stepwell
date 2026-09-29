@@ -1,0 +1,97 @@
+[
+  {
+    "id": "ks-comprehensive-grant",
+    "title": "Kansas Comprehensive Grant",
+    "sponsor": "Kansas Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://www.kansasregents.gov/students/student_financial_aid/scholarships_and_grants",
+    "award": {
+      "min": 100,
+      "max": 10000,
+      "text": "$200 to $10,000 at private colleges, $100 to $4,000 at public universities"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KS",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Kansas resident with financial need, full-time at one of 18 eligible private Kansas colleges, the six state universities or Washburn University. No separate application: list an eligible college on your FAFSA. Funding covers about 1 in 3 eligible students."
+    },
+    "description": "Kansas's main need-based grant for full-time students at eligible Kansas universities and private colleges. There is no separate application; you are considered when you file the FAFSA and list an eligible school. Funds are limited, so not everyone who qualifies gets it.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ks-state-scholarship",
+    "title": "Kansas State Scholarship",
+    "sponsor": "Kansas Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://www.kansasregents.gov/students/student_financial_aid/scholarships_and_grants",
+    "award": {
+      "min": null,
+      "max": 1000,
+      "text": "Up to $1,000 a year ($500 a semester), based on need"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KS",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be named a Kansas State Scholar as a senior at a Kansas high school: take the ACT by December of senior year and complete the Kansas Scholars Curriculum; the top half are picked by ACT and 7th-semester GPA. To get money: 12 credits a semester, 3.0 college GPA and financial need. File the FAFSA and state application each year."
+    },
+    "description": "A need-based award for top Kansas high school graduates named Kansas State Scholars. You earn the title by taking the ACT and finishing the Kansas Scholars Curriculum, and then apply each year with the FAFSA and the State of Kansas Student Aid Application by July 1.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ks-education-opportunity-scholarship",
+    "title": "Kansas Education Opportunity Scholarship",
+    "sponsor": "Kansas Board of Regents",
+    "sponsor_type": "state",
+    "url": "https://www.kansasregents.gov/students/student_financial_aid/scholarships_and_grants",
+    "award": {
+      "min": null,
+      "max": 1850,
+      "text": "Up to $1,850 a year ($925 a semester)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "05-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "KS",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be a first-generation college student (no parent or guardian finished a bachelor's) OR the child of a licensed Kansas pre-K to 12 teacher or paraprofessional. Permanent Kansas resident, full-time undergraduate at an eligible Kansas college, with financial need. Priority to graduating seniors and renewals. Up to 8 semesters."
+    },
+    "description": "For Kansas students who will be the first in their family to earn a bachelor's degree, or whose parent teaches or works as a paraprofessional in a Kansas school. It is based on financial need. Apply online and file the FAFSA by May 1.",
+    "checked_at": "2026-09-29"
+  }
+]

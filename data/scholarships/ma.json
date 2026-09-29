@@ -1,0 +1,190 @@
+[
+ {
+  "id": "ma-massgrant",
+  "title": "MASSGrant",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/massgrant.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Amount depends on your Student Aid Index and the type of college"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have lived in Massachusetts for at least 1 year, show financial need, and enroll full-time (12 credits) in a certificate, associate or bachelor's program at an approved Massachusetts college (or one in PA, VT or DC with reciprocity). No earlier bachelor's degree. Students who qualify under the state tuition equity law can apply with the MASFA."
+  },
+  "description": "Massachusetts' main need-based grant for full-time undergraduates. You apply by filing the FAFSA, or the Massachusetts Application for State Financial Aid (MASFA) if you cannot file the FAFSA, including many undocumented students. The 2026-27 deadline was June 30, 2026; check the page for the next one.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ma-massgrant-plus",
+  "title": "MASSGrant Plus",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/massgrantplus.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Free tuition and fees plus up to $1,200 for books if family income is about $85,000 or less"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "For UMass campuses and Massachusetts state universities. Family income about $85,000 or less: at least 6 credits a term. About $85,000 to $100,000: full-time (12 credits) and covers up to half of remaining tuition and fees. Must have lived in Massachusetts 1 year. No earlier bachelor's degree. Tuition equity students use the MASFA."
+  },
+  "description": "Makes Massachusetts public 4-year colleges (UMass and state universities) much cheaper for low- and middle-income families. If your family earns about $85,000 a year or less, it covers all tuition and fees and gives up to $1,200 for books. Families earning up to about $100,000 get part of the cost covered. Apply by filing the FAFSA or MASFA.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ma-masseducate-free-community-college",
+  "title": "MassEducate Free Community College",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/masseducate.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Free community college tuition and fees, plus up to $2,400 in allowances based on income"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "adult"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must attend a Massachusetts public community college in a certificate or associate program, at least 6 credits a term. Must have lived in Massachusetts for at least 1 year. No earlier bachelor's degree. Tuition equity students use the MASFA. Book and other allowances depend on family income."
+  },
+  "description": "Makes community college tuition and fees free in Massachusetts for students of any age and income. Families earning up to about $100,000 can also get money for books, and those earning up to about $85,000 can get extra help with other costs. File the FAFSA or MASFA and talk to your community college's financial aid office.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ma-john-and-abigail-adams-scholarship",
+  "title": "John and Abigail Adams Scholarship",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/adams.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition credit for up to 8 semesters at a Massachusetts public college"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must graduate from a Massachusetts public high school, score in the top 25% of your district on the 10th grade MCAS, and score Advanced on one test and Proficient or Advanced on the others. Must attend a Massachusetts public college full-time. Covers tuition only, not fees. Must have lived in Massachusetts 1 year."
+  },
+  "description": "A merit scholarship for students who do very well on the 10th grade MCAS tests. It takes money off tuition at Massachusetts public colleges and universities for up to 8 semesters. There is no application: eligible students are told in the fall of senior year. You still need to file the FAFSA or MASFA each year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ma-herter-memorial-scholarship",
+  "title": "Christian A. Herter Memorial Scholarship",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/herter.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Up to 50% of your calculated financial need"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2027-02-12"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": 2.5,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be in 10th or 11th grade at a Massachusetts high school and be nominated by a school or community agency. Must have high financial need and have overcome major hardship. Must enroll full-time after high school at a college in the continental U.S. Must have lived in Massachusetts 1 year."
+  },
+  "description": "For Massachusetts 10th and 11th graders who have faced serious hardship, such as abuse or major illness, and show strong academic promise. Your school or a community group must nominate you. Winners can get up to half of their financial need paid at a college anywhere in the continental U.S. The 2027 application opens December 2026.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ma-community-college-nursing-scholarship",
+  "title": "Community College Nursing Scholarship Program",
+  "sponsor": "Massachusetts Department of Higher Education, Office of Student Financial Assistance",
+  "sponsor_type": "state",
+  "url": "https://www.mass.edu/osfa/programs/ccnursingprogram.asp",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Covers remaining tuition, fees, books and supplies"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MA",
+   "min_gpa": null,
+   "fields": [
+    "51"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must enroll (at least 6 credits) in an approved nursing certificate or associate program (RN, LPN, nursing assistant, patient care assistant, pre-nursing) at a Massachusetts public community college. No earlier associate or bachelor's degree. Must have lived in Massachusetts 1 year. Tuition equity students use the MASFA."
+  },
+  "description": "Pays whatever tuition, fees, books and supplies are left after other grants for students in nursing programs at Massachusetts community colleges. It covers programs from nursing assistant up to registered nurse. File the FAFSA or MASFA and ask your college's financial aid office how to apply.",
+  "checked_at": "2026-09-29"
+ }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "or-opportunity-grant",
+    "title": "Oregon Opportunity Grant (OOG)",
+    "sponsor": "Oregon Higher Education Coordinating Commission, Office of Student Access and Completion (OSAC)",
+    "sponsor_type": "state",
+    "url": "https://oregonstudentaid.gov/grants/oregon-opportunity-grant/",
+    "award": {"min": null, "max": 8352, "text": "Up to $8,352 a year at 4-year schools and $4,320 at community colleges (2026-27)"},
+    "deadline": {"kind": "rolling"},
+    "stages": ["high_school", "college", "adult"],
+    "rules": {
+      "state": "OR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Oregon resident for 12 months before college. Undergraduate with no bachelor's degree at a participating Oregon college. Student Aid Index (SAI) limit was 8,000 for 2026-27. Not for theology or religious studies degrees. No summer awards."
+    },
+    "description": "Oregon's largest need-based grant, for students of all ages working on a first associate or bachelor's degree at an Oregon college. There is no separate application: file the FAFSA, or the Oregon Student Aid Application (ORSAA) if you are undocumented or have DACA, as soon as possible after October 1. Awards go first-come, first-served until money runs out.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "or-oregon-promise-grant",
+    "title": "Oregon Promise Grant",
+    "sponsor": "Oregon Higher Education Coordinating Commission, Office of Student Access and Completion (OSAC)",
+    "sponsor_type": "state",
+    "url": "https://oregonstudentaid.gov/grants/oregon-promise-grant/",
+    "award": {"min": null, "max": null, "text": "Community college tuition left after the Pell Grant and Oregon Opportunity Grant"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "OR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Recent Oregon high school or GED graduate with a 2.0 high school GPA (or 145 on all GED tests). Oregon resident 12 months; parents must live in Oregon for dependent students. Start at an Oregon community college the term after graduating. SAI limit was 27,000 for the Class of 2026. Up to 90 credits."
+    },
+    "description": "Helps recent Oregon high school and GED graduates pay tuition at an Oregon community college. You must apply during your senior year, before you graduate, and also file the FAFSA or ORSAA listing an Oregon community college. The deadline depends on your graduation date. Students graduating between July 1, 2026 and June 30, 2027 can start applying in October 2026. You only get one chance to apply.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "or-teacher-scholars-program-grant",
+    "title": "Oregon Teacher Scholars Program Grant",
+    "sponsor": "Oregon Higher Education Coordinating Commission, Office of Student Access and Completion (OSAC)",
+    "sponsor_type": "state",
+    "url": "https://oregonstudentaid.gov/grants/oregon-teacher-scholars-program-grant/",
+    "award": {"min": null, "max": 12000, "text": "Up to $12,000 a year for full-time students"},
+    "deadline": {"kind": "usually", "month_day": "04-15"},
+    "stages": ["college", "graduate"],
+    "rules": {
+      "state": "OR",
+      "min_gpa": null,
+      "fields": ["13", "42", "44"],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Oregon resident 12 months. Enrolled in an approved preliminary license program in teaching, school counseling, school social work or school psychology, within 2 years of finishing. Must show experience with diverse populations. At least half-time. SAI limits may apply."
+    },
+    "description": "A grant for Oregon students in the last two years of a program to become a teacher, school counselor, school social worker or school psychologist, who have experience working with diverse communities. Apply in the OSAC Student Portal and file the FAFSA or ORSAA. Deadlines depend on your start term: April 15 for fall, September 15 for winter, December 15 for spring.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "or-tribal-student-grant",
+    "title": "Oregon Tribal Student Grant",
+    "sponsor": "Oregon Higher Education Coordinating Commission, Office of Student Access and Completion (OSAC)",
+    "sponsor_type": "state",
+    "url": "https://oregonstudentaid.gov/grants/oregon-tribal-student-grant/",
+    "award": {"min": null, "max": null, "text": "Average cost of attendance left after other federal and state grants and scholarships"},
+    "deadline": {"kind": "date", "date": "2026-09-30"},
+    "stages": ["high_school", "college", "graduate"],
+    "rules": {
+      "state": "OR",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be an enrolled member of one of Oregon's nine federally recognized tribes. At least half-time at an Oregon community college, public university, or private nonprofit college, working on a first degree at that level. Tribal enrollment verification required."
+    },
+    "description": "A grant for members of Oregon's nine federally recognized tribes that can cover the average cost of college, including housing and books, after other grants. It is for undergraduate and graduate students at Oregon colleges. Apply every year with the grant application, the FAFSA or ORSAA, and a tribal enrollment form. The 2026-27 priority deadline is September 30, 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

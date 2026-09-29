@@ -1,0 +1,126 @@
+[
+ {
+  "id": "nv-governor-guinn-millennium-scholarship",
+  "title": "Governor Guinn Millennium Scholarship",
+  "sponsor": "Nevada State Treasurer's Office",
+  "sponsor_type": "state",
+  "url": "https://www.nevadatreasurer.gov/GGMS/GGMS_Home/",
+  "award": {
+   "min": null,
+   "max": 10000,
+   "text": "Up to $10,000 total, paid $40 to $80 per credit depending on the college"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "NV",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Need a 3.25 high school GPA (weighted or unweighted) OR an SAT of 1070 or ACT of 21. Must finish 4 years of English and math (through Algebra II), 3 of science and 3 of history, and have lived in Nevada 2 years. Must use it at an eligible Nevada college within 6 years after high school graduation. Recipients sign a citizenship or immigration status affidavit."
+  },
+  "description": "Nevada's merit scholarship for students who graduate from a Nevada high school and go to college in the state. It pays part of tuition for each credit, up to $10,000 in total. Students at Nevada high schools do not apply: your school sends your name and you get a letter after graduation. Home-schooled students and those at out-of-state high schools must apply.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "nv-promise-scholarship",
+  "title": "Nevada Promise Scholarship",
+  "sponsor": "Nevada System of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://nshe.nevada.edu/system-administration/departments/asa/students/financial-aid/nevada-promise-scholarship/",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Remaining community college tuition and mandatory fees for up to 3 years"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "NV",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "For Nevada high school graduates who go to a Nevada community college. Requires the FAFSA. Each community college runs its own application and sets required steps and dates, such as mentoring and training, so check with the college you plan to attend."
+  },
+  "description": "Makes community college in Nevada much cheaper for new high school graduates. It pays the base tuition and mandatory fees left after other state and federal aid for up to 3 years. Apply in the fall of your senior year through the Nevada community college you plan to attend, and finish every required step on time.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "nv-silver-state-opportunity-grant",
+  "title": "Silver State Opportunity Grant",
+  "sponsor": "Nevada System of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://nshe.nevada.edu/system-administration/departments/asa/students/financial-aid/silver-state-opportunity-grant/",
+  "award": {
+   "min": null,
+   "max": 5500,
+   "text": "Up to $5,500 a year (up to $4,400 if taking 12 to 14 credits)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "NV",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Nevada resident for tuition purposes at a Nevada community college or Nevada State University, take at least 12 credits, be college-ready in math and English, and have a Student Aid Index (SAI) of 8,500 or less. No bachelor's degree yet. Students who cannot legally file the FAFSA should ask the college's aid office."
+  },
+  "description": "A need-based grant for low-income students at Nevada's community colleges and Nevada State University who are ready for college-level math and English. Money is limited and goes first to students taking 15 credits with the most need, so file the FAFSA early.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "nv-teach-nevada-scholarship",
+  "title": "Teach Nevada Scholarship",
+  "sponsor": "Nevada Department of Education",
+  "sponsor_type": "state",
+  "url": "https://doe.nv.gov/educator-licensure/nevada-scholarship-opportunities",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Up to the cost of tuition, registration and mandatory fees"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "college",
+   "graduate"
+  ],
+  "rules": {
+   "state": "NV",
+   "min_gpa": null,
+   "fields": [
+    "13"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must have a high school diploma and attend an approved Nevada educator preparation program (traditional or alternative route) leading to a bachelor's or master's degree. Apply through your program; the state gives money to programs once the Legislature funds it, and each program picks recipients."
+  },
+  "description": "Helps people training to become teachers in Nevada pay tuition and fees. You apply through the approved teacher preparation program at your Nevada college or university, which decides who gets the scholarship.",
+  "checked_at": "2026-09-29"
+ }
+]

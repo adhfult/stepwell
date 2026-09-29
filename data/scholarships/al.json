@@ -1,0 +1,222 @@
+[
+  {
+    "id": "al-alabama-student-assistance-program",
+    "title": "Alabama Student Assistance Program (ASAP)",
+    "sponsor": "Alabama Commission on Higher Education (ACHE)",
+    "sponsor_type": "state",
+    "url": "https://sp.ache.edu/asap/",
+    "award": {
+      "min": 300,
+      "max": 5000,
+      "text": "$300 to $5,000 per school year, based on financial need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be an Alabama resident working on a first undergraduate degree at a participating Alabama college. Your college's financial aid office uses your FAFSA to decide if you qualify and how much you get."
+    },
+    "description": "ASAP is Alabama's need-based grant for undergraduates, and you do not pay it back. It gives $300 to $5,000 a year to Alabama residents working on their first undergraduate degree at a participating Alabama college. There is no separate application: you fill out the FAFSA, and your college's financial aid office uses it to decide if you qualify and how much you get. Ask your college's financial aid office about its deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "al-alabama-student-grant-program",
+    "title": "Alabama Student Grant Program (ASGP)",
+    "sponsor": "Alabama Commission on Higher Education (ACHE)",
+    "sponsor_type": "state",
+    "url": "https://sp.ache.edu/asgp/",
+    "award": {
+      "min": null,
+      "max": 3000,
+      "text": "Up to $3,000 per school year; the amount changes each year with state funding"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-15"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Only at 11 private colleges: Amridge, Faulkner, Huntingdon, Miles, Oakwood, Samford, Spring Hill, South University Montgomery, Stillman, U.S. Sports Academy, University of Mobile. Alabama resident for the last 12 months (2 proofs), at least half time, no prior bachelor's degree, not a religious-vocation major. The form asks for U.S. citizens or people in the process of becoming citizens."
+    },
+    "description": "A grant for Alabama residents who attend one of 11 private colleges in Alabama, such as Samford or the University of Mobile. It is not based on financial need, and you do not pay it back. You fill out a short form and turn it in to the financial aid office at your college. The 2026-27 form lists a fall deadline of September 15, 2026 and a spring semester deadline of February 15. The amount changes each year but is never more than $3,000 a year.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "al-reengage-alabama-grant",
+    "title": "(Re)Engage Alabama Grant Program",
+    "sponsor": "Alabama Commission on Higher Education (ACHE)",
+    "sponsor_type": "state",
+    "url": "https://sp.ache.edu/reengage/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers up to 24 credit hours for an associate degree or 48 for a bachelor's; amount not listed"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-15"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [
+        "01",
+        "04",
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "19",
+        "22",
+        "23",
+        "26",
+        "27",
+        "30",
+        "31",
+        "40",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "54"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Age 22 or older, Alabama resident, out of college for at least 2 years, with at least 36 credits toward an associate or 72 toward a bachelor's already earned. No prior degree at that level. Enroll at least half time (6+ credits) in an approved high-demand program at a participating Alabama college. U.S. citizen or permanent resident. Not for theology or religious study."
+    },
+    "description": "A grant for Alabama adults who started college, stopped, and want to come back and finish their degree. You must be at least 22, have been out of college for at least two years, and already have a good number of credits. It only covers degree programs tied to jobs Alabama needs most. You apply through the financial aid office at a participating college. Application deadlines are September 15 for fall, February 15 for spring, and June 15 for summer.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "al-law-enforcement-officers-family-scholarship",
+    "title": "Alabama Law Enforcement Officers' Family Scholarship",
+    "sponsor": "Alabama Commission on Higher Education (ACHE)",
+    "sponsor_type": "state",
+    "url": "https://sp.ache.edu/law-enforcement-officers-scholarship",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Up to $2,500 per semester toward tuition and required fees"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-10-02"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For a child (natural or adopted, under 24) or a current or surviving spouse (not remarried) of an Alabama law enforcement officer who has worked full time for at least 15 years or left full-time work no more than 10 years ago. You must have lived in Alabama for at least the last 5 years. Undergraduate study at an Alabama public college or school only."
+    },
+    "description": "This scholarship helps the families of long-serving Alabama law enforcement officers. It pays up to $2,500 a semester toward tuition and required fees at a public university, community college, or technical school in Alabama. Children under 24 and spouses can apply. You mail the application, with proof of the officer's certification and years of service, to the Alabama Commission on Higher Education. The deadline for the 2026-27 year is October 2, 2026.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "al-police-firefighters-survivors-educational-assistance",
+    "title": "Police Officers' and Firefighters' Survivors Educational Assistance Program (POFSEAP)",
+    "sponsor": "Alabama Commission on Higher Education (ACHE)",
+    "sponsor_type": "state",
+    "url": "https://sp.ache.edu/pofseap/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers tuition, fees, books and supplies at Alabama public colleges"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For children (under 21 at the time of the parent's death or disability) and spouses (not remarried) of Alabama police officers, firefighters or rescue squad members killed or totally disabled in the line of duty. Spouses must first enroll within 5 years of the death. Undergraduate study at an Alabama public college only."
+    },
+    "description": "A grant for the children and spouses of Alabama police officers and firefighters who were killed or totally disabled in the line of duty. It pays tuition, fees, books, and supplies for undergraduate study at public colleges in Alabama. You apply by mailing the initial application, with a death certificate or a doctor's letter and a letter from the employer, to the Alabama Commission on Higher Education. A renewal form is also on the page.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "al-gi-dependent-scholarship",
+    "title": "Alabama G.I. Dependent Scholarship Program",
+    "sponsor": "Alabama Department of Veterans Affairs (ADVA)",
+    "sponsor_type": "state",
+    "url": "https://va.alabama.gov/education-training/alabama-g-i-dependent-scholarship-program/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition up to $400 per credit hour, plus up to $1,000 for books and fees, after other grants"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "AL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": true,
+      "other": "The veteran must be rated 40% or more disabled from service, a former POW, missing in action, or have died from service or on duty, and must meet Alabama residency rules. The student must live in Alabama. Children must start before age 26 (up to 30 in some cases). Undergraduate study at qualifying Alabama schools; children get up to 10 semesters. Benefits are not paid for past terms."
+    },
+    "description": "This program helps the children, stepchildren, and spouses of Alabama veterans who were disabled or died because of military service. It pays tuition up to $400 per credit hour, plus up to $1,000 for required books and fees, after other scholarships and grants are used. Children can get up to five school years of undergraduate study at qualifying Alabama schools. You apply through the Alabama G.I. Dependent Scholarship Portal and must file the FAFSA every year.",
+    "checked_at": "2026-09-29"
+  }
+]

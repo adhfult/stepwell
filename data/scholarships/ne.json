@@ -1,0 +1,139 @@
+[
+ {
+  "id": "ne-opportunity-grant",
+  "title": "Nebraska Opportunity Grant (NOG)",
+  "sponsor": "Nebraska Coordinating Commission for Postsecondary Education",
+  "sponsor_type": "state",
+  "url": "https://ccpe.nebraska.gov/nebraska-opportunity-grant-nog",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Amount set by your college; average grant about $1,823 (2024-25)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "NE",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Nebraska resident attending a Nebraska college, university, community college or private career school, with a Student Aid Index from the FAFSA low enough to qualify. Colleges choose who gets it, and some require their own application, so each college sets its own deadline."
+  },
+  "description": "Nebraska's main need-based grant, formerly called the Nebraska State Grant. Your college awards it as part of your financial aid, so apply to the college and file the FAFSA early. Check with the financial aid office in case the college also needs its own form.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ne-access-college-early-scholarship",
+  "title": "Access College Early (ACE) Scholarship",
+  "sponsor": "Nebraska Coordinating Commission for Postsecondary Education",
+  "sponsor_type": "state",
+  "url": "https://ccpe.nebraska.gov/access-college-early-ace-scholarship-program",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition and mandatory fees for college courses taken while in high school"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "12-15"
+  },
+  "stages": [
+   "high_school"
+  ],
+  "rules": {
+   "state": "NE",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": "citizen_or_eligible_noncitizen",
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "For high school students taking a graded dual-enrollment or early-enrollment course from a participating Nebraska college. Your family must be approved for free or reduced lunch, SSI, TANF, SNAP or WIC, or have an extreme hardship, or you must be in a designated Career Education program. State law excludes students without legal status, including DACA."
+  },
+  "description": "Pays for college classes that Nebraska high school students from low-income families take for credit before graduating. Deadlines follow the college term: December 15 for fall classes, February 15 for winter, May 15 for spring and July 15 for summer. Send the ACE Student Application with proof of program approval or hardship.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ne-career-scholarship-community-colleges",
+  "title": "Nebraska Career Scholarship (Community Colleges)",
+  "sponsor": "Nebraska Coordinating Commission for Postsecondary Education",
+  "sponsor_type": "state",
+  "url": "https://ccpe.nebraska.gov/ne-career-scholarship-community-colleges",
+  "award": {
+   "min": null,
+   "max": 15000,
+   "text": "Up to $15,000 a year for tuition, fees, tools, books, room and board"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "NE",
+   "min_gpa": null,
+   "fields": [
+    "01",
+    "03",
+    "04",
+    "11",
+    "13",
+    "14",
+    "15",
+    "46",
+    "47",
+    "48",
+    "49",
+    "51",
+    "52"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Must be a first-time freshman or transfer student in an eligible high-demand program at a Nebraska community college and live in Nebraska while receiving it (out-of-state students may be recruited). Must sign up for a Nebraska internship, apprenticeship, clinical or job in your field before finishing. Each college adds its own rules and deadlines."
+  },
+  "description": "A renewable scholarship for students in Nebraska community college programs that lead to high-wage, high-demand jobs, such as healthcare, construction, repair and maintenance, computers, business and education. Each community college chooses recipients, so apply through your college's website. Some colleges also ask for the FAFSA.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "ne-community-college-gap-assistance",
+  "title": "Community College Gap Assistance Program",
+  "sponsor": "Nebraska Coordinating Commission for Postsecondary Education",
+  "sponsor_type": "state",
+  "url": "https://ccpe.nebraska.gov/gap",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Tuition, training costs, required books, equipment and testing fees"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "college"
+  ],
+  "rules": {
+   "state": "NE",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": false,
+   "other": "Family income must be at or below 250% of the federal poverty guidelines. For short non-credit or credit programs at one of Nebraska's six community colleges that are too short for a federal Pell Grant and lead to a credential in an in-demand field such as health, construction, manufacturing, transportation or computers. Colleges select recipients."
+  },
+  "description": "Helps low-income students pay for short job-training programs at Nebraska community colleges, the kind that do not qualify for federal financial aid. It can cover tuition, books, equipment and licensing test fees. Contact the Gap Assistance contact at your community college to apply.",
+  "checked_at": "2026-09-29"
+ }
+]

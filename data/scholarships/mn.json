@@ -1,0 +1,163 @@
+[
+ {
+  "id": "mn-state-grant",
+  "title": "Minnesota State Grant",
+  "sponsor": "Minnesota Office of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://ohe.mn.gov/grant-scholarship/minnesota-state-grant",
+  "award": {
+   "min": 100,
+   "max": null,
+   "text": "At least $100 a year; average about $3,406 (2023-24)"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MN",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Minnesota resident, a high school graduate (or equivalent) or at least 17, and enrolled for at least 3 credits as an undergraduate at an eligible Minnesota school. Not for out-of-state schools. No bachelor's degree yet. Up to 8 full-time semesters. Apply by the 30th day of each term. Undocumented students use the MN Alternative State Financial Aid Application."
+  },
+  "description": "Minnesota's main grant for students from low- and moderate-income families at Minnesota colleges, including universities, community and technical colleges, private colleges and career schools. The amount depends on your costs and your family's ability to pay. File the FAFSA, or the MN Alternative State Financial Aid Application if you cannot file the FAFSA, and reapply every year.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mn-north-star-promise",
+  "title": "North Star Promise",
+  "sponsor": "Minnesota Office of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://ohe.mn.gov/northstarpromise",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Covers remaining base tuition and mandatory fees after other grants"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "adult"
+  ],
+  "rules": {
+   "state": "MN",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be a Minnesota resident with family adjusted gross income below $80,000 and attend a Minnesota public college or university (Minnesota State, University of Minnesota) or a Tribal college, taking at least 1 credit. No bachelor's degree yet. Does not cover housing, books or tuition above the base rate. Undocumented students use the MN Alternative State Financial Aid Application."
+  },
+  "description": "Free tuition at Minnesota public colleges, universities and Tribal colleges for Minnesota residents whose family earns less than $80,000 a year. It pays the tuition and fees left after other grants and scholarships. There is no age limit, part-time students qualify, and you never pay it back. For 2026-27, the FAFSA or state application was due June 1, 2026.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mn-indian-scholarship",
+  "title": "Minnesota Indian Scholarship",
+  "sponsor": "Minnesota Office of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://ohe.mn.gov/indianscholarship",
+  "award": {
+   "min": null,
+   "max": 6000,
+   "text": "Up to $4,000 a year for undergraduates, up to $6,000 a year for graduate students"
+  },
+  "deadline": {
+   "kind": "usually",
+   "month_day": "07-01"
+  },
+  "stages": [
+   "high_school",
+   "college",
+   "graduate"
+  ],
+  "rules": {
+   "state": "MN",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be one-fourth or more American Indian ancestry, or an enrolled member or citizen of a federally recognized tribe or Canadian First Nation. Minnesota resident at an eligible Minnesota school: at least 3/4 time for undergraduates, 1/2 time for graduate students. Undergraduates must qualify for a Pell Grant or State Grant. Also apply for tribal education funds."
+  },
+  "description": "For American Indian students in Minnesota who have financial need. It helps pay for college or graduate school at eligible Minnesota schools, including tribal colleges. Fill out the Minnesota Indian Scholarship application online, plus the FAFSA or MN Alternative State Financial Aid Application. The priority deadline is July 1.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mn-student-teacher-grant",
+  "title": "Minnesota Student Teacher Grant",
+  "sponsor": "Minnesota Office of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://ohe.mn.gov/minnesota-student-teacher-grant",
+  "award": {
+   "min": null,
+   "max": 7500,
+   "text": "One-time award of up to $7,500 for your student teaching term"
+  },
+  "deadline": {
+   "kind": "date",
+   "date": "2026-10-30"
+  },
+  "stages": [
+   "college",
+   "graduate"
+  ],
+  "rules": {
+   "state": "MN",
+   "min_gpa": null,
+   "fields": [
+    "13"
+   ],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must be doing at least 12 weeks of student teaching for a Tier 3 license in an approved Minnesota teacher preparation program and show financial need. Must plan to teach in a shortage area or rural Minnesota district, or belong to a racial or ethnic group underrepresented among Minnesota teachers."
+  },
+  "description": "Helps Minnesota teaching students pay costs during their student teaching term. You can get it if you plan to teach a subject or in a place that needs teachers, or if you are from a group underrepresented among Minnesota teachers. Oct 30, 2026 is the last day for Fall 2026 terms; Spring 2027 has a Nov 16, 2026 priority date and Mar 19, 2027 cutoff.",
+  "checked_at": "2026-09-29"
+ },
+ {
+  "id": "mn-fostering-independence-grant",
+  "title": "Fostering Independence Higher Education Grant",
+  "sponsor": "Minnesota Office of Higher Education",
+  "sponsor_type": "state",
+  "url": "https://ohe.mn.gov/grant-scholarship/fostering-independence-higher-education-grants",
+  "award": {
+   "min": null,
+   "max": null,
+   "text": "Can cover the remaining cost of attendance after other aid"
+  },
+  "deadline": {
+   "kind": "unknown"
+  },
+  "stages": [
+   "high_school",
+   "college"
+  ],
+  "rules": {
+   "state": "MN",
+   "min_gpa": null,
+   "fields": [],
+   "citizenship": null,
+   "first_generation": false,
+   "military_family": false,
+   "needs_fafsa": true,
+   "other": "Must have been in Minnesota foster care (or adopted or placed with a permanent custodian from foster care) at age 13 or older, be under 27, be a Minnesota resident, and attend a Minnesota public or participating private college. The 2026-27 priority date was May 1, 2026, used only if money runs short. Up to 5 years."
+  },
+  "description": "For Minnesota students who were in foster care at age 13 or older. It can pay whatever is left of the full cost of college, including housing, after other aid. Just answer the foster care question on the FAFSA or the MN Alternative State Financial Aid Application; the state checks it and your college adds the grant to your aid.",
+  "checked_at": "2026-09-29"
+ }
+]

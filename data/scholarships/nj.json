@@ -1,0 +1,134 @@
+[
+  {
+    "id": "nj-tuition-aid-grant",
+    "title": "Tuition Aid Grant (TAG)",
+    "sponsor": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+    "sponsor_type": "state",
+    "url": "https://www.hesaa.org/Pages/TAG.aspx",
+    "award": {"min": null, "max": 14404, "text": "Up to about $14,404 a year (2026-27), based on need and the type of NJ college"},
+    "deadline": {"kind": "usually", "month_day": "09-15"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must attend an approved New Jersey college as an undergraduate. NJ resident for 12 months in a row, or NJ Dreamer rules (3 years at an NJ high school and an NJ diploma). Returning TAG students file by April 15."
+    },
+    "description": "New Jersey's main grant for college, based on how much money your family has. It helps pay tuition at public and private colleges in New Jersey, and the amount depends on your need and the type of college. You apply by filing the FAFSA, or the NJ Alternative Financial Aid Application if you are an NJ Dreamer without immigration papers. New applicants usually file by September 15; students renewing TAG file by April 15.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-community-college-opportunity-grant",
+    "title": "Community College Opportunity Grant (CCOG)",
+    "sponsor": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+    "sponsor_type": "state",
+    "url": "https://www.hesaa.org/Pages/CCOG.aspx",
+    "award": {"min": null, "max": null, "text": "Remaining tuition and approved fees at a NJ community college, at the in-county rate"},
+    "deadline": {"kind": "usually", "month_day": "09-15"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Family adjusted gross income (AGI) of $0 to $65,000. At least 6 credits a semester at a New Jersey community college. No college degree yet. Only in-county tuition and fees are covered."
+    },
+    "description": "Free tuition at a New Jersey community college for your first associate degree if your family income is $65,000 or less. It pays whatever tuition is left after other grants. You are considered automatically when you file the FAFSA, or the NJ Alternative Financial Aid Application if you are an NJ Dreamer. New students usually file by September 15; returning TAG students by April 15.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-garden-state-guarantee",
+    "title": "Garden State Guarantee (GSG)",
+    "sponsor": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+    "sponsor_type": "state",
+    "url": "https://www.hesaa.org/Pages/gsg.aspx",
+    "award": {"min": null, "max": null, "text": "Tuition and fees down to $0 in your third and fourth years at a NJ public university"},
+    "deadline": {"kind": "usually", "month_day": "09-15"},
+    "stages": ["college"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Family adjusted gross income (AGI) of $0 to $65,000. Full-time (12+ credits) at a New Jersey public four-year college. Must be a third- or fourth-year student (60 to 128 credits) working on a first bachelor's degree."
+    },
+    "description": "If your family income is $65,000 or less, New Jersey pays whatever tuition and fees are left in your third and fourth years at an in-state public four-year college or university. You are considered automatically when you file the FAFSA, or the NJ Alternative Financial Aid Application if you are an NJ Dreamer, by the state deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-stars",
+    "title": "NJ STARS (Student Tuition Assistance Reward Scholarship)",
+    "sponsor": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+    "sponsor_type": "state",
+    "url": "https://www.hesaa.org/Pages/NJScholarships.aspx",
+    "award": {"min": null, "max": null, "text": "Tuition (after other grants) at your home county college, up to 5 semesters"},
+    "deadline": {"kind": "usually", "month_day": "09-15"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Top 15% of your high school class at the end of junior or senior year. Lived in NJ 12 months before graduating. Full-time at your home county college. Need a 3.0 college GPA by your third semester to keep it."
+    },
+    "description": "A merit scholarship for New Jersey students near the top of their high school class. It pays tuition at your home county community college after other grants, for up to five semesters. Fees and books are not covered. NJ Dreamers can qualify through the NJ Alternative Financial Aid Application. Students who finish an associate degree may then get NJ STARS II to transfer to a four-year NJ college.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-governors-urban-scholarship",
+    "title": "Governor's Urban Scholarship (GUS)",
+    "sponsor": "New Jersey Higher Education Student Assistance Authority (HESAA)",
+    "sponsor_type": "state",
+    "url": "https://www.hesaa.org/Pages/GUS.aspx",
+    "award": {"min": null, "max": null, "text": "Yearly amount set by the state budget"},
+    "deadline": {"kind": "usually", "month_day": "09-15"},
+    "stages": ["high_school"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Top 5% of your class with a 3.0 GPA at the end of junior year. Must live in one of the listed high-need NJ communities. Need index (NJEI) below 10,500. Full-time at an approved NJ college. Your high school reports you; there is no separate application."
+    },
+    "description": "A merit scholarship for top students with financial need who live in certain New Jersey cities and towns, such as Newark, Camden, Paterson and Trenton. Your high school sends class rankings to the state, and the state tells you if you qualify. You must file the FAFSA, or the NJ Alternative Financial Aid Application if you are an NJ Dreamer, every year by the state deadline.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-educational-opportunity-fund",
+    "title": "Educational Opportunity Fund (EOF)",
+    "sponsor": "New Jersey Office of the Secretary of Higher Education",
+    "sponsor_type": "state",
+    "url": "https://www.nj.gov/highereducation/EOF/EOF_Eligibility.shtml",
+    "award": {"min": 200, "max": 3050, "text": "$200 to $3,050 a year, plus tutoring and counseling"},
+    "deadline": {"kind": "unknown"},
+    "stages": ["high_school", "college"],
+    "rules": {
+      "state": "NJ",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Low household income and assets (2026-27 limit: $64,300 income for a family of 4). NJ resident for 12 months. Must be accepted into the EOF program at one of about 40 participating NJ colleges; each campus sets its own academic rules."
+    },
+    "description": "A program for New Jersey students from low-income families who need extra support to get ready for college. It gives a grant for costs like books, fees and housing, plus tutoring and counseling on campus. Each participating college picks its own EOF students, so contact the EOF office at the college you want. You must file the FAFSA or the NJ Alternative Financial Aid Application.",
+    "checked_at": "2026-09-29"
+  }
+]

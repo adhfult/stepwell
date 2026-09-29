@@ -1,0 +1,194 @@
+[
+  {
+    "id": "la-tops",
+    "title": "TOPS Opportunity, Performance, Honors and Excellence Awards",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/tops/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition-based amount; Performance adds $400/yr, Honors $800/yr; Excellence pays up to $12,000/yr"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Louisiana resident; BESE-approved high school; 19-unit TOPS core. Core GPA and ACT: Opportunity 2.50 and ACT 20 (or state average); Performance 3.25 and 23; Honors 3.50 and 27; Excellence 3.50 and 31. Out-of-state grads can use a higher ACT instead. Enroll full-time by the first semester after the first anniversary of graduation. Louisiana colleges only."
+    },
+    "description": "Louisiana's merit scholarship for students who finish the TOPS core courses and meet GPA and ACT goals. Higher levels pay more, and the new Excellence level pays tuition and fees up to $12,000 a year. Apply with the FAFSA or the TOPS Online Application. Use it at Louisiana public colleges, technical colleges and eligible private schools.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "la-tops-tech",
+    "title": "TOPS Tech Award",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/tops/tops-tech/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays the TOPS Award Amount for an eligible technical program"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Louisiana resident. Complete the TOPS Tech JumpStart core (21 units) or the regular TOPS core. Minimum 2.50 core GPA and ACT 17 (or ACT WorkKeys Silver). Enroll full-time in an eligible technical program by the first semester after the first anniversary of graduation. Keep a 2.50 GPA each spring."
+    },
+    "description": "A TOPS award for students heading into technical and skill programs in Louisiana, like certificates and associate degrees. It has lower GPA and ACT goals than the university awards. Apply with the FAFSA or the TOPS Online Application.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "la-tops-tech-early-start",
+    "title": "TOPS Tech Early Start",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/tops/tops-tech-early-start/",
+    "award": {
+      "min": null,
+      "max": 600,
+      "text": "Up to $600 per school year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": 2.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "11th or 12th grader in good standing at a Louisiana public high school, taking up to 6 credit hours a semester toward a certification in an eligible program. Need a 15 in English and math on the ACT, PLAN or SAT equivalent, or an ACT WorkKeys Silver score."
+    },
+    "description": "Helps Louisiana public high school juniors and seniors take college or training classes toward a job certification while still in high school. It pays up to $600 a year for up to six credit hours a semester.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "la-go-grant",
+    "title": "Louisiana GO Grant",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/paying-for-college/scholarships-grants/go-grant/",
+    "award": {
+      "min": 300,
+      "max": 3000,
+      "text": "$300 to $3,000 a year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Louisiana resident who receives a Federal Pell Grant and still has unmet need after other aid. At least half-time at an eligible Louisiana college. Amount depends on your school's share of funds and its rules. Not paid for summer terms."
+    },
+    "description": "A need-based grant for Louisiana students, including nontraditional and adult students, who get a Pell Grant and still need help paying for college. File the FAFSA; your college decides the amount.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "la-mj-foster-promise",
+    "title": "M.J. Foster Promise Program",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/paying-for-college/scholarships-grants/mjfoster/",
+    "award": {
+      "min": null,
+      "max": 6400,
+      "text": "$3,200 a year full-time, up to $6,400 total over 3 years"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": null,
+      "fields": [
+        "46",
+        "51",
+        "11",
+        "48",
+        "15",
+        "49"
+      ],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be 21+ when you apply. Louisiana resident who lived there 24 months before the FAFSA. No associate or higher degree. Approved program at a 2-year public college or approved private career school. Income at or under 300% of poverty, or unemployed/underemployed 6 months. Must live and work in Louisiana 1 year after. No violent crime convictions."
+    },
+    "description": "Helps Louisiana adults 21 and older earn a short credential or associate degree in high-demand fields like construction, healthcare, IT, manufacturing, and transportation. It is not a loan, but you agree to live and work in Louisiana for a year after. Apply online any time; money is paid first come, first billed.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "la-geaux-teach",
+    "title": "Louisiana Geaux Teach Scholarship",
+    "sponsor": "Louisiana Office of Student Financial Assistance (LOSFA)",
+    "sponsor_type": "state",
+    "url": "https://mylosfa.la.gov/paying-for-college/scholarships-grants/louisiana-geaux-teach-program/",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "LA",
+      "min_gpa": 2.5,
+      "fields": [
+        "13"
+      ],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Louisiana resident for at least 2 years before July 1 of the school year. Full-time in a BESE-approved teacher prep or alternate certification program at a participating Louisiana school; each school picks its own recipients. Register with Selective Service if required."
+    },
+    "description": "For students training to become teachers in Louisiana, including people in alternate certification programs. You apply through your school of education with the Geaux Teach form. It pays tuition, fees and required books.",
+    "checked_at": "2026-09-29"
+  }
+]

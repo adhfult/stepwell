@@ -1,0 +1,157 @@
+[
+  {
+    "id": "va-guaranteed-assistance-program",
+    "title": "Virginia Guaranteed Assistance Program (VGAP)",
+    "sponsor": "State Council of Higher Education for Virginia",
+    "sponsor_type": "state",
+    "url": "https://www.schev.edu/financial-aid/financial-aid/federal-state-financial-aid/virginia-guaranteed-assistance-program",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Neediest students get at least tuition; up to tuition, required fees and a book allowance"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "VA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Virginia student (domicile, military dependent, or Tuition Equity rules) with financial need. Must graduate from a Virginia high school with a 2.5 GPA, or finish Virginia home school with SAT 980 or ACT 19 (GED not eligible). Must attend a Virginia public college full time. Renew for 3 more years with a 2.0 college GPA."
+    },
+    "description": "A need-based grant for Virginia high school graduates with at least a 2.5 GPA who go to a Virginia public college or university full time. There is no separate application: file the FAFSA, or the VASA application if you cannot file the FAFSA (for example, some undocumented students under Virginia's Tuition Equity law), by your college's financial aid deadline. Students with the most need get the biggest awards.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "va-commonwealth-award",
+    "title": "Virginia Commonwealth Award",
+    "sponsor": "State Council of Higher Education for Virginia",
+    "sponsor_type": "state",
+    "url": "https://www.schev.edu/financial-aid/financial-aid/federal-state-financial-aid/virginia-commonwealth-award",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Set by your college based on need; no more than tuition and required fees"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "VA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Virginia student (domicile, military dependent, or Tuition Equity rules) with financial need, enrolled at least half time in a degree, certificate or diploma program at a Virginia public two- or four-year college."
+    },
+    "description": "A need-based grant for Virginia residents at the state's public colleges and universities, including community colleges. There is no separate application: file the FAFSA, or the VASA application if you cannot file the FAFSA (for example, some undocumented students under Tuition Equity), by your college's deadline. Part-time students (half time or more) can qualify.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "va-tuition-assistance-grant",
+    "title": "Virginia Tuition Assistance Grant (VTAG)",
+    "sponsor": "State Council of Higher Education for Virginia",
+    "sponsor_type": "state",
+    "url": "https://www.schev.edu/financial-aid/financial-aid/federal-state-financial-aid/virginia-tuition-assistance-grant-program",
+    "award": {
+      "min": null,
+      "max": 5250,
+      "text": "Up to $5,250 a year for undergraduates in 2026-27 (less for online students); may change with funding"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "09-15"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "VA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Virginia student (domicile, military dependent, or Tuition Equity rules) enrolled full time at an eligible private nonprofit Virginia college, not in religious or theology training. Graduate students only in health programs. Not based on need. Late applications until December 1 only if funds remain."
+    },
+    "description": "A grant for Virginia residents who attend one of about 28 private nonprofit colleges in the state, like the University of Richmond, Liberty or Hampton. It is not based on income. Get the VTAG application from your college's financial aid office and turn it in there by September 15 before your fall semester. You can keep it each year you stay eligible.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "va-two-year-college-transfer-grant",
+    "title": "Two-Year College Transfer Grant",
+    "sponsor": "State Council of Higher Education for Virginia",
+    "sponsor_type": "state",
+    "url": "https://www.schev.edu/financial-aid/financial-aid/federal-state-financial-aid/two-year-college-transfer-grant",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": null
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "VA",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Virginia student (domicile, military dependent, or Tuition Equity rules). Must earn an associate degree at a Virginia public two-year college with a 3.0 GPA, then transfer to a participating Virginia four-year college. Student Aid Index of 15,000 or less."
+    },
+    "description": "A grant for Virginia students who finish an associate degree at a community college and then transfer to a participating Virginia public or private four-year school. File the FAFSA or VASA by your four-year school's aid deadline and ask its financial aid office about the grant application.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "va-workforce-credential-grant",
+    "title": "Workforce Credential Grant (FastForward)",
+    "sponsor": "State Council of Higher Education for Virginia",
+    "sponsor_type": "state",
+    "url": "https://www.schev.edu/financial-aid/financial-aid/federal-state-financial-aid/workforce-credential-grant",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "You pay one-third of the program cost; the state covers the rest if you finish"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "VA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be a Virginia resident (domicile) in an approved short training program in a high-demand field at a participating community college. If you do not finish the training, you pay another one-third of the cost."
+    },
+    "description": "Helps Virginians get short, job-focused training that leads to an industry certification or state license. You pay only one-third of the cost when you enroll, and the state pays the rest when you complete the program. Contact your local community college to apply.",
+    "checked_at": "2026-09-29"
+  }
+]

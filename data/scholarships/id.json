@@ -1,0 +1,128 @@
+[
+  {
+    "id": "id-opportunity-scholarship",
+    "title": "Idaho Opportunity Scholarship",
+    "sponsor": "Idaho State Board of Education",
+    "sponsor_type": "state",
+    "url": "https://nextsteps.idaho.gov/scholarship-idaho/idaho-opportunity-scholarship",
+    "award": {
+      "min": null,
+      "max": 3500,
+      "text": "Up to $3,500 a year, renewable for up to 4 years"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "ID",
+      "min_gpa": 2.7,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Idaho resident who graduated (or will) from an Idaho high school, Idaho home school, or GED/HSE in Idaho. Certificate, first associate or first bachelor's at an eligible Idaho college, starting in fall. Ranked 70% on need (SAI) and 30% on GPA. You can't apply for both this and Idaho LAUNCH. Renew with a 2.7 GPA and 30 credits a year."
+    },
+    "description": "Idaho's main need-based scholarship for students who finished high school in Idaho. You need at least a 2.7 unweighted GPA, and awards go to students with the most need. Apply through Scholarship Idaho and file the FAFSA, both by March 1, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "id-opportunity-adult-learners",
+    "title": "Idaho Opportunity Scholarship for Adult Learners",
+    "sponsor": "Idaho State Board of Education",
+    "sponsor_type": "state",
+    "url": "https://nextsteps.idaho.gov/scholarship-idaho/idaho-opportunity-scholarship-for-adult-learners",
+    "award": {
+      "min": null,
+      "max": 3500,
+      "text": "Up to $3,500 a year, renewable for up to 4 years"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "adult"
+    ],
+    "rules": {
+      "state": "ID",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Idaho resident with an Idaho high school, home school or GED/HSE. Earned 24+ college credits before stopping, not enrolled now, and no more than 2 classes in the last 24 months. Return at least part-time (6+ credits) at an eligible Idaho college for a certificate, associate or first bachelor's. FAFSA due Dec 1 (spring), April 15 (summer), July 1 (fall)."
+    },
+    "description": "Helps Idaho adults who stopped college go back and finish. You need at least 24 college credits already, a 2.5 GPA, and a break of about two years. Apply through Scholarship Idaho and file the FAFSA by the date for the term you start.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "id-launch",
+    "title": "Idaho LAUNCH Grant",
+    "sponsor": "Idaho Workforce Development Council",
+    "sponsor_type": "state",
+    "url": "https://nextsteps.idaho.gov/launch",
+    "award": {
+      "min": null,
+      "max": 8000,
+      "text": "80% of tuition and fees up to $8,000; up to $4,000 in the first year of longer programs"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-15"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "ID",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For the current graduating class of an Idaho public, charter, private or home school, or GED program, under 21 by April 15. Idaho resident. Eligible Idaho program tied to in-demand careers; start by fall after graduation. Priority deadline Nov 30; Career Pathway Plan due May 31. Can't also apply for the Opportunity Scholarship. FAFSA not required."
+    },
+    "description": "A one-time grant for Idaho high school seniors to train for in-demand jobs after graduation, at a trade school, 2-year or 4-year college in Idaho. It pays 80% of tuition and fees, up to $8,000. Apply through Scholarship Idaho between October 1 and April 15; apply by November 30 for priority. DACA students without a Social Security number can apply using a TIN.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "id-armed-forces-pso-dependent",
+    "title": "Armed Forces and Public Safety Officer Dependent Scholarship",
+    "sponsor": "Idaho State Board of Education",
+    "sponsor_type": "state",
+    "url": "https://nextsteps.idaho.gov/scholarship-idaho/armed-forces-and-pso-dependent-scholarship",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and fees waived, plus up to $750 a semester for books, on-campus housing and meals"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "07-01"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "ID",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Child or spouse of an Idaho military member or public safety officer (police, firefighter, paramedic, EMT) who was killed, went missing, became a POW, or became totally disabled in the line of duty. Idaho resident with Idaho high school, home school or GED/HSE. Eligible Idaho college. Deadlines: fall July 1, spring Dec 1, summer April 15."
+    },
+    "description": "Covers college costs at Idaho schools for children and spouses of Idaho service members or public safety officers who died, went missing or were permanently disabled in the line of duty. It pays tuition and fees, books, and on-campus housing and meals for up to four years of undergraduate study.",
+    "checked_at": "2026-09-29"
+  }
+]
