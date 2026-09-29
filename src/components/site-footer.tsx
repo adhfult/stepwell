@@ -22,8 +22,9 @@ export function SiteFooter() {
           </li>
         </ul>
         <p className="mt-3 text-sm text-muted">
-          Data from the U.S. Department of Labor (O*NET), the U.S. Department of Education (College Scorecard) and
-          official state and federal program pages. Free, with no ads and no tracking.
+          Data from the U.S. Department of Labor (O*NET), the U.S. Department of Education (College Scorecard), USAJOBS
+          (U.S. Office of Personnel Management) and official state and federal program pages. Free, with no ads and no
+          tracking.
         </p>
       </div>
     </footer>
