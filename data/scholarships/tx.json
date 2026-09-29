@@ -1,0 +1,229 @@
+[
+  {
+    "id": "tx-texas-grant",
+    "title": "TEXAS Grant (Toward EXcellence, Access, and Success)",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.hhloans.com/types-of-financial-aid/toward-excellence-access-and-success-grant-program-texas-grant/",
+    "award": {
+      "min": null,
+      "max": 16197,
+      "text": "Up to $5,399 per term in 2026-27 (fall, spring, summer); your school sets the amount"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-15"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have financial need, attend a Texas public university at least 3/4 time, and have no bachelor's degree. Most students start within 16 months of finishing a Texas high school (home school counts). Transfer, associate degree, and military discharge routes also exist. Texas residents who are not U.S. citizens can apply with the TASFA."
+    },
+    "description": "A need-based grant for Texas residents at Texas public universities. You apply by filling out the FAFSA, or the TASFA if you can't use the FAFSA, and your college's financial aid office decides if you get it. Students who were in the top 25% of their high school class or have high financial need get priority. Money is limited, so apply early; January 15 is the state priority date. You can keep it in later years if you meet your school's grade and progress rules.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-teog",
+    "title": "Texas Educational Opportunity Grant (TEOG)",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.hhloans.com/types-of-financial-aid/texas-educational-opportunity-grant-program-teog/",
+    "award": {
+      "min": null,
+      "max": 11688,
+      "text": "Up to $2,134 per term at community colleges in 2026-27; up to $3,896 at technical colleges"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-15"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have financial need, be enrolled at least half time at a Texas public community college, state college, or technical college, have no prior associate or bachelor's degree, and not have tried more than 30 college credit hours when first awarded (dual credit does not count). Texas residents who are not U.S. citizens can apply with the TASFA."
+    },
+    "description": "A need-based grant for Texas residents at public two-year colleges, like community colleges and technical colleges. You apply by filling out the FAFSA, or the TASFA if you can't use the FAFSA, and the college's financial aid office decides who gets it. Students in the top 25% of their high school class or with high need get priority. Funding is limited, so apply by January 15 if you can. After two-year college, TEOG students can move on to a TEXAS Grant at a university.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-tuition-equalization-grant",
+    "title": "Tuition Equalization Grant (TEG)",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.hhloans.com/types-of-financial-aid/tuition-equalization-grant-program-teg/",
+    "award": {
+      "min": null,
+      "max": 6405,
+      "text": "Up to $4,270 a year in 2026-27, or up to $6,405 for students with very high need"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-15"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate",
+      "adult"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For private nonprofit colleges in Texas only. Must have financial need, enroll at least 3/4 time in a first degree, and not get an athletic scholarship in the same term. Religious ministry degrees are not covered. Texas residents who are not U.S. citizens can apply with the TASFA."
+    },
+    "description": "A need-based grant that helps Texas residents afford private nonprofit colleges and universities in Texas, where tuition costs more than at public schools. It works for undergraduate and graduate degrees. You apply by filling out the FAFSA, or the TASFA if you can't use the FAFSA, and the college's financial aid office decides who gets it. Money is limited, and priority may go to students who apply by January 15.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-texas-first-scholarship",
+    "title": "Texas First Scholarship",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.highered.texas.gov/the-texas-first-program/",
+    "award": {
+      "min": null,
+      "max": 10798,
+      "text": "Up to $10,798 if you finish high school 2+ semesters early, or $5,399 if less (2026-27)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must graduate early with a Texas First Diploma: at least 22 credits, required STAAR exams, a score in the top 20% (80th percentile) on the SAT, ACT, PSAT/NMSQT, TSIA, or GED or be in the top 10% of your class, and skill in five subjects including a language other than English. Must use it at a Texas public college in the first academic year after you graduate."
+    },
+    "description": "A merit scholarship for high-achieving Texas students who finish high school early through the Texas First program. If you graduate two or more semesters early you get money equal to a full year of the TEXAS Grant; if you graduate one semester early you get half. You can use it at any Texas public college, university, or technical college that admits you. Ask your school counselor about it early, because the counselor confirms you qualify. It expires after your first college year.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-hazlewood-legacy",
+    "title": "Hazlewood Act Exemption (Legacy and Dependent Children)",
+    "sponsor": "Texas Veterans Commission",
+    "sponsor_type": "state",
+    "url": "https://tvc.texas.gov/education/hazlewood/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Free tuition and most fees for up to 150 credit hours at Texas public colleges"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Parent must be a veteran who entered service from Texas, served more than 180 days of active duty, got an honorable or general discharge, and lives in Texas. Legacy children must be 25 or younger. Children of veterans who died, went missing, or are 100% disabled from service may get their own 150 hours. Only one child uses a parent's hours at a time. Public colleges only; books and housing not covered."
+    },
+    "description": "A Texas benefit that lets a qualifying veteran parent pass their unused tuition-free credit hours to a child. It covers tuition and most fees at Texas public colleges and universities, for undergraduate or graduate study, but not books, supplies, or living costs. You apply through your college with a form, your parent's DD214, and a Hazlewood account on the Texas Veterans Commission site. Your college sets the deadline for each term. Financial need does not matter.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-nursing-students-scholarship",
+    "title": "Nursing Students Scholarship",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.highered.texas.gov/student-financial-aid-programs/work-study-scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Per term, up to your school's TEXAS Grant, TEOG, or TEG limit (e.g. $5,399 at public universities in 2026-27)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [
+        "51"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be enrolled at least half time in a professional or vocational nursing program at a participating Texas college, have financial need, and keep up your school's academic progress rules. Priority goes to past recipients, students with the most need, and students not yet licensed as a registered nurse. Texas residents who are not U.S. citizens can apply with the TASFA."
+    },
+    "description": "A need-based scholarship for Texas residents who are studying to become nurses, in vocational (LVN) or professional (RN) nursing programs. Your college's financial aid office picks who gets it, using your FAFSA or TASFA. Only colleges that take part in the program can offer it, so ask your nursing school's financial aid office how to be considered. You can get it along with a TEXAS Grant or TEOG.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "tx-foster-care-tuition-exemption",
+    "title": "Tuition Exemption for Current and Former Foster Youth",
+    "sponsor": "Texas Higher Education Coordinating Board",
+    "sponsor_type": "state",
+    "url": "https://www.hhloans.com/types-of-financial-aid/tuition-exemptions-related-to-individuals-currently-or-formerly-in-foster-care-in-texas/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Free tuition and many fees at Texas public colleges and universities"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate",
+      "adult"
+    ],
+    "rules": {
+      "state": "TX",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For youth who are or were under the conservatorship (legal care) of the Texas Department of Family and Protective Services (DFPS), or who were adopted from DFPS, and who meet DFPS program rules. DFPS confirms who qualifies with Form 1810. Must meet the enrollment rules before age 27 (some adopted students have no age limit). You do not need to be a Texas resident or show financial need."
+    },
+    "description": "Students who are or were in the legal care of Texas DFPS (foster care), or were adopted from DFPS, may go to Texas public colleges and universities without paying tuition or many fees. It works for undergraduate and graduate study. There is no need test and no yearly reapplication. After you are admitted, ask DFPS staff for Form 1810 to check if you qualify, then turn it in to your college. Many colleges have a foster care liaison who can help.",
+    "checked_at": "2026-09-28"
+  }
+]

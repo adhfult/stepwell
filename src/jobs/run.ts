@@ -14,6 +14,7 @@ import { readOnet } from "./sources/onet.ts";
 import { readOnetCip } from "./sources/onet-cip.ts";
 import { readOnetIp } from "./sources/onet-ip.ts";
 import { OUTLOOK_DELAY_MS, readOnetOutlook } from "./sources/onet-outlook.ts";
+import { readOfficialList } from "./sources/official-list.ts";
 import { readScorecard, SCORECARD_DELAY_MS } from "./sources/scorecard.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
@@ -35,6 +36,7 @@ const ADAPTERS: Record<string, Adapter> = {
   onet_cip: { kind: "occupation_program", read: (fetcher) => readOnetCip(fetcher) },
   onet_ip: { kind: "interest_question", read: readOnetIp, minDelayMs: OUTLOOK_DELAY_MS },
   onet_outlook: { kind: "occupation_outlook", read: readOnetOutlook, minDelayMs: OUTLOOK_DELAY_MS },
+  official_list: { kind: "scholarship", read: () => readOfficialList() },
   scorecard: { kind: "institution", read: readScorecard, minDelayMs: SCORECARD_DELAY_MS },
 };
 

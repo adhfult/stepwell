@@ -1,0 +1,297 @@
+[
+  {
+    "id": "pa-state-grant",
+    "title": "PA State Grant",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/grants/state-grant-program",
+    "award": {
+      "min": null,
+      "max": 6000,
+      "text": "Up to $6,000 a year (2026-27), based on need; much less at most out-of-state schools"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "05-01"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must have lived in Pennsylvania for at least 12 months, have no bachelor's degree, and enroll at least half-time in an approved program at least 2 years long"
+    },
+    "description": "Pennsylvania's main grant for college, based on how much money your family has. You apply by filing the FAFSA, then finishing a short form in PHEAA's GrantUs site. Most students must file by May 1 before the school year. If you are going to a community college, trade school, or other open-admission school, the deadline is August 1. You can use it at approved Pennsylvania schools. It pays at most $600 at approved schools in some other states.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-ready-to-succeed-scholarship",
+    "title": "PA Ready to Succeed Scholarship (RTSS)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/other-educational-aid/rtss",
+    "award": {
+      "min": 500,
+      "max": 3000,
+      "text": "$500 to $3,000 a year full-time, up to $1,500 part-time (2026-27)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Your college must take part and nominate you; family income of $208,000 or less; at least 24 credits already earned"
+    },
+    "description": "Extra money for Pennsylvania college students with good grades who have finished at least one year of college. There is no separate application. You file the FAFSA and the PA State Grant forms, and a participating college nominates you. Money runs out on a first-come, first-served basis by the date you finished those forms, so file the FAFSA early.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-targeted-industry-program",
+    "title": "PA Targeted Industry Program (PA-TIP)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/pa-tip",
+    "award": {
+      "min": null,
+      "max": 6000,
+      "text": "Up to $6,000 a year or your unmet need, whichever is less"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-05-01"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [
+        "01",
+        "11",
+        "13",
+        "15",
+        "30",
+        "47",
+        "49",
+        "51",
+        "52"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Your exact program must be on PHEAA's PA-TIP list and last from 10 weeks to under 2 years; you cannot also get a PA State Grant for it; separate PA-TIP application"
+    },
+    "description": "Help for Pennsylvania students in shorter job training programs, from 10 weeks to under 2 years long, in energy, health, manufacturing, or farming and food. You file the FAFSA and send PHEAA a PA-TIP application. It is based on need, and money goes first-come, first-served by the date your application arrives. For 2026-27 the application was due May 1, 2027.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-grow-pa-scholarship-grant",
+    "title": "Grow PA Scholarship Grant",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/grow-pa-scholarship-grant-program",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year, for up to 4 years"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-07"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [
+        "01",
+        "03",
+        "04",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "19",
+        "22",
+        "23",
+        "26",
+        "27",
+        "30",
+        "31",
+        "40",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "54"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Your exact major must be on PHEAA's Grow PA list; after school you must live and work in Pennsylvania in an in-demand job one year for each year of the grant, or repay it"
+    },
+    "description": "A grant for Pennsylvania students working toward an associate or bachelor's degree at a Pennsylvania school in a major that leads to an in-demand job, like nursing, teaching, computer science, or farming. After you graduate you must live and work in Pennsylvania in one of those jobs, one year for each year you got the grant. If you don't, you must pay the grant back. Apply to PHEAA with a separate form; awards go first-come, first-served.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-path-program",
+    "title": "PA Partnerships for Access to Higher Education (PATH)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/other-educational-aid/path",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year, added to a scholarship from a PATH partner"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "You must first win a scholarship from a PHEAA PATH partner group, which nominates you; you must also get a PA State Grant and attend a Pennsylvania school"
+    },
+    "description": "Extra grant money for Pennsylvania undergraduates who already won a scholarship from a nonprofit group that partners with PHEAA. You cannot apply on your own. You file the FAFSA, get a PA State Grant, and the partner group nominates you. PHEAA keeps a list of partner groups on its site, so check whether one works in your area.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-chafee-education-training-grant",
+    "title": "Chafee Education and Training Grant (Chafee ETG)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA) for the PA Department of Human Services",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/other-educational-aid/chafee-program",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 a year (2026-27)"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-31"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For youth who were in foster care at age 16 or older, or left it for adoption or guardianship after 16; must be under 26 on July 1 of the school year"
+    },
+    "description": "A grant for Pennsylvania students who have been in foster care, to help pay for college or career school. You need to have been in foster care at 16 or older, or been adopted or placed with a guardian after turning 16. File the FAFSA and mail or fax PHEAA a Chafee application. When you apply, PHEAA also checks if you qualify for a tuition waiver for foster youth. For 2026-27 the deadline was March 31, 2027.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-postsecondary-educational-gratuity",
+    "title": "PA Postsecondary Educational Gratuity Program (PEGP)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA)",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/other-educational-aid/postsecondary-educational-gratuity",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers remaining tuition, fees, and on-campus room and board at public PA colleges"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-31"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Your parent was a police officer, firefighter, rescue worker, corrections worker, National Guard member, or on active military duty who died doing their job; age 25 or under; full-time at a public PA college"
+    },
+    "description": "For children of Pennsylvania police officers, firefighters, ambulance workers, and some others, including military members, who died because of their job. It pays the tuition, fees, and on-campus housing and meals left after other grants, at Pennsylvania community colleges and state-owned or state-related universities. You must be 25 or younger when you apply and go full-time. Send PHEAA the application, a birth certificate, and your admission letter by March 31.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "pa-national-guard-military-family-education",
+    "title": "PA National Guard Military Family Education Program (MFEP)",
+    "sponsor": "Pennsylvania Higher Education Assistance Agency (PHEAA) with the PA Department of Military and Veterans Affairs",
+    "sponsor_type": "state",
+    "url": "https://www.pheaa.org/funding-opportunities/aid-for-military-national-guard/military-family-education",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and technology fee, up to the rate at a PA state-owned university, for up to 5 years"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "graduate",
+      "adult"
+    ],
+    "rules": {
+      "state": "PA",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "Your parent or spouse in the PA National Guard must sign up for 6 more years and assign this benefit to you; children must use it before age 26; school must be an approved PA school"
+    },
+    "description": "Pays tuition for the spouse or child of a Pennsylvania National Guard member who signs up to serve 6 more years. The Guard member applies first and chooses which family members get the benefit. Then the family member applies through a PHEAA online account. It can be used for a degree or career certificate at an approved Pennsylvania school. If the Guard member does not finish the 6 years, the money must be paid back.",
+    "checked_at": "2026-09-28"
+  }
+]

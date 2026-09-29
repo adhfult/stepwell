@@ -1,0 +1,298 @@
+[
+  {
+    "id": "ny-tuition-assistance-program",
+    "title": "Tuition Assistance Program (TAP)",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/tuition-assistance-program-tap",
+    "award": {
+      "min": 1000,
+      "max": 5665,
+      "text": "$1,000 to $5,665 a year toward tuition, based on family income and tuition cost"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Lived in New York for 12 months in a row. Family NY net taxable income of $125,000 or less for dependent students ($60,000 for married students with no dependents, $30,000 for single independent students). Must attend an approved New York college, full-time (12+ credits), and stay in good academic standing."
+    },
+    "description": "TAP is New York's main grant for college tuition, and you do not pay it back. How much you get depends on your family's income, how many family members are in college, and your tuition. You apply through the FAFSA and then the TAP application, every year. The last day is June 30 at the end of the school year you want aid for, but apply early. You must study at an approved college in New York. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-part-time-tap",
+    "title": "Part-Time Tuition Assistance Program (Part-Time TAP)",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/part-time-tuition-assistance-program-tap",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "A part of a full TAP award ($1,000 to $5,665), based on how many credits you take"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "06-30"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Lived in New York for 12 months in a row. Same income limits as TAP ($125,000 NY net taxable income for dependent students). Take 3 to 11 credits per semester in a degree program at a SUNY, CUNY, private or for-profit degree college in New York, and keep a cumulative C average."
+    },
+    "description": "Part-Time TAP is the TAP grant for students who take fewer than 12 credits a semester, like people who work while in college. The award is a share of a regular TAP award, based on your credits, and you do not pay it back. You apply through the FAFSA and the TAP application each year. Students without legal status can qualify through the NYS DREAM Act application.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-excelsior-scholarship",
+    "title": "Excelsior Scholarship",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/excelsior-scholarship-program",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers the tuition left after other grants at a SUNY or CUNY college"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Household federal adjusted gross income of $125,000 or less. Must attend a SUNY or CUNY college full-time and finish at least 30 credits each year without breaks. After college you must live in New York (and work in New York if you work) for as many years as you got the award, or it turns into a loan."
+    },
+    "description": "Excelsior lets students from families earning $125,000 or less go to a SUNY or CUNY college without paying tuition. It pays the tuition left after Pell, TAP and other grants. You must stay full-time and earn 30 credits a year. After college you must live in New York for as many years as you got it, or part becomes a loan. The application usually opens in May and closes in August. File the FAFSA and TAP application too. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-enhanced-tuition-award",
+    "title": "Enhanced Tuition Award (ETA)",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/enhanced-tuition-award-eta",
+    "award": {
+      "min": null,
+      "max": 6000,
+      "text": "Up to $6,000 a year toward tuition, combined with TAP and a match from the college"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Household federal adjusted gross income of $125,000 or less. Must attend a participating private college in New York full-time and finish at least 30 credits each year. After college you must live in New York (and work in New York if you work) for as many years as you got the award, or it turns into a loan."
+    },
+    "description": "The Enhanced Tuition Award helps students from families earning $125,000 or less pay tuition at certain private colleges in New York. Together with TAP and money from the college, it gives up to $6,000 a year. You must stay full-time and earn 30 credits a year. After you graduate you must live in New York for as many years as you got it, or it becomes a loan. You also file the FAFSA and TAP application. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-scholarships-for-academic-excellence",
+    "title": "NYS Scholarships for Academic Excellence",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/SAE",
+    "award": {
+      "min": 500,
+      "max": 1500,
+      "text": "$500 or $1,500 a year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Your New York high school nominates you based on your grades on certain Regents exams. Lived in New York for 12 months in a row. Must start full-time at a New York college in the fall after graduating. No income limit."
+    },
+    "description": "This scholarship rewards top students at New York high schools with $500 or $1,500 a year for college in New York. You do not apply on your own: your high school picks students based on Regents exam grades, so ask your school counselor about it and its deadline. You need to go to college full-time in New York the fall after you graduate, and file the FAFSA and TAP application each year. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-stem-incentive-program",
+    "title": "NYS Science, Technology, Engineering and Mathematics (STEM) Incentive Program",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/nys-science-technology-engineering-and-mathematics-stem-incentive",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers tuition at SUNY or CUNY, up to the SUNY in-state rate, minus TAP"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-15"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [
+        "01",
+        "03",
+        "11",
+        "14",
+        "15",
+        "26",
+        "27",
+        "30",
+        "40",
+        "41"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must rank in the top 10% of your New York high school class and apply in senior year. Must start at a SUNY or CUNY college the fall right after high school, in an approved STEM major, full-time, and keep a 2.5 college GPA. After college you must live in New York and work in an approved STEM job for 5 years, or the award becomes a loan with interest. No income limit."
+    },
+    "description": "For New York seniors in the top 10% of their class who plan to study science, technology, engineering or math at SUNY or CUNY. It pays your tuition, up to the SUNY in-state rate, after TAP. You apply in senior year and start college that fall. In return you must live in New York and work in an approved STEM job for 5 years after college, or you repay it as a loan. You also file the FAFSA and TAP application. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-math-and-science-teaching-incentive",
+    "title": "NYS Math and Science Teaching Incentive Program",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/nys-math-and-science-teaching-incentive-program",
+    "award": {
+      "min": null,
+      "max": 7070,
+      "text": "Up to $7,070 a year (2026-27 amount) or your tuition, whichever is less"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [
+        "13"
+      ],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Full-time in an approved New York college program that leads to teaching math or science in grades 7 to 12. Returning recipients need a 2.5 GPA. After school you must teach math or science full-time in a New York middle or high school for 5 years, or the award becomes a loan with interest. Limited funds. No income limit."
+    },
+    "description": "For college and graduate students training to become math or science teachers for grades 7 to 12. It pays up to the SUNY in-state tuition rate each year, at public or private colleges in New York. In return you must teach math or science full-time in New York for 5 years, starting within 2 years of finishing, or you repay it as a loan. Money is limited; past winners come first. File the FAFSA and TAP application too. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-merit-scholarship",
+    "title": "Military Enhanced Recognition Incentive and Tribute (MERIT) Scholarship",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/merit",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers college costs, up to the average cost of attendance at a SUNY state-operated college"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": true,
+      "other": "For children, spouses and dependents of U.S. military or state militia members who were New York residents and died, went missing in action, or became severely and permanently disabled because of their military duties. Disabled service members themselves can also apply. Must attend college full-time in an approved program. No income limit."
+    },
+    "description": "MERIT helps families of New York service members who died, went missing in action, or became severely and permanently disabled while doing their military duties. Their children, spouses and dependents, and the disabled service members themselves, can get help paying for college, up to the average cost at a SUNY college. You can apply any time of year with an online form and documents, after filing the FAFSA and TAP application. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "ny-memorial-scholarship",
+    "title": "NYS Memorial Scholarship",
+    "sponsor": "NYS Higher Education Services Corporation (HESC)",
+    "sponsor_type": "state",
+    "url": "https://hesc.ny.gov/find-aid/nys-grants-scholarships/nys-memorial-scholarship",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers college costs, up to the average cost of attendance at a SUNY state-operated college"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "NY",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For children, spouses and dependents of firefighters, volunteer firefighters, police officers, peace officers (including NYS correction officers) or EMS workers who died from injuries on duty serving New York. Must attend an approved New York college full-time in an undergraduate program. No income limit."
+    },
+    "description": "This scholarship helps the families of New York firefighters, police officers, peace officers and emergency medical workers who died because of injuries on the job. Their children, spouses and dependents can get help paying for college in New York, up to the average cost at a SUNY college. You can apply any time of year with a web form, after filing the FAFSA and TAP application. Students without legal status can qualify through the NYS DREAM Act.",
+    "checked_at": "2026-09-28"
+  }
+]

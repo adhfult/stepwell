@@ -1,0 +1,630 @@
+[
+  {
+    "id": "us-federal-pell-grant",
+    "title": "Federal Pell Grant",
+    "sponsor": "U.S. Department of Education",
+    "sponsor_type": "federal",
+    "url": "https://studentaid.gov/understand-aid/types/grants/pell",
+    "award": {
+      "min": null,
+      "max": 7395,
+      "text": "Up to $7,395 for 2026-27, based on financial need"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For undergraduates who have not earned a bachelor's degree. Can be received for up to 12 full-time terms (about six years)."
+    },
+    "description": "Money from the government for college that you do not have to pay back. It goes mostly to undergraduates with high financial need. To get it, file the FAFSA; your college uses it to decide if you qualify and how much you get. If your parent died while serving on active duty in the U.S. armed forces or as a public safety officer, you may qualify for the maximum amount.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-fseog",
+    "title": "Federal Supplemental Educational Opportunity Grant (FSEOG)",
+    "sponsor": "U.S. Department of Education",
+    "sponsor_type": "federal",
+    "url": "https://studentaid.gov/understand-aid/types/grants/fseog",
+    "award": {
+      "min": 100,
+      "max": 4000,
+      "text": "$100 to $4,000 a year, based on financial need and school funds"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For undergraduates with exceptional financial need. Only at colleges that take part, and money is limited, so applying early helps."
+    },
+    "description": "A grant for undergraduates with very high financial need. You do not pay it back. File the FAFSA so your college can see your need; the financial aid office gives FSEOG to the students who need it most. How much you get depends on your need, when you apply, your other aid, and how much money your school has.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-teach-grant",
+    "title": "TEACH Grant",
+    "sponsor": "U.S. Department of Education",
+    "sponsor_type": "federal",
+    "url": "https://studentaid.gov/understand-aid/types/grants/teach",
+    "award": {
+      "min": null,
+      "max": 4000,
+      "text": "Up to $4,000 a year for students preparing to teach"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [
+        "13"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must sign an agreement to teach full time for 4 years in a high-need field at a low-income school within 8 years of leaving school. If you do not, it turns into a loan you must repay. GPA of 3.25 or a high admissions test score. A 3.25 GPA, or a high enough admissions test score."
+    },
+    "description": "For students taking classes to become teachers. You agree to teach a high-need subject at a school serving low-income students for four years. If you do not finish the teaching, the grant becomes a loan with interest. File the FAFSA and ask your college's financial aid office if your program is TEACH-eligible.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-noaa-hollings-scholarship",
+    "title": "Ernest F. Hollings Undergraduate Scholarship",
+    "sponsor": "National Oceanic and Atmospheric Administration (NOAA)",
+    "sponsor_type": "federal",
+    "url": "https://www.noaa.gov/office-education/hollings-scholarship",
+    "award": {
+      "min": null,
+      "max": 9500,
+      "text": "Up to $9,500 a year for 2 years, plus a paid summer internship ($700 a week)"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-31"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be a full-time 2nd-year student in a 4-year program (or equivalent) when applying. Majors include ocean, environmental, biological and atmospheric sciences, math, engineering, computing, physical and social sciences, among others."
+    },
+    "description": "A NOAA scholarship for college sophomores interested in ocean, weather, climate, and environmental science, plus related fields. It pays up to $9,500 a year for your last two years of college and includes a 10-week paid summer internship at a NOAA facility. You need at least a 3.0 GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-dod-smart-scholarship",
+    "title": "SMART Scholarship-for-Service Program",
+    "sponsor": "U.S. Department of War (Defense)",
+    "sponsor_type": "federal",
+    "url": "https://www.smartscholarship.org/smart",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition plus a yearly stipend of $30,000 to $46,000, depending on degree level"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-12-04"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.0,
+      "fields": [
+        "14",
+        "11",
+        "26",
+        "27",
+        "40",
+        "42",
+        "30"
+      ],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Also open to citizens of Australia, Canada, New Zealand and the UK. Must be 18 by Jan 1, 2028 and able to get a security clearance. Work one year as a Department of War civilian employee for each year of funding. Summer internships required for awards over 1.5 years."
+    },
+    "description": "A STEM scholarship for engineering, computer science, math, physics, chemistry, biology and similar fields. It pays full tuition and a yearly stipend, and after you graduate you get a civilian job with the Department of War. High school seniors starting a bachelor's degree in fall 2027 can apply. The application runs from August 1 to the first Friday in December.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-army-rotc-scholarship",
+    "title": "Army ROTC Scholarship",
+    "sponsor": "U.S. Army",
+    "sponsor_type": "federal",
+    "url": "https://www.goarmy.com/careers-and-jobs/find-your-path/army-officers/rotc/scholarships",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition and fees (or room and board), $1,200 a year for books, $420 a month"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-10-12"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Unweighted high school GPA of at least 2.50, SAT or ACT, and passing fitness and medical checks. Age 17 to under 31 in the year you become an officer. Eight-year Army service obligation (active duty and/or reserve)."
+    },
+    "description": "Pays for college if you train to become an Army officer while in school. High school students who have finished junior year can apply for a 4-year scholarship; college students can get 2, 3 or 4-year scholarships. The 2026-27 cycle has three rounds: October 12, 2026, January 18, 2027 and March 8, 2027. You can leave after freshman year with no obligation.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-navy-nrotc-scholarship",
+    "title": "Navy and Marine Corps NROTC Scholarship",
+    "sponsor": "U.S. Navy",
+    "sponsor_type": "federal",
+    "url": "https://www.netc.navy.mil/Commands/Naval-Service-Training-Command/NROTC/Prospective-Midshipmen/Scholarship-and-Non-Scholarship-Options/Four-Year-National-Scholarship/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition and fees (or room and board up to $11,500), $750 a year for books, $250 to $400 a month"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "U.S. citizen or in the process of naturalizing. For the 4-year scholarship, age 17 to under 23 by September 1 of your first college year. Serve at least 5 years active duty (Navy) or 4 years (Marine Corps or Navy Nurse Corps)."
+    },
+    "description": "Pays for college while you train to become a Navy or Marine Corps officer. High school students apply for the 4-year scholarship; 2 and 3-year scholarships exist for college students. The application for fall 2027 is open now, and the Navy says the deadline is the end of January. You also get uniforms and summer training cruises.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-air-force-rotc-high-school-scholarship",
+    "title": "Air Force ROTC High School Scholarship",
+    "sponsor": "U.S. Department of the Air Force",
+    "sponsor_type": "federal",
+    "url": "https://www.afrotc.com/scholarships/high-school/requirements/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition help (capped or uncapped) or housing up to $10,000 a year, $900 for books, $300 to $500 a month"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.3,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Unweighted GPA of 3.3 or higher and SAT 1310, ACT 28 or CLT 93. Must be a citizen by the end of your first college term. Serve at least 4 years on active duty as an Air Force or Space Force officer."
+    },
+    "description": "Pays for college while you train to become an officer in the Air Force or Space Force. High school students who have finished junior year can apply. The 2026 application window runs July 1 to December 11, 2026. The exact scholarship type and tuition amount are decided when you are offered one.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-cybercorps-scholarship-for-service",
+    "title": "CyberCorps Scholarship for Service",
+    "sponsor": "National Science Foundation and U.S. Office of Personnel Management",
+    "sponsor_type": "federal",
+    "url": "https://sfs.opm.gov/Student/Information",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and fees, plus $27,000 a year (undergrad) or $37,000 (grad), and $6,000 for professional costs"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [
+        "11",
+        "43"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "U.S. citizen or lawful permanent resident. Full-time in a cybersecurity program at a participating college, within 3 years of graduating. Apply through the college. Work for the government in cybersecurity for as long as the scholarship lasted."
+    },
+    "description": "A scholarship for students studying cybersecurity at a participating college. It covers tuition and fees and pays a yearly stipend for up to three years. You must do a summer internship, and after graduating you work in a government cybersecurity job for as many years as you were funded. You apply through your college, and each college sets its own deadline.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-nih-undergraduate-scholarship",
+    "title": "NIH Undergraduate Scholarship Program (UGSP)",
+    "sponsor": "National Institutes of Health",
+    "sponsor_type": "federal",
+    "url": "https://www.training.nih.gov/research-training/pb/ugsp/",
+    "award": {
+      "min": null,
+      "max": 20000,
+      "text": "Up to $20,000 a year for tuition and living costs, renewable each year"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [
+        "26",
+        "42",
+        "45",
+        "51"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "U.S. citizen or permanent resident. GPA of 3.3 or top 5% of your class. Exceptional financial need certified by your college's aid office. For each year of support: a 10-week paid summer internship at NIH plus one year of paid work at NIH after graduation. A 3.3 GPA, or the top 5% of your class."
+    },
+    "description": "A need-based scholarship for students who want careers in biomedical, behavioral or social science research. Students accepted to or enrolled full time at a four-year college can apply. Each year of support comes with a paid summer internship at NIH and one year of paid work at NIH after you graduate (you can finish a graduate degree first).",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-usda-1890-national-scholars",
+    "title": "USDA 1890 National Scholars Program",
+    "sponsor": "U.S. Department of Agriculture",
+    "sponsor_type": "federal",
+    "url": "https://www.usda.gov/usda-1890-national-scholars-program",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full tuition, fees, books, room and board, plus a summer internship"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.0,
+      "fields": [
+        "01",
+        "03",
+        "26",
+        "19",
+        "11"
+      ],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must attend one of the 19 historically Black 1890 land-grant universities. ACT 21 or SAT 1080. Study agriculture, food, natural resources or a related field (such as economics, computer science or accounting). The internship may lead to a USDA job after graduation."
+    },
+    "description": "Covers the full cost of college for students at one of the nineteen 1890 land-grant universities who study agriculture, food, natural resources or a related field. High school seniors and rising college sophomores and juniors can apply. It can be renewed each year if your grades stay good. The last application closed March 8, 2026.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-gilman-scholarship",
+    "title": "Benjamin A. Gilman International Scholarship",
+    "sponsor": "U.S. Department of State",
+    "sponsor_type": "federal",
+    "url": "https://www.gilmanscholarship.org/applicants/eligibility/",
+    "award": {
+      "min": null,
+      "max": 5000,
+      "text": "Up to $5,000 for study or internship abroad, plus up to $3,000 more for critical languages"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-10-01"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must receive a Federal Pell Grant. Must be applying to or accepted into a credit-bearing study abroad or internship program. You can only receive it once."
+    },
+    "description": "Helps undergraduates who get the Pell Grant pay to study or intern in another country. Awards go up to $5,000, with extra money for students learning a critical need language or in STEM. The next deadline is October 1, 2026 at 11:59 p.m. Pacific Time.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-critical-language-scholarship",
+    "title": "Critical Language Scholarship (CLS) Program",
+    "sponsor": "U.S. Department of State",
+    "sponsor_type": "federal",
+    "url": "https://clscholarship.org/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers tuition, travel, housing and meals for an overseas summer language program"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be at least 18 and enrolled in a U.S. degree program (associate, bachelor's or graduate) when you apply."
+    },
+    "description": "A fully funded summer program where college and graduate students live abroad and study a language the U.S. considers important. The program pays for the main costs, including tuition, travel, housing and meals. The application for the 2027 program opens in fall 2026, and the deadline is in November.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-boren-scholarship",
+    "title": "Boren Scholarship",
+    "sponsor": "National Security Education Program (U.S. Department of War)",
+    "sponsor_type": "federal",
+    "url": "https://www.borenawards.org/eligible-programs",
+    "award": {
+      "min": 8000,
+      "max": 25000,
+      "text": "$8,000 to $25,000 depending on how long you study abroad"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-27"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "At least 18. Study outside Western Europe, Canada, Australia and New Zealand for at least 12 weeks (8 weeks for STEM majors in summer). Must agree to work for the federal government in a national security role after graduating."
+    },
+    "description": "Pays undergraduates to study a language and culture abroad in places important to U.S. national security. Longer programs get more money (up to $25,000 for 25 to 52 weeks). In return, you agree to work for the federal government in a national security role after college.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-truman-scholarship",
+    "title": "Harry S. Truman Scholarship",
+    "sponsor": "Harry S. Truman Scholarship Foundation",
+    "sponsor_type": "federal",
+    "url": "https://www.truman.gov/apply/applying/eligibility",
+    "award": {
+      "min": null,
+      "max": 30000,
+      "text": "Up to $30,000 for graduate school"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-02"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be nominated by your college (check your campus deadline, which is earlier). Must be in your third year (or last year if finishing in three years) and plan a career in public service."
+    },
+    "description": "For college juniors who plan to go to graduate school and then work in public service, like government, nonprofits, or schools. Scholars get up to $30,000 for graduate school plus leadership programs. You apply through your college, which nominates you. The national deadline is February 2, 2027.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-goldwater-scholarship",
+    "title": "Barry Goldwater Scholarship",
+    "sponsor": "Barry Goldwater Scholarship and Excellence in Education Foundation",
+    "sponsor_type": "federal",
+    "url": "https://goldwaterscholarship.gov/students/overview/",
+    "award": {
+      "min": null,
+      "max": 7500,
+      "text": "Up to $7,500 a year for tuition, fees, books, housing and meals"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-29"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.0,
+      "fields": [
+        "26",
+        "27",
+        "40",
+        "14",
+        "11"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "U.S. citizen, national or permanent resident. Must be a sophomore or junior and plan a research career in natural science, math or engineering. Your college must nominate you, and campus deadlines are earlier."
+    },
+    "description": "For college sophomores and juniors who want to become researchers in science, math or engineering. It pays up to $7,500 a year. Students cannot apply on their own; your college picks nominees and sends them in. National nominations are due the last Friday in January (January 29, 2027).",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-udall-undergraduate-scholarship",
+    "title": "Udall Undergraduate Scholarship",
+    "sponsor": "Udall Foundation",
+    "sponsor_type": "federal",
+    "url": "https://www.udall.gov/OurPrograms/Scholarship/Scholarship.aspx",
+    "award": {
+      "min": 7500,
+      "max": 7500,
+      "text": "$7,500 (up to 65 awards in 2027)"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-04"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [
+        "03",
+        "51",
+        "44"
+      ],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Sophomore or junior. For environment-related careers, or for enrolled members of federally recognized tribes planning careers in Tribal public policy or health care. Apply through your college's faculty representative."
+    },
+    "description": "For college sophomores and juniors who plan careers related to the environment, and for Native American and Alaska Native students planning careers in Tribal public policy or health care. Winners get $7,500. The application must be submitted by March 4, 2027, and your college may set an earlier deadline.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-nhsc-scholarship",
+    "title": "National Health Service Corps Scholarship",
+    "sponsor": "Health Resources and Services Administration (HRSA)",
+    "sponsor_type": "federal",
+    "url": "https://nhsc.hrsa.gov/scholarships/overview",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition and fees, a yearly payment for school costs, and a monthly living stipend, up to 4 years"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [
+        "51"
+      ],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be in (or accepted to) a primary care program: physician, dentist, nurse practitioner, nurse midwife or physician assistant. Pre-professional (pre-med) students are not eligible. Serve 2 to 4 years at an approved site in an area short of health workers."
+    },
+    "description": "Pays for school for students training to be primary care doctors, dentists, nurse practitioners, nurse midwives or physician assistants. In return you work in a community that does not have enough health care providers for 2 to 4 years. The 2026 application is closed; the next one has not been announced yet.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "us-segal-americorps-education-award",
+    "title": "Segal AmeriCorps Education Award",
+    "sponsor": "AmeriCorps",
+    "sponsor_type": "federal",
+    "url": "https://my.americorps.gov/trust/help/member_portal/eli_segal_americorps_education_award_overview.htm",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Equal to the maximum Pell Grant for a full-time year of service (less for part-time)"
+    },
+    "deadline": {
+      "kind": "rolling"
+    },
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Earned by finishing a term of AmeriCorps service. Must be 17 or older with a high school diploma or equivalent. Must be used within 7 years of finishing service."
+    },
+    "description": "Money you earn by completing a term of service with AmeriCorps. You can use it to pay for college or other school costs, or to pay back qualifying student loans. A full-time term earns an award equal to the maximum Pell Grant for that year. You can earn up to two full-time awards.",
+    "checked_at": "2026-09-28"
+  }
+]

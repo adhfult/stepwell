@@ -36,6 +36,19 @@ export type Database = {
                   Relationships: [
                     
                   ]
+                },"eligibility_profiles": {
+                  Row: {
+                    "citizenship": string | null,"consent_version": number,"consented_at": string,"first_generation": string | null,"gpa": number | null,"intended_fields": (string)[] | null,"military_family": string | null,"plans_fafsa": string | null,"updated_at": string,"user_id": string
+                  }
+                  Insert: {
+                    "citizenship"?: string | null,"consent_version": number,"consented_at"?: string,"first_generation"?: string | null,"gpa"?: number | null,"intended_fields"?: (string)[] | null,"military_family"?: string | null,"plans_fafsa"?: string | null,"updated_at"?: string,"user_id"?: string
+                  }
+                  Update: {
+                    "citizenship"?: string | null,"consent_version"?: number,"consented_at"?: string,"first_generation"?: string | null,"gpa"?: number | null,"intended_fields"?: (string)[] | null,"military_family"?: string | null,"plans_fafsa"?: string | null,"updated_at"?: string,"user_id"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"institutions": {
                   Row: {
                     "admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"name": string,"net_price": number | null,"ownership": string | null,"retrieved_at": string,"source_id": string,"state": string | null,"students": number | null,"unitid": number,"website": string | null
@@ -327,6 +340,25 @@ isOneToOne: false
       referencedColumns: ["onet_code"]
     }
                   ]
+                },"scholarships": {
+                  Row: {
+                    "award_max": number | null,"award_min": number | null,"award_text": string | null,"checked_at": string,"citizenship": string | null,"deadline_date": string | null,"deadline_kind": string,"deadline_month_day": string | null,"description": string,"fields": (string)[],"first_generation": boolean,"id": string,"military_family": boolean,"min_gpa": number | null,"needs_fafsa": boolean,"other_requirements": string | null,"retrieved_at": string,"source_id": string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"state": string | null,"title": string,"url": string
+                  }
+                  Insert: {
+                    "award_max"?: number | null,"award_min"?: number | null,"award_text"?: string | null,"checked_at": string,"citizenship"?: string | null,"deadline_date"?: string | null,"deadline_kind": string,"deadline_month_day"?: string | null,"description": string,"fields"?: (string)[],"first_generation"?: boolean,"id": string,"military_family"?: boolean,"min_gpa"?: number | null,"needs_fafsa"?: boolean,"other_requirements"?: string | null,"retrieved_at": string,"source_id"?: string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"state"?: string | null,"title": string,"url": string
+                  }
+                  Update: {
+                    "award_max"?: number | null,"award_min"?: number | null,"award_text"?: string | null,"checked_at"?: string,"citizenship"?: string | null,"deadline_date"?: string | null,"deadline_kind"?: string,"deadline_month_day"?: string | null,"description"?: string,"fields"?: (string)[],"first_generation"?: boolean,"id"?: string,"military_family"?: boolean,"min_gpa"?: number | null,"needs_fafsa"?: boolean,"other_requirements"?: string | null,"retrieved_at"?: string,"source_id"?: string,"sponsor"?: string,"sponsor_type"?: string,"stages"?: (string)[],"state"?: string | null,"title"?: string,"url"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "scholarships_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"sources": {
                   Row: {
                     "allowed": boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag": string | null,"last_release": string | null,"last_success_at": string | null,"name": string,"paused_reason": string | null,"refresh_interval": string,"terms_checked_at": string | null,"terms_url": string | null
@@ -362,6 +394,11 @@ isOneToOne: false
 "match_careers":
 { Args: { "p_artistic": number,"p_conventional": number,"p_enterprising": number,"p_investigative": number,"p_realistic": number,"p_social": number,"p_zone"?: number }; Returns: {
               "education_level": number,"fit": number,"job_zone": number,"onet_code": string,"title": string
+            }[]
+                           },
+"match_scholarships":
+{ Args: { "p_stage"?: string,"p_state"?: string }; Returns: {
+              "award_max": number,"award_min": number,"award_text": string,"checked_at": string,"deadline_date": string,"deadline_kind": string,"deadline_month_day": string,"description": string,"fields": (string)[],"id": string,"match": string,"sponsor": string,"sponsor_type": string,"title": string,"to_check": (string)[],"url": string
             }[]
                            },
 "search_occupations":

@@ -1,0 +1,253 @@
+[
+  {
+    "id": "fl-bright-futures-academic-scholars",
+    "title": "Bright Futures: Florida Academic Scholars",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/FAS-FMS.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers 100% of tuition and set fees at a Florida public college; a set amount per credit hour at private schools"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": 3.5,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Weighted 3.5 GPA in 16 college-prep courses, ACT 29, CLT 95 or SAT 1330 for class of 2027 (29, 96 or 1350 for class of 2028), and 100 volunteer hours, 100 paid work hours, or 100 combined. Florida high school diploma. Apply with the Florida Financial Aid Application (FFAA) between Oct 1 of senior year and Aug 31 after graduation."
+    },
+    "description": "Florida's top merit scholarship, paid for by the state lottery. Florida high school seniors with strong grades, high test scores, and volunteer or work hours can earn it. It pays for tuition and certain fees at a Florida public college or university, or a set amount at a private one. You apply by filling out the Florida Financial Aid Application during senior year. To keep it in college, you need at least a 3.0 college GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-bright-futures-medallion-scholars",
+    "title": "Bright Futures: Florida Medallion Scholars",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/FAS-FMS.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Covers 75% of tuition and set fees at a Florida public university (100% for an associate degree at a state college)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Weighted 3.0 GPA in 16 college-prep courses, ACT 24, CLT 82 or SAT 1190 for class of 2027 (25, 83 or 1200 for class of 2028), and 75 volunteer hours, 100 paid work hours, or 100 combined. Florida high school diploma. Apply with the FFAA between Oct 1 of senior year and Aug 31 after graduation."
+    },
+    "description": "The second level of Florida's Bright Futures merit scholarship. It asks for slightly lower grades and test scores than the Academic Scholars award. It pays 75% of tuition and certain fees at a Florida public university, all of it for an associate degree at a Florida state college, or a set amount at a private school. You apply with the Florida Financial Aid Application during senior year. To keep it, you need at least a 2.75 college GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-bright-futures-gold-seal-vocational",
+    "title": "Bright Futures: Gold Seal Vocational Scholars",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/GSV.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "$39 to $48 per semester credit hour in 2026-27, depending on the type of program"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Weighted 3.0 GPA in non-elective courses, 3 Career and Technical Education credits with a 3.5 unweighted GPA in them, minimum ACT, SAT or PERT section scores, and 30 volunteer hours (75 if you started 9th grade in 2024-25 or later), 100 paid work hours, or 100 combined. Only for career certificate, applied technology diploma, or A.S./A.A.S. programs."
+    },
+    "description": "A Bright Futures scholarship for Florida students heading into career and technical training, like a career certificate or a two-year technical degree. You need solid grades, at least three career and technical classes in high school, minimum scores on a college entrance or placement test, and volunteer or work hours. It pays a set amount per credit hour. You apply with the Florida Financial Aid Application during senior year.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-bright-futures-gold-seal-cape",
+    "title": "Bright Futures: Gold Seal CAPE Scholars",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/GSC.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "$39 to $48 per semester credit hour in 2026-27, depending on the type of program"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "08-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Earn at least 5 college credit hours through CAPE industry certifications in high school, plus 30 volunteer hours (75 if you started 9th grade in 2024-25 or later), 100 paid work hours, or 100 combined. Used for career and technical programs first; can later help toward a bachelor's degree."
+    },
+    "description": "A Bright Futures scholarship for Florida students who earn industry certifications in high school that count for college credit (called CAPE certifications). It pays a set amount per credit hour for career certificate and technical degree programs. After finishing an eligible associate degree, it can also pay for up to 60 credit hours toward a bachelor's degree. You apply with the Florida Financial Aid Application during senior year.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-student-assistance-grant",
+    "title": "Florida Student Assistance Grant (FSAG)",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/factsheets/FSAG.pdf",
+    "award": {
+      "min": 200,
+      "max": null,
+      "text": "At least $200 a year; your college sets the amount, up to a yearly limit set by the Legislature"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For undergraduates with substantial financial need in an associate or bachelor's program at a participating Florida college who have not already earned a bachelor's degree. File the FAFSA by your college's deadline. Enroll at least half time at a public school or full time at a private one."
+    },
+    "description": "Florida's main need-based grant for undergraduate students who live in Florida and show a lot of financial need. You apply by filing the FAFSA, and your college may have its own steps too. Your Florida college decides if you qualify and how much you get. It works at public universities and state colleges and at many private colleges. Each college sets its own deadline, so file the FAFSA early. To keep it, you need at least a 2.0 college GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-benacquisto-scholarship",
+    "title": "Benacquisto Scholarship Program",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/factsheets/BSP.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Your college's full in-state cost of attendance, minus your Bright Futures and National Merit awards"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must become a National Merit Scholar (see nationalmerit.org) and receive a qualifying National Merit award. Enroll full time in a bachelor's program at an eligible Florida school the fall after high school. No state application."
+    },
+    "description": "A Florida scholarship for high school graduates who become National Merit Scholars. It fills the gap between your college's full in-state cost (tuition, housing, books and more) and what Bright Futures and National Merit already pay. There is no separate application: your Florida college checks a list from the National Merit Scholarship Corporation. To keep it, you need at least a 3.0 college GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-effective-access-to-student-education-grant",
+    "title": "Effective Access to Student Education (EASE) Grant",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/factsheets/EASE.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Tuition help at eligible private Florida colleges; the yearly amount is set by the Legislature"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Full-time (12 credit hours per term) undergraduate working toward a first bachelor's degree at an eligible private Florida college or university. Not for theology or divinity degrees. Apply through the college's financial aid office."
+    },
+    "description": "A Florida grant that helps pay tuition for students who live in Florida and attend an eligible private Florida college or university. You apply through the college's financial aid office, and each college sets its own deadline and rules. Some upper-level students in fields like teaching, nursing, or cybersecurity can get extra money. To keep it, you need at least a 2.0 college GPA.",
+    "checked_at": "2026-09-28"
+  },
+  {
+    "id": "fl-children-spouses-deceased-disabled-veterans",
+    "title": "Scholarships for Children and Spouses of Deceased or Disabled Veterans",
+    "sponsor": "Florida Department of Education, Office of Student Financial Assistance",
+    "sponsor_type": "state",
+    "url": "https://www.floridastudentfinancialaidsg.org/PDF/factsheets/CSDDV.pdf",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Pays tuition and required fees at a Florida public college; a set amount at private schools"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-04-01"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "rules": {
+      "state": "FL",
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "For children (ages 16 to 22) or spouses of a Florida veteran who died from a service-connected cause, is 100% permanently and totally disabled from service, or is a POW or MIA. Apply with the Florida Financial Aid Application (FFAA); April 1 is the priority deadline."
+    },
+    "description": "A Florida scholarship for children and spouses of Florida veterans who died from military service, are fully and permanently disabled from it, or are listed as prisoners of war or missing in action. At a Florida public college or university it pays tuition and required fees. At a private school it pays a set amount. You apply with the Florida Financial Aid Application, which opens October 1. Apply by April 1 for the best chance of funding.",
+    "checked_at": "2026-09-28"
+  }
+]
