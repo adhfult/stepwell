@@ -94,7 +94,26 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   `src/jobs/sources/official-list.ts` (no fetching). Re-check each entry
   yearly; older than 12 months, the page says to check the official page.
   So far: federal, CA, FL, NY, PA, TX.
-- **USAJOBS API:** federal Pathways internships (open to high school students).
+- **USAJOBS Search API** (source `usajobs`, built 2026-09-29, waiting for
+  the owner's key): open federal postings on the student hiring path
+  (`GET https://data.usajobs.gov/api/search?HiringPath=student`, 500 a page),
+  read daily by `src/jobs/sources/usajobs.ts` into `opportunities`. Key in
+  the `Authorization-Key` header and the key holder's email as the
+  User-Agent, as USAJOBS requires. Unpaid ("without compensation") and
+  closed postings are left out; postings that leave USAJOBS are removed.
+  - Terms (https://developer.usajobs.gov/guides/terms-of-use, checked
+    2026-09-29): the standard federal-system notice, "to be used by
+    authorized users only" (a key makes us one). The Search API reference
+    says it "will be leveraged by Commercial Job Boards, Mobile Applications
+    and Social Media sites who desire to provide employment opportunities on
+    their site". Limits: 500 rows a page, 10,000 a query; no request rate given.
+  - robots.txt on data.usajobs.gov is `Disallow: /` for all crawlers
+    (checked 2026-09-29). The keyed API is the documented way in, so this
+    adapter alone skips the robots.txt check (decision 0007); spacing,
+    retries and the page cap still apply.
+  - Not yet run live: the parser was built from the API reference's example
+    response. Replace `fixtures/usajobs-search-docs-sample.json` with a saved
+    live page after the first `npm run import -- usajobs --dry-run`.
 - **Allowlisted sites:** only sites whose terms and robots.txt allow it; each
   gets an entry in "Allowlisted sites" below before its adapter is merged
   (process: v1 expansion draft, Section 3.9; decision 0007).
@@ -110,7 +129,7 @@ None yet.
 | Variable | Used by |
 |---|---|
 | `ONET_API_KEY` | O*NET import job |
-| CareerOneStop and USAJOBS keys (names set at registration) | Scholarship and internship import jobs |
+| `USAJOBS_API_KEY`, `USAJOBS_EMAIL` | Internships import job (the email is the one the key was requested with; it goes only to USAJOBS, as the User-Agent) |
 | `CONTEXT_DEV_API_KEY` | Import jobs, hard pages only |
 | `SCORECARD_API_KEY` | Scorecard import job |
 | `IMPORT_DATABASE_URL` | Import jobs: the `importer` role's pooler connection (decision 0008) |

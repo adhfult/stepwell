@@ -1,7 +1,8 @@
 # Spec: Internships and programs (USAJOBS Pathways first)
 
-- Status: approved (owner's go-ahead in chat, 2026-09-29: "All three");
-  the live import waits for the owner's USAJOBS API key
+- Status: built 2026-09-29; the live import waits for the owner's USAJOBS
+  API key (`USAJOBS_API_KEY` and `USAJOBS_EMAIL` in GitHub secrets and the
+  local settings file), then a live dry run and a saved live test page
 - Build step 8 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1 and 2.6).
 
@@ -46,19 +47,27 @@ apply for, so I can try a career before choosing it.
    O*NET codes, so the link would be guesswork.
 
 ## Acceptance criteria
-- [ ] Source `usajobs` (api, 1 day): adapter pages through
+- [ ] Source `usajobs` (api, 1 day) (built and unit-tested on the API
+      reference's example; tick after the first live dry run): adapter pages through
       `HiringPath=student` results with the key in headers (never the URL),
       validates each posting with zod, and stages it.
-- [ ] `opportunities` (public read): id (USAJOBS posting id), title,
+- [x] `opportunities` (public read): id (USAJOBS posting id), title,
       organization, locations (city, state, remote), pay min/max and
       interval, who may apply, close date, summary (at most 500 characters,
       plain text), URL (https, usajobs.gov), retrieved date. Merged in one
       transaction; missing postings removed.
-- [ ] `/internships` page with filters, list, empty and error states,
+- [x] `/internships` page with filters, list, empty and error states,
       skeleton, source line ("Source: USAJOBS, U.S. Office of Personnel
       Management"); Menu link.
-- [ ] Unit tests on a saved sample response; pgTAP for the merge and RLS;
+- [x] Unit tests on a saved sample response; pgTAP for the merge and RLS;
       checked at 320px; `npm run check` and `npm run test:db`.
+
+## Result (2026-09-29)
+- Unpaid ("without compensation") postings are left out (the goal is paid
+  internships); a state shows its postings plus remote ones.
+- data.usajobs.gov's robots.txt disallows all crawlers; the adapter skips
+  that check only for this documented, keyed API (decision 0007 addendum).
+- Checked at 320px and 1280px with synthetic postings merged locally.
 
 ## Out of scope
 Non-federal internships, summer and pre-college programs, saving

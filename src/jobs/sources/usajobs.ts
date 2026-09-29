@@ -1,0 +1,209 @@
+// USAJOBS Search API (U.S. Office of Personnel Management): open federal
+// postings on the student hiring path. Spec: docs/specs/internships.md.
+import { z } from "zod";
+import { STATES } from "../../lib/profile/options.ts";
+import type { Fetcher } from "../fetch/polite.ts";
+import type { AdapterResult, StagedRecord } from "./types.ts";
+
+const API = "https://data.usajobs.gov/api/search";
+const PER_PAGE = 500; // the API's maximum
+const MAX_PAGES = 20; // the API returns at most 10,000 rows per query
+
+export function pageUrl(page: number) {
+  return `${API}?HiringPath=student&ResultsPerPage=${PER_PAGE}&Page=${page}`;
+}
+
+export type PayInterval = "year" | "month" | "biweekly" | "week" | "day" | "hour";
+
+export type Opportunity = {
+  id: string;
+  title: string;
+  organization: string;
+  places: string[];
+  states: string[];
+  remote: boolean;
+  pay_min: number | null;
+  pay_max: number | null;
+  pay_interval: PayInterval | null;
+  who_may_apply: string | null;
+  closes_on: string;
+  summary: string | null;
+  url: string;
+};
+
+// The docs show codes ("PA"); live responses may spell them out ("Per Year").
+const INTERVALS: Record<string, PayInterval> = {
+  PA: "year", "PER YEAR": "year",
+  PM: "month", "PER MONTH": "month",
+  BW: "biweekly", "BI-WEEKLY": "biweekly", "PER BIWEEKLY": "biweekly",
+  PW: "week", "PER WEEK": "week",
+  PD: "day", "PER DAY": "day",
+  PH: "hour", "PER HOUR": "hour",
+};
+const UNPAID = new Set(["WC", "WITHOUT COMPENSATION"]);
+
+const STATE_CODES = new Map<string, string>(STATES.map((s) => [s.label.toLowerCase(), s.value]));
+
+/** Plain text: no tags, control characters or long dashes, spaces collapsed, cut at a word. */
+export function cleanText(text: string | null | undefined, max: number): string | null {
+  const plain = (text ?? "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .replace(/\s*[\u2013\u2014]\s*/g, " - ")
+    .replace(/\s+/g, " ")
+    .replace(/ ([.,;:!?])/g, "$1")
+    .trim();
+  if (!plain) return null;
+  if (plain.length <= max) return plain;
+  const cut = plain.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ") > max / 2 ? cut.lastIndexOf(" ") : cut.length)}…`;
+}
+
+const amount = z
+  .union([z.number(), z.string()])
+  .nullish()
+  .transform((v) => {
+    const n = Number(v);
+    return v != null && v !== "" && Number.isFinite(n) && n > 0 ? Math.round(n * 100) / 100 : null;
+  });
+
+const itemSchema = z.object({
+  MatchedObjectId: z.union([z.string(), z.number()]).transform(String).pipe(z.string().regex(/^\d{1,20}$/)),
+  MatchedObjectDescriptor: z.object({
+    PositionTitle: z.string().trim().min(1),
+    OrganizationName: z.string().nullish(),
+    DepartmentName: z.string().nullish(),
+    PositionURI: z.string(),
+    PositionLocation: z
+      .array(z.object({ LocationName: z.string().nullish(), CountrySubDivisionCode: z.string().nullish() }))
+      .nullish(),
+    // A real calendar day: one impossible date ("2026-11-31") would fail the whole merge.
+    ApplicationCloseDate: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}/)
+      .refine((d) => {
+        // zod runs this even when the regex failed, so it must not throw.
+        const t = new Date(`${d.slice(0, 10)}T00:00:00Z`);
+        return !Number.isNaN(t.getTime()) && t.toISOString().startsWith(d.slice(0, 10));
+      }, "not a real date"),
+    PositionRemuneration: z
+      .array(
+        z.object({
+          MinimumRange: amount,
+          MaximumRange: amount,
+          RateIntervalCode: z.string().nullish(),
+          Description: z.string().nullish(),
+        }),
+      )
+      .nullish(),
+    QualificationSummary: z.string().nullish(),
+    UserArea: z
+      .object({
+        Details: z
+          .object({
+            WhoMayApply: z.object({ Name: z.string().nullish() }).nullish(),
+            RemoteIndicator: z.union([z.boolean(), z.string()]).nullish(),
+          })
+          .nullish(),
+      })
+      .nullish(),
+  }),
+});
+
+/** The posting's link on usajobs.gov, normalized (live links can carry ":443"); null if it points anywhere else. */
+export function usajobsUrl(raw: string): string | null {
+  try {
+    const url = new URL(raw);
+    return url.protocol === "https:" && /^(www\.)?usajobs\.gov$/.test(url.hostname) ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * One posting as a staged record, or null for postings Stepwell leaves out
+ * on purpose (unpaid, or already closed). Only a missing id, title, link or
+ * closing date rejects; odd optional fields become empty instead, so a small
+ * change at USAJOBS can't trip the circuit breaker.
+ */
+export function parsePosting(raw: unknown, today: string): StagedRecord<Opportunity> | null {
+  const parsed = itemSchema.safeParse(raw);
+  const id = String((raw as { MatchedObjectId?: unknown })?.MatchedObjectId ?? "unknown");
+  const reject = (reason: string): StagedRecord<Opportunity> => ({ status: "rejected", id, reason, raw });
+  if (!parsed.success) return reject(parsed.error.issues.map((e) => `${e.path.join(".")}: ${e.message}`).join("; "));
+
+  const d = parsed.data.MatchedObjectDescriptor;
+  const url = usajobsUrl(d.PositionURI);
+  if (!url) return reject(`PositionURI is not a usajobs.gov link: ${d.PositionURI}`);
+
+  const closesOn = d.ApplicationCloseDate.slice(0, 10);
+  if (closesOn < today) return null;
+
+  const pay = d.PositionRemuneration?.[0];
+  const code = (pay?.RateIntervalCode ?? pay?.Description ?? "").trim().toUpperCase();
+  if (UNPAID.has(code) || UNPAID.has((pay?.Description ?? "").trim().toUpperCase())) return null;
+  const interval = INTERVALS[code] ?? INTERVALS[(pay?.Description ?? "").trim().toUpperCase()] ?? null;
+
+  const locations = d.PositionLocation ?? [];
+  const places = [...new Set(locations.map((l) => cleanText(l.LocationName, 200)).filter((p) => p !== null))];
+  const states = [
+    ...new Set(
+      locations.map((l) => STATE_CODES.get((l.CountrySubDivisionCode ?? "").trim().toLowerCase())).filter((s) => s !== undefined),
+    ),
+  ];
+  const remoteFlag = d.UserArea?.Details?.RemoteIndicator;
+
+  return {
+    status: "valid",
+    id: parsed.data.MatchedObjectId,
+    value: {
+      id: parsed.data.MatchedObjectId,
+      title: cleanText(d.PositionTitle, 300)!,
+      organization: cleanText(d.OrganizationName, 200) ?? cleanText(d.DepartmentName, 200) ?? "U.S. federal government",
+      places: places.slice(0, 500),
+      states,
+      remote: remoteFlag === true || remoteFlag === "true" || places.some((p) => /remote job/i.test(p)),
+      pay_min: pay?.MinimumRange ?? null,
+      pay_max: pay?.MaximumRange ?? null,
+      pay_interval: interval,
+      who_may_apply: cleanText(d.UserArea?.Details?.WhoMayApply?.Name, 200),
+      closes_on: closesOn,
+      summary: cleanText(d.QualificationSummary, 500),
+      url,
+    },
+  };
+}
+
+const pageSchema = z.object({
+  SearchResult: z.object({
+    SearchResultCountAll: z.coerce.number().int().min(0),
+    SearchResultItems: z.array(z.unknown()),
+  }),
+});
+
+export async function readUsajobs(
+  fetcher: Fetcher,
+  _previous: { etag: string | null; release: string | null },
+  env: { USAJOBS_API_KEY?: string; USAJOBS_EMAIL?: string },
+  today = new Date().toISOString().slice(0, 10),
+): Promise<AdapterResult<Opportunity>> {
+  if (!env.USAJOBS_API_KEY || !env.USAJOBS_EMAIL) {
+    throw new Error("USAJOBS_API_KEY and USAJOBS_EMAIL must be set (see docs/specs/internships.md)");
+  }
+  // USAJOBS asks for the key holder's email as the User-Agent. The key goes
+  // in a header, never the URL: failing URLs end up in error messages and logs.
+  const headers = { "User-Agent": env.USAJOBS_EMAIL, "Authorization-Key": env.USAJOBS_API_KEY, Accept: "application/json" };
+
+  const byId = new Map<string, StagedRecord<Opportunity>>(); // a posting on two pages is staged once
+  for (let page = 1, pages = 1; page <= pages; page++) {
+    const response = await fetcher.get(pageUrl(page), { headers });
+    if (response.status !== 200) throw new Error(`USAJOBS page ${page} returned ${response.status}`);
+    const data = pageSchema.parse(JSON.parse(response.body)).SearchResult;
+    pages = Math.min(MAX_PAGES, Math.ceil(data.SearchResultCountAll / PER_PAGE));
+    for (const item of data.SearchResultItems) {
+      const record = parsePosting(item, today);
+      if (record) byId.set(record.id, record);
+    }
+  }
+  return { status: "fetched", release: null, etag: null, records: [...byId.values()] };
+}

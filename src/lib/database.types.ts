@@ -289,6 +289,25 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"opportunities": {
+                  Row: {
+                    "closes_on": string,"id": string,"organization": string,"pay_interval": string | null,"pay_max": number | null,"pay_min": number | null,"places": (string)[],"remote": boolean,"retrieved_at": string,"source_id": string,"states": (string)[],"summary": string | null,"title": string,"url": string,"who_may_apply": string | null
+                  }
+                  Insert: {
+                    "closes_on": string,"id": string,"organization": string,"pay_interval"?: string | null,"pay_max"?: number | null,"pay_min"?: number | null,"places"?: (string)[],"remote"?: boolean,"retrieved_at": string,"source_id"?: string,"states"?: (string)[],"summary"?: string | null,"title": string,"url": string,"who_may_apply"?: string | null
+                  }
+                  Update: {
+                    "closes_on"?: string,"id"?: string,"organization"?: string,"pay_interval"?: string | null,"pay_max"?: number | null,"pay_min"?: number | null,"places"?: (string)[],"remote"?: boolean,"retrieved_at"?: string,"source_id"?: string,"states"?: (string)[],"summary"?: string | null,"title"?: string,"url"?: string,"who_may_apply"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "opportunities_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"profiles": {
                   Row: {
                     "age_confirmed": boolean,"created_at": string,"grad_year": number | null,"id": string,"nickname": string | null,"stage": string | null,"state": string | null,"updated_at": string

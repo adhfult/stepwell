@@ -10,6 +10,7 @@ const SECTIONS = [
   { href: "/careers", label: "Careers" },
   { href: "/interests", label: "Interest quiz" },
   { href: "/scholarships", label: "Scholarships" },
+  { href: "/internships", label: "Internships" },
 ];
 
 const navLink = "inline-flex min-h-11 items-center no-underline hover:underline focus-visible:underline";

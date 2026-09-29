@@ -52,7 +52,7 @@ build step's spec.
 | `knowledge_areas`, `ap_courses`, `knowledge_ap_map` (built) | id / code | O*NET's 33 knowledge areas, College Board's 42 AP courses, and Stepwell's mapping (hand-entered in the migration; `ap_courses_for_career()`) |
 | `sources` (built) | id | every data source, its terms check and fetcher |
 | `scholarships` (built) | id | official state and federal programs from `data/scholarships/` with their rules as columns; `match_scholarships()` |
-| `opportunities`, `listing_fields` | id | internships and programs (step 8) |
+| `opportunities` (built) | id (USAJOBS control number) | open federal internships: title, agency, places and states, remote, pay range and interval, who may apply, closing date, summary, link; public read, replaced daily by `ingest.merge_opportunities()` |
 
 **User data** (owner-only via RLS):
 | Table | Contents |
@@ -81,7 +81,7 @@ build step's spec.
 | `NEXT_PUBLIC_SUPABASE_URL` | yes | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | yes | Supabase publishable key |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | yes | Cloudflare Turnstile site key (unset locally = test key) |
-| `IMPORT_DATABASE_URL`, `IMPORT_CONTACT`, `ONET_API_KEY` (built); `SCORECARD_API_KEY`, CareerOneStop and USAJOBS keys, `CONTEXT_DEV_API_KEY` (later) | **no** | Import jobs only: GitHub Actions secrets, and the local settings file for local runs |
+| `IMPORT_DATABASE_URL`, `IMPORT_CONTACT`, `ONET_API_KEY` (built); `SCORECARD_API_KEY`, `USAJOBS_API_KEY`, `USAJOBS_EMAIL` (built); `CONTEXT_DEV_API_KEY` (later) | **no** | Import jobs only: GitHub Actions secrets, and the local settings file for local runs |
 | `SUPABASE_AUTH_CAPTCHA_SECRET` | **no** | Supabase Auth only; the test secret is set by `npm run db:start` |
 
 ## Later

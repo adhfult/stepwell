@@ -58,6 +58,8 @@ jobs:
           IMPORT_CONTACT: ${{ vars.IMPORT_CONTACT }}
           ONET_API_KEY: ${{ secrets.ONET_API_KEY }}
           SCORECARD_API_KEY: ${{ secrets.SCORECARD_API_KEY }}
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL: ${{ secrets.USAJOBS_EMAIL }}
           # Inputs pass through env, never pasted into the script.
           SOURCE: ${{ inputs.source }}
           FORCE: ${{ inputs.force }}

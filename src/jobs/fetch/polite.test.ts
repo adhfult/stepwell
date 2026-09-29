@@ -93,6 +93,15 @@ describe("createPoliteFetcher", () => {
     expect(calls).toHaveLength(1);
   });
 
+  it("skips robots.txt only when told to (official keyed APIs)", async () => {
+    const { fetcher, calls } = setup(
+      { ...robots("User-agent: *\nDisallow: /"), "https://example.gov/api": [ok("A")] },
+      { checkRobots: false },
+    );
+    await expect(fetcher.get("https://example.gov/api")).resolves.toMatchObject({ body: "A" });
+    expect(calls.map((c) => c.url)).toEqual(["https://example.gov/api"]);
+  });
+
   it("treats a missing robots.txt as allowing everything", async () => {
     const { fetcher } = setup({ "https://example.gov/a": [ok("A")] });
     await expect(fetcher.get("https://example.gov/a")).resolves.toMatchObject({ body: "A" });

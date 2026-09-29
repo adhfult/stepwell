@@ -29,6 +29,12 @@ type Options = {
   minDelayMs?: number;
   maxRetries?: number;
   pageCap?: number;
+  /**
+   * false only for an official, keyed API whose host disallows crawlers
+   * (decision 0007: the robots.txt rule is for other sites). Everything else
+   * here still applies.
+   */
+  checkRobots?: boolean;
   // Swappable for tests.
   fetchImpl?: typeof fetch;
   sleep?: (ms: number) => Promise<void>;
@@ -47,6 +53,7 @@ export function createPoliteFetcher({
   minDelayMs = 5_000,
   maxRetries = 3,
   pageCap = 2_000,
+  checkRobots = true,
   fetchImpl = fetch,
   sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
   now = Date.now,
@@ -95,7 +102,7 @@ export function createPoliteFetcher({
       const url = new URL(rawUrl);
       if (url.protocol !== "https:") throw new Error(`Only https is fetched: ${rawUrl}`);
 
-      const robots = await robotsFor(url);
+      const robots = checkRobots ? await robotsFor(url) : null;
       if (robots?.isDisallowed(url.href, ROBOT_NAME)) {
         throw new RobotsDisallowedError(`robots.txt disallows ${url.href}`);
       }

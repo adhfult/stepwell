@@ -16,6 +16,7 @@ import { readOnetIp } from "./sources/onet-ip.ts";
 import { OUTLOOK_DELAY_MS, readOnetOutlook } from "./sources/onet-outlook.ts";
 import { readOfficialList } from "./sources/official-list.ts";
 import { readScorecard, SCORECARD_DELAY_MS } from "./sources/scorecard.ts";
+import { readUsajobs } from "./sources/usajobs.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
 type Adapter = {
@@ -27,6 +28,8 @@ type Adapter = {
   ) => Promise<AdapterResult<unknown>>;
   /** Wait between requests to one host; official APIs follow their own documented limits. */
   minDelayMs?: number;
+  /** Only for official keyed APIs whose host disallows crawlers (decision 0007). */
+  skipRobots?: true;
 };
 
 // --due runs sources in order of id: onet first, since the crosswalk and
@@ -38,10 +41,17 @@ const ADAPTERS: Record<string, Adapter> = {
   onet_outlook: { kind: "occupation_outlook", read: readOnetOutlook, minDelayMs: OUTLOOK_DELAY_MS },
   official_list: { kind: "scholarship", read: () => readOfficialList() },
   scorecard: { kind: "institution", read: readScorecard, minDelayMs: SCORECARD_DELAY_MS },
+  // data.usajobs.gov's robots.txt disallows all crawlers (checked 2026-09-29);
+  // its Search API is the documented way in, with a key (docs/DATA_SOURCES.md).
+  usajobs: { kind: "opportunity", read: readUsajobs, skipRobots: true },
 };
 
 function fetcherFor(adapter: Adapter, env: JobEnv) {
-  return createPoliteFetcher({ userAgent: userAgentFor(env.IMPORT_CONTACT), minDelayMs: adapter.minDelayMs });
+  return createPoliteFetcher({
+    userAgent: userAgentFor(env.IMPORT_CONTACT),
+    minDelayMs: adapter.minDelayMs,
+    checkRobots: !adapter.skipRobots,
+  });
 }
 
 /** Prints a line, and adds it to the GitHub Actions job summary when there is one. */
