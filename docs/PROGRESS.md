@@ -4,35 +4,54 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] Fill the placeholders in `docs/legal/privacy-draft.md` and
-      `docs/legal/terms-draft.md` (name, contact email, email provider,
-      state, date), approve `docs/specs/legal-pages.md`, then build the pages
-      and the site footer
-- [ ] Work through `docs/LAUNCH.md` (domain, email sending, production
-      Supabase project, real Turnstile keys, Vercel) before real students
+- [ ] **Owner:** add `USAJOBS_API_KEY` and `USAJOBS_EMAIL` (the email the
+      key was requested with) to GitHub secrets and `.env.local`, ideally
+      together with the importer secret below (the `usajobs` source is due
+      daily and fails until its key exists). Then an agent runs
+      `npm run import -- usajobs --dry-run`, saves a live page as the test
+      fixture, and imports.
 - [ ] **Owner:** set the `importer` password and the `IMPORT_DATABASE_URL`
       GitHub secret (the permission system blocks agents from secret writes;
-      one-liner in the 2026-09-28 evening chat and `docs/LAUNCH.md`), then
-      run "Import data" once from the Actions tab
+      one-liner in `docs/LAUNCH.md`), then run "Import data" once from the
+      Actions tab. Until then the cloud has the tables but no imported data
+      (careers, colleges, the 264 scholarships).
+- [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
+      (contact email, email provider, law state, effective date);
+      `placeholdersLeft()` must be empty before launch.
+- [ ] Work through the rest of `docs/LAUNCH.md` (domain, email sending,
+      production Supabase project, real Turnstile keys, Vercel) before real
+      students
 - [ ] **Owner:** run `npx supabase db reset` locally once (blocked for
       agents because it wipes local accounts) to prove migrations + seed
-      work from scratch (the career migration was edited after it was first
-      applied locally; the local database was patched to match, and the
-      cloud got the final file)
+      work from scratch; then re-run the imports
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Scholarships: research the remaining 45 states and DC in batches
-      (same format and checks as `data/scholarships/`); re-check every entry
-      yearly (California's nursing and Gilman deadlines are days away)
-- [ ] Next build step: Internships and programs (v1 expansion, step 8:
-      USAJOBS Pathways; needs a free USAJOBS API key from the owner, and its
-      developer site works from the owner's network)
+- [ ] Specs to write and approve next: step 9 (saved plan and year-by-year
+      planner), an "About the data" page (then its footer link), and the
+      yearly scholarship re-check (rules in `data/scholarships/README.md`)
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
-- [ ] Later: a phone "Menu" button in the header, so Interests (and the next
-      sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-29 (morning): legal pages, all states, internships
+- Terms and Privacy pages and a site footer on every page; the sign-up
+  form links both. Placeholders stay until launch (`placeholdersLeft()`).
+- Scholarships: the other 45 states and DC (205 programs, 264 in all),
+  researched by five agents; 13 facts spot-checked live (one fix);
+  `data/scholarships/README.md` holds the research rules.
+- Internships (`docs/specs/internships.md`): source `usajobs`,
+  `opportunities` table, `/internships`, Menu link; migration pushed to the
+  cloud (advisors: only the intended warning). Found: data.usajobs.gov's
+  robots.txt disallows all crawlers, so this keyed API alone skips the
+  robots check (decision 0007 addendum). Built from the API reference's
+  example; not yet run live (no key).
+- Found and fixed while testing: an impossible closing date would have
+  failed the whole merge, and a malformed one would have crashed the
+  import (zod 4 runs `.refine` after a failed regex).
+- Tests: 156 unit, 203 pgTAP; Chrome at 320px and 1280px on a production
+  build, no console or CSP errors. Firecrawl credits are low.
+
+
 ### 2026-09-29 (just after midnight): scholarships built (first batch)
 - Owner chose: curated official list, skip the second question set, first
   batch federal + CA, TX, FL, NY, PA. Six research agents gathered 59
