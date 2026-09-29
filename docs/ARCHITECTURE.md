@@ -41,11 +41,11 @@ build step's spec.
 **Reference data** (public read, written only by import jobs):
 | Table | Key | Contents |
 |---|---|---|
-| `occupations` (built; interest scores still to come) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, `retired_at`, O*NET release; interest scores later |
+| `occupations` (built) | `onet_code` (computed `soc_code`) | title, description, job zone, typical education, six interest scores (1 to 7), `retired_at`, O*NET release |
 | `occupation_titles`, `occupation_details`, `occupation_related` (built) | `onet_code` | reported and alternate titles (search: `search_occupations()`); top tasks and skills (JSON); related careers |
 | `occupation_outlook` (built) | `onet_code` | outlook category and Bright Outlook reasons; annual and hourly pay (10th, median, 90th percentile; "or more" flags) |
 | `occupation_knowledge` | `onet_code` | knowledge ratings (joined for AP suggestions) |
-| `interest_questions` | id | Interest Profiler questions, cached once |
+| `interest_questions` (built) | index | the 60 Interest Profiler questions and their areas; matched with `match_careers()` |
 | `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
 | `programs` | `id` (unique `unitid, cip4, credential_level`) | median debt, earnings |
 | `occupation_program_map` | `(soc_code, cip6)` + computed `cip4` | CIP–SOC crosswalk |
@@ -57,7 +57,7 @@ build step's spec.
 | Table | Contents |
 |---|---|
 | `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
-| `interest_results` | latest Interest Profiler scores (six areas) |
+| `interest_results` (built) | latest quiz scores (six areas, 0 to 40), never the answers; saved only when the student presses Save |
 | `saved_items` (built, careers only so far) | one link column per kind (career, college, program, scholarship, opportunity, AP course), exactly one set |
 | `plan_items` | year-by-year plan: term, kind, title, due date, status; saved listings' deadlines read live |
 | `eligibility_profiles` | optional scholarship answers after a two-step opt-in; matching stays in the database; deleted after 12 months without a sign-in (decision 0006) |

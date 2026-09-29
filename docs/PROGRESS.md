@@ -21,11 +21,26 @@ Newest entries at the top. Keep each entry short.
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Next build step: Interest quiz (v1 expansion, Section 1, step 4);
-      its spec needs updating first. Programs and colleges (step 5) can use
-      the `SCORECARD_API_KEY` that's now set
+- [ ] Next build step: Programs and colleges (v1 expansion, Section 1,
+      step 5; College Scorecard with the `SCORECARD_API_KEY` that's set, and
+      the CIP to SOC crosswalk); its spec needs writing first
+- [ ] Later: a phone "Menu" button in the header, so Interests (and the next
+      sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-28 (evening, later): interest quiz built
+- Spec written and built (`docs/specs/interest-quiz.md`): source `onet_ip`
+  (60 questions); interest scores on `occupations`; `interest_results`
+  (scores only, saved on request); `match_careers()` (correlation);
+  `/interests` (5 pages of 12) and `/interests/results` (top areas, bars,
+  10 closest careers then all 30, preparation filter, save and remove);
+  account section; links from home and `/careers`. Pushed to the cloud.
+- Scoring rule confirmed against O*NET's own documented example.
+- Found: every page with a loading skeleton needs JavaScript (streamed
+  content stays hidden without it). Kept the skeletons; corrected the
+  Career Explorer spec's "works without JavaScript" claim.
+- Still blocked for agents: the `importer` password and GitHub secret.
+
 ### 2026-09-28 (end of day): pay and outlook; dependencies
 - Career Explorer step 6: new source `onet_outlook` (O*NET Web Services
   job outlook, 2 requests a second, 923 careers, 0 rejected, 8.4 minutes);

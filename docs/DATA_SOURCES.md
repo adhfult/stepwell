@@ -40,6 +40,13 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   50,000 a day (we make 2 a second, about 8 minutes); link to O*NET Web
   Services near the data. A 422 means no data for that career. Refreshed
   every 3 months.
+- **Interest Profiler questions** (source `onet_ip`, `src/jobs/sources/onet-ip.ts`):
+  `/mnm/interestprofiler/questions` (60 questions, answers 1 to 5), cached
+  once a year. The import stops if the answer scale changes, because scoring
+  (answers count 0 to 4, summed per area) depends on it; that rule matches
+  O*NET's documented example exactly. Career interest scores come from
+  `career_interest_types.csv` in the database download (scale "OI", 1 to 7,
+  923 careers). Matching is Stepwell's own (correlation in `match_careers()`).
 
 ## College Scorecard (colleges and programs)
 - **What:** U.S. colleges: cost, admission rate, graduation rate, and

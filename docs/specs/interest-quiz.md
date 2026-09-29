@@ -1,7 +1,7 @@
 # Spec: Interest quiz
 
-- Status: approved (owner's go-ahead in chat, 2026-09-28: "continue with
-  next on what's on the list")
+- Status: built (2026-09-28; approved by the owner's go-ahead in chat:
+  "continue with next on what's on the list")
 - Build step 4 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1, 2.3 and 2.7). Builds on `docs/specs/career-explorer.md`.
 
@@ -47,51 +47,54 @@ starting point.
 
 ## Acceptance criteria
 Data
-- [ ] Source `onet_ip` (kind api, refreshed every 12 months): the 60
+- [x] Source `onet_ip` (kind api, refreshed every 12 months): the 60
       questions from `/mnm/interestprofiler/questions` into
       `interest_questions` (index, area, text; public read).
-- [ ] `occupations` gains six interest scores (1 to 7) from
+- [x] `occupations` gains six interest scores (1 to 7) from
       `career_interest_types.csv` (scale "OI"), read by the O*NET adapter
       with a minimum row count like the other files.
-- [ ] `interest_results`: one row per student (latest result only), six
+- [x] `interest_results`: one row per student (latest result only), six
       scores 0 to 40, taken date; owner-only RLS; `user_id` from
       `auth.uid()`; deleted with the account.
-- [ ] `public.match_careers(r, i, a, s, e, c, zone)`: the 30 current careers
+- [x] `public.match_careers(r, i, a, s, e, c, zone)`: the 30 current careers
       whose interest scores correlate best with the student's, optionally
       only one preparation level; scores outside 0 to 40 are refused;
       identical scores in every area (no pattern to match) return nothing.
 
 Quiz (`/interests`)
-- [ ] Intro: what it is, 60 questions, about 5 to 10 minutes, no account
+- [x] Intro: what it is, 60 questions, about 5 to 10 minutes, no account
       needed, nothing is saved unless you choose to.
-- [ ] Questions in 5 pages of 12 (a fieldset per question with the five
+- [x] Questions in 5 pages of 12 (a fieldset per question with the five
       choices as radio buttons); "Next" and "Back"; "Page 2 of 5"; a page
       can't be left with unanswered questions (error summary, as in other
       forms).
-- [ ] Submitting: the server checks all 60 answers with zod, works out the
+- [x] Submitting: the server checks all 60 answers with zod, works out the
       scores and sends the student to the results page. Answers aren't stored.
 
 Results (`/interests/results`)
-- [ ] Scores validated with zod (bad values: a short "these results don't
+- [x] Scores validated with zod (bad values: a short "these results don't
       look right" message with a link to take the quiz).
-- [ ] The six areas, highest first, each with its score out of 40 as words
+- [x] The six areas, highest first, each with its score out of 40 as words
       and a simple bar (fill only, `primary`), and a one-sentence description;
       the top 3 highlighted in words ("Your top interests: Social,
       Investigative, Artistic").
-- [ ] Matching careers: a list with dividers (title link, facts line with
-      education and median pay), a preparation filter (all, or one of 5
-      levels) as a GET form, an empty state when nothing matches.
-- [ ] Save: signed in, "Save to my account" (or "Saved" and "Remove my
+- [x] Matching careers: a list with dividers (title link, facts line with
+      education and median pay), the 10 closest first with "Show all 30
+      matches" (a 30-row list was clutter at 320px), a preparation filter
+      (all, or one of 5 levels) as a GET form, an empty state when nothing
+      matches.
+- [x] Save: signed in, "Save to my account" (or "Saved" and "Remove my
       results"); signed out, "Sign in to save your results" returning here.
-- [ ] Source line: questions from the O*NET Interest Profiler (USDOL/ETA)
+- [x] Source line: questions from the O*NET Interest Profiler (USDOL/ETA)
       via O*NET Web Services, CC BY 4.0; career interest scores from the
       O*NET database; matching by Stepwell.
 
 Elsewhere
-- [ ] Account page: "Your interests" (top 3 and a link to the matching
-      careers, "Remove my results"), or an empty state linking to the quiz.
-- [ ] Home page and `/careers` link to the quiz.
-- [ ] Works at 320px and desktop; AVOID.md check; `npm run check` and
+- [x] Account page: "Your interests" (top 3 and a link to the matching
+      careers, where "Remove my results" is), or an empty state linking to
+      the quiz.
+- [x] Home page and `/careers` link to the quiz.
+- [x] Works at 320px and desktop; AVOID.md check; `npm run check` and
       `npm run test:db` pass.
 
 ## Data
