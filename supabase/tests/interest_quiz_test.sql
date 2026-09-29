@@ -16,6 +16,7 @@ select ok(
 
 -- Questions: all 60 or nothing
 delete from ingest.import_runs where source_id = 'onet_ip';
+delete from public.interest_questions; -- start empty, whatever local imports loaded
 set local role importer;
 create temporary table t_run on commit drop as select * from ingest.start_run('onet_ip');
 select lives_ok(

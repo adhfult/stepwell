@@ -23,7 +23,26 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "interest_questions": {
+            "institutions": {
+                  Row: {
+                    "admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"name": string,"net_price": number | null,"ownership": string | null,"retrieved_at": string,"source_id": string,"state": string | null,"students": number | null,"unitid": number,"website": string | null
+                  }
+                  Insert: {
+                    "admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"name": string,"net_price"?: number | null,"ownership"?: string | null,"retrieved_at": string,"source_id"?: string,"state"?: string | null,"students"?: number | null,"unitid": number,"website"?: string | null
+                  }
+                  Update: {
+                    "admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"name"?: string,"net_price"?: number | null,"ownership"?: string | null,"retrieved_at"?: string,"source_id"?: string,"state"?: string | null,"students"?: number | null,"unitid"?: number,"website"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "institutions_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"interest_questions": {
                   Row: {
                     "area": string,"index": number,"retrieved_at": string,"source_id": string,"text": string
                   }
@@ -97,6 +116,25 @@ isOneToOne: true
 isOneToOne: false
       referencedRelation: "sources"
       referencedColumns: ["id"]
+    }
+                  ]
+                },"occupation_programs": {
+                  Row: {
+                    "cip_title": string,"cip4": string | null,"cip6": string,"onet_code": string
+                  }
+                  Insert: {
+                    "cip_title": string,"cip4"?: never,"cip6": string,"onet_code": string
+                  }
+                  Update: {
+                    "cip_title"?: string,"cip4"?: never,"cip6"?: string,"onet_code"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_programs_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
     }
                   ]
                 },"occupation_related": {
@@ -175,6 +213,25 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"programs": {
+                  Row: {
+                    "cip4": string,"credential_level": number,"credential_title": string,"earnings_1yr": number | null,"earnings_4yr": number | null,"graduates": number | null,"id": number,"median_debt": number | null,"title": string,"unitid": number
+                  }
+                  Insert: {
+                    "cip4": string,"credential_level": number,"credential_title": string,"earnings_1yr"?: number | null,"earnings_4yr"?: number | null,"graduates"?: number | null,"id"?: never,"median_debt"?: number | null,"title": string,"unitid": number
+                  }
+                  Update: {
+                    "cip4"?: string,"credential_level"?: number,"credential_title"?: string,"earnings_1yr"?: number | null,"earnings_4yr"?: number | null,"graduates"?: number | null,"id"?: never,"median_debt"?: number | null,"title"?: string,"unitid"?: number
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "programs_unitid_fkey"
+      columns: ["unitid"]
+isOneToOne: false
+      referencedRelation: "institutions"
+      referencedColumns: ["unitid"]
+    }
+                  ]
                 },"saved_items": {
                   Row: {
                     "created_at": string,"id": string,"onet_code": string | null,"user_id": string
@@ -213,7 +270,12 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "delete_my_account":
+            "colleges_for_career":
+{ Args: { "p_level"?: string,"p_onet_code": string,"p_state"?: string }; Returns: {
+              "city": string,"college": string,"credential_level": number,"credential_title": string,"earnings_1yr": number,"earnings_4yr": number,"graduation_rate": number,"median_debt": number,"net_price": number,"ownership": string,"program": string,"program_id": number,"state": string,"unitid": number,"website": string
+            }[]
+                           },
+"delete_my_account":
 { Args: Record<PropertyKey, never>; Returns: undefined
                            },
 "match_careers":
