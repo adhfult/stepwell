@@ -46,6 +46,8 @@ export async function toggleSaved(_previous: ActionState, formData: FormData): P
     ({ error } = await supabase.from("saved_items").insert({ ...row, title: found.data.title }));
   }
   // 23505: already saved (for example, in a second tab). That's what they wanted.
+  // 54000: the per-student cap (1,000 saved items).
+  if (error?.code === "54000") return { error: "You’ve saved the most we allow (1,000). Remove some to save more." };
   if (error && error.code !== "23505") {
     console.error("Saving a listing failed:", error.code);
     return { error: "We couldn’t save that. Try again." };
@@ -82,6 +84,10 @@ export async function addPlanItem(_previous: ActionState, formData: FormData): P
   const supabase = await signedIn("/plan");
   const { error } = await supabase.from("plan_items").insert(parsed.data);
   if (error) {
+    // 54000: the per-student cap (500 plan steps).
+    if (error.code === "54000") {
+      return { error: "Your plan has the most steps we allow (500). Delete some to add more.", values: typed(formData) };
+    }
     console.error("Adding a plan item failed:", error.code);
     return { error: "We couldn’t add that. Try again.", values: typed(formData) };
   }

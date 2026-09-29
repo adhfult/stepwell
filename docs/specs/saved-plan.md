@@ -81,3 +81,6 @@ Other differences from the criteria above:
   listed" by name. pgTAP checks the merge still runs.
 - "My plan" sits beside Account in the header from 640px; on phones the
   header has no room, so Account links to it.
+- Security review: per-student caps (1,000 saved items, 500 plan steps)
+  by a trigger in `20260929231617_user_row_caps.sql`, since saved ids have
+  no foreign key and a script could otherwise fill the tables.
