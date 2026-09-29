@@ -46,9 +46,9 @@ build step's spec.
 | `occupation_outlook` (built) | `onet_code` | outlook category and Bright Outlook reasons; annual and hourly pay (10th, median, 90th percentile; "or more" flags) |
 | `occupation_knowledge` | `onet_code` | knowledge ratings (joined for AP suggestions) |
 | `interest_questions` (built) | index | the 60 Interest Profiler questions and their areas; matched with `match_careers()` |
-| `institutions` | `unitid` | name, city, state, control, net price, admission and graduation rates |
-| `programs` | `id` (unique `unitid, cip4, credential_level`) | median debt, earnings |
-| `occupation_program_map` | `(soc_code, cip6)` + computed `cip4` | CIP–SOC crosswalk |
+| `institutions` (built) | `unitid` | name, city, state, ownership, website, net price, admission rate, graduation rate (8-year, all students), students |
+| `programs` (built) | `id` (unique `unitid, cip4, credential_level`) | title, credential, earnings 1 and 4 years after, median debt, graduates |
+| `occupation_programs` (built) | `(onet_code, cip6)` + computed `cip4` | O*NET's CIP to O*NET-SOC crosswalk; `colleges_for_career()` joins through `cip4` |
 | `ap_courses`, `knowledge_ap_map` | code | AP course list and the knowledge-area mapping (hand-entered) |
 | `sources` (built) | id | every data source, its terms check and fetcher |
 | `scholarships`, `scholarship_criteria`, `opportunities`, `listing_fields` | id | listings, their eligibility rules, CIP families |

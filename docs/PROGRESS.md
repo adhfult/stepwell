@@ -21,13 +21,24 @@ Newest entries at the top. Keep each entry short.
       cloud got the final file)
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Next build step: Programs and colleges (v1 expansion, Section 1,
-      step 5; College Scorecard with the `SCORECARD_API_KEY` that's set, and
-      the CIP to SOC crosswalk); its spec needs writing first
+- [ ] Next build step: AP and academics suggestions (v1 expansion,
+      Section 1, step 6: O*NET knowledge ratings and a hand-written knowledge
+      area to AP course table); its spec needs writing first
 - [ ] Later: a phone "Menu" button in the header, so Interests (and the next
       sections) can join Careers there (DESIGN.md "Page frame")
 
 ## Log
+### 2026-09-28 (night): programs and colleges built
+- Spec written and built (`docs/specs/programs-and-colleges.md`): sources
+  `onet_cip` (O*NET's CIP to O*NET-SOC crosswalk, Excel, via the new
+  `read-excel-file` dependency) and `scorecard` (College Scorecard API);
+  `occupation_programs`, `institutions`, `programs`; `colleges_for_career()`;
+  "Where to study" on career pages and `/careers/[code]/colleges` with state
+  (profile state first) and credential filters. Pushed to the cloud.
+- Sizes: 5,787 colleges, 164,316 programs (30 MB), 8,501 crosswalk links.
+- Merged Dependabot PR #6 (actions/checkout v7 in the Claude workflows).
+- Still blocked for agents: the `importer` password and GitHub secret.
+
 ### 2026-09-28 (evening, later): interest quiz built
 - Spec written and built (`docs/specs/interest-quiz.md`): source `onet_ip`
   (60 questions); interest scores on `occupations`; `interest_results`

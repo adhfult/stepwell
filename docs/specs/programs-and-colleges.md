@@ -1,7 +1,7 @@
 # Spec: Programs and colleges
 
-- Status: approved (owner's go-ahead in chat, 2026-09-28: "continue with
-  next on what's on the list")
+- Status: built (2026-09-28; approved by the owner's go-ahead in chat:
+  "continue with next on what's on the list")
 - Build step 5 of the v1 expansion (`docs/specs/v1-expansion-draft.md`,
   Sections 1 and 2.4). Builds on `docs/specs/career-explorer.md`.
 
@@ -28,7 +28,9 @@ options.
   after completing, median federal loan debt, and graduates counted.
   api.data.gov accepts the key as an `X-Api-Key` header.
 - **Size:** on the first page, 77% of programs had graduates or earnings;
-  about 285,000 program rows in all (estimated 55 MB with indexes).
+  about 285,000 program rows estimated. Measured after the first import:
+  164,316 programs (30 MB), 5,787 colleges, 8,501 crosswalk links; the whole
+  local database 106 MB (24 MB of it staged records, cleaned after 30 days).
 
 ## Decisions made without asking (push back on any)
 1. **O*NET's crosswalk, not NCES's** (a change to Section 2.4, which planned
@@ -55,36 +57,38 @@ options.
 
 ## Acceptance criteria
 Data
-- [ ] Source `onet_cip` (dataset, refreshed every 12 months): the crosswalk
+- [x] Source `onet_cip` (dataset, refreshed every 12 months): the crosswalk
       into `occupation_programs` (O*NET code, 6-digit CIP and title,
       computed 4-digit CIP; public read). Codes for careers we don't have
       are skipped.
-- [ ] Source `scorecard` (api, refreshed every 3 months, 2 requests a
+- [x] Source `scorecard` (api, refreshed every 3 months, 2 requests a
       second): `institutions` (Scorecard id, name, city, state, public /
       private nonprofit / for-profit, website, average net price, admission
       rate, graduation rate, students) and `programs` (id; unique college +
       4-digit CIP + credential level; title, credential, earnings at 1 and 4
       years, median debt, graduates). Public read.
-- [ ] Merges in one transaction; program ids stay stable (upsert on the
+- [x] Merges in one transaction; program ids stay stable (upsert on the
       natural key); colleges and programs missing from a new run are removed.
-- [ ] `public.colleges_for_career(onet_code, state, level)`: programs at
+- [x] `public.colleges_for_career(onet_code, state, level)`: programs at
       colleges linked to the career, best earnings first (unknown last), at
       most 50; refuses a bad state or level.
-- [ ] Missing values stay empty, never 0 (DESIGN.md "Not reported").
+- [x] Missing values stay empty, never 0 (DESIGN.md "Not reported").
 
 Pages
-- [ ] Career page, "Where to study": up to 6 program names from the
-      crosswalk and a link "Find colleges for this career". Left out when
+- [x] Career page, "Where to study": up to 6 program names from the
+      crosswalk in CIP code order (a family's general program comes first:
+      51.3801 Registered Nursing) and a link "Find colleges for this career". Left out when
       the career has no linked programs.
-- [ ] `/careers/[code]/colleges`: filters (state, credential: certificate,
+- [x] `/careers/[code]/colleges`: filters (state, credential: certificate,
       associate's, bachelor's, graduate) as a GET form; a list with dividers:
       college name, program and credential, earnings and debt, then college
       type, place, net price and graduation rate, and its website's domain;
-      "Not reported" for missing numbers; empty state; source line (College
+      "Not reported" for missing numbers; the program named once when every
+      row shares it; the first 15, then "Show all"; empty state; source line (College
       Scorecard; O*NET crosswalk) with the note that earnings and debt
       describe students who got federal financial aid.
-- [ ] Loading skeleton and error state; works at 320px; AVOID.md check.
-- [ ] `npm run check` and `npm run test:db` pass.
+- [x] Loading skeleton and error state; works at 320px; AVOID.md check.
+- [x] `npm run check` and `npm run test:db` pass.
 
 ## Data
 | Table | Read | Write |

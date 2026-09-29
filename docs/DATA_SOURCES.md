@@ -57,13 +57,24 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   and page through results. Some values are suppressed (null) for privacy;
   show "not available", never 0.
 - **Key:** colleges use `UNITID`; programs use 4-digit CIP codes.
-- **Refresh:** monthly job (Scorecard updates a few times a year).
+- **Refresh:** every 3 months (source `scorecard`, `src/jobs/sources/scorecard.ts`).
+- **What we read** (checked 2026-09-28): operating schools that mainly award
+  certificates or degrees (5,787), 100 per page, with only the fields the
+  Scorecard website shows: net price (public or private by ownership),
+  admission rate, graduation rate (`outcome_percentage_suppressed.all_students.8yr.award_pooled`),
+  and per program (4-digit CIP, credential) median earnings 4 and 1 years
+  after finishing, median Stafford and Grad PLUS debt at that college, and
+  graduates. Programs with neither graduates nor earnings are skipped. The
+  key goes in the `X-Api-Key` header, never the URL. 1,000 requests an hour.
 
 ## Connecting careers to programs (the crosswalk)
 - The CIP–SOC crosswalk (from the National Center for Education Statistics
   and BLS) links programs of study (CIP) to occupations (SOC).
-- Stored as a table `occupation_program_map (soc_code, cip_code)`, loaded
-  from the official crosswalk file; re-check when either code set updates.
+- Stepwell uses O*NET's version, "2020 CIP to O*NET-SOC 2019"
+  (`https://www.onetcenter.org/crosswalks/cip/Education_CIP_to_ONET_SOC.xlsx`,
+  Excel only, CC BY 4.0), which maps programs straight to O*NET career codes
+  (8,501 links). Stored in `occupation_programs` (source `onet_cip`,
+  `src/jobs/sources/onet-cip.ts`), refreshed yearly.
 
 ## Scholarships and opportunities (v1)
 - **CareerOneStop Web API** (U.S. Dept. of Labor): Scholarship Finder, 9,500+
