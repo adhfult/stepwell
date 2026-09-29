@@ -23,7 +23,20 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "institutions": {
+            "ap_courses": {
+                  Row: {
+                    "code": string,"course_group": string,"name": string
+                  }
+                  Insert: {
+                    "code": string,"course_group": string,"name": string
+                  }
+                  Update: {
+                    "code"?: string,"course_group"?: string,"name"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"institutions": {
                   Row: {
                     "admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"name": string,"net_price": number | null,"ownership": string | null,"retrieved_at": string,"source_id": string,"state": string | null,"students": number | null,"unitid": number,"website": string | null
                   }
@@ -74,6 +87,44 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"knowledge_ap_map": {
+                  Row: {
+                    "ap_code": string,"area_id": string
+                  }
+                  Insert: {
+                    "ap_code": string,"area_id": string
+                  }
+                  Update: {
+                    "ap_code"?: string,"area_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "knowledge_ap_map_ap_code_fkey"
+      columns: ["ap_code"]
+isOneToOne: false
+      referencedRelation: "ap_courses"
+      referencedColumns: ["code"]
+    },{
+      foreignKeyName: "knowledge_ap_map_area_id_fkey"
+      columns: ["area_id"]
+isOneToOne: false
+      referencedRelation: "knowledge_areas"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"knowledge_areas": {
+                  Row: {
+                    "id": string,"name": string
+                  }
+                  Insert: {
+                    "id": string,"name": string
+                  }
+                  Update: {
+                    "id"?: string,"name"?: string
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"occupation_details": {
                   Row: {
                     "onet_code": string,"skills": NonNullable<Json>,"tasks": NonNullable<Json>
@@ -89,6 +140,31 @@ isOneToOne: false
       foreignKeyName: "occupation_details_onet_code_fkey"
       columns: ["onet_code"]
 isOneToOne: true
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    }
+                  ]
+                },"occupation_knowledge": {
+                  Row: {
+                    "area_id": string,"importance": number,"onet_code": string
+                  }
+                  Insert: {
+                    "area_id": string,"importance": number,"onet_code": string
+                  }
+                  Update: {
+                    "area_id"?: string,"importance"?: number,"onet_code"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "occupation_knowledge_area_id_fkey"
+      columns: ["area_id"]
+isOneToOne: false
+      referencedRelation: "knowledge_areas"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "occupation_knowledge_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
       referencedRelation: "occupations"
       referencedColumns: ["onet_code"]
     }
@@ -270,7 +346,12 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "colleges_for_career":
+            "ap_courses_for_career":
+{ Args: { "p_onet_code": string }; Returns: {
+              "ap_code": string,"ap_name": string,"area_name": string,"importance": number
+            }[]
+                           },
+"colleges_for_career":
 { Args: { "p_level"?: string,"p_onet_code": string,"p_state"?: string }; Returns: {
               "city": string,"college": string,"credential_level": number,"credential_title": string,"earnings_1yr": number,"earnings_4yr": number,"graduation_rate": number,"median_debt": number,"net_price": number,"ownership": string,"program": string,"program_id": number,"state": string,"unitid": number,"website": string
             }[]
