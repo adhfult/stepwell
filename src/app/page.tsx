@@ -6,7 +6,11 @@ import { CareerSearchForm } from "./careers/search-form";
 // The route line (DESIGN.md "Route line"): the real path through Stepwell,
 // each stop with a real screenshot of that step (public/screenshots/, taken at
 // 390px on a production build with a test account).
-const STOPS: { title: string; text: string; links: { href: string; label: string }[]; shot: string; alt: string }[] = [
+// Shared look for the screenshots: flat, with a border-subtle edge (DESIGN.md "Images").
+// A plain <img>: next/image adds an inline style, which the CSP blocks.
+const SHOT = { width: 356, height: 500, loading: "lazy", className: "h-auto w-full max-w-[240px] border border-border-subtle" } as const;
+
+const STOPS: { title: string; text: string; links: { href: string; label: string }[]; image: ReactNode }[] = [
   {
     title: "Careers",
     text: "See what the work is, what it pays, what training it takes, and the AP classes that help.",
@@ -14,15 +18,15 @@ const STOPS: { title: string; text: string; links: { href: string; label: string
       { href: "/careers", label: "Search careers" },
       { href: "/interests", label: "Take the interest quiz" },
     ],
-    shot: "/screenshots/career.png",
-    alt: "The pay and outlook section of the registered nurses page: median pay of $97,550 a year and a bright outlook, with its source.",
+    // eslint-disable-next-line @next/next/no-img-element
+    image: <img src="/screenshots/career.png" alt="The pay and outlook section of the registered nurses page: median pay of $97,550 a year and a bright outlook, with its source." {...SHOT} loading="eager" />,
   },
   {
     title: "Programs and colleges",
     text: "From any career, find the college programs that lead there, with cost, graduation rate and what graduates earn.",
     links: [{ href: "/careers", label: "Start from a career" }],
-    shot: "/screenshots/colleges.png",
-    alt: "Nursing programs at Ohio colleges, each with graduates' earnings, loan debt, net price and graduation rate.",
+    // eslint-disable-next-line @next/next/no-img-element
+    image: <img src="/screenshots/colleges.png" alt="Nursing programs at Ohio colleges, each with graduates' earnings, loan debt, net price and graduation rate." {...SHOT} />,
   },
   {
     title: "Money and experience",
@@ -32,15 +36,15 @@ const STOPS: { title: string; text: string; links: { href: string; label: string
       { href: "/internships", label: "Find internships" },
       { href: "/programs", label: "Find summer programs" },
     ],
-    shot: "/screenshots/scholarships.png",
-    alt: "Scholarships for Ohio high school students, with award amounts, deadlines and links to apply on the official sites.",
+    // eslint-disable-next-line @next/next/no-img-element
+    image: <img src="/screenshots/scholarships.png" alt="Scholarships for Ohio high school students, with award amounts, deadlines and links to apply on the official sites." {...SHOT} />,
   },
   {
     title: "Your plan",
     text: "Save what fits and lay it out year by year, next to the real deadlines.",
     links: [{ href: "/plan", label: "Start your plan" }],
-    shot: "/screenshots/plan.png",
-    alt: "A student's plan open at 11th grade, starting with Take AP Biology and a button to mark it done.",
+    // eslint-disable-next-line @next/next/no-img-element
+    image: <img src="/screenshots/plan.png" alt="A student's plan open at 11th grade, starting with Take AP Biology and a button to mark it done." {...SHOT} />,
   },
 ];
 
@@ -91,8 +95,7 @@ function Stop({
   title,
   text,
   links,
-  shot,
-  alt,
+  image,
 }: (typeof STOPS)[number] & { n: number; total: number; terrace: string; last: boolean }): ReactNode {
   return (
     <li className={`relative pl-[28px] ${last ? "pb-2" : "pb-12"} ${terrace}`}>
@@ -118,16 +121,7 @@ function Stop({
             ))}
           </ul>
         </div>
-        {/* A plain <img>: next/image adds an inline style, which the CSP blocks. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={shot}
-          alt={alt}
-          width={356}
-          height={500}
-          loading={n === 1 ? "eager" : "lazy"}
-          className="h-auto w-full max-w-[240px] border border-border-subtle"
-        />
+        {image}
       </div>
     </li>
   );
