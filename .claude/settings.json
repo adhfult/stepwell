@@ -21,6 +21,9 @@
     ]
   },
   "enabledPlugins": {
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "agent-skills@addy-agent-skills": true,
+    "impeccable@impeccable": true
   }
 }
