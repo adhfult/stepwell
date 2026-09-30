@@ -55,8 +55,11 @@ Details that change often (free-tier limits, prices) are marked "check".
       Supabase's root certificate in `src/jobs/`). Variable `IMPORT_CONTACT` = the Stepwell contact address.
 - [x] Run "Import data" by hand once (Actions tab), then check the
       `occupations` count in the table editor.
-- [ ] Check: do scheduled runs keep a private repo's workflow enabled, and
-      how many Actions minutes are used a month?
+- [x] Check (2026-09-30): GitHub turns off scheduled workflows after 60
+      days without activity only in public repositories; Stepwell's is
+      private. Minutes: the daily import mostly takes under a minute (the
+      full first load took 11), and CI about 1 to 2 minutes a push, so
+      well under the 2,000 free minutes a month for private repositories.
 
 ## 4. Cloudflare Turnstile (bot check)
 - [ ] **You:** free Cloudflare account, Turnstile, add a widget for

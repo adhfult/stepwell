@@ -9,9 +9,12 @@ Newest entries at the top. Keep each entry short.
       now (LAUNCH.md step 3 covers production). Sign-in rate limits are
       decided (decision 0009); their settings are in LAUNCH.md steps 3
       and 5.
-- [ ] **Owner:** CareerOneStop still returns 403 to its website, where the
-      API key is requested. Try from a phone on mobile data, or email their
-      developer support; the API itself answers.
+- [ ] **Waiting on CareerOneStop:** their site blocks every network the
+      owner tried (CloudFront 403), so the owner emailed
+      webservices@careeronestop.org on 2026-09-30 asking to register for a
+      Web API token by email. When the token arrives: `CAREERONESTOP_*`
+      names in `.env.example` and GitHub secrets, then a spec for importing
+      Scholarship Finder alongside the official list.
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.
