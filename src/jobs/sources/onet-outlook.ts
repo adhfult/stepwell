@@ -6,6 +6,12 @@ import type { Fetcher } from "../fetch/polite.ts";
 import type { AdapterResult, StagedRecord } from "./types.ts";
 
 const API = "https://api-v2.onetcenter.org";
+
+/** A "next page" link, only if it stays on O*NET's API: our key goes with every request. */
+export function sameOrigin(next: string | undefined, origin: string) {
+  if (next && new URL(next).origin !== origin) throw new Error(`O*NET sent a next link to another site: ${new URL(next).origin}`);
+  return next;
+}
 // O*NET's terms: no more than 5 requests a second. 2 a second leaves room
 // (about 8 minutes for all 923 careers).
 export const OUTLOOK_DELAY_MS = 500;
@@ -110,7 +116,7 @@ export async function readOnetOutlook(
     if (page.status !== 200) throw new Error(`O*NET career list returned ${page.status}`);
     const list = listSchema.parse(page.body);
     codes.push(...list.career.map((c) => c.code));
-    url = list.next;
+    url = sameOrigin(list.next, API);
   }
 
   const records: StagedRecord<Outlook>[] = [];

@@ -3,6 +3,7 @@
 // Spec: docs/specs/interest-quiz.md.
 import { z } from "zod";
 import type { Fetcher } from "../fetch/polite.ts";
+import { sameOrigin } from "./onet-outlook.ts";
 import type { AdapterResult } from "./types.ts";
 
 const QUESTIONS_URL = "https://api-v2.onetcenter.org/mnm/interestprofiler/questions?start=1&end=60";
@@ -39,7 +40,7 @@ export async function readOnetIp(
     const values = page.answer_option.map((o) => o.value).join(",");
     if (values !== "1,2,3,4,5") throw new Error(`Unexpected answer options: ${values}`);
     questions.push(...page.question);
-    url = page.next;
+    url = sameOrigin(page.next, new URL(QUESTIONS_URL).origin);
   }
 
   return {

@@ -34,6 +34,10 @@ Details that change often (free-tier limits, prices) are marked "check".
     with the same subjects as `supabase/config.toml`.
   - SMTP: the credentials from step 2.
   - Bot protection: Turnstile, with the **real** secret from step 4.
+  - "Secure password change" on (security audit 2026-09-29: otherwise a
+    copied login cookie can change the password through the Auth API,
+    skipping the app's email-link rule). Turn it on in the development
+    project now too.
 - [ ] Check: does the free project pause when idle, and what wakes it?
 
 ### Data imports (`.github/workflows/import.yml`, decision 0008)

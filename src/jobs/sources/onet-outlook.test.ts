@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Fetcher, FetchResult } from "../fetch/polite.ts";
-import { parseOutlook, readOnetOutlook } from "./onet-outlook.ts";
+import { parseOutlook, readOnetOutlook, sameOrigin } from "./onet-outlook.ts";
 
 // Shaped like the examples in O*NET's API v2 reference (job outlook and
 // "See all careers"); the live import on 2026-09-28 parsed all 923 careers
@@ -104,5 +104,13 @@ describe("readOnetOutlook", () => {
   it("fails clearly without a key", async () => {
     const { fetcher } = fakeFetcher();
     await expect(readOnetOutlook(fetcher, { etag: null, release: null }, {})).rejects.toThrow("ONET_API_KEY is not set");
+  });
+});
+
+describe("sameOrigin", () => {
+  it("follows next links only on O*NET's API, since the key goes with them", () => {
+    expect(sameOrigin("https://api-v2.onetcenter.org/mnm/careers/?start=21", "https://api-v2.onetcenter.org")).toContain("start=21");
+    expect(sameOrigin(undefined, "https://api-v2.onetcenter.org")).toBeUndefined();
+    expect(() => sameOrigin("https://attacker.example/x", "https://api-v2.onetcenter.org")).toThrow("another site");
   });
 });

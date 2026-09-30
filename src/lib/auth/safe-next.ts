@@ -17,7 +17,9 @@ export function safeNextPath(value: unknown, fallback = "/"): string {
   // result is still on it.
   const base = "http://stepwell.invalid";
   const url = new URL(value, base);
-  if (url.origin !== base) return fallback;
+  // Resolving turns "/.//evil.example" or "/%2e%2e//evil.example" back into
+  // "//evil.example", so check the cleaned-up path again.
+  if (url.origin !== base || url.pathname.startsWith("//")) return fallback;
 
   return url.pathname + url.search + url.hash;
 }

@@ -3,11 +3,11 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(10);
+select plan(11);
 
-insert into auth.users (id, email, raw_user_meta_data) values
-  ('11111111-1111-1111-1111-111111111111', 'student-a@example.test', '{"age_confirmed": true}'),
-  ('22222222-2222-2222-2222-222222222222', 'student-b@example.test', '{"age_confirmed": true}');
+insert into auth.users (id, email, raw_user_meta_data, last_sign_in_at) values
+  ('11111111-1111-1111-1111-111111111111', 'student-a@example.test', '{"age_confirmed": true}', now() - interval '1 hour'),
+  ('22222222-2222-2222-2222-222222222222', 'student-b@example.test', '{"age_confirmed": true}', null);
 
 -- How the function is defined
 select ok(
@@ -51,7 +51,15 @@ select set_config(
   '{"sub": "11111111-1111-1111-1111-111111111111", "role": "authenticated"}',
   true
 );
-select lives_ok('select public.delete_my_account()', 'student A can delete their account');
+select throws_ok(
+  'select public.delete_my_account()',
+  '42501', 'Sign in again to delete your account',
+  'without a sign-in in the last 10 minutes (the app''s password check), deletion is refused'
+);
+reset role;
+update auth.users set last_sign_in_at = now() where id = '11111111-1111-1111-1111-111111111111';
+set local role authenticated;
+select lives_ok('select public.delete_my_account()', 'student A can delete their account right after signing in');
 reset role;
 
 select is(

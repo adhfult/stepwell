@@ -15,6 +15,11 @@ describe("safeNextPath", () => {
     ["relative path", "account"],
     ["control character", "/account\n//evil.example"],
     ["empty", ""],
+    ["dot segment", "/.//evil.example"],
+    ["dot-dot segment", "/..//evil.example"],
+    ["folder then dot-dot", "/a/..//evil.example"],
+    ["encoded dot", "/%2e//evil.example"],
+    ["encoded dot-dot", "/%2e%2e//evil.example/x"],
   ])("falls back for a %s", (_label, value) => {
     expect(safeNextPath(value)).toBe("/");
   });
