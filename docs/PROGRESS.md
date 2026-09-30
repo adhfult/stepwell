@@ -50,8 +50,9 @@ Newest entries at the top. Keep each entry short.
   three other names, all-caps USAJOBS titles fixed.
 - New home page: first sentence says what Stepwell does, career search,
   then the route line with four real screenshots (`public/screenshots/`).
-- The owner ran `supabase db reset` (local data was wiped, migrations
-  rebuilt cleanly); all sources re-imported locally.
+- The local database was found empty apart from seed data, which is what
+  `supabase db reset` leaves (not confirmed by the owner); migrations had
+  rebuilt it cleanly. All sources re-imported locally.
 - Gotcha: `npx supabase migration new` waits on stdin when not in a
   terminal; run it with `</dev/null` (an empty migration got applied
   locally once and needed `migration repair --local`).
