@@ -42,6 +42,12 @@ Each item says **how Stepwell does it**.
       If added, they require a server-side role check and a decision record.
 - [ ] Sensitive actions (delete account, change email) re-check the session
       and ask for confirmation.
+      Known limit (accepted 2026-09-30): the email-link rule for a new
+      password lives in the app, and Supabase lets a session under 24 hours
+      old change its password through the Auth API directly. Someone with a
+      copied login cookie could use that, but the cookie already gives them
+      the account; cookies are HttpOnly, and students should sign out on
+      shared computers.
 
 ## Data and database
 - [ ] **Isolate user data.** Every table with user data has RLS with

@@ -63,7 +63,9 @@ export function createPoliteFetcher({
   let requests = 0;
 
   // Waits for the host's turn, then sends one request.
-  async function send(url: URL, headers: Record<string, string>, delayMs: number) {
+  // With an API key in the headers, a redirect is refused rather than followed,
+  // so the key can't be carried to another site (security audit 2026-09-30).
+  async function send(url: URL, headers: Record<string, string>, delayMs: number, keyed = false) {
     if (requests >= pageCap) throw new Error(`Page cap of ${pageCap} requests reached`);
     const last = lastRequestAt.get(url.host);
     if (last !== undefined) {
@@ -74,6 +76,7 @@ export function createPoliteFetcher({
     requests++;
     return fetchImpl(url, {
       headers: { "User-Agent": userAgent, ...headers },
+      redirect: keyed ? "error" : "follow",
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
   }
@@ -115,7 +118,7 @@ export function createPoliteFetcher({
         let response: Response | null = null;
         let failure: unknown = null;
         try {
-          response = await send(url, headers, delayMs);
+          response = await send(url, headers, delayMs, Object.keys(extraHeaders).length > 0);
           if (response.status !== 429 && response.status < 500) {
             // Read the body in here too: a download that stalls or drops
             // halfway is retried like any other network error.

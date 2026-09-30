@@ -11,12 +11,12 @@ import {
 function setup(routes: Record<string, Array<() => Response>>, options = {}) {
   let clock = 1_000_000;
   const sleeps: number[] = [];
-  const calls: Array<{ url: string; headers: Record<string, string>; at: number }> = [];
+  const calls: Array<{ url: string; headers: Record<string, string>; at: number; redirect?: RequestRedirect }> = [];
   const served = new Map<string, number>();
 
   const fetchImpl = (async (input: URL, init?: RequestInit) => {
     const url = input.href;
-    calls.push({ url, headers: (init?.headers ?? {}) as Record<string, string>, at: clock });
+    calls.push({ url, headers: (init?.headers ?? {}) as Record<string, string>, at: clock, redirect: init?.redirect });
     const queue = routes[url];
     if (!queue) return new Response("not found", { status: 404 });
     const n = served.get(url) ?? 0;
@@ -110,6 +110,17 @@ describe("createPoliteFetcher", () => {
   it("stops when robots.txt has a server error", async () => {
     const { fetcher } = setup({ "https://example.gov/robots.txt": [status(503)] });
     await expect(fetcher.get("https://example.gov/a")).rejects.toThrow("robots.txt");
+  });
+
+  it("refuses redirects when an API key rides along, follows them otherwise", async () => {
+    const { fetcher, calls } = setup({
+      ...robots("User-agent: *\nDisallow:"),
+      "https://example.gov/keyed": [ok()],
+      "https://example.gov/plain": [ok()],
+    });
+    await fetcher.get("https://example.gov/keyed", { headers: { "X-API-Key": "k" } });
+    await fetcher.get("https://example.gov/plain");
+    expect(calls.map((c) => c.redirect)).toEqual(["follow", "error", "follow"]);
   });
 
   it("sends extra headers to the page but not to robots.txt", async () => {

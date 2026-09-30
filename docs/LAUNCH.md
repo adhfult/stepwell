@@ -36,10 +36,13 @@ Details that change often (free-tier limits, prices) are marked "check".
   - Bot protection: Turnstile, with the **real** secret from step 4.
   - Rate Limits: sign-ins and sign-ups raised to about 300 per 5 minutes
     (all students share Vercel's addresses here; decision 0009).
-  - "Secure password change" on (security audit 2026-09-29: otherwise a
-    copied login cookie can change the password through the Auth API,
-    skipping the app's email-link rule). Turn it on in the development
-    project now too.
+  - "Secure password change" on. It asks for re-authentication only when
+    the session is over 24 hours old; tested locally 2026-09-30, a fresh
+    copied login cookie can still change the password through the Auth
+    API, skipping the app's 15-minute email-link rule. Accepted risk (see
+    SECURITY.md "Sensitive actions"): that cookie already gives full access
+    to the account, and Supabase's stricter "require current password"
+    would break Forgot password. Turn it on in the development project too.
 - [ ] Check: does the free project pause when idle, and what wakes it?
 
 ### Data imports (`.github/workflows/import.yml`, decision 0008)

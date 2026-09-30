@@ -28,6 +28,19 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-09-30 (early): second security audit, rate limits
+- Cloudflare's security-audit method (instructions read from GitHub, not
+  installed; source-only, report in ~/security-audit-skill/stepwell/run-1):
+  0 confirmed findings. Its password lead was tested locally and is real
+  within 24 hours of sign-in; recorded as an accepted risk (SECURITY.md,
+  LAUNCH.md). Its Claude-workflow lead doesn't apply (the repo is private).
+- Hardening from its notes: keyed API requests refuse redirects (checked
+  live: USAJOBS, O*NET, Scorecard still import); HSTS header.
+- Decision 0009: rate-limit sign-in at Vercel's firewall per IP; a secret
+  key with `Sb-Forwarded-For` would have skipped Supabase's captcha.
+- Home route line drawn as its own element; the owner's plugin settings
+  committed.
+
 ### 2026-09-29 (night): everything in one go
 - Planner saves internships (by closing year), AP classes (this year) and
   summer programs (by deadline), besides scholarships and colleges.
