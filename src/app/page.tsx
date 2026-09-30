@@ -75,7 +75,8 @@ export default function Home() {
       </section>
 
       <p className="mt-12 max-w-2xl">
-        Stepwell never sells or shares your information, and you can use most of it without an account.{" "}
+        Stepwell never sells your information or shares it with colleges or companies, and you can use most of it
+        without an account.{" "}
         <Link href="/about-data">See where the data comes from</Link>.
       </p>
     </Page>
