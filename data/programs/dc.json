@@ -1,0 +1,27 @@
+[
+  {
+    "id": "dc-marion-barry-syep",
+    "title": "Mayor Marion S. Barry Summer Youth Employment Program",
+    "sponsor": "DC Department of Employment Services",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://does.dc.gov/service/mayor-marion-s-barry-summer-youth-employment-program",
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "states": [
+      "DC"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "District of Columbia youth ages 14 to 24",
+    "description": "A summer jobs program run by the DC government that places you in a paid job with a private company or government office. You earn money, build work skills, and try out different careers. Apply online at summerjobs.dc.gov.",
+    "checked_at": "2026-09-29"
+  }
+]

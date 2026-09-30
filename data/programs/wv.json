@@ -1,0 +1,98 @@
+[
+  {
+    "id": "wv-governors-honors-academy",
+    "title": "Governor's Honors Academy",
+    "sponsor": "West Virginia Department of Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://wvde.us/academics/middle-secondary-education/student-events-programs-initiatives/governors-schools/governors-honors-academy",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WV"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-03"
+    },
+    "who_text": "West Virginia high school juniors who live in the state, with at least a 3.5 GPA or a top 10 percent class rank and no grades below a C",
+    "description": "A three-week live-in summer program at West Virginia University for about 175 strong students. State funds pay for tuition, room, board, and class materials. Your application goes through your county superintendent.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-governors-school-arts",
+    "title": "Governor's School for the Arts",
+    "sponsor": "West Virginia Department of Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://wvde.us/academics/middle-secondary-education/student-events-programs-initiatives/governors-schools-west-virginia/governors-school-arts-gsa",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WV"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-06"
+    },
+    "who_text": "West Virginia high school sophomores who live in the state and have at least a 2.2 GPA; an audition is required",
+    "description": "A free three-week live-in summer program for young artists, held in 2026 at West Virginia Wesleyan College. You study one area such as creative writing, dance, music, painting and drawing, theater, or digital literacy.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-governors-computer-science-institute",
+    "title": "Governor's Computer Science Institute",
+    "sponsor": "West Virginia Department of Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://wvde.us/academics/middle-secondary-education/student-events-programs-initiatives/governors-schools-west-virginia/governors-computer-science-institute-gcsi",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WV"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-03"
+    },
+    "who_text": "West Virginia residents in 9th or 10th grade at a West Virginia high school, with at least a 3.0 GPA and a principal recommendation",
+    "description": "A free one-week summer program at WVU Tech in Beckley. You practice coding and programming to solve real problems and work in teams like computer scientists do.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wv-governors-school-entrepreneurship",
+    "title": "Governor's School of Entrepreneurship",
+    "sponsor": "West Virginia Department of Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://wvde.us/academics/middle-secondary-education/student-events-programs-initiatives/governors-schools-west-virginia/governors-school-entrepreneurship-gse",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WV"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-13"
+    },
+    "who_text": "West Virginia residents in 9th, 10th, or 11th grade at a West Virginia high school, with at least a 2.5 GPA, a principal recommendation, and two teacher recommendations",
+    "description": "A free 10-day summer program held in 2026 at Marshall University. You work with other students to build a startup idea, learn from business experts, and pitch your idea to investors.",
+    "checked_at": "2026-09-29"
+  }
+]

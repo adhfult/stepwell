@@ -41,7 +41,7 @@ export default function PrivacyPage() {
           <strong>Your interest quiz scores, if you save them.</strong> Just the six scores, never your answers.
         </li>
         <li>
-          <strong>Careers, scholarships and colleges you save, and your plan.</strong> The steps you add to your plan
+          <strong>Careers, scholarships, colleges, internships, programs and AP classes you save, and your plan.</strong> The steps you add to your plan
           (a short title, the school year, when in the year, the kind of step and an optional due date), and whether
           you’ve done them. Only you can see them.
         </li>

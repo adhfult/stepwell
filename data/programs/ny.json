@@ -1,0 +1,73 @@
+[
+  {
+    "id": "ny-senate-undergraduate-session-assistants",
+    "title": "New York State Senate Undergraduate Session Assistants Program",
+    "sponsor": "New York State Senate",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.nysenate.gov/newsroom/articles/2024/undergraduate-program",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "NY"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$8,800 stipend",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Full-time undergraduates at an accredited college or university in New York State with at least a 3.0 GPA",
+    "description": "You work for the New York State Senate during its legislative session, from early January to late April. Session Assistants work at least 35 hours a week and are paid a stipend in installments every two weeks.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ny-assembly-session-internship",
+    "title": "New York State Assembly Session Internship Program",
+    "sponsor": "New York State Assembly",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://nyassembly.gov/internship/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "NY"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$8,800 stipend for undergraduate session interns",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Full-time college juniors and seniors in a degree program, in any major",
+    "description": "You spend a legislative session working inside the New York State Assembly as a paid session intern. Students of all majors can apply, and applications for the 2027 session are available on the program page.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ny-nyc-summer-youth-employment",
+    "title": "NYC Summer Youth Employment Program (SYEP)",
+    "sponsor": "NYC Department of Youth and Community Development",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.nyc.gov/site/dycd/services/jobs-internships/summer-youth-employment-program-syep.page",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "NY"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-13"
+    },
+    "who_text": "New York City youth ages 14 to 24",
+    "description": "SYEP gives New York City young people career exploration and paid work experience each summer. The 2026 application deadline was March 13, 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

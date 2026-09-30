@@ -4,6 +4,14 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
+- [ ] **In progress (owner asked 2026-09-29 to do all of it in one go),
+      in this order:** (1) planner saves internships and AP classes;
+      (2) summer programs and non-federal internships from official sites
+      (`data/programs/`, own table, spec first); (3) CareerOneStop 403
+      check; (4) mobile pass + design audit of every page at 320/390px
+      (header vs DESIGN.md list, plan page clutter, all-caps USAJOBS
+      titles); (5) new home page with real screenshots, last; (6) security
+      audit findings; (7) owner items listed, not done.
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.

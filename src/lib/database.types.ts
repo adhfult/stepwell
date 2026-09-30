@@ -355,16 +355,22 @@ isOneToOne: false
                   ]
                 },"saved_items": {
                   Row: {
-                    "created_at": string,"id": string,"onet_code": string | null,"scholarship_id": string | null,"title": string | null,"unitid": number | null,"user_id": string
+                    "ap_course_code": string | null,"created_at": string,"id": string,"onet_code": string | null,"opportunity_id": string | null,"scholarship_id": string | null,"student_program_id": string | null,"title": string | null,"unitid": number | null,"user_id": string
                   }
                   Insert: {
-                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"scholarship_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
+                    "ap_course_code"?: string | null,"created_at"?: string,"id"?: string,"onet_code"?: string | null,"opportunity_id"?: string | null,"scholarship_id"?: string | null,"student_program_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
                   }
                   Update: {
-                    "created_at"?: string,"id"?: string,"onet_code"?: string | null,"scholarship_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
+                    "ap_course_code"?: string | null,"created_at"?: string,"id"?: string,"onet_code"?: string | null,"opportunity_id"?: string | null,"scholarship_id"?: string | null,"student_program_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
                   }
                   Relationships: [
                     {
+      foreignKeyName: "saved_items_ap_course_code_fkey"
+      columns: ["ap_course_code"]
+isOneToOne: false
+      referencedRelation: "ap_courses"
+      referencedColumns: ["code"]
+    },{
       foreignKeyName: "saved_items_onet_code_fkey"
       columns: ["onet_code"]
 isOneToOne: false
@@ -403,6 +409,25 @@ isOneToOne: false
                   }
                   Relationships: [
                     
+                  ]
+                },"student_programs": {
+                  Row: {
+                    "checked_at": string,"deadline_date": string | null,"deadline_kind": string,"deadline_month_day": string | null,"description": string,"id": string,"kind": string,"paid": boolean,"pay_text": string | null,"remote": boolean,"retrieved_at": string,"source_id": string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"states": (string)[],"title": string,"url": string,"who_text": string | null
+                  }
+                  Insert: {
+                    "checked_at": string,"deadline_date"?: string | null,"deadline_kind": string,"deadline_month_day"?: string | null,"description": string,"id": string,"kind": string,"paid": boolean,"pay_text"?: string | null,"remote"?: boolean,"retrieved_at": string,"source_id"?: string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"states"?: (string)[],"title": string,"url": string,"who_text"?: string | null
+                  }
+                  Update: {
+                    "checked_at"?: string,"deadline_date"?: string | null,"deadline_kind"?: string,"deadline_month_day"?: string | null,"description"?: string,"id"?: string,"kind"?: string,"paid"?: boolean,"pay_text"?: string | null,"remote"?: boolean,"retrieved_at"?: string,"source_id"?: string,"sponsor"?: string,"sponsor_type"?: string,"stages"?: (string)[],"states"?: (string)[],"title"?: string,"url"?: string,"who_text"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "student_programs_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
                   ]
                 }
           }

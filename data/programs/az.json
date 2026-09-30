@@ -1,0 +1,25 @@
+[
+  {
+    "id": "az-keys-research-internship",
+    "title": "KEYS Research Internship",
+    "sponsor": "University of Arizona, BIO5 Institute",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://keys.arizona.edu/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "AZ"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Arizona high school students who are 16 or older by the first day, are U.S. citizens or permanent residents, and have lived in Arizona for at least one year",
+    "description": "A summer research internship where you work on real science projects with University of Arizona researchers. The 2027 program runs June 7 to July 23, costs nothing to join, and earns 3 units of college credit. Applications open November 2, 2026, and recommendations are due January 7.",
+    "checked_at": "2026-09-29"
+  }
+]

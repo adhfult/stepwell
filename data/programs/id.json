@@ -1,0 +1,36 @@
+[
+  {
+    "id": "id-cei-summer-stem-bridge",
+    "title": "Summer STEM Bridge Program",
+    "sponsor": "College of Eastern Idaho",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.cei.edu/summer-stem-bridge",
+    "stages": ["high_school"],
+    "states": ["ID"],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {"kind": "unknown"},
+    "who_text": "Idaho residents or students at an Idaho high school, at least 16, who are sophomores, juniors, or seniors",
+    "description": "Over eight weeks in Idaho Falls you take two college classes and earn 5 to 6 college credits, with field trips to Idaho National Laboratory. Tuition, fees, books, and materials are covered by grants, scholarships, and state funding. In 2026 it ran June 2 to July 23, with registration finishing in May.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "id-legislature-internship",
+    "title": "Idaho Legislature Internship",
+    "sponsor": "Idaho State Legislature",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://legislature.idaho.gov/idaho-legislature-internship-application/",
+    "stages": ["college"],
+    "states": ["ID"],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {"kind": "date", "date": "2026-11-20"},
+    "who_text": "College students approved by their school who have a faculty sponsor to oversee the internship",
+    "description": "Interns work at the Idaho State Capitol in Boise during the 2027 legislative session, which starts January 11, 2027 and runs into late March or early April. The internship is unpaid, but you see how state laws are made up close.",
+    "checked_at": "2026-09-29"
+  }
+]

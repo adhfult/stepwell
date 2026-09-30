@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ks-ku-aatee-aerospace-camp",
+    "title": "Advanced Aerospace Technologies Exploration Experience (AATEE)",
+    "sponsor": "University of Kansas, Center for Remote Sensing of Ice Sheets (CReSIS)",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://cresis.ku.edu/aatee",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "KS"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Rising high school seniors who attend high school in Kansas",
+    "description": "A free two-week camp at the University of Kansas in Lawrence where you study math, physics, aerospace engineering and computer science. You live in campus dorms. Room, board and tuition are covered by a Department of Defense grant.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ks-ku-fuse2-semiconductor-camp",
+    "title": "FuSe2 Summer Camp (Future of Semiconductors)",
+    "sponsor": "University of Kansas with the University of Houston",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://fuse2.ku.edu/apply",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "KS"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$1,000 stipend, with travel, lodging and food paid",
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-20"
+    },
+    "who_text": "High school juniors and seniors or college students whose parents or guardians are migratory farm workers, migratory fishers, or seasonal workers",
+    "description": "A one-week summer workshop at the University of Kansas about semiconductors, the tiny parts inside computers and phones. Your travel, lodging and food are paid, and you get a stipend.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "id": "oh-high-school-tech-internship",
+    "title": "High School Tech Internship Program",
+    "sponsor": "Ohio Governor's Office of Workforce Transformation",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://workforce.ohio.gov/initiatives/initiatives/hstechinternshipprogram",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "OH"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "At least $12 per hour for internships the state reimburses",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Ohio high school students interested in technology jobs",
+    "description": "You work a paid internship at an Ohio employer in a tech role such as software, data, or cybersecurity. The state pays back part of your wages to the employer. To join, contact the regional organization for your part of Ohio listed on the page.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "oh-state-highway-patrol-cadet-internship",
+    "title": "Ohio State Highway Patrol Cadet Internship",
+    "sponsor": "Ohio State Highway Patrol",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://statepatrol.ohio.gov/recruitment-and-training/recruitment/all-oshp-careers/cadet-internship",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "OH"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$16.93 per hour (undergraduate) or $20.59 per hour (graduate)",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "College freshmen (after one semester), sophomores, and juniors who are at least 18, keep a 2.5 GPA, and live in or move to Ohio",
+    "description": "You work 10 to 20 hours a week at a State Highway Patrol post while you are in college, learning about law enforcement with a mentor. The program prepares you to become a State Trooper cadet later.",
+    "checked_at": "2026-09-29"
+  }
+]

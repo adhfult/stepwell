@@ -52,6 +52,7 @@ build step's spec.
 | `knowledge_areas`, `ap_courses`, `knowledge_ap_map` (built) | id / code | O*NET's 33 knowledge areas, College Board's 42 AP courses, and Stepwell's mapping (hand-entered in the migration; `ap_courses_for_career()`) |
 | `sources` (built) | id | every data source, its terms check and fetcher |
 | `scholarships` (built) | id | official state and federal programs from `data/scholarships/` with their rules as columns; `match_scholarships()` |
+| `student_programs` (built) | id (state code or `us`, then a slug) | curated official summer programs, internships and research (free or paid only): sponsor, kind, stages, states (empty = national), remote, paid and pay text, deadline, who can apply, description, checked date; public read, replaced daily by `ingest.merge_student_programs()` |
 | `opportunities` (built) | id (USAJOBS control number) | open federal internships: title, agency, places and states, remote, pay range and interval, who may apply, closing date, summary, link; public read, replaced daily by `ingest.merge_opportunities()` |
 
 **User data** (owner-only via RLS):
@@ -59,7 +60,7 @@ build step's spec.
 |---|---|
 | `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
 | `interest_results` (built) | latest quiz scores (six areas, 0 to 40), never the answers; saved only when the student presses Save |
-| `saved_items` (built: careers, scholarships, colleges) | one link column per kind (`onet_code`, `scholarship_id`, `unitid`), exactly one set; scholarships and colleges have no foreign key (their daily merges delete rows) and keep a `title` copy so the plan can say "No longer listed" |
+| `saved_items` (built: careers, scholarships, colleges, internships, programs, AP classes) | one link column per kind (`onet_code`, `scholarship_id`, `unitid`, `opportunity_id`, `student_program_id`, `ap_course_code`), exactly one set; everything but careers and AP classes has no foreign key (their daily merges delete rows) and keeps a `title` copy so the plan can say "No longer listed" |
 | `plan_items` (built) | the student's own steps: title (200), kind, school year (or none), term, optional due date, done; no free-text notes. Saved listings' deadlines are read live on `/plan`. Capped per student (500 steps; 1,000 saved items) by `enforce_row_cap()` |
 | `eligibility_profiles` (built) | optional scholarship answers (first question set only), consent version; matching stays in the database; deleted with the account and after 12 months without a sign-in by pg_cron (decision 0006) |
 

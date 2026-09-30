@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nc-state-government-internship-program",
+    "title": "State of North Carolina Internship Program",
+    "sponsor": "North Carolina Department of Administration, Division for Women and Youth",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.doa.nc.gov/news/press-releases/2025/12/01/college-students-can-now-apply-summer-internships-state-government-agencies",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "NC"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$15 per hour stipend",
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-30"
+    },
+    "who_text": "North Carolina residents attending a college, university, technical institute, or community college",
+    "description": "You spend 10 weeks of summer working full time on a real project at a North Carolina state government agency. Interns work 40 hours a week and earn a stipend. Applications for summer 2026 closed on January 30.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nc-summer-ventures-science-math",
+    "title": "Summer Ventures in Science and Mathematics",
+    "sponsor": "North Carolina School of Science and Mathematics",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.ncssm.edu/summer/summer-ventures/summer-ventures-admissions",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "NC"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-05"
+    },
+    "who_text": "North Carolina students in their second or third year of high school who have not done Summer Ventures before",
+    "description": "You live on a college campus for four weeks in the summer and do research on a STEM topic you choose. The program is free for accepted students, and meals on campus are included. There is no application fee.",
+    "checked_at": "2026-09-29"
+  }
+]

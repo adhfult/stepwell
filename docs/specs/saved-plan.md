@@ -61,8 +61,9 @@ plan, move and finish items, delete the account.
 
 ## Result
 The owner said to proceed, so each open question took its default:
-1. Saving: scholarships and colleges (careers already could). Internships
-   and AP classes wait for a later step.
+1. Saving: scholarships and colleges (careers already could). Internships,
+   AP classes and summer programs were added the same evening (internships
+   sit in the school year they close; AP classes in the current year).
 2. No starter tasks; the plan starts empty with links to get going.
 3. Everyone gets the same year view; with no graduation year (adult
    learners, or not filled in) years run from now, and `/plan` asks for the

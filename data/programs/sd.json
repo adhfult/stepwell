@@ -1,0 +1,48 @@
+[
+  {
+    "id": "sd-sdsu-data-science-camp",
+    "title": "SDSU Data Science Camp",
+    "sponsor": "South Dakota State University",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.sdstate.edu/mathematics-statistics/sdsu-data-science-camp",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "SD"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students in grades 9 to 12; limited to 20 students",
+    "description": "A free four-day camp at South Dakota State University in Brookings with food and lodging provided. You learn the R programming language, practice statistics, explore artificial intelligence, and present a data science project. Families provide their own transportation.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "sd-gfp-internships",
+    "title": "South Dakota Game, Fish and Parks Internships",
+    "sponsor": "South Dakota Game, Fish and Parks",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://gfp.sd.gov/internships/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "SD"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "College and technical school students",
+    "description": "Paid internships with the state parks and wildlife agency in areas like park management, law enforcement, outdoor education, wildlife and fisheries, and GIS. Open positions are posted on the State of South Dakota careers site.",
+    "checked_at": "2026-09-29"
+  }
+]

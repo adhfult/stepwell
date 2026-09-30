@@ -1,0 +1,26 @@
+[
+  {
+    "id": "la-lsuhs-summer-research-internship",
+    "title": "Summer Research Internship Program for High School Students",
+    "sponsor": "LSU Health Sciences Center New Orleans, School of Medicine",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.medschool.lsuhsc.edu/genetics/summer_highschool_undergrad.aspx",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "LA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$2,645 stipend for high school students, paid in three parts",
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-16"
+    },
+    "who_text": "High school juniors and seniors aged 16 to 18 who live in or near New Orleans for the summer and can attend all eight weeks",
+    "description": "A paid eight-week summer research job in New Orleans. You work in a lab with LSU Health faculty and graduate students, attend weekly seminars, and present a poster at the end. Students pay for parking if they drive.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ms-governors-school",
+    "title": "Mississippi Governor's School",
+    "sponsor": "Mississippi University for Women",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.muw.edu/education/govschool/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "MS"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-01"
+    },
+    "who_text": "Mississippi residents in 10th or 11th grade when they apply who have not attended Mississippi Governor's School before",
+    "description": "A two-week honors program where you live on the Mississippi University for Women campus, set for June 6 to 19, 2027. Tuition, room, meals and activities are covered, but you pay for your own travel and dorm supplies.",
+    "checked_at": "2026-09-29"
+  }
+]

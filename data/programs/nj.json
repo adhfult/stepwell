@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nj-governors-school-engineering-technology",
+    "title": "Governor's School of New Jersey Program in Engineering and Technology",
+    "sponsor": "State of New Jersey Office of the Secretary of Higher Education and Rutgers University",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://www.nj.gov/govschool/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "NJ"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-08"
+    },
+    "who_text": "New Jersey high school juniors with a strong interest in engineering, computers, math or science, nominated by their high school",
+    "description": "A free summer program where you live on the Rutgers campus for about four weeks after junior year. You take engineering and technology courses and work with a small team on a research project that you present at the end. Talk to your school counselor early in junior year, because your school has to nominate you.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nj-governors-school-sciences",
+    "title": "Governor's School of New Jersey in the Sciences",
+    "sponsor": "State of New Jersey Office of the Secretary of Higher Education and Drew University",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://www.nj.gov/govschool/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "NJ"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-08"
+    },
+    "who_text": "New Jersey high school juniors with a strong interest in science, nominated by their high school",
+    "description": "A free summer science program where you live on the Drew University campus for about three weeks after junior year. The state covers all tuition and fees. Your high school has to nominate you, so ask your school counselor about it in the fall of junior year.",
+    "checked_at": "2026-09-29"
+  }
+]

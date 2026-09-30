@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sc-dnr-archaeology-internship",
+    "title": "SCDNR Heritage Trust Archaeology Internship",
+    "sponsor": "South Carolina Department of Natural Resources",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://heritagetrust.dnr.sc.gov/internships.html",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "SC"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$12 per hour for college students; high school interns are unpaid",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Summer: rising high school seniors, college and graduate students, and recent graduates. Spring and fall: college students in anthropology, archaeology, history or related fields",
+    "description": "Work with state archaeologists at the Parker Annex Archaeology Center in Columbia. The summer internship lasts six weeks, and applications are taken from December to February. College interns are paid, and high school interns are not.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "va-vita-summer-internship",
+    "title": "VITA Summer Internship Program",
+    "sponsor": "Virginia Information Technologies Agency",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.vita.virginia.gov/careers/emerging-talent/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "VA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid, nine-week summer program",
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-25"
+    },
+    "who_text": "College students in a two-year, four-year, or graduate degree program",
+    "description": "Virginia's state IT agency hires college interns for a paid nine-week summer program. You work part time, in person, at the VITA office in North Chesterfield. Applications open each February.",
+    "checked_at": "2026-09-29"
+  }
+]

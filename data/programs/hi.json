@@ -1,0 +1,53 @@
+[
+  {
+    "id": "hi-hele-imua-internship",
+    "title": "Hele Imua State of Hawaii Internship Program",
+    "sponsor": "Hawaii Department of Labor and Industrial Relations, Workforce Development Division",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://labor.hawaii.gov/wdd/intern/hele-imua/",
+    "stages": ["college"],
+    "states": ["HI"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid by DLIR through its payroll system",
+    "deadline": {"kind": "rolling"},
+    "who_text": "Hawaii residents at least 16 years old with a 2.5 GPA or higher, enrolled in college or graduated within the past year",
+    "description": "Hele Imua places interns in Hawaii state government jobs for up to 12 weeks, with a chance to extend. You apply by emailing an application form, resume, and short cover letter to your regional Workforce Development Division office.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "hi-uh-manoa-summer-research-institute",
+    "title": "UH Manoa Summer Research Institute",
+    "sponsor": "University of Hawaii at Manoa, College of Tropical Agriculture and Human Resilience",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.hawaii.edu/news/article.php?aId=14421",
+    "stages": ["high_school", "college"],
+    "states": ["HI"],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {"kind": "unknown"},
+    "who_text": "High school and college students across Hawaii",
+    "description": "This free eight week summer program pairs you with UH faculty to research problems in food systems, community resilience, and caring for the land. Public high school students can earn college credit at no cost.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "hi-lieutenant-governor-high-school-internship",
+    "title": "Office of the Lieutenant Governor High School Internship",
+    "sponsor": "Office of the Lieutenant Governor of Hawaii",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://ltgov.hawaii.gov/internship/",
+    "stages": ["high_school"],
+    "states": ["HI"],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {"kind": "usually", "month_day": "04-15"},
+    "who_text": "Hawaii residents at least 16 by the start date who have finished sophomore year and are full-time students",
+    "description": "This unpaid summer internship gives you hands-on experience and mentoring in public service at the Lieutenant Governor's office. In 2026 it ran June 16 to July 16, on Tuesday and Thursday mornings.",
+    "checked_at": "2026-09-29"
+  }
+]

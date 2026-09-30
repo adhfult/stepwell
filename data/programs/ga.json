@@ -1,0 +1,36 @@
+[
+  {
+    "id": "ga-governors-honors-program",
+    "title": "Georgia Governor's Honors Program (GHP)",
+    "sponsor": "Georgia Governor's Office of Education and Workforce Strategy",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://goews.georgia.gov/governors-honors-program",
+    "stages": ["high_school"],
+    "states": ["GA"],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {"kind": "date", "date": "2026-11-10"},
+    "who_text": "Georgia high school sophomores and juniors nominated through their school's local selection process",
+    "description": "GHP is a four week summer program where you live on a college campus and take advanced classes in a subject you are strong in. Meals and rooms are provided, so you mainly pay for travel and a few supplies. The 2027 program runs June 13 to July 10 at Georgia Southern University, and schools must send nominations by November 10, 2026.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ga-legislative-internship-program",
+    "title": "Georgia Legislative Internship Program",
+    "sponsor": "Georgia General Assembly, with the University of Georgia Carl Vinson Institute of Government",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://cviog.uga.edu/about/student-opportunities/georgia-legislative-internship-program.html",
+    "stages": ["college"],
+    "states": ["GA"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$300 per week stipend (UGA interns)",
+    "deadline": {"kind": "date", "date": "2026-09-30"},
+    "who_text": "Juniors and seniors at a college or university in Georgia; each school runs its own application, and this page is the UGA one",
+    "description": "Interns work full time at the Georgia State Capitol during the legislative session, which starts in January and runs through March. You help lawmakers and committees and see how state laws are made. Students at other Georgia colleges apply through their own school's coordinator.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -3,7 +3,10 @@ import Link from "next/link";
 import { z } from "zod";
 import { buttonClass } from "@/components/button-styles";
 import { Page, PageTitle } from "@/components/page";
+import { SaveButton } from "@/app/plan/save-button";
+import { getCurrentUser } from "@/lib/auth/dal";
 import { listOpportunities, type Opportunity } from "@/lib/opportunities/data";
+import { getMySavedIds } from "@/lib/plan/data";
 import { payText, placesText } from "@/lib/opportunities/labels";
 import { getMyProfile } from "@/lib/profile/data";
 import { STATES, stateName } from "@/lib/profile/options";
@@ -25,7 +28,11 @@ export default async function InternshipsPage({ searchParams }: PageProps<"/inte
   const where = params.where ?? profile?.state ?? "anywhere";
   const state = where === "anywhere" || where === "remote" ? undefined : where;
 
-  const postings = await listOpportunities({ state, remoteOnly: where === "remote" });
+  const [postings, user, saved] = await Promise.all([
+    listOpportunities({ state, remoteOnly: where === "remote" }),
+    getCurrentUser(),
+    getMySavedIds(),
+  ]);
   const shown = params.more ? postings : postings.slice(0, FIRST);
   const scope = where === "remote" ? " you can do remotely" : state ? ` in ${stateName(state)} or remote` : "";
 
@@ -48,7 +55,7 @@ export default async function InternshipsPage({ searchParams }: PageProps<"/inte
           </h2>
           <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
             {shown.map((o) => (
-              <Posting key={o.id} o={o} />
+              <Posting key={o.id} o={o} saved={user ? saved.internships.has(o.id) : null} />
             ))}
           </ul>
           {!params.more && postings.length > FIRST && (
@@ -113,7 +120,7 @@ function Filters({ where }: { where: string }) {
 }
 
 /** One posting: DESIGN.md deadline rules; the long parts fold away (native <details>). */
-function Posting({ o }: { o: Opportunity }) {
+function Posting({ o, saved }: { o: Opportunity; saved: boolean | null }) {
   const deadline = deadlineText({
     deadline_kind: "date",
     deadline_date: o.closes_on,
@@ -135,6 +142,7 @@ function Posting({ o }: { o: Opportunity }) {
       <p className="mt-2">
         <a href={o.url}>Apply on USAJOBS (usajobs.gov)</a>
       </p>
+      {saved !== null && <SaveButton kind="internship" id={o.id} saved={saved} />}
       {(o.summary || o.places.length > 1) && (
         <details className="mt-2">
           <summary className="inline-flex min-h-11 cursor-pointer items-center text-primary underline">Details</summary>

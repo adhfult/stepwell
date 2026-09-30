@@ -1,0 +1,51 @@
+[
+  {
+    "id": "nm-youth-conservation-corps",
+    "title": "New Mexico Youth Conservation Corps",
+    "sponsor": "New Mexico Energy, Minerals and Natural Resources Department",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.emnrd.nm.gov/about-ycc/",
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "states": [
+      "NM"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "New Mexico youth ages 14 to 25",
+    "description": "A paid job doing outdoor conservation work on projects across New Mexico, like improving parks and public land. Crew members who work at least 48 weeks within four years can also get a $1,500 education voucher or $500 cash. Check the program's job postings page to find a crew near you.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nm-nmt-buzzcamp",
+    "title": "New Mexico Tech BuzzCamp",
+    "sponsor": "New Mexico Institute of Mining and Technology",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.nmt.edu/buzzcamp/",
+    "stages": [
+      "middle_school",
+      "high_school"
+    ],
+    "states": [
+      "NM"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students entering 6th through 12th grade; spots are first come, first served",
+    "description": "A free week-long science and engineering camp where you stay in the dorms at New Mexico Tech in Socorro. There is one week for grades 6 to 10 and one for grades 11 and 12. Spots fill fast, so sign up as soon as it opens.",
+    "checked_at": "2026-09-29"
+  }
+]

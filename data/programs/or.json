@@ -1,0 +1,50 @@
+[
+  {
+    "id": "or-youth-corps",
+    "title": "Oregon Youth Corps and Summer Conservation Corps",
+    "sponsor": "Oregon Higher Education Coordinating Commission (Oregon Youth Works)",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.oregon.gov/highered/institutions-programs/workforce/Pages/OYCC.aspx",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "OR"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Oregon young people, typically ages 13 to 24",
+    "description": "The state funds local youth corps across Oregon that give young people paid work experience, including the Summer Conservation Corps, its largest program. You apply through a local program near you listed on the state's Oregon Youth Works page.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "or-osu-extension-internship",
+    "title": "OSU Extension Service Internship Program",
+    "sponsor": "Oregon State University Extension Service",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://extension.oregonstate.edu/about/osu-extension-service-internship-program",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "OR"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "On average $15 per hour, 40 hours per week in summer",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "College and community college students, plus high school juniors and seniors",
+    "description": "Paid summer internships at OSU Extension offices in Oregon counties, from mid-June to the end of August. Openings are usually announced in mid-February and you apply on the OSU Jobs website, ranking the counties you want.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "nv-vr-summer-youth-internship",
+    "title": "Summer Youth Internship Program",
+    "sponsor": "Nevada Department of Employment, Training and Rehabilitation, Vocational Rehabilitation",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://vrnevada.nv.gov/summer-youth-internship-program-2/",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "NV"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Fully paid internships funded by Vocational Rehabilitation",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Nevada students with disabilities ages 17 to 22",
+    "description": "A four week paid summer internship at a local business for students with disabilities. The state pays your wages, so you get real work experience and a paycheck. Contact your Nevada Vocational Rehabilitation office to ask how to take part.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "nv-unr-cbess-student-researchers",
+    "title": "CBESS Student Researchers (Community of Bilingual English-Spanish Speakers)",
+    "sponsor": "University of Nevada, Reno",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.unr.edu/raggio-center/educational-research/community-of-bilingual-english-spanish-speakers/student-researchers",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "NV"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Bilingual English and Spanish high school juniors in Northern Nevada",
+    "description": "A free program for bilingual high school juniors interested in science and health careers. You live on the University of Nevada, Reno campus for one week, then keep working online, with classes in English and Spanish. You also do your own research project about a health issue in your community.",
+    "checked_at": "2026-09-29"
+  }
+]

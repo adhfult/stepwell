@@ -1,0 +1,49 @@
+[
+  {
+    "id": "ne-yns-high-school-researchers",
+    "title": "Young Nebraska Scientists High School Researchers",
+    "sponsor": "University of Nebraska-Lincoln",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://yns.nebraska.edu/gain-hands-on-experience-in-stem/high-school-research",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "NE"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$15/hour for 20-40 hours per week for up to 8 weeks",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Nebraska residents who are at least 16 and in 10th or 11th grade",
+    "description": "A paid summer job working on a real university research team in Lincoln. You work from early June to early August and need teacher recommendations to apply. Applications open in early spring and spots are very limited, and there is no housing, so you need to commute.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ne-unmc-summer-undergraduate-research",
+    "title": "Summer Undergraduate Research Program (SURP)",
+    "sponsor": "University of Nebraska Medical Center",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.unmc.edu/student-success/pathway-programs/summer-undergraduate-research-program/index.html",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "NE"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Stipend; amount varies by department",
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-01"
+    },
+    "who_text": "College freshmen, sophomores and juniors who are U.S. citizens or permanent residents, usually with a GPA of 3.2 or higher",
+    "description": "A 10 week, full time summer research job in a medical science lab in Omaha. You get a stipend and go to weekly seminars about research careers. Applications for summer 2027 open November 1, 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

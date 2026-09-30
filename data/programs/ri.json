@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ri-prepareri-internship",
+    "title": "PrepareRI High School Summer Internship Program",
+    "sponsor": "Rhode Island Governor's Workforce Board (PrepareRI)",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://gwb.ri.gov/programs-services/prepareri",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "RI"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-14"
+    },
+    "who_text": "Rhode Island high school juniors at a public or charter school (or homeschooled), at least 16 years old, who live in Rhode Island and can work in the U.S.",
+    "description": "A paid summer internship with a Rhode Island employer for rising seniors. It starts with a one-week paid work-readiness bootcamp, then at least 150 hours of work over six weeks. It is free for students.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ri-real-skills-for-youth",
+    "title": "Real Skills for Youth",
+    "sponsor": "Rhode Island Governor's Workforce Board",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://gwb.ri.gov/programs-services/real-skills-youth",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "RI"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$16.00 per hour at some partner programs",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Rhode Island youth, mostly ages 14 to 24; each partner program sets its own age range",
+    "description": "A state-funded program that connects young people to paid work experience and career exploration through 29 partner organizations across Rhode Island. You pick a partner program from the state's yearly list and apply to it directly.",
+    "checked_at": "2026-09-29"
+  }
+]

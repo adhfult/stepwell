@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ca-college-corps",
+    "title": "#CaliforniansForAll College Corps",
+    "sponsor": "California Volunteers, Office of the Governor",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.californiavolunteers.ca.gov/californiansforall-college-corps-for-college-students/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "CA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Up to $10,000 pre-tax for 450 hours of service",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Full-time undergraduates at a participating California campus who are U.S. citizens, nationals, permanent residents, or AB 540 eligible, and who work to pay for school or show financial need",
+    "description": "You serve 450 hours over a school year with your campus or a local nonprofit, helping with K-12 education, climate action, or food insecurity. You get a living allowance during the year and education awards when you finish. You apply through your own college's College Corps program.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ca-climate-action-corps-fellowship",
+    "title": "California Climate Action Corps Fellowship",
+    "sponsor": "California Volunteers, Office of the Governor",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.californiavolunteers.ca.gov/california-climate-action-corps-fellowship",
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "states": [
+      "CA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Up to $35,250 living allowance (before taxes) over 11 months",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "People at least 18 years old with a high school diploma or equivalent",
+    "description": "A full-time, 11-month service fellowship from September through August where you lead climate projects in California communities. Fellows serve 1,700 hours and receive a living allowance plus training.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ca-capital-fellows-programs",
+    "title": "Capital Fellows Programs",
+    "sponsor": "Sacramento State, Center for California Studies",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://www.csus.edu/center/center-california-studies/capital-fellows/capital-fellows-apply.html",
+    "stages": [
+      "college",
+      "adult"
+    ],
+    "states": [
+      "CA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid full-time work for 10 to 11 months, with medical, dental and vision benefits",
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-10"
+    },
+    "who_text": "People who will have a completed bachelor's degree and be at least 20 years old by September 1 of the fellowship year",
+    "description": "Fellows work full time in California state government in Sacramento, in the Assembly, Senate, executive branch, or courts. The 2027-2028 fellowships last 10 to 11 months and include paid work and health benefits.",
+    "checked_at": "2026-09-29"
+  }
+]

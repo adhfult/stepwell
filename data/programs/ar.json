@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ar-arkansas-governors-school",
+    "title": "Arkansas Governor's School",
+    "sponsor": "Arkansas Tech University, funded by the Arkansas Department of Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://www.atu.edu/ags/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "AR"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-01"
+    },
+    "who_text": "Arkansas high school juniors (public, private, or homeschooled) nominated by a school counselor, gifted and talented coordinator, or parent for homeschoolers",
+    "description": "A four-week summer program at Arkansas Tech University in Russellville for students heading into their senior year. You pick one area such as math, science, music, drama, or visual arts. Tuition, room, board, meals, and class materials are free; you only pay for travel and personal spending.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-uark-fleischer-scholars",
+    "title": "Fleischer Scholars Program",
+    "sponsor": "University of Arkansas, Walton College of Business",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://walton.uark.edu/future-students/summer-programs.php",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "AR"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-14"
+    },
+    "who_text": "First-generation high school juniors at Arkansas high schools who are interested in studying business",
+    "description": "A free 6-day summer program on the University of Arkansas campus in Fayetteville for students who will be the first in their family to go to college. You explore business careers, practice communication skills, and get ready for college applications.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ar-uark-summer-arts-workshop",
+    "title": "Summer Arts Workshop",
+    "sponsor": "University of Arkansas, School of Art",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://art.uark.edu/news-events/summer-arts-workshop.php",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "AR"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-22"
+    },
+    "who_text": "Rising high school students in grades 10 to 12",
+    "description": "A week-long overnight art workshop at the University of Arkansas. There is no cost to attend: housing, meals, art materials, and trips to local museums and galleries are included.",
+    "checked_at": "2026-09-29"
+  }
+]

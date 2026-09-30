@@ -28,13 +28,17 @@ export default async function PlanPage() {
   const gradYear = profile?.grad_year ?? null;
   const at = (year: number) => bucket(year, stage, gradYear);
 
+  const internshipYear = (i: Plan["internships"][number]) => (i.live ? schoolYear(i.live.closes_on) : current);
   const years = planYears(current, stage, gradYear, [
     ...plan.items.flatMap((i) => (i.academic_year ? [i.academic_year] : [])),
     ...plan.scholarships.map((s) => (s.live ? scholarshipYear(s.live, today) : current)),
+    ...plan.internships.map((i) => internshipYear(i)),
+    ...plan.programs.map((p) => (p.live ? scholarshipYear(p.live, today) : current)),
   ]);
   const yearOptions = years.map((y) => ({ value: String(y), label: yearHeading(y, stage, gradYear) }));
   const undated = plan.items.filter((i) => i.academic_year === null);
-  const empty = plan.items.length === 0 && plan.scholarships.length === 0 && plan.colleges.length === 0;
+  const empty =
+    plan.items.length + plan.scholarships.length + plan.colleges.length + plan.internships.length + plan.apCourses.length + plan.programs.length === 0;
   const needsGradYear = !gradYear && stage !== "adult_learner";
 
   return (
@@ -74,12 +78,26 @@ export default async function PlanPage() {
             items={plan.items.filter((i) => i.academic_year !== null && at(i.academic_year) === year)}
             scholarships={plan.scholarships.filter((s) => at(s.live ? scholarshipYear(s.live, today) : current) === year)}
             colleges={at(collegeYear(current, stage, gradYear)) === year ? plan.colleges : []}
+            internships={plan.internships.filter((i) => at(internshipYear(i)) === year)}
+            apCourses={year === current ? plan.apCourses : []}
+            programs={plan.programs.filter((p) => at(p.live ? scholarshipYear(p.live, today) : current) === year)}
             years={yearOptions}
             today={today}
           />
         ))}
         {undated.length > 0 && (
-          <YearSection heading="No set year" open items={undated} scholarships={[]} colleges={[]} years={yearOptions} today={today} />
+          <YearSection
+            heading="No set year"
+            open
+            items={undated}
+            scholarships={[]}
+            colleges={[]}
+            internships={[]}
+            apCourses={[]}
+            programs={[]}
+            years={yearOptions}
+            today={today}
+          />
         )}
       </div>
 
@@ -125,6 +143,9 @@ function YearSection({
   items,
   scholarships,
   colleges,
+  internships,
+  apCourses,
+  programs,
   years,
   today,
 }: {
@@ -133,10 +154,13 @@ function YearSection({
   items: PlanItem[];
   scholarships: Plan["scholarships"];
   colleges: Plan["colleges"];
+  internships: Plan["internships"];
+  apCourses: Plan["apCourses"];
+  programs: Plan["programs"];
   years: { value: string; label: string }[];
   today: string;
 }) {
-  const count = items.length + scholarships.length + colleges.length;
+  const count = items.length + scholarships.length + colleges.length + internships.length + apCourses.length + programs.length;
   const sorted = [...items].sort((a, b) => TERM_ORDER.indexOf(a.term) - TERM_ORDER.indexOf(b.term));
   return (
     <details open={open} className="border-t border-border-subtle py-2">
@@ -159,6 +183,52 @@ function YearSection({
               </p>
             )}
             <SaveButton kind="scholarship" id={s.id} saved />
+          </li>
+        ))}
+        {programs.map((p) => (
+          <li key={p.id} className="py-4">
+            <p className="text-sm text-muted">Saved program</p>
+            <h3 className="font-bold">{p.live?.title ?? p.title}</h3>
+            {p.live ? (
+              <>
+                <p className="mt-1 text-sm text-muted">{p.live.sponsor}</p>
+                <Deadline s={p.live} today={today} />
+                <p className="mt-1">
+                  <a href={p.live.url}>Apply on the official site ({domainOf(p.live.url)})</a>
+                </p>
+              </>
+            ) : (
+              <p className="mt-1 text-muted">No longer listed</p>
+            )}
+            <SaveButton kind="program" id={p.id} saved />
+          </li>
+        ))}
+        {apCourses.map((c) => (
+          <li key={c.code} className="py-4">
+            <p className="text-sm text-muted">Saved AP class</p>
+            <h3 className="font-bold">{c.name}</h3>
+            <SaveButton kind="ap" id={c.code} saved />
+          </li>
+        ))}
+        {internships.map((i) => (
+          <li key={i.id} className="py-4">
+            <p className="text-sm text-muted">Saved internship</p>
+            <h3 className="font-bold">{i.live?.title ?? i.title}</h3>
+            {i.live ? (
+              <>
+                <p className="mt-1 text-sm text-muted">{i.live.organization}</p>
+                <Deadline
+                  s={{ deadline_kind: "date", deadline_date: i.live.closes_on, deadline_month_day: null, checked_at: today }}
+                  today={today}
+                />
+                <p className="mt-1">
+                  <a href={i.live.url}>Apply on USAJOBS (usajobs.gov)</a>
+                </p>
+              </>
+            ) : (
+              <p className="mt-1 text-muted">No longer listed (it may have closed)</p>
+            )}
+            <SaveButton kind="internship" id={i.id} saved />
           </li>
         ))}
         {colleges.map((c) => (

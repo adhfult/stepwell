@@ -15,6 +15,7 @@ import { readOnetCip } from "./sources/onet-cip.ts";
 import { readOnetIp } from "./sources/onet-ip.ts";
 import { OUTLOOK_DELAY_MS, readOnetOutlook } from "./sources/onet-outlook.ts";
 import { readOfficialList } from "./sources/official-list.ts";
+import { readOfficialPrograms } from "./sources/official-programs.ts";
 import { readScorecard, SCORECARD_DELAY_MS } from "./sources/scorecard.ts";
 import { readUsajobs } from "./sources/usajobs.ts";
 import type { AdapterResult } from "./sources/types.ts";
@@ -40,6 +41,7 @@ const ADAPTERS: Record<string, Adapter> = {
   onet_ip: { kind: "interest_question", read: readOnetIp, minDelayMs: OUTLOOK_DELAY_MS },
   onet_outlook: { kind: "occupation_outlook", read: readOnetOutlook, minDelayMs: OUTLOOK_DELAY_MS },
   official_list: { kind: "scholarship", read: () => readOfficialList() },
+  official_programs: { kind: "student_program", read: () => readOfficialPrograms() },
   scorecard: { kind: "institution", read: readScorecard, minDelayMs: SCORECARD_DELAY_MS },
   // data.usajobs.gov's robots.txt disallows all crawlers (checked 2026-09-29);
   // its Search API is the documented way in, with a key (docs/DATA_SOURCES.md).

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ky-governors-scholars-program",
+    "title": "Governor's Scholars Program",
+    "sponsor": "Commonwealth of Kentucky, Governor's Scholars Program",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://gsp.ky.gov/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "KY"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-15"
+    },
+    "who_text": "Kentucky residents in 11th grade who plan to return to a Kentucky school, applying through their school",
+    "description": "A free five-week summer program for Kentucky high school students, held on college campuses. You take classes, live in a dorm, and join activities with scholars from across the state. The state and private donors cover tuition, room and board; you bring transportation and pocket money, plus a refundable housing deposit. Your school sets its own deadline, earlier than the state date.",
+    "checked_at": "2026-09-29"
+  }
+]

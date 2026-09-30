@@ -122,6 +122,15 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
     placeholder (under $1 counts as not given), and remote places end in
     ", United States". The test fixture is four real postings, trimmed of
     long text and contact fields.
+- **Official programs** (source `official_programs`, built 2026-09-29):
+  Stepwell's curated list of free or paid summer programs, internships and
+  research from federal agencies and national labs, state agencies and
+  Governor's Schools, and public universities, in
+  `data/programs/<state>.json` and `federal.json` (111 programs), read
+  daily by `src/jobs/sources/official-programs.ts` into `student_programs`.
+  Researched by agents from the official pages, 20 spot-checked (96 of 100
+  facts matched; 4 wording fixes). Re-checked with the scholarships
+  (`npm run scholarships:due`). Spec: `docs/specs/programs.md`.
 - **Allowlisted sites:** only sites whose terms and robots.txt allow it; each
   gets an entry in "Allowlisted sites" below before its adapter is merged
   (process: v1 expansion draft, Section 3.9; decision 0007).

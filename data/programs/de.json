@@ -1,0 +1,36 @@
+[
+  {
+    "id": "de-state-summer-youth-employment-program",
+    "title": "Delaware State Summer Youth Employment Program",
+    "sponsor": "Delaware Department of Labor, Division of Employment and Training",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://labor.delaware.gov/audience-portals/students/",
+    "stages": ["high_school", "college"],
+    "states": ["DE"],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {"kind": "unknown"},
+    "who_text": "Delaware youth ages 14 to 21",
+    "description": "This state program gives young people a summer job for about ten weeks between June and August. You get real work experience and learn what employers expect. Contact the Division of Employment and Training through the page to ask about applying.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "de-legislative-fellows-program",
+    "title": "Jerome R. Lewis Legislative Fellows Program",
+    "sponsor": "University of Delaware, Biden School Institute for Public Administration",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://www.udel.edu/academics/colleges/biden-school/research-public-service/ipa/students/legislative-fellows-program/",
+    "stages": ["college"],
+    "states": ["DE"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid fellowship",
+    "deadline": {"kind": "date", "date": "2026-10-30"},
+    "who_text": "Full-time master's students, or juniors and seniors with a 3.4 GPA or higher, at the University of Delaware or Delaware State University",
+    "description": "Fellows work with Delaware lawmakers on Tuesdays, Wednesdays, and Thursdays from January 12 to June 30, 2027. You do nonpartisan research and help staff legislative committees.",
+    "checked_at": "2026-09-29"
+  }
+]

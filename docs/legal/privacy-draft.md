@@ -28,7 +28,7 @@ It's an independent project. Questions: [CONTACT EMAIL].
   other companies or to AI tools.
 - **Your interest quiz scores, if you save them.** Just the six scores, never
   your answers.
-- **Careers, scholarships and colleges you save, and your plan.** The steps
+- **Careers, scholarships, colleges, internships, programs and AP classes you save, and your plan.** The steps
   you add to your plan (a short title, the school year, when in the year, the
   kind of step and an optional due date), and whether you've done them. Only
   you can see them.

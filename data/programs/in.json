@@ -1,0 +1,50 @@
+[
+  {
+    "id": "in-earn-indiana",
+    "title": "EARN Indiana Paid Internships",
+    "sponsor": "Indiana Commission for Higher Education",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.in.gov/che/state-financial-aid/state-financial-aid-by-program/earn-indiana",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "IN"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "rolling"
+    },
+    "who_text": "Indiana residents in high school, or Indiana college students who file the FAFSA and have financial need",
+    "description": "EARN Indiana is the state's work-study program for paid internships. You make an account on Work and Learn Indiana, check the EARN Indiana box, and once the state confirms you qualify, you can apply to EARN jobs. The state pays part of your wage to the employer.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "in-purdue-summer-research-opportunities-program",
+    "title": "Summer Research Opportunities Program (SROP)",
+    "sponsor": "Purdue University Graduate School",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.purdue.edu/gradschool/diversity/programs/summer-research-opportunities-program/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "IN"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$4,500 stipend plus university housing",
+    "deadline": {
+      "kind": "usually",
+      "month_day": "02-10"
+    },
+    "who_text": "College students entering their junior or senior year with a GPA of 3.0 or higher who are U.S. citizens, permanent residents, refugees or asylees",
+    "description": "An eight-week summer research program at Purdue in West Lafayette. You do research with a faculty mentor and get workshops on applying to graduate school. You get a stipend and a place to live on campus.",
+    "checked_at": "2026-09-29"
+  }
+]

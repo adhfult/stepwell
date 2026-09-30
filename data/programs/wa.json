@@ -1,0 +1,49 @@
+[
+  {
+    "id": "wa-legislative-page-program",
+    "title": "Washington State Legislature Page Program",
+    "sponsor": "Washington State Legislature",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://leg.wa.gov/learn-and-participate/civic-education-programs/page-program/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Page stipend of $67 per day",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students at least 14 years old who have not turned 17, with parent or guardian permission and a teacher recommendation",
+    "description": "Pages spend one week working at the state capitol in Olympia while lawmakers meet from January into spring. You are sponsored by a legislator and can page only once. Applications for the 2027 session open November 1, 2026.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wa-legislative-internship",
+    "title": "Washington State Legislative Internship Program",
+    "sponsor": "Washington State Legislature",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://leg.wa.gov/learn-and-participate/civic-education-programs/internship-program/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "WA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$2,400 per month stipend",
+    "deadline": {
+      "kind": "date",
+      "date": "2026-10-28"
+    },
+    "who_text": "College juniors and seniors in good academic standing who will receive academic credit for the internship",
+    "description": "Interns work for the Washington State Legislature during the 2027 session, from January 5 to April 25, 2027. You earn a monthly stipend and college credit. The priority deadline is October 21, 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

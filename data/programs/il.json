@@ -1,0 +1,53 @@
+[
+  {
+    "id": "il-legislative-staff-intern-program",
+    "title": "Illinois Legislative Staff Intern Program (ILSIP)",
+    "sponsor": "University of Illinois Springfield",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://www.uis.edu/gradinterns/illinois-legislative-staff-intern-program",
+    "stages": ["college", "adult"],
+    "states": ["IL"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$3,300 per month stipend, plus tuition, fees and textbooks covered",
+    "deadline": {"kind": "usually", "month_day": "03-15"},
+    "who_text": "People who will have finished a bachelor's degree before the September 1 start date",
+    "description": "Interns work for 10 months, September 1 to June 30, with legislative staff in the Illinois General Assembly in Springfield. You earn a monthly stipend and graduate credit, and the program covers tuition, fees and textbooks.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "il-youth-investment-program",
+    "title": "Illinois Youth Investment Program (IYIP)",
+    "sponsor": "Illinois Department of Human Services",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.dhs.state.il.us/page.aspx?item=126652",
+    "stages": ["high_school", "college", "adult"],
+    "states": ["IL"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid job placements; summer wages subsidized for up to 3 months",
+    "deadline": {"kind": "unknown"},
+    "who_text": "Illinois residents ages 16 to 24 who are low income or face barriers such as homelessness, disability, or no work experience",
+    "description": "This state program helps young people get paid summer and longer term jobs, apprenticeships, and job training. It can also help with needs like transportation. You apply through a local partner agency listed on Illinois workNet.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "il-chicago-youth-works",
+    "title": "Chicago Youth Works (formerly One Summer Chicago)",
+    "sponsor": "City of Chicago Department of Family and Support Services",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.chicago.gov/city/en/depts/fss/provdrs/youth/svcs/youth-employment.html",
+    "stages": ["high_school", "college", "adult"],
+    "states": ["IL"],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid stipend for ages 14 to 15; paid summer jobs for ages 16 to 24",
+    "deadline": {"kind": "usually", "month_day": "05-29"},
+    "who_text": "Chicago residents ages 14 to 24",
+    "description": "Chicago's city program offers summer jobs and career exploration for young people. Ages 14 and 15 join Chicagobility for six weeks of paid activities, and ages 16 to 24 can get summer job placements that run at least six weeks from June into late July or August.",
+    "checked_at": "2026-09-29"
+  }
+]

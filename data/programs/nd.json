@@ -1,0 +1,25 @@
+[
+  {
+    "id": "nd-governors-school",
+    "title": "North Dakota Governor's School",
+    "sponsor": "University of North Dakota",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://und.edu/academics/nd-governor-school.html",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "ND"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "North Dakota high school sophomores and juniors who are high achieving or intellectually curious",
+    "description": "You live on the University of North Dakota campus in Grand Forks during June 2027 and study one area, such as education, energy law, health studies, or mental health. The state covers the cost, including housing and meals. Applications open in October 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

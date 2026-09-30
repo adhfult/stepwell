@@ -1,0 +1,26 @@
+[
+  {
+    "id": "me-umaine-self-summer-institute",
+    "title": "Sustainable Engineering Leaders of the Future (SELF) Residential Summer Institute",
+    "sponsor": "University of Maine, Forest Bioproducts Research Institute",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://forestbioproducts.umaine.edu/self/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "ME"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-30"
+    },
+    "who_text": "High school students interested in science and technology who send an essay and a report card",
+    "description": "A free week living at the University of Maine to explore engineering and sustainability. You see research demos, do hands-on projects and go on field trips. The program covers all costs.",
+    "checked_at": "2026-09-29"
+  }
+]

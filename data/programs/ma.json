@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ma-youthworks",
+    "title": "YouthWorks Summer and Year-Round Jobs",
+    "sponsor": "Massachusetts Executive Office of Labor and Workforce Development (run by Commonwealth Corporation)",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.mass.gov/youth-employment-and-skills-initiative",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "MA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "At least the state minimum wage; ages 14 to 15 get a similar stipend",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Massachusetts young people ages 14 to 25; you apply through the YouthWorks program or MassHire Career Center for your city or town",
+    "description": "YouthWorks is a state-funded program that places young people in paid, short-term jobs at public, private and nonprofit worksites. The summer session lasts 6 to 8 weeks, and there is also a school-year option. You also get job-readiness training, and deadlines are set by your local program.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -12,10 +12,32 @@ import type { ActionState } from "./state";
 // database fills user_id from auth.uid(), and Row Level Security limits
 // changes to their own rows.
 
-const saveSchema = z.discriminatedUnion("kind", [
-  z.object({ kind: z.literal("scholarship"), id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/) }),
-  z.object({ kind: z.literal("college"), id: z.coerce.number().int().positive() }),
-]);
+// What each Save button can save: its id check, saved_items column, where to
+// find its title, and where to send a signed-out student back to.
+const SAVABLE = {
+  scholarship: { id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/), column: "scholarship_id", back: "/scholarships" },
+  college: { id: z.coerce.number().int().positive(), column: "unitid", back: "/careers" },
+  internship: { id: z.string().regex(/^\d{1,20}$/), column: "opportunity_id", back: "/internships" },
+  ap: { id: z.string().regex(/^[a-z0-9-]{2,40}$/), column: "ap_course_code", back: "/careers" },
+  program: { id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/), column: "student_program_id", back: "/programs" },
+} as const;
+export type SavableKind = keyof typeof SAVABLE;
+
+/** The listing's current title, which also proves it exists; null if it doesn't. */
+async function titleOf(supabase: Awaited<ReturnType<typeof createClient>>, kind: SavableKind, id: string | number) {
+  const found =
+    kind === "scholarship"
+      ? await supabase.from("scholarships").select("title").eq("id", String(id)).maybeSingle()
+      : kind === "college"
+        ? await supabase.from("institutions").select("title:name").eq("unitid", Number(id)).maybeSingle()
+        : kind === "internship"
+          ? await supabase.from("opportunities").select("title").eq("id", String(id)).maybeSingle()
+          : kind === "program"
+            ? await supabase.from("student_programs").select("title").eq("id", String(id)).maybeSingle()
+            : await supabase.from("ap_courses").select("title:name").eq("code", String(id)).maybeSingle();
+  return found.error ? null : (found.data?.title ?? null);
+}
+
 const intentSchema = z.enum(["save", "remove"]);
 const idSchema = z.uuid();
 
@@ -24,26 +46,22 @@ async function signedIn(back: string) {
   return createClient();
 }
 
-/** Saves or removes a scholarship or college, copying its title so the plan can name it if it's later removed. */
+/** Saves or removes a listing, copying its title so the plan can name it if it's later removed. */
 export async function toggleSaved(_previous: ActionState, formData: FormData): Promise<ActionState> {
-  const parsed = saveSchema.safeParse({ kind: formData.get("kind"), id: formData.get("id") });
+  const kind = z.enum(Object.keys(SAVABLE) as [SavableKind, ...SavableKind[]]).safeParse(formData.get("kind"));
+  const id = kind.success ? SAVABLE[kind.data].id.safeParse(formData.get("id")) : null;
   const intent = intentSchema.safeParse(formData.get("intent"));
-  if (!parsed.success || !intent.success) return { error: "We couldn’t save that. Reload the page and try again." };
-  const supabase = await signedIn(parsed.data.kind === "scholarship" ? "/scholarships" : "/careers");
-  const column = parsed.data.kind === "scholarship" ? "scholarship_id" : "unitid";
+  if (!kind.success || !id?.success || !intent.success) return { error: "We couldn’t save that. Reload the page and try again." };
+  const { column, back } = SAVABLE[kind.data];
+  const supabase = await signedIn(back);
 
   let error;
   if (intent.data === "remove") {
-    ({ error } = await supabase.from("saved_items").delete().eq(column, parsed.data.id));
+    ({ error } = await supabase.from("saved_items").delete().eq(column, id.data));
   } else {
-    const found =
-      parsed.data.kind === "scholarship"
-        ? await supabase.from("scholarships").select("title").eq("id", parsed.data.id).maybeSingle()
-        : await supabase.from("institutions").select("title:name").eq("unitid", parsed.data.id).maybeSingle();
-    if (found.error || !found.data) return { error: "We couldn’t find that listing. Reload the page and try again." };
-    const row =
-      parsed.data.kind === "scholarship" ? { scholarship_id: parsed.data.id } : { unitid: parsed.data.id };
-    ({ error } = await supabase.from("saved_items").insert({ ...row, title: found.data.title }));
+    const title = await titleOf(supabase, kind.data, id.data);
+    if (!title) return { error: "We couldn’t find that listing. Reload the page and try again." };
+    ({ error } = await supabase.from("saved_items").insert({ [column]: id.data, title } as { title: string }));
   }
   // 23505: already saved (for example, in a second tab). That's what they wanted.
   // 54000: the per-student cap (1,000 saved items).

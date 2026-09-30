@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ok-stem-summer-academies",
+    "title": "STEM Summer Academies",
+    "sponsor": "Oklahoma State Regents for Higher Education",
+    "sponsor_type": "state",
+    "kind": "summer_program",
+    "url": "https://okhighered.org/summer-academies/",
+    "stages": [
+      "middle_school",
+      "high_school"
+    ],
+    "states": [
+      "OK"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students entering 8th through 12th grade",
+    "description": "Free science, technology, engineering, and math camps held at Oklahoma colleges each summer, lasting from four days to two weeks. Some let you live on campus and others are day programs. Applications for 2027 open in March 2027, and some academies have their own deadlines.",
+    "checked_at": "2026-09-29"
+  }
+]

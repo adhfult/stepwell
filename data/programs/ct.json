@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ct-youth-employment-program",
+    "title": "Connecticut Youth Employment Program",
+    "sponsor": "Connecticut Department of Labor",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://portal.ct.gov/dol/divisions/workforce-innovation-and-opportunity-act-wioa-administration-unit/ct-youth-employment-information",
+    "stages": [
+      "high_school",
+      "college",
+      "adult"
+    ],
+    "states": [
+      "CT"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Connecticut youth ages 14 to 24",
+    "description": "A state program that connects young people with paid jobs so they can earn money and build their resumes. You apply through the regional Workforce Development Board closest to where you live.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ct-uconn-summer-lead",
+    "title": "UConn Summer LEAD Program",
+    "sponsor": "University of Connecticut",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://admissions.uconn.edu/summer-lead-program/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "CT"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "High-achieving Connecticut residents entering their senior year of high school; first-generation students and students in Alliance School Districts are encouraged",
+    "description": "A free, short stay on the UConn Storrs campus where you live in a residence hall, try sample classes, and learn how college admission and financial aid work.",
+    "checked_at": "2026-09-29"
+  }
+]

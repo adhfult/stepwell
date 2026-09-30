@@ -1,0 +1,25 @@
+[
+  {
+    "id": "fl-gubernatorial-fellows-program",
+    "title": "Florida Gubernatorial Fellows Program",
+    "sponsor": "Executive Office of the Governor of Florida",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.flgov.com/eog/fellows/become-a-fellow",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "FL"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "At least $18 per hour, plus a $1,000 to $2,000 stipend depending on relocation needs",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Full-time college juniors and seniors, graduate students, and students who just graduated, from schools in Florida",
+    "description": "Fellows live in Tallahassee for the school year and work in key parts of Florida's state government. You earn an hourly wage while learning how state agencies make and carry out policy.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ak-rural-alaska-honors-institute",
+    "title": "Rural Alaska Honors Institute (RAHI)",
+    "sponsor": "University of Alaska Fairbanks",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.uaf.edu/rahi/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "AK"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-01"
+    },
+    "who_text": "Alaska Native or rural Alaskan high school juniors and seniors with a 3.0 GPA or higher who plan to earn a college degree",
+    "description": "A six-week summer program where you live on the University of Alaska Fairbanks campus and take real college courses, earning up to 10 credits. It is offered at no cost to students and their families. The 2027 application opens January 1.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "id": "ia-uiowa-summer-health-sciences-experience",
+    "title": "Summer Health Sciences Experience",
+    "sponsor": "University of Iowa with GEAR UP Iowa",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://pathways.uc.uiowa.edu/node/301",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "IA"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students going into 10th grade",
+    "description": "A free week living on the University of Iowa campus to explore health careers like medicine, nursing and dentistry. Travel to Iowa City, housing, meals, activities and one college credit are covered. The next session is in July 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "ia-uiowa-cancer-research-opportunities",
+    "title": "Cancer Research Opportunities at Iowa (CROI)",
+    "sponsor": "University of Iowa Holden Comprehensive Cancer Center",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://holden.uihealthcare.org/education-training/undergraduates/cancer-research-opportunities-iowa-croi",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "IA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$6,500 stipend over the 10-week program, with dorm housing",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "U.S. citizens or permanent residents in college (including community college) studying biomedical sciences or a related field, after their sophomore or junior year",
+    "description": "A paid 10-week summer program doing cancer research at the University of Iowa. You live in a campus dorm in Iowa City. No prior research experience is needed.",
+    "checked_at": "2026-09-29"
+  }
+]

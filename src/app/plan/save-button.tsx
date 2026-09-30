@@ -2,11 +2,11 @@
 
 import { useActionState } from "react";
 import { SubmitButton } from "@/components/form";
-import { toggleSaved } from "./actions";
+import { type SavableKind, toggleSaved } from "./actions";
 import { initialActionState } from "./state";
 
 /** "Save to my plan", or "Saved" with a way to remove it (same look as saving a career). */
-export function SaveButton({ kind, id, saved }: { kind: "scholarship" | "college"; id: string | number; saved: boolean }) {
+export function SaveButton({ kind, id, saved }: { kind: SavableKind; id: string | number; saved: boolean }) {
   const [state, action] = useActionState(toggleSaved, initialActionState);
   return (
     <form action={action} className="mt-2">

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "tx-mickey-leland-environmental-internship",
+    "title": "Mickey Leland Environmental Internship Program",
+    "sponsor": "Texas Commission on Environmental Quality",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.tceq.texas.gov/jobs/mickeyleland/apply",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "TX"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Paid, full-time summer internship",
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-28"
+    },
+    "who_text": "Full-time undergraduates with at least 60 semester hours, or graduate students, with a GPA of 2.0 or higher",
+    "description": "This paid summer internship places college students in environmental jobs at the TCEQ, other state agencies, local governments, or private companies around Texas. You work full time and learn how environmental rules are made and followed. Students from any school may apply.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "tx-summer-earn-and-learn",
+    "title": "Summer Earn and Learn (SEAL)",
+    "sponsor": "Texas Workforce Commission, Vocational Rehabilitation Services",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.twc.texas.gov/programs/vocational-rehabilitation/youth-students",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "TX"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Earn a paycheck for at least five weeks",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Texas students with disabilities, generally ages 14 to 22, through their local Vocational Rehabilitation office",
+    "description": "SEAL gives students with disabilities a real summer job with a local employer. You get work readiness training first, then work hands-on for about five to eight weeks and earn a paycheck. To join, contact your local Texas Workforce Solutions Vocational Rehabilitation office.",
+    "checked_at": "2026-09-29"
+  }
+]

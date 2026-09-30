@@ -1,0 +1,25 @@
+[
+  {
+    "id": "mi-harper-academy-nuclear-engineers",
+    "title": "Harper Academy 4 Future Nuclear Engineers",
+    "sponsor": "University of Michigan, Nuclear Engineering and Radiological Sciences",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://ners.engin.umich.edu/academics/harperacademy/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "MI"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Free to attend, and students receive a stipend",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "High school students who will be seniors in the fall (rising 12th graders)",
+    "description": "A four-week summer program on the University of Michigan campus in Ann Arbor where you live in a residence hall and explore nuclear engineering. Mornings cover math, science and college entrance exam prep, and afternoons cover leadership and design projects. The camp is free and you are paid a stipend.",
+    "checked_at": "2026-09-29"
+  }
+]

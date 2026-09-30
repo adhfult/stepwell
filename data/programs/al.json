@@ -1,0 +1,25 @@
+[
+  {
+    "id": "al-uab-summer-in-biomedical-sciences",
+    "title": "Summer in Biomedical Sciences (SIBS)",
+    "sponsor": "University of Alabama at Birmingham, Heersink School of Medicine",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.uab.edu/medicine/sibs/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "AL"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$4,000 stipend, with campus housing provided",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "College sophomores and juniors who are U.S. citizens or permanent residents",
+    "description": "An 8-week summer program in Birmingham where college students learn modern biology lab techniques and work with UAB medical school scientists. You get a stipend and campus housing, but travel costs are not covered.",
+    "checked_at": "2026-09-29"
+  }
+]

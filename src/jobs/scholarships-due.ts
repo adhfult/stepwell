@@ -17,19 +17,22 @@ export function dueReason(e: Pick<Entry, "checked_at" | "deadline">, today: stri
 }
 
 function main() {
-  const dir = new URL("../../data/scholarships/", import.meta.url);
   const today = new Date().toISOString().slice(0, 10);
   const lines: string[] = [];
-  for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
-    const entries = JSON.parse(readFileSync(new URL(file, dir), "utf8")) as Entry[];
-    const due = entries.flatMap((e) => {
-      const why = dueReason(e, today);
-      return why ? [`  - ${e.title} (${why}): ${e.url}`] : [];
-    });
-    if (due.length) lines.push(`${file.replace(".json", "").toUpperCase()}`, ...due);
+  // Summer programs (data/programs/) follow the same rules and get the same re-check.
+  for (const folder of ["scholarships", "programs"]) {
+    const dir = new URL(`../../data/${folder}/`, import.meta.url);
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
+      const entries = JSON.parse(readFileSync(new URL(file, dir), "utf8")) as Entry[];
+      const due = entries.flatMap((e) => {
+        const why = dueReason(e, today);
+        return why ? [`  - ${e.title} (${why}): ${e.url}`] : [];
+      });
+      if (due.length) lines.push(`${folder}/${file.replace(".json", "").toUpperCase()}`, ...due);
+    }
   }
-  if (!lines.length) return console.log("No scholarship entries are due for a re-check.");
-  const report = `Scholarship entries to re-check (see data/scholarships/README.md):\n\n${lines.join("\n")}\n`;
+  if (!lines.length) return console.log("No scholarship or program entries are due for a re-check.");
+  const report = `Scholarship and program entries to re-check (see data/scholarships/README.md):\n\n${lines.join("\n")}\n`;
   console.log(report);
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\`\`\`\n${report}\`\`\`\n`);
   process.exitCode = 1;

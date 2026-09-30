@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pa-school-for-excellence-ag-sciences",
+    "title": "Pennsylvania School for Excellence in the Agricultural Sciences",
+    "sponsor": "Penn State College of Agricultural Sciences",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://agsci.psu.edu/school-for-excellence/how-to-apply",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "PA"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "date",
+      "date": "2027-02-26"
+    },
+    "who_text": "Pennsylvania high school juniors (public, charter, private or homeschool) whose parent or guardian lives in Pennsylvania",
+    "description": "A free two-week summer program at Penn State's University Park campus for rising seniors. You live on campus, explore the agricultural sciences, and work on a service-learning project. Tuition, room, board and activities are paid for.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "pa-scope-education",
+    "title": "Summer College Opportunity Program in Education (S.C.O.P.E.)",
+    "sponsor": "Penn State College of Education",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://ed.psu.edu/about/deans-office/summer-college-opportunity-program-education",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "PA"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "01-26"
+    },
+    "who_text": "10th graders in a college-prep curriculum with at least a 3.0 GPA who are interested in education careers and are nominated by a school or organization; U.S. citizens or permanent residents",
+    "description": "A four-week summer program at Penn State for students thinking about careers in teaching, counseling or other education jobs. You take college prep courses and a research and writing course that earns one college credit. The College of Education and donors cover program expenses.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "pa-commonwealth-internships",
+    "title": "Internships with the Commonwealth of Pennsylvania",
+    "sponsor": "Commonwealth of Pennsylvania",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.pa.gov/services/employment/apply-for-internships-with-the-commonwealth0",
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "states": [
+      "PA"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "High school and college students interested in public service",
+    "description": "Pennsylvania state agencies hire high school and college students as paid interns in fields like engineering, environmental science, health care, transportation and technology. You search for openings on the state job site and apply online with a resume.",
+    "checked_at": "2026-09-29"
+  }
+]

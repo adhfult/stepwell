@@ -1,0 +1,25 @@
+[
+  {
+    "id": "md-governors-summer-internship-program",
+    "title": "Governor's Summer Internship Program (GSIP)",
+    "sponsor": "UMBC Shriver Center with the Maryland Office of the Governor",
+    "sponsor_type": "university",
+    "kind": "internship",
+    "url": "https://publicservicescholars.umbc.edu/gsip/",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "MD"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$5,000 stipend",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "College students who will be juniors or seniors during the summer, with a GPA of 2.7 or higher, who attend a Maryland school or are Maryland residents at an out-of-state school",
+    "description": "You work full time in a Maryland state government agency for the summer with a senior mentor. You research a policy question and present a recommendation to the Governor. Applications for summer 2027 open in fall 2026.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -8,6 +8,8 @@ import { getScholarshipFieldsForCareer } from "@/lib/scholarships/data";
 import { type Career, getApCourses, getCareer, isCareerSaved } from "@/lib/careers/data";
 import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalEducation } from "@/lib/careers/labels";
 import { OnetSource, OutlookSource } from "../source-line";
+import { SaveButton } from "@/app/plan/save-button";
+import { getMySavedIds } from "@/lib/plan/data";
 import { SaveCareerForm } from "./save-form";
 
 async function careerFor(params: PageProps<"/careers/[code]">["params"]) {
@@ -24,12 +26,13 @@ export async function generateMetadata({ params }: PageProps<"/careers/[code]">)
 
 export default async function CareerPage({ params }: PageProps<"/careers/[code]">) {
   const career = await careerFor(params);
-  const [user, saved, programs, apCourses, scholarshipFields] = await Promise.all([
+  const [user, saved, programs, apCourses, scholarshipFields, savedIds] = await Promise.all([
     getCurrentUser(),
     isCareerSaved(career.onet_code),
     getCareerPrograms(career.onet_code),
     getApCourses(career.onet_code),
     getScholarshipFieldsForCareer(career.onet_code),
+    getMySavedIds(),
   ]);
   const education = typicalEducation(career.education_level, career.education_share);
   const prep = preparation(career.job_zone);
@@ -130,6 +133,7 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
               <li key={course.ap_code} className="py-3">
                 <p className="font-bold">{course.ap_name}</p>
                 <p className="mt-1 text-sm text-muted">Builds: {course.area_name}</p>
+                {user && <SaveButton kind="ap" id={course.ap_code} saved={savedIds.ap.has(course.ap_code)} />}
               </li>
             ))}
           </ul>

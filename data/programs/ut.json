@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ut-summer-mathematics-program",
+    "title": "Summer Mathematics Program for High School Students",
+    "sponsor": "University of Utah Department of Mathematics",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.math.utah.edu/high-school-program/summerhsp.php",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "UT"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "05-28"
+    },
+    "who_text": "High school students ready to start calculus, with preference for students between junior and senior year; costs are covered for U.S. citizens, nationals, and permanent residents",
+    "description": "This is a free summer math program on the University of Utah campus in Salt Lake City. You spend weekdays for a few weeks working on advanced math with university faculty. It is a day program, so you need to live nearby or arrange your own housing.",
+    "checked_at": "2026-09-29"
+  }
+]

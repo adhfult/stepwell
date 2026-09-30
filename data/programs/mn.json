@@ -1,0 +1,25 @@
+[
+  {
+    "id": "mn-dnr-summer-internships",
+    "title": "Minnesota DNR Paid Summer Internships",
+    "sponsor": "Minnesota Department of Natural Resources",
+    "sponsor_type": "state",
+    "kind": "internship",
+    "url": "https://www.dnr.state.mn.us/careers/internships/index.html",
+    "stages": [
+      "college"
+    ],
+    "states": [
+      "MN"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "$19.00 per hour, 20 to 40 hours per week",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students who will receive academic credit or meet a school requirement through the internship",
+    "description": "The Minnesota DNR offers more than 200 summer internships around the state in a typical year, in areas like fisheries, forestry, parks and communications. Openings are posted each January on the Minnesota state careers website.",
+    "checked_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "wi-uw-engineering-summer-program",
+    "title": "Engineering Summer Program",
+    "sponsor": "University of Wisconsin-Madison College of Engineering",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://engineering.wisc.edu/engineering-summer-program/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WI"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "High school sophomores and juniors who are U.S. citizens or permanent residents, have finished algebra and geometry, and have at least a 3.0 unweighted GPA",
+    "description": "A free three-week live-in program at UW-Madison for students who like math, science, and engineering. Housing and meals are included. You take classes, do hands-on workshops, visit companies, and get mentoring from faculty.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-uwgb-freshwater-scholars",
+    "title": "High School Freshwater Scholars",
+    "sponsor": "University of Wisconsin-Green Bay",
+    "sponsor_type": "university",
+    "kind": "research",
+    "url": "https://www.uwgb.edu/freshwater/scholars/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WI"
+    ],
+    "remote": false,
+    "paid": true,
+    "pay_text": "Stipend of $1750 paid in two installments",
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students currently enrolled in high school, including graduating seniors; students 15 or younger need a work permit",
+    "description": "A paid summer research internship where you work 120 hours with a UW-Green Bay mentor on water science projects. You also go on group field trips to learn about water careers. Details for the 2027 program are expected in March.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "wi-uw-rural-scholars",
+    "title": "Wisconsin Rural Scholars Program",
+    "sponsor": "University of Wisconsin-Madison College of Agricultural and Life Sciences",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://ruralpartners.wisc.edu/wisconsin-rural-scholars-program/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "WI"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Rising high school sophomores, juniors, and seniors, aimed at students from rural school districts",
+    "description": "A five-day live-in program at UW-Madison where you explore agriculture and life science programs, research, and college life. There is no cost; meals, fees, and lodging are covered. Students often come as a group with a teacher from their district.",
+    "checked_at": "2026-09-29"
+  }
+]

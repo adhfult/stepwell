@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mt-montana-tech-metallurgy-summer-program",
+    "title": "Metallurgical and Materials Engineering Summer Program",
+    "sponsor": "Montana Technological University",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://mtech.edu/news/2026/02/applications-open-for-montana-techs-free-metallurgical-and-materials-engineering-summer-program-for-high-school-students.html",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "MT"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-31"
+    },
+    "who_text": "Students who will be high school juniors or seniors next fall and are interested in science or engineering careers",
+    "description": "A free, week-long summer program at Montana Tech in Butte where you explore metals and materials engineering. Lodging, meals and course materials are free, but you get yourself to campus. The 2026 session ran June 21 to 26.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "mt-montana-tech-environmental-engineering-camp",
+    "title": "Summer Environmental Engineering Camp",
+    "sponsor": "Montana Technological University",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://mtech.edu/news/2026/02/montana-tech-to-host-free-summer-environmental-engineering-camp-for-high-school-students.html",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "MT"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "usually",
+      "month_day": "04-19"
+    },
+    "who_text": "High school students entering their sophomore, junior or senior year",
+    "description": "A free, week-long residential camp at Montana Tech where you learn what environmental engineers do. Housing, meals and program materials are covered. The 2026 camp ran July 27 to 31.",
+    "checked_at": "2026-09-29"
+  }
+]

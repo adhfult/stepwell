@@ -1,0 +1,48 @@
+[
+  {
+    "id": "co-cu-boulder-aquetza",
+    "title": "Aquetza Summer Program",
+    "sponsor": "University of Colorado Boulder",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://www.colorado.edu/aquetza/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "CO"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Colorado high school students in grades 9, 10, and 11, with no GPA requirement",
+    "description": "A free summer program where you live on the CU Boulder campus with housing and food provided. You take classes in writing, reading, science, history, and civic topics. Applications for 2027 open February 2, 2027.",
+    "checked_at": "2026-09-29"
+  },
+  {
+    "id": "co-csu-first-generation-business-summit",
+    "title": "First Generation Business Summit",
+    "sponsor": "Colorado State University, College of Business",
+    "sponsor_type": "university",
+    "kind": "summer_program",
+    "url": "https://k12summer.colostate.edu/program/first-generation-business-summit/",
+    "stages": [
+      "high_school"
+    ],
+    "states": [
+      "CO"
+    ],
+    "remote": false,
+    "paid": false,
+    "pay_text": null,
+    "deadline": {
+      "kind": "unknown"
+    },
+    "who_text": "Students who have finished 9th through 12th grade and plan to be the first in their family to earn a bachelor's degree",
+    "description": "A free week at Colorado State University in Fort Collins where you stay in a dorm, eat in the dining halls, and meet business leaders and professors. Attendees earn 1 college credit in financial literacy.",
+    "checked_at": "2026-09-29"
+  }
+]
