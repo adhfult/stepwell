@@ -34,6 +34,8 @@ Details that change often (free-tier limits, prices) are marked "check".
     with the same subjects as `supabase/config.toml`.
   - SMTP: the credentials from step 2.
   - Bot protection: Turnstile, with the **real** secret from step 4.
+  - Rate Limits: sign-ins and sign-ups raised to about 300 per 5 minutes
+    (all students share Vercel's addresses here; decision 0009).
   - "Secure password change" on (security audit 2026-09-29: otherwise a
     copied login cookie can change the password through the Auth API,
     skipping the app's email-link rule). Turn it on in the development
@@ -68,6 +70,10 @@ Details that change often (free-tier limits, prices) are marked "check".
       and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (production project),
       `NEXT_PUBLIC_TURNSTILE_SITE_KEY`. Preview deployments use the
       development project's values.
+- [ ] **You, in Vercel (Firewall, rules):** rate limit by IP, about 10
+      requests a minute then block for 10 minutes, for POST requests to
+      `/sign-in`, `/sign-up`, `/forgot-password` and `/account/delete`
+      (decision 0009). Check the plan includes rate-limit rules first.
 - [ ] Two-factor sign-in on GitHub, Supabase, Vercel, Cloudflare and the
       domain registrar (SECURITY.md).
 
@@ -84,4 +90,5 @@ Details that change often (free-tier limits, prices) are marked "check".
 - [ ] Test as an untrusted user on production: two accounts; account A tries
       to read and change B's profile; every attempt fails (SECURITY.md).
 - [ ] Decide the open questions in `docs/specs/accounts-and-profile.md`
-      (unconfirmed accounts, per-IP rate limits, login cookie lifetime).
+      (unconfirmed accounts, login cookie lifetime; per-IP rate limits are
+      decided in decision 0009).

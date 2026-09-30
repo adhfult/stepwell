@@ -6,12 +6,9 @@ Newest entries at the top. Keep each entry short.
 ## Next up
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
       "Secure password change" in the development project's Auth settings
-      now (LAUNCH.md step 3 covers production); settle how sign-in rate
-      limits work behind Vercel (Supabase counts the server's address, not
-      the student's; Turnstile is the real guard); run the deeper
-      Cloudflare security audit (`npx skills add
-      https://github.com/cloudflare/security-audit-skill --skill
-      security-audit`).
+      now (LAUNCH.md step 3 covers production). Sign-in rate limits are
+      decided (decision 0009); their settings are in LAUNCH.md steps 3
+      and 5.
 - [ ] **Owner:** CareerOneStop still returns 403 to its website, where the
       API key is requested. Try from a phone on mobile data, or email their
       developer support; the API itself answers.

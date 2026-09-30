@@ -216,9 +216,9 @@ Small steps, each checked in the browser at `localhost:3000` (never
 
 ## Open questions
 - What happens to accounts that are never confirmed (delete after some days?).
-- Auth rate limits are per IP address. When sign-in runs in Server Actions,
-  Supabase may see the server's address for every student; check before a
-  class signs up at once.
+- ~~Auth rate limits are per IP address.~~ Decided 2026-09-29 in
+  `docs/decisions/0009-auth-rate-limits.md`: Vercel Firewall limits per
+  visitor IP, Turnstile stays at Supabase, Supabase's shared limit raised.
 
 ## Launch blockers (before any real student signs up)
 Step by step in `docs/LAUNCH.md`; Terms and Privacy in `docs/specs/legal-pages.md`.
