@@ -4,32 +4,58 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **In progress (owner asked 2026-09-29 to do all of it in one go),
-      in this order:** (1) planner saves internships and AP classes;
-      (2) summer programs and non-federal internships from official sites
-      (`data/programs/`, own table, spec first); (3) CareerOneStop 403
-      check; (4) mobile pass + design audit of every page at 320/390px
-      (header vs DESIGN.md list, plan page clutter, all-caps USAJOBS
-      titles); (5) new home page with real screenshots, last; (6) security
-      audit findings; (7) owner items listed, not done.
+- [ ] **Owner, before launch (security audit 2026-09-29):** turn on
+      "Secure password change" in the development project's Auth settings
+      now (LAUNCH.md step 3 covers production); settle how sign-in rate
+      limits work behind Vercel (Supabase counts the server's address, not
+      the student's; Turnstile is the real guard); run the deeper
+      Cloudflare security audit (`npx skills add
+      https://github.com/cloudflare/security-audit-skill --skill
+      security-audit`).
+- [ ] **Owner:** CareerOneStop still returns 403 to its website, where the
+      API key is requested. Try from a phone on mobile data, or email their
+      developer support; the API itself answers.
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.
 - [ ] Work through the rest of `docs/LAUNCH.md` (domain, email sending,
       production Supabase project, real Turnstile keys, Vercel) before real
       students
-- [ ] **Owner:** run `npx supabase db reset` locally once (blocked for
-      agents because it wipes local accounts) to prove migrations + seed
-      work from scratch; then re-run the imports
 - [ ] **Owner:** confirm or replace `IMPORT_CONTACT` (set to
       https://github.com/adhfult for now)
-- [ ] Review the planner defaults taken on 2026-09-29 (see the saved-plan
-      spec's Result): internships and AP classes can't be saved yet; no
-      starter tasks; no notes.
+- [ ] Review the defaults taken on 2026-09-29: planner (no starter tasks,
+      no notes; saved-plan spec's Result) and programs (official sources
+      only, free or paid only; programs spec). Programs for MO, NH, TN, VT
+      and WY weren't found under those rules.
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-09-29 (night): everything in one go
+- Planner saves internships (by closing year), AP classes (this year) and
+  summer programs (by deadline), besides scholarships and colleges.
+- `/programs`: 111 free or paid summer programs, internships and research
+  from federal agencies, labs, states and public universities
+  (`data/programs/`, table `student_programs`; `programs` was already
+  College Scorecard's). Three research agents, 20 entries spot-checked
+  (96 of 100 facts matched). Included in the monthly re-check.
+- Security audit (agent, whole repo): fixed an open redirect in
+  `safeNextPath` (dot segments), account deletion now needs a sign-in in
+  the last 10 minutes, O*NET next links stay on O*NET, CI actions pinned
+  to SHAs and the gitleaks download checksummed, secure password change on
+  locally.
+- Design audit at 320/390/640/768/1024: the header scrolled sideways at
+  640px (now Menu until 1024px; My plan in the main links), quiet Save
+  buttons in lists, plan years show their open/close marker, careers show
+  three other names, all-caps USAJOBS titles fixed.
+- New home page: first sentence says what Stepwell does, career search,
+  then the route line with four real screenshots (`public/screenshots/`).
+- The owner ran `supabase db reset` (local data was wiped, migrations
+  rebuilt cleanly); all sources re-imported locally.
+- Gotcha: `npx supabase migration new` waits on stdin when not in a
+  terminal; run it with `</dev/null` (an empty migration got applied
+  locally once and needed `migration repair --local`).
+
 ### 2026-09-29 (evening): About the data, re-check job, saved plan
 - The owner said to proceed on the three draft specs; each open question
   took its default, written in each spec's Result.
