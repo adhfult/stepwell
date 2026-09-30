@@ -107,12 +107,13 @@ Rules:
   landmark (in `layout.tsx`; pages render inside it, never their own `<main>`).
 - **Header** (on `background`, bottom `border-subtle` divider): the word
   "Stepwell" in Bitter bold `text-lg`, linking home, on the left. Main links
-  on the right: Careers, Colleges, Scholarships, Opportunities, My plan. On
-  phones these collapse behind a text button labeled "Menu" (no hamburger
-  icon). The signed-in student's account link is last. The "Menu" button
-  is a native `<details>` (`src/components/main-nav.tsx`), closed again
-  after navigating; with it, phones show "Menu" and "Sign in" (or
-  "Account") on one line at 320px; "Create account" joins from 640px.
+  on the right: Careers, Interest quiz, Scholarships, Internships, Programs,
+  My plan (colleges are reached from a career). Below 1024px these collapse
+  behind a text button labeled "Menu" (no hamburger icon); six links don't
+  fit on one line at 640px. The signed-in student's account link is last.
+  The "Menu" button is a native `<details>` (`src/components/main-nav.tsx`),
+  closed again after navigating; with it, phones show "Menu" and "Sign in"
+  (or "Account") on one line at 320px; "Create account" joins from 640px.
 - **Footer** (on `surface`, top `border-subtle` divider): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
   sources. Links are added only when their pages exist: Terms and Privacy
@@ -137,7 +138,7 @@ Rules:
   to the next line instead of breaking mid-word.
 
 ### Buttons
-All buttons: at least 44px tall, `px-4`, `rounded-control`, `text-base`
+All buttons except Quiet: at least 44px tall, `px-4`, `rounded-control`, `text-base`
 bold, sentence case, a verb that names the action ("Save career", not
 "Submit"). No icons by default.
 
@@ -145,7 +146,7 @@ bold, sentence case, a verb that names the action ("Save career", not
 |---|---|---|---|
 | Primary | `primary` fill, `surface` text (7.0:1) | `foreground` fill, `surface` text (13.8:1) | The one main action on a view |
 | Secondary | `surface` fill, 1px `border-strong`, `foreground` text | 1px `foreground` border | Other actions |
-| Quiet | No fill, looks like a link | Same as links | Cancel, Back, low-stakes actions |
+| Quiet | No fill, looks like a link (`buttonClass("quiet")`) | Same as links | Cancel, Back, low-stakes actions such as "Save to my plan" in a list |
 | Delete | `accent` fill, `surface` text (6.1:1) | `foreground` fill | Deleting data; always followed by a confirmation step |
 
 - Focus: the global 3px `foreground` outline, 2px away from the button.

@@ -45,8 +45,17 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
         </Link>
       </p>
       <PageTitle>{career.title}</PageTitle>
+      {/* Some careers have a dozen other names; phones see three, the rest fold away. */}
       {career.alsoCalled.length > 0 && (
-        <p className="mt-2 text-muted">Also called: {career.alsoCalled.join(", ")}</p>
+        <p className="mt-2 text-muted">Also called: {career.alsoCalled.slice(0, 3).join(", ")}</p>
+      )}
+      {career.alsoCalled.length > 3 && (
+        <details className="text-muted">
+          <summary className="inline-flex min-h-11 cursor-pointer items-center text-primary underline">
+            {career.alsoCalled.length - 3} more names
+          </summary>
+          <p>{career.alsoCalled.slice(3).join(", ")}</p>
+        </details>
       )}
 
       {career.retired_at && (

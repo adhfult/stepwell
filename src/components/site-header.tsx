@@ -40,21 +40,10 @@ async function AccountLinks() {
   const user = await getCurrentUser();
 
   if (user) {
-    // Phones get "Account" only, so the header stays on one line; the account
-    // page links to the plan. Both show from 640px.
     return (
-      <ul className="flex items-center justify-end gap-x-4">
-        <li className="hidden sm:block">
-          <Link href="/plan" className={navLink}>
-            My plan
-          </Link>
-        </li>
-        <li>
-          <Link href="/account" className={navLink}>
-            Account
-          </Link>
-        </li>
-      </ul>
+      <Link href="/account" className={navLink}>
+        Account
+      </Link>
     );
   }
 

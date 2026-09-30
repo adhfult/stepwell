@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Fetcher } from "../fetch/polite.ts";
-import { cleanText, isStudentJob, pageUrl, parsePosting, readUsajobs, usajobsUrl } from "./usajobs.ts";
+import { cleanText, isStudentJob, pageUrl, parsePosting, readUsajobs, unshout, usajobsUrl } from "./usajobs.ts";
 
 // Four real postings from the first live search (2026-09-29), trimmed of long
 // text and contact fields the adapter doesn't read: yearly pay, hourly pay
@@ -70,6 +70,15 @@ describe("parsePosting", () => {
 });
 
 describe("helpers", () => {
+  it("turns all-caps titles into title case, keeping acronyms", () => {
+    expect(unshout("COMPUTER ENGINEER")).toBe("Computer Engineer");
+    expect(unshout("IT SPECIALIST (INFOSEC/NETWORK)")).toBe("IT Specialist (Infosec/Network)");
+    expect(unshout("STUDENT TRAINEE (OFFICE OF THE CHIEF)")).toBe("Student Trainee (Office of the Chief)");
+    expect(unshout("Student Trainee (Park Guide)")).toBe("Student Trainee (Park Guide)");
+    expect(unshout("GS-7 IT INTERN")).toBe("GS-7 IT Intern");
+  });
+
+
   it("keeps student jobs and drops jobs that merely accept students (live examples)", () => {
     const twelve = Array.from({ length: 12 }, (_, i) => `path${i}`);
     expect(isStudentJob("Contract Specialist", ["student", "graduates"], [])).toBe(true);

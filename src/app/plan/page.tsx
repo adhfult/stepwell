@@ -164,9 +164,12 @@ function YearSection({
   const sorted = [...items].sort((a, b) => TERM_ORDER.indexOf(a.term) - TERM_ORDER.indexOf(b.term));
   return (
     <details open={open} className="border-t border-border-subtle py-2">
-      <summary className="flex min-h-11 cursor-pointer items-center gap-3">
-        <h2 className="inline font-heading text-lg font-bold">{heading}</h2>
-        <span className="text-sm text-muted">{count === 0 ? "Nothing yet" : `${count} ${count === 1 ? "thing" : "things"}`}</span>
+      {/* The summary keeps its native open/close marker, so it's clear the year opens. */}
+      <summary className="min-h-11 cursor-pointer py-2">
+        <h2 className="inline font-heading text-lg font-bold">{heading}</h2>{" "}
+        <span className="text-sm whitespace-nowrap text-muted">
+          {count === 0 ? "Nothing yet" : `${count} ${count === 1 ? "thing" : "things"}`}
+        </span>
       </summary>
       <ul className="divide-y divide-border-subtle">
         {sorted.map((item) => (
@@ -182,7 +185,7 @@ function YearSection({
                 <a href={s.live.url}>Apply on the official site ({domainOf(s.live.url)})</a>
               </p>
             )}
-            <SaveButton kind="scholarship" id={s.id} saved />
+            <SaveButton kind="scholarship" id={s.id} saved inPlan />
           </li>
         ))}
         {programs.map((p) => (
@@ -200,14 +203,14 @@ function YearSection({
             ) : (
               <p className="mt-1 text-muted">No longer listed</p>
             )}
-            <SaveButton kind="program" id={p.id} saved />
+            <SaveButton kind="program" id={p.id} saved inPlan />
           </li>
         ))}
         {apCourses.map((c) => (
           <li key={c.code} className="py-4">
             <p className="text-sm text-muted">Saved AP class</p>
             <h3 className="font-bold">{c.name}</h3>
-            <SaveButton kind="ap" id={c.code} saved />
+            <SaveButton kind="ap" id={c.code} saved inPlan />
           </li>
         ))}
         {internships.map((i) => (
@@ -228,7 +231,7 @@ function YearSection({
             ) : (
               <p className="mt-1 text-muted">No longer listed (it may have closed)</p>
             )}
-            <SaveButton kind="internship" id={i.id} saved />
+            <SaveButton kind="internship" id={i.id} saved inPlan />
           </li>
         ))}
         {colleges.map((c) => (
@@ -248,7 +251,7 @@ function YearSection({
             ) : (
               <p className="mt-1 text-muted">No longer listed</p>
             )}
-            <SaveButton kind="college" id={c.unitid} saved />
+            <SaveButton kind="college" id={c.unitid} saved inPlan />
           </li>
         ))}
       </ul>

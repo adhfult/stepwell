@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// DESIGN.md "Page frame": main sections inline from 640px; on phones they sit
-// behind a text button labeled "Menu" (no hamburger icon). <details> opens
+// DESIGN.md "Page frame": main sections inline from 1024px (six links don't
+// fit on one line below that); on phones and tablets they sit behind a text
+// button labeled "Menu" (no hamburger icon). <details> opens
 // and closes without extra code and works with the keyboard.
 const SECTIONS = [
   { href: "/careers", label: "Careers" },
@@ -12,6 +13,7 @@ const SECTIONS = [
   { href: "/scholarships", label: "Scholarships" },
   { href: "/internships", label: "Internships" },
   { href: "/programs", label: "Programs" },
+  { href: "/plan", label: "My plan" },
 ];
 
 const navLink = "inline-flex min-h-11 items-center no-underline hover:underline focus-visible:underline";
@@ -24,7 +26,7 @@ export function MainNav() {
 
   return (
     <nav aria-label="Main">
-      <ul className="hidden items-center gap-4 sm:flex">
+      <ul className="hidden items-center gap-4 lg:flex">
         {SECTIONS.map((s) => (
           <li key={s.href}>
             <Link href={s.href} aria-current={current(s.href)} className={navLink}>
@@ -33,7 +35,7 @@ export function MainNav() {
           </li>
         ))}
       </ul>
-      <details key={pathname} className="relative sm:hidden">
+      <details key={pathname} className="relative lg:hidden">
         <summary className={`${navLink} cursor-pointer list-none [&::-webkit-details-marker]:hidden`}>Menu</summary>
         <ul className="absolute right-0 z-10 mt-1 w-48 border border-border-strong bg-surface py-1">
           {SECTIONS.map((s) => (

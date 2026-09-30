@@ -123,6 +123,28 @@ const itemSchema = z.object({
   }),
 });
 
+// Kept in capitals when a whole title is in capitals ("STEM INTERN").
+const ACRONYMS = new Set(["STEM", "ROTC", "JROTC", "DOD", "DOJ", "DHS", "NASA", "USDA", "EPA", "GIS", "EMT", "LPN", "USA", "III", "MWR", "BHIP"]);
+const SMALL_WORDS = new Set(["a", "an", "and", "at", "for", "in", "of", "on", "or", "the", "to"]);
+
+/**
+ * Some agencies write titles in capitals, which reads like shouting (DESIGN.md:
+ * no all-caps). Only a title with no lowercase letters changes, word by word:
+ * "COMPUTER ENGINEER" to "Computer Engineer", keeping acronyms like IT.
+ */
+export function unshout(title: string) {
+  if (/[a-z]/.test(title)) return title;
+  let first = true;
+  return title.replace(/[A-Z][A-Z']*/g, (word) => {
+    const lower = word.toLowerCase();
+    // Two-letter words that aren't "of", "in" and so on are codes: GS, WG, VA.
+    const keep = ACRONYMS.has(word) || (word.length <= 2 && !SMALL_WORDS.has(lower));
+    const out = keep ? word : !first && SMALL_WORDS.has(lower) ? lower : word[0] + lower.slice(1);
+    first = false;
+    return out;
+  });
+}
+
 /** The posting's link on usajobs.gov, normalized (live links can carry ":443"); null if it points anywhere else. */
 export function usajobsUrl(raw: string): string | null {
   try {
@@ -180,7 +202,7 @@ export function parsePosting(raw: unknown, today: string): StagedRecord<Opportun
     id: parsed.data.MatchedObjectId,
     value: {
       id: parsed.data.MatchedObjectId,
-      title: cleanText(d.PositionTitle, 300)!,
+      title: unshout(cleanText(d.PositionTitle, 300)!),
       organization: cleanText(d.OrganizationName, 200) ?? cleanText(d.DepartmentName, 200) ?? "U.S. federal government",
       places: places.slice(0, 500),
       states,
