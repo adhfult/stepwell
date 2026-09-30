@@ -95,9 +95,10 @@ function Stop({
   alt,
 }: (typeof STOPS)[number] & { n: number; total: number; terrace: string; last: boolean }): ReactNode {
   return (
-    <li className={`relative border-l-4 border-primary pl-6 ${last ? "pb-2" : "pb-12"} ${terrace}`}>
-      {/* A stone: a 16px square on the 4px line, not chosen yet (surface fill, primary border). */}
-      <span aria-hidden="true" className="absolute -left-[10px] top-1 size-4 border-2 border-primary bg-surface" />
+    <li className={`relative pl-[28px] ${last ? "pb-2" : "pb-12"} ${terrace}`}>
+      {/* The route: a 4px line down the steps, and a stone (a 16px square, not chosen yet) centred on it. */}
+      <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-primary" />
+      <span aria-hidden="true" className="absolute -left-[6px] top-1 size-4 border-2 border-primary bg-surface" />
       <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-start">
         <div className="max-w-xl">
           <h3 className="text-lg font-bold">
