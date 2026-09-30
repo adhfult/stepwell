@@ -4,14 +4,6 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **Owner:** copy `USAJOBS_API_KEY` and `USAJOBS_EMAIL` from
-      `.env.local` into GitHub secrets (works locally since 2026-09-29; the
-      daily cloud import fails without them).
-- [ ] **Owner:** set the `importer` password and the `IMPORT_DATABASE_URL`
-      GitHub secret (the permission system blocks agents from secret writes;
-      one-liner in `docs/LAUNCH.md`), then run "Import data" once from the
-      Actions tab. Until then the cloud has the tables but no imported data
-      (careers, colleges, the 264 scholarships).
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.
@@ -46,6 +38,12 @@ Newest entries at the top. Keep each entry short.
 - USAJOBS ran live: 60 student postings kept of 103 (unpaid and
   "open to everyone" jobs left out); fixture replaced with real postings.
 - Row caps: 1,000 saved items and 500 plan steps per student.
+- Cloud imports running: the owner set `IMPORT_DATABASE_URL` and the
+  USAJOBS secrets; the first "Import data" run loaded every source (1,016
+  careers, 5,787 colleges, 8,501 program links, 923 outlooks, 60 quiz
+  questions, 264 scholarships, 60 internships, 0 rejected).
+- Fixed: USAJOBS closing dates are judged in Eastern time (the first
+  cloud run, at 8 pm Eastern, dropped 2 postings closing that day).
 - Local Supabase's Kong container had stopped (exit 127); `docker start
   supabase_kong_stepwell` fixed it.
 
