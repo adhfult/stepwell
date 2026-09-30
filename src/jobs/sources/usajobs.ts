@@ -209,7 +209,8 @@ export async function readUsajobs(
   fetcher: Fetcher,
   _previous: { etag: string | null; release: string | null },
   env: { USAJOBS_API_KEY?: string; USAJOBS_EMAIL?: string },
-  today = new Date().toISOString().slice(0, 10),
+  // Postings close at the end of their closing day in U.S. Eastern time (as the /internships page counts).
+  today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date()),
 ): Promise<AdapterResult<Opportunity>> {
   if (!env.USAJOBS_API_KEY || !env.USAJOBS_EMAIL) {
     throw new Error("USAJOBS_API_KEY and USAJOBS_EMAIL must be set (see docs/specs/internships.md)");
