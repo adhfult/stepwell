@@ -2,10 +2,12 @@ import { describe, expect, it } from "vitest";
 import {
   collegeMeters,
   debtText,
+  directorySchema,
   domainOf,
   earningsText,
   filtersSchema,
   ownershipName,
+  testFit,
 } from "./labels";
 
 describe("college labels", () => {
@@ -55,5 +57,58 @@ describe("collegeMeters", () => {
       graduation_rate: null,
     });
     expect(meters.every((m) => m.value === null && m.percent === null)).toBe(true);
+  });
+});
+
+describe("directorySchema", () => {
+  it("keeps good values and drops blank or malformed ones", () => {
+    expect(directorySchema.parse({ q: " nurse ", type: "public", bracket: "2", max: "12000", sat: "1200", page: "3" }))
+      .toMatchObject({ q: "nurse", type: "public", bracket: "2", max: 12000, sat: 1200, page: 3 });
+    expect(directorySchema.parse({ max: "", sat: "300", act: "40", page: "0", type: "x", optional: "yes" })).toEqual({
+      max: undefined,
+      sat: undefined,
+      act: undefined,
+      page: undefined,
+      type: undefined,
+      optional: undefined,
+      q: undefined,
+      program: undefined,
+      state: undefined,
+      size: undefined,
+      bracket: undefined,
+      admit: undefined,
+      setting: undefined,
+      years: undefined,
+      serves: undefined,
+      sort: undefined,
+    });
+  });
+});
+
+describe("testFit", () => {
+  const c = { sat_read_25: 500, sat_read_75: 600, sat_math_25: 510, sat_math_75: 620, act_25: 20, act_75: 27 };
+
+  it("places an SAT score against reading + math (1010 to 1220)", () => {
+    expect(testFit(c, { sat: 1000 })).toBe("below");
+    expect(testFit(c, { sat: 1010 })).toBe("in");
+    expect(testFit(c, { sat: 1220 })).toBe("in");
+    expect(testFit(c, { sat: 1230 })).toBe("above");
+  });
+
+  it("places an ACT score against the composite range", () => {
+    expect(testFit(c, { act: 19 })).toBe("below");
+    expect(testFit(c, { act: 27 })).toBe("in");
+    expect(testFit(c, { act: 28 })).toBe("above");
+  });
+
+  it("with both scores, uses SAT when reported, else ACT", () => {
+    expect(testFit(c, { sat: 1000, act: 30 })).toBe("below");
+    expect(testFit({ ...c, sat_read_25: null }, { sat: 1000, act: 30 })).toBe("above");
+  });
+
+  it("says nothing without a score or a full range", () => {
+    expect(testFit(c, {})).toBeNull();
+    expect(testFit({ ...c, sat_math_75: null }, { sat: 1100 })).toBeNull();
+    expect(testFit({ ...c, act_25: null, act_75: null }, { act: 25 })).toBeNull();
   });
 });

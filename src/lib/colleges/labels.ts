@@ -15,6 +15,119 @@ export const filtersSchema = z.object({
   level: z.enum(LEVELS.map((l) => l.value) as [string, ...string[]]).optional().catch(undefined),
 });
 
+type Choice = { value: string; label: string };
+const values = (choices: readonly Choice[]) => choices.map((c) => c.value) as [string, ...string[]];
+const choice = (choices: readonly Choice[]) => z.enum(values(choices)).optional().catch(undefined);
+/** A whole number typed into a GET form; blank or odd input is ignored. */
+const whole = (min: number, max: number) =>
+  z.string().regex(/^\d{1,7}$/).transform(Number).pipe(z.number().min(min).max(max)).optional().catch(undefined);
+const text = z.string().trim().max(100).optional().catch(undefined);
+
+export const TYPES = [
+  { value: "public", label: "Public" },
+  { value: "private_nonprofit", label: "Private nonprofit" },
+  { value: "for_profit", label: "For-profit" },
+] as const;
+export const SIZES = [
+  { value: "small", label: "Small (under 5,000 students)" },
+  { value: "medium", label: "Medium (5,000 to 15,000)" },
+  { value: "large", label: "Large (over 15,000)" },
+] as const;
+/** Family income brackets, in the order of institutions.net_price_by_income. */
+export const BRACKETS = [
+  { value: "1", label: "$0 to $30,000" },
+  { value: "2", label: "$30,001 to $48,000" },
+  { value: "3", label: "$48,001 to $75,000" },
+  { value: "4", label: "$75,001 to $110,000" },
+  { value: "5", label: "Over $110,000" },
+] as const;
+export const ADMIT = [
+  { value: "under25", label: "Under 25%" },
+  { value: "25to50", label: "25% to 50%" },
+  { value: "50to75", label: "50% to 75%" },
+  { value: "over75", label: "75% or more" },
+] as const;
+export const LOCALES = [
+  { value: "city", label: "City" },
+  { value: "suburb", label: "Suburb" },
+  { value: "town", label: "Town" },
+  { value: "rural", label: "Rural" },
+] as const;
+export const YEARS = [
+  { value: "4", label: "Four-year" },
+  { value: "2", label: "Two-year or shorter" },
+] as const;
+export const SERVES = [
+  { value: "hbcu", label: "Historically Black college or university" },
+  { value: "pbi", label: "Predominantly Black institution" },
+  { value: "hsi", label: "Hispanic-serving institution" },
+  { value: "tribal", label: "Tribal college or university" },
+  { value: "aanapisi", label: "Asian American and Native American Pacific Islander-serving" },
+  { value: "annh", label: "Alaska Native or Native Hawaiian-serving" },
+  { value: "nant", label: "Native American non-tribal institution" },
+] as const;
+export const SORTS = [
+  { value: "name", label: "Name" },
+  { value: "size", label: "Size, largest first" },
+  { value: "price", label: "Net price, lowest first" },
+] as const;
+const POLICIES: Record<string, string> = {
+  required: "Test scores required",
+  recommended: "Test scores recommended",
+  considered: "Test scores considered, not required",
+  neither: "Test scores neither required nor recommended",
+};
+
+export const labelOf = (choices: readonly Choice[], value: string | null | undefined) =>
+  choices.find((c) => c.value === value)?.label ?? null;
+export const policyName = (value: string | null) => (value ? (POLICIES[value] ?? null) : null);
+
+/** /colleges search params. Anything malformed is dropped, like the other list pages. */
+export const directorySchema = z.object({
+  q: text,
+  program: text,
+  state: z.enum(STATES.map((s) => s.value) as [string, ...string[]]).optional().catch(undefined),
+  type: choice(TYPES),
+  size: choice(SIZES),
+  bracket: choice(BRACKETS),
+  max: whole(0, 200_000),
+  admit: choice(ADMIT),
+  optional: z.literal("1").optional().catch(undefined),
+  setting: choice(LOCALES),
+  years: choice(YEARS),
+  serves: choice(SERVES),
+  sort: choice(SORTS),
+  page: whole(1, 10_000),
+  sat: whole(400, 1600),
+  act: whole(1, 36),
+});
+export type Directory = z.infer<typeof directorySchema>;
+
+export type Fit = "below" | "in" | "above";
+export type TestRanges = {
+  sat_read_25: number | null;
+  sat_read_75: number | null;
+  sat_math_25: number | null;
+  sat_math_75: number | null;
+  act_25: number | null;
+  act_75: number | null;
+};
+
+/**
+ * Where a student's score sits against a college's middle 50%: "below" the
+ * 25th percentile, "in" the range, or "above" the 75th. SAT compares to
+ * reading + math added together (approximate; the page says so). null when
+ * there's nothing to compare.
+ */
+export function testFit(c: TestRanges, mine: { sat?: number; act?: number }): Fit | null {
+  const place = (score: number, low: number, high: number): Fit => (score < low ? "below" : score > high ? "above" : "in");
+  const { sat_read_25: r25, sat_read_75: r75, sat_math_25: m25, sat_math_75: m75, act_25, act_75 } = c;
+  // With both scores, SAT when the college reports it, else ACT.
+  if (mine.sat && r25 !== null && r75 !== null && m25 !== null && m75 !== null) return place(mine.sat, r25 + m25, r75 + m75);
+  if (mine.act && act_25 !== null && act_75 !== null) return place(mine.act, act_25, act_75);
+  return null;
+}
+
 const OWNERSHIP: Record<string, string> = {
   public: "Public",
   private_nonprofit: "Private nonprofit",
@@ -23,7 +136,7 @@ const OWNERSHIP: Record<string, string> = {
 
 export const ownershipName = (value: string | null) => (value ? (OWNERSHIP[value] ?? null) : null);
 
-const dollars = (n: number) => `$${n.toLocaleString("en-US")}`;
+export const dollars = (n: number) => `$${n.toLocaleString("en-US")}`;
 
 /**
  * "Graduates earn $52,000 a year": the 4-year figure (the page explains it

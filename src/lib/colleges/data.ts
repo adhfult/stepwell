@@ -1,6 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
+import type { Directory } from "./labels";
 
 /**
  * Program names linked to a career in O*NET's crosswalk, by CIP code: the
@@ -30,6 +31,50 @@ export async function collegesForCareer(code: string, state?: string, level?: st
 }
 
 export type CollegeProgram = Awaited<ReturnType<typeof collegesForCareer>>[number];
+
+/** One page of /colleges (24 rows; each carries the total). */
+export async function searchColleges(f: Directory) {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("search_colleges", {
+    p_name: f.q,
+    p_program: f.program,
+    p_state: f.state,
+    p_ownership: f.type,
+    p_size: f.size,
+    p_bracket: f.bracket ? Number(f.bracket) : undefined,
+    p_max_price: f.max,
+    p_admit: f.admit,
+    p_test_optional: f.optional ? true : undefined,
+    p_locale: f.setting,
+    p_two_year: f.years ? f.years === "2" : undefined,
+    p_serves: f.serves,
+    p_sort: f.sort,
+    p_page: f.page,
+  });
+  if (error) throw new Error(`College search failed (${error.code})`);
+  return data;
+}
+
+export type DirectoryRow = Awaited<ReturnType<typeof searchColleges>>[number];
+
+export const getCollege = cache(async (unitid: number) => {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("institutions").select("*").eq("unitid", unitid).maybeSingle();
+  if (error) throw new Error(`College failed (${error.code})`);
+  return data;
+});
+
+export const getCollegePrograms = cache(async (unitid: number) => {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("programs")
+    .select("id, title, credential_level, credential_title, earnings_4yr, earnings_1yr, median_debt")
+    .eq("unitid", unitid)
+    .order("credential_level")
+    .order("title");
+  if (error) throw new Error(`College programs failed (${error.code})`);
+  return data;
+});
 
 /** When the College Scorecard data was last loaded, for the source line. */
 export const getScorecardRetrieved = cache(async (): Promise<string | null> => {
