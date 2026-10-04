@@ -32,6 +32,25 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: Intro page (spec intro-page.md, decision 0012)
+- Owner asked for an introduction page holding most of the decoration, then
+  calmer app pages and more information. Split into five projects; this is
+  the first. Next: calmer, info-first app pages; then college detail pages,
+  pay by state (BLS OEWS), and what the work is like (O*NET work context),
+  each with its own spec.
+- Home keeps its hero; slabs now link to four step sections that walk
+  Registered Nurses in Ohio with live numbers (pay, the best-paid public or
+  nonprofit bachelor's program, an open scholarship, an example plan year),
+  alternating teal and stone with stepped edges, then sources, privacy and
+  a closing search. Screenshots left the home page.
+- Gotcha: catching errors around Supabase reads in a page also catches
+  Next's dynamic-rendering signal, so the build prerendered "/" with every
+  panel empty. `unstable_rethrow` in the catch fixes it.
+- Verified on a production build at 320/390/1280: no overflow, zero console
+  or CSP errors, CLS at most 0.01, slab links land on their step, focus
+  visible, reduced motion; fallback lines shown for a nonexistent career.
+  195 tests.
+
 ### 2026-10-04: Teal bands, dark footer and data bars (spec ui-color-and-data)
 - Owner found the UI dull; chose "bolder, same palette" plus "data you can
   see" on all pages (decision 0011).

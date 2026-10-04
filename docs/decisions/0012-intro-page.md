@@ -1,7 +1,7 @@
 # 0012: Home is the intro page, with a live example and alternating bands
 
 - Date: 2026-10-04
-- Status: proposed (the owner asked for an introduction page holding most of
+- Status: accepted (the owner asked for an introduction page holding most of
   the decoration; chose "home becomes the intro" and "walk one real example")
 
 ## Context

@@ -236,18 +236,15 @@ The route line drawn as the real thing: stone steps going down to water.
   water `foreground` (the scene sits on the home page's teal band, beside the
   headline and search, so it is above the fold on a laptop), the route line a
   4px `primary` strip across the tops. On the band the slab focus outline is
-  `surface`. The chosen stop's panel sits below the band, text beside its
-  screenshot from 640px.
-- Each slab's top is the label of a radio (`name="step"`, visually hidden,
-  first one checked) with the stop title printed on it in Bricolage. Choosing
-  a slab shows that stop's panel (text, links, real screenshot) and raises the
-  slab 12px; it gets the 16px `highlight` stone with a `foreground` border and
-  the words "You are here". Keyboard focus draws the focus outline on the slab.
-- Panels are switched with CSS `:has(:checked)`, so it works without
-  JavaScript. Hidden panels are `display: none`.
+  `surface`.
+- Each slab's top is a link to its step further down the home page
+  (`#step-1` to `#step-4`, decision 0012), with the stop title printed on it
+  in Bricolage. The first slab is raised 12px with the 16px `highlight` stone,
+  a `foreground` border and the words "You are here". Keyboard focus draws
+  the focus outline on the slab's sign.
 - The scene tilts toward the pointer, at most 6 degrees each way, and settles
   back when the pointer leaves. No tilting with the phone's motion sensor.
-- Phones: the scene is at most 272px wide with the panel below; every slab's
+- Phones: the scene is at most 272px wide; every slab's
   tap area is at least 44px tall. If tilted text or tap areas don't work, a
   plain list of labels becomes the selector and the slabs only show the
   current step (record it in `docs/specs/ui-depth-and-motion.md`).
@@ -271,7 +268,23 @@ programs, interest quiz, plan). Form, legal and account pages have none.
   field outlined in `highlight` (accent red fails on teal). All of this is
   `.band` in `globals.css`, so components need no band props.
 - At most one band per page, always at the top. Its loading skeleton has
-  the same band.
+  the same band. The one exception is the home page (decision 0012), below.
+
+### Intro page (home)
+The home page is Stepwell's front door and holds most of its decoration
+(decision 0012, spec `intro-page.md`). App pages stay plain.
+- Hero band (headline, search, stepwell scene), then four step sections
+  that alternate `background` and teal band, then data sources, privacy and
+  a closing search on `background`.
+- Between sections, `<StepEdge>` (`src/components/step-edge.tsx`): four
+  flat stone steps, 24px tall (32px from 640px), in the next section's color,
+  stepping down left to right. No other dividers.
+- Each step shows one real example (Registered Nurses, Ohio) from our own
+  tables in a `.stone-panel` (`surface` fill, 1px `border-subtle`), which
+  undoes the band's color remap, so panels read the same on teal and stone.
+  The college is the best-paid public or nonprofit bachelor's program.
+- Each panel streams in behind a skeleton; a failed lookup shows "Live
+  numbers for this step aren't available right now."
 
 ### Data graphics
 Small bars that sketch a number next to it, so students can compare at a
