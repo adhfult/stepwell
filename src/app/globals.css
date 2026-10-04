@@ -165,9 +165,6 @@
 .band .text-primary {
   color: var(--surface);
 }
-.band a:hover {
-  color: var(--highlight);
-}
 .band :focus-visible {
   outline-color: var(--surface);
 }

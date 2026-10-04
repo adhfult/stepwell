@@ -275,11 +275,13 @@ function CollegeList({
               <dl className="mt-3 grid max-w-2xl gap-x-8 gap-y-3 sm:grid-cols-2">
                 {collegeMeters(c).map((m) => (
                   <div key={m.label} className={m.phone ? "" : "hidden sm:block"}>
-                    <div className="flex justify-between gap-3">
-                      <dt className="text-sm text-muted">{m.label}</dt>
-                      <dd className={m.value ? "font-bold" : "text-sm text-muted"}>{m.value ?? "Not reported"}</dd>
-                    </div>
-                    {m.percent !== null && <Meter percent={m.percent} className="mt-1" />}
+                    <dt className="float-left text-sm text-muted">{m.label}</dt>
+                    <dd>
+                      <p className={`text-right ${m.value ? "font-bold" : "text-sm text-muted"}`}>
+                        {m.value ?? "Not reported"}
+                      </p>
+                      {m.percent !== null && <Meter percent={m.percent} className="mt-1" />}
+                    </dd>
                   </div>
                 ))}
               </dl>

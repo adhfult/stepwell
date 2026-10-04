@@ -52,7 +52,7 @@ export function StepwellScene({ intro, stops, children }: { intro: ReactNode; st
         {stops.map((stop, i) => (
           <div key={stop.title} data-panel={i} className="grid gap-6 sm:grid-cols-[1fr_auto] sm:gap-12">
             <div className="max-w-2xl">
-              <h3 className="text-xl font-bold">
+              <h3 className="text-lg font-bold">
                 <span className="sr-only">
                   Step {i + 1} of {stops.length}:{" "}
                 </span>

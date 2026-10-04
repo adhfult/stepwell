@@ -262,8 +262,8 @@ programs, interest quiz, plan). Form, legal and account pages have none.
 - `<Band>` (`src/components/page.tsx`) uses the same widths and side padding
   as `<Page>`; the content below starts in `<Page>` as usual.
 - Inside: text `surface` (6.97:1), secondary and help text `border-subtle`
-  (4.83:1, never `muted`), links `surface` underlined with `highlight` on
-  hover, focus outline `surface`. `highlight` is 4.49:1 on primary, so only
+  (4.83:1, never `muted`), links `surface` underlined (hover thickens the
+  underline), focus outline `surface`. `highlight` is 4.49:1 on primary, so only
   fills and large marks, never small text.
 - Primary buttons inside a band turn `surface` with `foreground` text (and
   `foreground` on hover), keeping their stone edge. Inputs keep their
