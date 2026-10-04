@@ -1,6 +1,6 @@
 # Spec: GPA and test scores
 
-- Status: draft
+- Status: approved 2026-10-04
 
 ## Goal
 Let any student work out their unweighted and weighted GPA, ask "what grade
@@ -69,9 +69,9 @@ at colleges, so that I know where I stand and what to aim for.
 - [ ] Weighted points = points + the type's bonus; an F gets no bonus.
 - [ ] GPA = sum of points x credits / sum of credits over graded classes,
       plus start GPA x start credits from the shortcut on both sides.
-- [ ] Needed grade x for the unfinished classes:
-      x = (target x all credits - graded points - sum of bonus x credits of
-      unfinished classes) / unfinished credits, rounded up to a letter.
+- [ ] Needed grade: try each letter from F up in every unfinished class and
+      take the first that reaches the target (exact, and an F's missing
+      bonus needs no special case).
 
 ### Test scores (`src/lib/gpa/concordance.ts`)
 - [ ] ACT to SAT (Table A2) and SAT to ACT (Table A1) copied from ACT's
