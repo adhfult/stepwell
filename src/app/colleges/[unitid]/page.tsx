@@ -14,12 +14,15 @@ import {
   dollars,
   domainOf,
   earningsText,
+  fitText,
   labelOf,
   LOCALES,
   ownershipName,
   policyName,
   SERVES,
+  testFit,
 } from "@/lib/colleges/labels";
+import { getMyScores } from "@/lib/gpa/data";
 import { getMySavedIds } from "@/lib/plan/data";
 import { stateName } from "@/lib/profile/options";
 import { CAPS, toPercent } from "@/lib/scale";
@@ -46,6 +49,7 @@ export default async function CollegePage({ params }: PageProps<"/colleges/[unit
     getCurrentUser(),
     getMySavedIds(),
   ]);
+  const fit = testFit(c, await getMyScores());
 
   const sat =
     c.sat_read_25 !== null && c.sat_math_25 !== null && c.sat_read_75 !== null && c.sat_math_75 !== null
@@ -108,6 +112,11 @@ export default async function CollegePage({ params }: PageProps<"/colleges/[unit
               </div>
             ))}
           </dl>
+          {fit && (
+            <p className="mt-3">
+              {fitText(fit)}, from the scores saved on <Link href="/gpa">GPA and test scores</Link>.
+            </p>
+          )}
         </section>
 
         <section aria-labelledby="price-heading" className="mt-12 max-w-2xl">

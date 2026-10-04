@@ -6,11 +6,13 @@ import { Meter } from "@/components/meter";
 import { Band, Page, PageTitle } from "@/components/page";
 import { monthYear } from "@/lib/careers/labels";
 import { getScorecardRetrieved, searchColleges, type DirectoryRow } from "@/lib/colleges/data";
+import { getMyScores } from "@/lib/gpa/data";
 import {
   ADMIT,
   BRACKETS,
   directorySchema,
   dollars,
+  fitText,
   labelOf,
   LOCALES,
   ownershipName,
@@ -29,11 +31,13 @@ export const metadata: Metadata = { title: "Colleges" };
 
 const PER_PAGE = 24; // search_colleges() pages by 24
 
-const FIT_TEXT = { below: "below", in: "in", above: "above" } as const;
-
 export default async function CollegesPage({ searchParams }: PageProps<"/colleges">) {
   const params = directorySchema.parse(await searchParams);
-  const [rows, retrieved] = await Promise.all([searchColleges(params), getScorecardRetrieved()]);
+  const [rows, retrieved, saved] = await Promise.all([searchColleges(params), getScorecardRetrieved(), getMyScores()]);
+  // Scores typed here win; otherwise the ones saved on /gpa.
+  const typed = Boolean(params.sat || params.act);
+  const mine = typed ? params : saved;
+  const usingSaved = !typed && Boolean(saved.sat || saved.act);
   const total = Number(rows[0]?.total ?? 0);
   const pages = Math.max(1, Math.ceil(total / PER_PAGE));
   const page = Math.min(params.page ?? 1, pages);
@@ -68,14 +72,20 @@ export default async function CollegesPage({ searchParams }: PageProps<"/college
               {total.toLocaleString("en-US")} {total === 1 ? "college" : "colleges"}
             </h2>
             {bracket && <p className="mt-1">Net price shown for a family income of {bracket}.</p>}
-            {params.sat && (
+            {usingSaved && (
+              <p className="mt-1">
+                Using your saved {[saved.sat && `SAT ${saved.sat}`, saved.act && `ACT ${saved.act}`].filter(Boolean).join(" and ")}{" "}
+                from <Link href="/gpa">GPA and test scores</Link>.
+              </p>
+            )}
+            {mine.sat && (
               <p className="mt-1 text-sm text-muted">
                 SAT ranges add the reading and math scores, so where your score falls is approximate.
               </p>
             )}
             <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
               {rows.map((c) => (
-                <Row key={c.unitid} c={c} mine={params} />
+                <Row key={c.unitid} c={c} mine={mine} />
               ))}
             </ul>
             {pages > 1 && (
@@ -279,7 +289,6 @@ function Row({ c, mine }: { c: DirectoryRow; mine: { sat?: number; act?: number 
   const act = c.act_25 !== null && c.act_75 !== null ? `ACT ${c.act_25} to ${c.act_75}` : null;
   const ranges = [sat, act].filter(Boolean);
   const fit = testFit(c, mine);
-  const used = mine.sat && sat ? "SAT" : "ACT"; // testFit's order: SAT when reported, else ACT
   return (
     <li className="py-5">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -288,7 +297,7 @@ function Row({ c, mine }: { c: DirectoryRow; mine: { sat?: number; act?: number 
         </h3>
         {fit && (
           <span className="border border-border-strong bg-surface px-2 py-1 text-sm font-bold text-foreground">
-            Your {used} is {FIT_TEXT[fit]} the middle 50%
+            {fitText(fit)}
           </span>
         )}
       </div>

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { actToSat, satToAct } from "@/lib/gpa/concordance";
 import { STATES } from "@/lib/profile/options";
 import { CAPS, toPercent } from "@/lib/scale";
 
@@ -116,16 +117,32 @@ export type TestRanges = {
 /**
  * Where a student's score sits against a college's middle 50%: "below" the
  * 25th percentile, "in" the range, or "above" the 75th. SAT compares to
- * reading + math added together (approximate; the page says so). null when
- * there's nothing to compare.
+ * reading + math added together (approximate; the page says so). The SAT
+ * when the college reports it and the student has one, else the ACT; a
+ * student with only the other test is converted with the official
+ * concordance. null when there's nothing to compare.
  */
-export function testFit(c: TestRanges, mine: { sat?: number; act?: number }): Fit | null {
+export function testFit(
+  c: TestRanges,
+  mine: { sat?: number; act?: number },
+): { fit: Fit; test: "SAT" | "ACT"; converted: boolean } | null {
   const place = (score: number, low: number, high: number): Fit => (score < low ? "below" : score > high ? "above" : "in");
   const { sat_read_25: r25, sat_read_75: r75, sat_math_25: m25, sat_math_75: m75, act_25, act_75 } = c;
-  // With both scores, SAT when the college reports it, else ACT.
-  if (mine.sat && r25 !== null && r75 !== null && m25 !== null && m75 !== null) return place(mine.sat, r25 + m25, r75 + m75);
-  if (mine.act && act_25 !== null && act_75 !== null) return place(mine.act, act_25, act_75);
+  const satRange = r25 !== null && r75 !== null && m25 !== null && m75 !== null ? [r25 + m25, r75 + m75] : null;
+  const actRange = act_25 !== null && act_75 !== null ? [act_25, act_75] : null;
+  const asSat = mine.act ? actToSat(mine.act) : null;
+  const asAct = mine.sat ? satToAct(mine.sat) : null;
+  if (satRange && mine.sat) return { fit: place(mine.sat, satRange[0], satRange[1]), test: "SAT", converted: false };
+  if (actRange && mine.act) return { fit: place(mine.act, actRange[0], actRange[1]), test: "ACT", converted: false };
+  if (satRange && asSat) return { fit: place(asSat, satRange[0], satRange[1]), test: "SAT", converted: true };
+  if (actRange && asAct) return { fit: place(asAct, actRange[0], actRange[1]), test: "ACT", converted: true };
   return null;
+}
+
+/** The marker's words: "Your SAT is in the middle 50%", or "Your ACT (as an SAT) is below the middle 50%". */
+export function fitText(f: { fit: Fit; test: "SAT" | "ACT"; converted: boolean }): string {
+  const yours = f.converted ? `Your ${f.test === "SAT" ? "ACT (as an SAT)" : "SAT (as an ACT)"}` : `Your ${f.test}`;
+  return `${yours} is ${f.fit} the middle 50%`;
 }
 
 const OWNERSHIP: Record<string, string> = {
