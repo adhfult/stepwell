@@ -4,6 +4,13 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
+- [ ] Pages with a loading skeleton (career search, career, colleges,
+      scholarships) shift the footer when content streams in (CLS 0.12 to
+      0.29, found 2026-10-04; older than the redesign). One fix: give
+      `<main>` a minimum height so the footer starts below the fold.
+- [ ] Re-take the home page screenshots (`public/screenshots/`) so they
+      show the Bricolage headings and stone buttons; the plan one needs a
+      test account.
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
       "Secure password change" in the development project's Auth settings
       now (LAUNCH.md step 3 covers production). Sign-in rate limits are
@@ -30,6 +37,17 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: Depth, motion and the 3D stepwell (spec ui-depth-and-motion)
+- Owner chose: evolve Water and Stone, Bricolage Grotesque headings, an
+  interactive 3D stepwell, stone keycap buttons. Decision 0010 relaxes the
+  shadow and motion bans into a hard stone edge and a motion budget.
+- Built with CSS only (3D transforms, `:has()`, `@property`) plus React's
+  `<ViewTransition>`; no new dependencies.
+- Gotchas: the 3D scene's own plane caught every click until
+  `pointer-events: none`; the CSP allows `style.setProperty` but not
+  server-rendered style attributes; the career title morph can't survive
+  the `loading.tsx` skeleton, so it was dropped.
+
 ### 2026-10-04: CareerOneStop youth programs, licenses, certifications
 - Token works; the API has no Scholarship Finder and Training is 401.
 - Youth job programs on /programs (2,519 providers), licenses by state and

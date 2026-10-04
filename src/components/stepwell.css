@@ -158,7 +158,6 @@
   max-width: calc(var(--w) - 72px);
   background: var(--surface);
   border: 1px solid var(--border-strong);
-  border-radius: 2px;
   font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 700;
