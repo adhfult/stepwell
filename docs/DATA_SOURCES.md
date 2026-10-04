@@ -83,10 +83,17 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   `src/jobs/sources/onet-cip.ts`), refreshed yearly.
 
 ## Scholarships and opportunities (v1)
-- **CareerOneStop Web API** (U.S. Dept. of Labor): Scholarship Finder, 9,500+
-  awards; open data under USDOL's Open Data Policy. **Blocked 2026-09-28:**
-  the website returns 403 (CloudFront) to the owner on every network tried,
-  so no API key could be requested.
+- **CareerOneStop Web API** (U.S. Dept. of Labor). The owner got a token by
+  email on 2026-10-04 (`CAREERONESTOP_USER_ID`, `CAREERONESTOP_API_TOKEN`;
+  Bearer header, the ID in the path); a test call to
+  `/v1/occupation/{userId}/nurse/N/0/3` returned 200. **No scholarships:**
+  the API explorer (api.careeronestop.org/api-explorer) lists 37 endpoints
+  and no Scholarship Finder, and `/v1/scholarshipfinder/...` and
+  `/v1/scholarship/...` return 404. The Scholarship Finder seems to be on
+  the website only; ask CareerOneStop whether its data is available.
+  Endpoints that could help later: YouthProgramFinder (youth programs),
+  TrainingV (training programs), CertificationFinder, LicenseFinder,
+  ApprenticeshipFinder (offices).
 - **Official list** (source `official_list`, built 2026-09-29): Stepwell's
   curated list of official state and federal programs in
   `data/scholarships/<state>.json` and `federal.json`, researched from

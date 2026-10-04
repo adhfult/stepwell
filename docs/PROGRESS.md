@@ -9,12 +9,12 @@ Newest entries at the top. Keep each entry short.
       now (LAUNCH.md step 3 covers production). Sign-in rate limits are
       decided (decision 0009); their settings are in LAUNCH.md steps 3
       and 5.
-- [ ] **Waiting on CareerOneStop:** their site blocks every network the
-      owner tried (CloudFront 403), so the owner emailed
-      webservices@careeronestop.org on 2026-09-30 asking to register for a
-      Web API token by email. When the token arrives: `CAREERONESTOP_*`
-      names in `.env.example` and GitHub secrets, then a spec for importing
-      Scholarship Finder alongside the official list.
+- [ ] **CareerOneStop:** the owner has a Web API token (local settings and
+      GitHub secrets, 2026-10-04; a test call works). Its API has no
+      Scholarship Finder (DATA_SOURCES.md). Owner: ask CareerOneStop in the
+      same email thread whether the Scholarship Finder data is available to
+      API users. Possible next step instead: YouthProgramFinder or TrainingV
+      (spec first).
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.
