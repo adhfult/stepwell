@@ -84,6 +84,14 @@ export function deadlineText(
   return { text: "Check the official page for the deadline", tone: "normal" };
 }
 
+/** The first listing with an amount whose deadline hasn't passed, for the home page's example. */
+export function firstOpen<T extends Parameters<typeof deadlineText>[0] & { award_text: string | null }>(
+  list: T[],
+  today: Date = new Date(),
+): T | null {
+  return list.find((s) => s.award_text && deadlineText(s, today).tone !== "closed") ?? null;
+}
+
 /** "Checked September 2026" */
 export function checkedText(checkedAt: string) {
   const d = new Date(`${checkedAt}T00:00:00Z`);

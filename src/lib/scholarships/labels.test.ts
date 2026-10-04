@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkedText, deadlineText, eligibilitySchema } from "./labels";
+import { checkedText, deadlineText, eligibilitySchema, firstOpen } from "./labels";
 
 const today = new Date(2026, 8, 28); // September 28, 2026 (local)
 const listing = (over: object) => ({ deadline_kind: "unknown", deadline_date: null, deadline_month_day: null, checked_at: "2026-09-28", ...over });
@@ -23,6 +23,20 @@ describe("deadlineText", () => {
 
   it("says when a listing was checked", () => {
     expect(checkedText("2026-09-28")).toBe("Checked September 2026");
+  });
+});
+
+describe("firstOpen", () => {
+  const withAward = (award_text: string | null, over: object) => ({ ...listing(over), award_text });
+  const closed = withAward("Up to $5,000", { deadline_kind: "date", deadline_date: "2026-03-01" });
+
+  it("skips closed and amount-less listings", () => {
+    const open = withAward("Up to $5,000", { deadline_kind: "rolling" });
+    expect(firstOpen([closed, withAward(null, { deadline_kind: "rolling" }), open], today)).toBe(open);
+  });
+
+  it("returns null when every listing is closed", () => {
+    expect(firstOpen([closed], today)).toBeNull();
   });
 });
 
