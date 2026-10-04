@@ -10,6 +10,24 @@ const PER_PAGE = 100;
 export const SCORECARD_DELAY_MS = 500;
 
 const P = "latest.programs.cip_4_digit";
+const SAT = "latest.admissions.sat_scores";
+const ACT = "latest.admissions.act_scores";
+const POLICY_FIELD = "latest.admissions.test_requirements";
+// Net price by family income: $0-30k, $30-48k, $48-75k, $75-110k, $110k+.
+const BRACKETS = ["0-30000", "30001-48000", "48001-75000", "75001-110000", "110001-plus"];
+const SERVES = {
+  historically_black: "hbcu",
+  predominantly_black: "pbi",
+  hispanic: "hsi",
+  tribal: "tribal",
+  aanipi: "aanapisi",
+  annh: "annh",
+  nant: "nant",
+} as const;
+// Data dictionary codes; 4 ("do not know") stays null.
+const POLICY = { 1: "required", 2: "recommended", 3: "neither", 5: "considered" } as const;
+// school.locale is 11-43; the tens digit is the kind of place.
+const LOCALE = { 1: "city", 2: "suburb", 3: "town", 4: "rural" } as const;
 // The fields the Scorecard website itself uses (its data dictionary marks
 // them "shown/used on consumer website"), and nothing else.
 const FIELDS = [
@@ -32,6 +50,16 @@ const FIELDS = [
   `${P}.earnings.1_yr.overall_median_earnings`,
   `${P}.debt.staff_grad_plus.all.eval_inst.median`,
   `${P}.counts.ipeds_awards2`,
+  "school.locale",
+  "school.degrees_awarded.predominant",
+  POLICY_FIELD,
+  ...["25th", "75th"].flatMap((p) => [
+    `${SAT}.${p}_percentile.critical_reading`,
+    `${SAT}.${p}_percentile.math`,
+    `${ACT}.${p}_percentile.cumulative`,
+  ]),
+  ...["public", "private"].flatMap((o) => BRACKETS.map((b) => `latest.cost.net_price.${o}.by_income_level.${b}`)),
+  ...Object.keys(SERVES).map((k) => `school.minority_serving.${k}`),
 ].join(",");
 
 // Operating schools that mainly award certificates or degrees (1 to 4).
@@ -95,8 +123,23 @@ export type Institution = {
   admission_rate: number | null;
   graduation_rate: number | null;
   students: number | null;
+  sat_read_25: number | null;
+  sat_read_75: number | null;
+  sat_math_25: number | null;
+  sat_math_75: number | null;
+  act_25: number | null;
+  act_75: number | null;
+  test_policy: (typeof POLICY)[keyof typeof POLICY] | null;
+  net_price_by_income: (number | null)[] | null;
+  locale: (typeof LOCALE)[keyof typeof LOCALE] | null;
+  two_year: boolean | null;
+  serves: (typeof SERVES)[keyof typeof SERVES][];
   programs: Program[];
 };
+
+const sat = z.number().int().min(200).max(800);
+const act = z.number().int().min(1).max(36);
+const code = z.number().int();
 
 const positive = (n: number | null | undefined) => (typeof n === "number" && n > 0 ? Math.round(n) : null);
 
@@ -117,7 +160,7 @@ export function normalizeWebsite(url: string | null | undefined): string | null 
 /**
  * One school from the API as a staged record. Programs without graduates or
  * earnings are left out (nothing to show); a bad program is dropped, not the
- * whole school.
+ * whole school, and so is a bad value in the directory fields.
  */
 export function parseSchool(raw: unknown): StagedRecord<Institution> {
   const school = schoolSchema.safeParse(raw);
@@ -133,6 +176,14 @@ export function parseSchool(raw: unknown): StagedRecord<Institution> {
   const s = school.data;
   const ownership = OWNERSHIP[s["school.ownership"] as keyof typeof OWNERSHIP] ?? null;
   const netPrice = ownership === "public" ? s["latest.cost.avg_net_price.public"] : s["latest.cost.avg_net_price.private"];
+  const pick = <T>(key: string, schema: z.ZodType<T>) => {
+    const value = schema.safeParse((raw as Record<string, unknown>)[key]);
+    return value.success ? value.data : null;
+  };
+  const sector = ownership === "public" ? "public" : "private";
+  const byIncome = BRACKETS.map((b) => pick(`latest.cost.net_price.${sector}.by_income_level.${b}`, z.number().min(0)));
+  const locale = pick("school.locale", code);
+  const predominant = pick("school.degrees_awarded.predominant", code);
 
   const programs: Program[] = [];
   for (const rawProgram of s[P] ?? []) {
@@ -165,6 +216,19 @@ export function parseSchool(raw: unknown): StagedRecord<Institution> {
       admission_rate: s["latest.admissions.admission_rate.overall"] ?? null,
       graduation_rate: s["latest.completion.outcome_percentage_suppressed.all_students.8yr.award_pooled"] ?? null,
       students: s["latest.student.size"] ?? null,
+      sat_read_25: pick(`${SAT}.25th_percentile.critical_reading`, sat),
+      sat_read_75: pick(`${SAT}.75th_percentile.critical_reading`, sat),
+      sat_math_25: pick(`${SAT}.25th_percentile.math`, sat),
+      sat_math_75: pick(`${SAT}.75th_percentile.math`, sat),
+      act_25: pick(`${ACT}.25th_percentile.cumulative`, act),
+      act_75: pick(`${ACT}.75th_percentile.cumulative`, act),
+      test_policy: POLICY[pick(POLICY_FIELD, code) as keyof typeof POLICY] ?? null,
+      net_price_by_income: byIncome.some((n) => n !== null) ? byIncome.map((n) => (n === null ? null : Math.round(n))) : null,
+      locale: locale === null ? null : (LOCALE[Math.floor(locale / 10) as keyof typeof LOCALE] ?? null),
+      two_year: predominant === null ? null : predominant <= 2,
+      serves: (Object.keys(SERVES) as (keyof typeof SERVES)[])
+        .filter((k) => pick(`school.minority_serving.${k}`, code) === 1)
+        .map((k) => SERVES[k]),
       programs,
     },
   };

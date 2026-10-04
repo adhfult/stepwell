@@ -39,6 +39,41 @@ describe("parseSchool", () => {
     expect(record).toMatchObject({ status: "valid", value: { ownership: "private_nonprofit", net_price: null } });
   });
 
+  it("reads test scores, test policy, income prices, setting and minority-serving flags", () => {
+    expect(parseSchool(page.results[0])).toMatchObject({
+      value: {
+        sat_read_25: 420,
+        sat_math_25: 390,
+        act_25: 14,
+        act_75: 19,
+        test_policy: "considered",
+        net_price_by_income: [16500, 16387, 19622, 21680, 20364],
+        locale: "city",
+        two_year: false,
+        serves: ["hbcu"],
+      },
+    });
+  });
+
+  it("leaves unreported directory fields empty", () => {
+    expect(parseSchool(page.results[2])).toMatchObject({
+      value: { sat_read_25: null, act_75: null, test_policy: null, net_price_by_income: null, serves: [] },
+    });
+  });
+
+  it("drops a bad directory value, not the college", () => {
+    const bad = {
+      ...page.results[0],
+      "latest.admissions.sat_scores.25th_percentile.math": 9999,
+      "latest.admissions.test_requirements": 4,
+      "school.locale": "city",
+    };
+    expect(parseSchool(bad)).toMatchObject({
+      status: "valid",
+      value: { sat_math_25: null, sat_read_25: 420, test_policy: null, locale: null },
+    });
+  });
+
   it("rejects a school without a name", () => {
     expect(parseSchool({ ...page.results[0], "school.name": "" })).toMatchObject({ status: "rejected", id: "100654" });
   });
