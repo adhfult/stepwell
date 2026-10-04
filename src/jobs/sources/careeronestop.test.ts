@@ -30,9 +30,13 @@ describe("CareerOneStop parsers", () => {
   it("accepts license IDs with & and parentheses, and leaves out federal ones", () => {
     const raw = { LicenseList: [
       { ID: "08-KEYL(G)L", Title: "Key License", State: "Colorado" },
+      { ID: "34-11-2031.00", Title: "Office Manager", State: "New Jersey" },
       { ID: "00-FinOpL", Title: "Financial Operations", State: "Federal Agencies" },
     ] };
-    expect(parseLicenses("11-1011.00", raw)).toMatchObject([{ status: "valid", value: { license_id: "08-KEYL(G)L", state: "CO" } }]);
+    expect(parseLicenses("11-1011.00", raw)).toMatchObject([
+      { status: "valid", value: { license_id: "08-KEYL(G)L", state: "CO" } },
+      { status: "valid", value: { license_id: "34-11-2031.00", state: "NJ" } },
+    ]);
   });
 
   it("reads core certifications", () => {
@@ -48,7 +52,11 @@ describe("CareerOneStop parsers", () => {
 
   it("pages through licenses with the token in a header, never the URL", async () => {
     const calls: Array<{ url: string; auth?: string }> = [];
-    const page = (n: number) => ({ RecordCount: 51, LicenseList: Array.from({ length: n }, (_, i) => ({ ID: `X-${i}`, Title: "RN", State: "Ohio" })) });
+    // The first page holds a federal entry the parser drops; paging must still continue.
+    const page = (n: number) => ({
+      RecordCount: 51,
+      LicenseList: Array.from({ length: n }, (_, i) => ({ ID: `X-${i}`, Title: "RN", State: i === 0 && n === 50 ? "Federal Agencies" : "Ohio" })),
+    });
     const fetcher: Fetcher = {
       requestCount: () => calls.length,
       async get(url, options) {
@@ -63,6 +71,6 @@ describe("CareerOneStop parsers", () => {
       "https://api.careeronestop.org/v1/license/user-1/29-1141.00/0/0/0/50/50",
     ]);
     expect(calls.every((c) => c.auth === `Bearer ${"t".repeat(20)}` && !c.url.includes("t".repeat(20)))).toBe(true);
-    expect(result.status === "fetched" && result.records.length).toBe(51);
+    expect(result.status === "fetched" && result.records.length).toBe(50);
   });
 });

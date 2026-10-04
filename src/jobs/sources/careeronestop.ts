@@ -89,7 +89,7 @@ export async function readCosYouthPrograms(fetcher: Fetcher, _previous: Previous
 // --- Licenses ---------------------------------------------------------------
 
 const licenseSchema = z.object({
-  ID: z.string().regex(/^[A-Za-z0-9&()-]{1,40}$/),
+  ID: z.string().regex(/^[A-Za-z0-9&().-]{1,40}$/),
   Title: z.string(),
   State: z.string(),
   LicenseAgency: z.object({ Name: text, Url: text }).nullish(),
@@ -139,10 +139,13 @@ export async function readCosLicenses(fetcher: Fetcher, _previous: Previous, env
   const records: StagedRecord<CareerLicense>[] = [];
   for (const code of careers) {
     for (let start = 0; ; start += PAGE) {
-      const raw = (await cosGet(fetcher, env, `/license/{id}/${code}/0/0/0/${start}/${PAGE}`)) as { RecordCount?: number };
-      const page = parseLicenses(code, raw);
-      records.push(...page);
-      if (page.length < PAGE || start + PAGE >= (raw.RecordCount ?? 0)) break;
+      const raw = (await cosGet(fetcher, env, `/license/{id}/${code}/0/0/0/${start}/${PAGE}`)) as {
+        RecordCount?: number;
+        LicenseList?: unknown[];
+      };
+      records.push(...parseLicenses(code, raw));
+      // Page on the raw list: the parser drops federal entries, so its count can be short.
+      if ((raw.LicenseList?.length ?? 0) < PAGE || start + PAGE >= (raw.RecordCount ?? 0)) break;
     }
   }
   return { status: "fetched", release: null, etag: null, records };
