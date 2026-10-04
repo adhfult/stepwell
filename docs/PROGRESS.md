@@ -4,11 +4,9 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **Owner:** approve pushing the college directory commits, then apply
-      migration `20261004192436_college_directory.sql` to the cloud project
-      and re-run the Scorecard import there (`gh workflow` or
-      `npm run import -- scorecard` against production).
-- [ ] Pre-launch roadmap project 2 (GPA, SAT and ACT tools): brainstorm, spec.
+- [ ] **Owner:** approve pushing the GPA commits and applying migration
+      `20261004223017_academic_records.sql` to the cloud project.
+- [ ] Pre-launch roadmap project 3 (NCAA athlete path): brainstorm, spec.
 - [ ] Re-take `public/screenshots/plan.png` (needs a signed-in test
       account) so it shows the Bricolage headings like the other three.
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
@@ -37,6 +35,30 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: GPA and test scores (spec gpa-and-tests.md, roadmap project 2, decision 0013)
+- College directory pushed; its migration applied to the cloud and the
+  Scorecard import re-run there (5,787 colleges, 949 with SAT ranges). The
+  import's "changed" count only watches the 5 original columns, so it said 0.
+- `/gpa` ("GPA" in the nav): class list (type, grade or "Not finished yet",
+  credits), known-GPA shortcut, editable weights, live unweighted and
+  weighted GPA, "what grade do I need" (lowest letter in every unfinished
+  class), highest reachable, SAT/ACT conversion with links to `/colleges`.
+- Works signed out (draft in localStorage, loaded only after hydration so
+  it can't be overwritten). Signed in: consent, save, change, remove;
+  "Use 3.70 for scholarship matching" for students already opted in.
+- Concordance: ACT's 2018 tables, still the official ones (ACT's page and
+  the College Board say so; the 2025 ACT composite has no newer table).
+  Tables A1 and A2 share the same ranges, so one list converts both ways.
+- `testFit` converts with the concordance when the college reports only the
+  other test; `/colleges` and `/colleges/[unitid]` use saved scores when the
+  URL has none.
+- Data: `academic_records` (owner-only RLS, jsonb course check function,
+  12-month purge). Privacy page updated.
+- Verified: `npm run check`; `npm run test:db` (280); production build;
+  Playwright signed out and signed in (local test user): draft survives
+  reload, save without consent refused, save, reload, college markers, remove,
+  scholarship GPA; 320 and 1280 with no overflow, nav fits at 1024, keyboard
+  only, 0 console errors.
 ### 2026-10-04: College directory (spec college-directory.md, roadmap project 1)
 - `/colleges`: name search, state and sort up front; cost by income bracket,
   "most I'd pay", My SAT/ACT, type, size, admission rate, test-optional,

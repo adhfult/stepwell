@@ -9,7 +9,7 @@ item gets its own brainstorm when it starts.
 1. **College directory** (`college-directory.md`): `/colleges` with filters,
    a page per college, SAT/ACT, test policy, cost by income, setting and type
    from College Scorecard. Replaces the earlier "college detail pages" item.
-2. **GPA and test tools** (`gpa-and-tests.md`): weighted GPA (regular, honors, AP, IB, dual
+2. **GPA and test tools** (`gpa-and-tests.md`, built 2026-10-04): weighted GPA (regular, honors, AP, IB, dual
    enrollment), "what grade do I need in these classes to reach a Y GPA" and
    similar what-ifs, the official SAT/ACT concordance, a score matcher
    against the directory's ranges.
