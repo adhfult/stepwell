@@ -19,6 +19,8 @@ select is(
 
 -- Knowledge arrives with the O*NET merge
 delete from public.saved_items;
+delete from public.career_licenses;
+delete from public.career_certifications;
 delete from public.occupations;
 delete from ingest.import_runs where source_id = 'onet';
 update public.sources set last_success_at = null, last_etag = null, last_release = null where id = 'onet';

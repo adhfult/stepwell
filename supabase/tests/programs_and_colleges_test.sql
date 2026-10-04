@@ -9,6 +9,8 @@ select plan(18);
 grant usage on schema extensions to importer;
 
 delete from public.saved_items;
+delete from public.career_licenses;
+delete from public.career_certifications;
 delete from public.occupations;
 delete from public.institutions;
 delete from ingest.import_runs where source_id in ('onet_cip', 'scorecard');

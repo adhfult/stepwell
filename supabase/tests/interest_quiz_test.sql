@@ -53,6 +53,8 @@ reset role;
 
 -- Matching
 delete from public.saved_items;
+delete from public.career_licenses;
+delete from public.career_certifications;
 delete from public.occupations;
 insert into public.occupations
   (onet_code, title, description, onet_release, retrieved_at, job_zone,

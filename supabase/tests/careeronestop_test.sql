@@ -13,6 +13,8 @@ select ok(
   'the three tables have Row Level Security enabled'
 );
 
+delete from public.youth_programs;
+
 insert into public.occupations (onet_code, title, description, onet_release, retrieved_at)
   values ('99-9999.00', 'Test Career', 'A test.', '31.0', now())
   on conflict (onet_code) do nothing;
