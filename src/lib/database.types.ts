@@ -101,13 +101,13 @@ isOneToOne: false
                   ]
                 },"institutions": {
                   Row: {
-                    "admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"name": string,"net_price": number | null,"ownership": string | null,"retrieved_at": string,"source_id": string,"state": string | null,"students": number | null,"unitid": number,"website": string | null
+                    "act_25": number | null,"act_75": number | null,"admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"locale": string | null,"name": string,"net_price": number | null,"net_price_by_income": (number)[] | null,"ownership": string | null,"retrieved_at": string,"sat_math_25": number | null,"sat_math_75": number | null,"sat_read_25": number | null,"sat_read_75": number | null,"serves": (string)[] | null,"source_id": string,"state": string | null,"students": number | null,"test_policy": string | null,"two_year": boolean | null,"unitid": number,"website": string | null
                   }
                   Insert: {
-                    "admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"name": string,"net_price"?: number | null,"ownership"?: string | null,"retrieved_at": string,"source_id"?: string,"state"?: string | null,"students"?: number | null,"unitid": number,"website"?: string | null
+                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name": string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at": string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid": number,"website"?: string | null
                   }
                   Update: {
-                    "admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"name"?: string,"net_price"?: number | null,"ownership"?: string | null,"retrieved_at"?: string,"source_id"?: string,"state"?: string | null,"students"?: number | null,"unitid"?: number,"website"?: string | null
+                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name"?: string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at"?: string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid"?: number,"website"?: string | null
                   }
                   Relationships: [
                     {
@@ -525,6 +525,11 @@ isOneToOne: false
 "match_scholarships":
 { Args: { "p_stage"?: string,"p_state"?: string }; Returns: {
               "award_max": number,"award_min": number,"award_text": string,"checked_at": string,"deadline_date": string,"deadline_kind": string,"deadline_month_day": string,"description": string,"fields": (string)[],"id": string,"match": string,"sponsor": string,"sponsor_type": string,"title": string,"to_check": (string)[],"url": string
+            }[]
+                           },
+"search_colleges":
+{ Args: { "p_admit"?: string,"p_bracket"?: number,"p_locale"?: string,"p_max_price"?: number,"p_name"?: string,"p_ownership"?: string,"p_page"?: number,"p_program"?: string,"p_serves"?: string,"p_size"?: string,"p_sort"?: string,"p_state"?: string,"p_test_optional"?: boolean,"p_two_year"?: boolean }; Returns: {
+              "act_25": number,"act_75": number,"admission_rate": number,"city": string,"graduation_rate": number,"name": string,"ownership": string,"price": number,"sat_math_25": number,"sat_math_75": number,"sat_read_25": number,"sat_read_75": number,"state": string,"students": number,"test_policy": string,"total": number,"unitid": number
             }[]
                            },
 "search_occupations":
