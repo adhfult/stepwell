@@ -1,7 +1,8 @@
 # Design system: Stepwell
 
 **Status: chosen 2026-09-27; depth, motion and Bricolage added 2026-10-04
-(decision 0010).** Direction: **Water and Stone, with Wayfinding.**
+(decision 0010); teal bands, dark footer and data graphics added 2026-10-04
+(decision 0011).** Direction: **Water and Stone, with Wayfinding.**
 This file is the source of truth for colors, type, spacing, shape and the
 component patterns below. Every UI change uses only these tokens and patterns
 and never anything in `docs/design/AVOID.md`. If a new token or pattern is
@@ -120,8 +121,11 @@ Rules:
 - **Skip link**: the first thing on every page is "Skip to main content",
   hidden until focused with the keyboard, jumping to the single `<main>`
   landmark (in `layout.tsx`; pages render inside it, never their own `<main>`).
-- **Header** (on `background`, bottom `border-subtle` divider): the word
-  "Stepwell" in Bricolage bold `text-lg`, linking home, on the left. Main links
+- **Header** (on `background`, bottom `border-subtle` divider): a small
+  custom SVG mark (three stepped blocks in `primary`) and the word
+  "Stepwell" in Bricolage bold `text-lg`, linking home, on the left. The
+  current section's link has a 4px `primary` bar under it and
+  `aria-current="page"` (not `highlight`: a bare yellow bar is 1.4:1). Main links
   on the right: Careers, Interest quiz, Scholarships, Internships, Programs,
   My plan (colleges are reached from a career). Below 1024px these collapse
   behind a text button labeled "Menu" (no hamburger icon); six links don't
@@ -129,7 +133,7 @@ Rules:
   The "Menu" button is a native `<details>` (`src/components/main-nav.tsx`),
   closed again after navigating; with it, phones show "Menu" and "Sign in"
   (or "Account") on one line at 320px; "Create account" joins from 640px.
-- **Footer** (on `surface`, top `border-subtle` divider): About the data,
+- **Footer** (on `foreground`, `surface` text and links, hover `highlight`): About the data,
   Terms, Privacy, Contact, and one attribution line naming the government
   sources. Links are added only when their pages exist: Terms and Privacy
   and About the data now (`src/components/site-footer.tsx`); Contact later.
@@ -245,6 +249,36 @@ The route line drawn as the real thing: stone steps going down to water.
   current step (record it in `docs/specs/ui-depth-and-motion.md`).
 - Reduce motion: no entrance and no tilt; the scene appears in its final 3D
   state.
+
+### Bands
+A full-width `primary` strip behind a page's title area: the title, its
+intro and the page's search or filters. It is where each browsing page
+starts (home, careers, a career, colleges, scholarships, internships,
+programs, interest quiz, plan). Form, legal and account pages have none.
+- `<Band>` (`src/components/band.tsx`) uses the same widths and side padding
+  as `<Page>`; the content below starts in `<Page>` as usual.
+- Inside: text `surface` (6.97:1), secondary and help text `border-subtle`
+  (4.83:1, never `muted`), links `surface` underlined with `highlight` on
+  hover, focus outline `surface`. `highlight` is 4.49:1 on primary, so only
+  fills and large marks, never small text.
+- Buttons inside a band use the `band` kind: `surface` fill, `foreground`
+  text, `foreground` stone edge. Inputs keep their `surface` fill.
+- At most one band per page, always at the top. Its loading skeleton has
+  the same band.
+
+### Data graphics
+Small bars that sketch a number next to it, so students can compare at a
+glance.
+- `<Meter>` (`src/components/meter.tsx`): inline SVG, 8px tall, track
+  `border-subtle`, fill `primary`, radius 0. A range variant draws low to
+  high with a 2px `foreground` tick at the median.
+- Sized with SVG attributes, not `style=` (the CSP blocks inline styles).
+- Always `aria-hidden`: the number is printed beside it, so the bar is never
+  the only signal. "Not reported" values get no bar.
+- Fixed scales (`src/lib/scale.ts`), the same on every page: pay $200,000 a
+  year, graduates' earnings $150,000, loan debt $100,000, net price $60,000,
+  graduation rate 100%. Over the cap the bar is full; the number stays exact.
+- Bars don't animate.
 
 ### Panels and lists
 - Plain sections on `background` are the default. A panel (`surface` fill,
