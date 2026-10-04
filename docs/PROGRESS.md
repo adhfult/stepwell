@@ -32,6 +32,20 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: Teal bands, dark footer and data bars (spec ui-color-and-data)
+- Owner found the UI dull; chose "bolder, same palette" plus "data you can
+  see" on all pages (decision 0011).
+- Browsing pages start with a `primary` band (`<Band>` in page.tsx;
+  `.band` in globals.css remaps colors inside). Footer is dark stone; the
+  header marks the current section and has a step mark.
+- Home: headline, search and the 3D stepwell share the band, above the
+  fold. Career page: band shows median pay and outlook; path moves to a
+  side column from 1024px.
+- SVG bars on fixed scales (`lib/scale.ts`): career pay range, pay on
+  career rows, four meters on college rows.
+- Verified on a production build at 320/390/1280: no overflow, zero
+  console/CSP errors, CLS at most 0.01. 193 tests. Screenshots re-taken.
+
 ### 2026-10-04: Footer layout shift fixed; home screenshots re-taken
 - `<main>` is at least one screen tall (min-h-svh), so a short loading
   skeleton no longer pushes the footer: CLS 0 on six pages at 320/390/1280

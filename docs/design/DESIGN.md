@@ -265,15 +265,18 @@ programs, interest quiz, plan). Form, legal and account pages have none.
   (4.83:1, never `muted`), links `surface` underlined with `highlight` on
   hover, focus outline `surface`. `highlight` is 4.49:1 on primary, so only
   fills and large marks, never small text.
-- Buttons inside a band use the `band` kind: `surface` fill, `foreground`
-  text, `foreground` stone edge. Inputs keep their `surface` fill.
+- Primary buttons inside a band turn `surface` with `foreground` text (and
+  `foreground` on hover), keeping their stone edge. Inputs keep their
+  `surface` fill. Errors inside a band are bold `surface` text with the
+  field outlined in `highlight` (accent red fails on teal). All of this is
+  `.band` in `globals.css`, so components need no band props.
 - At most one band per page, always at the top. Its loading skeleton has
   the same band.
 
 ### Data graphics
 Small bars that sketch a number next to it, so students can compare at a
 glance.
-- `<Meter>` (`src/components/meter.tsx`): inline SVG, 8px tall, track
+- `<Meter>` (`src/components/meter.tsx`): inline SVG, an 8px bar, track
   `border-subtle`, fill `primary`, radius 0. A range variant draws low to
   high with a 2px `foreground` tick at the median.
 - Sized with SVG attributes, not `style=` (the CSP blocks inline styles).
@@ -282,6 +285,11 @@ glance.
 - Fixed scales (`src/lib/scale.ts`), the same on every page: pay $200,000 a
   year, graduates' earnings $150,000, loan debt $100,000, net price $60,000,
   graduation rate 100%. Over the cap the bar is full; the number stays exact.
+- Where: career "Pay and outlook" (range, with "$0" and "$200,000" under
+  it), career search rows (median pay figure and bar, beside the title from
+  640px), college rows (earnings, debt, net price, graduation rate as
+  "label ... value" with the bar below; phones show net price and graduation
+  rate, earnings and debt stay a sentence there).
 - Bars don't animate.
 
 ### Panels and lists
