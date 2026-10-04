@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 const SECTIONS = [
   { href: "/careers", label: "Careers" },
   { href: "/colleges", label: "Colleges" },
+  { href: "/gpa", label: "GPA" },
   { href: "/interests", label: "Interest quiz" },
   { href: "/scholarships", label: "Scholarships" },
   { href: "/internships", label: "Internships" },
