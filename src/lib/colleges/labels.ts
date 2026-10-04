@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { STATES } from "@/lib/profile/options";
+import { CAPS, toPercent } from "@/lib/scale";
 
 /** Credential filter choices, matching colleges_for_career()'s levels. */
 export const LEVELS = [
@@ -35,10 +36,6 @@ export function earningsText(earnings4: number | null, earnings1: number | null)
 }
 
 export const debtText = (debt: number | null) => (debt ? `Median federal loan debt ${dollars(debt)}` : null);
-export const netPriceText = (price: number | null) => (price !== null ? `Net price ${dollars(price)} a year` : null);
-export const rateText = (label: string, rate: number | string | null) =>
-  rate !== null ? `${label} ${Math.round(Number(rate) * 100)}%` : null;
-
 /** "www.aamu.edu" from "https://www.aamu.edu/...", so a link shows where it goes. */
 export function domainOf(url: string | null): string | null {
   if (!url) return null;
@@ -47,4 +44,45 @@ export function domainOf(url: string | null): string | null {
   } catch {
     return null;
   }
+}
+
+export type CollegeMeter = {
+  label: string;
+  /** Printed beside the bar; null shows "Not reported" and no bar. */
+  value: string | null;
+  percent: number | null;
+  /** Shown on phones too (the rest wait for 640px, where there's room). */
+  phone: boolean;
+};
+
+/**
+ * The four bars on a college row (DESIGN.md "Data graphics"), in reading
+ * order: what graduates earn, their debt, the yearly cost, the graduation rate.
+ */
+export function collegeMeters(c: {
+  earnings_4yr: number | null;
+  earnings_1yr: number | null;
+  median_debt: number | null;
+  net_price: number | null;
+  graduation_rate: number | string | null;
+}): CollegeMeter[] {
+  const earnings = c.earnings_4yr ?? c.earnings_1yr;
+  const money = (n: number | null, cap: number, label: string, phone: boolean, unit = "") => ({
+    label,
+    value: n === null ? null : `${dollars(Number(n))}${unit}`,
+    percent: n === null ? null : toPercent(Number(n), cap),
+    phone,
+  });
+  const rate = c.graduation_rate === null ? null : Number(c.graduation_rate);
+  return [
+    money(earnings, CAPS.earnings, c.earnings_4yr ? "Graduates earn" : "Graduates earn (1 year after)", false, " a year"),
+    money(c.median_debt, CAPS.debt, "Median loan debt", false),
+    money(c.net_price, CAPS.netPrice, "Net price", true, " a year"),
+    {
+      label: "Graduation rate",
+      value: rate === null ? null : `${Math.round(rate * 100)}%`,
+      percent: rate === null ? null : toPercent(rate, CAPS.rate),
+      phone: true,
+    },
+  ];
 }

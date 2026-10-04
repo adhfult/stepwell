@@ -180,7 +180,7 @@ function Listing({ s, saved }: { s: ScholarshipMatch; saved: boolean | null }) {
         )}
       </div>
       <p className="mt-1 text-sm text-muted">{s.sponsor}</p>
-      {s.award_text && <p className="mt-2">{s.award_text}</p>}
+      {s.award_text && <p className="mt-2 font-bold">{s.award_text}</p>}
       <p className={`mt-1 ${tone}`}>{deadline.text}</p>
       <p className="mt-2">
         <a href={s.url}>Apply on the official site ({domainOf(s.url)})</a>

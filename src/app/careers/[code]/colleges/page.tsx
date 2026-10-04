@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buttonClass } from "@/components/button-styles";
+import { Meter } from "@/components/meter";
 import { Band, Page, PageTitle } from "@/components/page";
 import { getCareer } from "@/lib/careers/data";
 import { onetCodeSchema } from "@/lib/careers/labels";
@@ -11,14 +12,13 @@ import {
   type CollegeProgram,
 } from "@/lib/colleges/data";
 import {
+  collegeMeters,
   debtText,
   domainOf,
   earningsText,
   filtersSchema,
   LEVELS,
-  netPriceText,
   ownershipName,
-  rateText,
 } from "@/lib/colleges/labels";
 import { monthYear } from "@/lib/careers/labels";
 import { getMySavedIds } from "@/lib/plan/data";
@@ -247,11 +247,10 @@ function CollegeList({
             earningsText(c.earnings_4yr, c.earnings_1yr),
             debtText(c.median_debt),
           ].filter(Boolean);
+          // Net price and graduation rate are drawn as bars on every screen.
           const college = [
             ownershipName(c.ownership),
             [c.city, c.state].filter(Boolean).join(", ") || null,
-            netPriceText(c.net_price),
-            rateText("Graduation rate", c.graduation_rate),
           ].filter(Boolean);
           const domain = domainOf(c.website);
           return (
@@ -262,7 +261,8 @@ function CollegeList({
                   ? c.credential_title
                   : `${c.program}, ${c.credential_title.toLowerCase()}`}
               </p>
-              <p className="mt-1">
+              {/* Phones: earnings and debt as a sentence; from 640px they're bars too. */}
+              <p className="mt-1 sm:hidden">
                 {outcomes.length > 0 ? (
                   `${outcomes.join(". ")}.`
                 ) : (
@@ -272,6 +272,17 @@ function CollegeList({
                 )}
               </p>
               <p className="mt-1 text-sm text-muted">{college.join(". ")}.</p>
+              <dl className="mt-3 grid max-w-2xl gap-x-8 gap-y-3 sm:grid-cols-2">
+                {collegeMeters(c).map((m) => (
+                  <div key={m.label} className={m.phone ? "" : "hidden sm:block"}>
+                    <div className="flex justify-between gap-3">
+                      <dt className="text-sm text-muted">{m.label}</dt>
+                      <dd className={m.value ? "font-bold" : "text-sm text-muted"}>{m.value ?? "Not reported"}</dd>
+                    </div>
+                    {m.percent !== null && <Meter percent={m.percent} className="mt-1" />}
+                  </div>
+                ))}
+              </dl>
               {domain && (
                 <p className="mt-1 text-sm">
                   <a href={c.website!}>{domain}</a>

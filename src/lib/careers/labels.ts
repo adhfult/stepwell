@@ -97,6 +97,16 @@ function amount(pay: Pay, period: "annual" | "hourly", level: "low" | "median" |
   return `${dollars(Number(value), cents)}${pay.or_more.includes(column) ? " or more" : ""}`;
 }
 
+/**
+ * Yearly pay as numbers for the pay bars, or null when there's no yearly
+ * median (hourly-only careers keep the text). Low and high may be missing.
+ */
+export function annualPay(pay: Pay | null) {
+  if (!pay || pay.annual_median === null) return null;
+  const num = (v: number | null) => (v === null ? null : Number(v));
+  return { low: num(pay.annual_low), median: Number(pay.annual_median), high: num(pay.annual_high) };
+}
+
 /** "$61,010 a year", "$23.94 an hour", "$239,200 or more a year", or null. */
 export function medianPay(pay: Pay | null): string | null {
   const unit = pay && payUnit(pay);

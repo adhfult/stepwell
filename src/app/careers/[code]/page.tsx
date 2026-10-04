@@ -6,7 +6,17 @@ import { getCurrentUser } from "@/lib/auth/dal";
 import { getCareerPrograms } from "@/lib/colleges/data";
 import { getScholarshipFieldsForCareer } from "@/lib/scholarships/data";
 import { type Career, getApCourses, getCareer, isCareerSaved } from "@/lib/careers/data";
-import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalEducation } from "@/lib/careers/labels";
+import {
+  annualPay,
+  medianPay,
+  onetCodeSchema,
+  outlookText,
+  payRange,
+  preparation,
+  typicalEducation,
+} from "@/lib/careers/labels";
+import { Meter } from "@/components/meter";
+import { CAPS, toPercent } from "@/lib/scale";
 import { OnetSource, OutlookSource } from "../source-line";
 import { SaveButton } from "@/app/plan/save-button";
 import { getMySavedIds } from "@/lib/plan/data";
@@ -251,6 +261,7 @@ function PayAndOutlook({ career }: { career: Career }) {
   const outlook = career.outlook!;
   const median = medianPay(outlook);
   const range = payRange(outlook);
+  const yearly = annualPay(outlook);
   const prospects = outlookText(outlook.outlook, outlook.bright_reasons);
   // BLS sometimes publishes pay only for a wider job group than this career.
   const widerGroup = outlook.wage_soc_code && outlook.wage_soc_code !== career.soc_code;
@@ -264,6 +275,21 @@ function PayAndOutlook({ career }: { career: Career }) {
         <div className="mt-4">
           <p className="text-sm text-muted">Median pay</p>
           <p className="text-xl font-bold">{median}</p>
+          {/* Where this pay sits on a fixed $0 to $200,000 scale: most people's
+              range, with the median marked (DESIGN.md "Data graphics"). */}
+          {yearly && (
+            <div className="mt-3 max-w-md">
+              <Meter
+                percent={toPercent(yearly.median, CAPS.pay)}
+                low={toPercent(yearly.low ?? yearly.median, CAPS.pay)}
+                high={toPercent(yearly.high ?? yearly.median, CAPS.pay)}
+              />
+              <p aria-hidden="true" className="mt-1 flex justify-between text-sm text-muted">
+                <span>$0</span>
+                <span>$200,000</span>
+              </p>
+            </div>
+          )}
           {range && <p className="mt-2">{range}</p>}
           {widerGroup && (
             <p className="mt-2 text-sm text-muted">Pay is for the wider job group this career belongs to.</p>
