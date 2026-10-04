@@ -31,11 +31,15 @@ describe("CareerOneStop parsers", () => {
     const raw = { LicenseList: [
       { ID: "08-KEYL(G)L", Title: "Key License", State: "Colorado" },
       { ID: "34-11-2031.00", Title: "Office Manager", State: "New Jersey" },
+      { ID: "28-12251194 C\r", Title: "Teacher", State: "Mississippi" },
+      { ID: "78-law", Title: "Lawyer", State: "Virgin Islands" },
       { ID: "00-FinOpL", Title: "Financial Operations", State: "Federal Agencies" },
     ] };
     expect(parseLicenses("11-1011.00", raw)).toMatchObject([
       { status: "valid", value: { license_id: "08-KEYL(G)L", state: "CO" } },
       { status: "valid", value: { license_id: "34-11-2031.00", state: "NJ" } },
+      { status: "valid", value: { license_id: "28-12251194C", state: "MS" } },
+      { status: "valid", value: { license_id: "78-law", state: "VI" } },
     ]);
   });
 

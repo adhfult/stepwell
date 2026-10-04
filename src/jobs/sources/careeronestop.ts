@@ -89,7 +89,11 @@ export async function readCosYouthPrograms(fetcher: Fetcher, _previous: Previous
 // --- Licenses ---------------------------------------------------------------
 
 const licenseSchema = z.object({
-  ID: z.string().regex(/^[A-Za-z0-9&().-]{1,40}$/),
+  // Some IDs carry stray spaces or line breaks ("28-12251194 C").
+  ID: z
+    .string()
+    .transform((v) => v.replace(/\s+/g, ""))
+    .pipe(z.string().regex(/^[A-Za-z0-9&().-]{1,40}$/)),
   Title: z.string(),
   State: z.string(),
   LicenseAgency: z.object({ Name: text, Url: text }).nullish(),
@@ -112,7 +116,8 @@ export function parseLicenses(onetCode: string, raw: unknown): StagedRecord<Care
   );
   return list.map((item): StagedRecord<CareerLicense> => {
     const r = licenseSchema.safeParse(item);
-    const state = r.success ? STATE_CODES.get(r.data.State.trim().toLowerCase()) : undefined;
+    const stateKey = r.success ? r.data.State.trim().toLowerCase() : "";
+    const state = STATE_CODES.get(stateKey) ?? (stateKey === "virgin islands" ? "VI" : undefined);
     const title = r.success ? cleanText(r.data.Title, 200) : null;
     const key = `${onetCode} ${String((item as { ID?: unknown })?.ID)}`;
     if (!r.success || !state || !title) {

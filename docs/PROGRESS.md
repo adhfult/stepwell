@@ -9,12 +9,11 @@ Newest entries at the top. Keep each entry short.
       now (LAUNCH.md step 3 covers production). Sign-in rate limits are
       decided (decision 0009); their settings are in LAUNCH.md steps 3
       and 5.
-- [ ] **CareerOneStop:** the owner has a Web API token (local settings and
-      GitHub secrets, 2026-10-04; a test call works). Its API has no
-      Scholarship Finder (DATA_SOURCES.md). Owner: ask CareerOneStop in the
-      same email thread whether the Scholarship Finder data is available to
-      API users. Possible next step instead: YouthProgramFinder or TrainingV
-      (spec first).
+- [ ] **CareerOneStop:** youth programs, licenses and certifications are
+      built (spec `careeronestop.md`). Owner: ask CareerOneStop to enable
+      the Training Finder (401 for this token) and whether the Scholarship
+      Finder data is available (not in the API). Scholarships: the owner is
+      looking for another tool.
 - [ ] **Owner:** fill the legal placeholders in `src/lib/legal/details.ts`
       (contact email, email provider, law state, effective date);
       `placeholdersLeft()` must be empty before launch.
@@ -31,6 +30,15 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: CareerOneStop youth programs, licenses, certifications
+- Token works; the API has no Scholarship Finder and Training is 401.
+- Youth job programs on /programs (2,519 providers), licenses by state and
+  core certifications on career pages; three cached sources, attribution
+  to DOLETA and Minnesota DEED.
+- Docker Desktop must be running for the local database (WSL
+  integration); Kong sometimes exits after a restart: `docker start
+  supabase_kong_stepwell`.
+
 ### 2026-09-30 (early): second security audit, rate limits
 - Cloudflare's security-audit method (instructions read from GitHub, not
   installed; source-only, report in ~/security-audit-skill/stepwell/run-1):
