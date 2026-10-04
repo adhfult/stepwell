@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { z } from "zod";
 import { buttonClass } from "@/components/button-styles";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
@@ -47,79 +47,82 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
   })}`;
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <PageTitle>Scholarships and grants</PageTitle>
-        <p className="mt-4">
-          Money for college you don’t pay back, from official state and federal programs. Every listing links to its
-          official page, where you apply. Submit at least a day early.
-        </p>
-
-        {user ? (
+    <>
+      <Band>
+        <div className="max-w-2xl">
+          <PageTitle>Scholarships and grants</PageTitle>
           <p className="mt-4">
-            {eligibility ? (
-              <>
-                Matched using your answers. <Link href="/account/eligibility">Change your answers</Link>
-              </>
-            ) : (
-              <>
-                <Link href="/account/eligibility">Answer a few optional questions</Link> to see which ones you qualify
-                for.
-              </>
-            )}
+            Money for college you don’t pay back, from official state and federal programs. Every listing links to its
+            official page, where you apply. Submit at least a day early.
           </p>
-        ) : (
-          <p className="mt-4">
-            <Link href="/sign-in?next=%2Fscholarships">Sign in</Link> to see which ones you qualify for.
-          </p>
-        )}
 
-        <Filters state={state} stage={stage} fields={params.fields} />
-        {fields && (
-          <p className="mt-4">
-            Showing programs for{" "}
-            {fields.map((f) => FIELDS.find((x) => x.value === f)?.label ?? f).join(", ").toLowerCase()}.{" "}
-            <Link href={`/scholarships?state=${state ?? "all"}&stage=${stage ?? "any"}`}>Show every field</Link>
-          </p>
-        )}
-      </div>
-
-      {listings.length > 0 ? (
-        <section aria-labelledby="list-heading" className="mt-10">
-          <h2 id="list-heading" className="text-lg font-bold">
-            {listings.length} {listings.length === 1 ? "program" : "programs"}
-            {state ? ` for ${stateName(state)} students` : ""}
-          </h2>
-          <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
-            {shown.map((s) => (
-              <Listing key={s.id} s={s} saved={saved && saved.scholarships.has(s.id)} />
-            ))}
-          </ul>
-          {!params.more && listings.length > FIRST && (
+          {user ? (
             <p className="mt-4">
-              <Link href={moreHref}>Show all {listings.length} programs</Link>
+              {eligibility ? (
+                <>
+                  Matched using your answers. <Link href="/account/eligibility">Change your answers</Link>
+                </>
+              ) : (
+                <>
+                  <Link href="/account/eligibility">Answer a few optional questions</Link> to see which ones you qualify
+                  for.
+                </>
+              )}
+            </p>
+          ) : (
+            <p className="mt-4">
+              <Link href="/sign-in?next=%2Fscholarships">Sign in</Link> to see which ones you qualify for.
             </p>
           )}
-        </section>
-      ) : (
-        <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
-          <h2 id="none-heading" className="text-lg font-bold">
-            No programs match
-          </h2>
-          <p className="mt-3">
-            {eligibility
-              ? "None of these programs fit your answers. Try another state or school stage, or change your answers."
-              : "Try another state or school stage."}
-          </p>
-        </section>
-      )}
 
-      <p className="mt-8 max-w-2xl text-sm text-muted">
-        Source: official state and federal program pages, listed by Stepwell (each listing says when it was checked).
-        Covers federal programs and the main state programs in all 50 states and DC; colleges and private groups offer
-        many more awards.
-      </p>
-    </Page>
+          <Filters state={state} stage={stage} fields={params.fields} />
+          {fields && (
+            <p className="mt-4">
+              Showing programs for{" "}
+              {fields.map((f) => FIELDS.find((x) => x.value === f)?.label ?? f).join(", ").toLowerCase()}.{" "}
+              <Link href={`/scholarships?state=${state ?? "all"}&stage=${stage ?? "any"}`}>Show every field</Link>
+            </p>
+          )}
+        </div>
+      </Band>
+      <Page width="browse">
+        {listings.length > 0 ? (
+          <section aria-labelledby="list-heading">
+            <h2 id="list-heading" className="text-lg font-bold">
+              {listings.length} {listings.length === 1 ? "program" : "programs"}
+              {state ? ` for ${stateName(state)} students` : ""}
+            </h2>
+            <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
+              {shown.map((s) => (
+                <Listing key={s.id} s={s} saved={saved && saved.scholarships.has(s.id)} />
+              ))}
+            </ul>
+            {!params.more && listings.length > FIRST && (
+              <p className="mt-4">
+                <Link href={moreHref}>Show all {listings.length} programs</Link>
+              </p>
+            )}
+          </section>
+        ) : (
+          <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
+            <h2 id="none-heading" className="text-lg font-bold">
+              No programs match
+            </h2>
+            <p className="mt-3">
+              {eligibility
+                ? "None of these programs fit your answers. Try another state or school stage, or change your answers."
+                : "Try another state or school stage."}
+            </p>
+          </section>
+        )}
+
+        <p className="mt-8 max-w-2xl text-sm text-muted">
+          Source: official state and federal program pages, listed by Stepwell (each listing says when it was checked).
+          Covers federal programs and the main state programs in all 50 states and DC; colleges and private groups offer
+          many more awards.
+        </p>
+      </Page>
+    </>
   );
 }
 

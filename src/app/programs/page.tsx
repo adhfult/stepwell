@@ -3,7 +3,7 @@ import Link from "next/link";
 import { z } from "zod";
 import { SaveButton } from "@/app/plan/save-button";
 import { buttonClass } from "@/components/button-styles";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
@@ -45,50 +45,53 @@ export default async function ProgramsPage({ searchParams }: PageProps<"/program
   const moreHref = `/programs?${new URLSearchParams({ state: state ?? "all", stage: stage ?? "any", more: "1" })}`;
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <PageTitle>Summer programs and research</PageTitle>
-        <p className="mt-4">
-          Free or paid programs run by federal agencies, national labs, states and public universities. They’re a way
-          to try a field before you choose it. Every listing links to its official page, where you apply.
+    <>
+      <Band>
+        <div className="max-w-2xl">
+          <PageTitle>Summer programs and research</PageTitle>
+          <p className="mt-4">
+            Free or paid programs run by federal agencies, national labs, states and public universities. They’re a way
+            to try a field before you choose it. Every listing links to its official page, where you apply.
+          </p>
+          <Filters state={state} stage={stage} />
+        </div>
+      </Band>
+      <Page width="browse">
+        {programs.length > 0 ? (
+          <section aria-labelledby="list-heading">
+            <h2 id="list-heading" className="text-lg font-bold">
+              {programs.length} {programs.length === 1 ? "program" : "programs"}
+              {state ? ` in ${stateName(state)} or open to every state` : ""}
+            </h2>
+            <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
+              {shown.map((p) => (
+                <Listing key={p.id} p={p} saved={user ? saved.programs.has(p.id) : null} />
+              ))}
+            </ul>
+            {!params.more && programs.length > FIRST && (
+              <p className="mt-4">
+                <Link href={moreHref}>Show all {programs.length} programs</Link>
+              </p>
+            )}
+          </section>
+        ) : (
+          <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
+            <h2 id="none-heading" className="text-lg font-bold">
+              No programs match
+            </h2>
+            <p className="mt-3">Try another state or school stage.</p>
+          </section>
+        )}
+
+        <YouthPrograms state={state} programs={youth} />
+
+        <p className="mt-8 max-w-2xl text-sm text-muted">
+          Source: official federal, state and public university program pages, listed by Stepwell (each listing says when
+          it was checked). Only programs that are free to attend or pay you are listed. For federal job postings, see{" "}
+          <Link href="/internships">internships</Link>.
         </p>
-        <Filters state={state} stage={stage} />
-      </div>
-
-      {programs.length > 0 ? (
-        <section aria-labelledby="list-heading" className="mt-10">
-          <h2 id="list-heading" className="text-lg font-bold">
-            {programs.length} {programs.length === 1 ? "program" : "programs"}
-            {state ? ` in ${stateName(state)} or open to every state` : ""}
-          </h2>
-          <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
-            {shown.map((p) => (
-              <Listing key={p.id} p={p} saved={user ? saved.programs.has(p.id) : null} />
-            ))}
-          </ul>
-          {!params.more && programs.length > FIRST && (
-            <p className="mt-4">
-              <Link href={moreHref}>Show all {programs.length} programs</Link>
-            </p>
-          )}
-        </section>
-      ) : (
-        <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
-          <h2 id="none-heading" className="text-lg font-bold">
-            No programs match
-          </h2>
-          <p className="mt-3">Try another state or school stage.</p>
-        </section>
-      )}
-
-      <YouthPrograms state={state} programs={youth} />
-
-      <p className="mt-8 max-w-2xl text-sm text-muted">
-        Source: official federal, state and public university program pages, listed by Stepwell (each listing says when
-        it was checked). Only programs that are free to attend or pay you are listed. For federal job postings, see{" "}
-        <Link href="/internships">internships</Link>.
-      </p>
-    </Page>
+      </Page>
+    </>
   );
 }
 

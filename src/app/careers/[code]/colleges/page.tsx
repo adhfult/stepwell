@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buttonClass } from "@/components/button-styles";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getCareer } from "@/lib/careers/data";
 import { onetCodeSchema } from "@/lib/careers/labels";
 import {
@@ -68,75 +68,78 @@ export default async function CareerCollegesPage({
   ]);
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <p>
-          <Link
-            href={`/careers/${career.onet_code}`}
-            className="inline-flex min-h-11 items-center"
-          >
-            Back to {career.title}
-          </Link>
-        </p>
-        <PageTitle>Colleges for {career.title}</PageTitle>
-        <p className="mt-4">
-          Programs at U.S. colleges that lead to this career, with the best-paid
-          graduates first. Earnings are median yearly pay 4 years after
-          finishing, unless marked; earnings and debt are for students who got
-          federal financial aid.
-        </p>
-        <Filters code={career.onet_code} state={state} level={filters.level} />
-      </div>
-
-      {colleges.length > 0 ? (
-        <section aria-labelledby="colleges-heading" className="mt-10">
-          <h2 id="colleges-heading" className="text-lg font-bold">
-            {colleges.length === 50
-              ? "Top 50 programs"
-              : `${colleges.length} ${colleges.length === 1 ? "program" : "programs"}`}
-            {state ? ` in ${stateName(state)}` : ""}
-          </h2>
-          <CollegeList
-            colleges={colleges}
-            showAll={showAll}
-            moreHref={moreHref(career.onet_code, state, filters.level)}
-            saved={user ? saved.colleges : null}
-          />
-        </section>
-      ) : (
-        <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
-          <h2 id="none-heading" className="text-lg font-bold">
-            No programs found{state ? ` in ${stateName(state)}` : ""}
-          </h2>
-          <p className="mt-3">
-            {state
-              ? "Try all states, or another kind of credential."
-              : "Try another kind of credential."}
+    <>
+      <Band>
+        <div className="max-w-2xl">
+          <p>
+            <Link
+              href={`/careers/${career.onet_code}`}
+              className="inline-flex min-h-11 items-center"
+            >
+              Back to {career.title}
+            </Link>
           </p>
-          {state && (
+          <PageTitle>Colleges for {career.title}</PageTitle>
+          <p className="mt-4">
+            Programs at U.S. colleges that lead to this career, with the best-paid
+            graduates first. Earnings are median yearly pay 4 years after
+            finishing, unless marked; earnings and debt are for students who got
+            federal financial aid.
+          </p>
+          <Filters code={career.onet_code} state={state} level={filters.level} />
+        </div>
+      </Band>
+      <Page width="browse">
+        {colleges.length > 0 ? (
+          <section aria-labelledby="colleges-heading">
+            <h2 id="colleges-heading" className="text-lg font-bold">
+              {colleges.length === 50
+                ? "Top 50 programs"
+                : `${colleges.length} ${colleges.length === 1 ? "program" : "programs"}`}
+              {state ? ` in ${stateName(state)}` : ""}
+            </h2>
+            <CollegeList
+              colleges={colleges}
+              showAll={showAll}
+              moreHref={moreHref(career.onet_code, state, filters.level)}
+              saved={user ? saved.colleges : null}
+            />
+          </section>
+        ) : (
+          <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
+            <h2 id="none-heading" className="text-lg font-bold">
+              No programs found{state ? ` in ${stateName(state)}` : ""}
+            </h2>
             <p className="mt-3">
-              <Link
-                href={`/careers/${career.onet_code}/colleges?state=all${filters.level ? `&level=${filters.level}` : ""}`}
-              >
-                Show all states
-              </Link>
+              {state
+                ? "Try all states, or another kind of credential."
+                : "Try another kind of credential."}
             </p>
-          )}
-        </section>
-      )}
+            {state && (
+              <p className="mt-3">
+                <Link
+                  href={`/careers/${career.onet_code}/colleges?state=all${filters.level ? `&level=${filters.level}` : ""}`}
+                >
+                  Show all states
+                </Link>
+              </p>
+            )}
+          </section>
+        )}
 
-      <p className="mt-8 max-w-2xl text-sm text-muted">
-        Source: College Scorecard, U.S. Department of Education
-        {retrieved ? `, retrieved ${monthYear(retrieved)}` : ""}. Programs
-        matched to careers with the O*NET CIP to O*NET-SOC crosswalk by
-        USDOL/ETA, used under the{" "}
-        <a href="https://creativecommons.org/licenses/by/4.0/">
-          CC BY 4.0 license
-        </a>
-        . Graduation rate: students who earned a credential within 8 years of
-        starting.
-      </p>
-    </Page>
+        <p className="mt-8 max-w-2xl text-sm text-muted">
+          Source: College Scorecard, U.S. Department of Education
+          {retrieved ? `, retrieved ${monthYear(retrieved)}` : ""}. Programs
+          matched to careers with the O*NET CIP to O*NET-SOC crosswalk by
+          USDOL/ETA, used under the{" "}
+          <a href="https://creativecommons.org/licenses/by/4.0/">
+            CC BY 4.0 license
+          </a>
+          . Graduation rate: students who earned a credential within 8 years of
+          starting.
+        </p>
+      </Page>
+    </>
   );
 }
 

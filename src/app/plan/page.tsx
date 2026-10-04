@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buttonClass } from "@/components/button-styles";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { todayEastern } from "@/lib/opportunities/data";
 import { getMyPlan, type Plan, type PlanItem } from "@/lib/plan/data";
@@ -42,8 +42,9 @@ export default async function PlanPage() {
   const needsGradYear = !gradYear && stage !== "adult_learner";
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
+    <>
+      <Band>
+        <div className="max-w-2xl">
         <PageTitle>My plan</PageTitle>
         <p className="mt-4">
           Your classes, tasks and applications, year by year, with the scholarships and colleges you saved. Deadlines
@@ -55,9 +56,10 @@ export default async function PlanPage() {
           </p>
         )}
       </div>
-
+    </Band>
+    <Page width="browse">
       {empty && (
-        <section aria-labelledby="empty-heading" className="mt-10 max-w-2xl">
+        <section aria-labelledby="empty-heading" className="max-w-2xl">
           <h2 id="empty-heading" className="text-lg font-bold">
             Nothing in your plan yet
           </h2>
@@ -113,26 +115,30 @@ export default async function PlanPage() {
         Department of Education. Always check the official page before you apply.
       </p>
     </Page>
-  );
+  </>
+);
 }
 
+// Signed out, the whole page is the band: one message and one action.
 function SignedOut() {
   return (
-    <Page>
-      <PageTitle>My plan</PageTitle>
-      <p className="mt-4">
-        Plan your classes, tasks and applications year by year, next to the scholarships and colleges you save, with
-        their real deadlines. Your plan is private to you.
-      </p>
-      <p className="mt-6">
-        <Link href="/sign-in?next=%2Fplan" className={buttonClass()}>
-          Sign in to start your plan
-        </Link>
-      </p>
-      <p className="mt-4">
-        New here? <Link href="/sign-up">Create an account</Link>
-      </p>
-    </Page>
+    <Band>
+      <div className="max-w-2xl">
+        <PageTitle>My plan</PageTitle>
+        <p className="mt-4">
+          Plan your classes, tasks and applications year by year, next to the scholarships and colleges you save, with
+          their real deadlines. Your plan is private to you.
+        </p>
+        <p className="mt-6">
+          <Link href="/sign-in?next=%2Fplan" className={buttonClass()}>
+            Sign in to start your plan
+          </Link>
+        </p>
+        <p className="mt-4">
+          New here? <Link href="/sign-up">Create an account</Link>
+        </p>
+      </div>
+    </Band>
   );
 }
 

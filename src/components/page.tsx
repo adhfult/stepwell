@@ -23,7 +23,7 @@ export function Page({ width = "reading", children }: { width?: keyof typeof wid
 export function Band({ width = "browse", children }: { width?: keyof typeof widths; children: ReactNode }) {
   return (
     <div className="band">
-      <div className={`mx-auto ${widths[width]} px-6 py-8 sm:py-12`}>{children}</div>
+      <div className={`mx-auto ${widths[width]} px-6 py-8 sm:py-12 lg:px-8`}>{children}</div>
     </div>
   );
 }

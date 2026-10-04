@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { z } from "zod";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { preparation } from "@/lib/careers/labels";
 import { getMyInterestResults, matchCareers } from "@/lib/interests/data";
@@ -42,61 +42,64 @@ export default async function InterestResultsPage({ searchParams }: PageProps<"/
   const isSaved = Boolean(saved && AREAS.every((a) => saved[a] === scores[a]));
 
   return (
-    <Page>
-      <PageTitle>Your interests</PageTitle>
-      <p className="mt-4 text-lg">
-        Your top interests: <strong>{listNames(ranked.slice(0, 3))}</strong>.
-      </p>
-
-      {user ? (
-        <SaveResultsForm scores={scores} saved={isSaved} />
-      ) : (
-        <p className="mt-4">
-          <Link href={`/sign-in?next=${encodeURIComponent(resultsPath(scores))}`}>Sign in to save your results</Link>
+    <>
+      <Band width="reading">
+        <PageTitle>Your interests</PageTitle>
+        <p className="mt-4 text-lg">
+          Your top interests: <strong>{listNames(ranked.slice(0, 3))}</strong>.
         </p>
-      )}
-
-      <section aria-labelledby="areas-heading" className="mt-12">
-        <h2 id="areas-heading" className="text-lg font-bold">
-          All six areas
-        </h2>
-        <ol className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">
-          {ranked.map((area) => (
-            <li key={area} className="py-4">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="font-heading font-bold">{AREA_TEXT[area].name}</h3>
-                <p className="shrink-0 text-sm">{scores[area]} out of 40</p>
-              </div>
-              <ScoreBar score={scores[area]} />
-              <p className="mt-2">{AREA_TEXT[area].description}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section aria-labelledby="matches-heading" className="mt-12">
-        <h2 id="matches-heading" className="text-lg font-bold">
-          Careers that match your interests
-        </h2>
-        <ZoneFilter scores={scores} zone={zone} />
-        {careers.length > 0 ? (
-          <>
-            <CareerList careers={showAll ? careers : careers.slice(0, FIRST_MATCHES)} />
-            {!showAll && careers.length > FIRST_MATCHES && (
-              <p className="mt-4">
-                <Link href={resultsPath(scores, `${zone ? `&zone=${zone}` : ""}&more=1`)}>
-                  Show all {careers.length} matches
-                </Link>
-              </p>
-            )}
-          </>
+      </Band>
+      <Page>
+        {user ? (
+          <SaveResultsForm scores={scores} saved={isSaved} />
         ) : (
-          <NoMatches scores={scores} zone={zone} />
+          <p className="mt-4">
+            <Link href={`/sign-in?next=${encodeURIComponent(resultsPath(scores))}`}>Sign in to save your results</Link>
+          </p>
         )}
-      </section>
 
-      <InterestSource />
-    </Page>
+        <section aria-labelledby="areas-heading" className="mt-12">
+          <h2 id="areas-heading" className="text-lg font-bold">
+            All six areas
+          </h2>
+          <ol className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">
+            {ranked.map((area) => (
+              <li key={area} className="py-4">
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="font-heading font-bold">{AREA_TEXT[area].name}</h3>
+                  <p className="shrink-0 text-sm">{scores[area]} out of 40</p>
+                </div>
+                <ScoreBar score={scores[area]} />
+                <p className="mt-2">{AREA_TEXT[area].description}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section aria-labelledby="matches-heading" className="mt-12">
+          <h2 id="matches-heading" className="text-lg font-bold">
+            Careers that match your interests
+          </h2>
+          <ZoneFilter scores={scores} zone={zone} />
+          {careers.length > 0 ? (
+            <>
+              <CareerList careers={showAll ? careers : careers.slice(0, FIRST_MATCHES)} />
+              {!showAll && careers.length > FIRST_MATCHES && (
+                <p className="mt-4">
+                  <Link href={resultsPath(scores, `${zone ? `&zone=${zone}` : ""}&more=1`)}>
+                    Show all {careers.length} matches
+                  </Link>
+                </p>
+              )}
+            </>
+          ) : (
+            <NoMatches scores={scores} zone={zone} />
+          )}
+        </section>
+
+        <InterestSource />
+      </Page>
+    </>
   );
 }
 

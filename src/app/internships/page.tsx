@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { z } from "zod";
 import { buttonClass } from "@/components/button-styles";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { SaveButton } from "@/app/plan/save-button";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { listOpportunities, type Opportunity } from "@/lib/opportunities/data";
@@ -37,56 +37,59 @@ export default async function InternshipsPage({ searchParams }: PageProps<"/inte
   const scope = where === "remote" ? " you can do remotely" : state ? ` in ${stateName(state)} or remote` : "";
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <PageTitle>Internships</PageTitle>
-        <p className="mt-4">
-          Paid federal internships and student jobs that are open now. You apply on USAJOBS, the U.S. government’s job
-          site. Most ask you to be enrolled in school.
-        </p>
-        <Filters where={where} />
-      </div>
-
-      {postings.length > 0 ? (
-        <section aria-labelledby="list-heading" className="mt-10">
-          <h2 id="list-heading" className="text-lg font-bold">
-            {postings.length} {postings.length === 1 ? "internship" : "internships"}
-            {scope}
-          </h2>
-          <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
-            {shown.map((o) => (
-              <Posting key={o.id} o={o} saved={user ? saved.internships.has(o.id) : null} />
-            ))}
-          </ul>
-          {!params.more && postings.length > FIRST && (
-            <p className="mt-4">
-              <Link href={`/internships?${new URLSearchParams({ where, more: "1" })}`}>
-                Show all {postings.length} internships
-              </Link>
-            </p>
-          )}
-        </section>
-      ) : (
-        <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
-          <h2 id="none-heading" className="text-lg font-bold">
-            No open internships{scope}
-          </h2>
-          <p className="mt-3">
-            {where === "anywhere" ? (
-              "New postings appear on USAJOBS every week, and this list updates daily. Check back soon."
-            ) : (
-              <>
-                New postings appear every week. Meanwhile, <Link href="/internships?where=anywhere">see every state</Link>.
-              </>
-            )}
+    <>
+      <Band>
+        <div className="max-w-2xl">
+          <PageTitle>Internships</PageTitle>
+          <p className="mt-4">
+            Paid federal internships and student jobs that are open now. You apply on USAJOBS, the U.S. government’s job
+            site. Most ask you to be enrolled in school.
           </p>
-        </section>
-      )}
+          <Filters where={where} />
+        </div>
+      </Band>
+      <Page width="browse">
+        {postings.length > 0 ? (
+          <section aria-labelledby="list-heading">
+            <h2 id="list-heading" className="text-lg font-bold">
+              {postings.length} {postings.length === 1 ? "internship" : "internships"}
+              {scope}
+            </h2>
+            <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
+              {shown.map((o) => (
+                <Posting key={o.id} o={o} saved={user ? saved.internships.has(o.id) : null} />
+              ))}
+            </ul>
+            {!params.more && postings.length > FIRST && (
+              <p className="mt-4">
+                <Link href={`/internships?${new URLSearchParams({ where, more: "1" })}`}>
+                  Show all {postings.length} internships
+                </Link>
+              </p>
+            )}
+          </section>
+        ) : (
+          <section aria-labelledby="none-heading" className="mt-10 max-w-2xl">
+            <h2 id="none-heading" className="text-lg font-bold">
+              No open internships{scope}
+            </h2>
+            <p className="mt-3">
+              {where === "anywhere" ? (
+                "New postings appear on USAJOBS every week, and this list updates daily. Check back soon."
+              ) : (
+                <>
+                  New postings appear every week. Meanwhile, <Link href="/internships?where=anywhere">see every state</Link>.
+                </>
+              )}
+            </p>
+          </section>
+        )}
 
-      <p className="mt-8 max-w-2xl text-sm text-muted">
-        Source: USAJOBS, U.S. Office of Personnel Management. Updated daily; the posting on USAJOBS has the final word.
-      </p>
-    </Page>
+        <p className="mt-8 max-w-2xl text-sm text-muted">
+          Source: USAJOBS, U.S. Office of Personnel Management. Updated daily; the posting on USAJOBS has the final word.
+        </p>
+      </Page>
+    </>
   );
 }
 
