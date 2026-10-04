@@ -103,6 +103,13 @@ Each item says **how Stepwell does it**.
       never logged (errors log only database codes); "Remove my answers";
       deleted with the account and after 12 months without a sign-in
       (pg_cron). The Privacy draft describes them.
+- [x] **Saved classes, grades and test scores** (decision 0013): saved only
+      after a consent tick; owner-only RLS with column grants; a check
+      function repeats every zod rule; session from `getCurrentUser()`,
+      `user_id` from `auth.uid()`; never logged; "Remove my grades and
+      scores"; deleted with the account and after 12 months without a
+      sign-in. Signed-out drafts stay in the browser and are validated
+      before use. The Privacy page describes them.
 - [ ] Minimum age 13, checked at sign-up with a neutral birth month and year
       question that is never stored (decision 0005); only `age_confirmed` is
       stored, and the sign-up trigger refuses accounts without it.
