@@ -72,6 +72,16 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   after finishing, median Stafford and Grad PLUS debt at that college, and
   graduates. Programs with neither graduates nor earnings are skipped. The
   key goes in the `X-Api-Key` header, never the URL. 1,000 requests an hour.
+- **College directory fields** (added 2026-10-04, names and codes checked in
+  `CollegeScorecardDataDictionary.xlsx`): SAT reading and math and ACT
+  composite 25th/75th percentiles; `admissions.test_requirements` (1 required,
+  2 recommended, 3 neither, 5 considered; 4 "do not know" stored as null);
+  `cost.net_price.{public,private}.by_income_level.*` for the five brackets
+  ($0-30k to $110k+, public or private by ownership); `school.locale` (tens
+  digit: city, suburb, town, rural); `degrees_awarded.predominant` (1 or 2 is
+  "two-year or shorter"); `school.minority_serving.*`. A bad value becomes
+  null; the college is kept. Local run: SAT ranges for 928 of the 1,107
+  four-year colleges that use test scores; income prices for 5,018 colleges.
 
 ## Connecting careers to programs (the crosswalk)
 - The CIP–SOC crosswalk (from the National Center for Education Statistics

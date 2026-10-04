@@ -4,6 +4,11 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
+- [ ] **Owner:** approve pushing the college directory commits, then apply
+      migration `20261004192436_college_directory.sql` to the cloud project
+      and re-run the Scorecard import there (`gh workflow` or
+      `npm run import -- scorecard` against production).
+- [ ] Pre-launch roadmap project 2 (GPA, SAT and ACT tools): brainstorm, spec.
 - [ ] Re-take `public/screenshots/plan.png` (needs a signed-in test
       account) so it shows the Bricolage headings like the other three.
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
@@ -32,6 +37,27 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: College directory (spec college-directory.md, roadmap project 1)
+- `/colleges`: name search, state and sort up front; cost by income bracket,
+  "most I'd pay", My SAT/ACT, type, size, admission rate, test-optional,
+  setting, length, minority-serving and program fold into "More filters".
+  24 a page, total, a page past the end shows the last page. SAT/ACT marker
+  ("below/in/above the middle 50%"); with both scores it uses SAT when the
+  college reports it, else ACT (owner was away; easy to change in `testFit`).
+- `/colleges/[unitid]`: facts, net price by income, programs by credential,
+  save (sign-in link when signed out). Career colleges, home example and My
+  plan link college names here. "Colleges" added to the nav (fits at 1024px).
+- Data: new `institutions` columns, `search_colleges()` RPC (security invoker,
+  validated, LIKE wildcards escaped), Scorecard import reads the new fields.
+- Fixed: five pgTAP files failed once CareerOneStop data was imported locally
+  (non-cascading FKs to occupations); they now clear those tables first.
+- Verified: `npm run check`; `npm run test:db` (266); production build;
+  Playwright 320/390/1280 on 10 pages: no overflow, 0 console/CSP errors,
+  CLS 0; keyboard-only filtering works.
+- Known: an unknown college id renders the not-found page with status 200
+  (the loading skeleton streams first), same as `/careers/[code]`.
+- Not checked: the signed-in save button on a college page (needs a test
+  account).
 ### 2026-10-04: Intro page (spec intro-page.md, decision 0012)
 - Owner asked for an introduction page holding most of the decoration, then
   calmer app pages and more information. Split into five projects; this is

@@ -1,6 +1,6 @@
 # Spec: College directory
 
-- Status: approved 2026-10-04
+- Status: built 2026-10-04 (local; cloud migration and import wait for the owner)
 
 ## Goal
 Let students browse and filter every college in College Scorecard, not only
@@ -15,26 +15,26 @@ that I can build a list worth applying to.
 
 ## Acceptance criteria
 ### Data
-- [ ] The Scorecard import also stores, per college (names checked in the
+- [x] The Scorecard import also stores, per college (names checked in the
       official data dictionary, `CollegeScorecardDataDictionary.xlsx`):
-  - [ ] SAT 25th and 75th percentiles, reading and math
+  - [x] SAT 25th and 75th percentiles, reading and math
         (`latest.admissions.sat_scores.{25th,75th}_percentile.{critical_reading,math}`)
-  - [ ] ACT composite 25th and 75th percentiles
+  - [x] ACT composite 25th and 75th percentiles
         (`latest.admissions.act_scores.{25th,75th}_percentile.cumulative`)
-  - [ ] Test policy (`latest.admissions.test_requirements`: required,
+  - [x] Test policy (`latest.admissions.test_requirements`: required,
         recommended, considered but not required, neither, unknown)
-  - [ ] Net price for the five income brackets ($0-30k, $30-48k, $48-75k,
+  - [x] Net price for the five income brackets ($0-30k, $30-48k, $48-75k,
         $75-110k, $110k+), public or private set by ownership
-  - [ ] Setting: city, suburb, town or rural (`school.locale` 11-43)
-  - [ ] Two-year or four-year (`school.degrees_awarded.predominant`)
-  - [ ] Minority-serving flags: HBCU, Hispanic-serving, tribal, AANAPISI,
+  - [x] Setting: city, suburb, town or rural (`school.locale` 11-43)
+  - [x] Two-year or four-year (`school.degrees_awarded.predominant`)
+  - [x] Minority-serving flags: HBCU, Hispanic-serving, tribal, AANAPISI,
         Alaska Native or Native Hawaiian, predominantly Black, Native
         American non-tribal (`school.minority_serving.*`)
-- [ ] Missing values stay null and show "Not reported"; a bad field skips
+- [x] Missing values stay null and show "Not reported"; a bad field skips
       that field's value, not the college.
 
 ### /colleges
-- [ ] A band with a name search, then a filter form (plain GET form,
+- [x] A band with a name search, then a filter form (plain GET form,
       works without JavaScript): state, public / private nonprofit /
       for-profit, size (small under 5,000, medium 5,000 to 15,000, large
       over 15,000), most I'd pay (net price for a chosen income bracket;
@@ -43,37 +43,37 @@ that I can build a list worth applying to.
       policy (test-optional means anything but "required"), setting,
       two-year or four-year, minority-serving, and "has a program in"
       (matches program titles).
-- [ ] Sort by name, size, or net price; 24 per page with page links and a
+- [x] Sort by name, size, or net price; 24 per page with page links and a
       total ("1,204 colleges").
-- [ ] Optional "My SAT" or "My ACT" field marks each row with a test-score
+- [x] Optional "My SAT" or "My ACT" field marks each row with a test-score
       range: "below the middle 50%", "in the middle 50%" or "above the
       middle 50%". SAT compares to reading plus math percentiles, and the
       page says this is approximate. Scores are never stored.
-- [ ] Each row: name (links to its page), city and state, type, size,
+- [x] Each row: name (links to its page), city and state, type, size,
       net price (for the chosen bracket when one is picked) and admission
       and graduation rate as `Meter`s, and the test range when reported.
-- [ ] Empty state: "No colleges match. Remove a filter." with a link that
+- [x] Empty state: "No colleges match. Remove a filter." with a link that
       clears filters. Skeleton while loading; an error boundary.
-- [ ] "Colleges" in the main navigation; it fits at 1024px.
+- [x] "Colleges" in the main navigation; it fits at 1024px.
 
 ### /colleges/[unitid]
-- [ ] Facts: location, setting, type (ownership, two- or four-year,
+- [x] Facts: location, setting, type (ownership, two- or four-year,
       minority-serving), size, admission rate, test policy with SAT and
       ACT ranges, graduation rate, website.
-- [ ] Net price by family income: five rows with `Meter`s on the
+- [x] Net price by family income: five rows with `Meter`s on the
       existing net price scale.
-- [ ] Every program, grouped by credential level, with graduates'
+- [x] Every program, grouped by credential level, with graduates'
       earnings and debt.
-- [ ] Save button (existing `SaveButton kind="college"`); signed-out
+- [x] Save button (existing `SaveButton kind="college"`); signed-out
       saving sends students to sign in and back.
-- [ ] College Scorecard source line under the numbers.
-- [ ] An unknown or malformed id is a 404.
-- [ ] College names on the career colleges page link here.
+- [x] College Scorecard source line under the numbers.
+- [x] An unknown or malformed id is a 404.
+- [x] College names on the career colleges page link here.
 
 ### Everywhere
-- [ ] No horizontal overflow, console or CSP errors at 320/390/1280;
+- [x] No horizontal overflow, console or CSP errors at 320/390/1280;
       CLS at most 0.1; every filter usable by keyboard.
-- [ ] Nothing from `docs/design/AVOID.md`.
+- [x] Nothing from `docs/design/AVOID.md`.
 
 ## Data
 - New nullable columns on `public.institutions` (one migration):
