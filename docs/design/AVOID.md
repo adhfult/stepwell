@@ -15,7 +15,8 @@ When reviewing any page, check it against every line below.
 - Purple and black as the color scheme
 - Pure white (#FFFFFF) as the page background; use a chosen off-white or tinted neutral from DESIGN.md
 - Liquid glass / glassmorphism (frosted, blurred translucent panels)
-- Drop shadows (use borders, spacing, or tone changes for separation)
+- Blurred or soft drop shadows (use borders, spacing, or tone changes for
+  separation). The hard stone edge on buttons in DESIGN.md is the only shadow
 - Radial orbs, glows, or blurry blobs behind content
 - Dot grids or grid-paper backgrounds
 - Also avoid: a warm cream background with a terracotta/clay accent, and a
@@ -51,10 +52,11 @@ When reviewing any page, check it against every line below.
 
 ## Never use: motion
 - Hover animations (lifting, scaling, sliding cards). Hover and focus may
-  change color or underline instantly; no movement
+  change color or underline instantly; the only movement is the 2px button
+  rise in DESIGN.md
 - Pulsing or pinging dots (`animate-ping`)
-- Fade-and-slide-up on every section; at most one purposeful motion moment,
-  and always respect "reduce motion"
+- Fade-and-slide-up on every section. Only the motion budget in DESIGN.md
+  moves, and "reduce motion" switches all of it off
 
 ## Never use: copy
 - Em dashes (—) in UI text. Use periods, commas, colons, or parentheses

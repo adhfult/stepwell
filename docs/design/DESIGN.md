@@ -1,6 +1,7 @@
 # Design system: Stepwell
 
-**Status: chosen 2026-09-27.** Direction: **Water and Stone, with Wayfinding.**
+**Status: chosen 2026-09-27; depth, motion and Bricolage added 2026-10-04
+(decision 0010).** Direction: **Water and Stone, with Wayfinding.**
 This file is the source of truth for colors, type, spacing, shape and the
 component patterns below. Every UI change uses only these tokens and patterns
 and never anything in `docs/design/AVOID.md`. If a new token or pattern is
@@ -46,13 +47,15 @@ Rules:
 - Light theme only for now (see Open items).
 
 ## Typography
-- Headings: **Bitter** (sturdy slab serif), weights 600 to 700.
+- Headings: **Bricolage Grotesque** (variable grotesque with ink-trap
+  details; modern but with character), weights 600 to 800. Headings at
+  `text-2xl` and up get `letter-spacing: -0.02em`.
 - Body, labels, numbers, forms: **Atkinson Hyperlegible Next** (from the
   Braille Institute; letters like l, I and 1 are never confused), weights 400
   and 700. Used for every dollar amount and date.
 - Both load once in `src/app/layout.tsx` through `next/font/google`, which
   self-hosts the files: students' browsers never contact Google. `globals.css`
-  applies Atkinson to `body` and Bitter to `h1` to `h4` by default, so pages
+  applies Atkinson to `body` and Bricolage to `h1` to `h4` by default, so pages
   need no font classes (`font-heading` / `font-body` exist for exceptions).
 - Scale (17px base, ratio 1.25):
 
@@ -64,9 +67,11 @@ Rules:
 | `text-xl` | 27px | 1.2 | Page headings on phones, key numbers |
 | `text-2xl` | 33px | 1.2 | Page headings from 640px |
 | `text-3xl` | 42px | 1.2 | Page headings from 1024px |
+| `text-4xl` | 53px | 1.1 | The home page heading from 1024px only |
 
 - Page headings use `<PageTitle>` (`src/components/page.tsx`): 27px on
-  phones, 33px from 640px, 42px from 1024px. Section headings inside a page
+  phones, 33px from 640px, 42px from 1024px (`size="hero"` on the home page
+  uses 53px from 1024px). Section headings inside a page
   are `text-lg`, so they never compete with the page title.
 
 - Sentence case everywhere. No all-caps labels, no letter-spaced eyebrows.
@@ -80,7 +85,17 @@ Rules:
 - Corner radius: **0** for panels, sections, tags and route stops (cut
   stone); **2px** (`rounded-control`) for inputs and buttons only. No other
   radii exist in Tailwind (the default radius scale is switched off).
-- No shadows. Separation comes from `surface` vs `background`, borders and space.
+- **One shadow: the stone edge.** A hard shadow with no blur, in a solid
+  token color, straight down, like the visible side of a stone block. It
+  marks things you can press, so it is only on buttons:
+  - `shadow-stone-edge`: `0 4px 0` in `foreground` (Primary and Delete
+    buttons);
+  - `shadow-stone-edge-quiet`: `0 4px 0` in `border-strong` (Secondary
+    buttons);
+  - `shadow-stone-edge-lifted`: `0 6px 0` in `foreground` (hover).
+  Panels, list rows, tags and inputs have no shadow; separation comes from
+  `surface` vs `background`, borders and space. Blurred or soft shadows
+  don't exist in Tailwind (the default shadow scale is switched off).
 - Tap targets are at least 44px tall and 44px wide.
 
 ## Layout
@@ -106,7 +121,7 @@ Rules:
   hidden until focused with the keyboard, jumping to the single `<main>`
   landmark (in `layout.tsx`; pages render inside it, never their own `<main>`).
 - **Header** (on `background`, bottom `border-subtle` divider): the word
-  "Stepwell" in Bitter bold `text-lg`, linking home, on the left. Main links
+  "Stepwell" in Bricolage bold `text-lg`, linking home, on the left. Main links
   on the right: Careers, Interest quiz, Scholarships, Internships, Programs,
   My plan (colleges are reached from a career). Below 1024px these collapse
   behind a text button labeled "Menu" (no hamburger icon); six links don't
@@ -144,13 +159,18 @@ bold, sentence case, a verb that names the action ("Save career", not
 
 | Kind | At rest | Hover | Use |
 |---|---|---|---|
-| Primary | `primary` fill, `surface` text (7.0:1) | `foreground` fill, `surface` text (13.8:1) | The one main action on a view |
-| Secondary | `surface` fill, 1px `border-strong`, `foreground` text | 1px `foreground` border | Other actions |
+| Primary | `primary` fill, `surface` text (7.0:1), stone edge | `foreground` fill, `surface` text (13.8:1) | The one main action on a view |
+| Secondary | `surface` fill, 1px `border-strong`, `foreground` text, quiet stone edge | 1px `foreground` border | Other actions |
 | Quiet | No fill, looks like a link (`buttonClass("quiet")`) | Same as links | Cancel, Back, low-stakes actions such as "Save to my plan" in a list |
-| Delete | `accent` fill, `surface` text (6.1:1) | `foreground` fill | Deleting data; always followed by a confirmation step |
+| Delete | `accent` fill, `surface` text (6.1:1), stone edge | `foreground` fill | Deleting data; always followed by a confirmation step |
+
+- **Keycap movement** (all but Quiet): on hover the button rises 2px and its
+  edge grows to 6px (`shadow-stone-edge-lifted`); pressed, it sinks 4px and
+  the edge disappears, so it sits flush. 150ms with `--ease-stone`. Under
+  reduce motion, hover and press only change color.
 
 - Focus: the global 3px `foreground` outline, 2px away from the button.
-- Disabled: `surface` fill, 1px `border-subtle`, `muted` text. Prefer
+- Disabled: `surface` fill, 1px `border-subtle`, `muted` text, no edge. Prefer
   leaving a button enabled and explaining the problem after it is pressed.
 - Working: the label changes ("Saving"), the button keeps its width and
   gets `aria-busy="true"`. No spinner (see motion).
@@ -190,21 +210,47 @@ Shows a student's path: career, program, college, plan.
   - chosen or saved: `primary` fill;
   - you are here: `highlight` fill, 2px `foreground` border, with the words
     "You are here" beside it.
-- Each stop has a label (Bitter `text-lg`), one line saying what is chosen
+- Each stop has a label (Bricolage `text-lg`), one line saying what is chosen
   (or what to choose), and one link.
 - Terracing: from 1024px, each stop's text block is indented 24px more
   than the one above (at most 72px), so the path visibly steps down. On
   phones there is no indent.
 - Screen readers hear each stop's state in words: "Step 2 of 4, Program:
   saved, Nursing (RN)".
-- This is the one place motion is allowed (see Icons and motion).
+- Where it appears: the home page draws it as the 3D stepwell (below); each
+  career page shows it under the title, starting at "This career" (you are
+  here), then Colleges with this program, Money and experience, Your plan.
+  There, the line draws in once (see Icons and motion), and from 1024px each
+  stone gets the stone edge.
+
+### Stepwell scene (home page)
+The route line drawn as the real thing: stone steps going down to water.
+- Four stone slabs, one per stop, stepping down a staircase into a water
+  plane, drawn with CSS 3D transforms (`src/components/stepwell.css`).
+  Colors: slab tops `surface`, sides `border-subtle` and `border-strong`,
+  water `primary`, the route line a 4px `primary` strip across the tops.
+- Each slab's top is the label of a radio (`name="step"`, visually hidden,
+  first one checked) with the stop title printed on it in Bricolage. Choosing
+  a slab shows that stop's panel (text, links, real screenshot) and raises the
+  slab 12px; it gets the 16px `highlight` stone with a `foreground` border and
+  the words "You are here". Keyboard focus draws the focus outline on the slab.
+- Panels are switched with CSS `:has(:checked)`, so it works without
+  JavaScript. Hidden panels are `display: none`.
+- The scene tilts toward the pointer, at most 6 degrees each way, and settles
+  back when the pointer leaves. No tilting with the phone's motion sensor.
+- Phones: the scene is at most 272px wide with the panel below; every slab's
+  tap area is at least 44px tall. If tilted text or tap areas don't work, a
+  plain list of labels becomes the selector and the slabs only show the
+  current step (record it in `docs/specs/ui-depth-and-motion.md`).
+- Reduce motion: no entrance and no tilt; the scene appears in its final 3D
+  state.
 
 ### Panels and lists
 - Plain sections on `background` are the default. A panel (`surface` fill,
   1px `border-subtle`, radius 0, padding 16px, 24px from 1024px) groups one
   thing: a college summary, a scholarship, a form.
 - Search results and saved items are **lists with dividers**, not grids of
-  cards: each row has a title link (Bitter `text-lg`), one line of key facts,
+  cards: each row has a title link (Bricolage `text-lg`), one line of key facts,
   and at most two tags.
 - Never a row of identical cards, never a bento grid (AVOID.md).
 
@@ -273,16 +319,29 @@ always words.
 
 ## Images
 - Only real screenshots of Stepwell, shown flat with a 1px `border-subtle`
-  edge: no device frames, no tilted 3D mockups. Alt text says what the
+  edge: no device frames, no tilted 3D mockups. (The stepwell scene is drawn
+  stone, not a tilted screenshot.) Alt text says what the
   screenshot shows.
 - No stock photos, no AI-generated people, no confetti.
 
 ## Icons and motion
 - No icon library. A small custom SVG set only (route stops, step markers),
   drawn in `foreground` or `primary`, always next to words.
-- One motion moment in the whole product: the route line draws in once on a
-  career's path page. Switched off under "reduce motion". Hover and focus
-  change color or underline instantly; nothing moves.
+- **Motion budget.** Only these move, nothing else:
+  1. Page changes: the content crossfades (200ms); a career's title morphs
+     from a results list into the career page heading. Header and footer
+     stay still.
+  2. The stepwell scene: a one-time entrance (slabs settle into place,
+     600ms), the pointer tilt, and the chosen slab rising (200ms).
+  3. Buttons: the 2px hover rise and the press (150ms).
+  4. The career page route line draws in once (600ms).
+- Easing for all of it: `--ease-stone` (`cubic-bezier(.2, .8, .2, 1)`): quick
+  start, soft landing, no bounce.
+- Links, tags, panels and list rows change color or underline instantly on
+  hover and focus; they never move.
+- Under "reduce motion" everything above snaps to its final state, and the
+  tilt is not attached. Every element's resting style is its final state, so
+  switching animation off never leaves something half-drawn.
 - Focus: a visible 3px `foreground` outline on every interactive element.
 
 ## Principles
@@ -291,11 +350,13 @@ to. Copy is plain and specific, like a helpful older student giving
 directions. Anything with a deadline stands out; everything else stays quiet.
 
 ## What `globals.css` already implements
-Tokens (colors, type scale, spacing, radius), default fonts for `body` and
-`h1` to `h4`, the focus outline, link styles, and `accent-color` for
+Tokens (colors, type scale, spacing, radius, stone-edge shadows, easing),
+default fonts for `body` and `h1` to `h4`, the reduce-motion switch, the
+focus outline, link styles, and `accent-color` for
 checkboxes and radio buttons. Everything else above is applied per component.
 
 ## Open items
 - **Dark mode is not designed yet.** The site is light only
   (`color-scheme: light`) until a dark palette is chosen and contrast-checked.
-- The route line's draw-in motion needs a prototype before it is final.
+- The stepwell scene's proportions are settled by prototype during the build
+  (spec `ui-depth-and-motion.md`).
