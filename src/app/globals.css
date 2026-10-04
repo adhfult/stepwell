@@ -129,6 +129,13 @@
     pointer-events: none;
   }
 
+  /* The career page route line draws in once, top to bottom. */
+  @keyframes route-draw {
+    from {
+      transform: scaleY(0);
+    }
+  }
+
   /* Reduce motion: everything snaps to its final state. Resting styles are
      always the final state, so nothing is left half-drawn. */
   @media (prefers-reduced-motion: reduce) {

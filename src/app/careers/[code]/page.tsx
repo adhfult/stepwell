@@ -11,6 +11,7 @@ import { OnetSource, OutlookSource } from "../source-line";
 import { SaveButton } from "@/app/plan/save-button";
 import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
+import { CareerPath } from "./career-path";
 import { Credentials } from "./credentials";
 import { SaveCareerForm } from "./save-form";
 
@@ -82,6 +83,8 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
           </Link>
         </p>
       )}
+
+      <CareerPath code={career.onet_code} title={career.title} />
 
       <section aria-labelledby="takes-heading" className="mt-12">
         <h2 id="takes-heading" className="text-lg font-bold">

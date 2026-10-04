@@ -220,8 +220,9 @@ Shows a student's path: career, program, college, plan.
 - Where it appears: the home page draws it as the 3D stepwell (below); each
   career page shows it under the title, starting at "This career" (you are
   here), then Colleges with this program, Money and experience, Your plan.
-  There, the line draws in once (see Icons and motion), and from 1024px each
-  stone gets the stone edge.
+  There, under the heading "Your path from here", the line draws in once
+  (see Icons and motion); each stop is one short line so phones stay
+  uncluttered.
 
 ### Stepwell scene (home page)
 The route line drawn as the real thing: stone steps going down to water.
