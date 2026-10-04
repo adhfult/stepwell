@@ -63,6 +63,7 @@ build step's spec.
 | `saved_items` (built: careers, scholarships, colleges, internships, programs, AP classes) | one link column per kind (`onet_code`, `scholarship_id`, `unitid`, `opportunity_id`, `student_program_id`, `ap_course_code`), exactly one set; everything but careers and AP classes has no foreign key (their daily merges delete rows) and keeps a `title` copy so the plan can say "No longer listed" |
 | `plan_items` (built) | the student's own steps: title (200), kind, school year (or none), term, optional due date, done; no free-text notes. Saved listings' deadlines are read live on `/plan`. Capped per student (500 steps; 1,000 saved items) by `enforce_row_cap()` |
 | `eligibility_profiles` (built) | optional scholarship answers (first question set only), consent version; matching stays in the database; deleted with the account and after 12 months without a sign-in by pg_cron (decision 0006) |
+| `academic_records` (built) | one row per student from `/gpa`: classes, grades and credits as checked jsonb (80 max), school weights, known-GPA shortcut, SAT and ACT, consent version; deleted with the account and after 12 months without a sign-in by pg_cron (decision 0013) |
 
 ## Data imports
 - One shared pipeline in `src/jobs/` with one adapter per source (v1 expansion

@@ -23,7 +23,20 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "ap_courses": {
+            "academic_records": {
+                  Row: {
+                    "act": number | null,"consent_version": number,"consented_at": string,"courses": NonNullable<Json>,"sat": number | null,"start_credits": number,"start_unweighted": number | null,"start_weighted": number | null,"updated_at": string,"user_id": string,"weight_ap": number | null,"weight_dual": number | null,"weight_honors": number | null,"weight_ib": number | null
+                  }
+                  Insert: {
+                    "act"?: number | null,"consent_version": number,"consented_at"?: string,"courses"?: NonNullable<Json>,"sat"?: number | null,"start_credits"?: number,"start_unweighted"?: number | null,"start_weighted"?: number | null,"updated_at"?: string,"user_id"?: string,"weight_ap"?: number | null,"weight_dual"?: number | null,"weight_honors"?: number | null,"weight_ib"?: number | null
+                  }
+                  Update: {
+                    "act"?: number | null,"consent_version"?: number,"consented_at"?: string,"courses"?: NonNullable<Json>,"sat"?: number | null,"start_credits"?: number,"start_unweighted"?: number | null,"start_weighted"?: number | null,"updated_at"?: string,"user_id"?: string,"weight_ap"?: number | null,"weight_dual"?: number | null,"weight_honors"?: number | null,"weight_ib"?: number | null
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"ap_courses": {
                   Row: {
                     "code": string,"course_group": string,"name": string
                   }
@@ -504,7 +517,10 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "ap_courses_for_career":
+            "academic_courses_valid":
+{ Args: { "p_courses": Json }; Returns: boolean
+                           },
+"ap_courses_for_career":
 { Args: { "p_onet_code": string }; Returns: {
               "ap_code": string,"ap_name": string,"area_name": string,"importance": number
             }[]
