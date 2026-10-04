@@ -15,7 +15,7 @@ export function Page({ width = "reading", children }: { width?: keyof typeof wid
   return <div className={`mx-auto ${widths[width]} px-6 py-8 sm:py-12 lg:px-8 lg:py-16`}>{children}</div>;
 }
 
-/** The page's one h1: 27px on phones, 33px from 640px, 42px from 1024px. */
-export function PageTitle({ children }: { children: ReactNode }) {
-  return <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">{children}</h1>;
+/** The page's one h1: 27px on phones, 33px from 640px, 42px (53px for the home page's "hero") from 1024px. */
+export function PageTitle({ size = "default", children }: { size?: "default" | "hero"; children: ReactNode }) {
+  return <h1 className={`text-xl font-bold sm:text-2xl ${size === "hero" ? "lg:text-4xl" : "lg:text-3xl"}`}>{children}</h1>;
 }

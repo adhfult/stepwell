@@ -1,16 +1,16 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { Page, PageTitle } from "@/components/page";
 import { CareerSearchForm } from "./careers/search-form";
+import { StepwellScene, type Stop } from "./stepwell-scene";
 
-// The route line (DESIGN.md "Route line"): the real path through Stepwell,
+// The path through Stepwell, drawn as the stepwell scene (DESIGN.md),
 // each stop with a real screenshot of that step (public/screenshots/, taken at
 // 390px on a production build with a test account).
 // Shared look for the screenshots: flat, with a border-subtle edge (DESIGN.md "Images").
 // A plain <img>: next/image adds an inline style, which the CSP blocks.
 const SHOT = { width: 356, height: 500, loading: "lazy", className: "h-auto w-full max-w-[240px] border border-border-subtle" } as const;
 
-const STOPS: { title: string; text: string; links: { href: string; label: string }[]; image: ReactNode }[] = [
+const STOPS: Stop[] = [
   {
     title: "Careers",
     text: "See what the work is, what it pays, what training it takes, and the AP classes that help.",
@@ -48,14 +48,11 @@ const STOPS: { title: string; text: string; links: { href: string; label: string
   },
 ];
 
-// Terracing from 1024px: each stop steps in 24px more (DESIGN.md), at most 72px.
-const TERRACE = ["", "lg:ml-6", "lg:ml-12", "lg:ml-[72px]"];
-
 export default function Home() {
   return (
     <Page width="browse">
       <div className="max-w-2xl">
-        <PageTitle>Find a career, then the path to it</PageTitle>
+        <PageTitle size="hero">Find a career, then the path to it</PageTitle>
         <p className="mt-4">
           Stepwell shows what a career pays and takes, which college programs lead there, and the scholarships,
           internships and summer programs that help you get started. It uses official U.S. government data, and
@@ -67,16 +64,7 @@ export default function Home() {
         </p>
       </div>
 
-      <section aria-labelledby="path-heading" className="mt-16">
-        <h2 id="path-heading" className="text-lg font-bold">
-          The path, one step at a time
-        </h2>
-        <ol className="mt-6">
-          {STOPS.map((stop, i) => (
-            <Stop key={stop.title} n={i + 1} total={STOPS.length} terrace={TERRACE[i]} last={i === STOPS.length - 1} {...stop} />
-          ))}
-        </ol>
-      </section>
+      <StepwellScene stops={STOPS} />
 
       <p className="mt-12 max-w-2xl">
         Stepwell never sells your information or shares it with colleges or companies, and you can use most of it
@@ -84,45 +72,5 @@ export default function Home() {
         <Link href="/about-data">See where the data comes from</Link>.
       </p>
     </Page>
-  );
-}
-
-function Stop({
-  n,
-  total,
-  terrace,
-  last,
-  title,
-  text,
-  links,
-  image,
-}: (typeof STOPS)[number] & { n: number; total: number; terrace: string; last: boolean }): ReactNode {
-  return (
-    <li className={`relative pl-[28px] ${last ? "pb-2" : "pb-12"} ${terrace}`}>
-      {/* The route: a 4px line down the steps, and a stone (a 16px square, not chosen yet) centred on it. */}
-      <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 bg-primary" />
-      <span aria-hidden="true" className="absolute -left-[6px] top-1 size-4 border-2 border-primary bg-surface" />
-      <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-start">
-        <div className="max-w-xl">
-          <h3 className="text-lg font-bold">
-            <span className="sr-only">
-              Step {n} of {total}:{" "}
-            </span>
-            {title}
-          </h3>
-          <p className="mt-2">{text}</p>
-          <ul className="mt-2">
-            {links.map((l) => (
-              <li key={l.href + l.label}>
-                <Link href={l.href} className="inline-flex min-h-11 items-center">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {image}
-      </div>
-    </li>
   );
 }

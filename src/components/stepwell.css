@@ -1,0 +1,230 @@
+/*
+ * The stepwell scene (DESIGN.md "Stepwell scene"): stone slabs stepping down
+ * toward the viewer into water, drawn with CSS 3D transforms. Plain CSS
+ * rather than Tailwind classes because each face needs its own transform.
+ *
+ * Geometry: the scene is a flat plane (x across, y toward the viewer)
+ * rotated into view. Slab n sits n slabs further forward and n thicknesses
+ * lower; each slab's top is a radio's <label>, its riser and side are the
+ * label's ::before and ::after (so they're clickable too).
+ */
+
+/* Typed so CSS can animate them: the entrance animates the view angles, and
+   the tilt eases between pointer positions. */
+@property --stepwell-rx {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 56deg;
+}
+@property --stepwell-rz {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 24deg;
+}
+@property --tilt-x {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+@property --tilt-y {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.stepwell-stage {
+  --w: 180px; /* slab width */
+  --d: 48px; /* slab depth */
+  --t: 26px; /* slab thickness */
+  --lift: 12px; /* how far the chosen slab rises */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  perspective: 1000px;
+  transition:
+    --tilt-x 150ms var(--ease-stone, cubic-bezier(0.2, 0.8, 0.2, 1)),
+    --tilt-y 150ms var(--ease-stone, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+
+.stepwell-scene {
+  /* Combined here, where the entrance animates the angles; the tilt is
+     inherited from the stage. Slabs and signs inherit the result. */
+  --rx: calc(var(--stepwell-rx) + var(--tilt-y));
+  --rz: calc(var(--stepwell-rz) + var(--tilt-x));
+  position: relative;
+  width: var(--w);
+  /* Four slabs, then the water. */
+  height: calc(var(--d) * 5.5);
+  margin: 0 auto 64px;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateZ(var(--rz));
+  /* The scene's own box is a plane at depth 0, in front of the slabs (which
+     sit lower), so it would catch every click. Only the slabs take clicks. */
+  pointer-events: none;
+  /* The entrance: from a flat map seen from above into the 3D view, once.
+     The resting state is the final view, so "reduce motion" (which turns
+     animations off) shows the finished scene. */
+  animation: stepwell-settle 600ms var(--ease-stone, cubic-bezier(0.2, 0.8, 0.2, 1)) backwards;
+}
+
+@keyframes stepwell-settle {
+  from {
+    --stepwell-rx: 0deg;
+    --stepwell-rz: 0deg;
+  }
+}
+
+.stepwell-slab {
+  --z: calc(var(--n) * var(--t) * -1);
+  --up: 0px;
+  position: absolute;
+  left: 0;
+  top: calc(var(--n) * var(--d));
+  width: var(--w);
+  height: var(--d);
+  display: block;
+  cursor: pointer;
+  pointer-events: auto;
+  background: var(--surface);
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--z) + var(--up)));
+  transition: transform 200ms var(--ease-stone, cubic-bezier(0.2, 0.8, 0.2, 1));
+}
+
+.stepwell-slab:nth-of-type(1) { --n: 0; }
+.stepwell-slab:nth-of-type(2) { --n: 1; }
+.stepwell-slab:nth-of-type(3) { --n: 2; }
+.stepwell-slab:nth-of-type(4) { --n: 3; }
+
+/* The riser, facing the viewer, and the right-hand side. They grow with the
+   lift so a raised slab is still a solid block. */
+.stepwell-slab::before,
+.stepwell-slab::after {
+  content: "";
+  position: absolute;
+}
+.stepwell-slab::before {
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: calc(var(--t) + var(--up));
+  background: var(--border-subtle);
+  transform-origin: top;
+  transform: rotateX(-90deg);
+}
+.stepwell-slab::after {
+  top: 0;
+  left: 100%;
+  width: calc(var(--t) + var(--up));
+  height: 100%;
+  background: var(--border-strong);
+  transform-origin: left;
+  transform: rotateY(90deg);
+}
+
+/* The route line across the slab top, and its stone (DESIGN.md "Route line"). */
+.stepwell-route {
+  position: absolute;
+  left: 22px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+.stepwell-stone {
+  position: absolute;
+  left: 16px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+}
+
+/* The sign: the stop's name, standing up on its slab and always facing the
+   viewer (it undoes the scene's rotation), so it's never squished. Anchored
+   at its right end: from this angle the sign's left part reaches forward,
+   over the lower slabs, instead of back into the slab behind. */
+.stepwell-sign {
+  position: absolute;
+  right: 12px;
+  bottom: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 8px;
+  max-width: calc(var(--w) - 72px);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--foreground);
+  transform-origin: bottom right;
+  transform: translateZ(2px) rotateZ(calc(var(--rz) * -1)) rotateX(calc(var(--rx) * -1));
+}
+.stepwell-here {
+  display: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* The chosen slab rises and becomes "you are here". */
+.stepwell-slab:has(input:checked) {
+  --up: var(--lift);
+}
+.stepwell-slab:has(input:checked) .stepwell-stone {
+  background: var(--highlight);
+  border-color: var(--foreground);
+}
+.stepwell-slab:has(input:checked) .stepwell-sign {
+  border: 2px solid var(--foreground);
+}
+.stepwell-slab:has(input:checked) .stepwell-here {
+  display: block;
+}
+.stepwell-slab:has(input:focus-visible) .stepwell-sign {
+  outline: 3px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.stepwell-water {
+  position: absolute;
+  left: 0;
+  top: calc(var(--d) * 4);
+  width: var(--w);
+  height: calc(var(--d) * 1.5);
+  background: var(--primary);
+  transform: translateZ(calc(var(--t) * -4));
+}
+
+/* Only the chosen stop's panel shows. Browsers without :has() show all four
+   in order, so the content is still all there. */
+@supports selector(:has(*)) {
+  .stepwell [data-panel] {
+    display: none;
+  }
+  .stepwell:has(input[value="0"]:checked) [data-panel="0"],
+  .stepwell:has(input[value="1"]:checked) [data-panel="1"],
+  .stepwell:has(input[value="2"]:checked) [data-panel="2"],
+  .stepwell:has(input[value="3"]:checked) [data-panel="3"] {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stepwell-stage {
+    --w: 220px;
+    --d: 58px;
+    --t: 32px;
+  }
+  /* Wider than the steps, like a pool, where there's room for it. */
+  .stepwell-water {
+    left: -16px;
+    width: calc(var(--w) + 32px);
+  }
+}

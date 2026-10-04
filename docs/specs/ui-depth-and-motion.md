@@ -90,7 +90,11 @@ only and keeps nothing.
 - **Touch screens:** no hover tilt; tapping slabs works.
 - **Tilted text hard to read, or 3D tap areas unreliable:** a plain list of
   labels becomes the selector and the slabs become decoration that shows the
-  current step. Record the choice here when building.
+  current step. Record the choice here when building. **Built (2026-10-04):
+  the slabs are the selector.** Signs stay upright facing the viewer, so
+  they read easily; every slab measured at least 44px tall at 320px. The
+  scene's own plane caught all clicks at first (it sits in front of the
+  lower slabs in 3D), fixed with `pointer-events: none` on the scene.
 
 ## Out of scope
 Dark mode, tilting with the phone's motion sensor (iOS asks for permission
