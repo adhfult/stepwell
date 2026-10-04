@@ -1,6 +1,6 @@
 # Spec: College directory
 
-- Status: draft
+- Status: approved 2026-10-04
 
 ## Goal
 Let students browse and filter every college in College Scorecard, not only
@@ -37,7 +37,8 @@ that I can build a list worth applying to.
 - [ ] A band with a name search, then a filter form (plain GET form,
       works without JavaScript): state, public / private nonprofit /
       for-profit, size (small under 5,000, medium 5,000 to 15,000, large
-      over 15,000), most I'd pay (net price for a chosen income bracket),
+      over 15,000), most I'd pay (net price for a chosen income bracket;
+      with no bracket picked, the existing average `net_price`),
       admission rate (under 25%, 25 to 50%, 50 to 75%, over 75%), test
       policy (test-optional means anything but "required"), setting,
       two-year or four-year, minority-serving, and "has a program in"
