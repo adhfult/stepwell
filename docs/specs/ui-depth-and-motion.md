@@ -80,7 +80,8 @@ Everywhere
       Pages with a loading skeleton (career search, career, colleges,
       scholarships) score 0.12 to 0.29 because the footer moves when the
       content streams in; same scores with the crossfade removed, so it
-      predates this work (see PROGRESS "Next up").
+      predated this work. Fixed after: `<main>` is at least one screen
+      tall (min-h-svh), CLS 0 on six pages at 320/390/1280.
 - [x] Every changed page checked against AVOID.md at 320, 390 and 1280px,
       and at 200% zoom.
 - [x] `npm run check` passes, including a test for the tilt math.

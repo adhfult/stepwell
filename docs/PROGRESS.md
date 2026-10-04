@@ -4,13 +4,8 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] Pages with a loading skeleton (career search, career, colleges,
-      scholarships) shift the footer when content streams in (CLS 0.12 to
-      0.29, found 2026-10-04; older than the redesign). One fix: give
-      `<main>` a minimum height so the footer starts below the fold.
-- [ ] Re-take the home page screenshots (`public/screenshots/`) so they
-      show the Bricolage headings and stone buttons; the plan one needs a
-      test account.
+- [ ] Re-take `public/screenshots/plan.png` (needs a signed-in test
+      account) so it shows the Bricolage headings like the other three.
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
       "Secure password change" in the development project's Auth settings
       now (LAUNCH.md step 3 covers production). Sign-in rate limits are
@@ -37,6 +32,14 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: Footer layout shift fixed; home screenshots re-taken
+- `<main>` is at least one screen tall (min-h-svh), so a short loading
+  skeleton no longer pushes the footer: CLS 0 on six pages at 320/390/1280
+  (was 0.10 to 0.30 on phones).
+- career, colleges and scholarships screenshots re-taken (390px, 2x, prod
+  build, signed out, quantized to about 45 KB). plan.png still old.
+- `.claude/reports/` (local telemetry) is gitignored.
+
 ### 2026-10-04: Depth, motion and the 3D stepwell (spec ui-depth-and-motion)
 - Owner chose: evolve Water and Stone, Bricolage Grotesque headings, an
   interactive 3D stepwell, stone keycap buttons. Decision 0010 relaxes the
