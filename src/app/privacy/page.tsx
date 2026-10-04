@@ -38,6 +38,13 @@ export default function PrivacyPage() {
           anyone, shared, or sent to other companies or to AI tools.
         </li>
         <li>
+          <strong>Your classes, grades and test scores, only if you save them.</strong> On the GPA page you can save
+          your classes (name, type, grade and credits), how your school weights classes, a GPA you already know, and
+          your SAT or ACT score. We use them only to show your GPA and where your scores fall at each college. They’re
+          never shown to anyone, shared, or sent to other companies or to AI tools. If you don’t sign in, the GPA page
+          keeps your work in your own browser only and never sends it to us.
+        </li>
+        <li>
           <strong>Your interest quiz scores, if you save them.</strong> Just the six scores, never your answers.
         </li>
         <li>
@@ -91,8 +98,9 @@ export default function PrivacyPage() {
       <h2>How long we keep it</h2>
       <p>
         Until you delete your account. You can do that anytime from your account page: it removes your login, your
-        profile, and everything you saved right away. Scholarship answers are also deleted if you don’t sign in for 12
-        months, and you can remove them yourself anytime on the “Scholarship matching” page.
+        profile, and everything you saved right away. Scholarship answers and saved grades and scores are also deleted if
+        you don’t sign in for 12 months, and you can remove them yourself anytime on the “Scholarship matching” and
+        “GPA and test scores” pages.
       </p>
 
       <h2>Your choices</h2>
@@ -103,6 +111,9 @@ export default function PrivacyPage() {
         <li>
           Change or remove your scholarship answers on the <Link href="/account/eligibility">Scholarship matching</Link>{" "}
           page.
+        </li>
+        <li>
+          Change or remove your saved classes, grades and scores on the <Link href="/gpa">GPA and test scores</Link> page.
         </li>
         <li>Delete your account and everything in it on your account page.</li>
         <li>Questions or requests: {contact}.</li>
