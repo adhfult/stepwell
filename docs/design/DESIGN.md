@@ -233,7 +233,11 @@ The route line drawn as the real thing: stone steps going down to water.
 - Four stone slabs, one per stop, stepping down a staircase into a water
   plane, drawn with CSS 3D transforms (`src/components/stepwell.css`).
   Colors: slab tops `surface`, sides `border-subtle` and `border-strong`,
-  water `primary`, the route line a 4px `primary` strip across the tops.
+  water `foreground` (the scene sits on the home page's teal band, beside the
+  headline and search, so it is above the fold on a laptop), the route line a
+  4px `primary` strip across the tops. On the band the slab focus outline is
+  `surface`. The chosen stop's panel sits below the band, text beside its
+  screenshot from 640px.
 - Each slab's top is the label of a radio (`name="step"`, visually hidden,
   first one checked) with the stop title printed on it in Bricolage. Choosing
   a slab shows that stop's panel (text, links, real screenshot) and raises the

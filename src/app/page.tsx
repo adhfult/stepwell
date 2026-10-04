@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Page, PageTitle } from "@/components/page";
+import { PageTitle } from "@/components/page";
 import { CareerSearchForm } from "./careers/search-form";
 import { StepwellScene, type Stop } from "./stepwell-scene";
 
@@ -50,27 +50,27 @@ const STOPS: Stop[] = [
 
 export default function Home() {
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <PageTitle size="hero">Find a career, then the path to it</PageTitle>
-        <p className="mt-4">
-          Stepwell shows what a career pays and takes, which college programs lead there, and the scholarships,
-          internships and summer programs that help you get started. It uses official U.S. government data, and
-          it’s free, with no ads.
-        </p>
-        <CareerSearchForm />
-        <p className="mt-6">
-          Not sure what you like? <Link href="/interests">Take the interest quiz</Link> and see careers that fit you.
-        </p>
-      </div>
-
-      <StepwellScene stops={STOPS} />
-
+    <StepwellScene
+      stops={STOPS}
+      intro={
+        <>
+          <PageTitle size="hero">Find a career, then the path to it</PageTitle>
+          <p className="mt-4">
+            Stepwell shows what a career pays and takes, which college programs lead there, and the scholarships,
+            internships and summer programs that help you get started. It uses official U.S. government data, and
+            it’s free, with no ads.
+          </p>
+          <CareerSearchForm />
+          <p className="mt-6">
+            Not sure what you like? <Link href="/interests">Take the interest quiz</Link> and see careers that fit you.
+          </p>
+        </>
+      }
+    >
       <p className="mt-12 max-w-2xl">
         Stepwell never sells your information or shares it with colleges or companies, and you can use most of it
-        without an account.{" "}
-        <Link href="/about-data">See where the data comes from</Link>.
+        without an account. <Link href="/about-data">See where the data comes from</Link>.
       </p>
-    </Page>
+    </StepwellScene>
   );
 }

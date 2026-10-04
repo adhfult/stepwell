@@ -201,6 +201,15 @@
   transform: translateZ(calc(var(--t) * -4));
 }
 
+/* On the teal band (DESIGN.md "Bands"): deeper water, and a focus outline
+   that shows on teal. */
+.band .stepwell-water {
+  background: var(--foreground);
+}
+.band .stepwell-slab:has(input:focus-visible) .stepwell-sign {
+  outline-color: var(--surface);
+}
+
 /* Only the chosen stop's panel shows. Browsers without :has() show all four
    in order, so the content is still all there. */
 @supports selector(:has(*)) {
@@ -211,7 +220,7 @@
   .stepwell:has(input[value="1"]:checked) [data-panel="1"],
   .stepwell:has(input[value="2"]:checked) [data-panel="2"],
   .stepwell:has(input[value="3"]:checked) [data-panel="3"] {
-    display: block;
+    display: grid; /* panels are grids: text, then the screenshot */
   }
 }
 
