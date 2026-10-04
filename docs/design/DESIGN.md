@@ -255,7 +255,7 @@ A full-width `primary` strip behind a page's title area: the title, its
 intro and the page's search or filters. It is where each browsing page
 starts (home, careers, a career, colleges, scholarships, internships,
 programs, interest quiz, plan). Form, legal and account pages have none.
-- `<Band>` (`src/components/band.tsx`) uses the same widths and side padding
+- `<Band>` (`src/components/page.tsx`) uses the same widths and side padding
   as `<Page>`; the content below starts in `<Page>` as usual.
 - Inside: text `surface` (6.97:1), secondary and help text `border-subtle`
   (4.83:1, never `muted`), links `surface` underlined with `highlight` on

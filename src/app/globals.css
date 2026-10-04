@@ -150,3 +150,49 @@
     }
   }
 }
+
+/*
+ * Bands (DESIGN.md "Bands"): a full-width primary strip behind a page's title
+ * area. Everything inside switches to colors that pass contrast on teal, here
+ * in one place so forms and skeletons need no band-specific props. Unlayered
+ * on purpose: it must beat the utility classes it remaps.
+ */
+.band {
+  background: var(--primary);
+  color: var(--surface);
+}
+.band a,
+.band .text-primary {
+  color: var(--surface);
+}
+.band a:hover {
+  color: var(--highlight);
+}
+.band :focus-visible {
+  outline-color: var(--surface);
+}
+/* Secondary text: border-subtle is 4.83:1 on primary; muted would fail. */
+.band .text-muted {
+  color: var(--border-subtle);
+}
+/* Errors keep their "Error:" words; accent red fails on teal, so surface + bold. */
+.band .text-accent {
+  color: var(--surface);
+  font-weight: 700;
+}
+.band .border-accent {
+  border-color: var(--highlight);
+}
+/* Primary buttons become the band kind: surface fill, foreground text. */
+.band .bg-primary {
+  background: var(--surface);
+  color: var(--foreground);
+}
+.band .bg-primary:hover {
+  background: var(--foreground);
+  color: var(--surface);
+}
+/* Skeleton blocks: a lighter teal instead of pale grey. */
+.band .bg-border-subtle {
+  background: color-mix(in srgb, var(--surface) 25%, transparent);
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Page, PageTitle } from "@/components/page";
+import { Band, Page, PageTitle } from "@/components/page";
 import { getOnetSource, searchCareers } from "@/lib/careers/data";
 import { searchQuerySchema } from "@/lib/careers/labels";
 import { CareerList } from "./career-list";
@@ -21,39 +21,42 @@ export default async function CareersPage({ searchParams }: PageProps<"/careers"
   const [results, source] = query ? await Promise.all([searchCareers(query), getOnetSource()]) : [null, null];
 
   return (
-    <Page width="browse">
-      <div className="max-w-2xl">
-        <PageTitle>Careers</PageTitle>
-        <p className="mt-4">
-          Look up a career to see what the work is, what it takes, and which careers are related. The information
-          comes from the U.S. Department of Labor.
-        </p>
-        <CareerSearchForm query={typeof raw === "string" ? raw : ""} error={error} />
-      </div>
-
-      {results === null && !error && <Examples />}
-      {results && results.length === 0 && <NoResults query={query} />}
-      {results && results.length > 0 && (
-        <section aria-labelledby="results-heading" className="mt-10">
-          <h2 id="results-heading" className="text-lg font-bold">
-            {results.length === MAX_RESULTS
-              ? `Top ${MAX_RESULTS} careers for “${query}”`
-              : `${results.length} ${results.length === 1 ? "career matches" : "careers match"} “${query}”`}
-          </h2>
-          <CareerList
-            careers={results.map((r) => ({
-              ...r,
-              // Skip "Also called: Nurse" when the student searched "nurse": it adds nothing.
-              note:
-                r.matched_title && r.matched_title.toLowerCase() !== query.toLowerCase()
-                  ? `Also called: ${r.matched_title}`
-                  : null,
-            }))}
-          />
-          {source && <OnetSource release={source.release} retrievedAt={source.retrievedAt} />}
-        </section>
-      )}
-    </Page>
+    <>
+      <Band>
+        <div className="max-w-2xl">
+          <PageTitle>Careers</PageTitle>
+          <p className="mt-4">
+            Look up a career to see what the work is, what it takes, and which careers are related. The information
+            comes from the U.S. Department of Labor.
+          </p>
+          <CareerSearchForm query={typeof raw === "string" ? raw : ""} error={error} />
+        </div>
+      </Band>
+      <Page width="browse">
+        {results === null && !error && <Examples />}
+        {results && results.length === 0 && <NoResults query={query} />}
+        {results && results.length > 0 && (
+          <section aria-labelledby="results-heading">
+            <h2 id="results-heading" className="text-lg font-bold">
+              {results.length === MAX_RESULTS
+                ? `Top ${MAX_RESULTS} careers for “${query}”`
+                : `${results.length} ${results.length === 1 ? "career matches" : "careers match"} “${query}”`}
+            </h2>
+            <CareerList
+              careers={results.map((r) => ({
+                ...r,
+                // Skip "Also called: Nurse" when the student searched "nurse": it adds nothing.
+                note:
+                  r.matched_title && r.matched_title.toLowerCase() !== query.toLowerCase()
+                    ? `Also called: ${r.matched_title}`
+                    : null,
+              }))}
+            />
+            {source && <OnetSource release={source.release} retrievedAt={source.retrievedAt} />}
+          </section>
+        )}
+      </Page>
+    </>
   );
 }
 
