@@ -16,7 +16,9 @@ const SECTIONS = [
   { href: "/plan", label: "My plan" },
 ];
 
-const navLink = "inline-flex min-h-11 items-center no-underline hover:underline focus-visible:underline";
+// The current section gets a 4px primary bar underneath ("you are here").
+const navLink =
+  "inline-flex min-h-11 items-center border-y-4 border-transparent no-underline hover:underline focus-visible:underline aria-[current=page]:border-b-primary";
 
 export function MainNav() {
   // The header stays mounted across pages; keying the menu to the path closes

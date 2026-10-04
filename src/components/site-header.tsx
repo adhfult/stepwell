@@ -18,8 +18,14 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-2 lg:px-8">
         <Link
           href="/"
-          className="inline-flex min-h-11 items-center font-heading text-lg font-bold text-foreground no-underline"
+          className="inline-flex min-h-11 items-center gap-2 font-heading text-lg font-bold text-foreground no-underline"
         >
+          {/* The mark: three stone steps going down (DESIGN.md "Page frame"). */}
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" className="fill-primary">
+            <rect x="0" y="2" width="8" height="4" />
+            <rect x="6" y="8" width="8" height="4" />
+            <rect x="12" y="14" width="8" height="4" />
+          </svg>
           Stepwell
         </Link>
         <div className="flex items-center gap-4">
