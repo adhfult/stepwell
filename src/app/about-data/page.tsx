@@ -52,6 +52,27 @@ const SOURCES = [
     url: "https://studentaid.gov/understand-aid/types/grants",
   },
   {
+    id: "cos_youth_programs",
+    name: "CareerOneStop: youth programs",
+    publisher: "U.S. Department of Labor (DOLETA) and the Minnesota Department of Employment and Economic Development (DEED)",
+    uses: "Youth job programs near you, on the summer programs page.",
+    url: "https://www.careeronestop.org/",
+  },
+  {
+    id: "cos_licenses",
+    name: "CareerOneStop: licenses",
+    publisher: "DOLETA and Minnesota DEED, from each state's licensing agencies",
+    uses: "Which license a career needs in your state, and the agency that gives it.",
+    url: "https://www.careeronestop.org/",
+  },
+  {
+    id: "cos_certifications",
+    name: "CareerOneStop: certifications",
+    publisher: "DOLETA and Minnesota DEED",
+    uses: "Core certifications for each career.",
+    url: "https://www.careeronestop.org/",
+  },
+  {
     id: "usajobs",
     name: "USAJOBS",
     publisher: "U.S. Office of Personnel Management",

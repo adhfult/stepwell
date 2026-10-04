@@ -8,7 +8,8 @@ import { getCurrentUser } from "@/lib/auth/dal";
 import { getMySavedIds } from "@/lib/plan/data";
 import { getMyProfile } from "@/lib/profile/data";
 import { STATES, stateName } from "@/lib/profile/options";
-import { listPrograms, type StudentProgram } from "@/lib/programs/data";
+import { CareerOneStopSource } from "@/components/careeronestop-source";
+import { listPrograms, listYouthPrograms, type StudentProgram } from "@/lib/programs/data";
 import { PROGRAM_KINDS, payLine } from "@/lib/programs/labels";
 import { checkedText, deadlineText, domainOf } from "@/lib/scholarships/labels";
 
@@ -39,7 +40,7 @@ export default async function ProgramsPage({ searchParams }: PageProps<"/program
   const state = params.state === "all" ? undefined : (params.state ?? profile?.state ?? undefined);
   const stage = params.stage === "any" ? undefined : (params.stage ?? profileStage ?? undefined);
 
-  const programs = await listPrograms({ state, stage });
+  const [programs, youth] = await Promise.all([listPrograms({ state, stage }), state ? listYouthPrograms(state) : []]);
   const shown = params.more ? programs : programs.slice(0, FIRST);
   const moreHref = `/programs?${new URLSearchParams({ state: state ?? "all", stage: stage ?? "any", more: "1" })}`;
 
@@ -79,6 +80,8 @@ export default async function ProgramsPage({ searchParams }: PageProps<"/program
           <p className="mt-3">Try another state or school stage.</p>
         </section>
       )}
+
+      <YouthPrograms state={state} programs={youth} />
 
       <p className="mt-8 max-w-2xl text-sm text-muted">
         Source: official federal, state and public university program pages, listed by Stepwell (each listing says when
@@ -150,5 +153,48 @@ function Listing({ p, saved }: { p: StudentProgram; saved: boolean | null }) {
         <p className="mt-2 text-sm text-muted">{checkedText(p.checked_at)}</p>
       </details>
     </li>
+  );
+}
+
+/**
+ * Youth job programs (CareerOneStop youth service providers): free help for
+ * ages 14 to 24 finding work and training. Only for a chosen state; the
+ * nationwide list has 2,500.
+ */
+function YouthPrograms({ state, programs }: { state?: string; programs: Awaited<ReturnType<typeof listYouthPrograms>> }) {
+  const row = (p: (typeof programs)[number]) => (
+    <li key={p.id} className="py-3">
+      <p className="font-bold">{p.website ? <a href={p.website}>{p.name}</a> : p.name}</p>
+      {p.city && <p className="text-sm text-muted">{p.city}</p>}
+    </li>
+  );
+  return (
+    <section aria-labelledby="youth-heading" className="mt-12 max-w-2xl">
+      <h2 id="youth-heading" className="text-lg font-bold">
+        Youth job programs{state ? ` in ${stateName(state)}` : ""}
+      </h2>
+      <p className="mt-3">
+        Free local programs, paid for by the U.S. Department of Labor, that help people about 14 to 24 find jobs,
+        internships and training. Each one sets its own rules, so check its site.
+      </p>
+      {!state ? (
+        <p className="mt-3">Choose a state above to see programs near you.</p>
+      ) : programs.length === 0 ? (
+        <p className="mt-3">None are listed for {stateName(state)}.</p>
+      ) : (
+        <>
+          <ul className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">{programs.slice(0, FIRST).map(row)}</ul>
+          {programs.length > FIRST && (
+            <details className="mt-2">
+              <summary className="inline-flex min-h-11 cursor-pointer items-center text-primary underline">
+                Show all {programs.length} programs
+              </summary>
+              <ul className="divide-y divide-border-subtle border-b border-border-subtle">{programs.slice(FIRST).map(row)}</ul>
+            </details>
+          )}
+        </>
+      )}
+      <CareerOneStopSource />
+    </section>
   );
 }

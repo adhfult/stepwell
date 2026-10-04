@@ -1,0 +1,113 @@
+{
+ "LicenseList": [
+  {
+   "ID": "20-0091291141",
+   "Title": "Registered Nurse (RN)",
+   "Description": "Registered nurses assess patient health problems and needs, develop and implement nursing care plans, and maintain medical records. Administer nursing care to ill, injured, convalescent, or disabled patients. May advise patients on health maintenance and disease prevention or provide case management. Licensing or registration required. Includes Clinical Nurse Specialists.",
+   "State": "Kansas",
+   "ActiveStatusDesc": "Active",
+   "ContinuingEDUIndDesc": "Continuing education required to maintain license",
+   "CriminalIndDesc": "Background check required",
+   "EducationIndDesc": "Degree required",
+   "LicExamIndDesc": "Third-party exam required",
+   "ExperienceIndDesc": "Work experience required",
+   "LicTypeIndDesc": "Stand-alone license",
+   "VeteransIndDesc": "N/A - Not displayed",
+   "LastUpdated": "09/05/2024",
+   "LicenseAgency": {
+    "Name": "Licensure~Kansas State Board of Nursing",
+    "Address": null,
+    "City": "Topeka",
+    "State": "KS",
+    "Zip": "66612-1230",
+    "Phone": null,
+    "Email": null,
+    "Url": "http://www.ksbn.org"
+   }
+  },
+  {
+   "ID": "11-23",
+   "Title": "NURSE, REGISTERED",
+   "Description": "Contact licensing agency for more information.",
+   "State": "District Of Columbia",
+   "ActiveStatusDesc": "Active",
+   "ContinuingEDUIndDesc": "Continuing education required to maintain license",
+   "EducationIndDesc": "Degree required",
+   "LicExamIndDesc": "Third-party exam required",
+   "ExperienceIndDesc": "No experience required",
+   "LicTypeIndDesc": "Stand-alone license",
+   "VeteransIndDesc": "N/A - Not displayed",
+   "LastUpdated": "06/23/2016",
+   "LicenseAgency": {
+    "Name": "Department of Health~Health Regulation Administration",
+    "Address": null,
+    "City": "Washington",
+    "State": "DC",
+    "Zip": "20020",
+    "Phone": null,
+    "Email": null,
+    "Url": "https://dchealth.dc.gov/service/professional-license-applications"
+   }
+  },
+  {
+   "ID": "32-14301",
+   "Title": "Registered Nurse (RN)",
+   "Description": "Applicants for licensure by examination must:\r\n1)  Have graduated from an approved school of nursing with a diploma or nursing degree.\r\n2)  Have passed the National Council Licensure Examination (NCLEX).\r\n3)  Submit fingerprint cards (fingerprint reports must be cleared by the Board to obtain licensure).\r\n\r\nApplicants for licensure by endorsement must:\r\n1)  Have graduated from an approved school of nursing with a diploma or nursing degree.\r\n2)  Have passed the NCLEX or State Board Test Pool Examination (SBTPE).\r\n3)  Have been licensed or registered as a RN under the laws of another jurisdiction.\r\n4)  Submit fingerprint cards (fingerprint reports must be cleared by the Board to obtain licensure).\r\n\r\nFees may be subject to change. Fees are:  application by examination--$100; application by endorsement--$105; fingerprinting - $50 (may vary);  biennial renewal - $100.",
+   "State": "Nevada",
+   "ActiveStatusDesc": "Active",
+   "ContinuingEDUIndDesc": "Continuing education required to maintain license",
+   "CriminalIndDesc": "No criminal record prohibitions",
+   "EducationIndDesc": "Degree required",
+   "LicExamIndDesc": "Third-party exam required",
+   "ExperienceIndDesc": "No experience required",
+   "LicTypeIndDesc": "Stand-alone license",
+   "VeteransIndDesc": "N/A - Not displayed",
+   "LastUpdated": "01/14/2016",
+   "LicenseAgency": {
+    "Name": "Nevada State Board of Nursing~Licensure, Certification and Education",
+    "Address": null,
+    "City": "Las Vegas",
+    "State": null,
+    "Zip": "89119-7533",
+    "Phone": null,
+    "Email": null,
+    "Url": "http://www.nevadanursingboard.org"
+   }
+  },
+  {
+   "ID": "55-162",
+   "Title": "REGISTERED NURSE",
+   "Description": "A registered nurse is a person who practices professional nursing. \n\nProfessional nursing means the performance for compensation of any act in the observation or care of the ill, injured or infirm, or for the maintenance of health or prevention of illness of others, which act requires substantial nursing skill, knowledge or training, or application of nursing principles based on biological, physical and social sciences, such as the observation and recording of symptoms and reactions, the execution of procedures and techniques in the treatment of the sick under the general or special supervision or direction of a physician, podiatrist, or dentist, or under an order of a person who is licensed to practice medicine, podiatry, or dentistry in another state if that person prepared the order after examining the patient in that other state and directs that the order be carried out in this state, and the execution of general nursing procedures and techniques.",
+   "State": "Wisconsin",
+   "ActiveStatusDesc": "Active",
+   "ContinuingEDUIndDesc": "Continuing education required to maintain license",
+   "CriminalIndDesc": "No criminal record prohibitions",
+   "EducationIndDesc": "Degree required",
+   "LicExamIndDesc": "Third-party exam required",
+   "ExperienceIndDesc": "No experience required",
+   "LicTypeIndDesc": "Stand-alone license",
+   "VeteransIndDesc": "N/A - Not displayed",
+   "LastUpdated": "12/02/2020",
+   "LicenseAgency": {
+    "Name": "WI Department of Safety and Professional Services~Division of Professional Credential Processing",
+    "Address": null,
+    "City": "Madison",
+    "State": "WI",
+    "Zip": "53708-8935",
+    "Phone": null,
+    "Email": null,
+    "Url": "https://dsps.wi.gov/Pages/Professions/Default.aspx"
+   }
+  }
+ ],
+ "LicenseDetail": null,
+ "RecordCount": 143,
+ "DidYouMean": "",
+ "AutoCorrection": "",
+ "QueriedOn": {
+  "Code": "29-1141.00",
+  "Title": "Registered Nurses",
+  "Type": "ONETDataLevel",
+  "IsKeywordSearch": false
+ }
+}

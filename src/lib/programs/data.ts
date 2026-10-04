@@ -20,3 +20,16 @@ export async function listPrograms(where: { state?: string; stage?: string }) {
 }
 
 export type StudentProgram = Awaited<ReturnType<typeof listPrograms>>[number];
+
+/** Youth job programs (CareerOneStop youth service providers) in one state, by city. */
+export async function listYouthPrograms(state: string) {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("youth_programs")
+    .select("id, name, city, website")
+    .eq("state", state)
+    .order("city")
+    .order("name");
+  if (error) throw new Error(`Youth programs failed (${error.code})`);
+  return data;
+}

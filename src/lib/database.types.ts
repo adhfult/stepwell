@@ -36,6 +36,56 @@ export type Database = {
                   Relationships: [
                     
                   ]
+                },"career_certifications": {
+                  Row: {
+                    "cert_id": string,"name": string,"onet_code": string,"organization": string | null,"retrieved_at": string,"source_id": string,"url": string | null
+                  }
+                  Insert: {
+                    "cert_id": string,"name": string,"onet_code": string,"organization"?: string | null,"retrieved_at"?: string,"source_id"?: string,"url"?: string | null
+                  }
+                  Update: {
+                    "cert_id"?: string,"name"?: string,"onet_code"?: string,"organization"?: string | null,"retrieved_at"?: string,"source_id"?: string,"url"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "career_certifications_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    },{
+      foreignKeyName: "career_certifications_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"career_licenses": {
+                  Row: {
+                    "agency": string | null,"agency_url": string | null,"license_id": string,"onet_code": string,"retrieved_at": string,"source_id": string,"state": string,"title": string
+                  }
+                  Insert: {
+                    "agency"?: string | null,"agency_url"?: string | null,"license_id": string,"onet_code": string,"retrieved_at"?: string,"source_id"?: string,"state": string,"title": string
+                  }
+                  Update: {
+                    "agency"?: string | null,"agency_url"?: string | null,"license_id"?: string,"onet_code"?: string,"retrieved_at"?: string,"source_id"?: string,"state"?: string,"title"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "career_licenses_onet_code_fkey"
+      columns: ["onet_code"]
+isOneToOne: false
+      referencedRelation: "occupations"
+      referencedColumns: ["onet_code"]
+    },{
+      foreignKeyName: "career_licenses_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"eligibility_profiles": {
                   Row: {
                     "citizenship": string | null,"consent_version": number,"consented_at": string,"first_generation": string | null,"gpa": number | null,"intended_fields": (string)[] | null,"military_family": string | null,"plans_fafsa": string | null,"updated_at": string,"user_id": string
@@ -429,6 +479,25 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"youth_programs": {
+                  Row: {
+                    "city": string | null,"id": string,"name": string,"retrieved_at": string,"source_id": string,"state": string,"website": string | null,"zip": string | null
+                  }
+                  Insert: {
+                    "city"?: string | null,"id": string,"name": string,"retrieved_at"?: string,"source_id"?: string,"state": string,"website"?: string | null,"zip"?: string | null
+                  }
+                  Update: {
+                    "city"?: string | null,"id"?: string,"name"?: string,"retrieved_at"?: string,"source_id"?: string,"state"?: string,"website"?: string | null,"zip"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "youth_programs_source_id_fkey"
+      columns: ["source_id"]
+isOneToOne: false
+      referencedRelation: "sources"
+      referencedColumns: ["id"]
+    }
+                  ]
                 }
           }
           Views: {
@@ -589,4 +658,3 @@ export const Constants = {
           }
         }
 } as const
-

@@ -1,0 +1,465 @@
+{
+ "CertList": [
+  {
+   "Id": "11215-A",
+   "Name": "Certified Correctional Health Professional",
+   "Url": "https://ncchc.org/professional-certification/cchp/",
+   "Organization": "National Commission on Correctional Health Care",
+   "Type": "Core",
+   "TypeOrder": "A",
+   "Related": "Y",
+   "CertAccredAgencyList": null,
+   "OrganizationAddress": null,
+   "OrganizationUrl": "https://ncchc.org/",
+   "Acronym": "CCHP",
+   "Description": "The CCHP examination measures a candidate's knowledge, understanding and application of the content areas covered on the exam, including standards and guidelines essential to the delivery of appropriate health care, the basic legal principles for practicing in a correctional health care system, the ethical obligations of correctional health professionals and the role of health care professionals in delivering care in the correctional environment.",
+   "CertDetailList": [
+    {
+     "Name": "More than two years of education or training after high school required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "More than two years of work experience required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Oral or Written Exam Required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renewal Required?",
+     "Value": "Every 1  Year(s)"
+    },
+    {
+     "Name": "Renew through Continuing Educational Units(CEU)?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renew through Re-Examination?",
+     "Value": "No"
+    },
+    {
+     "Name": "Renew through Continuing Professional Development(CPD)?",
+     "Value": "No"
+    },
+    {
+     "Name": "Does applicant have choice of at least two options from above for renewal (CEU, CPD, or exam)?",
+     "Value": "No"
+    }
+   ],
+   "CertTestOption": [
+    "Other",
+    "Third Party Exam Center"
+   ],
+   "ExamDetail": "National Commission on Correctional Health Care certification exams are administered by &lt;a title=&quot;PSI?AMP&quot; href=&quot;http://online.goamp.com/CandidateHome/displayTCList.aspx?pExamID=21745&quot; target=&quot;_blank&quot;&gt;PSI/AMP&lt;/a&gt;"
+  },
+  {
+   "Id": "13420-A",
+   "Name": "Prehospital Trauma Life Support",
+   "Url": "http://naemt.org/docs/default-source/education-documents/education-catalog-2022-09-08-2021-final.pdf",
+   "Organization": "National Association Of Emergency Medical Technicians",
+   "Type": "Core",
+   "TypeOrder": "A",
+   "Related": "Y",
+   "CertAccredAgencyList": [
+    {
+     "Name": "In-Demand",
+     "Order": "1"
+    }
+   ],
+   "OrganizationAddress": null,
+   "OrganizationUrl": "https://naemt.org/",
+   "Acronym": "PHTLS",
+   "Description": "Prehospital Trauma Life Support (PHTLS), now in its 9th\r\nedition, is recognized around the world as the leading\r\ncontinuing education program for prehospital emergency\r\ntrauma care. The mission of PHTLS is to promote excellence\r\nin trauma patient management by all providers involved\r\nin the delivery of prehospital care. PHTLS is developed\r\nby NAEMT in cooperation with the American College of\r\nSurgeons Committee on Trauma, which provides medical\r\ndirection and content oversight.\r\nPHTLS courses improve the quality of trauma care and\r\ndecrease mortality. The program is based on a philosophy\r\nstressing the treatment of the multi-system trauma patient as\r\na unique entity with specific needs. PHTLS promotes critical\r\nthinking as the foundation for providing quality care. The\r\ncourse utilizes the internationally recognized PHTLS textbook.",
+   "CertDetailList": [
+    {
+     "Name": "More than two years of education or training after high school required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "More than two years of work experience required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Oral or Written Exam Required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renewal Required?",
+     "Value": "Every 4  Year(s)"
+    },
+    {
+     "Name": "Renew through Continuing Educational Units(CEU)?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renew through Re-Examination?",
+     "Value": "Yes"
+    }
+   ],
+   "CertTestOption": [],
+   "ExamDetail": null
+  },
+  {
+   "Id": "11764-A",
+   "Name": "Assistant at Surgery - Certified",
+   "Url": "https://nascertification.com/as-c/",
+   "Organization": "National Assistant at Surgery Certification",
+   "Type": "Core",
+   "TypeOrder": "A",
+   "Related": "Y",
+   "CertAccredAgencyList": null,
+   "OrganizationAddress": null,
+   "OrganizationUrl": "https://nascertification.com",
+   "Acronym": "AS-C",
+   "Description": "The AS-C (Assistant at Surgery - Certified) program is for surgical first assistants who are interested in improving and validating their knowledge and skills and providing the highest quality care to patients. NASC does not currently administer the AS-C exam to new applicants. Current AS-C holders may still recertify via a point system or by exam.\r\n\r\nCandidates use the AS-C credential to gain credibility and recognition from colleagues and patients, achieve their personal and professional goals, and enhance their career development. AS-C certification provides evidence to employers that the certified individual has met academic and national standards for the knowledge required of first assistants at surgery.",
+   "CertDetailList": [
+    {
+     "Name": "More than two years of education or training after high school required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Oral or Written Exam Required?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renewal Required?",
+     "Value": "Every 3  Year(s)"
+    },
+    {
+     "Name": "Renew through Continuing Educational Units(CEU)?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Renew through Re-Examination?",
+     "Value": "No"
+    },
+    {
+     "Name": "Renew through Continuing Professional Development(CPD)?",
+     "Value": "Yes"
+    },
+    {
+     "Name": "Does applicant have choice of at least two options from above for renewal (CEU, CPD, or exam)?",
+     "Value": "Yes"
+    }
+   ],
+   "CertTestOption": [],
+   "ExamDetail": null
+  }
+ ],
+ "CertAccredAgencyLegend": [
+  {
+   "Acronym": "In-Demand",
+   "Description": "In-demand certification."
+  },
+  {
+   "Acronym": "NCCA",
+   "Description": "This certification is accredited by NCCA."
+  },
+  {
+   "Acronym": "ANAB",
+   "Description": "This certification is accredited by ANAB."
+  },
+  {
+   "Acronym": "MILITARY",
+   "Description": "This certification is related to military occupational specialties."
+  },
+  {
+   "Acronym": "JOB CORPS",
+   "Description": "This certification is related to Job Corps training programs."
+  },
+  {
+   "Acronym": "IND",
+   "Description": "This certification is third-party industry-endorsed."
+  },
+  {
+   "Acronym": "ICAC",
+   "Description": "International Certification Accreditation Council"
+  }
+ ],
+ "RecordCount": 10,
+ "DidYouMean": null,
+ "AutoCorrection": null,
+ "IsDirectMatch": "D",
+ "OccupationCountList": {
+  "UndoList": [],
+  "FilterList": [
+   {
+    "Item": "Registered Nurses (10)",
+    "Count": 10,
+    "Value": "Registered Nurses"
+   },
+   {
+    "Item": "Licensed Practical and Licensed Vocational Nurses (2)",
+    "Count": 2,
+    "Value": "Licensed Practical and Licensed Vocational Nurses"
+   },
+   {
+    "Item": "Nurse Practitioners (2)",
+    "Count": 2,
+    "Value": "Nurse Practitioners"
+   },
+   {
+    "Item": "Acute Care Nurses (1)",
+    "Count": 1,
+    "Value": "Acute Care Nurses"
+   },
+   {
+    "Item": "Cardiovascular Technologists and Technicians (1)",
+    "Count": 1,
+    "Value": "Cardiovascular Technologists and Technicians"
+   },
+   {
+    "Item": "Critical Care Nurses (1)",
+    "Count": 1,
+    "Value": "Critical Care Nurses"
+   },
+   {
+    "Item": "Epidemiologists (1)",
+    "Count": 1,
+    "Value": "Epidemiologists"
+   },
+   {
+    "Item": "Family Medicine Physicians (1)",
+    "Count": 1,
+    "Value": "Family Medicine Physicians"
+   },
+   {
+    "Item": "General Internal Medicine Physicians (1)",
+    "Count": 1,
+    "Value": "General Internal Medicine Physicians"
+   },
+   {
+    "Item": "Healthcare Support Workers, All Other (1)",
+    "Count": 1,
+    "Value": "Healthcare Support Workers~D~ All Other"
+   },
+   {
+    "Item": "Hospitalists (1)",
+    "Count": 1,
+    "Value": "Hospitalists"
+   },
+   {
+    "Item": "Nurse Midwives (1)",
+    "Count": 1,
+    "Value": "Nurse Midwives"
+   },
+   {
+    "Item": "Paramedics (1)",
+    "Count": 1,
+    "Value": "Paramedics"
+   },
+   {
+    "Item": "Phlebotomists (1)",
+    "Count": 1,
+    "Value": "Phlebotomists"
+   },
+   {
+    "Item": "Physician Assistants (1)",
+    "Count": 1,
+    "Value": "Physician Assistants"
+   },
+   {
+    "Item": "Radiologic Technologists and Technicians (1)",
+    "Count": 1,
+    "Value": "Radiologic Technologists and Technicians"
+   },
+   {
+    "Item": "Respiratory Therapists (1)",
+    "Count": 1,
+    "Value": "Respiratory Therapists"
+   }
+  ]
+ },
+ "IndustryCountList": {
+  "UndoList": [],
+  "FilterList": [
+   {
+    "Item": "General Medical and Surgical Hospitals (5)",
+    "Count": 5,
+    "Value": "General Medical and Surgical Hospitals"
+   },
+   {
+    "Item": "Hospitals (4)",
+    "Count": 4,
+    "Value": "Hospitals"
+   },
+   {
+    "Item": "Ambulatory Health Care Services (3)",
+    "Count": 3,
+    "Value": "Ambulatory Health Care Services"
+   },
+   {
+    "Item": "Nursing Care Facilities (Skilled Nursing Facilities) (3)",
+    "Count": 3,
+    "Value": "Nursing Care Facilities ~G~Skilled Nursing Facilities~H~"
+   },
+   {
+    "Item": "Nursing and Residential Care Facilities (2)",
+    "Count": 2,
+    "Value": "Nursing and Residential Care Facilities"
+   },
+   {
+    "Item": "Offices of Other Health Practitioners (2)",
+    "Count": 2,
+    "Value": "Offices of Other Health Practitioners"
+   },
+   {
+    "Item": "Other Ambulatory Health Care Services (2)",
+    "Count": 2,
+    "Value": "Other Ambulatory Health Care Services"
+   },
+   {
+    "Item": "Continuing Care Retirement Communities and Assisted Living Facilities for the Elderly (1)",
+    "Count": 1,
+    "Value": "Continuing Care Retirement Communities and Assisted Living Facilities for the Elderly"
+   },
+   {
+    "Item": "Educational Services (1)",
+    "Count": 1,
+    "Value": "Educational Services"
+   },
+   {
+    "Item": "Home Health Care Services (1)",
+    "Count": 1,
+    "Value": "Home Health Care Services"
+   },
+   {
+    "Item": "Medical and Diagnostic Laboratories (1)",
+    "Count": 1,
+    "Value": "Medical and Diagnostic Laboratories"
+   },
+   {
+    "Item": "Offices of Dentists (1)",
+    "Count": 1,
+    "Value": "Offices of Dentists"
+   },
+   {
+    "Item": "Offices of Physicians (1)",
+    "Count": 1,
+    "Value": "Offices of Physicians"
+   },
+   {
+    "Item": "Other Residential Care Facilities (1)",
+    "Count": 1,
+    "Value": "Other Residential Care Facilities"
+   },
+   {
+    "Item": "Other Schools and Instruction (1)",
+    "Count": 1,
+    "Value": "Other Schools and Instruction"
+   },
+   {
+    "Item": "Outpatient Care Centers (1)",
+    "Count": 1,
+    "Value": "Outpatient Care Centers"
+   },
+   {
+    "Item": "Psychiatric and Substance Abuse Hospitals (1)",
+    "Count": 1,
+    "Value": "Psychiatric and Substance Abuse Hospitals"
+   },
+   {
+    "Item": "Residential Intellectual and Developmental Disability, Mental Health, and Substance Abuse Facilities (1)",
+    "Count": 1,
+    "Value": "Residential Intellectual and Developmental Disability~D~ Mental Health~D~ and Substance Abuse Facilities"
+   },
+   {
+    "Item": "Specialty (except Psychiatric and Substance Abuse) Hospitals (1)",
+    "Count": 1,
+    "Value": "Specialty ~G~except Psychiatric and Substance Abuse~H~ Hospitals"
+   }
+  ]
+ },
+ "TypeCountList": {
+  "UndoList": [
+   {
+    "Item": "Core",
+    "Count": 0,
+    "Value": "Core"
+   }
+  ],
+  "FilterList": []
+ },
+ "OrgCountList": {
+  "UndoList": [],
+  "FilterList": [
+   {
+    "Item": "National Assistant at Surgery Certification (3)",
+    "Count": 3,
+    "Value": "National Assistant at Surgery Certification"
+   },
+   {
+    "Item": "American Association of Critical-Care Nurses (1)",
+    "Count": 1,
+    "Value": "American Association of Critical~B~Care Nurses"
+   },
+   {
+    "Item": "American Medical Certification Association (1)",
+    "Count": 1,
+    "Value": "American Medical Certification Association"
+   },
+   {
+    "Item": "Certification Board of Infection Control and Epidemiology, Inc. (1)",
+    "Count": 1,
+    "Value": "Certification Board of Infection Control and Epidemiology~D~ Inc~A~"
+   },
+   {
+    "Item": "Lamaze International (1)",
+    "Count": 1,
+    "Value": "Lamaze International"
+   },
+   {
+    "Item": "National Association Of Emergency Medical Technicians (1)",
+    "Count": 1,
+    "Value": "National Association Of Emergency Medical Technicians"
+   },
+   {
+    "Item": "National Commission on Correctional Health Care (1)",
+    "Count": 1,
+    "Value": "National Commission on Correctional Health Care"
+   },
+   {
+    "Item": "Vascular Access Certification Corporation (1)",
+    "Count": 1,
+    "Value": "Vascular Access Certification Corporation"
+   }
+  ]
+ },
+ "RelatedCountList": {
+  "UndoList": [],
+  "FilterList": [
+   {
+    "Item": "Closely related",
+    "Count": 10,
+    "Value": "D"
+   },
+   {
+    "Item": "All relevant",
+    "Count": 0,
+    "Value": "I"
+   }
+  ]
+ },
+ "CertDetail": null,
+ "CertAccredAgencyCountList": {
+  "UndoList": [],
+  "FilterList": [
+   {
+    "Item": "In-Demand (3)",
+    "Count": 3,
+    "Value": "In~B~Demand"
+   },
+   {
+    "Item": "MILITARY (2)",
+    "Count": 2,
+    "Value": "MILITARY"
+   },
+   {
+    "Item": "NCCA (1)",
+    "Count": 1,
+    "Value": "NCCA"
+   }
+  ]
+ }
+}

@@ -145,3 +145,15 @@ export const getApCourses = cache(async (code: string) => {
   if (error) throw new Error(`AP courses failed (${error.code})`);
   return data;
 });
+
+/** Every state's licenses for a career, and its core certifications (CareerOneStop). */
+export const getCredentials = cache(async (code: string) => {
+  const supabase = await createClient();
+  const [licenses, certifications] = await Promise.all([
+    supabase.from("career_licenses").select("license_id, title, state, agency, agency_url").eq("onet_code", code).order("state"),
+    supabase.from("career_certifications").select("cert_id, name, organization, url").eq("onet_code", code).order("name"),
+  ]);
+  if (licenses.error) throw new Error(`Licenses failed (${licenses.error.code})`);
+  if (certifications.error) throw new Error(`Certifications failed (${certifications.error.code})`);
+  return { licenses: licenses.data, certifications: certifications.data };
+});

@@ -50,7 +50,7 @@ export function isStudentJob(title: string, hiringPaths: string[], offeringTypes
   return hiringPaths.length <= 3 || STUDENT_JOB.test(title) || offeringTypes.some((o) => /intern/i.test(o));
 }
 
-const STATE_CODES = new Map<string, string>(STATES.map((s) => [s.label.toLowerCase(), s.value]));
+export const STATE_CODES = new Map<string, string>(STATES.map((s) => [s.label.toLowerCase(), s.value]));
 
 /** Plain text: no tags, control characters or long dashes, spaces collapsed, cut at a word. */
 export function cleanText(text: string | null | undefined, max: number): string | null {

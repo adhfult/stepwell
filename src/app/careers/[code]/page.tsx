@@ -10,6 +10,8 @@ import { medianPay, onetCodeSchema, outlookText, payRange, preparation, typicalE
 import { OnetSource, OutlookSource } from "../source-line";
 import { SaveButton } from "@/app/plan/save-button";
 import { getMySavedIds } from "@/lib/plan/data";
+import { getMyProfile } from "@/lib/profile/data";
+import { Credentials } from "./credentials";
 import { SaveCareerForm } from "./save-form";
 
 async function careerFor(params: PageProps<"/careers/[code]">["params"]) {
@@ -26,13 +28,14 @@ export async function generateMetadata({ params }: PageProps<"/careers/[code]">)
 
 export default async function CareerPage({ params }: PageProps<"/careers/[code]">) {
   const career = await careerFor(params);
-  const [user, saved, programs, apCourses, scholarshipFields, savedIds] = await Promise.all([
+  const [user, saved, programs, apCourses, scholarshipFields, savedIds, profile] = await Promise.all([
     getCurrentUser(),
     isCareerSaved(career.onet_code),
     getCareerPrograms(career.onet_code),
     getApCourses(career.onet_code),
     getScholarshipFieldsForCareer(career.onet_code),
     getMySavedIds(),
+    getMyProfile(),
   ]);
   const education = typicalEducation(career.education_level, career.education_share);
   const prep = preparation(career.job_zone);
@@ -152,6 +155,8 @@ export default async function CareerPage({ params }: PageProps<"/careers/[code]"
           </p>
         </section>
       )}
+
+      <Credentials code={career.onet_code} state={profile?.state ?? null} />
 
       {career.tasks.length > 0 && (
         <section aria-labelledby="tasks-heading" className="mt-12">

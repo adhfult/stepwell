@@ -91,9 +91,14 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   and no Scholarship Finder, and `/v1/scholarshipfinder/...` and
   `/v1/scholarship/...` return 404. The Scholarship Finder seems to be on
   the website only; ask CareerOneStop whether its data is available.
-  Endpoints that could help later: YouthProgramFinder (youth programs),
-  TrainingV (training programs), CertificationFinder, LicenseFinder,
-  ApprenticeshipFinder (offices).
+  Used (built 2026-10-04, spec `docs/specs/careeronestop.md`):
+  `cos_youth_programs` (youth service providers, monthly, 1 call),
+  `cos_licenses` and `cos_certifications` (each career, every 3 months,
+  0.5 s apart). Training returns 401 for this token (ask CareerOneStop).
+  Terms: their data license asks for attribution to DOLETA and Minnesota
+  DEED on every page showing the data (`CareerOneStopSource`). No
+  robots.txt on api.careeronestop.org. Contacts and staff emails in the
+  youth list are never stored.
 - **Official list** (source `official_list`, built 2026-09-29): Stepwell's
   curated list of official state and federal programs in
   `data/scholarships/<state>.json` and `federal.json`, researched from

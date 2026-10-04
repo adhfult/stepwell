@@ -10,6 +10,7 @@ import { breakerReason } from "./breaker.ts";
 import { type JobEnv, parseJobEnv } from "./env.ts";
 import { createPoliteFetcher, type Fetcher, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
 import { databaseClient, finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
+import { readCosCertifications, readCosLicenses, readCosYouthPrograms } from "./sources/careeronestop.ts";
 import { readOnet } from "./sources/onet.ts";
 import { readOnetCip } from "./sources/onet-cip.ts";
 import { readOnetIp } from "./sources/onet-ip.ts";
@@ -20,13 +21,24 @@ import { readScorecard, SCORECARD_DELAY_MS } from "./sources/scorecard.ts";
 import { readUsajobs } from "./sources/usajobs.ts";
 import type { AdapterResult } from "./sources/types.ts";
 
+const COS_DELAY_MS = 500;
+
+/** Career codes for adapters that look up each career (ingest.career_codes()). */
+async function careerCodes(db: pg.Client) {
+  const { rows } = await db.query<{ code: string }>("select c as code from ingest.career_codes() c");
+  return rows.map((r) => r.code);
+}
+
 type Adapter = {
   kind: RecordKind;
   read: (
     fetcher: Fetcher,
     previous: { etag: string | null; release: string | null },
     env: JobEnv,
+    careers: string[],
   ) => Promise<AdapterResult<unknown>>;
+  /** Looks something up for every career, so it gets the career codes from the database. */
+  needsCareers?: true;
   /** Wait between requests to one host; official APIs follow their own documented limits. */
   minDelayMs?: number;
   /** Only for official keyed APIs whose host disallows crawlers (decision 0007). */
@@ -45,7 +57,12 @@ const ADAPTERS: Record<string, Adapter> = {
   scorecard: { kind: "institution", read: readScorecard, minDelayMs: SCORECARD_DELAY_MS },
   // data.usajobs.gov's robots.txt disallows all crawlers (checked 2026-09-29);
   // its Search API is the documented way in, with a key (docs/DATA_SOURCES.md).
-  usajobs: { kind: "opportunity", read: readUsajobs, skipRobots: true },
+  usajobs: { kind: "opportunity", read: (fetcher, previous, env) => readUsajobs(fetcher, previous, env), skipRobots: true },
+  // CareerOneStop documents no rate limit; two requests a second is polite and
+  // keeps a career-by-career run near 10 minutes.
+  cos_youth_programs: { kind: "youth_program", read: readCosYouthPrograms, minDelayMs: COS_DELAY_MS },
+  cos_licenses: { kind: "career_license", read: readCosLicenses, minDelayMs: COS_DELAY_MS, needsCareers: true },
+  cos_certifications: { kind: "career_certification", read: readCosCertifications, minDelayMs: COS_DELAY_MS, needsCareers: true },
 };
 
 function fetcherFor(adapter: Adapter, env: JobEnv) {
@@ -79,7 +96,8 @@ async function importSource(db: pg.Client, env: JobEnv, source: string, force: b
     const previous = force
       ? { etag: null, release: null }
       : { etag: run.lastEtag, release: run.lastRelease };
-    const result = await adapter.read(fetcherFor(adapter, env), previous, env);
+    const careers = adapter.needsCareers ? await careerCodes(db) : [];
+    const result = await adapter.read(fetcherFor(adapter, env), previous, env, careers);
     if (result.status === "unchanged") {
       await finishRun(db, run.runId, { status: "unchanged", release: result.release, etag: result.etag });
       report(`${source}: unchanged (release ${result.release})`);
@@ -115,7 +133,14 @@ async function importSource(db: pg.Client, env: JobEnv, source: string, force: b
 }
 
 async function dryRun(env: JobEnv, source: string, adapter: Adapter) {
-  const result = await adapter.read(fetcherFor(adapter, env), { etag: null, release: null }, env);
+  let careers: string[] = [];
+  if (adapter.needsCareers) {
+    // Read-only: a dry run only lists the careers; a few are enough to check the parser.
+    const db = databaseClient(env.IMPORT_DATABASE_URL);
+    await db.connect();
+    careers = (await careerCodes(db).finally(() => db.end())).slice(0, 5);
+  }
+  const result = await adapter.read(fetcherFor(adapter, env), { etag: null, release: null }, env, careers);
   if (result.status === "unchanged") throw new Error("A dry run never sends an ETag");
   const valid = result.records.filter((r) => r.status === "valid");
   const rejected = result.records.filter((r) => r.status === "rejected");
