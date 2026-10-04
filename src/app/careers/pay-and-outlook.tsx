@@ -16,7 +16,7 @@ export function PayAndOutlook({ career, heading = "h2" }: { career: Career; head
   const widerGroup = outlook.wage_soc_code && outlook.wage_soc_code !== career.soc_code;
 
   return (
-    <section aria-labelledby="pay-heading" className="mt-12">
+    <section aria-labelledby="pay-heading" className={heading === "h3" ? "mt-4" : "mt-12"}>
       <Heading id="pay-heading" className="text-lg font-bold">
         Pay and outlook
       </Heading>

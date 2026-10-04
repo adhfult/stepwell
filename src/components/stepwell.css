@@ -5,8 +5,8 @@
  *
  * Geometry: the scene is a flat plane (x across, y toward the viewer)
  * rotated into view. Slab n sits n slabs further forward and n thicknesses
- * lower; each slab's top is a radio's <label>, its riser and side are the
- * label's ::before and ::after (so they're clickable too).
+ * lower; each slab's top is a link to its step, its riser and side are the
+ * link's ::before and ::after (so they're clickable too).
  */
 
 /* Typed so CSS can animate them: the entrance animates the view angles, and
@@ -85,8 +85,8 @@
   width: var(--w);
   height: var(--d);
   display: block;
-  cursor: pointer;
   pointer-events: auto;
+  text-decoration: none;
   background: var(--surface);
   transform-style: preserve-3d;
   transform: translateZ(calc(var(--z) + var(--up)));
@@ -172,21 +172,25 @@
   font-weight: 400;
 }
 
-/* The chosen slab rises and becomes "you are here". */
-.stepwell-slab:has(input:checked) {
+/* The first slab rises and says "you are here". */
+.stepwell-slab.is-here {
   --up: var(--lift);
 }
-.stepwell-slab:has(input:checked) .stepwell-stone {
+.is-here .stepwell-stone {
   background: var(--highlight);
   border-color: var(--foreground);
 }
-.stepwell-slab:has(input:checked) .stepwell-sign {
+.is-here .stepwell-sign {
   border: 2px solid var(--foreground);
 }
-.stepwell-slab:has(input:checked) .stepwell-here {
+.is-here .stepwell-here {
   display: block;
 }
-.stepwell-slab:has(input:focus-visible) .stepwell-sign {
+/* Focus shows on the sign, which always faces the viewer. */
+.stepwell-slab:focus-visible {
+  outline: none;
+}
+.stepwell-slab:focus-visible .stepwell-sign {
   outline: 3px solid var(--foreground);
   outline-offset: 2px;
 }
@@ -206,22 +210,8 @@
 .band .stepwell-water {
   background: var(--foreground);
 }
-.band .stepwell-slab:has(input:focus-visible) .stepwell-sign {
+.band .stepwell-slab:focus-visible .stepwell-sign {
   outline-color: var(--surface);
-}
-
-/* Only the chosen stop's panel shows. Browsers without :has() show all four
-   in order, so the content is still all there. */
-@supports selector(:has(*)) {
-  .stepwell [data-panel] {
-    display: none;
-  }
-  .stepwell:has(input[value="0"]:checked) [data-panel="0"],
-  .stepwell:has(input[value="1"]:checked) [data-panel="1"],
-  .stepwell:has(input[value="2"]:checked) [data-panel="2"],
-  .stepwell:has(input[value="3"]:checked) [data-panel="3"] {
-    display: grid; /* panels are grids: text, then the screenshot */
-  }
 }
 
 @media (min-width: 1024px) {

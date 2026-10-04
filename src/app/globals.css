@@ -193,3 +193,23 @@
 .band .bg-border-subtle {
   background: color-mix(in srgb, var(--surface) 25%, transparent);
 }
+
+/* A stone panel (the home page's live examples): surface fill on either
+   background, with the band's remap undone inside it. */
+.stone-panel {
+  background: var(--surface);
+  color: var(--foreground);
+  border: 1px solid var(--border-subtle);
+}
+.band .stone-panel a {
+  color: var(--primary);
+}
+.band .stone-panel .text-muted {
+  color: var(--muted);
+}
+.band .stone-panel :focus-visible {
+  outline-color: var(--foreground);
+}
+.band .stone-panel .bg-border-subtle {
+  background: var(--border-subtle);
+}
