@@ -24,6 +24,7 @@
   --color-*: initial;
   --text-*: initial;
   --radius-*: initial;
+  --shadow-*: initial;
 
   /* 4px steps; use only 1, 2, 3, 4, 6, 8, 12, 16, 24 (see DESIGN.md). */
   --spacing: 0.25rem;
@@ -40,8 +41,13 @@
   --text-2xl--line-height: 1.2;
   --text-3xl: 2.625rem;
   --text-3xl--line-height: 1.2;
+  --text-4xl: 3.3125rem;
+  --text-4xl--line-height: 1.1;
 
   --radius-control: 2px;
+
+  /* Motion (DESIGN.md "Icons and motion"): quick start, soft landing. */
+  --ease-stone: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* "inline" makes utilities use these values where they're applied, which the
@@ -57,7 +63,12 @@
   --color-border-strong: var(--border-strong);
   --color-border-subtle: var(--border-subtle);
 
-  --font-heading: var(--font-bitter, Georgia), serif;
+  /* The stone edge (DESIGN.md "Spacing and shape"): hard, no blur, buttons only. */
+  --shadow-stone-edge: 0 4px 0 var(--foreground);
+  --shadow-stone-edge-quiet: 0 4px 0 var(--border-strong);
+  --shadow-stone-edge-lifted: 0 6px 0 var(--foreground);
+
+  --font-heading: var(--font-bricolage, ui-sans-serif), system-ui, sans-serif;
   --font-body: var(--font-atkinson, ui-sans-serif), system-ui, sans-serif;
 }
 
@@ -75,7 +86,11 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-bitter, Georgia), serif;
+    font-family: var(--font-heading);
+  }
+
+  h1 {
+    letter-spacing: -0.02em;
   }
 
   :focus-visible {
@@ -84,7 +99,7 @@
   }
 
   /* Links are always underlined: color alone doesn't mark a link. Hover
-     changes instantly (no transitions, per AVOID.md). */
+     changes instantly (links never move; DESIGN.md motion budget). */
   a {
     color: var(--primary);
     text-decoration-line: underline;
@@ -100,5 +115,19 @@
   /* Native checkboxes and radio buttons in the primary color. */
   :root {
     accent-color: var(--primary);
+  }
+
+  /* Reduce motion: everything snaps to its final state. Resting styles are
+     always the final state, so nothing is left half-drawn. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after,
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }

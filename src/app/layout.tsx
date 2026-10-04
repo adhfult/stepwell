@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible_Next, Bitter } from "next/font/google";
+import { Atkinson_Hyperlegible_Next, Bricolage_Grotesque } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 // Self-hosted by next/font: students' browsers never contact Google.
 // The CSS variables are used by globals.css (body and headings).
-const bitter = Bitter({ subsets: ["latin"], variable: "--font-bitter", display: "swap" });
+// opsz: the letters adjust their shape to the size they are shown at.
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  axes: ["opsz"],
+  variable: "--font-bricolage",
+  display: "swap",
+});
 // Next.js has no size metrics for Atkinson Hyperlegible Next yet, so the build
 // warns "Failed to find font override values". Harmless: without a
 // size-matched fallback, text may shift slightly when the font arrives.
@@ -23,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bitter.variable} ${atkinson.variable} h-full antialiased`}>
+    <html lang="en" className={`${bricolage.variable} ${atkinson.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         {/* Lets keyboard users jump past the header; visible only when focused. */}
         <a

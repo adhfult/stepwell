@@ -1,6 +1,6 @@
 # Spec: Depth, motion and the 3D stepwell
 
-- Status: draft (from the owner's brainstorming answers, 2026-10-04)
+- Status: approved by the owner ("Proceed with what you have planned", 2026-10-04)
 
 ## Goal
 Make Stepwell look more modern and interactive, with real depth and better
