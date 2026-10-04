@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Session handoff notes (local only)
 .claude/handoffs/
+
+# Local telemetry reports
+.claude/reports/

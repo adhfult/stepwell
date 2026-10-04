@@ -40,7 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to main content
         </a>
         <SiteHeader />
-        <main id="main" className="flex-1">
+        {/* min-h-svh: the footer starts below the fold, so a short loading skeleton
+            swapping for real content never pushes it (layout shift). */}
+        <main id="main" className="min-h-svh flex-1">
           {/* Page changes crossfade (DESIGN.md motion budget); header and footer stay put. */}
           <ViewTransition>{children}</ViewTransition>
         </main>
