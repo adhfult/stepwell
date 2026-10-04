@@ -45,6 +45,9 @@ Newest entries at the top. Keep each entry short.
   career rows, four meters on college rows.
 - Verified on a production build at 320/390/1280: no overflow, zero
   console/CSP errors, CLS at most 0.01. 193 tests. Screenshots re-taken.
+- Pushed. Career rows on phones now show "Median pay $X a year" on one
+  line (stacked from 640px). Still open: something below the band on
+  signed-out /plan (owner to decide); signed-in /plan needs a test account.
 
 ### 2026-10-04: Footer layout shift fixed; home screenshots re-taken
 - `<main>` is at least one screen tall (min-h-svh), so a short loading

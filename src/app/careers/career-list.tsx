@@ -43,8 +43,10 @@ export function CareerList({ careers }: { careers: CareerListItem[] }) {
             <div className="mt-2 w-48 shrink-0 sm:mt-1 sm:text-right">
               {pay ? (
                 <>
-                  <p className="text-sm text-muted">Median pay</p>
-                  <p className="font-bold">{pay}</p>
+                  <p>
+                    <span className="text-sm text-muted">Median pay</span>{" "}
+                    <span className="font-bold sm:block">{pay}</span>
+                  </p>
                   {yearly && <Meter percent={toPercent(yearly.median, CAPS.pay)} className="mt-1" />}
                 </>
               ) : (
