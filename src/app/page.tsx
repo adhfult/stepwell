@@ -234,7 +234,9 @@ async function CollegePanel() {
   const place = [ownershipName(college.ownership), [college.city, college.state].filter(Boolean).join(", ")];
   return (
     <>
-      <h3 className="font-heading text-lg font-bold">{college.college}</h3>
+      <h3 className="font-heading text-lg font-bold">
+        <Link href={`/colleges/${college.unitid}`}>{college.college}</Link>
+      </h3>
       <p className="mt-1">
         {college.program}, {college.credential_title.toLowerCase()}
       </p>

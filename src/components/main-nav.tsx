@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// DESIGN.md "Page frame": main sections inline from 1024px (six links don't
+// DESIGN.md "Page frame": main sections inline from 1024px (seven links don't
 // fit on one line below that); on phones and tablets they sit behind a text
 // button labeled "Menu" (no hamburger icon). <details> opens
 // and closes without extra code and works with the keyboard.
 const SECTIONS = [
   { href: "/careers", label: "Careers" },
+  { href: "/colleges", label: "Colleges" },
   { href: "/interests", label: "Interest quiz" },
   { href: "/scholarships", label: "Scholarships" },
   { href: "/internships", label: "Internships" },

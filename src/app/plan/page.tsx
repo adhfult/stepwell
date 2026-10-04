@@ -243,7 +243,9 @@ function YearSection({
         {colleges.map((c) => (
           <li key={c.unitid} className="py-4">
             <p className="text-sm text-muted">Saved college: applications are usually due this year</p>
-            <h3 className="font-bold">{c.live?.name ?? c.title}</h3>
+            <h3 className="font-bold">
+              {c.live ? <Link href={`/colleges/${c.unitid}`}>{c.live.name}</Link> : c.title}
+            </h3>
             {c.live ? (
               <p className="mt-1 text-sm text-muted">
                 {[c.live.city, c.live.state].filter(Boolean).join(", ")}

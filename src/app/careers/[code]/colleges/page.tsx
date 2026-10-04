@@ -255,7 +255,9 @@ function CollegeList({
           const domain = domainOf(c.website);
           return (
             <li key={c.program_id} className="py-4">
-              <h3 className="font-heading text-lg font-bold">{c.college}</h3>
+              <h3 className="font-heading text-lg font-bold">
+                <Link href={`/colleges/${c.unitid}`}>{c.college}</Link>
+              </h3>
               <p className="mt-1">
                 {sharedTitle
                   ? c.credential_title
