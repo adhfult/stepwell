@@ -117,6 +117,18 @@
     accent-color: var(--primary);
   }
 
+  /* Page changes (DESIGN.md motion budget): 200ms with the stone easing.
+     Clicks pass through to the new page while it runs. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 200ms;
+    animation-timing-function: var(--ease-stone, cubic-bezier(0.2, 0.8, 0.2, 1));
+  }
+  ::view-transition {
+    pointer-events: none;
+  }
+
   /* Reduce motion: everything snaps to its final state. Resting styles are
      always the final state, so nothing is left half-drawn. */
   @media (prefers-reduced-motion: reduce) {

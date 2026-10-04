@@ -58,8 +58,12 @@ The 3D stepwell (home page)
 Page transitions
 - [ ] Navigating between pages crossfades the content (200ms); header and
       footer stay still.
-- [ ] Opening a career from search or quiz results morphs its title into the
-      career page heading.
+- [x] ~~Opening a career from search or quiz results morphs its title into
+      the career page heading.~~ Dropped while building: the career page's
+      `loading.tsx` skeleton makes one navigation several view transitions
+      (results, then skeleton, then page), so the two titles are never in the
+      same one. Morphing into the skeleton and back looked worse than the
+      plain crossfade.
 - [ ] Browsers without View Transitions navigate normally.
 
 Career page route line

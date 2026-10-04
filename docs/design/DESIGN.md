@@ -328,9 +328,10 @@ always words.
 - No icon library. A small custom SVG set only (route stops, step markers),
   drawn in `foreground` or `primary`, always next to words.
 - **Motion budget.** Only these move, nothing else:
-  1. Page changes: the content crossfades (200ms); a career's title morphs
-     from a results list into the career page heading. Header and footer
-     stay still.
+  1. Page changes: the content crossfades (200ms). Header and footer stay
+     still. (A title morph from results into the career page was tried and
+     dropped: the career page's loading skeleton splits one navigation into
+     several transitions, so the two titles never meet.)
   2. The stepwell scene: a one-time entrance (slabs settle into place,
      600ms), the pointer tilt, and the chosen slab rising (200ms).
   3. Buttons: the 2px hover rise and the press (150ms).

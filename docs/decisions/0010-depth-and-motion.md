@@ -16,7 +16,8 @@ the owner wants Stepwell to feel more modern and interactive.
   list rows stay flat, so depth still means "you can press this".
 - **3D:** a drawn stepwell on the home page (CSS 3D transforms) and a
   terraced route line on the career page. Screenshots stay flat.
-- **Motion budget:** page crossfades and the career title morph; the
+- **Motion budget:** page crossfades (a career title morph was planned, then
+  dropped while building; see the spec); the
   stepwell's entrance, tilt and rising landing; the button rise and press;
   the career route line drawing in. Nothing else moves, and reduce motion
   switches all of it off.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransition } from "react";
 import { Atkinson_Hyperlegible_Next, Bricolage_Grotesque } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -40,7 +41,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <SiteHeader />
         <main id="main" className="flex-1">
-          {children}
+          {/* Page changes crossfade (DESIGN.md motion budget); header and footer stay put. */}
+          <ViewTransition>{children}</ViewTransition>
         </main>
         <SiteFooter />
       </body>
