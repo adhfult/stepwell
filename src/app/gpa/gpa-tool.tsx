@@ -90,6 +90,8 @@ function Editor({ saved, signedIn, needsConsent, eligibilityOptedIn, initial }: 
   const [version, setVersion] = useState(0);
   const [hasSaved, setHasSaved] = useState(Boolean(saved));
   const [status, setStatus] = useState<Status>(null);
+  // Decided once: tied to live credits, the panel would shut while the student clears that field.
+  const [startOpen] = useState(initial.start.credits > 0);
   const [pending, startTransition] = useTransition();
 
   const sat = parse(satRaw);
@@ -177,7 +179,7 @@ function Editor({ saved, signedIn, needsConsent, eligibilityOptedIn, initial }: 
           the ones the “What grade do I need?” box works out.
         </p>
 
-        <details className="mt-6 border border-border-subtle bg-surface px-4 py-1" open={start.credits > 0 || undefined}>
+        <details className="mt-6 border border-border-subtle bg-surface px-4 py-1" open={startOpen || undefined}>
           <summary className="min-h-11 cursor-pointer py-2.5 font-bold">Start from a GPA I already know (optional)</summary>
           <p className="mt-2 text-sm text-muted">
             Use your report card GPA for earlier terms instead of typing every class. Then add only this term’s classes.

@@ -16,8 +16,8 @@ export const MAX_COURSES = 80;
 export const CONSENT_VERSION = 1;
 
 const halfStep = (n: number) => Number.isInteger(n * 2);
-const weight = z.number().min(0).max(1);
-const startGpa = z.number().min(0).max(5).nullable();
+const weight = z.number().min(0, "Class bonuses go from 0 to 1").max(1, "Class bonuses go from 0 to 1");
+const startGpa = z.number().min(0, "A GPA goes from 0 to 5").max(5, "A GPA goes from 0 to 5").nullable();
 
 export const recordSchema = z.object({
   courses: z
@@ -26,14 +26,18 @@ export const recordSchema = z.object({
         name: z.string().trim().max(80, "Class names can be up to 80 characters"),
         type: z.enum(COURSE_TYPES),
         grade: z.enum(GRADES).nullable(),
-        credits: z.number().min(0.5).max(5).refine(halfStep, "Credits go in steps of 0.5"),
+        credits: z
+          .number()
+          .min(0.5, "Each class needs credits from 0.5 to 5")
+          .max(5, "Each class needs credits from 0.5 to 5")
+          .refine(halfStep, "Credits go in steps of 0.5"),
       }),
     )
     .max(MAX_COURSES, `Up to ${MAX_COURSES} classes`),
   weights: z.object({ honors: weight, ap: weight, ib: weight, dual: weight }),
-  start: z.object({ unweighted: startGpa, weighted: startGpa, credits: z.number().min(0).max(80) }),
-  sat: z.number().int().min(400).max(1600).refine((n) => n % 10 === 0, "SAT scores go in steps of 10").nullable(),
-  act: z.number().int().min(1).max(36).nullable(),
+  start: z.object({ unweighted: startGpa, weighted: startGpa, credits: z.number().min(0, "Credits so far go from 0 to 80").max(80, "Credits so far go from 0 to 80") }),
+  sat: z.number().int().min(400, "SAT totals go from 400 to 1600").max(1600, "SAT totals go from 400 to 1600").refine((n) => n % 10 === 0, "SAT scores go in steps of 10").nullable(),
+  act: z.number().int().min(1, "ACT composites go from 1 to 36").max(36, "ACT composites go from 1 to 36").nullable(),
 });
 
 /** A row from academic_records back into what the page edits (numeric columns arrive as strings or numbers). */
