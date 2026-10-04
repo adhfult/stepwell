@@ -16,7 +16,7 @@ import type { ActionState } from "./state";
 // find its title, and where to send a signed-out student back to.
 const SAVABLE = {
   scholarship: { id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/), column: "scholarship_id", back: "/scholarships" },
-  college: { id: z.coerce.number().int().positive(), column: "unitid", back: "/careers" },
+  college: { id: z.coerce.number().int().positive(), column: "unitid", back: "/colleges" },
   internship: { id: z.string().regex(/^\d{1,20}$/), column: "opportunity_id", back: "/internships" },
   ap: { id: z.string().regex(/^[a-z0-9-]{2,40}$/), column: "ap_course_code", back: "/careers" },
   program: { id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/), column: "student_program_id", back: "/programs" },
