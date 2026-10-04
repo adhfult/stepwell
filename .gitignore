@@ -43,3 +43,6 @@ next-env.d.ts
 
 # browser tool (Playwright MCP) snapshots and logs
 .playwright-mcp/
+
+# Session handoff notes (local only)
+.claude/handoffs/
