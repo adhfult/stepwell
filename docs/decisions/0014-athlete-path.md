@@ -1,7 +1,7 @@
 # 0014: College athlete path data and rules
 
 - Date: 2026-10-04
-- Status: proposed (spec `ncaa-athlete-path.md`)
+- Status: accepted (spec `ncaa-athlete-path.md`)
 
 ## Context
 Roadmap project 3 needs colleges by sport and level, and an eligibility

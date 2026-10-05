@@ -1,6 +1,6 @@
 # Spec: College athlete path
 
-- Status: draft (design approved in chat 2026-10-04; this text awaits review)
+- Status: approved 2026-10-04
 
 ## Goal
 Help a student who wants to play a sport in college see which colleges
