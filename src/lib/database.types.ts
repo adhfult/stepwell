@@ -99,6 +99,25 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"college_sports": {
+                  Row: {
+                    "men": number | null,"sport": string,"unitid": number,"women": number | null
+                  }
+                  Insert: {
+                    "men"?: number | null,"sport": string,"unitid": number,"women"?: number | null
+                  }
+                  Update: {
+                    "men"?: number | null,"sport"?: string,"unitid"?: number,"women"?: number | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "college_sports_unitid_fkey"
+      columns: ["unitid"]
+isOneToOne: false
+      referencedRelation: "institutions"
+      referencedColumns: ["unitid"]
+    }
+                  ]
                 },"eligibility_profiles": {
                   Row: {
                     "citizenship": string | null,"consent_version": number,"consented_at": string,"first_generation": string | null,"gpa": number | null,"intended_fields": (string)[] | null,"military_family": string | null,"plans_fafsa": string | null,"updated_at": string,"user_id": string
@@ -114,13 +133,13 @@ isOneToOne: false
                   ]
                 },"institutions": {
                   Row: {
-                    "act_25": number | null,"act_75": number | null,"admission_rate": number | null,"city": string | null,"graduation_rate": number | null,"locale": string | null,"name": string,"net_price": number | null,"net_price_by_income": (number)[] | null,"ownership": string | null,"retrieved_at": string,"sat_math_25": number | null,"sat_math_75": number | null,"sat_read_25": number | null,"sat_read_75": number | null,"serves": (string)[] | null,"source_id": string,"state": string | null,"students": number | null,"test_policy": string | null,"two_year": boolean | null,"unitid": number,"website": string | null
+                    "act_25": number | null,"act_75": number | null,"admission_rate": number | null,"athletics_code": number | null,"city": string | null,"graduation_rate": number | null,"locale": string | null,"name": string,"net_price": number | null,"net_price_by_income": (number)[] | null,"ownership": string | null,"retrieved_at": string,"sat_math_25": number | null,"sat_math_75": number | null,"sat_read_25": number | null,"sat_read_75": number | null,"serves": (string)[] | null,"source_id": string,"state": string | null,"students": number | null,"test_policy": string | null,"two_year": boolean | null,"unitid": number,"website": string | null
                   }
                   Insert: {
-                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name": string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at": string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid": number,"website"?: string | null
+                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"athletics_code"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name": string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at": string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid": number,"website"?: string | null
                   }
                   Update: {
-                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name"?: string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at"?: string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid"?: number,"website"?: string | null
+                    "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"athletics_code"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name"?: string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at"?: string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid"?: number,"website"?: string | null
                   }
                   Relationships: [
                     {
@@ -544,7 +563,7 @@ isOneToOne: false
             }[]
                            },
 "search_colleges":
-{ Args: { "p_admit"?: string,"p_bracket"?: number,"p_locale"?: string,"p_max_price"?: number,"p_name"?: string,"p_ownership"?: string,"p_page"?: number,"p_program"?: string,"p_serves"?: string,"p_size"?: string,"p_sort"?: string,"p_state"?: string,"p_test_optional"?: boolean,"p_two_year"?: boolean }; Returns: {
+{ Args: { "p_admit"?: string,"p_bracket"?: number,"p_level"?: string,"p_locale"?: string,"p_max_price"?: number,"p_name"?: string,"p_ownership"?: string,"p_page"?: number,"p_program"?: string,"p_serves"?: string,"p_size"?: string,"p_sort"?: string,"p_sport"?: string,"p_state"?: string,"p_team"?: string,"p_test_optional"?: boolean,"p_two_year"?: boolean }; Returns: {
               "act_25": number,"act_75": number,"admission_rate": number,"city": string,"graduation_rate": number,"name": string,"ownership": string,"price": number,"sat_math_25": number,"sat_math_75": number,"sat_read_25": number,"sat_read_75": number,"state": string,"students": number,"test_policy": string,"total": number,"unitid": number
             }[]
                            },
