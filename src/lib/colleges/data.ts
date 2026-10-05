@@ -51,7 +51,7 @@ export async function searchColleges(f: Directory) {
     p_sort: f.sort,
     p_page: f.page,
     p_sport: f.sport,
-    p_team: f.sport ? f.team : undefined,
+    p_team: f.team,
     p_level: f.level,
   });
   if (error) throw new Error(`College search failed (${error.code})`);

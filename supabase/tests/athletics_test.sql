@@ -4,7 +4,7 @@
 
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(14);
+select plan(15);
 
 grant usage on schema extensions to importer;
 
@@ -44,6 +44,7 @@ select throws_ok($$ insert into public.college_sports (unitid, sport, men) value
 select is((select count(*)::int from public.search_colleges(p_sport => 'soccer')), 2, 'sport filter');
 select is((select name from public.search_colleges(p_sport => 'soccer', p_team => 'women')), 'Coastal College',
   'team filter');
+select is((select count(*)::int from public.search_colleges(p_team => 'women')), 1, 'team filter works without a sport');
 select is((select name from public.search_colleges(p_level => 'd1')), 'Mountain University', 'level filter');
 select throws_ok($$ select * from public.search_colleges(p_level => 'd4') $$, 'P0001', null, 'unknown level refused');
 reset role;

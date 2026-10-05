@@ -223,9 +223,9 @@ begin
         when 'd1' then array[1, 2, 3] when 'd2' then array[4, 5] when 'd3' then array[6, 7]
         when 'naia' then array[9, 10] when 'juco' then array[12, 13, 14, 17, 19]
         else array[8, 15, 16, 18, 20] end::smallint[]))
-      and (p_sport is null or exists (
+      and ((p_sport is null and p_team is null) or exists (
         select from public.college_sports s
-        where s.unitid = i.unitid and s.sport = p_sport
+        where s.unitid = i.unitid and (p_sport is null or s.sport = p_sport)
           and (p_team is null or (p_team = 'men' and s.men is not null) or (p_team = 'women' and s.women is not null))))
   ),
   numbered as (
