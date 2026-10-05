@@ -38,6 +38,19 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-05: athlete path review fixes
+- EADA: a combined row ("Swimming and Diving", "Track and Field and Cross
+  Country") counts toward its first sport only, and only until a split row
+  arrives. Cross-country no longer copies track counts (746 colleges
+  before, 6 equal now); diving is listed only where reported on its own
+  (5 colleges), so the filter reads "Swimming and diving". Blank rows skip.
+- `/athletes`: NAIA check shows with GPA or scores and no classes; the
+  checker resets when the saved class list changes; timeline steps from
+  past school years land in this one; college students get a plain "for
+  high school students" message.
+- Team filter works without a sport (`data.ts` and `search_colleges`; the
+  athletics migration was edited in place since it isn't on the cloud yet).
+- An old `/gpa` tab no longer erases class tags (`keepTags`).
 ### 2026-10-04: college athlete path (spec ncaa-athlete-path.md, roadmap project 3, decision 0014)
 - Built per `docs/specs/ncaa-athlete-path.md` and decision 0014: EADA import
   (`eada`, 2,037 colleges, 18,377 teams locally), sport/team/level filters
