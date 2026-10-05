@@ -71,12 +71,13 @@ export default async function AthletesPage({ searchParams }: PageProps<"/athlete
               <p>
                 Sign in and save your classes on <Link href="/gpa">GPA and test scores</Link> to check them here.
               </p>
-            ) : !record || record.courses.length === 0 ? (
+            ) : !record || (rule.core && record.courses.length === 0) ? (
               <p>
-                Add your classes on the <Link href="/gpa">GPA page</Link> first.
+                Add your {rule.core ? "classes" : "GPA or test scores"} on the <Link href="/gpa">GPA page</Link> first.
               </p>
             ) : (
               <CoreChecker
+                key={record.courses.map((c) => c.name).join("\n")}
                 assoc={level}
                 courses={record.courses}
                 weights={record.weights}

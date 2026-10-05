@@ -70,9 +70,15 @@ describe("checkNaia", () => {
 
 describe("timelinePlanItems", () => {
   it("places steps in school years from the graduation year and skips ones already in the plan", () => {
-    const items = timelinePlanItems("ncaa1", 2029, []);
+    const items = timelinePlanItems("ncaa1", 2029, [], 2025);
     const first = TIMELINE.find((s) => s.assocs.includes("ncaa1"))!;
     expect(items[0]).toEqual({ title: first.title, kind: "task", academic_year: 2029 - 13 + first.grade, term: "full_year", due_on: null });
-    expect(timelinePlanItems("ncaa1", 2029, items.map((i) => i.title))).toEqual([]);
+    expect(timelinePlanItems("ncaa1", 2029, items.map((i) => i.title), 2025)).toEqual([]);
+  });
+
+  it("moves steps from school years already over into this one", () => {
+    // Graduating 2027, in 2026-27 (12th grade): 9th to 11th grade steps land in 2026.
+    const years = timelinePlanItems("ncaa1", 2027, [], 2026).map((i) => i.academic_year);
+    expect(new Set(years)).toEqual(new Set([2026]));
   });
 });

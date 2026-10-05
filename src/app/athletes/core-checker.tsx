@@ -88,7 +88,8 @@ export function CoreChecker({ assoc, courses, weights, start, sat, act }: Props)
     <div>
       <p>
         For each class, pick its core area (check your school’s list of NCAA-approved courses) and the grade you took it
-        in. Other core means world language, religion or philosophy.
+        in. Other core means world language, religion or philosophy. A full-year class counts as one core course and a
+        semester as half, so give semester classes 0.5 credits on the GPA page.
       </p>
       <ul className="mt-6 divide-y divide-border-subtle border-y border-border-subtle">
         {tags.map((t, i) => (

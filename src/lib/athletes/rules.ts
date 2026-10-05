@@ -178,14 +178,17 @@ export const TIMELINE: Step[] = [
   { grade: 12, title: "Compare athletics aid agreement offers with your family before you sign one", assocs: NCAA, url: CBSA },
 ];
 
-/** The timeline as plan rows for one association, skipping titles already in the plan. */
-export function timelinePlanItems(assoc: Assoc, gradYear: number, existing: string[]) {
+/**
+ * The timeline as plan rows for one association, skipping titles already in the plan. Steps from
+ * school years already over land in the current one (`current`, from schoolYear()).
+ */
+export function timelinePlanItems(assoc: Assoc, gradYear: number, existing: string[], current: number) {
   const have = new Set(existing);
   return TIMELINE.filter((s) => s.assocs.includes(assoc) && !have.has(s.title)).map((s) => ({
     title: s.title,
     kind: "task" as const,
     // A school year is named by the year it starts; 12th grade starts the year before graduation.
-    academic_year: gradYear - 13 + s.grade,
+    academic_year: Math.max(current, gradYear - 13 + s.grade),
     term: "full_year" as const,
     due_on: null,
   }));

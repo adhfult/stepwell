@@ -4,6 +4,8 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { timelinePlanItems } from "@/lib/athletes/rules";
 import { getCurrentUser } from "@/lib/auth/dal";
+import { todayEastern } from "@/lib/opportunities/data";
+import { schoolYear } from "@/lib/plan/labels";
 import { CORE_AREAS, courseSchema } from "@/lib/gpa/record";
 import { getMyProfile } from "@/lib/profile/data";
 import { createClient } from "@/lib/supabase/server";
@@ -68,8 +70,12 @@ export async function addTimeline(input: unknown): Promise<{ ok: true; added: nu
   if (!assoc.success) return { ok: false, message: "Pick a level first." };
   const profile = await getMyProfile();
   if (!profile) return { ok: false, message: "Sign in to add these to your plan." };
-  if (!profile.grad_year || (profile.stage !== "high_school" && profile.stage !== "middle_school")) {
-    return { ok: false, message: "Add your high school graduation year in your profile first." };
+  const inSchool = profile.stage === "high_school" || profile.stage === "middle_school";
+  if (profile.stage && !inSchool) {
+    return { ok: false, message: "These steps are for high school students, so they aren’t added to your plan." };
+  }
+  if (!inSchool || !profile.grad_year) {
+    return { ok: false, message: "Add your school stage and high school graduation year in your profile first." };
   }
   const supabase = await createClient();
   const { data: existing, error } = await supabase.from("plan_items").select("title");
@@ -77,7 +83,7 @@ export async function addTimeline(input: unknown): Promise<{ ok: true; added: nu
     console.error("Reading plan for timeline failed:", error.code);
     return { ok: false, message: "We couldn’t add these. Try again." };
   }
-  const rows = timelinePlanItems(assoc.data, profile.grad_year, existing.map((r) => r.title));
+  const rows = timelinePlanItems(assoc.data, profile.grad_year, existing.map((r) => r.title), schoolYear(todayEastern()));
   if (rows.length === 0) return { ok: true, added: 0 };
   const { error: insertError } = await supabase.from("plan_items").insert(rows);
   // 54000: the per-student cap (500 plan steps).
