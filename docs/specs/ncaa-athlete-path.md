@@ -105,3 +105,69 @@ a student's high school (linked, not imported).
   survive, add the timeline to the plan twice (no duplicates), filter
   `/colleges?sport=soccer&team=women&level=d2`, and open a college's Sports
   section.
+
+## Rules checked (2026-10-04)
+
+Checked on official pages on 2026-10-04. `CBSA` is the NCAA 2026-27 Guide for the College-Bound Student-Athlete,
+http://fs.ncaa.org/Docs/eligibility_center/Student_Resources/CBSA.pdf.
+
+### NCAA core GPA
+
+- Letter points: "QUALITY POINTS A = 4 points B = 3 points C = 2 points D = 1 point" (CBSA).
+- Plus and minus ignored: "The Eligibility Center does not use plus or minus grades when calculating your core-course
+  GPA. For example, grades of B+, B and B- are each worth 3 quality points." (CBSA)
+- Weighting only if the school's scale is approved: "weighted grading scales must be submitted by the high school and
+  approved by the Eligibility Center" (CBSA); "A maximum of 1.00 additional quality point may be assigned." and "Weight
+  cannot be applied to dual-enrollment courses." (https://www.ncaa.org/eligibility-center/resources-for-high-schools/).
+  The checker leaves weighting out, so its estimate can only be lower than the official one.
+- Units: "1 semester unit = 0.50 unit" (CBSA).
+
+### Division I and II
+
+- DI areas: English 4, math (Algebra I or higher) 3, science 2, more English/math/science 1, social science 2, more
+  core 4 (https://www.ncaa.org/eligibility-center/initial-eligibility-requirements/division-i/).
+- DI 10/7: "Ten of your core courses (7 in English, math, or science) must be completed before start of the seventh
+  semester (senior year)." (division-i page)
+- DI GPA: "Earn a minimum 2.3 core-course GPA." (CBSA)
+- No tests: "In January 2023, NCAA Divisions I and II adopted legislation to remove standardized test scores from
+  initial-eligibility requirements." (CBSA)
+- DII areas: English 3, math 2, science 2, more English/math/science 3, social science 2, more core 4
+  (https://www.ncaa.org/eligibility-center/initial-eligibility-requirements/division-ii/); "Earn a minimum 2.2
+  core-course GPA." (CBSA). No 10/7 or other timing rule is listed for DII.
+- NOT CONFIRMED: a lab requirement for science. Both pages say only "Science 2 years", so the checker doesn't ask.
+
+### NAIA
+
+- "Must graduate with a 2.3+ GPA or meet two of the three following requirements": ACT 18 or SAT 970, a 2.0 GPA, top
+  half of the class (https://www.naia.org/wp-content/uploads/2026/05/naia_guide_college_bound_student.pdf, May 2026;
+  bylaw https://copforum.naia.org/21-b-10-initial-eligibility/).
+- "based on your high school grades (no core courses necessary!)"
+  (https://www.naia.org/student-athletes/prospective/high-school-students/).
+- NOT CONFIRMED: no page names a graduating class; the May 2026 guide is taken as current for 2027. NAIA early
+  determination thresholds differ between the guide and the bylaw page, so the tool doesn't show them.
+
+### Junior and community colleges
+
+- NJCAA: "To be certified for participation on an NJCAA Eligibility Roster, a student-athlete must provide proof of high
+  school graduation", by final transcript or "State-recognized equivalency exam test results and diploma" (NJCAA
+  Handbook and Bylaws 2026-27, Art. V §2.B.1,
+  https://media.ardorsportshub.com/files/404933495157163011/6b815aea7cf842719e5deeefd7dc9310-NJCAA-Handbook---Bylaws---2026-27-9-9-26.pdf).
+- CCCAA: "A student who has been admitted to attend any California community college shall be eligible to participate
+  in the college athletic program", with 12 units in the season (bylaw 1.3.1)
+  (https://www.cccaasports.org/Constitution/2026-27/2026-27_Constitution.pdf).
+
+### Timeline
+
+- "Register with the Eligibility Center at eligibilitycenter.org before ninth grade"; a Profile Page is for students not
+  yet recruited; "Transition your account to an Academic and Athletics Certification account once you are recruited by
+  a Division I or II school." (CBSA)
+- "Before a Division I or II official visit: » You must register with the Eligibility Center." (CBSA) Division III is
+  not included.
+- "Ask your high school counselor to upload your official high school transcript with proof of graduation after you
+  graduate." (CBSA)
+- NAIA: "Every student interested in playing sports at NAIA colleges for the first time needs to register online with
+  the NAIA Eligibility Center and receive an eligible determination." (NAIA guide)
+- Commitment: "Official Commitment: When you sign an athletics aid agreement for a scholarship with a Division I or II
+  school." (CBSA); "The National Letter of Intent (NLI) website is no longer available as of May 1, 2025"
+  (http://www.nationalletter.org/). No ncaa.org page says "replaced", so the tool says "athletics aid agreement" and
+  doesn't mention the NLI.
