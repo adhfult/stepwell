@@ -15,3 +15,18 @@ describe("recordSchema", () => {
     expect(recordSchema.safeParse(EMPTY_RECORD).success).toBe(true);
   });
 });
+
+describe("recordSchema class tags", () => {
+  const course = { name: "English 9", type: "regular", grade: "A", credits: 1 };
+  it("keeps core and year (a /gpa save must not strip athlete tags)", () => {
+    const parsed = recordSchema.parse({ ...EMPTY_RECORD, courses: [{ ...course, core: "english", year: 9 }] });
+    expect(parsed.courses[0]).toEqual({ ...course, core: "english", year: 9 });
+  });
+  it("still accepts untagged classes", () => {
+    expect(recordSchema.parse({ ...EMPTY_RECORD, courses: [course] }).courses[0]).toEqual(course);
+  });
+  it("refuses unknown tags", () => {
+    expect(recordSchema.safeParse({ ...EMPTY_RECORD, courses: [{ ...course, core: "gym" }] }).success).toBe(false);
+    expect(recordSchema.safeParse({ ...EMPTY_RECORD, courses: [{ ...course, year: 8 }] }).success).toBe(false);
+  });
+});

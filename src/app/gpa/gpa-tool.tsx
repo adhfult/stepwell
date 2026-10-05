@@ -6,7 +6,7 @@ import { buttonClass } from "@/components/button-styles";
 import { ResultPanel } from "@/components/form";
 import { actToSat, CONCORDANCE_SOURCE, satToAct } from "@/lib/gpa/concordance";
 import { type Course, COURSE_TYPES, type CourseType, GRADES, gpa, highest, needed, type Scale, type Weights } from "@/lib/gpa/gpa";
-import { type AcademicRecord, EMPTY_RECORD, MAX_COURSES, recordSchema } from "@/lib/gpa/record";
+import { type AcademicRecord, EMPTY_RECORD, MAX_COURSES, recordSchema, type SavedCourse } from "@/lib/gpa/record";
 import { removeAcademicRecord, saveAcademicRecord, setScholarshipGpa } from "./actions";
 
 const TYPE_NAMES: Record<CourseType, string> = { regular: "Regular", honors: "Honors", ap: "AP", ib: "IB", dual: "Dual enrollment" };
@@ -14,10 +14,10 @@ const DRAFT_KEY = "stepwell-gpa-draft";
 const control = "mt-2 block min-h-11 w-full rounded-control border border-border-strong bg-surface px-3 text-base text-foreground";
 const invalidControl = "mt-2 block min-h-11 w-full rounded-control border-2 border-accent bg-surface px-3 text-base text-foreground";
 
-type Row = Course & { id: number };
+type Row = SavedCourse & { id: number };
 type Status = { tone: "info" | "error"; title: string; text: string } | null;
 
-const toRows = (courses: Course[]) => courses.map((c, i) => ({ ...c, id: i }));
+const toRows = (courses: SavedCourse[]) => courses.map((c, i) => ({ ...c, id: i }));
 const fixed = (n: number) => n.toFixed(2);
 const article = (grade: string) => (grade.startsWith("A") || grade === "F" ? "an" : "a");
 /** "" stays null; anything else is a number or NaN for the caller to reject. */
@@ -99,7 +99,7 @@ function Editor({ saved, signedIn, needsConsent, eligibilityOptedIn, initial }: 
   const satOk = sat !== null && Number.isInteger(sat) && sat >= 400 && sat <= 1600 && sat % 10 === 0;
   const actOk = act !== null && Number.isInteger(act) && act >= 1 && act <= 36;
   const record: AcademicRecord = {
-    courses: rows.map((r) => ({ name: r.name, type: r.type, grade: r.grade, credits: r.credits })),
+    courses: rows.map(({ id, ...course }) => course),
     weights,
     start,
     sat: satOk ? sat : null,

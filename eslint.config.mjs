@@ -5,6 +5,8 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  // `const { id, ...rest } = row` drops a key on purpose; the dropped name isn't an unused variable.
+  { rules: { "@typescript-eslint/no-unused-vars": ["warn", { ignoreRestSiblings: true }] } },
   // Import jobs hold database credentials: nothing outside src/jobs may
   // import them (v1 expansion, Section 3.11).
   {
