@@ -31,6 +31,9 @@ describe("checkCore", () => {
     const r = checkCore(full.filter((x) => !(x.core === "math" && x.year === 11)), ASSOCIATIONS.ncaa1.core!);
     expect(r.gaps).toContain("1 more math");
   });
+  it("says courses for more than one extra core course", () => {
+    expect(checkCore([], ASSOCIATIONS.ncaa1.core!).gaps).toContain("4 more core courses");
+  });
   it("counts surplus English, math or science toward the extra areas", () => {
     const r = checkCore([...full.filter((x) => x.core !== "other"), ...[1, 2, 3, 4].map(() => c("english", "B", 12))],
       ASSOCIATIONS.ncaa1.core!);

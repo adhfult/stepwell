@@ -11,6 +11,7 @@ const SECTIONS = [
   { href: "/careers", label: "Careers" },
   { href: "/colleges", label: "Colleges" },
   { href: "/gpa", label: "GPA" },
+  { href: "/athletes", label: "Athletes" },
   { href: "/interests", label: "Interest quiz" },
   { href: "/scholarships", label: "Scholarships" },
   { href: "/internships", label: "Internships" },

@@ -122,7 +122,10 @@ export function checkCore(courses: SavedCourse[], rule: CoreRule): CoreResult {
   };
   const gaps = (Object.keys(need) as (keyof CoreRule["need"])[])
     .filter((area) => got[area] < need[area])
-    .map((area) => `${round2(need[area] - got[area])} more ${AREA_WORDS[area]}`);
+    .map((area) => {
+      const n = round2(need[area] - got[area]);
+      return `${n} more ${AREA_WORDS[area]}${area === "any" && n > 1 ? "s" : ""}`;
+    });
 
   const graded = core.filter((c) => c.grade !== null);
   const credits = graded.reduce((sum, c) => sum + units(c), 0);
