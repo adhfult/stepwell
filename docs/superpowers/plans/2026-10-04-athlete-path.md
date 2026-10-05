@@ -288,11 +288,11 @@ drop function public.search_colleges(
 Then paste the whole `create function public.search_colleges(...)` from
 `supabase/migrations/20261004192436_college_directory.sql` (lines 147 to 251) and make exactly these edits:
 
-1. After `p_serves text default null,` add:
+1. After `p_page integer default 1` add a comma and (appended last so any positional caller keeps working):
 ```sql
   p_sport text default null,
   p_team text default null,
-  p_level text default null,
+  p_level text default null
 ```
 2. After the `p_serves` validation `if` block add:
 ```sql
@@ -320,13 +320,13 @@ Then paste the whole `create function public.search_colleges(...)` from
 4. The revoke/grant at the end use the new signature:
 ```sql
 revoke execute on function public.search_colleges(
-  text, text, text, text, text, integer, integer, text, boolean, text, boolean, text, text, text, text, text, integer
+  text, text, text, text, text, integer, integer, text, boolean, text, boolean, text, text, integer, text, text, text
 ) from public;
 grant execute on function public.search_colleges(
-  text, text, text, text, text, integer, integer, text, boolean, text, boolean, text, text, text, text, text, integer
+  text, text, text, text, text, integer, integer, text, boolean, text, boolean, text, text, integer, text, text, text
 ) to anon, authenticated;
 ```
-(Argument order: the 12 old filters, then p_sport, p_team, p_level, then p_sort, p_page.)
+(Argument order: the 14 old arguments unchanged, then p_sport, p_team, p_level. No caller passes them by position today; checked 2026-10-04.)
 
 - [ ] **Step 4: Apply and run the tests**
 
@@ -697,7 +697,7 @@ import { readEada } from "./sources/eada.ts";
 - [ ] **Step 7: Dry run against the real file, then import locally**
 
 Run: `npm run import -- eada --dry-run`
-Expected: about 2,037 seen, 0 rejected, release 2024-25. If it fails on a robots.txt check, open `https://ope.ed.gov/robots.txt`; only if it disallows the API path, stop and report to the owner (do not add `skipRobots` without approval: decision 0007).
+Expected: about 2,037 seen, 0 rejected, release 2024-25. robots.txt: `https://ope.ed.gov/robots.txt` redirects to an ed.gov HTML page with no rules (checked 2026-10-04), so the fetcher allows the API. If a run ever reports robots disallowed, stop and ask the owner (do not add `skipRobots`: decision 0007).
 
 Run: `npm run import -- eada`
 Expected: merged; then `npx supabase db query --local "select count(*), count(distinct unitid) from public.college_sports"` shows about 17,000 teams at about 1,900 colleges.
@@ -1101,7 +1101,7 @@ export function timelinePlanItems(assoc: Assoc, gradYear: number, existing: stri
 }
 ```
 
-Confirm the recruiting-calendar URL loads (curl -I, follow redirects) before committing; if it redirects to the NCAA home page, use `https://www.ncaa.org/eligibility-center/` instead.
+Check every URL in `ASSOCIATIONS` and `TIMELINE` with `curl -sIL -o /dev/null -w '%{http_code} %{url_effective}\n' <url>` before committing. Old `ncaa.org/sports/...` links redirect to the home page; any URL that ends on a home page or an error gets replaced by `https://www.ncaa.org/eligibility-center/` (NCAA) or the association's eligibility page.
 
 - [ ] **Step 4: Run the tests**
 
@@ -1249,7 +1249,7 @@ git commit -m "feat: sport, team and level filters; Sports section on college pa
 
 **Interfaces:**
 - Consumes: `ASSOCIATIONS`, `checkCore`, `checkNaia`, `overallGpa`, `TIMELINE`, `timelinePlanItems`, `Assoc` (Task 5); `SPORTS`, `TEAMS`, `LEVEL_GROUPS` (Task 3); `getMyAcademicRecord` (`src/lib/gpa/data.ts`), `getMyProfile` (`src/lib/profile/data.ts`), `getCurrentUser` (`src/lib/auth/dal.ts`), `courseSchema`, `CORE_AREAS` (Task 4); `Band`, `Page`, `PageTitle` (`src/components/page`), `buttonClass` (`src/components/button-styles`).
-- Produces: server actions `saveCoreTags(tags: {core: CoreArea | null; year: number | null}[]): Promise<SaveResult>` and `addTimeline(assoc: Assoc): Promise<{ ok: true; added: number } | { ok: false; message: string }>`.
+- Produces: server actions `saveCoreTags(tags: {name: string; core: CoreArea | null; year: number | null}[]): Promise<SaveResult>` and `addTimeline(assoc: Assoc): Promise<{ ok: true; added: number } | { ok: false; message: string }>`.
 
 - [ ] **Step 1: Read the patterns to copy:** `src/app/gpa/loading.tsx` and `src/app/colleges/error.tsx` (skeleton and error page), the `Band`/`Page` usage in `src/app/gpa/page.tsx`, and `docs/design/AVOID.md`.
 
@@ -1269,7 +1269,13 @@ import { createClient } from "@/lib/supabase/server";
 export type SaveResult = { ok: true } | { ok: false; message: string };
 
 const tagsSchema = z
-  .array(z.object({ core: z.enum(CORE_AREAS).nullable(), year: z.number().int().min(9).max(12).nullable() }))
+  .array(
+    z.object({
+      name: z.string().max(80),
+      core: z.enum(CORE_AREAS).nullable(),
+      year: z.number().int().min(9).max(12).nullable(),
+    }),
+  )
   .max(80);
 
 /**
@@ -1289,7 +1295,12 @@ export async function saveCoreTags(input: unknown): Promise<SaveResult> {
   }
   if (!data) return { ok: false, message: "Save your classes on the GPA page first." };
   const courses = z.array(courseSchema).safeParse(data.courses);
-  if (!courses.success || courses.data.length !== tags.data.length) {
+  // Same count and names in the same order, or the list changed in another tab.
+  if (
+    !courses.success ||
+    courses.data.length !== tags.data.length ||
+    courses.data.some((c, i) => c.name !== tags.data[i].name)
+  ) {
     return { ok: false, message: "Your classes changed since this page loaded. Reload the page and try again." };
   }
   const tagged = courses.data.map((c, i) => {
@@ -1340,7 +1351,7 @@ export async function addTimeline(input: unknown): Promise<{ ok: true; added: nu
 Check the profile stage values in `src/lib/profile/schema.ts` (`high_school`, `middle_school` are used by `src/lib/plan/labels.ts:36`); match them exactly. Past-graduation steps (a senior adding 9th-grade steps) land in past school years; that is fine, they show in the plan as earlier years only if `planYears` includes them, which it does for any year with items.
 
 - [ ] **Step 3: Write `src/app/athletes/core-checker.tsx`** (client): props `{ assoc: Assoc; courses: SavedCourse[]; weights; start; sat: number | null; act: number | null }`.
-  - State: `tags` array initialized from `courses` (`{core: c.core ?? null, year: c.year ?? null}`), `topHalf: boolean | null`, `message`.
+  - State: `tags` array initialized from `courses` (`{name: c.name, core: c.core ?? null, year: c.year ?? null}`), `topHalf: boolean | null`, `message`.
   - For `ncaa1`/`ncaa2`: a list of the saved classes, each a `<fieldset>` with the class name as `<legend>`, a `<select>` "Core area" (Not a core course, English, Math, Science, Social science, Other core: world language, religion, philosophy) and a `<select>` "Grade taken" (Not set, 9th to 12th). Below: the live `checkCore(taggedCourses, ASSOCIATIONS[assoc].core!)` result as plain sentences: "Core courses: 11 of 16 (including planned)." "Core GPA: 2.41 (minimum 2.3)." "Before senior year: 8 of 10, 6 of 7 in English, math or science." the `gaps` list joined ("Still needed: 1 more math, 2 more core course."), and the `untimed` names ("Add the grade taken for: Biology.").
   - For `naia`: the overall GPA from `overallGpa`, the saved SAT/ACT, and a radio group "Are you in the top half of your class?" (Yes, No, Not sure), then `checkNaia` as "Meets the NAIA standard", "Doesn't meet it yet" or "Depends on your class rank".
   - Every result ends with: "Estimate, not an official certification. {decides.name} decides." linking `decides.url`.
@@ -1444,4 +1455,4 @@ git add src/app/privacy/page.tsx src/lib/sources/list.ts docs/DATA_SOURCES.md do
 git commit -m "docs: EADA source, privacy note for class tags, athlete path built"
 ```
 
-Owner steps after this plan (ask, do not do): push; apply the athletics migration to the cloud; run the cloud import (`! gh workflow run import.yml -f source=eada`).
+Owner steps after this plan (ask, do not do): push; apply the athletics migration to the cloud. The nightly `import.yml` `--due` run then picks up `eada` by itself (a new source has no last success); `! gh workflow run import.yml -f source=eada` only makes it happen sooner.
