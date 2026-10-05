@@ -45,6 +45,19 @@ export const recordSchema = z.object({
   act: z.number().int().min(1, "ACT composites go from 1 to 36").max(36, "ACT composites go from 1 to 36").nullable(),
 });
 
+/**
+ * A /gpa tab opened before the student tagged classes on /athletes sends them untagged; an untagged
+ * class keeps the saved tags of the named class it matches. Unnamed classes can't be matched.
+ */
+export function keepTags(courses: SavedCourse[], saved: SavedCourse[]): SavedCourse[] {
+  const byName = new Map(saved.filter((c) => c.name).map((c) => [c.name, c]));
+  return courses.map((c) => {
+    const t = byName.get(c.name);
+    if (c.core || c.year || !t) return c;
+    return { ...c, ...(t.core && { core: t.core }), ...(t.year && { year: t.year }) };
+  });
+}
+
 /** A row from academic_records back into what the page edits (numeric columns arrive as strings or numbers). */
 export function fromRow(row: {
   courses: unknown;

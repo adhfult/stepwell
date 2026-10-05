@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/auth/dal";
-import { CONSENT_VERSION, recordSchema } from "@/lib/gpa/record";
+import { z } from "zod";
+import { CONSENT_VERSION, courseSchema, keepTags, recordSchema } from "@/lib/gpa/record";
 import { createClient } from "@/lib/supabase/server";
 
 export type SaveResult = { ok: true } | { ok: false; message: string };
@@ -15,13 +16,21 @@ const SIGN_IN = "Sign in to save your classes and scores.";
  * client. Grades are never logged: errors report only the database code.
  */
 export async function saveAcademicRecord(input: unknown, consent: boolean): Promise<SaveResult> {
-  if (!(await getCurrentUser())) return { ok: false, message: SIGN_IN };
+  const user = await getCurrentUser();
+  if (!user) return { ok: false, message: SIGN_IN };
   if (!consent) return { ok: false, message: "Tick the box to say it’s OK to save your classes and scores." };
   const parsed = recordSchema.safeParse(input);
   if (!parsed.success) return { ok: false, message: parsed.error.issues[0]?.message ?? "Check your classes and scores." };
 
-  const { courses, weights, start, sat, act } = parsed.data;
+  const { weights, start, sat, act } = parsed.data;
   const supabase = await createClient();
+  // Core-course tags set on /athletes since this page loaded stay put (keepTags).
+  const { data: saved, error: readError } = await supabase.from("academic_records").select("courses").eq("user_id", user.id).maybeSingle();
+  if (readError) {
+    console.error("Loading saved classes failed:", readError.code);
+    return { ok: false, message: "We couldn’t save your classes. Try again." };
+  }
+  const courses = keepTags(parsed.data.courses, z.array(courseSchema).catch([]).parse(saved?.courses ?? []));
   const { error } = await supabase.from("academic_records").upsert(
     {
       courses,

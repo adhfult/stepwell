@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { EMPTY_RECORD, recordSchema } from "./record";
+import { EMPTY_RECORD, keepTags, recordSchema } from "./record";
 
 describe("recordSchema", () => {
   it("explains a cleared credits field in plain words", () => {
@@ -28,5 +28,18 @@ describe("recordSchema class tags", () => {
   it("refuses unknown tags", () => {
     expect(recordSchema.safeParse({ ...EMPTY_RECORD, courses: [{ ...course, core: "gym" }] }).success).toBe(false);
     expect(recordSchema.safeParse({ ...EMPTY_RECORD, courses: [{ ...course, year: 8 }] }).success).toBe(false);
+  });
+});
+
+describe("keepTags", () => {
+  const base = { type: "regular" as const, grade: "A" as const, credits: 1 };
+  it("gives an untagged class the saved tags of the class with its name, so an old tab can't erase them", () => {
+    const saved = [{ ...base, name: "English 9", core: "english" as const, year: 9 as const }, { ...base, name: "", core: "math" as const }];
+    const incoming = [{ ...base, name: "English 9" }, { ...base, name: "" }, { ...base, name: "Art", year: 10 as const }];
+    expect(keepTags(incoming, saved)).toEqual([
+      { ...base, name: "English 9", core: "english", year: 9 },
+      { ...base, name: "" },
+      { ...base, name: "Art", year: 10 },
+    ]);
   });
 });
