@@ -100,6 +100,10 @@ const MERGE = {
     sql: "select added, changed, removed from ingest.merge_career_certifications($1)",
     params: [runId],
   }),
+  college_athletics: (runId: number) => ({
+    sql: "select added, changed, removed from ingest.merge_college_athletics($1)",
+    params: [runId],
+  }),
   opportunity: (runId: number) => ({
     sql: "select added, changed, removed from ingest.merge_opportunities($1)",
     params: [runId],

@@ -11,6 +11,7 @@ import { type JobEnv, parseJobEnv } from "./env.ts";
 import { createPoliteFetcher, type Fetcher, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
 import { databaseClient, finishRun, merge, pauseSource, type RecordKind, stageRecords, startRun } from "./load.ts";
 import { readCosCertifications, readCosLicenses, readCosYouthPrograms } from "./sources/careeronestop.ts";
+import { readEada } from "./sources/eada.ts";
 import { readOnet } from "./sources/onet.ts";
 import { readOnetCip } from "./sources/onet-cip.ts";
 import { readOnetIp } from "./sources/onet-ip.ts";
@@ -63,6 +64,8 @@ const ADAPTERS: Record<string, Adapter> = {
   cos_youth_programs: { kind: "youth_program", read: readCosYouthPrograms, minDelayMs: COS_DELAY_MS },
   cos_licenses: { kind: "career_license", read: readCosLicenses, minDelayMs: COS_DELAY_MS, needsCareers: true },
   cos_certifications: { kind: "career_certification", read: readCosCertifications, minDelayMs: COS_DELAY_MS, needsCareers: true },
+  // One 12 MB zip a year; the 5-minute fetch timeout covers its 2-minute download.
+  eada: { kind: "college_athletics", read: (fetcher, previous) => readEada(fetcher, previous) },
 };
 
 function fetcherFor(adapter: Adapter, env: JobEnv) {
