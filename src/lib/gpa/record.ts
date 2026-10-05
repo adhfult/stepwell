@@ -47,14 +47,16 @@ export const recordSchema = z.object({
 
 /**
  * A /gpa tab opened before the student tagged classes on /athletes sends them untagged; an untagged
- * class keeps the saved tags of the named class it matches. Unnamed classes can't be matched.
+ * tag is filled from the saved class with the same name. Unnamed classes can't be matched.
  */
 export function keepTags(courses: SavedCourse[], saved: SavedCourse[]): SavedCourse[] {
   const byName = new Map(saved.filter((c) => c.name).map((c) => [c.name, c]));
   return courses.map((c) => {
     const t = byName.get(c.name);
-    if (c.core || c.year || !t) return c;
-    return { ...c, ...(t.core && { core: t.core }), ...(t.year && { year: t.year }) };
+    if (!t) return c;
+    const core = c.core ?? t.core;
+    const year = c.year ?? t.year;
+    return { ...c, ...(core && { core }), ...(year && { year }) };
   });
 }
 

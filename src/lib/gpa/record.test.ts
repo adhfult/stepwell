@@ -42,4 +42,9 @@ describe("keepTags", () => {
       { ...base, name: "Art", year: 10 },
     ]);
   });
+
+  it("fills each tag on its own, so a class with only a year still keeps its saved core area", () => {
+    const saved = [{ ...base, name: "English 9", core: "english" as const, year: 9 as const }];
+    expect(keepTags([{ ...base, name: "English 9", year: 9 }], saved)).toEqual([{ ...base, name: "English 9", core: "english", year: 9 }]);
+  });
 });
