@@ -50,6 +50,9 @@ export async function searchColleges(f: Directory) {
     p_serves: f.serves,
     p_sort: f.sort,
     p_page: f.page,
+    p_sport: f.sport,
+    p_team: f.sport ? f.team : undefined,
+    p_level: f.level,
   });
   if (error) throw new Error(`College search failed (${error.code})`);
   return data;
@@ -82,4 +85,19 @@ export const getScorecardRetrieved = cache(async (): Promise<string | null> => {
   const { data, error } = await supabase.from("sources").select("last_success_at").eq("id", "scorecard").maybeSingle();
   if (error) throw new Error(`Source lookup failed (${error.code})`);
   return data?.last_success_at ?? null;
+});
+
+export const getCollegeSports = cache(async (unitid: number) => {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("college_sports").select("sport, men, women").eq("unitid", unitid).order("sport");
+  if (error) throw new Error(`College sports failed (${error.code})`);
+  return data;
+});
+
+/** The EADA season loaded last ("2024-25"), for the source line. */
+export const getEadaSeason = cache(async (): Promise<string | null> => {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("sources").select("last_release").eq("id", "eada").maybeSingle();
+  if (error) throw new Error(`Source lookup failed (${error.code})`);
+  return data?.last_release ?? null;
 });

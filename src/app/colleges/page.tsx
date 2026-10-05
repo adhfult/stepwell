@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { buttonClass } from "@/components/button-styles";
 import { Meter } from "@/components/meter";
 import { Band, Page, PageTitle } from "@/components/page";
+import { LEVEL_GROUPS, SPORTS, TEAMS } from "@/lib/athletes/sports";
 import { monthYear } from "@/lib/careers/labels";
 import { getScorecardRetrieved, searchColleges, type DirectoryRow } from "@/lib/colleges/data";
 import { getMyScores } from "@/lib/gpa/data";
@@ -169,7 +170,7 @@ function Input({ id, label, hint, children }: { id: string; label: string; hint?
 
 /** A plain GET form (works without JavaScript); the less common filters fold away so phones stay short. */
 function Filters({ params: p }: { params: Directory }) {
-  const more = [p.program, p.type, p.size, p.bracket, p.max, p.admit, p.optional, p.setting, p.years, p.serves, p.sat, p.act];
+  const more = [p.program, p.type, p.size, p.bracket, p.max, p.admit, p.optional, p.setting, p.years, p.serves, p.sat, p.act, p.sport, p.team, p.level];
   return (
     <form action="/colleges" method="get" role="search" aria-label="Colleges" className="mt-6">
       <div className="grid gap-4 sm:grid-cols-3 sm:items-end">
@@ -181,7 +182,7 @@ function Filters({ params: p }: { params: Directory }) {
       </div>
       <details className="mt-4" open={more.some((v) => v !== undefined)}>
         <summary className="inline-flex min-h-11 cursor-pointer items-center font-bold underline">
-          More filters: cost, test scores, type, setting
+          More filters: cost, test scores, type, setting, sports
         </summary>
         <div className="mt-2 grid gap-4 sm:grid-cols-2 sm:items-end lg:grid-cols-3">
           <Select id="bracket" label="Your family’s yearly income" choices={BRACKETS} value={p.bracket} any="Not chosen" />
@@ -224,6 +225,9 @@ function Filters({ params: p }: { params: Directory }) {
           <Select id="setting" label="Setting" choices={LOCALES} value={p.setting} any="Any setting" />
           <Select id="years" label="Length" choices={YEARS} value={p.years} any="Any length" />
           <Select id="serves" label="Minority-serving" choices={SERVES} value={p.serves} any="Any college" />
+          <Select id="sport" label="Sport" choices={SPORTS} value={p.sport} any="Any sport" />
+          <Select id="team" label="Team" choices={TEAMS} value={p.team} any="Men’s or women’s" />
+          <Select id="level" label="Athletics level" choices={LEVEL_GROUPS} value={p.level} any="Any level" />
           <Input id="program" label="Has a program in" hint="For example: nursing">
             <input
               id="program"

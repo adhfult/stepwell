@@ -5,9 +5,16 @@ import { z } from "zod";
 import { Meter } from "@/components/meter";
 import { Band, Page, PageTitle } from "@/components/page";
 import { SaveButton } from "@/app/plan/save-button";
+import { levelName, sportLabel } from "@/lib/athletes/sports";
 import { getCurrentUser } from "@/lib/auth/dal";
 import { monthYear } from "@/lib/careers/labels";
-import { getCollege, getCollegePrograms, getScorecardRetrieved } from "@/lib/colleges/data";
+import {
+  getCollege,
+  getCollegePrograms,
+  getCollegeSports,
+  getEadaSeason,
+  getScorecardRetrieved,
+} from "@/lib/colleges/data";
 import {
   BRACKETS,
   debtText,
@@ -43,11 +50,13 @@ const percent = (n: number | string | null) => (n === null ? null : `${Math.roun
 
 export default async function CollegePage({ params }: PageProps<"/colleges/[unitid]">) {
   const c = await collegeFor(params);
-  const [programs, retrieved, user, saved] = await Promise.all([
+  const [programs, retrieved, user, saved, sports, season] = await Promise.all([
     getCollegePrograms(c.unitid),
     getScorecardRetrieved(),
     getCurrentUser(),
     getMySavedIds(),
+    getCollegeSports(c.unitid),
+    getEadaSeason(),
   ]);
   const fit = testFit(c, await getMyScores());
 
@@ -172,6 +181,34 @@ export default async function CollegePage({ params }: PageProps<"/colleges/[unit
             ))
           )}
         </section>
+        {c.athletics_code !== null && (
+          <section aria-labelledby="sports-heading" className="mt-12 max-w-2xl">
+            <h2 id="sports-heading" className="text-lg font-bold">
+              Sports
+            </h2>
+            <p className="mt-2">{levelName(c.athletics_code) ?? "Athletics level not reported"}.</p>
+            {(["women", "men"] as const).map((team) => {
+              const list = sports.filter((s) => s[team] !== null);
+              return list.length === 0 ? null : (
+                <div key={team} className="mt-6">
+                  <h3 className="font-heading font-bold">{team === "women" ? "Women’s teams" : "Men’s teams"}</h3>
+                  <ul className="mt-2 divide-y divide-border-subtle border-y border-border-subtle">
+                    {list.map((s) => (
+                      <li key={s.sport} className="flex justify-between gap-4 py-2">
+                        <Link href={`/colleges?sport=${s.sport}&team=${team}`}>{sportLabel(s.sport)}</Link>
+                        <span className="text-muted">{s[team]} athletes</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+            <p className="mt-4 text-sm text-muted">
+              Source: U.S. Department of Education, Equity in Athletics Data Analysis (EADA){season ? `, ${season}` : ""}.
+              Athletes counted once per team. <Link href="/athletes">What it takes to play in college</Link>
+            </p>
+          </section>
+        )}
 
         <p className="mt-8 max-w-2xl text-sm text-muted">
           Source: College Scorecard, U.S. Department of Education{retrieved ? `, retrieved ${monthYear(retrieved)}` : ""}.

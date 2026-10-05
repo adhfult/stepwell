@@ -123,3 +123,16 @@ describe("testFit", () => {
     expect(testFit({ ...c, act_25: null, act_75: null }, { act: 5 })).toBeNull();
   });
 });
+
+describe("directorySchema sport filters", () => {
+  it("keeps known sport, team and level", () => {
+    expect(directorySchema.parse({ sport: "soccer", team: "women", level: "d2" })).toMatchObject({
+      sport: "soccer", team: "women", level: "d2",
+    });
+  });
+  it("drops unknown values", () => {
+    expect(directorySchema.parse({ sport: "quidditch", team: "coed", level: "d4" })).toMatchObject({
+      sport: undefined, team: undefined, level: undefined,
+    });
+  });
+});

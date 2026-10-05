@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { LEVEL_GROUPS, SPORTS, TEAMS } from "@/lib/athletes/sports";
 import { actToSat, satToAct } from "@/lib/gpa/concordance";
 import { STATES } from "@/lib/profile/options";
 import { CAPS, toPercent } from "@/lib/scale";
@@ -97,6 +98,9 @@ export const directorySchema = z.object({
   setting: choice(LOCALES),
   years: choice(YEARS),
   serves: choice(SERVES),
+  sport: choice(SPORTS),
+  team: choice(TEAMS),
+  level: choice(LEVEL_GROUPS),
   sort: choice(SORTS),
   page: whole(1, 10_000),
   sat: whole(400, 1600),
