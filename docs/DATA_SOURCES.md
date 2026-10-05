@@ -83,6 +83,32 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   null; the college is kept. Local run: SAT ranges for 928 of the 1,107
   four-year colleges that use test scores; income prices for 5,018 colleges.
 
+## Equity in Athletics Data Analysis (EADA) (college sports)
+- **What:** which sports each college offers, its athletics level (NCAA
+  division, NAIA, junior college associations), and men's and women's
+  participant counts per team.
+- **Owner:** U.S. Department of Education, Office of Postsecondary Education.
+- **Access:** no key. `GET https://ope.ed.gov/athletics/api/dataFiles/fileList`,
+  pick the newest `EADA_YYYY-YYYY.zip` by `Year` (not the All_Data file), then
+  `api/dataFiles/file?fileName=...`. Read `instLevel.xlsx` (one row per
+  college) and `schools.xlsx` (one row per college and sport) from the zip.
+- **Rules:** public domain (17 U.S.C. 105). About 12 MB, about 2 minutes to
+  download; the fetch timeout is 5 minutes. No ETag, HEAD or Range, so the
+  season in `sources.last_release` ("2024-25") decides "unchanged".
+  robots.txt redirects to an HTML page with no rules (checked 2026-10-04).
+- **Key:** `unitid`, same as College Scorecard. Colleges not in our
+  Scorecard table are skipped by the merge.
+- **Refresh:** checked monthly (source `eada`, `src/jobs/sources/eada.ts`);
+  a new season usually comes out around April.
+- **What we read** (checked 2026-10-04, 2024-25 file): `ClassificationCode`
+  (1 to 20, named in `src/lib/athletes/sports.ts`); per sport `PARTIC_MEN` and
+  `PARTIC_WOMEN`, with `PARTIC_COED_MEN`/`PARTIC_COED_WOMEN` filling in when
+  those are blank. Combined sports ("Swimming and Diving (combined)", "Track
+  and Field and Cross Country (combined)") count toward each part, and the
+  larger count wins when a college also reports the parts. "Other Sports" is
+  skipped. An unknown sport name stops the import. Local run: 2,037 colleges,
+  18,377 teams at 2,027 colleges.
+
 ## Connecting careers to programs (the crosswalk)
 - The CIP–SOC crosswalk (from the National Center for Education Statistics
   and BLS) links programs of study (CIP) to occupations (SOC).

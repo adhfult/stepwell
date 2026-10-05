@@ -51,7 +51,7 @@ export default async function AthletesPage({ searchParams }: PageProps<"/athlete
       <Page width="browse">
         <section aria-labelledby="rules-heading" className="max-w-2xl">
           <h2 id="rules-heading" className="text-lg font-bold">
-            What {rule.name} asks for
+            What {level === "juco" ? "junior and community colleges ask" : `${rule.name} asks`} for
           </h2>
           <p className="mt-2">{rule.summary}</p>
           <p className="mt-2 text-sm text-muted">

@@ -36,6 +36,13 @@ export const SOURCES = [
     url: "https://collegescorecard.ed.gov/",
   },
   {
+    id: "eada",
+    name: "Equity in Athletics Data Analysis (EADA)",
+    publisher: "U.S. Department of Education, Office of Postsecondary Education",
+    uses: "Which sports each college offers, at what level, and roster sizes for men’s and women’s teams.",
+    url: "https://ope.ed.gov/athletics/",
+  },
+  {
     id: "official_list",
     name: "Official scholarship and grant programs",
     publisher: "Federal and state agencies, each named on its listing",

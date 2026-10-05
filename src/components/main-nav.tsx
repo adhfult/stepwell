@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// DESIGN.md "Page frame": main sections inline from 1024px (seven links don't
+// DESIGN.md "Page frame": main sections inline from 1024px (nine links don't
 // fit on one line below that); on phones and tablets they sit behind a text
 // button labeled "Menu" (no hamburger icon). <details> opens
 // and closes without extra code and works with the keyboard.

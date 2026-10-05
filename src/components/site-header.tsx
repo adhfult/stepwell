@@ -54,15 +54,16 @@ async function AccountLinks() {
   }
 
   return (
-    // Phones get "Sign in" only, so the header stays on one line; the sign-in
-    // page links to "Create an account". Both show from 640px.
+    // Phones, and from 1024px where the nine main links sit inline, get "Sign in"
+    // only, so the header stays on one line; the sign-in page links to "Create
+    // an account". Both show from 640px to 1023px.
     <ul className="flex items-center justify-end gap-x-4">
       <li>
         <Link href="/sign-in" className={navLink}>
           Sign in
         </Link>
       </li>
-      <li className="hidden sm:block">
+      <li className="hidden sm:block lg:hidden">
         <Link href="/sign-up" className={navLink}>
           Create account
         </Link>
@@ -77,7 +78,7 @@ function AccountLinksSkeleton() {
     <div className="flex min-h-11 items-center gap-4" aria-busy="true">
       <span className="sr-only">Loading account links</span>
       <span aria-hidden="true" className="h-3 w-14 bg-border-subtle" />
-      <span aria-hidden="true" className="hidden h-3 w-28 bg-border-subtle sm:block" />
+      <span aria-hidden="true" className="hidden h-3 w-28 bg-border-subtle sm:block lg:hidden" />
     </div>
   );
 }

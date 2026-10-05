@@ -4,9 +4,12 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **Owner:** approve pushing the GPA commits and applying migration
-      `20261004223017_academic_records.sql` to the cloud project.
-- [ ] Pre-launch roadmap project 3 (NCAA athlete path): brainstorm, spec.
+- [ ] **Owner:** approve pushing the athlete path commits and applying
+      migration `20261005025740_athletics.sql` to the cloud project. The
+      nightly `import.yml --due` run then imports `eada` by itself.
+- [ ] Pre-launch roadmap project 4 (context.dev scholarship data).
+- [ ] Athlete rules: re-check every August against the new NCAA guide
+      (`src/lib/athletes/rules.ts`, spec "Rules checked").
 - [ ] Re-take `public/screenshots/plan.png` (needs a signed-in test
       account) so it shows the Bricolage headings like the other three.
 - [ ] **Owner, before launch (security audit 2026-09-29):** turn on
@@ -35,6 +38,19 @@ Newest entries at the top. Keep each entry short.
       own judgment; easy to change in one migration)
 
 ## Log
+### 2026-10-04: college athlete path (spec ncaa-athlete-path.md, roadmap project 3, decision 0014)
+- Built per `docs/specs/ncaa-athlete-path.md` and decision 0014: EADA import
+  (`eada`, 2,037 colleges, 18,377 teams locally), sport/team/level filters
+  on `/colleges`, a Sports section on college pages, and `/athletes` (rules
+  checked on official pages 2026-10-04, core-course checker on saved `/gpa`
+  classes, NAIA check, timeline that adds to `/plan` once).
+- Class tags (`core`, `year`) live on `academic_records.courses`; `/gpa`
+  keeps them (tested in the browser).
+- Header: from 1024px only "Sign in" shows (no "Create account") so nine
+  main links fit on one line.
+- Open: inline-style CSP errors after client-side page changes on
+  `/colleges` (also on `?state=OH`, so not from this work); two pgTAP tests
+  count all rows and fail once the local test account has saved data.
 ### 2026-10-04: GPA and test scores (spec gpa-and-tests.md, roadmap project 2, decision 0013)
 - College directory pushed; its migration applied to the cloud and the
   Scorecard import re-run there (5,787 colleges, 949 with SAT ranges). The

@@ -40,7 +40,9 @@ export default function PrivacyPage() {
         <li>
           <strong>Your classes, grades and test scores, only if you save them.</strong> On the GPA page you can save
           your classes (name, type, grade and credits), how your school weights classes, a GPA you already know, and
-          your SAT or ACT score. We use them only to show your GPA and where your scores fall at each college. They’re
+          your SAT or ACT score. If you add them on the Athletes page, each class also keeps its core-course area and
+          the grade you took it in. We use them only to show your GPA, where your scores fall at each college, and
+          your college sports eligibility estimate. They’re
           never shown to anyone, shared, or sent to other companies or to AI tools. If you don’t sign in, the GPA page
           keeps your work in your own browser only and never sends it to us.
         </li>

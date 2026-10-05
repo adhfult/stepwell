@@ -13,7 +13,7 @@ const AREAS: { value: CoreArea; label: string }[] = [
   { value: "math", label: "Math" },
   { value: "science", label: "Science" },
   { value: "social", label: "Social science" },
-  { value: "other", label: "Other core: world language, religion, philosophy" },
+  { value: "other", label: "Other core" },
 ];
 const YEARS = [9, 10, 11, 12].map((y) => ({ value: String(y), label: `${y}th grade` }));
 const TOP_HALF = [
@@ -88,7 +88,7 @@ export function CoreChecker({ assoc, courses, weights, start, sat, act }: Props)
     <div>
       <p>
         For each class, pick its core area (check your school’s list of NCAA-approved courses) and the grade you took it
-        in.
+        in. Other core means world language, religion or philosophy.
       </p>
       <ul className="mt-6 divide-y divide-border-subtle border-y border-border-subtle">
         {tags.map((t, i) => (
