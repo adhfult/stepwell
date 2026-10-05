@@ -28,7 +28,7 @@ export const SPORTS = [
   { value: "soccer", label: "Soccer" },
   { value: "softball", label: "Softball" },
   { value: "squash", label: "Squash" },
-  { value: "swimming", label: "Swimming" },
+  { value: "swimming", label: "Swimming and diving" },
   { value: "synchronized-swimming", label: "Synchronized swimming" },
   { value: "table-tennis", label: "Table tennis" },
   { value: "tennis", label: "Tennis" },
@@ -39,7 +39,7 @@ export const SPORTS = [
   { value: "wrestling", label: "Wrestling" },
 ] as const;
 
-/** EADA's `Sports` names to our slugs. Combined sports split; "Other Sports" is skipped (empty list). */
+/** EADA's `Sports` names to our slugs. A combined sport's counts go to its first slug (src/jobs/sources/eada.ts); "Other Sports" is skipped (empty list). */
 export const EADA_SPORTS: Record<string, string[]> = {
   Archery: ["archery"],
   Badminton: ["badminton"],

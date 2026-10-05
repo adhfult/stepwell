@@ -43,27 +43,33 @@ export function parseEada(inst: unknown[][], schools: unknown[][], minRows = MIN
     "schools",
   );
 
-  // unitid -> slug -> counts; a sport reported combined and split keeps the larger count.
-  const teams = new Map<unknown, Map<string, { men: number | null; women: number | null }>>();
+  // unitid -> slug -> counts. A combined row ("Swimming and Diving") counts toward its first sport only,
+  // and only until a split row for that sport arrives; split rows of one sport keep the larger count.
+  type Counts = { men: number | null; women: number | null; combined: boolean };
+  const teams = new Map<unknown, Map<string, Counts>>();
+  const max = (a: number | null | undefined, b: number | null) => (a == null ? b : b === null ? a : Math.max(a, b));
   for (const row of schools.slice(1)) {
+    if (row[s.unitid] == null) continue; // blank row, e.g. at the end of the sheet
     const name = String(row[s.Sports] ?? "");
     const slugs = EADA_SPORTS[name];
     if (!slugs) throw new Error(`Unknown EADA sport "${name}"; add it to src/lib/athletes/sports.ts`);
     const men = num(row[s.PARTIC_MEN]) ?? num(row[s.PARTIC_COED_MEN]);
     const women = num(row[s.PARTIC_WOMEN]) ?? num(row[s.PARTIC_COED_WOMEN]);
     if (men === null && women === null) continue;
-    const bySport = teams.get(row[s.unitid]) ?? new Map();
+    const bySport = teams.get(row[s.unitid]) ?? new Map<string, Counts>();
     teams.set(row[s.unitid], bySport);
-    for (const slug of slugs) {
-      const had = bySport.get(slug);
-      const max = (a: number | null | undefined, b: number | null) => (a == null ? b : b === null ? a : Math.max(a, b));
-      bySport.set(slug, { men: max(had?.men, men), women: max(had?.women, women) });
+    const combined = slugs.length > 1;
+    for (const slug of combined ? slugs.slice(0, 1) : slugs) {
+      let had = bySport.get(slug);
+      if (combined && had && !had.combined) continue;
+      if (!combined && had?.combined) had = undefined;
+      bySport.set(slug, { men: max(had?.men, men), women: max(had?.women, women), combined });
     }
   }
 
   const records = inst.slice(1).map((row, n): StagedRecord<CollegeAthletics> => {
     const sports = [...(teams.get(row[i.unitid])?.entries() ?? [])]
-      .map(([sport, c]) => ({ sport, ...c }))
+      .map(([sport, { men, women }]) => ({ sport, men, women }))
       .sort((a, b) => a.sport.localeCompare(b.sport));
     const result = collegeSchema.safeParse({ unitid: row[i.unitid], code: row[i.ClassificationCode], sports });
     return result.success
