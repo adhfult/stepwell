@@ -43,8 +43,8 @@ export function parseEada(inst: unknown[][], schools: unknown[][], minRows = MIN
     "schools",
   );
 
-  // unitid -> slug -> counts. A combined row ("Swimming and Diving") counts toward its first sport only,
-  // and only until a split row for that sport arrives; split rows of one sport keep the larger count.
+  // unitid -> slug -> counts. A combined row ("Swimming and Diving") counts toward each of its sports
+  // until a split row for that sport arrives; split rows of one sport keep the larger count.
   type Counts = { men: number | null; women: number | null; combined: boolean };
   const teams = new Map<unknown, Map<string, Counts>>();
   const max = (a: number | null | undefined, b: number | null) => (a == null ? b : b === null ? a : Math.max(a, b));
@@ -59,7 +59,7 @@ export function parseEada(inst: unknown[][], schools: unknown[][], minRows = MIN
     const bySport = teams.get(row[s.unitid]) ?? new Map<string, Counts>();
     teams.set(row[s.unitid], bySport);
     const combined = slugs.length > 1;
-    for (const slug of combined ? slugs.slice(0, 1) : slugs) {
+    for (const slug of slugs) {
       let had = bySport.get(slug);
       if (combined && had && !had.combined) continue;
       if (!combined && had?.combined) had = undefined;

@@ -17,7 +17,7 @@ const schools = [
   [100654, 3, "Track and Field and Cross Country (combined)", 60, 55, null, null],
   [100654, 24, "Track and Field (Outdoor)", 70, 50, null, null],
   [100654, 25, "Cross Country", 12, 14, null, null],
-  // Combined only: counts go to the primary sport (swimming), not diving.
+  // Combined only: the counts go to both sports.
   [100654, 30, "Swimming and Diving (combined)", 25, 30, null, null],
   // Coed only: the coed counts fill in.
   [200, 36, "Sailing", null, null, 9, 7],
@@ -39,6 +39,7 @@ describe("parseEada", () => {
           { sport: "baseball", men: 47, women: null },
           { sport: "basketball", men: 27, women: 20 },
           { sport: "cross-country", men: 12, women: 14 },
+          { sport: "diving", men: 25, women: 30 },
           { sport: "swimming", men: 25, women: 30 },
           { sport: "track", men: 70, women: 50 },
         ],
