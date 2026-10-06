@@ -40,10 +40,9 @@ Newest entries at the top. Keep each entry short.
 ## Log
 ### 2026-10-05: athlete path review fixes
 - EADA: a combined row ("Swimming and Diving", "Track and Field and Cross
-  Country") counts toward its first sport only, and only until a split row
-  arrives. Cross-country no longer copies track counts (746 colleges
-  before, 6 equal now); diving is listed only where reported on its own
-  (5 colleges), so the filter reads "Swimming and diving". Blank rows skip.
+  Country") counts toward each sport it covers until a split row arrives,
+  so it no longer overwrites split counts (owner chose coverage over exact
+  rosters 2026-10-06). Blank rows skip.
 - `/athletes`: NAIA check shows with GPA or scores and no classes; the
   checker resets when the saved class list changes; timeline steps from
   past school years land in this one; college students get a plain "for
