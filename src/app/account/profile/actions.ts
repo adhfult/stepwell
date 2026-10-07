@@ -20,6 +20,7 @@ export async function saveProfile(_previous: ProfileState, formData: FormData): 
     stage: formText(formData, "stage"),
     state: formText(formData, "state"),
     gradYear: formText(formData, "gradYear"),
+    county: formText(formData, "county"),
   };
 
   const result = makeProfileSchema(new Date()).safeParse(values);
@@ -33,6 +34,7 @@ export async function saveProfile(_previous: ProfileState, formData: FormData): 
         stage: errors.stage?.[0],
         state: errors.state?.[0],
         gradYear: errors.gradYear?.[0],
+        county: errors.county?.[0],
       },
     };
   }
@@ -48,6 +50,8 @@ export async function saveProfile(_previous: ProfileState, formData: FormData): 
   }
 
   revalidatePath("/account");
+  revalidatePath("/account/profile"); // a new state brings its counties
+  revalidatePath("/scholarships");
   return {
     status: "saved",
     fieldErrors: {},
@@ -57,6 +61,7 @@ export async function saveProfile(_previous: ProfileState, formData: FormData): 
       stage: saved.stage,
       state: saved.state,
       gradYear: saved.grad_year === null ? "" : String(saved.grad_year),
+      county: saved.county ?? "",
     },
   };
 }

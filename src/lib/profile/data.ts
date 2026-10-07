@@ -10,8 +10,8 @@ import { createClient } from "@/lib/supabase/server";
  * Row Level Security enforces the same rule in the database.
  */
 
-export type Profile = Pick<Database["public"]["Tables"]["profiles"]["Row"], "nickname" | "stage" | "state" | "grad_year">;
-export type ProfileUpdate = Pick<Database["public"]["Tables"]["profiles"]["Update"], "nickname" | "stage" | "state" | "grad_year">;
+export type Profile = Pick<Database["public"]["Tables"]["profiles"]["Row"], "nickname" | "stage" | "state" | "grad_year" | "county">;
+export type ProfileUpdate = Pick<Database["public"]["Tables"]["profiles"]["Update"], "nickname" | "stage" | "state" | "grad_year" | "county">;
 
 /** The signed-in student's profile, or null when signed out. */
 export const getMyProfile = cache(async (): Promise<Profile | null> => {
@@ -21,7 +21,7 @@ export const getMyProfile = cache(async (): Promise<Profile | null> => {
   const supabase = await createClient();
   const { data } = await supabase
     .from("profiles")
-    .select("nickname, stage, state, grad_year")
+    .select("nickname, stage, state, grad_year, county")
     .eq("id", user.id)
     .maybeSingle();
   return data;

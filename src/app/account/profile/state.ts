@@ -3,10 +3,10 @@
  * actions.ts because a "use server" file may only export async functions.
  */
 
-export type ProfileField = "nickname" | "stage" | "state" | "gradYear";
+export type ProfileField = "nickname" | "stage" | "state" | "gradYear" | "county";
 
 /** The form's answers as typed (the menus and radios send text). */
-export type ProfileValues = { nickname: string; stage: string; state: string; gradYear: string };
+export type ProfileValues = { nickname: string; stage: string; state: string; gradYear: string; county: string };
 
 export type ProfileState = {
   status: "idle" | "invalid" | "error" | "saved";

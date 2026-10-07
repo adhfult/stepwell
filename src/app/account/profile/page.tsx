@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Page, PageTitle } from "@/components/page";
 import { requireUser } from "@/lib/auth/dal";
+import { countiesOf } from "@/lib/profile/counties";
 import { getMyProfile, isProfileComplete } from "@/lib/profile/data";
 import { ProfileForm } from "./profile-form";
 
@@ -22,11 +23,13 @@ export default async function ProfilePage() {
       </p>
       <ProfileForm
         thisYear={new Date().getUTCFullYear()}
+        counties={profile?.state ? countiesOf(profile.state) : []}
         initialValues={{
           nickname: profile?.nickname ?? "",
           stage: profile?.stage ?? "",
           state: profile?.state ?? "",
           gradYear: profile?.grad_year == null ? "" : String(profile.grad_year),
+          county: profile?.county ?? "",
         }}
       />
       <p className="mt-8">

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isCountyIn } from "./counties";
 import { STAGES, STATES } from "./options";
 
 /**
@@ -29,18 +30,24 @@ export function makeProfileSchema(now: Date) {
         .min(thisYear - 1, { error: yearError })
         .max(thisYear + 8, { error: yearError }),
     ]),
+    county: z.union([z.literal(""), z.string().regex(/^\d{5}$/)]).default(""),
+  })
+  .refine((p) => p.county === "" || isCountyIn(p.county, p.state), {
+    error: "Choose a county in your state, or Not set",
+    path: ["county"],
   });
 }
 
 export type ProfileInput = z.output<ReturnType<typeof makeProfileSchema>>;
 
 /** Valid form answers as database columns, ready for update(). */
-export function toProfileUpdate({ nickname, stage, state, gradYear }: ProfileInput) {
+export function toProfileUpdate({ nickname, stage, state, gradYear, county }: ProfileInput) {
   return {
     nickname: nickname === "" ? null : nickname,
     stage,
     state,
     // Adult learners aren't asked; clear it whatever was sent.
     grad_year: stage === "adult_learner" || gradYear === "" ? null : gradYear,
+    county: county === "" ? null : county,
   };
 }

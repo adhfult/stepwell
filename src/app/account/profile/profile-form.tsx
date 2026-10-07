@@ -16,7 +16,7 @@ import { saveProfile } from "./actions";
 import type { ProfileState, ProfileValues } from "./state";
 
 /** Summary order follows the form; stage links to its first radio (id="stage"). */
-const fields = ["nickname", "stage", "state", "gradYear"] as const;
+const fields = ["nickname", "stage", "state", "county", "gradYear"] as const;
 
 function summaryItems(state: ProfileState): SummaryItem[] {
   const items: SummaryItem[] = state.formError ? [{ message: state.formError }] : [];
@@ -27,7 +27,18 @@ function summaryItems(state: ProfileState): SummaryItem[] {
   return items;
 }
 
-export function ProfileForm({ initialValues, thisYear }: { initialValues: ProfileValues; thisYear: number }) {
+type Option = { value: string; label: string };
+
+/** `counties` belong to the saved state (the page loads them); another state needs a save first. */
+export function ProfileForm({
+  initialValues,
+  thisYear,
+  counties,
+}: {
+  initialValues: ProfileValues;
+  thisYear: number;
+  counties: Option[];
+}) {
   const [state, formAction] = useActionState(saveProfile, {
     status: "idle",
     fieldErrors: {},
@@ -38,6 +49,8 @@ export function ProfileForm({ initialValues, thisYear }: { initialValues: Profil
   // Which stage is picked right now, to word (or hide) the graduation question.
   const [stage, setStage] = useState(state.values.stage);
   const yearLabel = gradYearLabel(stage);
+  const [chosenState, setChosenState] = useState(state.values.state);
+  const countiesHere = chosenState === initialValues.state && counties.length > 0;
   const years = useMemo(
     () => Array.from({ length: 10 }, (_, i) => String(thisYear - 1 + i)).map((year) => ({ value: year, label: year })),
     [thisYear],
@@ -82,8 +95,35 @@ export function ProfileForm({ initialValues, thisYear }: { initialValues: Profil
           invalid={Boolean(state.fieldErrors.state)}
           describedById={state.fieldErrors.state ? "state-error" : undefined}
           defaultValue={state.values.state}
+          onChange={(e) => setChosenState(e.target.value)}
         />
         <FieldError id="state-error" message={state.fieldErrors.state} />
+      </div>
+
+      <div>
+        {countiesHere ? (
+          <>
+            <SelectField
+              id="county"
+              label="Which county do you live in? (optional)"
+              placeholder="Not set"
+              options={counties}
+              invalid={Boolean(state.fieldErrors.county)}
+              describedById={`county-hint${state.fieldErrors.county ? " county-error" : ""}`}
+              defaultValue={state.values.county}
+            />
+            <FieldError id="county-error" message={state.fieldErrors.county} />
+          </>
+        ) : (
+          <p className="font-bold">Which county do you live in? (optional)</p>
+        )}
+        <p id="county-hint" className="mt-2 text-sm text-muted">
+          {countiesHere
+            ? "Shows scholarships from foundations near you. Only you can see it."
+            : chosenState
+              ? "Save your state first, then pick your county here."
+              : "Choose your state first."}
+        </p>
       </div>
 
       {/* Not asked for adult learners; the server clears it for them anyway. */}

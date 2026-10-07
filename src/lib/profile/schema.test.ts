@@ -14,7 +14,14 @@ function errorsFor(input: Record<string, string>) {
 
 describe("profile schema", () => {
   it("turns valid answers into database columns", () => {
-    expect(columns(valid)).toEqual({ nickname: "Sam", stage: "high_school", state: "OH", grad_year: 2029 });
+    expect(columns(valid)).toEqual({ nickname: "Sam", stage: "high_school", state: "OH", grad_year: 2029, county: null });
+  });
+
+  it("keeps an optional county from the chosen state", () => {
+    expect(columns({ ...valid, county: "39049" }).county).toBe("39049");
+    expect(columns({ ...valid, county: "" }).county).toBeNull();
+    expect(errorsFor({ ...valid, county: "06037" }).county).toEqual(["Choose a county in your state, or Not set"]);
+    expect(errorsFor({ ...valid, county: "x" }).county).toBeDefined();
   });
 
   it("stores an empty or blank nickname as nothing, and trims the rest", () => {
