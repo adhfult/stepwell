@@ -1,7 +1,8 @@
 name: Scholarship re-check
 
 # Monthly (docs/specs/scholarship-recheck.md): fails with the list of entries
-# to re-check by hand, so GitHub emails the owner. Reads only the repo's files.
+# to re-check by hand and any local scholarship link that stopped answering
+# (docs/specs/more-scholarships.md), so GitHub emails the owner.
 on:
   schedule:
     - cron: "23 13 1 * *"
@@ -13,10 +14,16 @@ permissions:
 jobs:
   due:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: 24
       - run: npm run scholarships:due
+      - run: npm ci
+        if: ${{ !cancelled() }}
+      - run: npm run award-sites:check
+        if: ${{ !cancelled() }}
+        env:
+          IMPORT_CONTACT: ${{ vars.IMPORT_CONTACT }}
