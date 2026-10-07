@@ -7,9 +7,6 @@ Newest entries at the top. Keep each entry short.
 - [ ] **Owner:** review `data/award-sites/ca.json` (46 links) and
       `data/scholarships/private.json` (19 programs). Both are live on the
       cloud (migration applied, pushed, import run 37561284140 added 19).
-- [ ] **Owner:** review the TX, FL, NY, PA local scholarship commits
-      (c16e85a..abbc687, gaps listed in each commit body; NY's Central NY
-      counties come from outside sources), then approve the push.
 - [ ] Next states for local scholarships: `/award-sites-research` skill,
       `npm run award-sites:gaps -- <ST>` (docs/tools.md).
 - [ ] Athlete rules: re-check every August against the new NCAA guide
