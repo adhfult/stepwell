@@ -1,0 +1,408 @@
+[
+  {
+    "id": "pa-bucks-cc",
+    "name": "Bucks County Community College",
+    "kind": "college",
+    "unitid": 211307,
+    "counties": [],
+    "url": "https://www.bucks.edu/scholarships/",
+    "serves": "Bucks students; Foundation scholarships through the ScholarshipUniverse portal",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-ccac",
+    "name": "Community College of Allegheny County",
+    "kind": "college",
+    "unitid": 210605,
+    "counties": [],
+    "url": "https://ccac.edu/cost-and-aid/financial-aid/scholarships.php",
+    "serves": "CCAC students; one AwardSpring application for more than 100 foundation scholarship funds",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-ccp",
+    "name": "Community College of Philadelphia",
+    "kind": "college",
+    "unitid": 215239,
+    "counties": [],
+    "url": "https://ccp.academicworks.com/",
+    "serves": "Community College of Philadelphia students; the college's scholarship listings",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-adams",
+    "name": "Adams County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42001"],
+    "url": "https://www.adamscountycf.org/grants-scholarships/scholarships/",
+    "serves": "Adams County high school students; more than 100 scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-alleghenies",
+    "name": "Community Foundation for the Alleghenies",
+    "kind": "foundation",
+    "counties": ["42009", "42021", "42063", "42111"],
+    "url": "https://www.cfalleghenies.org/scholarships/",
+    "serves": "Students in Bedford, Cambria, Indiana and Somerset counties; one online application, plus school-selected awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-berks",
+    "name": "Berks County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42011"],
+    "url": "https://bccf.org/funds/scholarships/",
+    "serves": "Berks County students; one universal application matches you to scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-bucks",
+    "name": "Bucks County Foundation",
+    "kind": "foundation",
+    "counties": ["42017"],
+    "url": "https://www.buckscountyfoundation.org/receive/",
+    "serves": "Students throughout Bucks County; over 100 scholarship awards, applications open each January",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-centre",
+    "name": "Centre Foundation",
+    "kind": "foundation",
+    "counties": ["42027"],
+    "url": "https://centrefoundation.org/grants/for-students/",
+    "serves": "Seniors in all Centre County school districts, some nearby districts, college students and returning adults",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-chester",
+    "name": "Chester County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42029"],
+    "url": "https://chescocf.org/receive/apply-for-scholarships/",
+    "serves": "Chester County students, mostly graduating seniors; apply through your school or the online universal application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-clearfield",
+    "name": "Clearfield County Charitable Foundation",
+    "kind": "foundation",
+    "counties": ["42033"],
+    "url": "https://clearfieldcharitablefoundation.org/scholarship-application-portal-page",
+    "serves": "Clearfield County students; online and mailed scholarship applications",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-crawford",
+    "name": "Crawford Heritage Community Foundation",
+    "kind": "foundation",
+    "counties": ["42039"],
+    "url": "https://crawfordheritage.org/scholarships/",
+    "serves": "Graduating seniors and current college students living in Crawford County",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-elk",
+    "name": "Elk County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42047"],
+    "url": "https://elkcountyfoundation.org/scholarships/",
+    "serves": "Elk County students; scholarships listed by school or category",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-endless-mountains",
+    "name": "Community Foundation of the Endless Mountains",
+    "kind": "foundation",
+    "counties": ["42115"],
+    "url": "https://community-foundation.org/scholarships/",
+    "serves": "Graduating high school seniors in the region; scholarships listed by fund",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-erie",
+    "name": "Erie Community Foundation",
+    "kind": "foundation",
+    "counties": ["42049"],
+    "url": "https://eriecommunityfoundation.org/scholarships/",
+    "serves": "Erie County students; one online application covers most scholarships, others are applied for at school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-fayette",
+    "name": "Community Foundation of Fayette County",
+    "kind": "foundation",
+    "counties": ["42051"],
+    "url": "https://www.cffayettepa.org/for-scholarships/",
+    "serves": "Fayette County students; one online application lists the scholarships you match",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-fcfp",
+    "name": "First Community Foundation Partnership of Pennsylvania",
+    "kind": "foundation",
+    "counties": ["42081", "42093", "42097", "42109", "42119"],
+    "url": "https://www.fcfpartnership.org/grants-scholarships/",
+    "serves": "High school students in Lycoming, Montour, Northumberland, Snyder and Union counties",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-lancaster",
+    "name": "Lancaster County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42071"],
+    "url": "https://www.lancfound.org/grant/general-scholarships/",
+    "serves": "Lancaster County high school seniors, graduates and residents; one application for all funds in the program",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-luzerne",
+    "name": "The Luzerne Foundation",
+    "kind": "foundation",
+    "counties": ["42079"],
+    "url": "https://luzernefoundation.org/scholarships-accepting-applications/",
+    "serves": "Graduating seniors from Luzerne County area high schools; scholarships listed by school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-philadelphia",
+    "name": "Philadelphia Foundation",
+    "kind": "foundation",
+    "counties": ["42017", "42029", "42045", "42091", "42101"],
+    "url": "https://www.philafound.org/students/apply-for-a-scholarship/",
+    "serves": "Graduating seniors in Bucks, Chester, Delaware, Montgomery and Philadelphia counties with unmet financial need; one portal",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-pittsburgh",
+    "name": "The Pittsburgh Foundation",
+    "kind": "foundation",
+    "counties": ["42003", "42129"],
+    "url": "https://pittsburghfoundation.org/apply-for-scholarship",
+    "serves": "Local seniors, undergraduate and graduate students; about 375 scholarship funds, shared with the Westmoreland County foundation",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-schuylkill",
+    "name": "Schuylkill Area Community Foundation",
+    "kind": "foundation",
+    "counties": ["42107"],
+    "url": "https://www.sacfoundation.com/scholarships.htm",
+    "serves": "Schuylkill County students; one GoApply application for all scholarships and graduation awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-scranton",
+    "name": "Scranton Area Community Foundation",
+    "kind": "foundation",
+    "counties": ["42069"],
+    "url": "https://safdn.org/scholarship-application/",
+    "serves": "Scranton area students; one common application for over 90 scholarship funds",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-tfec",
+    "name": "The Foundation for Enhancing Communities",
+    "kind": "foundation",
+    "counties": ["42041", "42043", "42055", "42099"],
+    "url": "https://www.tfec.org/tfec-scholarships/scholarship-search/",
+    "serves": "South Central Pennsylvania students; search more than 190 scholarships by student type",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-warren",
+    "name": "Community Foundation of Warren County",
+    "kind": "foundation",
+    "counties": ["42123"],
+    "url": "https://cfowc.org/scholarships/",
+    "serves": "Warren County students; traditional and workforce development scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-washington",
+    "name": "Washington County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42125"],
+    "url": "https://www.wccf.net/apply-for-a-grant/lifelong-learning-grants",
+    "serves": "Washington County students, from K-12 through college and graduate school; need- and merit-based awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-wayne",
+    "name": "Wayne County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42127"],
+    "url": "https://www.waynefoundation.org/Scholarships/about",
+    "serves": "Wayne County residents at public or private schools, plus some for Wallenpaupack Area High School",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-cf-york",
+    "name": "York County Community Foundation",
+    "kind": "foundation",
+    "counties": ["42133"],
+    "url": "https://yccf.org/for-grant-seekers/scholarships/",
+    "serves": "York County graduating seniors, through local Dollars for Scholars chapters and field-of-study scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-commonwealth-u",
+    "name": "Commonwealth University of Pennsylvania",
+    "kind": "college",
+    "unitid": 498562,
+    "counties": [],
+    "url": "https://www.commonwealthu.edu/cost-and-aid/scholarships",
+    "serves": "Commonwealth University students; new first-year and transfer students are reviewed for scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-dccc",
+    "name": "Delaware County Community College",
+    "kind": "college",
+    "unitid": 211927,
+    "counties": [],
+    "url": "https://www.dccc.edu/admissions-and-financial-aid/financial-aid/scholarships/",
+    "serves": "DCCC students; Educational Foundation scholarships for full-time students who file the FAFSA",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-drexel",
+    "name": "Drexel University",
+    "kind": "college",
+    "unitid": 212054,
+    "counties": [],
+    "url": "https://drexel.edu/drexelcentral/finaid/grants/undergraduate-scholarships/",
+    "serves": "Drexel undergraduates; merit scholarships for incoming first-year and transfer students and other awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-hacc",
+    "name": "Harrisburg Area Community College",
+    "kind": "college",
+    "unitid": 212878,
+    "counties": [],
+    "url": "https://www.hacc.edu/Paying/TypesofAid/Scholarships/credit-scholarships.cfm",
+    "serves": "HACC students; one general application matches you to HACC Foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-iup",
+    "name": "Indiana University of Pennsylvania",
+    "kind": "college",
+    "unitid": 213020,
+    "counties": [],
+    "url": "https://www.iup.edu/financialaid/types-of-financial-aid/scholarships/index.html",
+    "serves": "IUP students; applicants are automatically considered for academic scholarships, plus a list of outside awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-kutztown",
+    "name": "Kutztown University of Pennsylvania",
+    "kind": "college",
+    "unitid": 213349,
+    "counties": [],
+    "url": "https://www.kutztown.edu/affordability/guide-to-financial-aid/scholarships.html",
+    "serves": "Kutztown students; university and KU Foundation scholarships for new and current students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-millersville",
+    "name": "Millersville University of Pennsylvania",
+    "kind": "college",
+    "unitid": 214041,
+    "counties": [],
+    "url": "https://www.millersville.edu/finaid/financial-aid-options/scholarships/",
+    "serves": "Millersville students; scholarships for new and current students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-montco-cc",
+    "name": "Montgomery County Community College",
+    "kind": "college",
+    "unitid": 214111,
+    "counties": [],
+    "url": "https://www.mc3.edu/paying-for-college/scholarships",
+    "serves": "Montco students; one scholarship application for over 200 scholarship funds",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-northampton-cc",
+    "name": "Northampton County Area Community College",
+    "kind": "college",
+    "unitid": 214379,
+    "counties": [],
+    "url": "https://northampton.academicworks.com/",
+    "serves": "Northampton Community College students; scholarship listings and automatch application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-penn-state",
+    "name": "Pennsylvania State University-Main Campus",
+    "kind": "college",
+    "unitid": 214777,
+    "counties": [],
+    "url": "https://www.psu.edu/costs-aid/types-of-aid/scholarships",
+    "serves": "Penn State students; admitted students who file the FAFSA are considered for available scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-penn-state-world-campus",
+    "name": "Pennsylvania State University-World Campus",
+    "kind": "college",
+    "unitid": 479956,
+    "counties": [],
+    "url": "https://www.worldcampus.psu.edu/tuition-and-financial-aid/scholarships",
+    "serves": "Penn State World Campus students; one application plus the FAFSA covers many scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-pennwest",
+    "name": "Pennsylvania Western University",
+    "kind": "college",
+    "unitid": 498571,
+    "counties": [],
+    "url": "https://www.pennwest.edu/affording-college/scholarships-grants/scholarships.php",
+    "serves": "PennWest students; new campus-based students are automatically considered for merit scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-pitt",
+    "name": "University of Pittsburgh-Pittsburgh Campus",
+    "kind": "college",
+    "unitid": 215293,
+    "counties": [],
+    "url": "https://financialaid.pitt.edu/types-of-aid/scholarships/",
+    "serves": "Pitt students; first-year applicants with a complete application by December 1 are automatically considered for academic scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-slippery-rock",
+    "name": "Slippery Rock University of Pennsylvania",
+    "kind": "college",
+    "unitid": 216038,
+    "counties": [],
+    "url": "https://www.sru.edu/admissions/financial-aid/types-of-aid/scholarships",
+    "serves": "SRU students; merit scholarships for admitted freshmen and others with their own applications",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-temple",
+    "name": "Temple University",
+    "kind": "college",
+    "unitid": 216339,
+    "counties": [],
+    "url": "https://sfs.temple.edu/financial-aid-types/scholarships",
+    "serves": "Temple students; campus scholarships plus ScholarshipUniverse, a search of outside awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "pa-west-chester",
+    "name": "West Chester University of Pennsylvania",
+    "kind": "college",
+    "unitid": 216764,
+    "counties": [],
+    "url": "https://www.wcupa.edu/financialAid/scholarships.aspx",
+    "serves": "WCU students; one general scholarship application for over 180 scholarships",
+    "checked_on": "2026-10-06"
+  }
+]
