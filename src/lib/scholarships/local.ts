@@ -4,6 +4,7 @@
 // importing its file below (a test checks none is missing).
 import { z } from "zod";
 import ca from "../../../data/award-sites/ca.json";
+import fl from "../../../data/award-sites/fl.json";
 import tx from "../../../data/award-sites/tx.json";
 
 export const siteSchema = z
@@ -28,6 +29,7 @@ export type Site = z.infer<typeof siteSchema>;
 /** State code -> its reviewed directory file. */
 export const FILES: Record<string, Site[]> = {
   CA: ca as Site[],
+  FL: fl as Site[],
   TX: tx as Site[],
 };
 

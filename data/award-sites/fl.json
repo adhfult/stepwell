@@ -1,0 +1,442 @@
+[
+  {
+    "id": "fl-broward-college",
+    "name": "Broward College",
+    "kind": "college",
+    "unitid": 132709,
+    "counties": [],
+    "url": "https://www.broward.edu/admissions/financial-aid/scholarships/",
+    "serves": "Broward College students; awards for merit, financial need, degree choice and more",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-brevard",
+    "name": "Community Foundation for Brevard",
+    "kind": "foundation",
+    "counties": [
+      "12009"
+    ],
+    "url": "https://cfbrevard.org/grants/scholarships/",
+    "serves": "Brevard County students; nine scholarships, each with its own rules, application and deadline",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-broward",
+    "name": "Broward Education Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12011"
+    ],
+    "url": "https://browardedfoundation.org/what-we-do/students/",
+    "serves": "Graduating seniors from Broward County Public Schools; also handles Community Foundation of Broward awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-central-florida",
+    "name": "Central Florida Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12095",
+      "12105"
+    ],
+    "url": "https://cffound.org/what-we-do/scholarships/",
+    "serves": "Central Florida students; each scholarship names its own school, county or group, such as Orange or Polk County",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-charlotte",
+    "name": "Charlotte Community Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12015"
+    ],
+    "url": "https://www.charlottecf.org/scholarships/",
+    "serves": "People who have lived or worked in Charlotte County at least a year, from graduating seniors to adults returning to school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-collier",
+    "name": "Collier Community Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12021"
+    ],
+    "url": "https://colliercf.org/scholarships/",
+    "serves": "Collier County students of many backgrounds, GPAs, fields of study and levels of education",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-gulf-coast",
+    "name": "Gulf Coast Community Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12115",
+      "12015",
+      "12027"
+    ],
+    "url": "https://gulfcoastcf.org/community-impact/scholarships",
+    "serves": "Students of all ages from Sarasota, Charlotte and DeSoto counties, Boca Grande, Lakewood Ranch and Longboat Key",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-indian-river",
+    "name": "Scholarship Foundation of Indian River County",
+    "kind": "foundation",
+    "counties": [
+      "12061"
+    ],
+    "url": "https://www.sfindianriver.org/apply-for-award/who-can-apply/",
+    "serves": "Indian River County residents with financial need planning full-time study at an accredited college",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-keys",
+    "name": "Community Foundation of the Florida Keys",
+    "kind": "foundation",
+    "counties": [
+      "12087"
+    ],
+    "url": "https://cffk.org/for-nonprofits-center-for-nonprofit-excellence/scholarships/",
+    "serves": "Students from Monroe County high schools, for educational and vocational studies",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-manatee",
+    "name": "Manatee Community Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12081"
+    ],
+    "url": "https://manateecf.org/scholarships/degree-seeking/",
+    "serves": "Manatee County residents seeking degrees; some funds are also open to Sarasota County residents",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-miami",
+    "name": "The Miami Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12086"
+    ],
+    "url": "https://miamifoundation.org/scholarships/",
+    "serves": "Miami-Dade County students, through the foundation's online scholarship portal",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-northeast-florida",
+    "name": "The Community Foundation for Northeast Florida",
+    "kind": "foundation",
+    "counties": [
+      "12031"
+    ],
+    "url": "https://www.jaxcf.org/2026-college-scholarships/",
+    "serves": "Northeast Florida students, from graduating seniors to current college students; some awards for Duval County",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-ocala",
+    "name": "Community Foundation of Ocala Marion County",
+    "kind": "foundation",
+    "counties": [
+      "12083"
+    ],
+    "url": "https://www.ocalafoundation.org/scholarships/",
+    "serves": "Marion County nursing students (RN or BSN) who plan to work at a Marion County acute care facility",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-palm-beach-martin",
+    "name": "Community Foundation for Palm Beach and Martin Counties",
+    "kind": "foundation",
+    "counties": [
+      "12099",
+      "12085"
+    ],
+    "url": "https://yourcommunityfoundation.org/scholarship-seekers/",
+    "serves": "Graduating high school seniors in Palm Beach or Martin County headed to college, university or trade school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-pinellas-education",
+    "name": "Pinellas Education Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12103"
+    ],
+    "url": "https://pinellaseducation.org/students/",
+    "serves": "Pinellas County students: senior scholarships, Take Stock in Children (grades 7-12) and Rising Stars arts awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-polk-education",
+    "name": "Polk Education Foundation",
+    "kind": "foundation",
+    "counties": [
+      "12105"
+    ],
+    "url": "https://www.polkeducationfoundation.org/scholarships/scholarships_applications",
+    "serves": "Graduating seniors across Polk County's public high schools, plus paper applications open to some other students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-sarasota",
+    "name": "Community Foundation of Sarasota County",
+    "kind": "foundation",
+    "counties": [
+      "12115"
+    ],
+    "url": "https://www.cfsarasota.org/students/scholarship-opportunities",
+    "serves": "Sarasota County students, with separate scholarships for students under 24 and those 24 or older",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-southwest-florida",
+    "name": "Collaboratory (Southwest Florida Community Foundation)",
+    "kind": "foundation",
+    "counties": [
+      "12015",
+      "12021",
+      "12043",
+      "12051",
+      "12071"
+    ],
+    "url": "https://collaboratory.org/scholarships/",
+    "serves": "Charlotte, Collier, Glades, Hendry and Lee students: graduating seniors, adult learners, undergraduate and graduate students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-cf-tampa-bay",
+    "name": "Community Foundation Tampa Bay",
+    "kind": "foundation",
+    "counties": [
+      "12057",
+      "12103",
+      "12101",
+      "12053",
+      "12017"
+    ],
+    "url": "https://www.cftampabay.org/student-scholarships",
+    "serves": "Mostly Hillsborough, Pinellas, Pasco, Hernando and Citrus students: seniors, college students and those returning",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-efsc",
+    "name": "Eastern Florida State College",
+    "kind": "college",
+    "unitid": 132693,
+    "counties": [],
+    "url": "https://easternflorida.academicworks.com/",
+    "serves": "Eastern Florida State College students, for scholarships in one application portal",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fau",
+    "name": "Florida Atlantic University",
+    "kind": "college",
+    "unitid": 133669,
+    "counties": [],
+    "url": "https://www.fau.edu/finaid/types-of-aid/scholarships/",
+    "serves": "FAU students, for scholarships based on achievement, leadership, activities, work and financial need",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fgcu",
+    "name": "Florida Gulf Coast University",
+    "kind": "college",
+    "unitid": 433660,
+    "counties": [],
+    "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/scholarships",
+    "serves": "Prospective and current FGCU undergraduates, including FGCU Foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fiu",
+    "name": "Florida International University",
+    "kind": "college",
+    "unitid": 133951,
+    "counties": [],
+    "url": "https://fiu.academicworks.com/",
+    "serves": "FIU students, for university and endowed scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fscj",
+    "name": "Florida State College at Jacksonville",
+    "kind": "college",
+    "unitid": 133702,
+    "counties": [],
+    "url": "https://www.fscj.edu/financial-aid/scholarships",
+    "serves": "Current and future FSCJ students, matched to scholarships through ScholarshipUniverse",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fsu",
+    "name": "Florida State University",
+    "kind": "college",
+    "unitid": 134097,
+    "counties": [],
+    "url": "https://fsu.academicworks.com/",
+    "serves": "FSU students, for scholarships funded through the FSU Foundation and private donors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-fsw",
+    "name": "Florida SouthWestern State College",
+    "kind": "college",
+    "unitid": 133508,
+    "counties": [],
+    "url": "https://www.fsw.edu/financialaid/scholarships",
+    "serves": "FSW students, for institutional scholarships through a yearly scholarship application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-hillsborough-college",
+    "name": "Hillsborough College",
+    "kind": "college",
+    "unitid": 134495,
+    "counties": [],
+    "url": "https://www.hcfl.edu/paying-college/financial-aid-and-scholarships/scholarships-grants-and-work-study/scholarships",
+    "serves": "Degree-seeking Hillsborough College students, for HC Foundation and state scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-irsc",
+    "name": "Indian River State College",
+    "kind": "college",
+    "unitid": 134608,
+    "counties": [],
+    "url": "https://irsc.edu/admissions/financial-aid/types-aid/scholarships/",
+    "serves": "IRSC students, including Indian River State College Foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-mdc",
+    "name": "Miami Dade College",
+    "kind": "college",
+    "unitid": 135717,
+    "counties": [],
+    "url": "https://www.mdc.edu/financialaid/scholarships/",
+    "serves": "New, continuing, returning and transfer MDC students; one application matches you to 300+ scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-miami",
+    "name": "University of Miami",
+    "kind": "college",
+    "unitid": 135726,
+    "counties": [],
+    "url": "https://admissions.miami.edu/undergraduate/financial-aid/scholarships/index.html",
+    "serves": "Undergraduate applicants to the University of Miami; all are considered for merit scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-palm-beach-state",
+    "name": "Palm Beach State College",
+    "kind": "college",
+    "unitid": 136358,
+    "counties": [],
+    "url": "https://www.palmbeachstate.edu/foundation/student-scholarships/",
+    "serves": "Palm Beach State students; one application for 200+ foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-santa-fe",
+    "name": "Santa Fe College",
+    "kind": "college",
+    "unitid": 137096,
+    "counties": [],
+    "url": "https://www.sfcollege.edu/foundation/scholarships/",
+    "serves": "Santa Fe College students, for scholarships funded by Santa Fe College Foundation donors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-seminole-state",
+    "name": "Seminole State College of Florida",
+    "kind": "college",
+    "unitid": 137209,
+    "counties": [],
+    "url": "https://www.seminolestate.edu/foundation/scholarships",
+    "serves": "Current and prospective Seminole State students, for foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-spc",
+    "name": "St Petersburg College",
+    "kind": "college",
+    "unitid": 137078,
+    "counties": [],
+    "url": "https://www.spcollege.edu/financial-aid/types-of-financial-aid/scholarships",
+    "serves": "SPC students, for SPC Foundation, donor, state and college scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-tallahassee-state",
+    "name": "Tallahassee State College",
+    "kind": "college",
+    "unitid": 137759,
+    "counties": [],
+    "url": "https://tscfl.scholarships.ngwebsolutions.com/Scholarships/Search",
+    "serves": "Tallahassee State College students; lists every scholarship offered by the college and the TSC Foundation",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-ucf",
+    "name": "University of Central Florida",
+    "kind": "college",
+    "unitid": 132903,
+    "counties": [],
+    "url": "https://ucf.academicworks.com/",
+    "serves": "UCF students; UCF Foundation scholarships and outside awards in one portal",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-uf",
+    "name": "University of Florida",
+    "kind": "college",
+    "unitid": 134130,
+    "counties": [],
+    "url": "https://www.sfa.ufl.edu/types-of-aid/scholarships/",
+    "serves": "UF students, for university, state, college and department scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-unf",
+    "name": "University of North Florida",
+    "kind": "college",
+    "unitid": 136172,
+    "counties": [],
+    "url": "https://www.unf.edu/scholarships/",
+    "serves": "UNF students, for UNF and outside scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-usf",
+    "name": "University of South Florida",
+    "kind": "college",
+    "unitid": 137351,
+    "counties": [],
+    "url": "https://www.usf.edu/financial-aid/scholarships/",
+    "serves": "USF students, for USF scholarships and fellowships through one online application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-ut",
+    "name": "The University of Tampa",
+    "kind": "college",
+    "unitid": 137847,
+    "counties": [],
+    "url": "https://www.ut.edu/admissions/financial-aid/scholarships-and-grants",
+    "serves": "University of Tampa undergraduates, for institutional scholarships and grants",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "fl-valencia",
+    "name": "Valencia College",
+    "kind": "college",
+    "unitid": 138187,
+    "counties": [],
+    "url": "https://valenciacollege.edu/finaid/programs/scholarships/",
+    "serves": "Valencia students; awards mainly based on financial need, some for talent or interests",
+    "checked_on": "2026-10-06"
+  }
+]
