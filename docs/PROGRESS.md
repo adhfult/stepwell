@@ -5,12 +5,8 @@ Newest entries at the top. Keep each entry short.
 
 ## Next up
 - [ ] **Owner:** review `data/award-sites/ca.json` (46 links) and
-      `data/scholarships/private.json` (19 programs), then approve pushing
-      the more-scholarships commits and applying migration
-      `20261007010410_local_scholarships.sql` to the cloud (migration
-      first, then push code, then `gh workflow run import.yml -R
-      adhfult/stepwell -f source=official_list` so the private programs reach
-      the cloud table).
+      `data/scholarships/private.json` (19 programs). Both are live on the
+      cloud (migration applied, pushed, import run 37561284140 added 19).
 - [ ] Local scholarship files for TX, FL, NY, PA (one commit each, owner
       approves each); CA gaps: Los Angeles, San Francisco, Fresno, Tulare.
 - [ ] Athlete rules: re-check every August against the new NCAA guide
