@@ -9,6 +9,12 @@ describe("linkProblem", () => {
   it("says when robots.txt kept it from checking", () =>
     expect(linkProblem(new RobotsDisallowedError("no"))).toBe("not checked (robots.txt)"));
   it("reports a network failure", () => expect(linkProblem(new Error("ETIMEDOUT"))).toBe("failed: ETIMEDOUT"));
+  it("flags a link that lands on another site, ignoring www", () => {
+    expect(linkProblem({ ...ok, finalUrl: "https://www.blackbaud.com/x" }, "https://fsu.academicworks.com/")).toBe(
+      "lands on another site: https://www.blackbaud.com/x",
+    );
+    expect(linkProblem(ok, "https://www.x.org/s")).toBeNull();
+  });
 });
 
 describe("pageTitle", () => {

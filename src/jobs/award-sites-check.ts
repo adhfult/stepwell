@@ -8,11 +8,17 @@
 import { appendFileSync, readdirSync, readFileSync } from "node:fs";
 import { createPoliteFetcher, type FetchResult, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
 
-/** What's wrong with a link's answer, or null when it's fine. */
-export function linkProblem(result: FetchResult | Error): string | null {
+const host = (url: string) => new URL(url).hostname.replace(/^www\./, "");
+
+/**
+ * What's wrong with a link's answer, or null when it's fine. Landing on another site counts:
+ * retired portals (e.g. <college>.academicworks.com) redirect to a marketing page that answers 200.
+ */
+export function linkProblem(result: FetchResult | Error, url?: string): string | null {
   if (result instanceof RobotsDisallowedError) return "not checked (robots.txt)";
   if (result instanceof Error) return `failed: ${result.message}`;
-  return result.status === 200 ? null : `answered ${result.status}`;
+  if (result.status !== 200) return `answered ${result.status}`;
+  return url && host(result.finalUrl) !== host(url) ? `lands on another site: ${result.finalUrl}` : null;
 }
 
 /** The page's <title>, to spot a donor or news page before linking it. */
@@ -22,7 +28,7 @@ async function main(url?: string) {
   const fetcher = createPoliteFetcher({ userAgent: userAgentFor(process.env.IMPORT_CONTACT), maxRetries: 1 });
   if (url) {
     const result = await fetcher.get(url).catch((e: Error) => e);
-    const problem = linkProblem(result);
+    const problem = linkProblem(result, url);
     console.log(problem ?? "answers 200");
     if (!(result instanceof Error)) console.log(`lands on: ${result.finalUrl}\ntitle: ${pageTitle(result.body) ?? "none"}`);
     if (problem) process.exitCode = 1;
@@ -32,7 +38,7 @@ async function main(url?: string) {
   const lines: string[] = [];
   for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
     for (const site of JSON.parse(readFileSync(new URL(file, dir), "utf8")) as { id: string; url: string }[]) {
-      const problem = linkProblem(await fetcher.get(site.url).catch((e: Error) => e));
+      const problem = linkProblem(await fetcher.get(site.url).catch((e: Error) => e), site.url);
       if (problem) lines.push(`  - ${site.id} (${problem}): ${site.url}`);
     }
   }
