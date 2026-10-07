@@ -3,6 +3,7 @@
 // copied. One reviewed file per state in data/award-sites/; add a state by
 // importing its file below (a test checks none is missing).
 import { z } from "zod";
+import ca from "../../../data/award-sites/ca.json";
 
 export const siteSchema = z
   .object({
@@ -24,7 +25,7 @@ export const siteSchema = z
 export type Site = z.infer<typeof siteSchema>;
 
 /** State code -> its reviewed directory file. */
-export const FILES: Record<string, Site[]> = {};
+export const FILES: Record<string, Site[]> = { CA: ca as Site[] };
 
 /** Foundations for the student's county first, then statewide ones. Colleges show on their own pages. */
 export function localSources(sites: Site[], county: string | null): Site[] {

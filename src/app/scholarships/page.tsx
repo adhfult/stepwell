@@ -9,6 +9,7 @@ import { getMyProfile } from "@/lib/profile/data";
 import { STAGES, STATES, stateName } from "@/lib/profile/options";
 import { getMyEligibility, matchScholarships, type ScholarshipMatch } from "@/lib/scholarships/data";
 import { checkedText, deadlineText, domainOf, FIELDS } from "@/lib/scholarships/labels";
+import { FILES, localSources } from "@/lib/scholarships/local";
 import { SaveButton } from "@/app/plan/save-button";
 
 export const metadata: Metadata = { title: "Scholarships and grants" };
@@ -116,6 +117,8 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
           </section>
         )}
 
+        {state && <LocalSection state={state} county={state === profile?.state ? (profile.county ?? null) : null} signedIn={Boolean(user)} />}
+
         <p className="mt-8 max-w-2xl text-sm text-muted">
           Source: official state and federal program pages, listed by Stepwell (each listing says when it was checked).
           Covers federal programs and the main state programs in all 50 states and DC; colleges and private groups offer
@@ -123,6 +126,60 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
         </p>
       </Page>
     </>
+  );
+}
+
+/** Foundations near the student, linked to their own scholarship pages (spec more-scholarships.md). */
+function LocalSection({ state, county, signedIn }: { state: string; county: string | null; signedIn: boolean }) {
+  const sites = FILES[state];
+  const list = sites ? localSources(sites, county) : [];
+  return (
+    <section aria-labelledby="local-heading" className="mt-12 max-w-2xl">
+      <h2 id="local-heading" className="text-lg font-bold">
+        Local scholarships in {stateName(state)}
+      </h2>
+      {!sites ? (
+        <p className="mt-2">We don’t list local foundations for {stateName(state)} yet.</p>
+      ) : (
+        <>
+          <p className="mt-2">
+            Community foundations give scholarships to students from their area. Each one lists its awards and
+            deadlines on its own site.
+          </p>
+          {!county && (
+            <p className="mt-2">
+              {signedIn ? (
+                <>
+                  <Link href="/account/profile">Add your county in your profile</Link> to see local foundations.
+                </>
+              ) : (
+                <>
+                  <Link href="/sign-in?next=%2Faccount%2Fprofile">Sign in and add your county</Link> to see local
+                  foundations.
+                </>
+              )}
+            </p>
+          )}
+          {list.length > 0 ? (
+            <ul className="mt-4 divide-y divide-border-subtle border-y border-border-subtle">
+              {list.map((s) => (
+                <li key={s.id} className="py-4">
+                  <a href={s.url} className="font-bold">
+                    {s.name}
+                  </a>
+                  <p className="mt-1">{s.serves}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    Scholarships listed on their site. {checkedText(s.checked_on)}.
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            county && <p className="mt-4">No foundations listed for your county yet.</p>
+          )}
+        </>
+      )}
+    </section>
   );
 }
 

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ca-cf-monterey",
+    "name": "Community Foundation for Monterey County",
+    "kind": "foundation",
+    "counties": ["06053"],
+    "url": "https://cfmco.org/scholarships/resources/",
+    "serves": "Students in Monterey County, including College Futures Monterey County for low-income students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sacramento-region-cf",
+    "name": "Sacramento Region Community Foundation",
+    "kind": "foundation",
+    "counties": ["06067", "06113"],
+    "url": "https://www.sacregcf.org/students/",
+    "serves": "Students at schools in Sacramento and Yolo counties; each award lists its own rules",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-silicon-valley-cf",
+    "name": "Silicon Valley Community Foundation",
+    "kind": "foundation",
+    "counties": ["06081", "06085"],
+    "url": "https://www.svcf.org/scholarships",
+    "serves": "High school seniors, undergraduates, re-entry and graduate students in San Mateo and Santa Clara counties",
+    "checked_on": "2026-10-06"
+  }
+]

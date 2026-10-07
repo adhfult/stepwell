@@ -7,6 +7,7 @@ import { Band, Page, PageTitle } from "@/components/page";
 import { SaveButton } from "@/app/plan/save-button";
 import { levelName, sportLabel } from "@/lib/athletes/sports";
 import { getCurrentUser } from "@/lib/auth/dal";
+import { collegeScholarships } from "@/lib/scholarships/local";
 import { monthYear } from "@/lib/careers/labels";
 import {
   getCollege,
@@ -152,6 +153,11 @@ export default async function CollegePage({ params }: PageProps<"/colleges/[unit
               );
             })}
           </dl>
+          {collegeScholarships(c.unitid) && (
+            <p className="mt-6">
+              <a href={collegeScholarships(c.unitid)!.url}>This college’s own scholarships</a> are listed on its site.
+            </p>
+          )}
         </section>
 
         <section aria-labelledby="programs-heading" className="mt-12 max-w-2xl">
