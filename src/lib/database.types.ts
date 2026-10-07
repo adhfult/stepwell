@@ -27,6 +27,7 @@ export type Database = {
                   Row: {
                     "act": number | null,"consent_version": number,"consented_at": string,"courses": NonNullable<Json>,"sat": number | null,"start_credits": number,"start_unweighted": number | null,"start_weighted": number | null,"updated_at": string,"user_id": string,"weight_ap": number | null,"weight_dual": number | null,"weight_honors": number | null,"weight_ib": number | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "act"?: number | null,"consent_version": number,"consented_at"?: string,"courses"?: NonNullable<Json>,"sat"?: number | null,"start_credits"?: number,"start_unweighted"?: number | null,"start_weighted"?: number | null,"updated_at"?: string,"user_id"?: string,"weight_ap"?: number | null,"weight_dual"?: number | null,"weight_honors"?: number | null,"weight_ib"?: number | null
                   }
@@ -40,6 +41,7 @@ export type Database = {
                   Row: {
                     "code": string,"course_group": string,"name": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "code": string,"course_group": string,"name": string
                   }
@@ -53,6 +55,7 @@ export type Database = {
                   Row: {
                     "cert_id": string,"name": string,"onet_code": string,"organization": string | null,"retrieved_at": string,"source_id": string,"url": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "cert_id": string,"name": string,"onet_code": string,"organization"?: string | null,"retrieved_at"?: string,"source_id"?: string,"url"?: string | null
                   }
@@ -78,6 +81,7 @@ isOneToOne: false
                   Row: {
                     "agency": string | null,"agency_url": string | null,"license_id": string,"onet_code": string,"retrieved_at": string,"source_id": string,"state": string,"title": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "agency"?: string | null,"agency_url"?: string | null,"license_id": string,"onet_code": string,"retrieved_at"?: string,"source_id"?: string,"state": string,"title": string
                   }
@@ -103,6 +107,7 @@ isOneToOne: false
                   Row: {
                     "men": number | null,"sport": string,"unitid": number,"women": number | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "men"?: number | null,"sport": string,"unitid": number,"women"?: number | null
                   }
@@ -122,6 +127,7 @@ isOneToOne: false
                   Row: {
                     "citizenship": string | null,"consent_version": number,"consented_at": string,"first_generation": string | null,"gpa": number | null,"intended_fields": (string)[] | null,"military_family": string | null,"plans_fafsa": string | null,"updated_at": string,"user_id": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "citizenship"?: string | null,"consent_version": number,"consented_at"?: string,"first_generation"?: string | null,"gpa"?: number | null,"intended_fields"?: (string)[] | null,"military_family"?: string | null,"plans_fafsa"?: string | null,"updated_at"?: string,"user_id"?: string
                   }
@@ -135,6 +141,7 @@ isOneToOne: false
                   Row: {
                     "act_25": number | null,"act_75": number | null,"admission_rate": number | null,"athletics_code": number | null,"city": string | null,"graduation_rate": number | null,"locale": string | null,"name": string,"net_price": number | null,"net_price_by_income": (number)[] | null,"ownership": string | null,"retrieved_at": string,"sat_math_25": number | null,"sat_math_75": number | null,"sat_read_25": number | null,"sat_read_75": number | null,"serves": (string)[] | null,"source_id": string,"state": string | null,"students": number | null,"test_policy": string | null,"two_year": boolean | null,"unitid": number,"website": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "act_25"?: number | null,"act_75"?: number | null,"admission_rate"?: number | null,"athletics_code"?: number | null,"city"?: string | null,"graduation_rate"?: number | null,"locale"?: string | null,"name": string,"net_price"?: number | null,"net_price_by_income"?: (number)[] | null,"ownership"?: string | null,"retrieved_at": string,"sat_math_25"?: number | null,"sat_math_75"?: number | null,"sat_read_25"?: number | null,"sat_read_75"?: number | null,"serves"?: (string)[] | null,"source_id"?: string,"state"?: string | null,"students"?: number | null,"test_policy"?: string | null,"two_year"?: boolean | null,"unitid": number,"website"?: string | null
                   }
@@ -154,6 +161,7 @@ isOneToOne: false
                   Row: {
                     "area": string,"index": number,"retrieved_at": string,"source_id": string,"text": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "area": string,"index": number,"retrieved_at": string,"source_id"?: string,"text": string
                   }
@@ -173,6 +181,7 @@ isOneToOne: false
                   Row: {
                     "artistic": number,"conventional": number,"enterprising": number,"investigative": number,"realistic": number,"social": number,"taken_at": string,"user_id": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "artistic": number,"conventional": number,"enterprising": number,"investigative": number,"realistic": number,"social": number,"taken_at"?: string,"user_id"?: string
                   }
@@ -186,6 +195,7 @@ isOneToOne: false
                   Row: {
                     "ap_code": string,"area_id": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "ap_code": string,"area_id": string
                   }
@@ -211,6 +221,7 @@ isOneToOne: false
                   Row: {
                     "id": string,"name": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "id": string,"name": string
                   }
@@ -224,6 +235,7 @@ isOneToOne: false
                   Row: {
                     "onet_code": string,"skills": NonNullable<Json>,"tasks": NonNullable<Json>
                   }
+                  ComputedFields: never
                   Insert: {
                     "onet_code": string,"skills"?: NonNullable<Json>,"tasks"?: NonNullable<Json>
                   }
@@ -243,6 +255,7 @@ isOneToOne: true
                   Row: {
                     "area_id": string,"importance": number,"onet_code": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "area_id": string,"importance": number,"onet_code": string
                   }
@@ -268,6 +281,7 @@ isOneToOne: false
                   Row: {
                     "annual_high": number | null,"annual_low": number | null,"annual_median": number | null,"bright_reasons": (string)[],"hourly_high": number | null,"hourly_low": number | null,"hourly_median": number | null,"onet_code": string,"or_more": (string)[],"outlook": string,"retrieved_at": string,"source_id": string,"wage_soc_code": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "annual_high"?: number | null,"annual_low"?: number | null,"annual_median"?: number | null,"bright_reasons"?: (string)[],"hourly_high"?: number | null,"hourly_low"?: number | null,"hourly_median"?: number | null,"onet_code": string,"or_more"?: (string)[],"outlook": string,"retrieved_at": string,"source_id"?: string,"wage_soc_code"?: string | null
                   }
@@ -293,6 +307,7 @@ isOneToOne: false
                   Row: {
                     "cip_title": string,"cip4": string | null,"cip6": string,"onet_code": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "cip_title": string,"cip4"?: never,"cip6": string,"onet_code": string
                   }
@@ -312,6 +327,7 @@ isOneToOne: false
                   Row: {
                     "onet_code": string,"rank": number,"related_code": string,"tier": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "onet_code": string,"rank": number,"related_code": string,"tier": string
                   }
@@ -337,6 +353,7 @@ isOneToOne: false
                   Row: {
                     "featured": boolean,"kind": string,"onet_code": string,"title": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "featured"?: boolean,"kind": string,"onet_code": string,"title": string
                   }
@@ -356,6 +373,7 @@ isOneToOne: false
                   Row: {
                     "description": string,"education_level": number | null,"education_share": number | null,"interest_artistic": number | null,"interest_conventional": number | null,"interest_enterprising": number | null,"interest_investigative": number | null,"interest_realistic": number | null,"interest_social": number | null,"job_zone": number | null,"onet_code": string,"onet_release": string,"retired_at": string | null,"retrieved_at": string,"soc_code": string | null,"source_id": string,"title": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "description": string,"education_level"?: number | null,"education_share"?: number | null,"interest_artistic"?: number | null,"interest_conventional"?: number | null,"interest_enterprising"?: number | null,"interest_investigative"?: number | null,"interest_realistic"?: number | null,"interest_social"?: number | null,"job_zone"?: number | null,"onet_code": string,"onet_release": string,"retired_at"?: string | null,"retrieved_at": string,"soc_code"?: never,"source_id"?: string,"title": string
                   }
@@ -375,6 +393,7 @@ isOneToOne: false
                   Row: {
                     "closes_on": string,"id": string,"organization": string,"pay_interval": string | null,"pay_max": number | null,"pay_min": number | null,"places": (string)[],"remote": boolean,"retrieved_at": string,"source_id": string,"states": (string)[],"summary": string | null,"title": string,"url": string,"who_may_apply": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "closes_on": string,"id": string,"organization": string,"pay_interval"?: string | null,"pay_max"?: number | null,"pay_min"?: number | null,"places"?: (string)[],"remote"?: boolean,"retrieved_at": string,"source_id"?: string,"states"?: (string)[],"summary"?: string | null,"title": string,"url": string,"who_may_apply"?: string | null
                   }
@@ -394,6 +413,7 @@ isOneToOne: false
                   Row: {
                     "academic_year": number | null,"created_at": string,"done": boolean,"due_on": string | null,"id": string,"kind": string,"term": string,"title": string,"user_id": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "academic_year"?: number | null,"created_at"?: string,"done"?: boolean,"due_on"?: string | null,"id"?: string,"kind"?: string,"term"?: string,"title": string,"user_id"?: string
                   }
@@ -405,13 +425,14 @@ isOneToOne: false
                   ]
                 },"profiles": {
                   Row: {
-                    "age_confirmed": boolean,"created_at": string,"grad_year": number | null,"id": string,"nickname": string | null,"stage": string | null,"state": string | null,"updated_at": string
+                    "age_confirmed": boolean,"county": string | null,"created_at": string,"grad_year": number | null,"id": string,"nickname": string | null,"stage": string | null,"state": string | null,"updated_at": string
                   }
+                  ComputedFields: never
                   Insert: {
-                    "age_confirmed": boolean,"created_at"?: string,"grad_year"?: number | null,"id": string,"nickname"?: string | null,"stage"?: string | null,"state"?: string | null,"updated_at"?: string
+                    "age_confirmed": boolean,"county"?: string | null,"created_at"?: string,"grad_year"?: number | null,"id": string,"nickname"?: string | null,"stage"?: string | null,"state"?: string | null,"updated_at"?: string
                   }
                   Update: {
-                    "age_confirmed"?: boolean,"created_at"?: string,"grad_year"?: number | null,"id"?: string,"nickname"?: string | null,"stage"?: string | null,"state"?: string | null,"updated_at"?: string
+                    "age_confirmed"?: boolean,"county"?: string | null,"created_at"?: string,"grad_year"?: number | null,"id"?: string,"nickname"?: string | null,"stage"?: string | null,"state"?: string | null,"updated_at"?: string
                   }
                   Relationships: [
                     
@@ -420,6 +441,7 @@ isOneToOne: false
                   Row: {
                     "cip4": string,"credential_level": number,"credential_title": string,"earnings_1yr": number | null,"earnings_4yr": number | null,"graduates": number | null,"id": number,"median_debt": number | null,"title": string,"unitid": number
                   }
+                  ComputedFields: never
                   Insert: {
                     "cip4": string,"credential_level": number,"credential_title": string,"earnings_1yr"?: number | null,"earnings_4yr"?: number | null,"graduates"?: number | null,"id"?: never,"median_debt"?: number | null,"title": string,"unitid": number
                   }
@@ -439,6 +461,7 @@ isOneToOne: false
                   Row: {
                     "ap_course_code": string | null,"created_at": string,"id": string,"onet_code": string | null,"opportunity_id": string | null,"scholarship_id": string | null,"student_program_id": string | null,"title": string | null,"unitid": number | null,"user_id": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "ap_course_code"?: string | null,"created_at"?: string,"id"?: string,"onet_code"?: string | null,"opportunity_id"?: string | null,"scholarship_id"?: string | null,"student_program_id"?: string | null,"title"?: string | null,"unitid"?: number | null,"user_id"?: string
                   }
@@ -464,6 +487,7 @@ isOneToOne: false
                   Row: {
                     "award_max": number | null,"award_min": number | null,"award_text": string | null,"checked_at": string,"citizenship": string | null,"deadline_date": string | null,"deadline_kind": string,"deadline_month_day": string | null,"description": string,"fields": (string)[],"first_generation": boolean,"id": string,"military_family": boolean,"min_gpa": number | null,"needs_fafsa": boolean,"other_requirements": string | null,"retrieved_at": string,"source_id": string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"state": string | null,"title": string,"url": string
                   }
+                  ComputedFields: never
                   Insert: {
                     "award_max"?: number | null,"award_min"?: number | null,"award_text"?: string | null,"checked_at": string,"citizenship"?: string | null,"deadline_date"?: string | null,"deadline_kind": string,"deadline_month_day"?: string | null,"description": string,"fields"?: (string)[],"first_generation"?: boolean,"id": string,"military_family"?: boolean,"min_gpa"?: number | null,"needs_fafsa"?: boolean,"other_requirements"?: string | null,"retrieved_at": string,"source_id"?: string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"state"?: string | null,"title": string,"url": string
                   }
@@ -483,6 +507,7 @@ isOneToOne: false
                   Row: {
                     "allowed": boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag": string | null,"last_release": string | null,"last_success_at": string | null,"name": string,"paused_reason": string | null,"refresh_interval": string,"terms_checked_at": string | null,"terms_url": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "allowed"?: boolean,"attribution": string,"homepage": string,"id": string,"kind": string,"last_etag"?: string | null,"last_release"?: string | null,"last_success_at"?: string | null,"name": string,"paused_reason"?: string | null,"refresh_interval": string,"terms_checked_at"?: string | null,"terms_url"?: string | null
                   }
@@ -496,6 +521,7 @@ isOneToOne: false
                   Row: {
                     "checked_at": string,"deadline_date": string | null,"deadline_kind": string,"deadline_month_day": string | null,"description": string,"id": string,"kind": string,"paid": boolean,"pay_text": string | null,"remote": boolean,"retrieved_at": string,"source_id": string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"states": (string)[],"title": string,"url": string,"who_text": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "checked_at": string,"deadline_date"?: string | null,"deadline_kind": string,"deadline_month_day"?: string | null,"description": string,"id": string,"kind": string,"paid": boolean,"pay_text"?: string | null,"remote"?: boolean,"retrieved_at": string,"source_id"?: string,"sponsor": string,"sponsor_type": string,"stages": (string)[],"states"?: (string)[],"title": string,"url": string,"who_text"?: string | null
                   }
@@ -515,6 +541,7 @@ isOneToOne: false
                   Row: {
                     "city": string | null,"id": string,"name": string,"retrieved_at": string,"source_id": string,"state": string,"website": string | null,"zip": string | null
                   }
+                  ComputedFields: never
                   Insert: {
                     "city"?: string | null,"id": string,"name": string,"retrieved_at"?: string,"source_id"?: string,"state": string,"website"?: string | null,"zip"?: string | null
                   }

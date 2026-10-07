@@ -49,6 +49,12 @@ describe("parseFile", () => {
     expect(parseFile("federal.json", [federal])[0]).toMatchObject({ status: "rejected" });
   });
 
+  it("reads private national programs from private.json with pv- ids and no state", () => {
+    const pv = { ...entry, id: "pv-gates", sponsor_type: "private", rules: { ...entry.rules, state: null } };
+    expect(parseFile("private.json", [pv])[0]).toMatchObject({ status: "valid", id: "pv-gates" });
+    expect(parseFile("private.json", [{ ...pv, rules: entry.rules }])[0]).toMatchObject({ status: "rejected" });
+  });
+
   it("rejects http links, bad dates, dashes and a min above the max", () => {
     const bad = [
       { ...entry, url: "http://www.csac.ca.gov" },

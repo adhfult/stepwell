@@ -15,7 +15,7 @@ export const entrySchema = z
     id: z.string().regex(/^[a-z]{2}-[a-z0-9-]{2,80}$/),
     title: z.string().trim().min(1).max(200),
     sponsor: z.string().trim().min(1).max(200),
-    sponsor_type: z.enum(["federal", "state"]),
+    sponsor_type: z.enum(["federal", "state", "private"]),
     url: z.url({ protocol: /^https$/ }),
     award: z.object({
       min: z.number().int().positive().nullable(),
@@ -46,8 +46,8 @@ export const entrySchema = z
     message: "award.min is more than award.max",
     path: ["award"],
   })
-  .refine((e) => (e.sponsor_type === "federal") === (e.rules.state === null), {
-    message: "State programs need rules.state; federal ones must not have it",
+  .refine((e) => (e.sponsor_type === "state") === (e.rules.state !== null), {
+    message: "State programs need rules.state; federal and private ones must not have it",
     path: ["rules", "state"],
   });
 
@@ -88,7 +88,8 @@ export type ScholarshipRow = ReturnType<typeof toRow>;
  * federal programs with ids "us-...", "ca.json" California's with "ca-...".
  */
 export function parseFile(fileName: string, raw: unknown): StagedRecord<ScholarshipRow>[] {
-  const prefix = fileName === "federal.json" ? "us" : fileName.replace(/\.json$/, "");
+  const prefix = fileName === "federal.json" ? "us" : fileName === "private.json" ? "pv" : fileName.replace(/\.json$/, "");
+  const kind = prefix === "us" ? "federal" : prefix === "pv" ? "private" : "state";
   if (!Array.isArray(raw)) throw new Error(`${fileName}: expected a JSON array`);
   return raw.map((item, i): StagedRecord<ScholarshipRow> => {
     const result = entrySchema.safeParse(item);
@@ -99,7 +100,8 @@ export function parseFile(fileName: string, raw: unknown): StagedRecord<Scholars
     const e = result.data;
     const wrongPlace =
       !e.id.startsWith(`${prefix}-`) ? `id must start with "${prefix}-"` :
-      prefix !== "us" && e.rules.state !== prefix.toUpperCase() ? `rules.state must be ${prefix.toUpperCase()}` :
+      e.sponsor_type !== kind ? `sponsor_type must be "${kind}" in ${fileName}` :
+      kind === "state" && e.rules.state !== prefix.toUpperCase() ? `rules.state must be ${prefix.toUpperCase()}` :
       null;
     return wrongPlace
       ? { status: "rejected", id, reason: wrongPlace, raw: item }

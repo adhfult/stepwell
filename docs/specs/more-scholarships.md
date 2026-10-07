@@ -1,6 +1,6 @@
 # Spec: More scholarships (local directory and private awards)
 
-- Status: draft
+- Status: approved (2026-10-06)
 
 Roadmap project 4, first part (docs/specs/pre-launch-roadmap.md). Internships
 and AP data get their own specs later.
