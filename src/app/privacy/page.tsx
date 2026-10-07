@@ -27,8 +27,8 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Your profile, if you fill it in.</strong> A nickname (optional), where you are in school, your state,
-          and the year you expect to graduate (optional). We use it to suggest careers, programs and colleges that fit
-          you.
+          your county (optional) and the year you expect to graduate (optional). We use it to suggest careers, programs,
+          colleges and local scholarships that fit you. Only you can see your county.
         </li>
         <li>
           <strong>Scholarship answers, only if you turn on matching.</strong> If you choose to, you can tell us your

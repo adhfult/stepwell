@@ -58,7 +58,7 @@ build step's spec.
 **User data** (owner-only via RLS):
 | Table | Contents |
 |---|---|
-| `profiles` (built) | user id, optional nickname, stage, state, expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
+| `profiles` (built) | user id, optional nickname, stage, state, optional county (Census FIPS, decision 0015), expected graduation year, age confirmed (no birthdate). Created by `handle_new_user()` at sign-up, which refuses any sign-up without age confirmation; students may update only nickname, stage, state, county and year. `delete_my_account()` deletes the login and, by cascade, all of a student's rows (decision 0004). |
 | `interest_results` (built) | latest quiz scores (six areas, 0 to 40), never the answers; saved only when the student presses Save |
 | `saved_items` (built: careers, scholarships, colleges, internships, programs, AP classes) | one link column per kind (`onet_code`, `scholarship_id`, `unitid`, `opportunity_id`, `student_program_id`, `ap_course_code`), exactly one set; everything but careers and AP classes has no foreign key (their daily merges delete rows) and keeps a `title` copy so the plan can say "No longer listed" |
 | `plan_items` (built) | the student's own steps: title (200), kind, school year (or none), term, optional due date, done; no free-text notes. Saved listings' deadlines are read live on `/plan`. Capped per student (500 steps; 1,000 saved items) by `enforce_row_cap()` |

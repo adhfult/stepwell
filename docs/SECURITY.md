@@ -110,6 +110,11 @@ Each item says **how Stepwell does it**.
       scores"; deleted with the account and after 12 months without a
       sign-in. Signed-out drafts stay in the browser and are validated
       before use. The Privacy page describes them.
+- [x] **County on the profile** (decision 0015): optional, "Not set" by
+      default, a 5-digit FIPS check in the database and a same-state check in
+      zod; owner-only RLS with a column grant; cleared when the state
+      changes; deleted with the account; used only to order local
+      scholarships. The Privacy page describes it.
 - [ ] Minimum age 13, checked at sign-up with a neutral birth month and year
       question that is never stored (decision 0005); only `age_confirmed` is
       stored, and the sign-up trigger refuses accounts without it.

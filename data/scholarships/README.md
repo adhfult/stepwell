@@ -1,13 +1,16 @@
 # Official scholarship list
 
-One file per state (`<code>.json`) plus `federal.json`, in the format in
+One file per state (`<code>.json`) plus `federal.json` and `private.json`
+(private national programs, ids `pv-...`), in the format in
 `docs/specs/scholarships.md` ("Listing format"). Loaded by the
 `official_list` import (`src/jobs/sources/official-list.ts`), which rejects
 anything off-format.
 
 ## Rules for adding or re-checking entries
 - Official government pages only (state agencies, public university
-  systems they point to). Unknown facts are `null`, never guessed; every
+  systems they point to). `private.json`: the sponsor's own program page; no
+  loans, fees, lottery-style giveaways, lead-generation sites, or programs
+  only for one employer's or group's members. Unknown facts are `null`, never guessed; every
   fact should be on the linked page or a page it links to.
 - 2 to 6 programs a state: the main ones a student can apply to.
 - Leave out loans, conditional or forgivable loans (repaid if you don't
