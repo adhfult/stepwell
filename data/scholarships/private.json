@@ -1,0 +1,595 @@
+[
+  {
+    "id": "pv-coca-cola-scholars",
+    "title": "Coca-Cola Scholars Program Scholarship",
+    "sponsor": "Coca-Cola Scholars Foundation",
+    "sponsor_type": "private",
+    "url": "https://www.coca-colascholarsfoundation.org/apply/",
+    "award": {
+      "min": 20000,
+      "max": 20000,
+      "text": "$20,000 for each of 150 Scholars a year"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "09-30"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.0,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school seniors in the 50 states, DC, Puerto Rico or select DoD schools. Children and grandchildren of Coca-Cola company or bottler employees cannot apply. The first round has no essays; semifinalists add essays, a transcript and a recommendation."
+    },
+    "description": "A $20,000 award for high school seniors who lead and serve in their schools and communities. The first online round is short, with no essays. About 1% of applicants move on to a longer second round, then interviews. 150 students are chosen each year. The application is open from early August to the end of September of your senior year.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-gates-scholarship",
+    "title": "The Gates Scholarship",
+    "sponsor": "The Gates Scholarship",
+    "sponsor_type": "private",
+    "url": "https://www.thegatesscholarship.org/scholarship/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full cost of attendance not covered by other aid"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.3,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "Must be a Pell-eligible high school senior and a U.S. citizen or permanent resident. The 3.3 GPA is cumulative and weighted. Must plan to enroll full-time in a four-year degree at a U.S. accredited nonprofit college."
+    },
+    "description": "A very selective scholarship for high school seniors from low-income families. It pays the full cost of college (tuition, fees, books, housing and food) that your other financial aid does not cover. Strong applicants have top grades, leadership and community service. Check the official page for the current year's dates.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-jack-kent-cooke-college",
+    "title": "Cooke College Scholarship Program",
+    "sponsor": "Jack Kent Cooke Foundation",
+    "sponsor_type": "private",
+    "url": "https://www.jkcf.org/our-scholarships/college-scholarship-program/",
+    "award": {
+      "min": null,
+      "max": 55000,
+      "text": "Up to $55,000 a year, after other aid"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-11"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.75,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Unweighted GPA of 3.75 or higher. Family income up to $95,000. Must submit an SAT, ACT, AP or IB score (no minimum). Must complete four years of high school in the U.S., a U.S. territory or a U.S. military base. Apply through the Common App."
+    },
+    "description": "A large scholarship for high-achieving high school seniors with financial need who want to attend a top four-year college. It fills the gap left after your college's aid and can cover tuition, living costs and books. Scholars also get advising on choosing a college and on financial aid. Any field of study is allowed.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-jack-kent-cooke-transfer",
+    "title": "Cooke Undergraduate Transfer Scholarship",
+    "sponsor": "Jack Kent Cooke Foundation",
+    "sponsor_type": "private",
+    "url": "https://www.jkcf.org/our-scholarships/undergraduate-transfer-scholarship/",
+    "award": {
+      "min": null,
+      "max": 55000,
+      "text": "Up to $55,000 a year for two to three years, after other aid"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-12-09"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For community college students with sophomore status by January 1, 2027, or recent graduates (since spring 2022). Must not have attended a four-year college before. Family income up to $95,000. Must plan to enroll full-time in a bachelor's program in fall 2027."
+    },
+    "description": "A selective scholarship for top community college students who want to transfer and finish a bachelor's degree at a four-year college. It covers much of the cost that remains after other aid for the last two to three years. Scholars also get advising and can apply for internship and graduate school support.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-questbridge-national-college-match",
+    "title": "QuestBridge National College Match",
+    "sponsor": "QuestBridge",
+    "sponsor_type": "private",
+    "url": "https://www.questbridge.org/apply-to-college/programs/national-college-match",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Full four-year scholarship from a partner college, valued at over $360,000"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school seniors from low-income backgrounds who earn mostly A's in the hardest classes offered. Scholarships are given by QuestBridge's 55 partner colleges to students who match with them."
+    },
+    "description": "A free application that connects high-achieving seniors from low-income families with 55 top colleges. If you match with a college, you are admitted with a full four-year scholarship that covers tuition, housing and food, with no loans and no parent contribution. Students who do not match can still apply through other rounds.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-burger-king-scholars",
+    "title": "BK Scholars Program",
+    "sponsor": "Burger King Foundation",
+    "sponsor_type": "private",
+    "url": "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars",
+    "award": {
+      "min": 1000,
+      "max": 60000,
+      "text": "$1,000 to $60,000"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-12-15"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school seniors, and also Burger King employees and their families. The application closes December 15, 2026, or earlier once 30,000 applications are received. Can be used for college or vocational and technical school."
+    },
+    "description": "Scholarships for high school seniors heading to college or a vocational or technical school. Winners are chosen by grades, work experience, activities, community service and financial need. Most awards are smaller, and three top students each year get $60,000. Apply early because the application can close before the deadline.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-elks-most-valuable-student",
+    "title": "Most Valuable Student Scholarship",
+    "sponsor": "Elks National Foundation",
+    "sponsor_type": "private",
+    "url": "https://www.elks.org/scholars/scholarships/mvs.cfm",
+    "award": {
+      "min": 4000,
+      "max": 30000,
+      "text": "500 awards: $30,000 for the top 20, $4,000 for the rest, paid over four years"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-12"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "U.S. citizens only; permanent residents do not qualify. High school graduates cannot apply. You do not need to be related to an Elks member. Must enroll full-time in a four-year degree at a U.S. college."
+    },
+    "description": "A national scholarship for high school seniors, judged on grades, leadership and financial need. 500 students win four-year awards each year, and the top 20 attend a leadership weekend in Chicago. Local Elks lodges may give their own awards through the same application.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-ron-brown-scholar",
+    "title": "Ron Brown Scholarship",
+    "sponsor": "Ron Brown Scholar Program",
+    "sponsor_type": "private",
+    "url": "https://ronbrown.org/ron-brown-scholarship/",
+    "award": {
+      "min": 40000,
+      "max": 40000,
+      "text": "$40,000 ($10,000 a year for four years)"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "12-01"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be Black/African American, a U.S. citizen or permanent resident, and a high school senior. Must show leadership potential and do community service. Transcripts and recommendations are due December 15. Financial need is considered."
+    },
+    "description": "A four-year scholarship for Black high school seniors who care about public service, community work, business and global issues. About 20 students are chosen each year from thousands of applicants. It can be used at any accredited four-year college in the U.S. for any major, and comes with lasting mentoring.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-hispanic-scholarship-fund",
+    "title": "HSF Scholar Program",
+    "sponsor": "Hispanic Scholarship Fund",
+    "sponsor_type": "private",
+    "url": "https://www.hsf.net/scholarship/",
+    "award": {
+      "min": 500,
+      "max": 5000,
+      "text": "$500 to $5,000, depending on need and available funds"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": true,
+      "other": "For students of Hispanic heritage. U.S. citizen, permanent legal resident or DACA. Minimum GPA 3.0 for high school students and 2.5 for college and graduate students. Must plan to enroll full-time at an accredited public or nonprofit four-year college or graduate school."
+    },
+    "description": "Each year HSF picks about 10,000 students of Hispanic heritage as HSF Scholars. Scholars get career help, mentoring and conferences, and may receive a scholarship if funds allow. You need to file the FAFSA. Check the official page for when the next application opens.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-apia-scholarship",
+    "title": "APIA Scholarship",
+    "sponsor": "APIA Scholars",
+    "sponsor_type": "private",
+    "url": "https://apiascholars.org/scholarships/",
+    "award": {
+      "min": 2500,
+      "max": 20000,
+      "text": "$2,500 one-year awards to $20,000 multi-year awards"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-15"
+    },
+    "stages": [
+      "high_school",
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must show high financial need. Must be a citizen, national or permanent resident of the U.S., Marshall Islands, Micronesia or Palau. For students working toward an associate or bachelor's degree; students who already have a bachelor's degree cannot apply."
+    },
+    "description": "Scholarships for undergraduates at two-year and four-year colleges, from a group that serves Asian and Pacific Islander American students. Students from all backgrounds may apply; selection favors high financial need and students who are first in their family to go to college. The application opens November 15, 2026.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-cobell-undergraduate",
+    "title": "Cobell Undergraduate Scholarship",
+    "sponsor": "Cobell Scholarship",
+    "sponsor_type": "private",
+    "url": "https://cobellscholar.org/scholarships/undergraduate/",
+    "award": {
+      "min": null,
+      "max": 8000,
+      "text": "Up to $5,000 for new students, up to $8,000 for returning"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-03-31"
+    },
+    "stages": [
+      "college"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be an enrolled member of a federally recognized American Indian tribe or Alaska Native Corporation. For associate or bachelor's degree students at accredited nonprofit colleges, usually full-time. No minimum GPA, but 3.25 or higher is competitive. Must reapply each year."
+    },
+    "description": "A scholarship for Native American and Alaska Native students working toward an associate or bachelor's degree at a tribal college, community college or university. It helps pay tuition, fees, books and living costs. The application opens December 15, 2026, through the OASIS portal.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-jackie-robinson-foundation",
+    "title": "Jackie Robinson Foundation Scholarship",
+    "sponsor": "Jackie Robinson Foundation",
+    "sponsor_type": "private",
+    "url": "https://jackierobinson.org/apply/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": null
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2027-01-14"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For graduating high school seniors with financial need, strong grades, leadership and community service. Must submit an SAT or ACT score and the CSS Profile. Must not have more than 25% of the credits needed to finish college. You do not need to play sports."
+    },
+    "description": "A scholarship for high school seniors going to a four-year college, with mentoring, internships and leadership training through college. Scholars do community service while in the program. The application, one recommendation and the CSS Profile are all due in mid-January.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-equitable-excellence",
+    "title": "Equitable Excellence Scholarship",
+    "sponsor": "Equitable Foundation",
+    "sponsor_type": "private",
+    "url": "https://equitable.com/foundation/equitable-excellence-scholarship",
+    "award": {
+      "min": null,
+      "max": 20000,
+      "text": "$5,000 a year for up to four years ($20,000 total)"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 2.5,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school seniors living in the 50 states, DC or Puerto Rico who plan to enroll full-time at a two- or four-year U.S. college. Winners must agree to let their name, photo and plans be used to promote the program."
+    },
+    "description": "A renewable scholarship for high school seniors who want to be a force for good and encourage others in their community to go to college. Winners also get workshops and mentors. It is run with Scholarship America. Check the official page for when the next application opens.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-davidson-fellows",
+    "title": "Davidson Fellows Scholarship",
+    "sponsor": "Davidson Institute",
+    "sponsor_type": "private",
+    "url": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/",
+    "award": {
+      "min": 25000,
+      "max": 100000,
+      "text": "$25,000, $50,000 or $100,000"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": "citizen_or_eligible_noncitizen",
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Must be 18 or younger at the deadline and a U.S. citizen or permanent resident living in the U.S. (or overseas on active U.S. military duty). Must have finished a significant piece of work in science, technology, engineering, math, literature, music, philosophy or Outside the Box."
+    },
+    "description": "A large scholarship for young people, 18 or under, who have finished an impressive project, such as research, writing or music. You apply in one category and show that the work is your own. Winners and a parent attend an awards event. The next application opens in fall 2026.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-american-indian-college-fund",
+    "title": "American Indian College Fund Scholarships",
+    "sponsor": "American Indian College Fund",
+    "sponsor_type": "private",
+    "url": "https://collegefund.org/students/scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Varies; awards average $2,000 to $3,000"
+    },
+    "deadline": {
+      "kind": "unknown"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For American Indian and Alaska Native students at tribal colleges or other accredited nonprofit schools. One application each year covers many scholarships. The application opens February 1; apply by May 31 for priority review. High school seniors apply in their last semester."
+    },
+    "description": "One yearly application lets American Indian and Alaska Native students be considered for many scholarships, for certificates, undergraduate and graduate study. Students at the 35 tribal colleges can be considered for all of them. High school seniors can apply too.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-vfw-voice-of-democracy",
+    "title": "Voice of Democracy Audio Essay Scholarship",
+    "sponsor": "Veterans of Foreign Wars (VFW)",
+    "sponsor_type": "private",
+    "url": "https://www.vfw.org/community/youth-and-education/youth-scholarships",
+    "award": {
+      "min": null,
+      "max": 35000,
+      "text": "Up to $35,000 national first place; state winners get at least $1,000"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-10-31"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "Grades 9 to 12. Must be a U.S. citizen, a permanent resident, or have applied for permanent residence. Students 20 or older, GED and adult education students, and foreign exchange students cannot enter. Submit to a participating local VFW Post, not to national headquarters."
+    },
+    "description": "A yearly contest where high school students write and record a 3 to 5 minute audio essay on a patriotic theme. This year's theme is \"What a Veteran Taught Me About America.\" Entries are judged at the Post, district, state and national levels.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-folds-of-honor",
+    "title": "Folds of Honor Scholarships",
+    "sponsor": "Folds of Honor",
+    "sponsor_type": "private",
+    "url": "https://foldsofhonor.org/scholarships/",
+    "award": {
+      "min": null,
+      "max": null,
+      "text": "Based on unmet need; up to $2,500 per term"
+    },
+    "deadline": {
+      "kind": "usually",
+      "month_day": "03-31"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate",
+      "adult"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": true,
+      "needs_fafsa": false,
+      "other": "For spouses and dependents of U.S. service members or first responders who were killed or disabled. The application window is February 1 to March 31 each year. When accepting an award, you must show a 2.0 or higher term GPA for your two most recent terms."
+    },
+    "description": "Scholarships for the families of fallen or disabled service members and first responders. They pay school costs left after other aid, for college, trade school or graduate study. There is also a fund for private school or tutoring in grades K to 12.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-point-foundation-flagship",
+    "title": "Point Foundation Flagship Scholarship",
+    "sponsor": "Point Foundation",
+    "sponsor_type": "private",
+    "url": "https://pointfoundation.org/scholarships/flagship",
+    "award": {
+      "min": null,
+      "max": 15000,
+      "text": "Up to $15,000, for up to four years"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-19"
+    },
+    "stages": [
+      "high_school",
+      "college",
+      "graduate"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": 3.3,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For LGBTQ+ and ally students. Must be at least a high school senior and enrolled full-time in a degree program at an accredited nonprofit U.S. college. Students in fully online programs cannot apply."
+    },
+    "description": "A scholarship for LGBTQ+ and ally students in undergraduate, graduate or professional programs. Along with money, scholars get leadership training, a summer conference and a network of mentors. The award starts in the fall 2027 term.",
+    "checked_at": "2026-10-06"
+  },
+  {
+    "id": "pv-regeneron-science-talent-search",
+    "title": "Regeneron Science Talent Search",
+    "sponsor": "Society for Science",
+    "sponsor_type": "private",
+    "url": "https://www.societyforscience.org/regeneron-sts/",
+    "award": {
+      "min": null,
+      "max": 250000,
+      "text": "$3.1 million in awards a year; top prize $250,000"
+    },
+    "deadline": {
+      "kind": "date",
+      "date": "2026-11-05"
+    },
+    "stages": [
+      "high_school"
+    ],
+    "rules": {
+      "state": null,
+      "min_gpa": null,
+      "fields": [],
+      "citizenship": null,
+      "first_generation": false,
+      "military_family": false,
+      "needs_fafsa": false,
+      "other": "For high school seniors who have done original research in science, math or engineering. Read the official rules on the program page before applying."
+    },
+    "description": "The oldest national science research competition for high school seniors. You submit your own research project and a full application. 300 scholars and 40 finalists are chosen, and finalists compete for large awards to help pay for their education.",
+    "checked_at": "2026-10-06"
+  }
+]
