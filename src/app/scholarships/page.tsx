@@ -53,8 +53,8 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
         <div className="max-w-2xl">
           <PageTitle>Scholarships and grants</PageTitle>
           <p className="mt-4">
-            Money for college you don’t pay back, from official state and federal programs. Every listing links to its
-            official page, where you apply. Submit at least a day early.
+            Money for college you don’t pay back, from official state and federal programs and large national private
+            ones. Every listing links to its official page, where you apply. Submit at least a day early.
           </p>
 
           {user ? (
@@ -120,9 +120,9 @@ export default async function ScholarshipsPage({ searchParams }: PageProps<"/sch
         {state && <LocalSection state={state} county={state === profile?.state ? (profile.county ?? null) : null} signedIn={Boolean(user)} />}
 
         <p className="mt-8 max-w-2xl text-sm text-muted">
-          Source: official state and federal program pages, listed by Stepwell (each listing says when it was checked).
-          Covers federal programs and the main state programs in all 50 states and DC; colleges and private groups offer
-          many more awards.
+          Source: official program pages, listed by Stepwell (each listing says when it was checked). Covers federal
+          programs, the main state programs in all 50 states and DC, and a short list of large national private programs;
+          colleges and local groups offer many more awards.
         </p>
       </Page>
     </>

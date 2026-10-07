@@ -103,7 +103,7 @@ export default function Home() {
       <Step
         n={3}
         on="page"
-        text="Scholarships and grants from official state and federal programs, paid federal internships, and free or paid summer programs."
+        text="Scholarships and grants from official state, federal and large private programs, paid federal internships, and free or paid summer programs."
         links={[
           { href: "/scholarships", label: "Find scholarships" },
           { href: "/internships", label: "Find internships" },

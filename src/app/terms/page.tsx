@@ -33,7 +33,7 @@ export default function TermsPage() {
       <p>
         Career, program and college information comes from official U.S. government sources such as O*NET (U.S.
         Department of Labor) and College Scorecard (U.S. Department of Education). Scholarship listings come from
-        official state and federal program pages, and internship postings from USAJOBS (U.S. Office of Personnel
+        official state, federal and private program pages, and internship postings from USAJOBS (U.S. Office of Personnel
         Management); both can change at any time, so always check the official page before you apply. All of it can be out of date or incomplete, and it’s a starting point, not a promise about any job,
         school, award or cost. Check important details with the school or program, and talk with a counselor or a
         trusted adult.

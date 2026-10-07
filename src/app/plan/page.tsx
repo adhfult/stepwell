@@ -111,7 +111,7 @@ export default async function PlanPage() {
       </section>
 
       <p className="mt-8 max-w-2xl text-sm text-muted">
-        Deadlines: official state and federal program pages, listed by Stepwell. Colleges: College Scorecard, U.S.
+        Deadlines: official program pages, listed by Stepwell. Colleges: College Scorecard, U.S.
         Department of Education. Always check the official page before you apply.
       </p>
     </Page>
