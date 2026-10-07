@@ -1,11 +1,216 @@
 [
   {
+    "id": "ca-cal-poly-pomona",
+    "name": "California State Polytechnic University-Pomona",
+    "kind": "college",
+    "unitid": 110529,
+    "counties": [],
+    "url": "https://www.cpp.edu/financial-aid/scholarships/",
+    "serves": "Cal Poly Pomona students, for campus scholarships and listed outside awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-cal-state-la",
+    "name": "California State University-Los Angeles",
+    "kind": "college",
+    "unitid": 110592,
+    "counties": [],
+    "url": "https://www.calstatela.edu/financialaid/scholarships",
+    "serves": "Cal State LA students; over 400 campus scholarships through one application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-cf-mendocino",
+    "name": "Community Foundation of Mendocino County",
+    "kind": "foundation",
+    "counties": ["06045"],
+    "url": "https://communityfound.org/scholarships/",
+    "serves": "Mendocino County students, through the foundation's scholarship portal",
+    "checked_on": "2026-10-06"
+  },
+  {
     "id": "ca-cf-monterey",
     "name": "Community Foundation for Monterey County",
     "kind": "foundation",
     "counties": ["06053"],
     "url": "https://cfmco.org/scholarships/resources/",
     "serves": "Students in Monterey County, including College Futures Monterey County for low-income students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-cf-north-state",
+    "name": "Community Foundation of the North State",
+    "kind": "foundation",
+    "counties": ["06089", "06093", "06103"],
+    "url": "https://cfnorthstate.org/grant/scholarships/",
+    "serves": "Students in Shasta, Siskiyou and Tehama counties, from high school freshmen to returning college students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-cf-santa-cruz",
+    "name": "Community Foundation Santa Cruz County",
+    "kind": "foundation",
+    "counties": ["06087"],
+    "url": "https://www.cfscc.org/scholarships",
+    "serves": "Students in Santa Cruz County, including graduating seniors from any county high school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-cf-slo",
+    "name": "The Community Foundation San Luis Obispo County",
+    "kind": "foundation",
+    "counties": ["06079"],
+    "url": "https://www.cfsloco.org/scholarships/",
+    "serves": "San Luis Obispo County students; more than 100 scholarships, each with its own rules",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-csulb",
+    "name": "California State University-Long Beach",
+    "kind": "college",
+    "unitid": 110583,
+    "counties": [],
+    "url": "https://csulb.academicworks.com/",
+    "serves": "Cal State Long Beach students; one general application matches you to campus awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-csun",
+    "name": "California State University-Northridge",
+    "kind": "college",
+    "unitid": 110608,
+    "counties": [],
+    "url": "https://csun.academicworks.com/",
+    "serves": "CSUN students; fill out a general application each year to be matched to campus awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-east-bay-cf",
+    "name": "East Bay Community Foundation",
+    "kind": "foundation",
+    "counties": ["06001", "06013"],
+    "url": "https://www.ebcf.org/grants/scholarship-opportunities/",
+    "serves": "East Bay students in Alameda and Contra Costa counties; each fund lists its own rules and contact",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-el-dorado-cf",
+    "name": "El Dorado Community Foundation",
+    "kind": "foundation",
+    "counties": ["06017"],
+    "url": "https://eldoradocf.org/scholarship-catalog/",
+    "serves": "El Dorado County graduating seniors, with some awards open to students from elsewhere",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-fresno-state",
+    "name": "California State University-Fresno",
+    "kind": "college",
+    "unitid": 110556,
+    "counties": [],
+    "url": "https://fresnostate.academicworks.com/",
+    "serves": "Fresno State students, both continuing and newly applied, for department and college awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-humboldt-area-foundation",
+    "name": "Humboldt Area Foundation",
+    "kind": "foundation",
+    "counties": ["06023"],
+    "url": "https://hafoundation.org/requesting-support/scholarship-search/",
+    "serves": "Students in the Humboldt area, through one universal application; the FAFSA is not required to apply",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-inland-empire-cf",
+    "name": "Inland Empire Community Foundation",
+    "kind": "foundation",
+    "counties": ["06065", "06071"],
+    "url": "https://www.iegives.org/students/overview/",
+    "serves": "Students living in Riverside and San Bernardino counties; many awards are given through local colleges",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-kern-cf",
+    "name": "Kern Community Foundation",
+    "kind": "foundation",
+    "counties": ["06029"],
+    "url": "https://www.kernfoundation.org/students/scholarships/",
+    "serves": "Graduating Kern County high school seniors with a 2.0 GPA or higher, through one application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-lmu",
+    "name": "Loyola Marymount University",
+    "kind": "college",
+    "unitid": 117946,
+    "counties": [],
+    "url": "https://lmu.academicworks.com/",
+    "serves": "LMU students; sign in with MyLMU to apply for campus scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-long-beach-cf",
+    "name": "Long Beach Community Foundation",
+    "kind": "foundation",
+    "counties": ["06037"],
+    "url": "https://longbeachcf.org/scholarships/",
+    "serves": "Students from the greater Long Beach area, including Long Beach City College and CSULB students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-napa-valley-cf",
+    "name": "Napa Valley Community Foundation",
+    "kind": "foundation",
+    "counties": ["06055"],
+    "url": "https://www.napavalleycf.org/im-a-student/scholarship-opportunities/",
+    "serves": "Napa County high school seniors, Napa Valley College students, health care students and some winery workers",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-north-valley-cf",
+    "name": "North Valley Community Foundation",
+    "kind": "foundation",
+    "counties": ["06007"],
+    "url": "https://www.nvcf.org/nvcf-scholarships",
+    "serves": "High school seniors and recent graduates in the Butte County area; awards can be filtered by high school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-oc-cf",
+    "name": "Orange County Community Foundation",
+    "kind": "foundation",
+    "counties": ["06059"],
+    "url": "https://www.oc-cf.org/scholarships/available-scholarships/",
+    "serves": "Orange County students starting or continuing college, with awards for many interests and GPAs",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-pasadena-cf",
+    "name": "Pasadena Community Foundation",
+    "kind": "foundation",
+    "counties": ["06037"],
+    "url": "https://pasadenacf.org/programs/scholarships/",
+    "serves": "Students from the greater Pasadena area, from high school to community college and graduate school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-pepperdine",
+    "name": "Pepperdine University",
+    "kind": "college",
+    "unitid": 121150,
+    "counties": [],
+    "url": "https://pepperdine.academicworks.com/",
+    "serves": "Pepperdine students, with lists for each school; sign in with WaveNet to apply",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-placer-cf",
+    "name": "Placer Community Foundation",
+    "kind": "foundation",
+    "counties": ["06061"],
+    "url": "https://www.placercf.org/scholarships",
+    "serves": "Placer County students, including graduating high school seniors and Sierra College students",
     "checked_on": "2026-10-06"
   },
   {
@@ -18,12 +223,213 @@
     "checked_on": "2026-10-06"
   },
   {
+    "id": "ca-sacramento-state",
+    "name": "California State University-Sacramento",
+    "kind": "college",
+    "unitid": 110617,
+    "counties": [],
+    "url": "https://csus.academicworks.com/",
+    "serves": "Sacramento State students, both continuing and newly applied",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-san-diego-foundation",
+    "name": "San Diego Foundation",
+    "kind": "foundation",
+    "counties": ["06073"],
+    "url": "https://www.sdfoundation.org/students/",
+    "serves": "San Diego County high school seniors and college students, through one common scholarship application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-san-joaquin-cf",
+    "name": "San Joaquin Community Foundation",
+    "kind": "foundation",
+    "counties": ["06077"],
+    "url": "https://sanjoaquincf.org/scholarships/",
+    "serves": "San Joaquin County high school seniors planning on college or other study after high school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sb-scholarship-foundation",
+    "name": "Scholarship Foundation of Santa Barbara",
+    "kind": "foundation",
+    "counties": ["06083"],
+    "url": "https://www.sbscholarship.org/apply/",
+    "serves": "Santa Barbara County students going to college, graduate or vocational school, including adult and re-entry students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sdsu",
+    "name": "San Diego State University",
+    "kind": "college",
+    "unitid": 122409,
+    "counties": [],
+    "url": "https://sdsu.academicworks.com/",
+    "serves": "San Diego State students; the general application matches you to campus scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sf-state",
+    "name": "San Francisco State University",
+    "kind": "college",
+    "unitid": 122597,
+    "counties": [],
+    "url": "https://sfsu.academicworks.com/",
+    "serves": "SF State students with a student ID; open campus scholarships are recommended after one application",
+    "checked_on": "2026-10-06"
+  },
+  {
     "id": "ca-silicon-valley-cf",
     "name": "Silicon Valley Community Foundation",
     "kind": "foundation",
     "counties": ["06081", "06085"],
     "url": "https://www.svcf.org/scholarships",
     "serves": "High school seniors, undergraduates, re-entry and graduate students in San Mateo and Santa Clara counties",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sjsu",
+    "name": "San Jose State University",
+    "kind": "college",
+    "unitid": 122755,
+    "counties": [],
+    "url": "https://www.sjsu.edu/faso/types-of-aid/scholarships/index.php",
+    "serves": "San Jose State students, through the campus scholarship system",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-solano-cf",
+    "name": "Solano Community Foundation",
+    "kind": "foundation",
+    "counties": ["06095"],
+    "url": "https://solanocf.org/GrantProgams.aspx",
+    "serves": "Solano County students; applications open in January",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sonoma-cf",
+    "name": "Community Foundation Sonoma County",
+    "kind": "foundation",
+    "counties": ["06097"],
+    "url": "https://www.sonomacf.org/nonprofits/apply-for-scholarships/",
+    "serves": "Sonoma County residents with financial need going to college or trade school, applying through 10,000 Degrees",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-sonora-area-foundation",
+    "name": "Sonora Area Foundation",
+    "kind": "foundation",
+    "counties": ["06109"],
+    "url": "https://sonora-area.org/scholarships/",
+    "serves": "Tuolumne County high school seniors and Columbia College students, through one universal application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-stanislaus-cf",
+    "name": "Stanislaus Community Foundation",
+    "kind": "foundation",
+    "counties": ["06099"],
+    "url": "https://www.stanislauscf.org/scholarships/",
+    "serves": "Mostly Stanislaus County residents, from graduating seniors to college students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-uc-berkeley",
+    "name": "University of California-Berkeley",
+    "kind": "college",
+    "unitid": 110635,
+    "counties": [],
+    "url": "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships/",
+    "serves": "UC Berkeley students, including campus merit and need-based scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-uci",
+    "name": "University of California-Irvine",
+    "kind": "college",
+    "unitid": 110653,
+    "counties": [],
+    "url": "https://www.ofas.uci.edu/scholarships/",
+    "serves": "UC Irvine students, plus tips on outside scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ucla",
+    "name": "University of California-Los Angeles",
+    "kind": "college",
+    "unitid": 110662,
+    "counties": [],
+    "url": "https://ucla.academicworks.com/",
+    "serves": "UCLA students; one application puts you in the running for over 2,000 campus scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ucr",
+    "name": "University of California-Riverside",
+    "kind": "college",
+    "unitid": 110671,
+    "counties": [],
+    "url": "https://financialaid.ucr.edu/scholarships",
+    "serves": "UC Riverside students, through the campus scholarship system",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ucsb",
+    "name": "University of California-Santa Barbara",
+    "kind": "college",
+    "unitid": 110705,
+    "counties": [],
+    "url": "https://www.finaid.ucsb.edu/types-aid/scholarship-awards/general-information",
+    "serves": "UC Santa Barbara students, through the campus scholarship system",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ucsc",
+    "name": "University of California-Santa Cruz",
+    "kind": "college",
+    "unitid": 110714,
+    "counties": [],
+    "url": "https://financialaid.ucsc.edu/types-of-aid/scholarships/",
+    "serves": "UC Santa Cruz students, including campus merit scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ucsd",
+    "name": "University of California-San Diego",
+    "kind": "college",
+    "unitid": 110680,
+    "counties": [],
+    "url": "https://ucsd.academicworks.com/",
+    "serves": "UC San Diego students; sign in and fill out the general application to be matched",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-usc",
+    "name": "University of Southern California",
+    "kind": "college",
+    "unitid": 123961,
+    "counties": [],
+    "url": "https://financialaid.usc.edu/undergraduate-financial-aid/admitted-and-continuing-students/scholarships/",
+    "serves": "Admitted and continuing USC undergraduates",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-ventura-county-cf",
+    "name": "Ventura County Community Foundation",
+    "kind": "foundation",
+    "counties": ["06111"],
+    "url": "https://vccf.org/scholarships/students/",
+    "serves": "Students in Ventura County; the scholarship season opens each fall",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ca-yolo-cf",
+    "name": "Yolo Community Foundation",
+    "kind": "foundation",
+    "counties": ["06113"],
+    "url": "https://yolocf.org/scholarships/",
+    "serves": "Yolo County students; applications open in January",
     "checked_on": "2026-10-06"
   }
 ]
