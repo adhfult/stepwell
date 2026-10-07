@@ -1,0 +1,394 @@
+[
+  {
+    "id": "tx-acc",
+    "name": "Austin Community College District",
+    "kind": "college",
+    "unitid": 222992,
+    "counties": [],
+    "url": "https://students.austincc.edu/scholarships/",
+    "serves": "ACC students; one application matches you to the scholarships you qualify for",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-alamo-nvc",
+    "name": "Northwest Vista College",
+    "kind": "college",
+    "unitid": 420398,
+    "counties": [],
+    "url": "https://alamo.academicworks.com/",
+    "serves": "Alamo Colleges students, including Northwest Vista; one portal for district scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-alamo-sac",
+    "name": "San Antonio College",
+    "kind": "college",
+    "unitid": 227924,
+    "counties": [],
+    "url": "https://alamo.academicworks.com/",
+    "serves": "Alamo Colleges students, including San Antonio College; one portal for district scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-blinn",
+    "name": "Blinn College District",
+    "kind": "college",
+    "unitid": 223427,
+    "counties": [],
+    "url": "https://www.blinn.edu/scholarships/",
+    "serves": "Blinn students, from new high school graduates to returning and first-time college students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-abilene",
+    "name": "Community Foundation of Abilene",
+    "kind": "foundation",
+    "counties": ["48441", "48083"],
+    "url": "https://www.cfabilene.org/scholarships",
+    "serves": "Students from Abilene and the surrounding area",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-amarillo",
+    "name": "Amarillo Area Foundation",
+    "kind": "foundation",
+    "counties": ["48011", "48045", "48065", "48069", "48075", "48087", "48111", "48117", "48129", "48179", "48191", "48195", "48205", "48211", "48233", "48295", "48341", "48357", "48359", "48369", "48375", "48381", "48393", "48421", "48483"],
+    "url": "https://amarilloareafoundation.org/scholarship/",
+    "serves": "Texas Panhandle students; awards by county, college or field of study, mostly for graduating seniors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-austin",
+    "name": "Austin Community Foundation",
+    "kind": "foundation",
+    "counties": ["48021", "48053", "48055", "48209", "48453", "48491"],
+    "url": "https://www.austincf.org/apply-for-funding/scholarships/opportunities/",
+    "serves": "Central Texas students, from new high school graduates to students in college or vocational training",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-brazos-valley",
+    "name": "Community Foundation of the Brazos Valley",
+    "kind": "foundation",
+    "counties": ["48041", "48051", "48185", "48313", "48395", "48289", "48477"],
+    "url": "https://www.cfbv.org/scholarships/",
+    "serves": "A few scholarships for Brazos Valley high school seniors, some through school counselors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-coastal-bend",
+    "name": "Coastal Bend Community Foundation",
+    "kind": "foundation",
+    "counties": ["48007", "48025", "48249", "48273", "48355", "48391", "48409"],
+    "url": "https://www.cbcfoundation.org/scholarships/",
+    "serves": "Students who graduated from a high school in Aransas, Bee, Jim Wells, Kleberg, Nueces, Refugio or San Patricio County",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-dallas",
+    "name": "Communities Foundation of Texas",
+    "kind": "foundation",
+    "counties": ["48085", "48113", "48121", "48139", "48257", "48397", "48439"],
+    "url": "https://www.cftexas.org/scholarships/apply-for-scholarships/",
+    "serves": "Dallas-Fort Worth area students; dozens of scholarships through one application, each with its own rules",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-east-texas",
+    "name": "East Texas Communities Foundation",
+    "kind": "foundation",
+    "counties": ["48001", "48005", "48037", "48063", "48067", "48073", "48119", "48159", "48183", "48203", "48213", "48223", "48277", "48315", "48343", "48365", "48379", "48387", "48401", "48403", "48405", "48419", "48423", "48449", "48459", "48467", "48499"],
+    "url": "https://etcf.org/scholarships/",
+    "serves": "Graduating seniors and college students from East Texas; each scholarship has its own county or school rules",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-el-paso",
+    "name": "El Paso Community Foundation",
+    "kind": "foundation",
+    "counties": ["48141"],
+    "url": "https://epcf.org/grants-and-scholarships/apply-for-a-scholarship",
+    "serves": "El Paso County high school seniors; college students are pointed to their campus scholarship office",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-hill-country",
+    "name": "The Community Foundation (Texas Hill Country)",
+    "kind": "foundation",
+    "counties": ["48019", "48031", "48137", "48171", "48259", "48267", "48265", "48319", "48385", "48463"],
+    "url": "https://www.communityfoundation.net/scholarships/",
+    "serves": "Students in the Texas Hill Country counties the Kerrville foundation serves",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-laredo",
+    "name": "Laredo Area Community Foundation",
+    "kind": "foundation",
+    "counties": ["48479"],
+    "url": "https://www.laredofoundation.org/scholarships.html",
+    "serves": "Laredo-area students, from high school seniors to college students and returning adults",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-montgomery",
+    "name": "Montgomery County Community Foundation",
+    "kind": "foundation",
+    "counties": ["48339"],
+    "url": "https://www.mccfoundation.org/scholarships/",
+    "serves": "Montgomery County students; applications go through high school counselors and Lone Star College aid offices",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-permian-basin",
+    "name": "Permian Basin Area Foundation",
+    "kind": "foundation",
+    "counties": ["48003", "48033", "48043", "48103", "48105", "48109", "48115", "48135", "48165", "48173", "48227", "48243", "48301", "48317", "48329", "48371", "48377", "48383", "48389", "48443", "48461", "48475", "48495"],
+    "url": "https://pbaf.org/scholarships/",
+    "serves": "Students from the Permian Basin region; each scholarship has its own criteria",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-san-antonio",
+    "name": "San Antonio Area Foundation",
+    "kind": "foundation",
+    "counties": ["48029", "48479"],
+    "url": "https://saafdn.org/scholarships/apply-for-a-scholarship/",
+    "serves": "Over 90 scholarships for high school seniors, college students and returning adults; Legacy Scholarship for Bexar and Webb juniors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-waco-duncan",
+    "name": "Waco Foundation (Duncan Scholars)",
+    "kind": "foundation",
+    "counties": ["48309"],
+    "url": "https://wacofoundation.org/community-impact/duncan-scholars",
+    "serves": "Waco ISD students chosen through Waco and University high schools, for college aid and coaching",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-cf-west-texas",
+    "name": "Community Foundation of West Texas",
+    "kind": "foundation",
+    "counties": ["48017", "48079", "48107", "48125", "48153", "48169", "48189", "48219", "48269", "48279", "48303", "48305", "48345", "48445", "48501"],
+    "url": "https://www.cfwtx.org/scholarships",
+    "serves": "Over 100 scholarships a year for South Plains area students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-collin",
+    "name": "Collin County Community College District",
+    "kind": "college",
+    "unitid": 247834,
+    "counties": [],
+    "url": "https://www.collin.edu/financialaid/scholarships",
+    "serves": "Collin College students, for campus scholarship opportunities",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-dallas-college",
+    "name": "Dallas College",
+    "kind": "college",
+    "unitid": 224615,
+    "counties": [],
+    "url": "https://www.dallascollege.edu/paying-for-college/scholarships-aid/",
+    "serves": "Dallas College students; over 300 foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-epcc",
+    "name": "El Paso Community College",
+    "kind": "college",
+    "unitid": 224642,
+    "counties": [],
+    "url": "https://www.epcc.edu/Admissions/FinancialAid/scholarships",
+    "serves": "EPCC students; one general application covers several scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-hamman-foundation",
+    "name": "George and Mary Josephine Hamman Foundation",
+    "kind": "foundation",
+    "counties": ["48039", "48071", "48157", "48167", "48201", "48291", "48339", "48473"],
+    "url": "https://hammanfoundation.org/scholarship-guidelines/",
+    "serves": "High school seniors in Harris and nearby Houston-area counties; considers academics and financial need",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-hcc",
+    "name": "Houston City College",
+    "kind": "college",
+    "unitid": 225423,
+    "counties": [],
+    "url": "https://www.hccs.edu/paying-for-college/financial-aid--scholarships/scholarships/",
+    "serves": "Houston City College students, for HCC Foundation scholarships and the Eagle Promise program",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-lone-star",
+    "name": "Lone Star College System",
+    "kind": "college",
+    "unitid": 227182,
+    "counties": [],
+    "url": "https://www.lonestar.edu/scholarships.htm",
+    "serves": "Lone Star College students, through one scholarship application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-mark-kilroy-foundation",
+    "name": "Mark Kilroy Foundation",
+    "kind": "foundation",
+    "counties": ["48039", "48167"],
+    "url": "https://www.markkilroyfoundation.org/mkf-scholarships.html",
+    "serves": "Seniors, graduates and GED holders from listed high schools in Brazoria and Galveston counties",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-san-jac",
+    "name": "San Jacinto Community College",
+    "kind": "college",
+    "unitid": 227979,
+    "counties": [],
+    "url": "https://www.sanjac.edu/admissions/paying-for-college/grants-scholarships/scholarships/",
+    "serves": "San Jac current and incoming students; one application matches foundation and department scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-shsu",
+    "name": "Sam Houston State University",
+    "kind": "college",
+    "unitid": 227881,
+    "counties": [],
+    "url": "https://www.shsu.edu/cost-aid/types-of-aid/scholarships",
+    "serves": "Admitted SHSU students, through the Scholarships4Kats application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-south-texas-college",
+    "name": "South Texas College",
+    "kind": "college",
+    "unitid": 409315,
+    "counties": [],
+    "url": "https://studentservices.southtexascollege.edu/finaid/scholarships/",
+    "serves": "South Texas College students; one application considers you for all STC scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-tcc",
+    "name": "Tarrant County College District",
+    "kind": "college",
+    "unitid": 228547,
+    "counties": [],
+    "url": "https://www.tccd.edu/services/paying-for-college/scholarships/",
+    "serves": "TCC students; one general application each spring for hundreds of foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-terry-foundation",
+    "name": "The Terry Foundation",
+    "kind": "foundation",
+    "counties": [],
+    "url": "https://terryfoundation.org/apply/",
+    "serves": "Texas high school graduates entering one of 11 Texas public universities as full-time freshmen; need and leadership",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-ttu",
+    "name": "Texas Tech University",
+    "kind": "college",
+    "unitid": 229115,
+    "counties": [],
+    "url": "https://www.depts.ttu.edu/scholarships/",
+    "serves": "Texas Tech new and continuing students, for merit and competitive scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-txst",
+    "name": "Texas State University",
+    "kind": "college",
+    "unitid": 228459,
+    "counties": [],
+    "url": "https://onestop.txst.edu/financial-aid/scholarships.html",
+    "serves": "Texas State freshmen, transfer and continuing students, for admission and competitive scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-uh",
+    "name": "University of Houston",
+    "kind": "college",
+    "unitid": 225511,
+    "counties": [],
+    "url": "https://www.uh.edu/one-stop/financial/undergraduate/types-aid/scholarships/",
+    "serves": "University of Houston students, for merit and other university scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-unt",
+    "name": "University of North Texas",
+    "kind": "college",
+    "unitid": 227216,
+    "counties": [],
+    "url": "https://financialaid.unt.edu/scholarships",
+    "serves": "Admitted UNT students; the Eagle Scholarship Portal matches you to scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-uta",
+    "name": "The University of Texas at Arlington",
+    "kind": "college",
+    "unitid": 228769,
+    "counties": [],
+    "url": "https://www.uta.edu/administration/fao/scholarships",
+    "serves": "UT Arlington students; new students are considered for merit scholarships automatically",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-utd",
+    "name": "The University of Texas at Dallas",
+    "kind": "college",
+    "unitid": 228787,
+    "counties": [],
+    "url": "https://finaid.utdallas.edu/scholarships/",
+    "serves": "UT Dallas freshmen, transfer, graduate and continuing students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-utep",
+    "name": "The University of Texas at El Paso",
+    "kind": "college",
+    "unitid": 228796,
+    "counties": [],
+    "url": "https://www.utep.edu/financial-aid/types-of-aid/scholarships.html",
+    "serves": "UTEP students, with applications through ScholarMine",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-utexas",
+    "name": "The University of Texas at Austin",
+    "kind": "college",
+    "unitid": 228778,
+    "counties": [],
+    "url": "https://onestop.utexas.edu/managing-costs/scholarships-financial-aid/types-of-financial-aid/scholarships/",
+    "serves": "UT Austin students; continuing and transfer students apply through LASSO",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-utrgv",
+    "name": "The University of Texas Rio Grande Valley",
+    "kind": "college",
+    "unitid": 227368,
+    "counties": [],
+    "url": "https://www.utrgv.edu/scholarships/",
+    "serves": "UTRGV entering freshmen, transfer, current and graduate students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "tx-utsa",
+    "name": "The University of Texas at San Antonio",
+    "kind": "college",
+    "unitid": 229027,
+    "counties": [],
+    "url": "https://onestop.utsa.edu/scholarships/",
+    "serves": "UTSA freshmen, transfer and current students, through the Scholarship Hub general application",
+    "checked_on": "2026-10-06"
+  }
+]
