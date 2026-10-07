@@ -2,6 +2,8 @@
  * Checks that every local scholarship link (data/award-sites/) still answers
  * (spec more-scholarships.md). One polite GET per link; exits 1 when any link
  * is broken, so the monthly workflow fails and GitHub emails the owner.
+ * With a URL (`npm run award-sites:check -- <url>`) it tries just that link and
+ * prints where it lands and its title, to vet a candidate before adding it.
  */
 import { appendFileSync, readdirSync, readFileSync } from "node:fs";
 import { createPoliteFetcher, type FetchResult, RobotsDisallowedError, userAgentFor } from "./fetch/polite.ts";
@@ -13,8 +15,19 @@ export function linkProblem(result: FetchResult | Error): string | null {
   return result.status === 200 ? null : `answered ${result.status}`;
 }
 
-async function main() {
+/** The page's <title>, to spot a donor or news page before linking it. */
+export const pageTitle = (html: string) => html.match(/<title[^>]*>([^<]*)</i)?.[1].trim().replace(/\s+/g, " ") || null;
+
+async function main(url?: string) {
   const fetcher = createPoliteFetcher({ userAgent: userAgentFor(process.env.IMPORT_CONTACT), maxRetries: 1 });
+  if (url) {
+    const result = await fetcher.get(url).catch((e: Error) => e);
+    const problem = linkProblem(result);
+    console.log(problem ?? "answers 200");
+    if (!(result instanceof Error)) console.log(`lands on: ${result.finalUrl}\ntitle: ${pageTitle(result.body) ?? "none"}`);
+    if (problem) process.exitCode = 1;
+    return;
+  }
   const dir = new URL("../../data/award-sites/", import.meta.url);
   const lines: string[] = [];
   for (const file of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
@@ -30,4 +43,4 @@ async function main() {
   process.exitCode = 1;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) await main();
+if (import.meta.url === `file://${process.argv[1]}`) await main(process.argv[2]);

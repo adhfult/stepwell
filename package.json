@@ -16,7 +16,8 @@
     "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
     "import": "node --env-file-if-exists=.env.local src/jobs/run.ts",
     "scholarships:due": "node src/jobs/scholarships-due.ts",
-    "award-sites:check": "node src/jobs/award-sites-check.ts"
+    "award-sites:check": "node src/jobs/award-sites-check.ts",
+    "award-sites:gaps": "node src/jobs/award-sites-gaps.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

@@ -17,6 +17,10 @@ this through CLAUDE.md; Antigravity, Copilot and Codex read it directly).
 - `npm run check`: lint + typecheck + tests. Run before saying work is done.
 - `npm run build`: production build
 - `npm test`: tests only
+- `npm run award-sites:gaps -- TX`: research worklist for a state's local scholarship file (docs/tools.md)
+- `npm run award-sites:check -- <url>`: vet one candidate scholarship link (no URL: check them all)
+- `/award-sites-research`: skill for adding one state's local scholarship file
+- If you repeat a manual step 3 times this session, offer /build-project-tool for it.
 
 ## Before building anything
 1. Read `docs/PRODUCT.md` (what we're building and what we're NOT building).
