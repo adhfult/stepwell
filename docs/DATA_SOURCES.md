@@ -104,10 +104,21 @@ That keeps pages fast, stays within rate limits, and lets us join datasets.
   (1 to 20, named in `src/lib/athletes/sports.ts`); per sport `PARTIC_MEN` and
   `PARTIC_WOMEN`, with `PARTIC_COED_MEN`/`PARTIC_COED_WOMEN` filling in when
   those are blank. Combined sports ("Swimming and Diving (combined)", "Track
-  and Field and Cross Country (combined)") count toward each part, and the
-  larger count wins when a college also reports the parts. "Other Sports" is
+  and Field and Cross Country (combined)") count toward each part until the
+  college reports that part on its own row, which then wins. "Other Sports" is
   skipped. An unknown sport name stops the import. Local run: 2,037 colleges,
   18,377 teams at 2,027 colleges.
+
+## Census county list (profile county, local scholarships)
+- **What:** every county and county-equivalent with its 5-digit FIPS code,
+  for the profile's optional county and `data/award-sites/` entries.
+- **Owner:** U.S. Census Bureau. Public domain (17 U.S.C. 105).
+- **Access:** `https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt`
+  (pipe-separated), turned into `data/counties.json` (grouped by state, only
+  the 56 states and territories in the profile list; 3,234 counties).
+  Downloaded 2026-10-06. Connecticut uses its 8 historical counties, the
+  names people know, not the 2022 planning regions.
+- **Refresh:** by hand when counties change (rare).
 
 ## Connecting careers to programs (the crosswalk)
 - The CIP–SOC crosswalk (from the National Center for Education Statistics
