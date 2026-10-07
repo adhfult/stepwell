@@ -1,0 +1,336 @@
+[
+  {
+    "id": "ny-albany",
+    "name": "University at Albany",
+    "kind": "college",
+    "unitid": 196060,
+    "counties": [],
+    "url": "https://www.albany.edu/admissions/scholarships-aid",
+    "serves": "Incoming UAlbany students, including merit scholarships for first-year students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-baruch",
+    "name": "CUNY Bernard M Baruch College",
+    "kind": "college",
+    "unitid": 190512,
+    "counties": [],
+    "url": "https://baruch.scholarships.ngwebsolutions.com/Scholarships/Search",
+    "serves": "Currently enrolled Baruch degree students; searchable college scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-binghamton",
+    "name": "Binghamton University",
+    "kind": "college",
+    "unitid": 196079,
+    "counties": [],
+    "url": "https://www.binghamton.edu/financial-aid/types-of-aid/scholarships/",
+    "serves": "Binghamton students; most scholarships need no separate application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-bmcc",
+    "name": "CUNY Borough of Manhattan Community College",
+    "kind": "college",
+    "unitid": 190521,
+    "counties": [],
+    "url": "https://www.bmcc.cuny.edu/students/scholarships-awards-other-opportunities/",
+    "serves": "BMCC students, for college scholarships and listed outside awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-brooklyn-college",
+    "name": "CUNY Brooklyn College",
+    "kind": "college",
+    "unitid": 190549,
+    "counties": [],
+    "url": "https://www.brooklyn.edu/admissions-aid/financial-aid-scholarships/scholarships/apply/",
+    "serves": "New and current Brooklyn College students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-buffalo",
+    "name": "University at Buffalo",
+    "kind": "college",
+    "unitid": 196088,
+    "counties": [],
+    "url": "https://www.buffalo.edu/financialaid/basics/types/scholarships.html",
+    "serves": "UB undergraduate, transfer, graduate and professional students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-adirondack",
+    "name": "Adirondack Foundation",
+    "kind": "foundation",
+    "counties": ["36019", "36031", "36033", "36041"],
+    "url": "https://adkcommunityfoundation.org/funding-support/scholarship-opportunities/",
+    "serves": "Adirondack region students, including graduating seniors and non-traditional students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-allegany",
+    "name": "Allegany County Area Foundation",
+    "kind": "foundation",
+    "counties": ["36003"],
+    "url": "https://alleganycountyareafoundation.dollarsforscholars.org/index.php?section=chapterWebsite&action=main&fwID=456",
+    "serves": "Students attending or graduated from schools in Allegany County; one application for many scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-berkshire-taconic",
+    "name": "Berkshire Taconic Community Foundation",
+    "kind": "foundation",
+    "counties": ["36021", "36027"],
+    "url": "https://berkshiretaconic.org/grants-scholarships/apply-for-scholarships",
+    "serves": "Seniors and other residents of Columbia and northeast Dutchess counties, plus adult learners",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-buffalo",
+    "name": "Community Foundation for Greater Buffalo",
+    "kind": "foundation",
+    "counties": ["36003", "36009", "36013", "36029", "36037", "36063", "36073", "36121"],
+    "url": "https://www.cfgb.org/community-change/initiatives/scholarships/",
+    "serves": "Western New York residents in eight counties going to college full time; preference for Pell-eligible students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-capital-region",
+    "name": "Community Foundation for the Greater Capital Region",
+    "kind": "foundation",
+    "counties": ["36001", "36083", "36091", "36093"],
+    "url": "https://cfgcr.org/scholarships/",
+    "serves": "High school, college and non-traditional students; some awards for Albany, Rensselaer, Saratoga or Schenectady counties",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-cattaraugus",
+    "name": "Cattaraugus Region Community Foundation",
+    "kind": "foundation",
+    "counties": ["36009"],
+    "url": "https://www.cattfoundation.org/scholarships",
+    "serves": "Students in the Cattaraugus Region, with awards tied to high schools, majors and career goals",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-central-ny",
+    "name": "Central New York Community Foundation",
+    "kind": "foundation",
+    "counties": ["36053", "36067"],
+    "url": "https://cnycf.org/scholarships/",
+    "serves": "Central New York students; searchable scholarships, many tied to a high school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-chautauqua",
+    "name": "Chautauqua Region Community Foundation",
+    "kind": "foundation",
+    "counties": ["36013"],
+    "url": "https://www.crcfonline.org/scholarships/",
+    "serves": "Chautauqua County seniors, college students and adults in workforce training; one application for most awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-elmira-corning",
+    "name": "Community Foundation of Elmira-Corning and the Finger Lakes",
+    "kind": "foundation",
+    "counties": ["36015", "36097", "36101", "36123"],
+    "url": "https://communityfund.org/what-we-do/scholarships/",
+    "serves": "High school seniors and adult learners in Chemung, Schuyler, Steuben and Yates counties",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-glens-falls",
+    "name": "Glens Falls Foundation",
+    "kind": "foundation",
+    "counties": ["36113", "36115"],
+    "url": "https://www.glensfallsfoundation.org/how-to-apply-for-scholarships",
+    "serves": "Glens Falls area students in medical school, or attending Dartmouth College or Harvard University",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-herkimer-oneida",
+    "name": "Community Foundation of Herkimer and Oneida Counties",
+    "kind": "foundation",
+    "counties": ["36043", "36065"],
+    "url": "https://foundationhoc.org/community-investments/scholarship-opportunities/",
+    "serves": "Graduates of Herkimer County and Oneida County high schools, plus some Mohawk Valley awards",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-hudson-valley",
+    "name": "Community Foundations of the Hudson Valley",
+    "kind": "foundation",
+    "counties": ["36027", "36079", "36111"],
+    "url": "https://communityfoundationshv.org/scholarships/",
+    "serves": "Hudson Valley students; searchable scholarships for Dutchess, Putnam and Ulster counties and more",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-northern-chautauqua",
+    "name": "Northern Chautauqua Community Foundation",
+    "kind": "foundation",
+    "counties": ["36013"],
+    "url": "https://www.nccfoundation.org/scholarships/",
+    "serves": "Students from northern Chautauqua County; over 200 scholarship funds, searchable by high school",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-northern-ny",
+    "name": "Northern New York Community Foundation",
+    "kind": "foundation",
+    "counties": ["36045", "36049", "36089"],
+    "url": "https://nnycf.org/scholarships/scholarship-overview/",
+    "serves": "Students in Jefferson, Lewis and St. Lawrence counties, including trade and vocational students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-orange-sullivan-rockland",
+    "name": "Community Foundation of Orange, Sullivan and Rockland",
+    "kind": "foundation",
+    "counties": ["36071", "36087", "36105"],
+    "url": "https://cfosrny.org/apply-for-scholarships/",
+    "serves": "High school seniors, college students, career and technical learners and returning adults",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-cf-rochester",
+    "name": "Rochester Area Community Foundation",
+    "kind": "foundation",
+    "counties": ["36037", "36051", "36055", "36069", "36073", "36099", "36117", "36123"],
+    "url": "https://www.racf.org/scholarships/search-for-scholarships/",
+    "serves": "Rochester-area students; searchable scholarships, many for graduating high school seniors",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-city-tech",
+    "name": "CUNY New York City College of Technology",
+    "kind": "college",
+    "unitid": 190655,
+    "counties": [],
+    "url": "https://www.citytech.cuny.edu/scholarships/",
+    "serves": "Students currently enrolled at City Tech",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-farmingdale",
+    "name": "Farmingdale State College",
+    "kind": "college",
+    "unitid": 196042,
+    "counties": [],
+    "url": "https://www.farmingdale.edu/scholarships/",
+    "serves": "Incoming first-year and transfer Farmingdale students, through the college foundation",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-fordham",
+    "name": "Fordham University",
+    "kind": "college",
+    "unitid": 191241,
+    "counties": [],
+    "url": "https://www.fordham.edu/student-financial-services/types-of-financial-aid/undergraduate-scholarships-and-grants/",
+    "serves": "Fordham undergraduates; admission applicants are considered for merit scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-hunter",
+    "name": "CUNY Hunter College",
+    "kind": "college",
+    "unitid": 190594,
+    "counties": [],
+    "url": "https://www.hunter.cuny.edu/students/financial-aid/financial-aid-types/scholarships/",
+    "serves": "Hunter College students, for college and outside scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-john-jay",
+    "name": "CUNY John Jay College of Criminal Justice",
+    "kind": "college",
+    "unitid": 190600,
+    "counties": [],
+    "url": "https://www.jjay.cuny.edu/admissions/tuition-financial-aid/scholarships",
+    "serves": "New and continuing John Jay students",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-laguardia",
+    "name": "CUNY LaGuardia Community College",
+    "kind": "college",
+    "unitid": 190628,
+    "counties": [],
+    "url": "https://www.laguardia.edu/about/laguardia-foundation/scholarships/",
+    "serves": "LaGuardia degree and continuing education students of any citizenship status",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-lehman",
+    "name": "CUNY Lehman College",
+    "kind": "college",
+    "unitid": 190637,
+    "counties": [],
+    "url": "https://www.lehman.cuny.edu/scholarships/",
+    "serves": "Lehman College students, for college and outside scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-nassau-cc",
+    "name": "Nassau Community College",
+    "kind": "college",
+    "unitid": 193478,
+    "counties": [],
+    "url": "https://ncc.edu/aboutncc/givetoncc/scholarships/",
+    "serves": "New and continuing Nassau Community College students; hundreds of foundation scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-queens-college",
+    "name": "CUNY Queens College",
+    "kind": "college",
+    "unitid": 190664,
+    "counties": [],
+    "url": "https://www.qc.cuny.edu/academics/ohs/internal-scholarships/",
+    "serves": "Queens College students; foundation scholarships with an application each semester",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-rit",
+    "name": "Rochester Institute of Technology",
+    "kind": "college",
+    "unitid": 195003,
+    "counties": [],
+    "url": "https://www.rit.edu/admissions/aid/merit-based-scholarships",
+    "serves": "Incoming first-year and transfer RIT students; merit scholarships with no separate application",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-stony-brook",
+    "name": "Stony Brook University",
+    "kind": "college",
+    "unitid": 196097,
+    "counties": [],
+    "url": "https://www.stonybrook.edu/commcms/finaid/scholarships/",
+    "serves": "New and continuing Stony Brook students; merit, talent, service and need-based scholarships",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-suffolk-ccc",
+    "name": "Suffolk County Community College",
+    "kind": "college",
+    "unitid": 366395,
+    "counties": [],
+    "url": "https://sunysuffolk.edu/apply-enroll/scholarships/index.jsp",
+    "serves": "New and continuing SUNY Suffolk students; hundreds of scholarships through one online system",
+    "checked_on": "2026-10-06"
+  },
+  {
+    "id": "ny-syracuse",
+    "name": "Syracuse University",
+    "kind": "college",
+    "unitid": 196413,
+    "counties": [],
+    "url": "https://financialaid.syr.edu/scholarships/",
+    "serves": "Syracuse University undergraduates, including merit-based scholarships",
+    "checked_on": "2026-10-06"
+  }
+]

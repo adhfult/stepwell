@@ -5,6 +5,7 @@
 import { z } from "zod";
 import ca from "../../../data/award-sites/ca.json";
 import fl from "../../../data/award-sites/fl.json";
+import ny from "../../../data/award-sites/ny.json";
 import tx from "../../../data/award-sites/tx.json";
 
 export const siteSchema = z
@@ -30,6 +31,7 @@ export type Site = z.infer<typeof siteSchema>;
 export const FILES: Record<string, Site[]> = {
   CA: ca as Site[],
   FL: fl as Site[],
+  NY: ny as Site[],
   TX: tx as Site[],
 };
 
