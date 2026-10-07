@@ -4,10 +4,13 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
-- [ ] **Owner:** approve pushing the athlete path commits and applying
-      migration `20261005025740_athletics.sql` to the cloud project. The
-      nightly `import.yml --due` run then imports `eada` by itself.
-- [ ] Pre-launch roadmap project 4 (context.dev scholarship data).
+- [ ] **Owner:** review `data/award-sites/ca.json` (46 links) and
+      `data/scholarships/private.json` (19 programs), then approve pushing
+      the more-scholarships commits and applying migration
+      `20261007010410_local_scholarships.sql` to the cloud (migration
+      first, then push code).
+- [ ] Local scholarship files for TX, FL, NY, PA (one commit each, owner
+      approves each); CA gaps: Los Angeles, San Francisco, Fresno, Tulare.
 - [ ] Athlete rules: re-check every August against the new NCAA guide
       (`src/lib/athletes/rules.ts`, spec "Rules checked").
 - [ ] Re-take `public/screenshots/plan.png` (needs a signed-in test
@@ -37,6 +40,18 @@ Newest entries at the top. Keep each entry short.
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 
+
+## 2026-10-06: More scholarships (roadmap 4, part 1)
+- Built spec `more-scholarships.md` (decision 0015): optional private county
+  on the profile, a linked "Local scholarships" directory on /scholarships
+  (community foundations by county), college pages link to the college's own
+  scholarship page, and 19 large private national programs (`pv-` ids).
+- Links only, no copying awards: context.dev was paid, local Ollama took
+  ~9 min a page, and Blackbaud's terms forbid scraping AcademicWorks.
+- `npm run award-sites:check` (also in the monthly recheck job) confirms
+  every link answers. Migration applied locally only.
+- Checked in the browser: San Diego County shows the San Diego Foundation at
+  320 and 1280px, no sideways scroll; Cal Poly Pomona shows its link.
 ## Log
 ### 2026-10-05: athlete path review fixes
 - EADA: a combined row ("Swimming and Diving", "Track and Field and Cross

@@ -33,7 +33,7 @@ I don't only find state and federal aid.
 
 ## Acceptance criteria
 ### Directory files
-- [ ] `data/award-sites/<state>.json`, one entry per source: `id`, `name`,
+- [x] `data/award-sites/<state>.json`, one entry per source: `id`, `name`,
       `kind` (`foundation` or `college`), `unitid` (college only), `counties`
       (5-digit FIPS codes; empty means the whole state), `url` (the
       scholarship page, https), `serves` (short plain text, at most 140
@@ -43,37 +43,37 @@ I don't only find state and federal aid.
       list scholarships, plus colleges with a public scholarship page) and the
       owner approves it in a commit. A college entry's `unitid` must exist in
       the Scorecard data.
-- [ ] `data/counties.json`: every county from the Census Bureau's county
+- [x] `data/counties.json`: every county from the Census Bureau's county
       list (public domain): FIPS, state, name.
 
 ### Link check
-- [ ] `npm run award-sites:check` fetches each `url` once with the polite
+- [x] `npm run award-sites:check` fetches each `url` once with the polite
       fetcher and lists any that don't answer 200 (or redirect to a 200).
       Pages whose robots.txt blocks the check are listed as "not checked".
-- [ ] The monthly `scholarship-recheck.yml` job runs it too, so a dead link
+- [x] The monthly `scholarship-recheck.yml` job runs it too, so a dead link
       fails the job and GitHub emails the owner.
 
 ### Private national programs
-- [ ] `data/scholarships/private.json` with ids `pv-...` (one-line loader rule
+- [x] `data/scholarships/private.json` with ids `pv-...` (one-line loader rule
       like `federal.json` → `us`), `sponsor_type: "private"`, checked by hand
       with `checked_at`, covered by `npm run scholarships:due`. Start with 20
       programs whose official pages state the rules. Migration widens the
       `sponsor_type` check.
 
 ### Student side
-- [ ] Profile gets an optional county, from the counties of the student's
+- [x] Profile gets an optional county, from the counties of the student's
       state, with a "Not set" choice. Changing state clears it. The server
       checks the county belongs to the state.
-- [ ] `/scholarships` gets a "Local scholarships" section for the student's
+- [x] `/scholarships` gets a "Local scholarships" section for the student's
       state: foundations serving their county first, then statewide ones.
       Without a county: statewide ones only, and "Add your county in your
       profile to see local foundations." A state with no file yet: "We don't
       list local foundations for [state] yet."
-- [ ] Each entry: name (linked), what it serves, and "Scholarships listed on
+- [x] Each entry: name (linked), what it serves, and "Scholarships listed on
       their site. Checked [date]."
-- [ ] A college page links to "This college's scholarships" when its file
+- [x] A college page links to "This college's scholarships" when its file
       has an entry for that `unitid`.
-- [ ] Privacy policy and `docs/SECURITY.md` updated for county; decision 0015
+- [x] Privacy policy and `docs/SECURITY.md` updated for county; decision 0015
       records why it's stored.
 
 ## Data
