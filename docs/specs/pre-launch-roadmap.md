@@ -36,11 +36,12 @@ item gets its own brainstorm when it starts.
    College Board course pages). No copied course text.
 6. **Interactive interest quiz**: card sorts, scenario choices, work values,
    results that explain themselves and lead to next steps.
-7. **AI helper**: chat, helper and study guide on a free provider chosen for
-   its data terms (no training on students' prompts), server-only, per-user
-   daily limits, answers grounded in Stepwell's data. Needs a decision
-   record: AGENTS.md says Anthropic API and PRODUCT.md says AI comes later.
-   Research so far: `~/notes/stepwell-free-ai-hosting.md` (owner's machine).
+7. **AI helper**: chat, helper and study guide through the Anthropic API
+   (decision 0016: first-party only, no resellers), server-only, per-user
+   daily limits, answers grounded in Stepwell's data. After the first round
+   of real students. Background AI comes first: career summaries
+   (`career-summaries.md`), then reading allowlisted scholarship pages, then
+   drafts for item 5.
 
 Still queued from earlier: calmer, info-first app pages; pay by state (BLS
 OEWS); what the work is like (O*NET work context). They slot in between the

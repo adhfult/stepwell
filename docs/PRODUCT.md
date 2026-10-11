@@ -42,7 +42,9 @@ One connected path, built on free official data:
 Design and build order: `docs/specs/v1-expansion-draft.md` (approved 2026-09-28).
 
 ## Not doing (for now)
-- AI advisor chat (phase 2, after the data foundation works).
+- AI advisor chat until real students have used the app (roadmap item 7,
+  decision 0016). AI text written ahead of time from our data, and reviewed,
+  is allowed now (e.g. career summaries).
 - Application tracking, résumés, counselor or parent accounts.
 - Native mobile apps (the website works on phones).
 - Anything outside the U.S.
