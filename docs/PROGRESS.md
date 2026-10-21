@@ -21,6 +21,15 @@ quiz, course overviews, student AI helper (after real students).
 **Parked by the owner (2026-10-20):** reading scholarship pages with AI and
 more states' local scholarships; decide later.
 
+**Public repository (2026-10-20, owner chose public so GitHub Actions is
+free):** history scanned clean; Claude workflows deleted; LICENSE (AGPL-3.0),
+README and `.github/SECURITY.md` added. When filling `src/lib/legal/details.ts`,
+use an address on the new domain, not a personal one (it is public in the
+code). After the switch: outside-contributor workflow approval, secret
+scanning with push protection, private vulnerability reporting, wiki off,
+then re-run CI and "Import data". Delete the unused `CLAUDE_CODE_OAUTH_TOKEN`
+secret in GitHub.
+
 **Other open items:**
 - [ ] **Owner:** review `data/award-sites/ca.json` (46 links) and
       `data/scholarships/private.json` (19 programs). Both are live on the
@@ -216,9 +225,10 @@ more states' local scholarships; decide later.
 ### 2026-09-30 (early): second security audit, rate limits
 - Cloudflare's security-audit method (instructions read from GitHub, not
   installed; source-only, report in ~/security-audit-skill/stepwell/run-1):
-  0 confirmed findings. Its password lead was tested locally and is real
-  within 24 hours of sign-in; recorded as an accepted risk (SECURITY.md,
-  LAUNCH.md). Its Claude-workflow lead doesn't apply (the repo is private).
+  0 confirmed findings. One password lead was tested locally and accepted
+  (SECURITY.md, LAUNCH.md). Its Claude-workflow lead didn't apply while the
+  repo was private; the two Claude workflows were deleted before it went
+  public (2026-10-20).
 - Hardening from its notes: keyed API requests refuse redirects (checked
   live: USAJOBS, O*NET, Scorecard still import); HSTS header.
 - Decision 0009: rate-limit sign-in at Vercel's firewall per IP; a secret

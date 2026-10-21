@@ -1436,7 +1436,7 @@ Run: `npm run build && npm start` (port 3000; if EADDRINUSE, find the PID with `
 
 - [ ] **Step 4: Check in the browser with Playwright** at 320, 390, 1024 and 1280px; save screenshots under `.playwright-mcp/`:
   - `/athletes` signed out: all levels via the level form; no console or CSP errors; no horizontal scroll.
-  - Sign in at `/sign-in` as `gpa-test@example.test` / `gpa-test-pass-1` (local database only). On `/gpa` make sure there are a few saved classes. On `/athletes?level=ncaa1`, tag them and save; reload; tags remain.
+  - Sign in at `/sign-in` with a test account in the local database. On `/gpa` make sure there are a few saved classes. On `/athletes?level=ncaa1`, tag them and save; reload; tags remain.
   - On `/gpa` change one grade and save; back on `/athletes` the tags are still there (Review Focus 1).
   - Click "Add to my plan" twice: the second time adds 0; `/plan` shows the steps in the right grade years (Review Focus 5). With the profile's graduation year cleared, the message asks for it.
   - `/colleges?sport=soccer&team=women&level=d2`: results, filters kept on page 2.

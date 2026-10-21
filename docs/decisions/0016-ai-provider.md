@@ -5,8 +5,7 @@
 
 ## Context
 The owner now has API keys for several AI services (Anthropic, Google
-Gemini, Groq, OpenRouter, and the resellers CheaperInference, OpusProxy and
-CleanAPIs) and wants AI in Stepwell, both in background data jobs and, later,
+Gemini, Groq, OpenRouter, and several reseller services) and wants AI in Stepwell, both in background data jobs and, later,
 a student-facing helper. Replies being slow is fine. Users may be 13 to 17
 (decision 0002), so where their words go matters more than price. AGENTS.md
 already names the Anthropic API; the pre-launch roadmap (item 7) said "a free
@@ -18,8 +17,8 @@ small API costs (about $1 for a run over every career).
 - Stepwell calls AI through the **Anthropic API directly**, with the official
   `@anthropic-ai/sdk`, from server code and import jobs only. Never from the
   browser.
-- **No resellers or proxies** (CheaperInference, OpusProxy, CleanAPIs or
-  similar), not even for background jobs over public data. We can't know
+- **No resellers or proxies** (services that resell or relay other
+  companies' models), not even for background jobs over public data. We can't know
   what they keep or for how long, reselling keys usually breaks the model
   maker's terms, and a proxy that disappears mid-run costs more than it saves.
 - **No gateway in between** (Vercel AI Gateway, OpenRouter): each one is
