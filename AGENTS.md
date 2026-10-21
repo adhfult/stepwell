@@ -34,6 +34,8 @@ this through CLAUDE.md; Antigravity, Copilot and Codex read it directly).
   `NEXT_PUBLIC_` may reach the browser, and those must never be secret.
 - Every database table holding user data gets Row Level Security policies in
   the same migration that creates it (see the supabase-migration skill).
+- Every new table in `public` also gets explicit `grant`s in that migration:
+  Supabase stopped granting Data API access automatically on 2026-10-30.
 - Check permissions on the server. Never trust a user ID sent from the browser.
 - Validate all input on the server with zod.
 - Record significant decisions in `docs/decisions/` (one short file each).

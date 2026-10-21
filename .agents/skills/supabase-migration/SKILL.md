@@ -29,6 +29,12 @@ Without RLS, anyone with the public key can read the whole table.
 
    alter table public.notes enable row level security;
 
+   -- From 2026-10-30 Supabase no longer grants Data API access to new tables
+   -- automatically. Without these lines the API says "permission denied".
+   -- Grant only what the policies below allow; add service_role only if
+   -- app code really uses it (this app doesn't).
+   grant select, insert, update, delete on public.notes to authenticated;
+
    create policy "Users read their own notes" on public.notes
      for select to authenticated using ((select auth.uid()) = user_id);
    create policy "Users add their own notes" on public.notes
@@ -66,7 +72,9 @@ Without RLS, anyone with the public key can read the whole table.
    project (prefer a development project over production).
 
 ## Checks before finishing
-- Every new table: `enable row level security` is present.
+- Every new table: `enable row level security` is present, and the same
+  migration has an explicit `grant` for each role that should reach it
+  (reference data: `grant select ... to anon, authenticated`).
 - No policy uses `using (true)` on user data.
 - Columns users shouldn't set themselves (user_id, role, created_at) are
   filled by defaults, not accepted from the client.

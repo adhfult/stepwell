@@ -4,6 +4,24 @@ Agents: read this first each session; add an entry at the end of each session.
 Newest entries at the top. Keep each entry short.
 
 ## Next up
+**Launch path (2026-10-20; the app is built, what's left is accounts and checks):**
+1. **Owner:** domain (gates email, Turnstile and Vercel), then email sending,
+   production Supabase project and Auth settings, Turnstile keys, Vercel with
+   rate-limit rules, two-factor sign-in. All in `docs/LAUNCH.md`.
+2. **Owner:** legal placeholders in `src/lib/legal/details.ts`
+   (`placeholdersLeft()` empty) and a legal review; decide the open questions
+   in `accounts-and-profile.md`.
+3. **Claude, once 1 and 2 exist:** `db push` to production (only when the
+   owner says), pre-ship-security skill, Cloudflare security-audit skill,
+   two-account test on production.
+4. Soft launch to about 10 students (`PRODUCT.md` "How we'll know it works").
+After launch, in this order: career summaries (`career-summaries.md`, draft,
+needs owner approval), work context and pay by state (no AI), interactive
+quiz, course overviews, student AI helper (after real students).
+**Parked by the owner (2026-10-20):** reading scholarship pages with AI and
+more states' local scholarships; decide later.
+
+**Other open items:**
 - [ ] **Owner:** review `data/award-sites/ca.json` (46 links) and
       `data/scholarships/private.json` (19 programs). Both are live on the
       cloud (migration applied, pushed, import run 37561284140 added 19).
@@ -38,6 +56,16 @@ Newest entries at the top. Keep each entry short.
 - [ ] Review the AP mapping in `docs/specs/ap-suggestions.md` (Stepwell's
       own judgment; easy to change in one migration)
 
+
+## 2026-10-20: AI decision, Supabase grants
+- Decision 0016: AI only through the Anthropic API, server-side; no resellers
+  or gateways. Draft spec `career-summaries.md` (not approved, not built).
+  PRODUCT.md and roadmap item 7 updated.
+- Supabase stops auto-granting Data API access to new `public` tables on
+  2026-10-30. Checked all 27 tables: each migration already grants
+  explicitly, so nothing breaks, including the future production project.
+  Rule added to AGENTS.md and the supabase-migration skill. Not tested
+  against the new behavior (it starts 2026-10-30).
 
 ## 2026-10-06: More scholarships (roadmap 4, part 1)
 - Built spec `more-scholarships.md` (decision 0015): optional private county
