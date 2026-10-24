@@ -1,16 +1,27 @@
 # Launch checklist: Stepwell
 
 Everything that must happen before a real student signs up, in order. Steps
-marked **You** need your own accounts; **Claude** steps run only with your OK.
+marked **You** need your own accounts; **Assistant** steps run only with your OK.
 Details that change often (free-tier limits, prices) are marked "check".
 
 ## 1. Domain
 - [ ] **You:** get a domain (GitHub Student Pack: Namecheap, .TECH or
       Name.com, free for a year; renewal is paid). Everything below uses it.
+      Checked 2026-10-24 (education.github.com/pack): Namecheap gives a
+      free .me, .TECH one .tech, Name.com one domain from 25+ endings, each
+      for the first year; renewal prices aren't listed, so check at checkout.
+      A plain .org or .com at Cloudflare Registrar costs about $10 a year at
+      cost (check the live price); moving there before year 2 is an option.
 
 ## 2. Email sending (Supabase's built-in email only reaches your own team)
 - [ ] **You:** pick a sending provider Supabase documents for custom SMTP
       (for example Resend, Postmark, Amazon SES, Brevo; check free tiers).
+      Checked 2026-10-24: **Resend** (recommended; Supabase documents it)
+      free is 3,000 a month, at most 100 a day (resend.com/pricing). Brevo
+      free is 300 a day (fallback if 100 a day is too few). Postmark free is
+      only 100 a month. Amazon SES has no lasting free amount. Once custom
+      SMTP is saved, Supabase starts at 30 emails an hour; raise it on the
+      Auth Rate Limits page (supabase.com/docs/guides/auth/auth-smtp).
 - [ ] **You:** verify the domain with it (the SPF and DKIM DNS records it
       gives you), and create SMTP credentials.
 - [ ] Sender: name "Stepwell", address such as `no-reply@<domain>`.
@@ -19,11 +30,12 @@ Details that change often (free-tier limits, prices) are marked "check".
 
 ## 3. Production Supabase project
 - [ ] **You:** create a second project, "Stepwell production", on the free
-      plan (check how many active free projects are allowed). Keep the
+      plan (checked 2026-10-24: 2 active free projects per organization,
+      so development plus production uses both; supabase.com/pricing). Keep the
       current "Stepwell" project for development (SECURITY.md: previews use
       a separate development project).
 - [ ] **You:** link it: `npx supabase link --project-ref <production ref>`.
-- [ ] **Claude (with your OK):** `npx supabase db push` to create the tables,
+- [ ] **Assistant (with your OK):** `npx supabase db push` to create the tables,
       then `npx supabase db advisors --linked`.
 - [ ] **You, in the production dashboard** (Authentication settings). These
       are set by hand, not with `supabase config push`, because the local
@@ -39,7 +51,10 @@ Details that change often (free-tier limits, prices) are marked "check".
   - "Secure password change" on (see SECURITY.md "Sensitive actions").
     Supabase's stricter "require current password" would break Forgot
     password, so don't use it. Turn it on in the development project too.
-- [ ] Check: does the free project pause when idle, and what wakes it?
+- [x] Check (2026-10-24): a free project with little activity over 7 days
+      may be paused; open it in the dashboard and choose Resume
+      (supabase.com/docs/guides/platform/free-project-pausing). Real traffic
+      keeps production awake; the development project may pause.
 
 ### Data imports (`.github/workflows/import.yml`, decision 0008)
 - [x] **You, in the SQL editor:** give the `importer` role a long random
@@ -51,11 +66,11 @@ Details that change often (free-tier limits, prices) are marked "check".
       Supabase's root certificate in `src/jobs/`). Variable `IMPORT_CONTACT` = the Stepwell contact address.
 - [x] Run "Import data" by hand once (Actions tab), then check the
       `occupations` count in the table editor.
-- [x] Check (2026-09-30): GitHub turns off scheduled workflows after 60
-      days without activity only in public repositories; Stepwell's is
-      private. Minutes: the daily import mostly takes under a minute (the
-      full first load took 11), and CI about 1 to 2 minutes a push, so
-      well under the 2,000 free minutes a month for private repositories.
+- [x] Check (2026-10-24): the repository is public, so GitHub Actions
+      minutes are free (the private repo's billing had stopped every job
+      from 2026-10-18). GitHub turns off scheduled workflows in a public
+      repository after 60 days with no activity: any commit resets it, or
+      re-enable "Import data" in the Actions tab.
 
 ## 4. Cloudflare Turnstile (bot check)
 - [ ] **You:** free Cloudflare account, Turnstile, add a widget for
@@ -75,7 +90,12 @@ Details that change often (free-tier limits, prices) are marked "check".
 - [ ] **You, in Vercel (Firewall, rules):** rate limit by IP, about 10
       requests a minute then block for 10 minutes, for POST requests to
       `/sign-in`, `/sign-up`, `/forgot-password` and `/account/delete`
-      (decision 0009). Check the plan includes rate-limit rules first.
+      (decision 0009). Hobby allows only **one** rate-limit rule (checked
+      2026-10-24, vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting),
+      so make one rule: method POST and path in that list of four.
+- [x] Check (2026-10-24): Hobby is for non-commercial personal use
+      (vercel.com/docs/limits/fair-use-guidelines). A free, no-ads student
+      project fits; ads, sponsorship or paid helpers would need Pro.
 - [ ] Two-factor sign-in on GitHub, Supabase, Vercel, Cloudflare and the
       domain registrar (SECURITY.md).
 
@@ -86,7 +106,7 @@ Details that change often (free-tier limits, prices) are marked "check".
       `placeholdersLeft()` must return an empty list before launch. The
       pages and footer links are already live (`docs/specs/legal-pages.md`).
 - [ ] Legal review of the age screen, Terms and Privacy (not legal advice here).
-- [ ] **Claude:** pre-ship-security skill, then Cloudflare's security-audit
+- [ ] **Assistant:** pre-ship-security check, then Cloudflare's security-audit
       skill (`npx skills add https://github.com/cloudflare/security-audit-skill
       --skill security-audit`), then fix what they find.
 - [ ] Test as an untrusted user on production: two accounts; account A tries
