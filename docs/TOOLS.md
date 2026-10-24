@@ -16,7 +16,6 @@
 | Sharing `.env.local` values between two PCs (optional) | Doppler | Free Team plan while a student (Student Pack) | Optional |
 | Error tracking | Sentry | Via Student Pack | Before public launch; send no personal data |
 | Testing on real phones | BrowserStack | Via Student Pack | Before public launch |
-| Code suggestions in VS Code | GitHub Copilot | Free via Student Pack | Now |
 | Designs and mockups | Figma | Education plan | When choosing the design |
 
 Not used on purpose: ad networks, third-party analytics/trackers, Firebase,

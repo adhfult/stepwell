@@ -7,8 +7,8 @@
 The owner now has API keys for several AI services (Anthropic, Google
 Gemini, Groq, OpenRouter, and several reseller services) and wants AI in Stepwell, both in background data jobs and, later,
 a student-facing helper. Replies being slow is fine. Users may be 13 to 17
-(decision 0002), so where their words go matters more than price. AGENTS.md
-already names the Anthropic API; the pre-launch roadmap (item 7) said "a free
+(decision 0002), so where their words go matters more than price. The project
+instructions already name the Anthropic API; the pre-launch roadmap (item 7) said "a free
 provider", and PRODUCT.md listed an AI advisor as "not doing". Decision 0015
 ruled out paid services for reading scholarship pages; the owner now accepts
 small API costs (about $1 for a run over every career).

@@ -1,7 +1,7 @@
 # 0009: Rate-limit sign-in at Vercel's firewall, keep Turnstile at Supabase
 
 - Date: 2026-09-29
-- Status: accepted (Claude's recommendation after the security audit; the
+- Status: accepted (recommended after the security audit; the
   owner asked for everything that could be done to be done; revisit if
   Vercel's plan doesn't include rate-limit rules)
 

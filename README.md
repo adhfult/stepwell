@@ -23,7 +23,6 @@ npm run check                 # lint + typecheck + tests
 - `docs/SECURITY.md`: project-specific security rules
 - `docs/design/DESIGN.md`: colors, type, spacing
 - `docs/specs/`, `docs/decisions/`: feature specs and decision records
-- `AGENTS.md`: instructions for AI coding agents
 
 ## Data sources
 Government data is copied into our own tables by scheduled jobs, never fetched

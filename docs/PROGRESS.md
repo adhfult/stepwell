@@ -11,7 +11,7 @@ Newest entries at the top. Keep each entry short.
 2. **Owner:** legal placeholders in `src/lib/legal/details.ts`
    (`placeholdersLeft()` empty) and a legal review; decide the open questions
    in `accounts-and-profile.md`.
-3. **Claude, once 1 and 2 exist:** `db push` to production (only when the
+3. **Assistant, once 1 and 2 exist:** `db push` to production (only when the
    owner says), pre-ship-security skill, Cloudflare security-audit skill,
    two-account test on production.
 4. Soft launch to about 10 students (`PRODUCT.md` "How we'll know it works").
@@ -22,12 +22,12 @@ quiz, course overviews, student AI helper (after real students).
 more states' local scholarships; decide later.
 
 **Public repository (2026-10-20, owner chose public so GitHub Actions is
-free):** history scanned clean; Claude workflows deleted; LICENSE (AGPL-3.0),
+free):** history scanned clean; assistant workflows deleted; LICENSE (AGPL-3.0),
 README and `.github/SECURITY.md` added. When filling `src/lib/legal/details.ts`,
 use an address on the new domain, not a personal one (it is public in the
 code). After the switch: outside-contributor workflow approval, secret
 scanning with push protection, private vulnerability reporting, wiki off,
-then re-run CI and "Import data". Delete the unused `CLAUDE_CODE_OAUTH_TOKEN`
+then re-run CI and "Import data". Delete the unused assistant token
 secret in GitHub.
 
 **Other open items:**
@@ -73,7 +73,7 @@ secret in GitHub.
 - Supabase stops auto-granting Data API access to new `public` tables on
   2026-10-30. Checked all 27 tables: each migration already grants
   explicitly, so nothing breaks, including the future production project.
-  Rule added to AGENTS.md and the supabase-migration skill. Not tested
+  Rule added to the project instructions and the migration checklist. Not tested
   against the new behavior (it starts 2026-10-30).
 
 ## 2026-10-06: More scholarships (roadmap 4, part 1)
@@ -200,7 +200,7 @@ secret in GitHub.
   (was 0.10 to 0.30 on phones).
 - career, colleges and scholarships screenshots re-taken (390px, 2x, prod
   build, signed out, quantized to about 45 KB). plan.png still old.
-- `.claude/reports/` (local telemetry) is gitignored.
+- Local telemetry reports are ignored.
 
 ### 2026-10-04: Depth, motion and the 3D stepwell (spec ui-depth-and-motion)
 - Owner chose: evolve Water and Stone, Bricolage Grotesque headings, an
@@ -226,8 +226,8 @@ secret in GitHub.
 - Cloudflare's security-audit method (instructions read from GitHub, not
   installed; source-only, report in ~/security-audit-skill/stepwell/run-1):
   0 confirmed findings. One password lead was tested locally and accepted
-  (SECURITY.md, LAUNCH.md). Its Claude-workflow lead didn't apply while the
-  repo was private; the two Claude workflows were deleted before it went
+  (SECURITY.md, LAUNCH.md). Its workflow lead didn't apply while the
+  repo was private; the two assistant workflows were deleted before it went
   public (2026-10-20).
 - Hardening from its notes: keyed API requests refuse redirects (checked
   live: USAJOBS, O*NET, Scorecard still import); HSTS header.
@@ -339,7 +339,7 @@ secret in GitHub.
   "Where to study" on career pages and `/careers/[code]/colleges` with state
   (profile state first) and credential filters. Pushed to the cloud.
 - Sizes: 5,787 colleges, 164,316 programs (30 MB), 8,501 crosswalk links.
-- Merged Dependabot PR #6 (actions/checkout v7 in the Claude workflows).
+- Merged Dependabot PR #6 (actions/checkout v7 in the assistant workflows).
 - Still blocked for agents: the `importer` password and GitHub secret.
 
 ### 2026-09-28 (evening, later): interest quiz built
@@ -364,7 +364,7 @@ secret in GitHub.
   local imports now read the local settings file too.
 - Dependabot: merged React 19.3.0; ESLint 10, TypeScript 7 and
   `@types/node` 26 held back in `.github/dependabot.yml` (toolchain
-  support; Node 24 runtime). The owner merged the Claude GitHub Actions
+  support; Node 24 runtime). The owner merged the assistant GitHub Actions
   workflows (PR #5).
 - Still blocked for agents (secret writes): the `importer` password and
   `IMPORT_DATABASE_URL`, so scheduled imports end with a notice.

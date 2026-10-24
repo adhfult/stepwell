@@ -13,7 +13,7 @@ Each item says **how Stepwell does it**.
       `ONET_API_KEY`, `SCORECARD_API_KEY`, ...) live only in GitHub Actions
       secrets.
 - [ ] **Hide all .env files.** `.gitignore` blocks `.env*` except `.env.example`;
-      the pre-commit hook blocks real `.env` files; Claude can't read them.
+      the pre-commit hook blocks real `.env` files; coding assistants can't read them.
 - [ ] **Never hardcode secrets.** No keys, passwords, or tokens in source,
       tests, docs, or commit messages. `.env.example` holds names only.
 - [ ] **Check Git history for secrets.** gitleaks runs on every commit
